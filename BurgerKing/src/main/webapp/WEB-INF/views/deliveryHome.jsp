@@ -14,7 +14,7 @@
 	<c:forEach items="${orderList }" var="orderList">
 	      <h4>${orderList.order_no }</h4>
 	      <h4>${orderList.user_id }</h4>
-	      <img alt="이미지 오류" src="resources/img/product/french_fries.png">
 	 </c:forEach>
+	 <img alt="이미지 오류" src="resources/img/product/french_fries.png">
 </body>
 </html>
