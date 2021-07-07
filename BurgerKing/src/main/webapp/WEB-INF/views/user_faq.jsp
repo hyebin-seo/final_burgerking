@@ -8,16 +8,8 @@
 <title>FAQ</title>
 <link  href="resources/css/cs/user_faq.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link href="resources/js/cs/user_faq.js" type="text/javascript">
-<script type="text/javascript">
-$( document ).ready( function() {
-    $( '.btn_acc' ).click( function() {
-      $('.btn_acc').addClass("on");
-      $( '.text_area' ).toggle();
-    } );
-  } );
+<script src="resources/js/cs/user_faq.js" type="text/javascript"></script>
 
-</script>
 </head>
 <body>
 	<div class="faq_category">
