@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: wnsqj
 Build-Jdk: 1.8.0_281
+=======
+Built-By: kjsun
+Build-Jdk: 1.8.0_271
+>>>>>>> origin/BugerKing_jiseon
 Created-By: Maven Integration for Eclipse
 
