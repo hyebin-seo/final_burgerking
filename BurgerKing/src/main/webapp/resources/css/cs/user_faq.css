@@ -75,11 +75,25 @@ button{
 	overflow: visible;
 	cursor: pointer;
 	background: 0;
+	
 }
+
+.acc_tit {
+	position: relative;
+	/* 해당 요소의 자식 요소를 양 옆 끝으로 배치 (span, btn) */
+	display: flex;
+	justify-content: space-between;
+}
+
 .btn_acc{
-	position: absolute;
-	left: 0;
-	top: 0;
+	/* position: absolute; */
+	/* left:0;
+	top: 0; */
+	width: 20px;
+	height: 20px;
+	background: url("../../img/cs/faq_btn.png") no-repeat;
+	text-indent: -9999em;
+	background-size: 15px auto;
 	
 }
 .btn_acc:after{
@@ -89,8 +103,6 @@ button{
 	width:20px;
 	height:20px;
 	margin-top: -10px; 
-	background: url("../../img/cs/faq_btn.png") no-repeat;
-	background-size: 15px auto;
 	border: 0; 
 }
 /*FAQ 테이블 no, 구분, 제목*/
@@ -98,7 +110,7 @@ button{
 	height: 56px; 
 	padding: 10px;
 	font-size: 1.125rem; 
-	text-align: center; 
+	text-align: center;
 	vertical-align: middle;
 	font-family: 'S-CoreDream-5Medium';
 }
