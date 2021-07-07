@@ -8,9 +8,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>딜리버리</title>
+<link  href="resources/css/delivery/deliveryHome.css"  rel="stylesheet"  type="text/css">
 </head>
+<jsp:include page="deliveryHeader.jsp" flush="true"/>
 <body>
+	
+
 	<c:forEach items="${orderList }" var="orderList">
 	      <h4>${orderList.order_no }</h4>
 	      <h4>${orderList.user_id }</h4>
