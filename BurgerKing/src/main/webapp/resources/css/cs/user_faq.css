@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+.faq_category{
+	height: 48px;
+	margin-bottom: 24px;
+}
+/*faq-kind 라벨 */
+.faq_category label{
+	float: left;
+	margin-right: 9px;
+}
+/*faq kind label 디자인*/
+.switch01{
+	position: relative; 
+	display: inline-block;
+	font-weight: 700; 
+	cursor: pointer;
+}
+/*faq-kind 버튼 선택되었을 때  */
+.switch01 input:checked+*{
+	background: #2e2e2e;
+}
+/*faq-kind 버튼 */
+.switch01 input+*{
+	display: inline-block;
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 1.25rem;
+	color: #fff;
+	background: #8d8d8d;
+	text-align: center; 
+	line-height: 38px;
+	border-radius: 5px;	
+	box-sizing: border-box;
+}
+/*input박스 라디오 버튼 없애기*/
+.switch01 input[type=radio] {
+	display: none;
+}
+.switch01 span{
+	font-family: 'S-CoreDream-9Black';
+}
+table{
+	width: 100%;
+	border-collapse:collapse;
+}
+/*FAQ 테이블 헤더*/
+.flist01 thead th{
+	font-family: 'S-CoreDream-9Black';
+	height: 50px;
+	font-size: 1.25rem;
+	text-align: center;
+	border-top: 2px solid #000;
+	border-bottom : 2px solid #E5E5E5;
+	background: #FAFAFA;
+}
+
+/*FAQ 버튼*/
+button{
+	margin: 0; 
+	border: none;
+	overflow: visible;
+	cursor: pointer;
+	background: 0;
+}
+.btn_acc{
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+}
+.btn_acc:after{
+	content: "";
+	position: absolute; 
+	top:50%;
+	width:20px;
+	height:20px;
+	margin-top: -10px; 
+	background: url("../../img/cs/faq_btn.png") no-repeat;
+	background-size: 15px auto;
+	border: 0; 
+}
+/*FAQ 테이블 no, 구분, 제목*/
+.flist01 tbody td {
+	height: 56px; 
+	padding: 10px;
+	font-size: 1.125rem; 
+	text-align: center; 
+	vertical-align: middle;
+	font-family: 'S-CoreDream-5Medium';
+}
+
+/*FAQ content*/
+ .acc_cont .text_area{
+	display: none;
+}
