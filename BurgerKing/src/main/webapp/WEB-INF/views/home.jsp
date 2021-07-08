@@ -52,7 +52,7 @@
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								메뉴소개 </a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">스폐셜&할인팩</a></li>
+								<li><a class="dropdown-item" href="Login.do">스폐셜&할인팩</a></li>
 								<li><a class="dropdown-item" href="#">프리미엄</a></li>
 								<li><a class="dropdown-item" href="#">와퍼</a></li>
 								<li><a class="dropdown-item" href="#">주니어&버거</a></li>
@@ -89,11 +89,10 @@
 								<li><a class="dropdown-item" href="#">why 버거킹</a></li>
 								<li><a class="dropdown-item" href="#">버거킹 News</a></li>
 							</ul></li>
-
-						<li class="nav-item"><a class="nav-link dropdown-toggle"
-							href="#" id="navbarDropdown" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"> <img
-								src="resources/img/main/delivery.png" width="150">
+                         <!-- Login.jsp로 이동! -->
+						<li class="nav-item"><a class="nav-link " href="Login.do"
+							role="button"> <img src="resources/img/main/delivery.png"
+								width="150">
 						</a></li>
 						<!-- disabled 메뉴가 왜 필요할까? 근데 그냥 냅둬봐야지 ㅋㅋㅋ<li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -200,12 +199,6 @@
 		</div>
 		<!-- 버거킹 대표번호 나오는 부분  끝(이미지처리)-->
 
-
-
-
-
-
-
 	</section>
 	<!-- 본문   -->
 
@@ -213,20 +206,20 @@
 	<!-- foote 시작 -->
 	<footer class="footer">
 		<div class="info">
-		
-		  <div class="info_div">
-		     <ul class="info_ul1">
-		       <li>메뉴</li>
-		       <li>매장</li>
-		       <li>이벤트</li>
-		       <li>브랜드 스토리</li>
-		       <li>고객센터</li>
-		     </ul>
-		  </div>
-		
-		
+
+			<div class="info_div">
+				<ul class="info_ul1">
+					<li>메뉴</li>
+					<li>매장</li>
+					<li>이벤트</li>
+					<li>브랜드 스토리</li>
+					<li>고객센터</li>
+				</ul>
+			</div>
+
+
 		</div>
-		
+
 
 	</footer>
 	<!-- foote 끝 -->
