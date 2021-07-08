@@ -7,17 +7,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </head>
 <body>
 	
-	<div align="center">
-	  
-	      <h3>공지사항</h3>
-	 
-	   <br> <br>
-	   <div>
-	   <table border="0" cellspacing="0" width="500">
+	
+		
+	  	<div class = "notice_list" align="center">
+	    <table class = "table1">
+	    
 	    <form method="post"
 	      action="<%=request.getContextPath() %>/notice_search.do">
 	      
@@ -25,19 +26,23 @@
 	      <select name="field">	         
 	         <option value="title_cont">제목+내용</option>	      	         	      
 	      </select>
-	      <input type="text" name="keyword">
-	      <input type="submit" value="검색">
+	     
+	      <img alt="..." src="resources/img/cs/barB.png">
+	     
+	  
+	      <button class="btn_search" type="submit"></button>
+	     
 	   </form>
-	   	<hr>
+	   	<hr id="hr1">
 	      <tr>
-	         <th>NO</th> <th>공지제목</th>
-	      	 <th>작성일자</th> <th>조회수</th>
+	         <th>NO.</th> <th>공지제목</th>
+	      	 <th>날짜</th> <th>조회수</th>
 	      </tr>
 	      
 	      <c:set var="list" value="${List }" />
 	      <c:if test="${!empty list }">
 	         <c:forEach items="${list }" var="dto">
-	            <tr>
+	            <tr align="center">
 	               <td> ${dto.getNotice_no() } </td>
 	         	   <td> <a href="<%=request.getContextPath() %>/notice_cont.do?no=${dto.getNotice_no() }&page=${Paging.getPage() }">
 	         						${dto.getNotice_title() }</a></td>
@@ -67,22 +72,22 @@
 	   </table>
 	   </div>
 	  
-	   <hr>
+	   <hr id="hr1">
 	   <%-- 페이징 처리 부분 --%>
-	   
-	   
-	   <c:forEach begin="${Pagjing.getStartBlock() }"
-	       					end="${Paging.getEndBlock() }" var="i">
-	      <c:if test="${i == Paging.getPage() }">
-	         <b><a href="notice_list.do?page=${i }">[${i }]</a></b>
-	      </c:if>
-	      
-	      <c:if test="${i != Paging.getPage() }">
-	         <a href="notice_list.do?page=${i }">[${i }]</a>
-	      </c:if>
-	   </c:forEach>
-	   
-	
+	<%-- 페이징 처리 부분 --%>
+      <div class="text">
+      <c:forEach begin="${Paging.getStartBlock() }"
+                         end="${Paging.getEndBlock() }" var="i">
+         <c:if test="${i == Paging.getPage() }">
+            <b class="page"><a href="notice_list.do?page=${i }">${i }</a></b>
+         </c:if>
+         
+         <c:if test="${i != Paging.getPage() }">
+            <span class="page"><a href="notice_list.do?page=${i }">${i }</a></span>
+         </c:if>
+      </c:forEach>
+      </div>
+   </div>
 	   <br>
 	   
 	</div>

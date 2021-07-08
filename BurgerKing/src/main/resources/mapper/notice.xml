@@ -14,9 +14,9 @@
 								resultType="com.burger.cs.model.NoticeDTO">
 		<![CDATA[
 			select * from
-				(select b.*, row_number()
+				(select n.*, row_number()
 				   over(order by notice_no desc) rnum
-				   from notice b) 
+				   from notice n) 
 				     where rnum >= #{startNo} and rnum <= #{endNo} 
 		]]>
 	</select>
