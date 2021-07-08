@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     
+}
+
+#hr1 {
+    border: 0;
+    height: 3px;
+    background: #000;
+   
+}
+
+.table1 {
+	 width : 70%;
+	 border-spacing:  30px;
+}
+
+.table1 th {
+		
+	font-family: 'S-CoreDream-9Black';
+	height: 30px;
+	font-size: 1.25rem;
+	text-align: center;	
+	background: #FAFAFA;
+	
+	
+}
+
+.table1 td{
+	
+	height: 30px; 
+	padding: 5px;
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+	font-family: 'S-CoreDream-5Medium';
+	
+}
+
+.btn_search {
+		
+	width: 50px;
+	height: 50px;
+	background: url("../../img/cs/searchB.png") no-repeat;
+	background-size: 50px auto;
+	padding: 0;
+	border: 0;
+}
+
+/* .search_bar {
+		
+	width: 50px;
+	height: 50px;
+	background: url("../../img/cs/barB.png") no-repeat;
+	background-size: 50px auto;	
+	padding: 0;
+	border: 0;
+} */
+
+
+
+/*페이징 디자인*/
+.text{
+   text-align: center; 
+}
+.page a{
+   height: 36px; 
+   padding: 0 3px; 
+   font-size: 1.25rem;
+   font-family: 'S-CoreDream-5Medium';
+   text-decoration: none; 
+   color : #000;
+   min-width: 1.5em;
+}
+
+
+

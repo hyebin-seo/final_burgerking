@@ -29,7 +29,7 @@ public class NoticeController {
 	@RequestMapping("notice_list.do")
 	public String list(HttpServletRequest request, Model model) {
 		
-		int page = 0;     // 현재 페이지 변수
+		int page = 1;     // 현재 페이지 변수
 		
 		if(request.getParameter("page") != null) {
 			page = Integer.parseInt(request.getParameter("page"));
@@ -189,17 +189,18 @@ public class NoticeController {
 		}
 	
 	
-	// @RequestMapping(notice_search.do")
-	// public String search(@RequestParam("field") String field,
-	//		@RequestParam("keyword") String keyword,
-	//		@RequestParam("page") int nowPage, Model model) {
+	 @RequestMapping("notice_search.do")
+	 public String search(@RequestParam("field") String field,
+			@RequestParam("keyword") String keyword,
+			@RequestParam("page") int nowPage, Model model) {
 		
-	//	// 검색분류와 검색어에 해당하는 게시글의 갯수를 DB에서 확인하는 작업
-	//	totalRecord = this.dao.searchNoticeCount(field, keyword);
-	//	// 
-	//	PageDTO dto = new PageDTO(nowPage, rowsize, totalRecord, field, keyword);
-	//	
-	//	this.dao.searchNoticeList(dto);
-	// }
+		// 검색분류와 검색어에 해당하는 게시글의 갯수를 DB에서 확인하는 작업
+		totalRecord = this.dao.searchNoticeCount(field, keyword);
+		// 
+		PageDTO dto = new PageDTO(nowPage, rowsize, totalRecord, field, keyword);
+		
+		this.dao.searchNoticeList(dto);
+		return "notice_search";
+	 }
 	 }
 
