@@ -3,5 +3,19 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.burger.cs.model">
+<mapper namespace="com.burger.cs.model.FaqDAO">
+	<select id="faqcount" resultType="int">
+		select count(*) from faq
+	</select>
+	
+	<select id="faqlist" parameterType="com.burger.cs.model.PageDTO"
+								resultType="com.burger.cs.model.FaqDTO">
+		<![CDATA[
+			select * from
+				(select b.*, row_number()
+				   over(order by faq_no desc) rnum
+				   from faq b) 
+				     where rnum >= #{startNo} and rnum <= #{endNo} 
+		]]>
+	</select>
 </mapper>
