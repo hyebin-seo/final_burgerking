@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 
-<style>
+<!-- <style>
 	
 	@font-face {
 	 font-family: 'Material Icons';
@@ -52,22 +52,26 @@
 		 font-feature-settings: 'liga';
 	 }
  
-</style>
+</style> -->
 <body>
 
 	<div class="order_container">
 		<div class="order">
-			<ul>
-				<li>				
-					<strong>딜리버리 주문내역</strong>
-					<p>주문내역이 없습니다.</p>					
-				</li>
+			<div class="order_wrapper">
+				<div class="my-delivery">
+					<dl>
+						<dt>딜리버리 주문내역</dt>
+						<dd>주문내역이 없습니다.</dd>
+					</dl>
+				</div>
 				
-				<li>
-					<strong>카트</strong>
-					<p>카트에 담은 상품이 없습니다.</p>
-				</li>
-			</ul>
+				<div class="my-cart">
+					<dl>
+						<dt>카트</dt>
+						<dd>카트에 담은 상품이 없습니다.</dd>
+					</dl>
+				</div>
+			</div>
 		</div>
 	</div>
 	
@@ -79,11 +83,12 @@
 			</div>
 			
 			<div class="location">
-				<span class="material-icons">
-					fmd_good
+				<span class="addr">
+					<span>배달지를 선택하세요</span>
 				</span>
-				<span>배달지를 선택하세요</span>
-				<a class="btn"><span>변경</span></a>
+				<span class="btn">
+					<a><span>변경</span></a>
+				</span>
 			</div>
 		</div>
 	</div>
@@ -106,13 +111,19 @@
 				</div>
 				
 				<div class="coupon-info">
-					<div class="coupon">
-						쿠폰
-					</div>
+					<dl class="coupon">
+						<dt>나의 쿠폰</dt>
+						<dd>
+							<strong>0장</strong>
+						</dd>
+					</dl>
 					
-					<div class="stamp">
-						스탬프
-					</div>
+					<dl class="stamp">
+						<dt>나의 스탬프</dt>
+						<dd>
+							<strong>0개</strong>
+						</dd>
+					</dl>
 				</div>
 			</div>
 		</div>
