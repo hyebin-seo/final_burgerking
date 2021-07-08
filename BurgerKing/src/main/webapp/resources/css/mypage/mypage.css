@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+/* rem 기준 */
+html {
+	font-size: 20px;	
+}
+
+/* 본문 전체 폰트 적용 */
+body * {
+	font-family: 'Black Han Sans';
+}
+
+/* 먹색 영역 스타일 시작  */
+
+body {
+	padding: 5rem 0 0;	/* 이 부분은 헤더 포함시킨 후 삭제하기 */
+	font-size: 1rem;
+	margin: 0;			/* 전체화면 너비 차지할 수 있도록 */
+}
+
+/* 먹색 영역 전체 감싸는 영역 */
+/* 배경색 적용, 높이 적용 */
+.order_container {
+	background: rgb(46,46,46);
+	height: 6.2rem;		/* 124px */
+}
+
+/* 리스트 감싸는 영역 */
+/* 가운데 배치(너비는 바꿔야함) */
+.order {
+	width: 96%;			/* 970px 이상에서는 96% 크기 유지 */
+	height: 67.33px;
+	margin: 0 auto;		/* 가운데 정렬 */
+	padding: 0.23rem;
+}
+
+.order ul {
+	display: flex;		/* 자식인 li는 행배치됨 */
+	justify-content: space-between;
+	list-style: none;		
+}
+
+.order ul li {
+	flex: 1;			/* li들의 크기는 동일 */
+	position: relative;
+	/* padding: 0 0 0 1.5rem; */
+	/* background: url(/resources/img/mypage/img_delivery.png) no-repeat left; */
+}
+
+/* li 사이에 선 추가(모든 li요소 앞에 선 추가) */
+.order ul li:before {
+	content:"";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100px;
+	border-left: 1px solid rgb(255,255,255);
+}
+
+/* li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게) */
+.order ul li:first-child:before {
+	content:"";
+	border-left: 0;
+}
+
+.order ul li strong {
+	font-size: 1.25rem;
+	color: rgb(255,255,255);
+	padding-left: 6rem;
+}
+
+.order ul li p {
+	font-size: 1rem;
+	color: rgb(255,255,255);
+	padding-left: 6rem;
+}
+
+.order ul li:nth-child(1) {
+	background: url("../../img/mypage/img_delivery.png") no-repeat left top;
+}
+
+.order ul li:nth-child(2) {
+	background: url("../../img/mypage/img_cart.png") no-repeat left 0.2rem top;
+}
+
+
+/* 까만 영역 스타일 시작 */
+
+/* 배경, 글씨색 지정 */
+.loc_container {
+	background: rgb(0,0,0);
+	color: rgb(255,255,255);
+	height: 2.9rem;
+}
+
+
+.loc_container .loc {
+	display: flex;		/* 자식 div 행배치 */
+	justify-content: space-between;	/* 양 끝에 위치시킴 */
+	height: 1.9rem;
+	padding-top: 0.7rem;
+	font-size: 1rem;
+}
+
+.loc_container .loc .page-navi {
+	padding-left: 4rem;
+}
+
+.loc_container .loc .location {
+	padding-right: 4rem;
+}
+
+.loc_container .loc .page-navi a {
+	position: relative;
+	padding-left: 0.7rem;
+}
+
+.loc_container .loc .page-navi a::before {
+	content:">";
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.loc_container .loc .page-navi a:first-child:before {
+	content:"";
+}
+
+.loc_container .loc .location .btn {
+	display: inline-block;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	width: 56px;
+	/* height: 34px; */
+	align-content: center;
+}
+
+.btn span {
+	padding-left: 10px;
+	text-align: center;
+}
+
+
+/* 하얀색 영역 스타일 */
+
+/* 전체 div - 높이, 배경색(흰색), 위아래 패딩 */
+.myking-wrapper {
+	height: 342.67px;
+	background-color: rgb(242,235,230);
+	padding: 50px 0 50px 0;
+}
+
+/* 안쪽 div */
+.myking-wrapper .myking-container {
+	margin: 0 auto;		/* 가운데 정렬 */
+    padding: 0 20px;	/* 양 옆 여백 */
+    width: 1184px;		/* 너비 */
+}
+
+/* MY킹 써있는 영역 */
+.myking-wrapper .myking-container .my-king {
+	height: 86px;			/* 높이 */
+	margin-bottom: 26px;	/* 마진줘서 하단 쿠폰 영역이랑 띄워놓기 */
+}
+
+/* MY킹 글씨 */
+.myking-wrapper .myking-container .my-king h2 {
+	display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 20px 0 23px;
+    border-bottom: 3px solid #000;
+	margin-bottom: 15px;
+    font-size: 2.1rem;
+    line-height: 100%;
+}
+
+/* 쿠폰/스탬프 영역 */
+.myking-wrapper .myking-container .my-coupon {
+	height: 135.67px;
+	padding: 16px 0 30px;	/* 위 16px, 아래 30px 여백 */
+}
+
+/* 쿠폰/스탬프 영역에서 회원정보/쿠폰+스탬프 영역은 행배치 */
+.my-coupon>*{
+	float: left;
+}
+
+/* 쿠폰 영역 - 회원정보 */
+.my-coupon .my-info {
+	width: 34%;		/* 너비 */
+}
+
+/* 회원 이름이랑 '반갑습니다' 사이에 간격 띄우기 */
+.my-coupon .my-info .user strong {
+    margin-right: 0.5em;
+}
+
+.my-coupon .my-info .user {
+	font-size: 1.825rem;
+}
+
+/* 쿠폰/스탬프 영역 */
+.my-coupon .coupon-info {
+	width: 66%;
+}
