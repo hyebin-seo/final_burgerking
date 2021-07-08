@@ -1,0 +1,696 @@
+@charset "UTF-8";
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    display: block;
+    font-size: 2.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.bg_w {
+    background: #fff;
+}
+
+.web_container02 {
+    max-width: 776px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.contentsWrap .page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+}
+
+.searchWrap01:last-child {
+    margin-bottom: 0;
+}
+
+.searchWrap01 {
+    position: relative;
+    margin-bottom: 8px;
+    background: #fff;
+}
+
+.r_srch01 {
+    position: relative;
+    padding-right: 166px;
+}
+
+.inpbox {
+    position: relative;
+}
+
+.inpbox input {
+    width: 100%;
+    padding: 0 25px 3px 5px;
+}
+
+input[type=color], input[type=date], input[type=datetime], input[type=email], input[type=file], input[type=month], input[type=number], input[type=password], input[type=rang], input[type=search], input[type=tel], input[type=text], input[type=url] {
+    display: inline-block;
+    height: 66px;
+    margin: 0;
+    padding: 3px 10px 3px 4px;
+    font-weight: 400;
+    font-size: 1.375rem;
+    font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    vertical-align: middle;
+    background: url(../../img/delivery/search_under.png) repeat-x 0 100%;
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+.inpbox button {
+    width: 30px;
+    height: 63px;
+    margin: 0;
+}
+
+.inpbox button, .inpbox input~* {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.btn_del01 {
+    width: 30px;
+    height: 40px;
+    text-indent: -9999em;
+    background: url(../../img/delivery/search_btn.png) no-repeat 50%;
+    background-size: 18px auto;
+}
+
+.r_srch01 button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -22px;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.btn_search01 {
+    width: 134px;
+    height: 44px;
+    color: #fff;
+    background: #2e2e2e;
+    border-radius: 5px;
+}
+
+.btn_search01>span {
+    padding-right: 28px;
+    background: url(../../img/delivery/search_btn.png) no-repeat 100%;
+}
+
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.web_container02 {
+    max-width: 776px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.tabfixWrap {
+    position: relative;
+    padding-top: 54px;
+}
+
+.tabfixWrap .tab01 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.tab01 {
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.tab01 a:hover, .tab01 button:hover {
+    color: #2e2e2e;
+}
+
+.tab01 a, .tab01 button {
+    display: inline-block;
+    padding: 10px 1px;
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: #b8b8b8;
+    border: 0 solid transparent;
+    border-width: 4px 0;
+}
+
+button {
+    margin: 0;
+    font: font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.tab01 ul {
+    display: table;
+}
+
+.tab01 li:first-child {
+    padding-left: 0;
+}
+
+.tab01 li {
+    position: relative;
+    display: table-cell;
+    padding: 0 18px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.tab01 li.on a, .tab01 li.on button {
+    color: #e22219;
+    border-bottom-color: #e22219;
+}
+
+.tab01 button {
+    height: 54px;
+    padding: 5px 0;
+}
+
+.tab01 a>*, .tab01 button>* {
+    vertical-align: middle;
+}
+
+.hide {
+    position: absolute!important;
+    left: -10000px;
+    top: -10000px;
+    visibility: hidden;
+}
+
+.nodata {
+	display: none;
+}
+
+.nodata, .nodata .tit {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.container01 {
+    padding: 20px 0;
+}
+
+.container01 .delivery_list {
+    padding: 0;
+}
+
+.delivery_list>li {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 45px 50px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.delivery_list .addr, .delivery_list .nick {
+    margin-right: 60px;
+    font-size: 1.5rem;
+}
+
+.delivery_list .addr_old {
+    margin-top: 7px;
+}
+
+.addr_old {
+    font-size: 1rem;
+    color: rgba(0,0,0,.5);
+}
+
+.addr_old .type {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 4px 8px;
+    font-weight: 700;
+    font-size: .625rem;
+    color: #fff;
+    line-height: 100%;
+    vertical-align: middle;
+    background: #8d8d8d;
+    border-radius: 2px;
+}
+
+.delivery_list .btn_detail {
+    width: 85%;
+}
+
+.btn_detail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -99999em;
+    background: transparent;
+}
+
+.tab_cont {
+	display: none;
+}
+
+
+/*주소지 찾기 팝업*/
+.popWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+}
+
+.m_FullpopWrap .popbox01 {
+    background: #f2ebe6;
+}
+
+.popbox01, .popbox02 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 568px;
+    max-height: 95%;
+    margin-left: -284px;
+    padding-bottom: 84px;
+    background: #fff;
+    overflow: auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.popWrap .titleBar {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.popWrap .titleBar .page_tit {
+    height: 104px;
+    margin: 0;
+    padding: 20px 70px 20px 40px;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 63px;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.popbox01 .title_btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.popbox01 .title_btn button {
+    width: 100px;
+    height: 100%;
+}
+
+.popWrap .btn_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.btn_close {
+    width: 40px;
+    height: 40px;
+    text-indent: -9999em;
+    background: url(../../img/delivery/location_close.png) no-repeat 50%;
+}
+
+.popcont {
+    max-height: 580px;
+    padding: 24px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.srchaddrPop {
+    background: #f2ebe6;
+}
+
+.nopadding {
+    padding: 0!important;
+}
+
+.search_address {
+    padding: 28px 38px 34px;
+    background: #fff;
+}
+
+.searchWrap01:last-child {
+    margin-bottom: 0;
+}
+
+.searchWrap01 {
+    position: relative;
+    margin-bottom: 8px;
+    background: #fff;
+}
+
+.r_srch01.st02 {
+    padding-right: 62px;
+}
+
+.r_srch01 {
+    position: relative;
+    padding-right: 166px;
+}
+
+.inpbox {
+    position: relative;
+}
+
+.search_address .r_srch01 input {
+    font-size: 1.375rem;
+}
+
+.inpbox input {
+    width: 100%;
+    padding: 0 25px 3px 5px;
+}
+
+.inpbox button {
+    width: 30px;
+    height: 63px;
+    margin: 0;
+}
+
+.inpbox button, .inpbox input~* {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.r_srch01 button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -22px;
+}
+
+.btn_search02 {
+    width: 54px;
+    height: 54px;
+    text-indent: -9999em;
+    background: url(../../img/delivery/search_btn_circle.png) no-repeat 50%;
+}
+
+.address_result {
+    padding: 25px 38px 0;
+    background: #f2ebe6;
+}
+
+.address_result .txt_result {
+    margin-bottom: 17px;
+}
+
+.addr_searchguide .result_box {
+    height: auto;
+    padding: 34px 28px 6px;
+}
+
+.address_result .result_box {
+    position: relative;
+    height: 362px;
+    padding: 13px 30px 16px;
+    background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.addr_searchguide .result_box ul {
+    font-size: .875rem;
+    overflow: hidden;
+}
+
+.addr_searchguide .result_box li {
+    float: left;
+    width: 50%;
+    min-height: 67px;
+    padding-bottom: 10px;
+}
+
+.addr_searchguide .result_box strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+li {
+    list-style: none;
+}
+
+.address_result {
+    padding: 25px 38px 0;
+    background: #f2ebe6;
+}
+
+.address_result .txt_result {
+    margin-bottom: 17px;
+}
+
+em {
+    color: #e22219;
+}
+address, em {
+    font-style: normal;
+}
+
+.result_box .nodata {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    margin-top: -1.3em;
+    padding: 0;
+    font-size: 1.25rem;
+    color: #cacaca;
+    line-height: 130%;
+}
+
+.board_paging {
+    margin-top: 30px;
+    text-align: center;
+}
+
+article, aside, figure, footer, header, hgroup, nav, section {
+    display: block;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.board_paging li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.VuePagination__count, .VuePagination__pagination-item-next-page, .VuePagination__pagination-item-prev-page {
+    display: none!important;
+}
+
+.addr_detail>* {
+    padding: 30px 38px;
+}
+
+.srchaddrPop .addrbox dl {
+    display: table;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.srchaddrPop .addrbox dt {
+    width: 2em;
+    white-space: nowrap;
+}
+
+.txtbox02 {
+    height: 28px;
+    padding: 0 7px;
+    line-height: 28px;
+    background: #8d8d8d;
+    border-radius: 3px;
+}
+
+.txtbox01, .txtbox02 {
+    display: inline-block;
+    min-width: 3em;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.srchaddrPop .addrbox dl:last-child {
+    margin: 0;
+}
+
+.inp_detail {
+    background: #fff;
+}
+
+.pop_btn.full_type {
+    padding: 0;
+}
+
+.pop_btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.popWrap .btn02:only-child {
+    max-width: 100%;
+}
+
+.btn02:only-child {
+    width: 100%;
+    max-width: 450px;
+}
+
+.btn02:disabled {
+    color: #2e2e2e;
+    background-color: #e5e5e5;
+}
+
+.pop_btn button {
+    line-height: normal;
+}
+
+.pop_btn a, .pop_btn button {
+    border-radius: 0;
+}
+
+.btn02, .btn02.red {
+    display: inline-block;
+    height: 84px;
+    padding: 20px 10px;
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+    background: #e22219 url(../img/bg_btn02_pattern.908362f6.png) repeat-x 0 0;
+    background-size: auto 100%;
+}
+
+
+.sub_popWrap {
+    width: 100%;
+    background: #fff;
+    z-index: 50;
+}
+
+.sub_popWrap, .sub_popWrap .popbox01 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.m_FullpopWrap .popbox01 {
+    background: #f2ebe6;
+}
+
+.sub_popWrap .popbox01 .M_headerWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.popWrap .titleBar {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.popWrap .titleBar .page_tit {
+    height: 104px;
+    margin: 0;
+    padding: 20px 70px 20px 40px;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 63px;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.popbox01 .title_btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.sub_popWrap .popbox01 .popcont {
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.map {
+	width: 100%;
+    height: 100%;
+}
+

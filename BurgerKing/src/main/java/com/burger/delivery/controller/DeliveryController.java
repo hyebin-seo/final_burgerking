@@ -25,4 +25,10 @@ public class DeliveryController {
 		
 		return "deliveryHome";
 	}
+	
+	@RequestMapping("location.do")
+	public String location() {
+		
+		return "deliveryLocation";
+	}
 }

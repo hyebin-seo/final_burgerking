@@ -11,33 +11,41 @@
 
 
 <div class="delivery_navbar">
-	<div class="empty_box"></div>
-	<div class="web_header_center_div">
 	 <div class="delivery_navbar_right_menu">
-	  	<ul class="delivery_navbar_right_menu">
+	  	<ul style="padding-left: 70%;">
 	        <li><a href="">브랜드홈</a></li>
 	        <li class="border_li"><a href="">로그인</a></li>
 	        <li class="border_li"><a href="">고객센터</a></li>
 	    </ul>
-	 </div>
+	</div>
+	
+	<div class="logo_myinfo_all_div">
+      <div class="delivery_navbar_logo">
+        <h1 class="king_logo"><span><b>딜리버리</b></span></h1>
+      </div>
+      
+      <div class="delivery_navbar_myinfo">
+	      <div class="my_info_icon"><i class="fas fa-user-circle"></i></div>
+	      <div class="my_info_span_div">
+	        <div class="span_div"><span id="user_name_span">(비회원)</span> 님 안녕하세요.</div>
+	      	<div class="span_div"><a> <Strong>MY킹 바로가기 ></Strong> </a></div>
+	      </div>
+	  </div>
+	</div>
 	 
+	<div class="mob_header_center_div">
 	  <a href="#" class="delivery_navbar_toggleBtn">
         <i class="fas fa-bars"></i>
       </a>
       
-      <div class="delivery_navbar_logo">
-        <h1 class="king_logo"><span>딜리버리</span></h1>
+      <div class="mob_delivery_navbar_logo">
+        <h1 class="mob_king_logo"><span>딜리버리</span></h1>
       </div>
       
       <a href="#" class="delivery_navbar_cartBtn">
       	<i class="fas fa-shopping-cart"></i>
       </a>
-
-	  <div class="delivery_navbar_myinfo">
-	      
-	  </div>
-	 </div>
-	 <div class="empty_box"></div>
+   </div>
 </div>
 
 
