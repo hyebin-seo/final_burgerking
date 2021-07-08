@@ -1,5 +1,20 @@
 @charset "UTF-8";
 
+/* 폰트 */
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: all;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: all;
+     font-style: normal;
+}
+
 /* rem 기준 */
 html {
 	font-size: 20px;	
@@ -7,7 +22,7 @@ html {
 
 /* 본문 전체 폰트 적용 */
 body * {
-	font-family: 'Black Han Sans';
+	font-family: 'S-CoreDream-9Black';
 }
 
 /* 먹색 영역 스타일 시작  */
@@ -23,31 +38,82 @@ body {
 .order_container {
 	background: rgb(46,46,46);
 	height: 6.2rem;		/* 124px */
+	background: url(../../img/mypage/img_background.gif) repeat-x top;
 }
 
 /* 리스트 감싸는 영역 */
-/* 가운데 배치(너비는 바꿔야함) */
 .order {
-	width: 96%;			/* 970px 이상에서는 96% 크기 유지 */
-	height: 67.33px;
+	width: 87%;			/* 970px 이상에서는 87% 크기 유지 */
+	height: 124px;
 	margin: 0 auto;		/* 가운데 정렬 */
-	padding: 0.23rem;
+	padding: 0 1rem;
+	
 }
 
-.order ul {
-	display: flex;		/* 자식인 li는 행배치됨 */
+.order .order_wrapper {
+	position: relative;
+	height: 100%;
+}
+
+.order .order_wrapper .my-delivery {
+	position: absolute;
+	left:0;
+	top: 25%;
+	width: 16%;
+	height: 3.4rem;
+	padding-left: 110px;
+	color: rgb(255,255,255);
+	background: url(../../img/mypage/img_delivery.png) no-repeat 0;
+}
+
+.order .order_wrapper .my-cart {
+	position: absolute;
+	right: 0;
+	top: 25%;
+	width: 33%;
+	padding-left: 95px;
+	color: rgb(255,255,255);
+	background: url(../../img/mypage/img_cart.png) no-repeat 0;
+}
+
+.my-delivery>dl, .my-cart>dl {
+	margin: 0;
+	font-weight: 700;
+}
+
+.my-delivery>dl>dd, .my-cart>dl>dd {
+	margin: 0;
+	margin-top: 0.5rem;
+	font-family: 'S-CoreDream-5Medium';
+	font-weight: 400;
+	font-size: 0.9rem;
+}
+
+.order_wrapper:before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 3px;
+	height: 100%;
+	margin-left: -1.5px;
+	background: url(../../img/mypage/img_line.png) no-repeat 50%;
+}
+
+/* .order ul {
+	display: flex;		자식인 li는 행배치됨
 	justify-content: space-between;
 	list-style: none;		
 }
 
 .order ul li {
-	flex: 1;			/* li들의 크기는 동일 */
+	flex: 1;			li들의 크기는 동일
 	position: relative;
-	/* padding: 0 0 0 1.5rem; */
-	/* background: url(/resources/img/mypage/img_delivery.png) no-repeat left; */
+	padding: 0 0 0 1.5rem;
+	background: url(/resources/img/mypage/img_delivery.png) no-repeat left;
 }
 
-/* li 사이에 선 추가(모든 li요소 앞에 선 추가) */
+li 사이에 선 추가(모든 li요소 앞에 선 추가)
 .order ul li:before {
 	content:"";
 	position: absolute;
@@ -57,7 +123,7 @@ body {
 	border-left: 1px solid rgb(255,255,255);
 }
 
-/* li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게) */
+li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
 .order ul li:first-child:before {
 	content:"";
 	border-left: 0;
@@ -81,7 +147,7 @@ body {
 
 .order ul li:nth-child(2) {
 	background: url("../../img/mypage/img_cart.png") no-repeat left 0.2rem top;
-}
+} */
 
 
 /* 까만 영역 스타일 시작 */
@@ -90,43 +156,81 @@ body {
 .loc_container {
 	background: rgb(0,0,0);
 	color: rgb(255,255,255);
-	height: 2.9rem;
+	height: 1.9rem;
+	padding: 0.5rem 0;
+	font-family: 'S-CoreDream-5Medium';
+	font-weight: 400;
+	font-size: 0.8rem;
 }
 
-
 .loc_container .loc {
-	display: flex;		/* 자식 div 행배치 */
-	justify-content: space-between;	/* 양 끝에 위치시킴 */
+	/* display: flex;		자식 div 행배치
+	justify-content: space-between;	양 끝에 위치시킴	*/
 	height: 1.9rem;
-	padding-top: 0.7rem;
-	font-size: 1rem;
+	width: 91%;			/* 너비는 91%, 패딩 양 옆 20px씩 주고 나머지 넓이는 양 옆 마진으로 똑같이 */
+	margin: 0 auto;
+	padding: 0 1rem;
 }
 
 .loc_container .loc .page-navi {
-	padding-left: 4rem;
-}
-
-.loc_container .loc .location {
-	padding-right: 4rem;
+	/* padding-left: 4rem; */
+	float: left;
+	height: 38px;
 }
 
 .loc_container .loc .page-navi a {
-	position: relative;
-	padding-left: 0.7rem;
+	/* position: relative; */
+	float: left;
 }
 
 .loc_container .loc .page-navi a::before {
-	content:">";
-	position: absolute;
+	/* position: absolute;
 	left: 0;
-	top: 0;
+	top: 0; */
+	content:"";
+	background: url(../../img/mypage/img_arrow2.gif) no-repeat 50%;
+	margin: 0 12px;
+	width: 4px;
+	float: left;
+	height: 38px;
 }
 
 .loc_container .loc .page-navi a:first-child:before {
 	content:"";
+	margin: 0;
+	width: 0;
 }
 
-.loc_container .loc .location .btn {
+.page-navi span {
+	line-height: 38px;
+}
+
+.loc_container .loc .location {
+	/* padding-right: 4rem; */
+	float: right;
+	height: 38px;
+}
+
+.location span {
+	line-height: 38px;
+}
+
+.location {
+	background: url(../../img/mypage/img_location.png) no-repeat 0;
+	padding-left: 22px;
+}
+
+.location .addr{
+	width: 9%;
+}
+
+.location .btn {
+	width: 4%;
+	height: 34px;
+	margin-left: 20px;
+}
+
+.location .btn a {
 	display: inline-block;
 	background-color: white;
 	color: black;
@@ -134,10 +238,6 @@ body {
 	width: 56px;
 	/* height: 34px; */
 	align-content: center;
-}
-
-.btn span {
-	padding-left: 10px;
 	text-align: center;
 }
 
@@ -146,15 +246,15 @@ body {
 
 /* 전체 div - 높이, 배경색(흰색), 위아래 패딩 */
 .myking-wrapper {
-	height: 342.67px;
-	background-color: rgb(242,235,230);
-	padding: 50px 0 50px 0;
+	height: 247.67px;
+	background-color: rgb(255,255,255);
+	padding: 50px 0 45px 0;
 }
 
 /* 안쪽 div */
 .myking-wrapper .myking-container {
 	margin: 0 auto;		/* 가운데 정렬 */
-    padding: 0 20px;	/* 양 옆 여백 */
+    padding: 0 1rem;	/* 양 옆 여백 */
     width: 1184px;		/* 너비 */
 }
 
@@ -173,14 +273,16 @@ body {
     margin-inline-end: 0px;
     padding: 20px 0 23px;
     border-bottom: 3px solid #000;
+	margin-top: 0;
 	margin-bottom: 15px;
-    font-size: 2.1rem;
+    font-size: 2rem;
+    font-weight: 900;
     line-height: 100%;
 }
 
 /* 쿠폰/스탬프 영역 */
 .myking-wrapper .myking-container .my-coupon {
-	height: 135.67px;
+	/* height: 135.67px; */
 	padding: 16px 0 30px;	/* 위 16px, 아래 30px 여백 */
 }
 
@@ -192,18 +294,66 @@ body {
 /* 쿠폰 영역 - 회원정보 */
 .my-coupon .my-info {
 	width: 34%;		/* 너비 */
+	/* height: 90px; */
 }
 
 /* 회원 이름이랑 '반갑습니다' 사이에 간격 띄우기 */
 .my-coupon .my-info .user strong {
     margin-right: 0.5em;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .my-coupon .my-info .user {
 	font-size: 1.825rem;
+	margin: 0;
+	/* height: 37px; */
+}
+
+/* 반갑습니다는 덜 굵게 */
+.my-coupon .my-info .user>span {
+	font-size: 1.5rem;
+	font-weight: 100;
+}
+
+/* 정보변경 */
+.my-coupon .my-info a {
+	margin: 1.5px 0 0 0;
+	padding: 5px 35px 5px 0;
+	height: 27px;
+	background: url("../../img/mypage/img_arrow.png") no-repeat right;
+	font-size: 1rem;
+	font-weight: lighter;
 }
 
 /* 쿠폰/스탬프 영역 */
 .my-coupon .coupon-info {
 	width: 66%;
+}
+
+.coupon-info .coupon {
+	width: 8.45rem;
+	height: 74px;
+	padding-left: 8.4rem;
+	display: inline-block;
+	background: url(../../img/mypage/img_coupon.png) no-repeat left;
+	margin: 0;
+}
+
+.coupon-info .coupon dt, .coupon-info .stamp dt {
+	font-size: 24px;
+}
+
+.coupon-info .coupon dd, .coupon-info .stamp dd {
+	font-size: 30px;
+	margin: 0;
+}
+
+.coupon-info .stamp {
+	width: 8.45rem;
+	height: 74px;
+	padding-left: 8.4rem;
+	display: inline-block;
+	background: url(../../img/mypage/img_stamp.png) no-repeat left;
+	margin: 0;
 }
