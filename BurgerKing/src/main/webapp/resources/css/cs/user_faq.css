@@ -56,6 +56,7 @@
 table{
 	width: 100%;
 	border-collapse:collapse;
+	border-bottom : 2px solid #000;
 }
 /*FAQ 테이블 헤더*/
 .flist01 thead th{
@@ -66,6 +67,9 @@ table{
 	border-top: 2px solid #000;
 	border-bottom : 2px solid #E5E5E5;
 	background: #FAFAFA;
+}
+.flist01{
+	border-bottom : 2px solid #000;
 }
 
 /*FAQ 버튼*/
@@ -94,6 +98,7 @@ button{
 	background: url("../../img/cs/faq_btn.png") no-repeat;
 	text-indent: -9999em;
 	background-size: 15px auto;
+	transition: all ease 0.7s;
 	
 }
 .btn_acc:after{
@@ -104,6 +109,12 @@ button{
 	height:20px;
 	margin-top: -10px; 
 	border: 0; 
+	
+}
+.open .btn_acc{
+	-webkit-transform: rotate(180deg);
+	margin-right: 1%;
+
 }
 /*FAQ 테이블 no, 구분, 제목*/
 .flist01 tbody td {
@@ -115,7 +126,33 @@ button{
 	font-family: 'S-CoreDream-5Medium';
 }
 
-/*FAQ content*/
- .acc_cont .text_area{
+/*FAQ content 숨기기*/
+.acc_cont{
 	display: none;
+	
+}
+.acc_cont .text_area{
+	height: 0;
+}
+/*FAQ의 제목이 선택되었을 때 content를 감싸는 tr의 클래스가 show로 변경됨*/
+.show{
+	display: table-row;
+	background: #FAFAFA;
+}
+.text_area{
+	padding: 0 60px;
+}
+
+/*페이징 디자인*/
+.text{
+	text-align: center; 
+}
+.page a{
+	height: 36px; 
+	padding: 0 3px; 
+	font-size: 1.25rem;
+	font-family: 'S-CoreDream-5Medium';
+	text-decoration: none; 
+	color : #000;
+	min-width: 1.5em;
 }

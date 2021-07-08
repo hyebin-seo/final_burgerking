@@ -6,10 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>FAQ</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="resources/img/main/fab.ico">
 <link  href="resources/css/cs/user_faq.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/user_faq.js" type="text/javascript"></script>
-
+  
 </head>
 <body>
 	<div class="faq_category">
@@ -51,15 +53,18 @@
 					<th scope="col">제목</th>			
 				</tr>
 			</thead>
-			<tbody>
+			<c:set var="list" value="${List }" />
+				<c:if test="${!empty list }">
+	        	 <c:forEach items="${list }" var="dto">
+			<tbody class="acc_body">
 				<tr class="acc_tit_tr">
-					<td class="no">1</td>
+					<td class="no">${dto.getFaq_no() }</td>
 					<td class="kind">
-						<span>딜리버리 주문</span>
+						<span>${dto.getFaq_kind() }</span>
 					</td>
 					<td>
 						<div class="acc_tit">
-						<span class="tit">대량주문에 대한 제한이 있는지요?</span>
+						<span class="tit">${dto.getFaq_title() }</span>
 						<button type="button" class="btn_acc">
 							<span>FAQ 내용 보기</span>
 						</button>
@@ -69,37 +74,35 @@
 				<tr class="acc_cont">
 					<td colspan="3">
 						<div class="text_area">
-						대량주문의 경우 매장 상황을 파악한 후 버거킹 딜리버리 콜센터에서 확인전화를 드리며 
-						확인 전화가 완료되어야 주문이 접수됩니다. 
-						원재료 및 제품의 생산시간을 고려하여 가능 여부를 안내해드립니다.
+						${dto.getFaq_cont() }
 						</div>
 					</td>
 				</tr>
-				<tr class="acc_tit_tr">
-					<td class="no">2</td>
-					<td class="kind">
-						<span>딜리버리 주문</span>
-					</td>
-					<td>
-						<div class="acc_tit">
-						<span class="tit">대량주문에 대한 제한이 있는지요?</span>
-						<button type="button" class="btn_acc">
-							<span>FAQ 내용 보기</span>
-						</button>
-						</div>
-					</td>
-				</tr>
-				<tr class="acc_cont">
-					<td colspan="3">
-						<div class="text_area">
-						대량주문의 경우 매장 상황을 파악한 후 버거킹 딜리버리 콜센터에서 확인전화를 드리며 
-						확인 전화가 완료되어야 주문이 접수됩니다. 
-						원재료 및 제품의 생산시간을 고려하여 가능 여부를 안내해드립니다.
-						</div>
-					</td>
-				</tr>
+				 </c:forEach>
+	      </c:if>
+	      <c:if test="${empty list }">
+	      	 <tr>
+	            <td colspan="3" align="center">
+	               <h3>검색된 게시물이 없습니다.</h3>
+	            </td>
+	         </tr>
+	      </c:if>
 			</tbody>
 		</table>
+		<br><br>
+		<%-- 페이징 처리 부분 --%>
+	   <div class="text">
+	   <c:forEach begin="${Paging.getStartBlock() }"
+	       					end="${Paging.getEndBlock() }" var="i">
+	      <c:if test="${i == Paging.getPage() }">
+	         <b class="page"><a href="faq_home.do?page=${i }">${i }</a></b>
+	      </c:if>
+	      
+	      <c:if test="${i != Paging.getPage() }">
+	         <span class="page"><a href="faq_home.do?page=${i }">${i }</a></span>
+	      </c:if>
+	   </c:forEach>
+	   </div>
 	</div>
 </body>
 </html>

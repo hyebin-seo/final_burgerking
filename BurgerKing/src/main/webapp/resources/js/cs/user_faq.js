@@ -1,6 +1,26 @@
-$( document ).ready( function() {
-    $( '.btn_acc' ).click( function() {
-      $('.btn_acc').addClass("on");
-      $( '.text_area' ).toggle();
-    } );
-  } );
+$(function(){  
+    var article = (".flist01 .show");  
+    $(".flist01 .acc_tit_tr .acc_tit").click(function() {  
+        var myArticle =$(this).parents().next("tr");  
+        if($(myArticle).hasClass('acc_cont')) {  
+            $(article).removeClass('show').addClass('acc_cont');  
+            $(myArticle).removeClass('acc_cont').addClass('show');  
+        }  
+        else {  
+            $(myArticle).addClass('acc_cont').removeClass('show');  
+        }  
+    });  
+});  
+$(function(){  
+    var article1 = (".flist01 .open");  
+    $(".flist01 .acc_tit_tr .acc_tit").click(function() {  
+        var myArticle1 =$(this).parents("tbody");  
+        if($(myArticle1).hasClass('acc_body')) {  
+            $(article1).removeClass('open').addClass('acc_body');  
+            $(myArticle1).removeClass('acc_body').addClass('open');  
+        }  
+        else {  
+            $(myArticle1).addClass('acc_body').removeClass('open');  
+        }  
+    });  
+}); 
