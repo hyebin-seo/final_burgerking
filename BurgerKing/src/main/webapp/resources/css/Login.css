@@ -27,21 +27,68 @@ body {
 	background: #fff;
 }
 
-.head_menuWrap {
-	background-color: #E22219;
-	height: 11em;
+.login_section{
+	width: 90%;
+	margin: auto;
+	background-image: url("../img/login/section.png");
+	background-size: contain;
 }
 
-.web_locationWrap {
-	background-color: #000000;
-	height: 4em;
-	 color: white;
-  
-  text-align: left;
+.login_section h1:first-child { color: red; 
+
 }
 
-.web_locationWrap a span{
-   margin-left: 20px;
- }
+
+
+.head_main{
+	height:300px;
+	
+    position: sticky;
+	    width:100%;
+	    top:0;
+        height: 300px;
+    background-color: rgb(167, 3, 3);
+}
+
+
+
+
+.head_nav{
+    height: 100px;
+    background-color: black;
+}
+
+
+.middle_web_container{
+    height: 500px;
+    width: 100%;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.email_login{
+    width: 50%;
+    height: 500px;
+    border-right: 0.5px dashed  lightgray;
+   
+}
+
+
+.sns_login{
+    width: 50%;
+    height: 500px;
+    
+}
+
+/* 비회원 주문 */
+
+.noid_order{
+    width: 100%;
+    height: 350px;
+   
+}
+
 
 
