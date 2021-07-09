@@ -29,7 +29,10 @@
 	    }).open();
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/jun
 
 	/* 아이디 중복체크 */
 	$(function(){		// 아이디 입력창이 포커스 잃었을 때 함수 실행
@@ -170,6 +173,9 @@
 			
 		});
 	});
+<<<<<<< HEAD
+>>>>>>> origin/jun
+=======
 >>>>>>> origin/jun
 		
 </script>	
@@ -179,7 +185,11 @@
 <body>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    <jsp:include page="header.jsp" />
+=======
+   <jsp:include page="user_header.jsp" />
+>>>>>>> origin/jun
 =======
    <jsp:include page="user_header.jsp" />
 >>>>>>> origin/jun
@@ -190,7 +200,11 @@
 		<h3 style="text-align: center; padding-top: 10vh;">JOIN</h3>
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<form method="post" action="<%=request.getContextPath()%>/join_Ok.do" style="width: 25%; margin: auto; padding-top: 5vh;">
+=======
+		<form method="post" action="<%=request.getContextPath()%>/user_join_ok.do" style="width: 25%; margin: auto; padding-top: 5vh;">
+>>>>>>> origin/jun
 =======
 		<form method="post" action="<%=request.getContextPath()%>/user_join_ok.do" style="width: 25%; margin: auto; padding-top: 5vh;">
 >>>>>>> origin/jun

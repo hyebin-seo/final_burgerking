@@ -11,9 +11,12 @@ public class UserDTO {
    private String user_phone;
    private String user_addr;
 <<<<<<< HEAD
+<<<<<<< HEAD
    private String zipcode;
    private String user_addr1;
    private String user_addr2;
+=======
+>>>>>>> origin/jun
 =======
 >>>>>>> origin/jun
    private String user_date;

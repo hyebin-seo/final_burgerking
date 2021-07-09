@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   
   <mapper namespace="com.burger.login.model.LoginDAO">
@@ -24,6 +25,8 @@
   </mapper>
 
 =======
+=======
+>>>>>>> origin/jun
 
 <mapper namespace="com.burger.login.model.LoginDAO">
 
@@ -33,5 +36,9 @@
    
    </insert>
    
+<<<<<<< HEAD
+</mapper>
+>>>>>>> origin/jun
+=======
 </mapper>
 >>>>>>> origin/jun

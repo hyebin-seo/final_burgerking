@@ -29,11 +29,14 @@
 	<!-- 로그인페이지 header 및 상단고정 필수 -->
 	<header class="head_main">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<div class="head_menuWrap">
 		   <a href="/burger/">브랜드 홈</a>
 		</div>
            
 =======
+=======
+>>>>>>> origin/jun
 		<div class="head_menuWrap"></div>
 
 >>>>>>> origin/jun
@@ -65,8 +68,12 @@
 					 <!-- 아이디/비밀번호 작성한는곳 -->
 					 <form action="login_Ok.do" method="post">
 <<<<<<< HEAD
+<<<<<<< HEAD
 					 
 						<input type="text" name="user_id" placeholder="아이디[이메일]" id="userId"> <br>
+=======
+						<input type="text" name="formtext1" placeholder="아이디[이메일]" id="userId"> <br>
+>>>>>>> origin/jun
 =======
 						<input type="text" name="formtext1" placeholder="아이디[이메일]" id="userId"> <br>
 >>>>>>> origin/jun

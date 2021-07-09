@@ -16,6 +16,7 @@ public class LoginDAOImpl implements LoginDAO{
 	public int join(UserDTO dto) {
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return this.sqlSession.insert("join_insert", dto);
 	}
 
@@ -27,6 +28,9 @@ public class LoginDAOImpl implements LoginDAO{
 		
 		
 		return this.sqlSession.selectOne("user_check", user_id);
+=======
+		return this.sqlSession.insert("add", dto);
+>>>>>>> origin/jun
 =======
 		return this.sqlSession.insert("add", dto);
 >>>>>>> origin/jun
