@@ -16,6 +16,7 @@ public class PageDTO {
 	private int startBlock;        // 해당 페이지에서 시작 블럭
 	private int endBlock;          // 해당 페이지에서 끝 블럭
 	private int allPage;           // 전체 페이지 수
+	private String faq_cate; 
 	
 	// 검색 관련 멤버 선언
 	private String field;
@@ -61,6 +62,12 @@ public class PageDTO {
 		this.keyword = keyword;
 	}
 	
+	public PageDTO(int page, int rowsize, int totalRecord,
+			String faq_cate) {
+		this(page, rowsize, totalRecord);
+		this.faq_cate = faq_cate;
+
+	}
 	
 	
 	

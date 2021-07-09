@@ -5,7 +5,7 @@
 
 <mapper namespace="com.burger.cs.model.FaqDAO">
 	<select id="faqcount" resultType="int">
-		select count(*) from faq
+		select count(*) from faq 
 	</select>
 	
 	<select id="faqlist" parameterType="com.burger.cs.model.PageDTO"
@@ -17,5 +17,20 @@
 				   from faq b) 
 				     where rnum >= #{startNo} and rnum <= #{endNo} 
 		]]>
+	</select>
+	
+	<select id="faqcatelist" parameterType="com.burger.cs.model.PageDTO"
+								resultType="com.burger.cs.model.FaqDTO">
+		<![CDATA[
+			select * from
+				(select b.*, row_number()
+				   over(order by faq_no desc) rnum
+				   from faq b) 
+				     where rnum >= #{startNo} and rnum <= #{endNo} and faq_cate=#{faq_cate}
+		]]>
+	</select>
+	
+	<select id="faqcatecount" resultType="int">
+		select count(*) from faq where faq_cate=#{faq_cate}
 	</select>
 </mapper>
