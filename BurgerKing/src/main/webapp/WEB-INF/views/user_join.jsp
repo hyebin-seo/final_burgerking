@@ -28,6 +28,149 @@
 	        }
 	    }).open();
 	}
+<<<<<<< HEAD
+=======
+
+	/* 아이디 중복체크 */
+	$(function(){		// 아이디 입력창이 포커스 잃었을 때 함수 실행
+		
+		$("#user_id").blur(function(){
+			
+			var userId = $("#user_id").val();
+			
+			$.ajax({
+				type: "post",
+				url: "ajax/idCheck.jsp",
+				data: {"paramId" : userId},
+				success: function(data){
+					
+					if(data==1){	// DB에 이미 존재하는 아이디일경우 (중복인 경우)
+						console.log(data);	
+						
+						var warning = '<font color="red">※ 중복된 아이디입니다.</font>';
+						
+						$("#user_id").val("");
+						$("#id_check_result").text('');
+						$("#id_check_result").show();
+						$("#id_check_result").append(warning);
+						$("#id").val("").focus();
+						
+						$("#user_id").css({
+							"border":"1px solid red"
+						});
+						
+						return false;
+						
+					}else if(data==0){			// 사용가능한 아이디일 경우 (중복 아닐 경우)
+						console.log(data);		
+						
+						var text = '<font color="blue">* 사용 가능한 아이디입니다.</font>';
+						
+						$("#id_check_result").text('');		// idcheck 영역을 초기화.
+						$("#id_check_result").show();		
+						$("#id_check_result").append(text);
+						
+						$("#user_id").css({
+							"border":"1px solid blue"
+						});
+					
+						return false;
+						
+					}else if(data==2){
+						console.log(data);	
+						
+						var warning = '<font color="red">※ 아이디를 입력하세요.</font>';
+						
+						$("#user_id").val("");
+						$("#id_check_result").text('');
+						$("#id_check_result").show();
+						$("#id_check_result").append(warning);
+						$("#id").val("").focus();
+						
+						$("#user_id").css({
+							"border":"1px solid red"
+						});
+						
+					}
+				},
+				error: function(request, error){
+					alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				}
+			});
+			
+		});
+	});
+	
+	/* 비밀번호랑 비밀번호 확인란 일치하는지 확인 */
+	$(function(){		// 비밀번호 확인 입력창이 포커스 잃었을 때 함수 실행
+		
+		$("#pwd_check").blur(function(){
+			
+			var pwd = $("#pwd").val();
+			var pwd_check = $("#pwd_check").val();
+			
+			$.ajax({
+				type: "post",
+				url: "ajax/pwdCheck.jsp",
+				data: {"paramPwd" : pwd, "paramPwdCheck" : pwd_check},
+				success: function(data){
+					
+					if(data==1){	// 비밀번호 확인 => 비밀번호랑 다른 경우 (통과x)
+						console.log(data);	
+						
+						var warning = '<font color="red">※ 비밀번호와 일치해야 합니다.</font>';
+						
+						$("#pwd_check").val("");
+						
+						$("#pwd_check_result").text('');
+						$("#pwd_check_result").show();
+						$("#pwd_check_result").append(warning);
+						
+						$("#pwd_check").css({
+							"border":"1px solid red"
+						});
+						
+						return false;
+						
+					}else if(data==0){			// 비밀번호 확인 => 비밀번호랑 일치하는 경우 (통과)
+						console.log(data);		
+						
+						/* var text = '<font color="light gray">* 사용 가능한 아이디입니다.</font>'; */
+						
+						$("#pwd_check_result").text('');		// idcheck 영역을 초기화.
+						$("#pwd_check_result").show();								
+						
+						$("#pwd_check").css({
+							"border":"1px solid blue"
+						});
+						
+						return false;
+					
+					}else if(data==2){			// 비밀번호 확인 => 비밀번호가 null인 경우 (통과 x)
+						console.log(data);	
+						
+						var warning = '<font color="red">※ 비밀번호를 먼저 입력하세요.</font>';
+						
+						$("#pwd_check").val("");
+						
+						$("#pwd_check_result").text('');
+						$("#pwd_check_result").show();
+						$("#pwd_check_result").append(warning);
+						
+						$("#pwd_check").css({
+							"border":"1px solid red"
+						});
+						
+					}
+				},
+				error: function(request, error){
+					alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				}
+			});
+			
+		});
+	});
+>>>>>>> origin/jun
 		
 </script>	
 
@@ -35,14 +178,22 @@
 </head>
 <body>
 
+<<<<<<< HEAD
    <jsp:include page="header.jsp" />
+=======
+   <jsp:include page="user_header.jsp" />
+>>>>>>> origin/jun
 
 	
 	<div>
 		<!-- 아이디, 비번, 이름, 연락처, 주소, 성별 -->
 		<h3 style="text-align: center; padding-top: 10vh;">JOIN</h3>
 		
+<<<<<<< HEAD
 		<form method="post" action="<%=request.getContextPath()%>/join_Ok.do" style="width: 25%; margin: auto; padding-top: 5vh;">
+=======
+		<form method="post" action="<%=request.getContextPath()%>/user_join_ok.do" style="width: 25%; margin: auto; padding-top: 5vh;">
+>>>>>>> origin/jun
 	  		<div class="mb-3">
 	    		<label for="id" class="form-label">아이디</label>
 	    		<input type="text" name="user_id" required class="form-control" id="user_id">

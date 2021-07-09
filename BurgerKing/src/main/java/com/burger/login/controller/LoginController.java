@@ -1,5 +1,6 @@
 package com.burger.login.controller;
 
+<<<<<<< HEAD
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -7,11 +8,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.el.parser.AstDotSuffix;
 import org.omg.CORBA.PUBLIC_MEMBER;
+=======
+>>>>>>> origin/jun
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.burger.login.model.LoginDAO;
+import com.burger.login.model.UserDTO;
+
+
+
 
 import com.burger.login.model.LoginDAO;
 import com.burger.login.model.UserDTO;
@@ -37,6 +46,7 @@ public class LoginController {
 	 return "user_join";	
 	}
 	
+<<<<<<< HEAD
 
   //회원가입 메서드	
 	@RequestMapping("join_Ok.do")
@@ -115,6 +125,13 @@ public class LoginController {
 		
 		
 	
+=======
+	@RequestMapping("join_Ok.do")
+	public void joinOk(UserDTO dto, Model model) {
+		
+   int check = this.dao.join(dto);
+		
+>>>>>>> origin/jun
 	
 	}
 

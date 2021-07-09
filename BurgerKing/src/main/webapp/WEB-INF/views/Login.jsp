@@ -28,10 +28,15 @@
 <body>
 	<!-- 로그인페이지 header 및 상단고정 필수 -->
 	<header class="head_main">
+<<<<<<< HEAD
 		<div class="head_menuWrap">
 		   <a href="/burger/">브랜드 홈</a>
 		</div>
            
+=======
+		<div class="head_menuWrap"></div>
+
+>>>>>>> origin/jun
 	</header>
 	<div class="head_nav">
 		<nav></nav>
@@ -59,8 +64,12 @@
 					<div class="main">
 					 <!-- 아이디/비밀번호 작성한는곳 -->
 					 <form action="login_Ok.do" method="post">
+<<<<<<< HEAD
 					 
 						<input type="text" name="user_id" placeholder="아이디[이메일]" id="userId"> <br>
+=======
+						<input type="text" name="formtext1" placeholder="아이디[이메일]" id="userId"> <br>
+>>>>>>> origin/jun
 
 					    <input type="password" name="user_pwd" placeholder="비밀번호" id="myInput" size="30%" height="50px">
 					    <!-- 비밀번호 보이기/안보이기 기능 -->
