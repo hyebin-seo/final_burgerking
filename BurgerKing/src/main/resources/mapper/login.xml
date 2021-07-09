@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.cs.model.NoticeDAO">
+	
+	<select id="count" resultType="int">
+		select count(*) from notice
+	</select>
+	
+	<select id="list" parameterType="com.burger.cs.model.PageDTO"
+								resultType="com.burger.cs.model.NoticeDTO">
+		<![CDATA[
+			select * from
+				(select n.*, row_number()
+				   over(order by notice_no desc) rnum
+				   from notice n) 
+				     where rnum >= #{startNo} and rnum <= #{endNo} 
+		]]>
+	</select>
+	
+	<insert id="add" parameterType="com.burger.cs.model.NoticeDTO">
+		<selectKey resultType="int" keyProperty="notice_no" order="BEFORE">
+			select count(*) + 1 from notice
+		</selectKey>
+		
+		insert into notice values(#{notice_no},
+		   #{notice_title}, #{notice_cont}, sysdate, default)
+	
+	</insert>
+	
+	<update id="read" parameterType="int">
+		update notice set notice_hit = notice_hit + 1 
+						where notice_no = #{no}
+	</update>
+	
+	
+	<select id="content" parameterType="int" 
+							resultType="com.burger.cs.model.NoticeDTO">
+		select * from notice where notice_no = #{no}
+	</select>
+	
+	<update id="edit" parameterType="com.burger.cs.model.NoticeDTO">
+		update notice set notice_title = #{notice_title},
+		    notice_cont = #{notice_cont} where notice_no = #{notice_no}
+	</update>
+	
+	<delete id="del" parameterType="int">
+		delete from notice where notice_no = #{no}
+	</delete>
+	
+	<update id="seq" parameterType="int">
+		<![CDATA[
+			update notice set notice_no = notice_no - 1
+					where notice_no > #{no}
+		]]>
+	</update>
+	
+	
+	
+</mapper>
