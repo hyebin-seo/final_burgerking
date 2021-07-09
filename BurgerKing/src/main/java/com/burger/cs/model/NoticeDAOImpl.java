@@ -65,8 +65,8 @@ public class NoticeDAOImpl implements NoticeDAO {
 	}
 
 	@Override
-	public int searchNoticeCount(String field, String keyword) {
-		// TODO Auto-generated method stub
+	public int searchNoticeCount(String keyword) {
+		
 		return 0;
 	}
 

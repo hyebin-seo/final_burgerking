@@ -13,27 +13,24 @@
 
 </head>
 <body>
-	
-	
-		
+			
 	  	<div class = "notice_list" align="center">
 	    <table class = "table1">
 	    
 	    <form method="post"
-	      action="<%=request.getContextPath() %>/notice_search.do">
-	      
+	      action="<%=request.getContextPath() %>/notice_search.do">	      
 	      <input type="hidden" name="page" value="${Paging.getPage() }">
-	      <select name="field">	         
+	    <!--   <select name="field">	         
 	         <option value="title_cont">제목+내용</option>	      	         	      
-	      </select>
-	     
-	      <img alt="..." src="resources/img/cs/barB.png">
-	     
+	      </select> -->
+	    		<input type="text" placeholder="제목  + 내용" class="search_bar" name = "keyword">
+	    	 	<button class="btn_search" type="submit"></button>
+	    	
 	  
-	      <button class="btn_search" type="submit"></button>
+	     
 	     
 	   </form>
-	   	<hr id="hr1">
+	   	<hr class="hr1">
 	      <tr>
 	         <th>NO.</th> <th>공지제목</th>
 	      	 <th>날짜</th> <th>조회수</th>
