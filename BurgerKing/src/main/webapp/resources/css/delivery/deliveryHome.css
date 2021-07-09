@@ -1,5 +1,25 @@
 @charset "UTF-8";
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
 body {
 	font-size: 1rem;
 	margin-top: 10%;
@@ -43,6 +63,8 @@ body {
     width: 24%;
     position: absolute;
     padding-top: 1%;
+    right: 56%;
+    top: 200px;
 }
 
 /* 가운데 선 div */
@@ -65,6 +87,8 @@ body {
     position: absolute;
     right: 5%;
     padding-top: 1%;
+    right: 69px;
+    top: 200px;
 }
 
 /* 페이지네비/주소/총금액 전체 div */
@@ -164,6 +188,82 @@ body {
     line-height: 34px;
     background: #fff;
     border-radius: 5px;
+}
+
+/* 유의사항 div */
+.order_caution {
+	max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+/* 유의사항 title */
+.tit03 {
+    position: relative;
+    margin: 25px 0;
+    padding: 12px 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #000;
+}
+
+.tit03>h2, .tit03>h3, .tit03>h4 {
+    margin-right: 10em;
+}
+
+.tit03 button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: 1.4em;
+    margin-top: -.7em;
+    font-size: 1.125rem;
+    color: #2e2e2e;
+}
+
+/* 알레르기 유발성분 버튼 */
+.btn_infoingredient {
+    position: relative;
+    padding: 0 0 0 24px;
+    font-family: 'S-CoreDream-9Black';
+    background: url(../../img/delivery/btn_infoingredient.png) no-repeat 0;
+    border: none;
+}
+
+.btn_infoingredient>* {
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.btn_infoingredient>:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background: url(../../img/delivery/after.png) no-repeat 100%;
+}
+
+/* 유의사항 리스트 ul */
+.txtlist01 {
+    margin: 7px 0 7px 22px;
+    line-height: 167%;
+}
+
+.txtlist01 li {
+    position: relative;
+/*     padding-left: 12px; */
+}
+
+.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 1.67em;
 }
 
 /* 모바일 화면 */

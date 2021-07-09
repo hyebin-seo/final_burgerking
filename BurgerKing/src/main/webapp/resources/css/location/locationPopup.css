@@ -1,0 +1,462 @@
+@charset "UTF-8";
+
+/*주소지 찾기 팝업*/
+.popWrap {
+	display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+}
+
+.m_FullpopWrap .popbox01 {
+    background: #f2ebe6;
+}
+
+.popbox01, .popbox02 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 568px;
+    max-height: 95%;
+    margin-left: -284px;
+    padding-bottom: 84px;
+    background: #fff;
+    overflow: auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.popWrap .titleBar {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.popWrap .titleBar .page_tit {
+    height: 104px;
+    margin: 0;
+    padding: 20px 70px 20px 40px;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 63px;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.popbox01 .title_btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.popbox01 .title_btn button {
+    width: 100px;
+    height: 100%;
+}
+
+.popWrap .btn_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.btn_close {
+    width: 40px;
+    height: 40px;
+    text-indent: -9999em;
+    background: url(../../img/delivery/location_close.png) no-repeat 50%;
+}
+
+.popcont {
+    max-height: 580px;
+    padding: 24px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.srchaddrPop {
+    background: #f2ebe6;
+}
+
+.nopadding {
+    padding: 0!important;
+}
+
+.search_address {
+    padding: 28px 38px 34px;
+    background: #fff;
+}
+
+.searchWrap01:last-child {
+    margin-bottom: 0;
+}
+
+.searchWrap01 {
+    position: relative;
+    margin-bottom: 8px;
+    background: #fff;
+}
+
+.r_srch01.st02 {
+    padding-right: 62px;
+}
+
+.r_srch01 {
+    position: relative;
+    padding-right: 166px;
+}
+
+.inpbox {
+    position: relative;
+}
+
+.search_address .r_srch01 input {
+    font-size: 1.375rem;
+}
+
+.inpbox input {
+    width: 100%;
+    padding: 0 25px 3px 5px;
+}
+
+.inpbox button {
+    width: 30px;
+    height: 63px;
+    margin: 0;
+}
+
+.inpbox button, .inpbox input~* {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.r_srch01 button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -22px;
+}
+
+.btn_search02 {
+    width: 54px;
+    height: 54px;
+    text-indent: -9999em;
+    background: url(../../img/delivery/search_btn_circle.png) no-repeat 50%;
+}
+
+.address_result {
+    padding: 25px 38px 0;
+    background: #f2ebe6;
+}
+
+.address_result .txt_result {
+    margin-bottom: 17px;
+}
+
+.address_result .result_box {
+    position: relative;
+    height: 362px;
+    padding: 13px 30px 16px;
+    background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.addr_list .keyword {
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.addr_list p {
+    margin-bottom: 5px;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.addr_list li {
+    position: relative;
+    padding: 19px 0;
+    font-size: 1.125rem;
+    color: #8d8d8d;
+}
+/* 도로명 주소 */
+.addr_list .txtbox02 {
+    margin-right: 5px;
+}
+
+/* 지번주소 */
+.txtbox02.st02 {
+    min-width: 2.2em;
+    height: 20px;
+    font-size: .75rem;
+    line-height: 20px;
+}
+
+/* 디테일 버튼 */
+.btn_detail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -99999em;
+    background: transparent;
+}
+
+/* 지도보기 버튼 */
+.btn04 {
+	font-family: 'S-CoreDream-5Medium';
+    display: inline-block;
+    min-width: 3.5em;
+    height: 36px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #fff;
+    background: #2e2e2e;
+    border-radius: 5px;
+}
+
+/* 지도보기 버튼 */
+.addr_list .btn04 {
+    position: absolute;
+    right: 0;
+    top: 19px;
+}
+
+.addr_searchguide .result_box {
+    height: auto;
+    padding: 34px 23px 6px;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.addr_searchguide .result_box ul {
+    font-size: .875rem;
+    overflow: hidden;
+}
+
+.addr_searchguide .result_box li {
+    float: left;
+    width: 50%;
+    min-height: 67px;
+    padding-bottom: 10px;
+}
+
+.addr_searchguide .result_box strong {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'S-CoreDream-9Black';
+}
+
+li {
+    list-style: none;
+}
+
+.address_result {
+    padding: 25px 38px 0;
+    background: #f2ebe6;
+}
+
+.address_result .txt_result {
+    margin-bottom: 17px;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+em {
+    color: #e22219;
+}
+address, em {
+    font-style: normal;
+}
+
+.result_box .nodata {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    margin-top: -1.3em;
+    padding: 0;
+    font-size: 1.25rem;
+    color: #cacaca;
+    line-height: 130%;
+}
+
+.board_paging {
+    margin-top: 30px;
+    text-align: center;
+}
+
+article, aside, figure, footer, header, hgroup, nav, section {
+    display: block;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.board_paging li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.VuePagination__count, .VuePagination__pagination-item-next-page, .VuePagination__pagination-item-prev-page {
+    display: none!important;
+}
+
+.addr_detail>* {
+    padding: 30px 38px;
+}
+
+.srchaddrPop .addrbox dl {
+    display: table;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.srchaddrPop .addrbox dt {
+    width: 2em;
+    white-space: nowrap;
+}
+
+.txtbox02 {
+    height: 28px;
+    padding: 0 7px;
+    line-height: 28px;
+    background: #8d8d8d;
+    border-radius: 3px;
+}
+
+.txtbox01, .txtbox02 {
+    display: inline-block;
+    min-width: 3em;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.srchaddrPop .addrbox dl:last-child {
+    margin: 0;
+}
+
+.inp_detail {
+    background: #fff;
+}
+
+.pop_btn.full_type {
+    padding: 0;
+}
+
+.pop_btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.popWrap .btn02:only-child {
+    max-width: 100%;
+}
+
+.btn02:only-child {
+    width: 100%;
+    max-width: 450px;
+}
+
+.btn02:disabled {
+    color: #2e2e2e;
+    background-color: #e5e5e5;
+}
+
+.pop_btn button {
+    line-height: normal;
+}
+
+.pop_btn a, .pop_btn button {
+    border-radius: 0;
+}
+
+.btn02, .btn02.red {
+    display: inline-block;
+    height: 84px;
+    padding: 20px 10px;
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+    background: #e22219 url('https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png') repeat-x 0 0;
+    background-size: auto 100%;
+    font-family: 'S-CoreDream-9Black';
+}
+
+
+.sub_popWrap {
+    width: 100%;
+    background: #fff;
+    z-index: 50;
+}
+
+.sub_popWrap, .sub_popWrap .popbox01 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.m_FullpopWrap .popbox01 {
+    background: #f2ebe6;
+}
+
+.sub_popWrap .popbox01 .M_headerWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.popWrap .titleBar {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.popWrap .titleBar .page_tit {
+    height: 104px;
+    margin: 0;
+    padding: 20px 70px 20px 40px;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 63px;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.popbox01 .title_btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.sub_popWrap .popbox01 .popcont {
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.map {
+	width: 100%;
+    height: 100%;
+}

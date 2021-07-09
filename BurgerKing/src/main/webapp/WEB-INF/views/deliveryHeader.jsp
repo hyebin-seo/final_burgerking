@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- 제이쿼리 CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <!-- 아이콘 CDN 링크 -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 <!-- 글꼴 CDN 링크 -->
