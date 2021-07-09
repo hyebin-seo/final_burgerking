@@ -24,3 +24,17 @@ $(function(){
         }  
     });  
 }); 
+
+
+/*$("input[type=radio]").click(function(){
+	alert("asdasdsadads");
+    $(this).prop("checked", true);
+    alert($(this).prop("checked", true));
+    $("form").submit();
+});*/
+$(function(){  
+	$(".switch01").click(function(){
+	    $(this).children('input').attr('checked','checked');
+	    $("form").submit();
+	});
+}); 

@@ -21,4 +21,14 @@ public class FaqDAOImpl implements FaqDAO {
 	public List<FaqDTO> getFaqList(PageDTO dto) {
 		return this.sqlSession.selectList("faqlist", dto);
 	}
+	
+	@Override
+	public List<FaqDTO> getFaqcateList(PageDTO dto) {
+		return this.sqlSession.selectList("faqcatelist", dto);
+	}
+
+	@Override
+	public int getListcateCount(String faq_cate) {
+		return this.sqlSession.selectOne("faqcatecount",faq_cate);
+	}
 }

@@ -15,30 +15,32 @@
 </head>
 <body>
 	<div class="faq_category">
+		<form method="post" action="faq_home.do">
 		<label class="switch01">
-			<input type="radio" name="faq_kind" checked="checked">
+			<input type="radio" name="faq_cate" value="all" checked="checked">
 			<span>전체</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_kind">
+			<input type="radio" name="faq_cate" value="product">
 			<span>제품/품질/서비스</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_kind">
+			<input type="radio" name="faq_cate" value="delivery">
 			<span>딜리버리 주문</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_kind">
+			<input type="radio" name="faq_cate" value="rental">
 			<span>임대/가맹</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_kind">
+			<input type="radio" name="faq_cate" value="burgercard">
 			<span>버거킹카드</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_kind">
+			<input type="radio" name="faq_cate" value="etc">
 			<span>기타</span>
 		</label>
+		</form>
 	</div>
 	<div class="faq_list">
 		<table class="flist01 acc_type">
@@ -83,7 +85,7 @@
 	      <c:if test="${empty list }">
 	      	 <tr>
 	            <td colspan="3" align="center">
-	               <h3>검색된 게시물이 없습니다.</h3>
+	               <h3>등록된 FAQ가 없습니다</h3>
 	            </td>
 	         </tr>
 	      </c:if>
