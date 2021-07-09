@@ -35,7 +35,7 @@
 </head>
 <body>
 
-   <jsp:include page="user_header.jsp" />
+   <jsp:include page="header.jsp" />
 
 	
 	<div>

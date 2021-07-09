@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.el.parser.AstDotSuffix;
 import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -68,34 +69,53 @@ public class LoginController {
 	
 	// 로그인 메서드
 	@RequestMapping("login_Ok.do")
-	public String login_ok(@RequestParam("user_id")String user_id,@RequestParam("user_pwd")String user_pwd,
+	public void login_ok(@RequestParam("user_id")String user_id,@RequestParam("user_pwd")String user_pwd,
 			HttpServletResponse response) throws IOException {
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter script = response.getWriter();
 		
-	UserDTO dto =  this.dao.checkId_pwd(user_id, user_pwd);
-	response.setContentType("text/html; charset=UTF-8");
-	PrintWriter script = response.getWriter();
-	
-	if (dto.getUser_id() == user_id) {
-		if (dto.getUser_pwd() == user_pwd) {
-			
-			
-			
+		System.out.println("user_id>>"+user_id);
+		
+	if (!user_id.equals("")  &&  !user_pwd.equals("")) {
+		
+		UserDTO dto =  this.dao.checkId_pwd(user_id, user_pwd);
+		System.out.println(dto.getUser_id());
+		
+		
+		if ( dto.getUser_id().equals(user_id)) {
+			if (dto.getUser_pwd().equals(user_pwd)) {
+				
+				script.println("<script>");
+				 script.println("location.href=/burger/");
+				script.println("</script>");
+				
+			}else {
+				script.println("<script>");
+				   script.println("alert('비밀번호가 틀렸습니다.')");
+				   script.println("history.back()");
+				script.println("</script>");
+			}
 		}else {
 			script.println("<script>");
-			   script.println("alert('비밀번호가 틀렸습니다.')");
+			   script.println("alert('아이디가 존재하지 않습니다.')");
 			   script.println("history.back()");
 			script.println("</script>");
 		}
-	}else {
+	} else {
 		script.println("<script>");
-		   script.println("alert('아이디가 존재하지 않습니다.')");
+		   script.println("alert('아이디 및 비밀번호를 확인해주세요.')");
 		   script.println("history.back()");
 		script.println("</script>");
 	}
+    		
+
+	
+	
+	
 		
 		
 	
-	return "home";
+	
 	}
 
 }
