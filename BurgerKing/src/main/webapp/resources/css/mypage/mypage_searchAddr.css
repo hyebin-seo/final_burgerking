@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /* 폰트 */
 @font-face {
      font-family: 'S-CoreDream-9Black';
@@ -25,6 +26,11 @@ body * {
 	font-family: 'S-CoreDream-9Black';
 }
 
+body {
+	word-break: keep-all;
+	word-wrap: normal;
+}
+
 /* 먹색 영역 스타일 시작  */
 
 body {
@@ -33,18 +39,24 @@ body {
 	margin: 0;			/* 전체화면 너비 차지할 수 있도록 */
 }
 
+body a {
+	text-decoration: none;
+}
+
 /* 먹색 영역 전체 감싸는 영역 */
 /* 배경색 적용, 높이 적용 */
 .order_container {
 	background: rgb(46,46,46);
 	height: 6.2rem;		/* 124px */
 	background: url(../../img/mypage/img_background.gif) repeat-x top;
+	min-width: 975px;
 }
 
 /* 리스트 감싸는 영역 */
 .order {
 	width: 87%;			/* 970px 이상에서는 87% 크기 유지 */
 	height: 124px;
+	max-width: 1144px;
 	margin: 0 auto;		/* 가운데 정렬 */
 	padding: 0 1rem;
 	
@@ -61,6 +73,7 @@ body {
 	top: 25%;
 	width: 16%;
 	height: 3.4rem;
+	min-width: 276.39px;
 	padding-left: 110px;
 	color: rgb(255,255,255);
 	background: url(../../img/mypage/img_delivery.png) no-repeat 0;
@@ -157,6 +170,7 @@ li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
 	background: rgb(0,0,0);
 	color: rgb(255,255,255);
 	height: 1.9rem;
+	min-width: 975px;
 	padding: 0.5rem 0;
 	font-family: 'S-CoreDream-5Medium';
 	font-weight: 400;
@@ -168,6 +182,7 @@ li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
 	justify-content: space-between;	양 끝에 위치시킴	*/
 	height: 1.9rem;
 	width: 91%;			/* 너비는 91%, 패딩 양 옆 20px씩 주고 나머지 넓이는 양 옆 마진으로 똑같이 */
+	max-width: 1144px;
 	margin: 0 auto;
 	padding: 0 1rem;
 }
@@ -242,118 +257,150 @@ li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
 }
 
 
-/* 하얀색 영역 스타일 */
 
-/* 전체 div - 높이, 배경색(흰색), 위아래 패딩 */
-.myking-wrapper {
-	height: 247.67px;
-	background-color: rgb(255,255,255);
+/* 하얀색 영역 (배달지 검색) */
+
+/* 전체 감싸는 영역(위아래 여백) */
+.search_box {
+	height: 132px;
 	padding: 50px 0 45px 0;
+	min-width: 960px;
 }
 
-/* 안쪽 div */
-.myking-wrapper .myking-container {
-	margin: 0 auto;		/* 가운데 정렬 */
-    padding: 0 1rem;	/* 양 옆 여백 */
-    width: 1184px;		/* 너비 */
+/* 감싸는 영역(양 옆 여백) */
+.search_container {
+	height: 132px;
+	max-width: 760px;
+	margin: 0 auto;
+	padding: 0 8px;
 }
 
-/* MY킹 써있는 영역 */
-.myking-wrapper .myking-container .my-king {
-	height: 86px;			/* 높이 */
-	margin-bottom: 26px;	/* 마진줘서 하단 쿠폰 영역이랑 띄워놓기 */
+/* 검색 타이틀 영역 */
+.search_container .search_title {
+	margin-bottom: 26px;
 }
 
-/* MY킹 글씨 */
-.myking-wrapper .myking-container .my-king h2 {
-	display: block;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding: 20px 0 23px;
-    border-bottom: 3px solid #000;
-	margin-top: 0;
-	margin-bottom: 15px;
-    font-size: 2rem;
-    font-weight: 900;
-    line-height: 100%;
-}
-
-/* 쿠폰/스탬프 영역 */
-.myking-wrapper .myking-container .my-coupon {
-	/* height: 135.67px; */
-	padding: 16px 0 30px;	/* 위 16px, 아래 30px 여백 */
-}
-
-/* 쿠폰/스탬프 영역에서 회원정보/쿠폰+스탬프 영역은 행배치 */
-.my-coupon>*{
-	float: left;
-}
-
-/* 쿠폰 영역 - 회원정보 */
-.my-coupon .my-info {
-	width: 34%;		/* 너비 */
-	/* height: 90px; */
-}
-
-/* 회원 이름이랑 '반갑습니다' 사이에 간격 띄우기 */
-.my-coupon .my-info .user strong {
-    margin-right: 0.5em;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.my-coupon .my-info .user {
-	font-size: 1.825rem;
+/* 검색 타이틀 */
+.search_container .search_title h2 {
 	margin: 0;
-	/* height: 37px; */
+	font-size: 2rem;
+	font-weight: 900;
 }
 
-/* 반갑습니다는 덜 굵게 */
-.my-coupon .my-info .user>span {
-	font-size: 1.5rem;
-	font-weight: 100;
+/* 검색창 영역 */
+.search_wrap .search {
+	padding-right: 166px;
+	position: relative;
 }
 
-/* 정보변경 */
-.my-coupon .my-info a {
-	margin: 1.5px 0 0 0;
-	padding: 5px 35px 5px 0;
-	height: 27px;
-	background: url("../../img/mypage/img_arrow.png") no-repeat right;
-	font-size: 1rem;
-	font-weight: lighter;
-}
-
-/* 쿠폰/스탬프 영역 */
-.my-coupon .coupon-info {
-	width: 66%;
-}
-
-.coupon-info .coupon {
-	width: 8.45rem;
-	height: 74px;
-	padding-left: 8.4rem;
+/* 검색창 */
+.search_inp input {
+	width: 100%;
 	display: inline-block;
-	background: url(../../img/mypage/img_coupon.png) no-repeat left;
+	box-sizing: border-box;		/* border포함한 사이즈로 (밑줄 위치 맞추기) */
+	padding: 0 25px 3px 5px;
+	height: 66px;
+	font-size: 1.1rem;
+	vertical-align: middle;
+	background: url(../../img/mypage/img_line2.png) repeat-x 0 100%;
+	border: none;
+	appearance: none;
+	outline: none;		/* 입력할 때 인풋 박스 테두리 제거 */
+}
+
+/* 검색 버튼 */
+.search_btn {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -22px;
+	width: 134px;
+	height: 44px;
+	color: #fff;
+	background: #2e2e2e;
+	border-radius: 5px;
+	border: none;
+	text-align: center;
+}
+
+/* 검색 버튼 텍스트 + 검색 이미지 */
+.search_btn span {
+	padding-right: 28px;
+	background: url(../../img/mypage/img_searchBtn.png) no-repeat 100%;
+}
+
+
+/* 베이지색 영역 시작 */
+
+/* 전체 감싸는 영역 - 위아래 여백, 배경색, 높이 지정 */
+.contents_box {
+	padding: 50px 0 45px;
+	background-color: #f2ebe6;
+	height: 510px;
+	min-width: 960px;
+}
+
+.contents_container {
+	margin: 0 auto;
+	padding: 0 8px;
+	height: 510px;
+	max-width: 760px;
+}
+
+.contents_wrap {
+	padding-top: 54px;
+	position: relative;
+	height: 456px;
+}
+
+.contents_wrap .tab_tit {
+	margin-bottom: 20px;
+	height: 54px;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	overflow: auto;
+}
+
+.tab_tit ul {
+	display: table;
 	margin: 0;
+	padding: 0;
+	list-style: none;
+	height: 54px;
 }
 
-.coupon-info .coupon dt, .coupon-info .stamp dt {
-	font-size: 24px;
+.tab_tit ul li:first-child {
+	padding-left: 0;
 }
 
-.coupon-info .coupon dd, .coupon-info .stamp dd {
-	font-size: 30px;
+.tab_tit ul li {
+	position: relative;
+	display: table-cell;
+	padding: 0 18px;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.tab_tit ul li.on a, .tab_tit li.on button {
+	color: #e22219;
+	border-bottom-color: #e22219;
+}
+
+.tab_tit button {
+	height: 54px;
+	padding: 5px 0;
+	vertical-align: middle;
 	margin: 0;
+	background: 0;
+	overflow: visible;
 }
 
-.coupon-info .stamp {
-	width: 8.45rem;
-	height: 74px;
-	padding-left: 8.4rem;
+.tab_tit a, .tab_tit button {
 	display: inline-block;
-	background: url(../../img/mypage/img_stamp.png) no-repeat left;
-	margin: 0;
+	font-size: 1.05rem;
+	color: #b8b8b8;
+	border: 0 solid transparent;
+	border-width: 4px 0;
 }

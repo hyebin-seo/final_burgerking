@@ -1,0 +1,468 @@
+@charset "UTF-8";
+
+/* 폰트 */
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: all;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: all;
+     font-style: normal;
+}
+
+/* rem 기준 */
+html {
+	font-size: 20px;	
+}
+
+/* 본문 전체 폰트 적용 */
+body * {
+	font-family: 'S-CoreDream-9Black';
+}
+
+body {
+	word-break: keep-all;
+	word-wrap: normal;
+}
+
+/* 먹색 영역 스타일 시작  */
+
+body {
+	padding: 5rem 0 0;	/* 이 부분은 헤더 포함시킨 후 삭제하기 */
+	font-size: 1rem;
+	margin: 0;			/* 전체화면 너비 차지할 수 있도록 */
+}
+
+body a {
+	text-decoration: none;
+}
+
+/* 먹색 영역 전체 감싸는 영역 */
+/* 배경색 적용, 높이 적용 */
+.order_container {
+	background: rgb(46,46,46);
+	height: 6.2rem;		/* 124px */
+	background: url(../../img/mypage/img_background.gif) repeat-x top;
+	min-width: 975px;
+}
+
+/* 리스트 감싸는 영역 */
+.order {
+	width: 87%;			/* 970px 이상에서는 87% 크기 유지 */
+	height: 124px;
+	max-width: 1144px;
+	margin: 0 auto;		/* 가운데 정렬 */
+	padding: 0 1rem;
+	
+}
+
+.order .order_wrapper {
+	position: relative;
+	height: 100%;
+}
+
+.order .order_wrapper .my-delivery {
+	position: absolute;
+	left:0;
+	top: 25%;
+	width: 16%;
+	height: 3.4rem;
+	min-width: 276.39px;
+	padding-left: 110px;
+	color: rgb(255,255,255);
+	background: url(../../img/mypage/img_delivery.png) no-repeat 0;
+}
+
+.order .order_wrapper .my-cart {
+	position: absolute;
+	right: 0;
+	top: 25%;
+	width: 33%;
+	padding-left: 95px;
+	color: rgb(255,255,255);
+	background: url(../../img/mypage/img_cart.png) no-repeat 0;
+}
+
+.my-delivery>dl, .my-cart>dl {
+	margin: 0;
+	font-weight: 700;
+}
+
+.my-delivery>dl>dd, .my-cart>dl>dd {
+	margin: 0;
+	margin-top: 0.5rem;
+	font-family: 'S-CoreDream-5Medium';
+	font-weight: 400;
+	font-size: 0.9rem;
+}
+
+.order_wrapper:before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 3px;
+	height: 100%;
+	margin-left: -1.5px;
+	background: url(../../img/mypage/img_line.png) no-repeat 50%;
+}
+
+/* .order ul {
+	display: flex;		자식인 li는 행배치됨
+	justify-content: space-between;
+	list-style: none;		
+}
+
+.order ul li {
+	flex: 1;			li들의 크기는 동일
+	position: relative;
+	padding: 0 0 0 1.5rem;
+	background: url(/resources/img/mypage/img_delivery.png) no-repeat left;
+}
+
+li 사이에 선 추가(모든 li요소 앞에 선 추가)
+.order ul li:before {
+	content:"";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100px;
+	border-left: 1px solid rgb(255,255,255);
+}
+
+li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
+.order ul li:first-child:before {
+	content:"";
+	border-left: 0;
+}
+
+.order ul li strong {
+	font-size: 1.25rem;
+	color: rgb(255,255,255);
+	padding-left: 6rem;
+}
+
+.order ul li p {
+	font-size: 1rem;
+	color: rgb(255,255,255);
+	padding-left: 6rem;
+}
+
+.order ul li:nth-child(1) {
+	background: url("../../img/mypage/img_delivery.png") no-repeat left top;
+}
+
+.order ul li:nth-child(2) {
+	background: url("../../img/mypage/img_cart.png") no-repeat left 0.2rem top;
+} */
+
+
+/* 까만 영역 스타일 시작 */
+
+/* 배경, 글씨색 지정 */
+.loc_container {
+	background: rgb(0,0,0);
+	color: rgb(255,255,255);
+	height: 1.9rem;
+	min-width: 975px;
+	padding: 0.5rem 0;
+	font-family: 'S-CoreDream-5Medium';
+	font-weight: 400;
+	font-size: 0.8rem;
+}
+
+.loc_container .loc {
+	/* display: flex;		자식 div 행배치
+	justify-content: space-between;	양 끝에 위치시킴	*/
+	height: 1.9rem;
+	width: 91%;			/* 너비는 91%, 패딩 양 옆 20px씩 주고 나머지 넓이는 양 옆 마진으로 똑같이 */
+	max-width: 1144px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.loc_container .loc .page-navi {
+	/* padding-left: 4rem; */
+	float: left;
+	height: 38px;
+}
+
+.loc_container .loc .page-navi a {
+	/* position: relative; */
+	float: left;
+}
+
+.loc_container .loc .page-navi a::before {
+	/* position: absolute;
+	left: 0;
+	top: 0; */
+	content:"";
+	background: url(../../img/mypage/img_arrow2.gif) no-repeat 50%;
+	margin: 0 12px;
+	width: 4px;
+	float: left;
+	height: 38px;
+}
+
+.loc_container .loc .page-navi a:first-child:before {
+	content:"";
+	margin: 0;
+	width: 0;
+}
+
+.page-navi span {
+	line-height: 38px;
+}
+
+.loc_container .loc .location {
+	/* padding-right: 4rem; */
+	float: right;
+	height: 38px;
+}
+
+.location span {
+	line-height: 38px;
+}
+
+.location {
+	background: url(../../img/mypage/img_location.png) no-repeat 0;
+	padding-left: 22px;
+}
+
+.location .addr{
+	width: 9%;
+}
+
+.location .btn {
+	width: 4%;
+	height: 34px;
+	margin-left: 20px;
+}
+
+.location .btn a {
+	display: inline-block;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	width: 56px;
+	/* height: 34px; */
+	align-content: center;
+	text-align: center;
+}
+
+
+/* 하얀색 영역 스타일 */
+
+/* 전체 div - 높이, 배경색(흰색), 위아래 패딩 */
+.myking-wrapper {
+	height: 247.67px;
+	min-width: 975px;
+	background-color: rgb(255,255,255);
+	padding: 2.5rem 0 2.25rem 0;
+}
+
+/* 안쪽 div */
+.myking-wrapper .myking-container {
+	margin: 0 auto;		/* 가운데 정렬 */
+    padding: 0 1rem;	/* 양 옆 여백 */
+    /* width: 96%; */
+    max-width: 1144px;
+    min-width: 920px;
+    height: 247.67px;
+}
+
+/* MY킹 써있는 영역 */
+.myking-wrapper .myking-container .my-king {
+	height: 86px;			/* 높이 */
+	margin-bottom: 26px;	/* 마진줘서 하단 쿠폰 영역이랑 띄워놓기 */
+}
+
+/* MY킹 글씨 */
+.myking-wrapper .myking-container .my-king h2 {
+	display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 20px 0 23px;
+    border-bottom: 3px solid #000;
+	margin-top: 0;
+	margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 100%;
+}
+
+/* 쿠폰/스탬프 영역 */
+.myking-wrapper .myking-container .my-coupon {
+	/* height: 135.67px; */
+	min-width: 920px;
+	padding: 16px 0 30px;	/* 위 16px, 아래 30px 여백 */
+}
+
+/* 쿠폰/스탬프 영역에서 회원정보/쿠폰+스탬프 영역은 행배치 */
+.my-coupon>*{
+	float: left;
+}
+
+/* 쿠폰 영역 - 회원정보 */
+.my-coupon .my-info {
+	width: 34%;		/* 너비 */
+	/* height: 90px; */
+	/* overflow-wrap: normal;
+	overflow-x: hidden;
+	overflow-y: hidden; */
+}
+
+/* 회원 이름이랑 '반갑습니다' 사이에 간격 띄우기 */
+.my-coupon .my-info .user strong {
+    margin-right: 0.5em;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.my-coupon .my-info .user {
+	font-size: 1.825rem;
+	margin: 0;
+	/* height: 37px; */
+}
+
+/* 반갑습니다는 덜 굵게 */
+.my-coupon .my-info .user>span {
+	font-size: 1.5rem;
+	font-weight: 100;
+}
+
+/* 정보변경 */
+.my-coupon .my-info a {
+	margin: 15px 0 0 0;
+	padding: 5px 35px 5px 0;
+	display: block;
+	height: 27px;
+	width: 20%;
+	background: url("../../img/mypage/img_arrow.png") no-repeat 90%;
+	font-size: 1rem;
+	font-weight: lighter;
+	
+}
+
+/* 쿠폰/스탬프 영역 */
+.my-coupon .coupon-info {
+	width: 66%;
+	min-width: 607.198px;
+	word-break: keep-all;
+}
+
+.coupon-info .coupon {
+	max-width: 8.45rem;
+	height: 74px;
+	min-width: 135.5px;
+	padding-left: 8.4rem;
+	display: inline-block;
+	background: url(../../img/mypage/img_coupon.png) no-repeat 15%;
+	margin: 0;
+}
+
+.coupon-info .coupon dt, .coupon-info .stamp dt {
+	font-size: 24px;
+}
+
+.coupon-info .coupon dd, .coupon-info .stamp dd {
+	font-size: 30px;
+	margin: 0;
+}
+
+.coupon-info .stamp {
+	max-width: 8.45rem;
+	height: 74px;
+	min-width: 135.5px;
+	/* max-width: 187.76px; */
+	padding-left: 8.4rem;
+	display: inline-block;
+	background: url(../../img/mypage/img_stamp.png) no-repeat 15%;
+	margin: 0;
+}
+
+
+/* 베이지색 영역 시작(MY세트 / MY배달지) */
+.beige_box {
+	height: 154px;
+	padding: 50px 0 45px 0;
+	background-color: #f2ebe6;
+}
+
+.beige_container {
+	height: 114px;
+	margin: 0 auto;
+	padding: 20px 16px;		/* 고정값이라 px */
+	max-width: 1184px;		/* 고정값이라 px */
+	width: 97%;
+	min-width: 975px;
+}
+
+.beige_wrapper {
+	margin: -10px 0 20px;
+	height: 104px;
+}
+
+.beige_wrapper ul {
+	list-style: none;
+	height: 104px;
+	margin: 0;
+	padding: 0;
+}
+
+.beige_wrapper ul li {
+	position: relative;
+	float: left;
+	width: 50%;
+	height: 104px;
+}
+
+.beige_wrapper ul li:before {
+	content:"";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	background: #e6dfda; 
+}
+
+.beige_wrapper ul li:first-child:before {
+	display: none;
+}
+
+.mySet a {
+	display: block;
+	height: 104px;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+.mySet a span {
+	background: url(../../img/mypage/img_mySet.png) no-repeat 99%;
+	line-height: 104px;
+	display: inline-block;
+	padding-right: 35%;
+}
+
+.myLoc a {
+	display: block;
+	height: 104px;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.myLoc a span {
+	background: url(../../img/mypage/img_myLoc.png) no-repeat 99%;
+	line-height: 104px;
+	display: inline-block;
+	padding-right: 35%;
+}
