@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1fa0c9e1-c995-40b9-bf8d-625c8569d52a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.wst.common.component" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.wst.common.component" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/.settings/org.eclipse.wst.validation.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/controller/FaqController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/controller/FaqController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/controller/NoticeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/controller/NoticeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/FaqDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/FaqDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/FaqDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/FaqDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/FaqDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/FaqDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/NoticeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/NoticeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/NoticeDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/NoticeDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/NoticeDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/NoticeDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/PageDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/cs/model/PageDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/delivery/controller/DeliveryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/delivery/controller/DeliveryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/delivery/model/DeliveryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/delivery/model/DeliveryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/delivery/model/DeliveryDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/delivery/model/DeliveryDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/delivery/model/DeliveryDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/delivery/model/DeliveryDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/login/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/login/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/login/model/LoginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/login/model/LoginDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/main/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/main/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/main/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/main/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/main/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/main/controller/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/main/model/ProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/classes/com/burger/main/model/ProductDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BurgerKing/target/m2e-wtp/web-resources/META-INF/maven/com.main/burger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BurgerKing/target/m2e-wtp/web-resources/META-INF/maven/com.main/burger/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1v2ZIP8P7FyeG9MvByXCCevUnUa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1fa0c9e1-c995-40b9-bf8d-625c8569d52a" name="Default Changelist" comment="" />
+      <created>1625762063335</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625762063335</updated>
+      <workItem from="1625762064584" duration="313000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
