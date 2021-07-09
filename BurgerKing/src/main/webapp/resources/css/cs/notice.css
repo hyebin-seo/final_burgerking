@@ -12,11 +12,11 @@
      
 }
 
-#hr1 {
+.hr1 {
     border: 0;
     height: 3px;
     background: #000;
-   
+   max-width: 70%;
 }
 
 .table1 {
@@ -24,15 +24,15 @@
 	 border-spacing:  30px;
 }
 
+
+
 .table1 th {
 		
 	font-family: 'S-CoreDream-9Black';
 	height: 30px;
 	font-size: 1.25rem;
 	text-align: center;	
-	background: #FAFAFA;
-	
-	
+	background: #FAFAFA;		
 }
 
 .table1 td{
@@ -46,26 +46,105 @@
 	
 }
 
+.table2 {
+	 width : 70%;
+	 border-spacing:  30px;
+}
+
+
+#tr1 {		
+	font-family: 'S-CoreDream-5Medium';
+	height: 20px;
+	font-size: 1.5rem;
+	text-align: left;	
+	background: #FAFAFA;
+	width: 100%;	
+		
+}
+
+#tr2 {	
+	font-family: 'S-CoreDream-5Medium';
+	height: 10px;
+	font-size: 1.00rem;		
+	background: #FAFAFA;	
+	color: gray;
+	width: 100%;
+	
+}
+#tr3 {		
+	font-family: 'S-CoreDream-5Medium';
+	height: 20px;
+	font-size: 1.25rem;
+	text-align: left;	
+	background: #FAFAFA;
+	width: 100%;
+	
+		
+}
+
+
+
+
+#td1{
+	width: 100%;	
+	
+}
+
+#td2{
+	
+	width: 100%;			
+}
+
+#td2-2{
+	width: 100%;
+	text-align: right;
+}
+
+#td3{
+	width: 100%;	
+	padding-left: 70px;
+	padding-right: 70px;
+}
+
+
 .btn_search {
 		
 	width: 50px;
-	height: 50px;
+	height: 60px;
 	background: url("../../img/cs/searchB.png") no-repeat;
 	background-size: 50px auto;
 	padding: 0;
 	border: 0;
 }
 
-/* .search_bar {
+.btn_list {
 		
-	width: 50px;
-	height: 50px;
-	background: url("../../img/cs/barB.png") no-repeat;
-	background-size: 50px auto;	
+	width: 200px;
+	height: 60px;
+	background: url("../../img/cs/listB.png") no-repeat;
+	background-size: 200px 
 	padding: 0;
 	border: 0;
-} */
+	font-family: 'S-CoreDream-9Black';
+	font-size: 1.25rem;
+	color: white;
+}
 
+.search_bar {
+		
+	display: inline-block;
+    height: 50px;
+    width : 30%;
+    background: url(../../img/cs/barB.png) no-repeat bottom;
+    border: 0;
+    outline: none;
+    padding: 5px 10px 5px 5px;
+    font-weight: 400;
+    font-size: 30px;
+    font-family: 'S-CoreDream-5Medium';
+    text-align: left;
+    vertical-align: bottom;   
+    }
 
 
 /*페이징 디자인*/
