@@ -15,7 +15,17 @@ public class LoginDAOImpl implements LoginDAO{
 	@Override
 	public int join(UserDTO dto) {
 		
-		return this.sqlSession.insert("add", dto);
+		return this.sqlSession.insert("join_insert", dto);
+	}
+
+
+
+	@Override
+	public UserDTO checkId_pwd(String user_id, String user_pwd) {
+		
+		
+		
+		return this.sqlSession.selectOne("user_check", user_id);
 	}
 
 }
