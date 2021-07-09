@@ -7,9 +7,9 @@
 
 <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="resources/css/mypage/mypage.css" type="text/css">
+<link rel="stylesheet" href="resources/css/mypage/mypage_main.css" type="text/css">
 
-<title>Insert title here</title>
+<title>마이킹</title>
 </head>
 
 <!-- <style>
@@ -87,7 +87,7 @@
 					<span>배달지를 선택하세요</span>
 				</span>
 				<span class="btn">
-					<a><span>변경</span></a>
+					<a href="mypage_searchAddr.do"><span>변경</span></a>
 				</span>
 			</div>
 		</div>
@@ -125,6 +125,26 @@
 						</dd>
 					</dl>
 				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="beige_box">
+		<div class="beige_container">
+			<div class="beige_wrapper">
+				<ul>
+					<li class="mySet">
+						<a>
+							<span>MY세트</span>
+						</a>
+					</li>
+					
+					<li class="myLoc">
+						<a>
+							<span>MY배달지</span>
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
