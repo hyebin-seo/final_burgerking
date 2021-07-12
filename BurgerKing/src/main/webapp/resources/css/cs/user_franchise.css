@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+body{
+	min-height: 100%; 
+	color: #000; 
+	background: #f2ebe6; 
+	word-wrap:normal; 
+	word-break: keep-all;
+	margin: 0;
+}
+div{
+	display: block;
+}
+/*안보이게 할거면 왜 자꾸 태그를 넣는지 모르겠다 코드 보기 쉬우라고인가*/
+.hide{
+	display: none;
+}
+.web_container{
+	box-sizing: border-box;
+	max-width: 1184px; 
+	margin: 0 auto;
+	padding: 0 20px;
+}
+/*모집 설명 div 배경색*/
+.bg_w{
+	background: #fff;
+}
+
+/*모집 설명 div class*/
+.contentsBox01{
+	padding : 50px 0 120px; 
+}
+/*모집 설명 div class*/
+.branch_intro01{
+	padding: 0;
+	font-size : 1.25rem; 
+	line-height : 160%;
+	border-bottom: 3px solid #6e3d2f;
+}
+.branch_intro01 .msgbox{
+	width: 50%;
+}
+.msgbox{
+	width: 572px;
+}
+/*TASTE IS KING 글씨*/
+.branch_intro01 .keyowrd{
+	width: 572px;
+	height: 67px; 
+	margin-bottom: 30px;
+	text-indent: -99999em;
+	background: url(https://www.burgerking.co.kr/dist/img/txt_king01.f0a5e6ba.jpg) no-repeat;
+}
+/*버거킹 ~ 성공 준비 글씨*/
+.branch_intro01 .tit{
+	margin: 35px 0 20px; 
+	font-weight: 700; 
+	font-size: 2.275rem; 
+	line-height: 116%;
+	font-family: 'S-CoreDream-9Black';
+}
+h5.tit{
+	width: 572px;
+	height: 88px;
+}
+/*div박스 배경 가게 이미지*/
+.branch_intro01 .web_container{
+	height: 458px; 
+	padding-top: 17px;
+	background: url(https://www.burgerking.co.kr/dist/img/bg_branch.145865e0.jpg)no-repeat 100% 100%;
+}
+.container01{
+	margin: 0 40px;
+}
+/*버거킹 글 설명*/
+.msgbox p { 
+	margin: 0;
+	font-family: 'S-CoreDream-5Medium';
+	width: 610px;
+}
+
+
+
+/*2번째 설명 부분*/
+.branch_intro02 .web_container .container01{
+	margin: 0;
+}
+.branch_intro02 .msgbox{
+	width: 1152px;
+	 overflow: hidden;
+}
+/*title*/
+.branch_intro02 .msgbox .tit{
+	font-weight : 700;
+	font-size: 3rem;
+	line-height: 125%;
+	font-family: 'S-CoreDream-9Black';
+}
+p.WEB.tit{
+	width: 576px;
+}
+.branch_intro02 .msgbox .tit span {
+    display: block;
+}
+.branch_intro02 .msgbox>* {
+	float : left;
+	width: 50%;
+}
+
+
+/*설명*/
+.branch_intro02 .msgbox .txt{
+	width: 610px;
+	float: right;
+	padding-left: 10px; 
+	line-height: 160%;
+	font-family: 'S-CoreDream-5Medium';
+	
+}
+
+.branch_intro02 .msgbox .txt p{
+    margin-bottom: 25px;
+    
+}
