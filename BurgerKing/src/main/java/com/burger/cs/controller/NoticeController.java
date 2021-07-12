@@ -195,7 +195,7 @@ public class NoticeController {
 			@RequestParam("page") int nowPage, Model model) {
 		
 		// 검색분류와 검색어에 해당하는 게시글의 갯수를 DB에서 확인하는 작업
-		totalRecord = this.dao.searchNoticeCount(field, keyword);
+		//totalRecord = this.dao.searchNoticeCount(field, keyword);
 		// 
 		PageDTO dto = new PageDTO(nowPage, rowsize, totalRecord, field, keyword);
 		

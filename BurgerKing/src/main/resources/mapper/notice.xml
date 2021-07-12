@@ -58,9 +58,10 @@
 		]]>
 	</update>
 	
-	<select id="count" resultType="int">
+<!-- count 아이디 중복됩니다
+ 	<select id="count" resultType="int">
 		select count(*) from notice
-	</select>
+	</select> -->
 	
 	<select id="search_list" parameterType="com.burger.cs.model.PageDTO"
 								resultType="com.burger.cs.model.NoticeDTO">
