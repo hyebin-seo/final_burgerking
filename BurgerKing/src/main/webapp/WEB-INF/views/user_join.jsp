@@ -6,8 +6,22 @@
 	<meta charset="UTF-8">
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<title>삭스온 : SOCKS ON</title>
+<title>버거킹</title>
+
+<!-- 파비콘 -->
+<link rel="shortcut icon" type="image/x-icon"
+	href="resources/img/main/fab.ico">
+	
+	<!-- Lgoin.css 연결 -->
+<link rel="stylesheet" href="resources/css/user/join.css">
+	
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script type="text/javascript">
+
+</script>
 
 <script>
 
@@ -47,7 +61,8 @@
 	    		<label for="id" class="form-label">아이디</label>
 	    		<input type="text" name="user_id" required class="form-control" id="user_id">
 	    		<!-- 아이디 중복체크 결과 들어갈 부분 -->
-	  			<span id="id_check_result"></span>
+	  			<span class="id_check_result1">엄청나게 이쁜 아이디입니다!!</span>
+	  			<span class="id_check_result2">아이디가 이미 존재합니다.</span>
 	  		</div>
 	  		
 	  		<div class="mb-3">
@@ -58,7 +73,8 @@
 			<div class="mb-3">
 	    		<label for="pwd_check" class="form-label">비밀번호 확인</label>
 	    		<input type="password" name="user_pwd_check" required class="form-control" id="pwd_check" name="user_pwd">
-	  			<span id="pwd_check_result"></span>
+	  			<span class="pwd_check_result">비밀번호가 일치하지 않습니다.</span>
+	  			<span class="pwd_check_result1">아주멌진 비밀번호입니다!</span>
 	  		</div>
 			
 			<div class="mb-3">
@@ -114,5 +130,10 @@
 	<br><br>
 	<jsp:include page="footer.jsp" />
 
+
+
+<script type="text/javascript" src="resources/js/login/join.js"></script>
 </body>
+
+
 </html>

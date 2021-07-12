@@ -27,15 +27,16 @@ body {
 	background: #fff;
 }
 
+
+
 .login_section{
 	width: 90%;
 	margin: auto;
 	
 }
 
-.login_section h1:first-child { color: red; 
 
-}
+
 
 
 
@@ -47,10 +48,6 @@ body {
 	    top:0;
         height: 180px;
     background-color: rgb(209, 57, 42);
-}
-
-.head_menuWrap{
-	
 }
 
 
@@ -95,6 +92,8 @@ body {
     height: 350px;
     background-color: rgb(241,235,230);
 }
+
+
 
 
 

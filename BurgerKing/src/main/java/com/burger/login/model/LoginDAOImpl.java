@@ -28,4 +28,13 @@ public class LoginDAOImpl implements LoginDAO{
 		return this.sqlSession.selectOne("user_check", user_id);
 	}
 
+
+
+	//아이디 중복체크 
+		@Override
+		public int idcheck(String user_id) {
+			
+			return this.sqlSession.selectOne("idcheck", user_id);
+		}
+
 }

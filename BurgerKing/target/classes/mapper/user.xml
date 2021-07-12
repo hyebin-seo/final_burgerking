@@ -19,6 +19,11 @@
    
    </select>
   
+  <select id="idcheck" resultType="int">
+     
+     select count(*) from user_info where user_id = #{user_id}
+   
+   </select>
   
   </mapper>
 

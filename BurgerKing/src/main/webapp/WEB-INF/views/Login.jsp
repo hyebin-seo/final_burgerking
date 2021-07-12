@@ -29,7 +29,11 @@
 	<!-- 로그인페이지 header 및 상단고정 필수 -->
 	<header class="head_main">
 		<div class="head_menuWrap">
-		   <a href="/burger/">브랜드 홈</a>
+		   <ul style="margin: 0; padding: 0; float: right; list-style: none; display: inline-block" >
+		      <li style="">브랜드 홈</li>
+		      <li>로그인</li>
+		      <li>고객센터</li>
+		   </ul>
 		</div>
            
 	</header>
@@ -58,7 +62,7 @@
 					</h3>
 					<div class="main">
 					 <!-- 아이디/비밀번호 작성한는곳 -->
-					 <form action="login_Ok.do" method="post">
+					 <form action="login_ifo.do" method="post">
 					 
 						<input type="text" name="user_id" placeholder="아이디[이메일]" id="userId"> <br>
 
@@ -71,7 +75,7 @@
 					
 						<input type="image" value="로그인" src="resources/img/login/login_t.png">
 						</form>
-						<button onclick="location.href='join.do'"><img src="resources/img/login/join.png"></button>
+						<button onclick="location.href='join_info_service.do'"><img src="resources/img/login/join.png"></button>
 						 <input type="checkbox"
 						id="idSaveCheck">아이디 기억하기
 						
