@@ -12,7 +12,7 @@ $(document).ready(function () {
 	$(document).on("click", "button[class='btn04']", function () {
 		var roadAddr_val = $(this).val();
 
-		// 도로명 주소를 좌표 값으로 변환
+		// 도로명 주소를 좌표 값으로 변환(API)
 		naver.maps.Service.geocode({
 	        query: roadAddr_val
 	    }, function(status, response) {
@@ -23,23 +23,23 @@ $(document).ready(function () {
 	        var result = response.v2, // 검색 결과의 컨테이너
 	            items = result.addresses; // 검색 결과의 배열
 	            
-	        // do Something
+	        // 리턴 받은 좌표 값 변수에 저장
 	        let x = parseFloat(items[0].x);
 	        let y = parseFloat(items[0].y);
 	        
 	        // 지도 생성
 	        var map = new naver.maps.Map('map', {
-				center: new naver.maps.LatLng(y, x),
+				center: new naver.maps.LatLng(y, x), //지도를 열 좌표
 				zoom: 18
 			});
 			
-	        // 지도에 해당 지역 표시 마커(좌표/아이콘 설정)
+	        // 지도에 해당 지역 마커(좌표/아이콘 설정)
 	        var markerOptions = {
-	        	    position: new naver.maps.LatLng(y, x),
+	        	    position: new naver.maps.LatLng(y, x), //마커 찍을 좌표
 	        	    map: map,
 	        	    icon: {
-	        	        url: 'resources/img/delivery/map_marker.png',
-	        	        size: new naver.maps.Size(36, 49),
+	        	        url: 'resources/img/delivery/map_marker.png', //아이콘 경로
+	        	        size: new naver.maps.Size(36, 49), //아이콘 사이즈
 	        	        origin: new naver.maps.Point(0, 0),
 	        	        anchor: new naver.maps.Point(11, 35)
 	        	    }
