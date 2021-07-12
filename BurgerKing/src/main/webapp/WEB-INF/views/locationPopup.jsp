@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>주소지 검색</title>
 <link href="resources/css/location/locationPopup.css"  rel="stylesheet"  type="text/css">
+<!-- 지도 API CDN -->
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7l0mvlbzl6&submodules=geocoder"></script>
 <body>
 
 
@@ -28,7 +30,7 @@
             
             <div class="search_address">
                 <div class="searchWrap01">
-                  <form name="form" id="form" method="post">
+                  <form name="form" id="form" method="post" onsubmit="return false;">
                   	<input type="hidden" name="currentPage" value="1"/> <!-- 요청 변수 설정 (현재 페이지. currentPage : n > 0) -->
 					<input type="hidden" name="countPerPage" value="10"/><!-- 요청 변수 설정 (페이지당 출력 개수. countPerPage 범위 : 0 < n <= 100) -->
 					<input type="hidden" name="resultType" value="json"/> <!-- 요청 변수 설정 (검색결과형식 설정, json) --> 
@@ -61,24 +63,7 @@
             </div>
            
             <div class="address_result" style="display: none;">
-                <p class="txt_result"><span><em>0</em>개의 검색결과가 있습니다.</span></p>
-                <div class="result_box">
-                    <div class="nodata">검색 결과가 없습니다.<br>다시 입력해 주세요.</div>
-                    <div class="board_paging">
-                        <div class="VuePagination ">
-                            <nav class="">
-                                <ul class="pagination VuePagination__pagination" style="display: none;">
-                                    <li class="VuePagination__pagination-item page-item  VuePagination__pagination-item-prev-chunk disabled"><a href="javascript:void(0);" disabled="disabled" class="page-link">&lt;&lt;</a></li>
-                                    <li class="VuePagination__pagination-item page-item  VuePagination__pagination-item-prev-page disabled"><a href="javascript:void(0);" disabled="disabled" class="page-link">&lt;</a></li>
-                                    <li class="VuePagination__pagination-item page-item  VuePagination__pagination-item-next-page disabled"><a href="javascript:void(0);" disabled="disabled" class="page-link">&gt;</a></li>
-                                    <li class="VuePagination__pagination-item page-item  VuePagination__pagination-item-next-chunk disabled"><a href="javascript:void(0);" disabled="disabled" class="page-link">&gt;&gt;</a></li>
-                                </ul>
-                                <p class="VuePagination__count " style="display: none;">0 records</p>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-                <div class="paginate" id="pageApi"></div>
+                <!-- 주소 결과 / 페이지네이션 동적생성 -->
             </div>
             
             <div class="addr_detail" style="display: none;">
@@ -101,6 +86,7 @@
         
         <div class="pop_btn full_type"><button type="button" disabled="disabled" class="btn02"><span>이 주소로 배달지 설정</span></button></div>
         
+        <!-- 지도 팝업 -->
         <div class="sub_popWrap" style="display: none;">
             <div class="popbox01 nobtn">
                 <div class="M_headerWrap">
