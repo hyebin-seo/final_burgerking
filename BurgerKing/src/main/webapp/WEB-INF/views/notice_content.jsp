@@ -32,6 +32,12 @@
 	      	<tr id = "tr2">
 	      	 <td id = "td2-2">조회수ㅣ${dto.getNotice_hit() }</td> 
 	      	</tr> 
+	      	
+	      	<tr id ="tr3">	           
+	            <td id = "td3"> 	    	            		        	 
+	            	 <img src="<%=request.getContextPath()%>/notice_img/${dto.getNotice_image() }" class="img-fluid" alt=".." width="300px" height="300px" readonly>  
+	            </td>
+	      	 </tr>
  
 	      	 <tr id ="tr3">	           
 	            <td id = "td3"> 
@@ -39,6 +45,8 @@
 	            	 
 	            </td>
 	      	 </tr>
+	      	 
+	      
 	      	 
 	      	
 	     
@@ -57,14 +65,14 @@
 	      	 <hr class="hr1">
 	         <td colspan="2" align="center">
 	         
-	            <input type="button" value="글수정"
+	            <input type="button" class="btn_list" value="공지수정"
 	                onclick="location.href='notice_update.do?no=${dto.getNotice_no() }&page=${page }'">
 	                 
 	            <input type="button" class="btn_list" value = "목록보기"	                
 	                onclick="location.href='notice_list.do?page=${page }'">
 	            
-	            <input type="button" value="글삭제"
-	                onclick="if(confirm('게시글을 삭제 하시겠습니까?')) {
+	            <input type="button" class="btn_list" value="공지삭제"
+	                onclick="if(confirm('공지사항을 삭제 하시겠습니까?')) {
 	                				location.href='notice_delete.do?no=${dto.getNotice_no() }&page=${page }'
 	                		 }else {return; }">
 	          

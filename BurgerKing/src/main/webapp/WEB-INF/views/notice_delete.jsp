@@ -1,17 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
 	<div align="center">
 	  
-	      <h3>공지사항 삭제 폼</h3>
+	      <h1>공지사항 삭제시 복구되지 않습니다.</h1>
 	 
 	   <br> <br>
 	   
@@ -22,12 +25,13 @@
 	      <input type="hidden" name="notice_no" value="${dto.getNotice_no() }">     
 	      <input type="hidden" name="page" value="${page }">
 	     <div>
-	      <table border="1" cellspacing="0" width="350">
+	      <table class="table2">
 	        
 	         <tr>
 	         	<td colspan="2" align="center">
-	               <input type="submit" value="글삭제">&nbsp;&nbsp;
-	             
+	               <input type="submit" class="btn_list" value="공지사항삭제">&nbsp;&nbsp;
+	               <input type="button" class="btn_list" value="뒤로가기"
+	                onclick="location.href='notice_cont.do?no=${dto.getNotice_no() }&page=${page }'">
 	            </td>
 	         </tr>
 	      </table>

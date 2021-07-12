@@ -61,7 +61,7 @@
 	      
 	      <tr>
 	         <td colspan="4" align="right">
-	            <input type="button" value="글쓰기"
+	            <input type="button" class="btn_list" value="공지작성"
 	                 onclick="location.href='notice_write.do'">
 	         </td>
 	      </tr>
@@ -69,7 +69,7 @@
 	   </table>
 	   </div>
 	  
-	   <hr id="hr1">
+	   <hr class="hr1">
 	   <%-- 페이징 처리 부분 --%>
 	<%-- 페이징 처리 부분 --%>
       <div class="text">

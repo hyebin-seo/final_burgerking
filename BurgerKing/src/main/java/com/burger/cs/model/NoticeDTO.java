@@ -12,4 +12,5 @@ public class NoticeDTO {
 	private String notice_cont;	
 	private int notice_hit;
 	private Date notice_regdate;
+	private String notice_image;
 }
