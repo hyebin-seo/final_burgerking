@@ -16,6 +16,7 @@
     background: #f2ebe6;
 }
 
+/* 중앙 팝업 배경 */
 .popbox01, .popbox02 {
     position: absolute;
     left: 50%;
@@ -28,6 +29,11 @@
     overflow: auto;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+/* 지도보기 팝업 패딩 */
+.popbox01.nobtn {
+    padding: 0;
 }
 
 .popWrap .titleBar {
@@ -399,7 +405,7 @@ article, aside, figure, footer, header, hgroup, nav, section {
     font-family: 'S-CoreDream-9Black';
 }
 
-
+/* 지도보기 */
 .sub_popWrap {
     width: 100%;
     background: #fff;
@@ -413,15 +419,18 @@ article, aside, figure, footer, header, hgroup, nav, section {
     height: 100%;
 }
 
-.m_FullpopWrap .popbox01 {
-    background: #f2ebe6;
-}
-
 .sub_popWrap .popbox01 .M_headerWrap {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
+}
+
+.sub_popWrap .popbox01 {
+    margin: 0;
+    padding-top: 105px;
+    -webkit-transform: none;
+    transform: none;
 }
 
 .popWrap .titleBar {
@@ -459,4 +468,77 @@ article, aside, figure, footer, header, hgroup, nav, section {
 .map {
 	width: 100%;
     height: 100%;
+}
+
+/*페이지네이션 관련*/
+article, aside, figure, footer, header, hgroup, nav, section {
+    display: block;
+    padding: 0;
+    margin: 0;
+/*     box-sizing: border-box; */
+    -webkit-box-sizing: border-box;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.board_paging a {
+    display: inline-block;
+    min-width: 1.5em;
+    height: 36px;
+    padding: 0 3px;
+    font-size: 1.25rem;
+    line-height: 36px;
+    text-align: center;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.VuePagination__pagination-item-next-chunk a, .VuePagination__pagination-item-prev-chunk a {
+    width: 38px;
+    margin: 0 27px;
+    text-indent: -999em;
+    text-align: left;
+}
+
+.VuePagination__count, .VuePagination__pagination-item-next-page, .VuePagination__pagination-item-prev-page {
+    display: none!important;
+}
+
+.VuePagination__pagination-item-prev-chunk a {
+    background: url(../../img/delivery/paging_prev.png) no-repeat 50%;
+}
+
+.VuePagination__pagination-item-next-chunk a {
+    background: url(../../img/delivery/paging_next.png) no-repeat 50%;
+}
+
+.board_paging .active a, .board_paging .cur a {
+    font-weight: 700;
+}
+
+
+@media screen and (min-width: 767px) {
+	.w_alignL {
+    text-align: left!important;
+}
 }
