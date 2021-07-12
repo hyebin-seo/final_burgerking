@@ -27,7 +27,7 @@
 		</selectKey>
 		
 		insert into notice values(#{notice_no},
-		   #{notice_title}, #{notice_cont}, sysdate, default)
+		   #{notice_title}, #{notice_cont}, sysdate, default, #{notice_image})
 	
 	</insert>
 	
@@ -44,7 +44,9 @@
 	
 	<update id="edit" parameterType="com.burger.cs.model.NoticeDTO">
 		update notice set notice_title = #{notice_title},
-		    notice_cont = #{notice_cont} where notice_no = #{notice_no}
+		    notice_cont = #{notice_cont},
+		    	notice_image = #{notice_image}
+		    	 where notice_no = #{notice_no}
 	</update>
 	
 	<delete id="del" parameterType="int">
