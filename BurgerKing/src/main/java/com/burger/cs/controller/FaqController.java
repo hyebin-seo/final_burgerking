@@ -36,7 +36,7 @@ public class FaqController {
 				page = Integer.parseInt(request.getParameter("page"));
 			} else {
 				page = 1; // 처음으로"게시물 전체 목록" 태그를 클릭한 경우 }
-
+			}
 				// DB상의 전체 게시물의 수를 확인하는 작업. 
 				
 				totalRecord = this.dao.getListCount();
@@ -49,9 +49,9 @@ public class FaqController {
 
 				model.addAttribute("List", pageList);
 				model.addAttribute("Paging", dto);
+				model.addAttribute("cate", faq_cate);
 				System.out.println(dto);
 				
-			}
 		}else {
 			int page = 0; // 현재 페이지 변수
 
@@ -59,7 +59,7 @@ public class FaqController {
 				page = Integer.parseInt(request.getParameter("page"));
 			} else {
 				page = 1; // 처음으로"게시물 전체 목록" 태그를 클릭한 경우 }
-
+			}
 				// DB상의 전체 게시물의 수를 확인하는 작업. 
 				totalRecord = this.dao.getListcateCount(faq_cate);
 
@@ -70,8 +70,9 @@ public class FaqController {
 
 				model.addAttribute("List", pageList);
 				model.addAttribute("Paging", dto);
+				model.addAttribute("cate", faq_cate);
 				System.out.println("cateList >>> "+ dto);
-			}
+			
 		}
 		
 		

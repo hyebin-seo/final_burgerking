@@ -17,27 +17,33 @@
 	<div class="faq_category">
 		<form method="post" action="faq_home.do">
 		<label class="switch01">
-			<input type="radio" name="faq_cate" value="all" checked="checked">
+			<input type="radio" name="faq_cate" value="all"
+				<c:if test="${cate == 'all' }">checked</c:if>>
 			<span>전체</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_cate" value="product">
+			<input type="radio" name="faq_cate" value="product"
+				<c:if test="${cate == 'product' }">checked</c:if>>
 			<span>제품/품질/서비스</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_cate" value="delivery">
+			<input type="radio" name="faq_cate" value="delivery"
+				<c:if test="${cate == 'delivery' }">checked</c:if>>
 			<span>딜리버리 주문</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_cate" value="rental">
+			<input type="radio" name="faq_cate" value="rental"
+				<c:if test="${cate == 'rental' }">checked</c:if>>
 			<span>임대/가맹</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_cate" value="burgercard">
+			<input type="radio" name="faq_cate" value="burgercard"
+				<c:if test="${cate == 'burgercard' }">checked</c:if>>
 			<span>버거킹카드</span>
 		</label>
 		<label class="switch01">
-			<input type="radio" name="faq_cate" value="etc">
+			<input type="radio" name="faq_cate" value="etc"
+				<c:if test="${cate == 'etc' }">checked</c:if>>
 			<span>기타</span>
 		</label>
 		</form>
@@ -97,11 +103,13 @@
 	   <c:forEach begin="${Paging.getStartBlock() }"
 	       					end="${Paging.getEndBlock() }" var="i">
 	      <c:if test="${i == Paging.getPage() }">
-	         <b class="page"><a href="faq_home.do?page=${i }">${i }</a></b>
+	         <%-- <b class="page"><a href="faq_home.do?page=${i }">${i }</a></b> --%>
+	         <b class="page"><a href="javascript:paging_faq(${i })">${i }</a></b>
 	      </c:if>
 	      
 	      <c:if test="${i != Paging.getPage() }">
-	         <span class="page"><a href="faq_home.do?page=${i }">${i }</a></span>
+	         <%-- <span class="page"><a href="faq_home.do?page=${i }">${i }</a></span> --%>
+	         <span class="page"><a href="javascript:paging_faq(${i })">${i }</a></span>
 	      </c:if>
 	   </c:forEach>
 	   </div>

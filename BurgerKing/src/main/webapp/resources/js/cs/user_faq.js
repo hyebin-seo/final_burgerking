@@ -25,16 +25,15 @@ $(function(){
     });  
 }); 
 
-
-/*$("input[type=radio]").click(function(){
-	alert("asdasdsadads");
-    $(this).prop("checked", true);
-    alert($(this).prop("checked", true));
-    $("form").submit();
-});*/
 $(function(){  
 	$(".switch01").click(function(){
 	    $(this).children('input').attr('checked','checked');
 	    $("form").submit();
 	});
 }); 
+
+function paging_faq(page) {
+	var checkValue = $("input[name='faq_cate']:checked").val();
+	console.log("faq_home.do?faq_cate="+checkValue+"&page="+page);
+	location.href="faq_home.do?faq_cate="+checkValue+"&page="+page;
+}
