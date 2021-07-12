@@ -31,6 +31,7 @@ body {
 	word-wrap: normal;
 }
 
+
 /* 먹색 영역 스타일 시작  */
 
 body {
@@ -161,6 +162,12 @@ li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
 .order ul li:nth-child(2) {
 	background: url("../../img/mypage/img_cart.png") no-repeat left 0.2rem top;
 } */
+
+
+.contentsWrap {
+	min-height: 450px;
+	margin: 0 auto;
+}
 
 
 /* 까만 영역 스타일 시작 */
@@ -363,7 +370,11 @@ li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
 	overflow: auto;
 }
 
-.tab_tit ul {
+/* .tab_tit button:hover {
+	color: #2e2e2e;
+} */
+
+.tab_tit .item2 {
 	display: table;
 	margin: 0;
 	padding: 0;
@@ -404,3 +415,529 @@ li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
 	border: 0 solid transparent;
 	border-width: 4px 0;
 }
+
+/* 배달지 내용 보여주는 컨테이너 부분 */
+
+/* 콘텐츠 컨테이너에서 최근 배달지, MY 배달지 h3태그는 아예 안 보이게 */
+.hide {
+	position: absolute!important;
+	left: -10000px;
+	top: -10000px;
+	visibility: hidden;
+}
+/* 배달지 정보 없을 경우 보여줄 내용 */
+.nodata {
+	padding: 370px 10px 10px;
+	color: #766e69;
+	text-align: center;
+	background: url(../../img/mypage/img_nodata.png) no-repeat center 150px;
+	z-index: 10;
+	font-size: 1.2rem;		/* 24px */
+}
+
+.nodata span {
+	line-height: 150%;
+}
+
+.container01 {
+	padding: 20px 0;
+}
+
+/* 최근 배달지 탭의 배달지 리스트 */
+.container01 .delivery_list {
+	padding: 0;
+}
+
+.delivery_list>li {
+	position: relative;
+    margin-bottom: 20px;
+    padding: 45px 50px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.delivery_list .addr, .delivery_list .nick {
+    margin-right: 60px;
+    font-size: 1.5rem;
+}
+
+.delivery_list .addr_old {
+    margin-top: 7px;
+}
+
+.addr_old {
+    font-size: 1rem;
+    color: rgba(0,0,0,.5);
+}
+
+.addr_old .type {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 4px 8px;
+    font-weight: 700;
+    font-size: .625rem;
+    color: #fff;
+    line-height: 100%;
+    vertical-align: middle;
+    background: #8d8d8d;
+    border-radius: 2px;
+}
+
+.delivery_list .btn_detail {
+    width: 85%;
+}
+
+.btn_detail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -99999em;
+    background: transparent;
+}
+
+/* .popWrap {
+	box-sizing: border-box;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+
+.m_FullpopWrap .popbox01 {
+	background: #f2ebe6;
+}
+
+.popbox01, .popbox02 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 568px;
+	max-height: 95%;
+	margin-left: -284px;
+	padding-bottom: 84px;
+	overflow: auto;
+	transform: translateY(-50%);
+}
+
+.popWrap .titleBar {
+	position: relative;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.popWrap .titleBar .page_tit {
+	height: 104px;
+	margin: 0;
+	padding: 20px 70px 20px 40px;
+	font-size: 1.5rem;
+	line-height: 63px;
+	background: #fff;
+}
+
+.w_alignL {
+	text-align: left!important;
+}
+
+.popbox01 .title_btn {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+}
+
+.popbox01 .title_btn button {
+	width: 100px;
+	height: 100%;
+}
+
+.popWrap .btn_close {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.btn_close {
+	text-indent: -9999em;
+	background: url(../../img/mypage/img_close.png) no-repeat 50%;
+}
+
+button {
+	margin: 0;
+	vertical-align: middle;
+	border: none;
+	overflow: visible;
+	color: #000;
+	padding: 0;
+}
+
+.popcont {
+	max-height: 580px;
+	overflow-y: auto;
+}
+
+#srchaddrPop {
+	background: #f2ebe6;	
+}
+
+.nopadding {
+	padding: 0!important;
+} */
+
+/*주소지 찾기 팝업*/
+
+/* dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin: 0;
+    font: font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.popWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+}
+
+.m_FullpopWrap {
+	font-size: 16px;
+}
+.m_FullpopWrap .popbox01 {
+    background: #f2ebe6;
+    height: 560px;
+}
+
+.popbox01, .popbox02 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 568px;
+    max-height: 95%;
+    margin-left: -284px;
+    padding-bottom: 84px;
+    background: #fff;
+    overflow: auto;
+    overflow: hidden;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.popWrap .titleBar {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.popWrap .titleBar .page_tit {
+    height: 104px;
+    margin: 0;
+    padding: 20px 70px 20px 40px;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 63px;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.w_alignL {
+	text-align: left!important;
+}
+
+.w_alignL span {
+	font-size: 30px;
+}
+
+.popbox01 {
+	box-sizing: border-box;
+	left: 646px;
+	line-height: normal;
+	
+}
+
+.popbox01 .title_btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.popbox01 .title_btn button {
+    width: 100px;
+    height: 100%;
+}
+
+.popWrap .btn_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.btn_close {
+    width: 40px;
+    height: 40px;
+    text-indent: -9999em;
+    background: url(../../img/mypage/img_close.png) no-repeat 50%;
+}
+
+.popcont {
+    max-height: 580px;
+    padding: 24px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.srchaddrPop {
+    background: #f2ebe6;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(242, 235, 230);
+}
+
+.nopadding {
+    padding: 0!important;
+}
+
+.search_address {
+    padding: 28px 38px 34px;
+    background: #fff;
+}
+
+.searchWrap01:last-child {
+    margin-bottom: 0;
+}
+
+.searchWrap01 {
+    position: relative;
+    margin-bottom: 8px;
+    background: #fff;
+}
+
+.r_srch01.st02 {
+    padding-right: 62px;
+}
+
+.r_srch01 {
+    position: relative;
+    padding-right: 166px;
+}
+
+.inpbox {
+    position: relative;
+}
+
+.search_address .r_srch01 input {
+    font-size: 1.375rem;
+}
+
+.inpbox input {
+    width: 100%;
+    padding: 0 25px 3px 5px;
+    display: inline-block;
+    height: 66px;
+    margin: 0;
+    vertical-align: middle;
+    background: url(../../img/mypage/img_line2.png) repeat-x 0 100%;
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    apperance: none;
+    outline: none;
+}
+
+.inpbox button {
+    width: 30px;
+    height: 63px;
+    margin: 0;
+}
+
+.inpbox button, .inpbox input~* {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.r_srch01 button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -22px;
+}
+
+.btn_search02 {
+    width: 54px;
+    height: 54px;
+    text-indent: -9999em;
+    background: url(../../img/mypage/img_searchBtn2.png) no-repeat 50%;
+}
+
+.address_result {
+    padding: 25px 38px 0;
+    background: #f2ebe6;
+}
+
+.address_result .txt_result {
+    margin-bottom: 17px;
+    font-size: 15px;
+}
+
+.addr_searchguide .result_box {
+    height: auto;
+    padding: 34px 28px 6px;
+}
+
+.address_result .result_box {
+    position: relative;
+    height: 174px;
+    padding: 13px 30px 16px;
+    padding: 34px 28px 6px 28px;
+    text-size-adjust: 100%;
+    background: #fff;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+   	width: 492px;
+   	background-clip: border-box;
+   	box-sizing: border-box;
+}
+
+.addr_searchguide .result_box ul {
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.addr_searchguide .result_box li {
+    float: left;
+    width: 50%;
+    min-height: 67px;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+.addr_searchguide .result_box strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+li {
+    list-style: none;
+}
+
+span {
+	font-family: 'S-CoreDream-5Medium';
+}
+
+.address_result {
+    padding: 25px 38px 0;
+    background: #f2ebe6;
+    font-stretch: 100%;
+}
+
+.address_result .txt_result {
+    margin-bottom: 17px;
+}
+
+em {
+    color: #e22219;
+}
+address, em {
+    font-style: normal;
+}
+
+.result_box .nodata {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    margin-top: -1.3em;
+    padding: 0;
+    font-size: 1.25rem;
+    color: #cacaca;
+    line-height: 130%;
+}
+
+.board_paging {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.pop_btn full_type {
+	box-sizing: border-box;
+	font-size: 15px;
+	font-stretch: 100%;
+	left: 0px;
+	line-height: normal;
+	margin: 0;
+	overflow-wrap: normal;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding: 0;
+	position: absolute;
+	right: 0px;
+	text-size-adjust: 100%;
+}
+
+.pop_btn .button span {
+	font-family: 'S-CoreDream-9Black';
+	font-weight: bold;
+}
+
+.popWrap .btn02:only-child {
+	max-width: 100%;
+}
+
+.btn02:only-child {
+	width: 100%;
+}
+
+.btn02:disabled {
+	color: #2e2e2e;
+	background-color: #e5e5e5;
+}
+
+.pop_btn button {
+	line-height: normal;
+}
+
+.pop_btn a, .pop_btn button {
+	border-radius: 0;
+}
+
+.btn02, .btn02.red {
+	display: inline-block;
+	height: 84px;
+	padding: 20px 10px;
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	background: #e22219 url(../../img/mypage/img_background2.png) repeat-x 0 0;
+	background-size: auto 100%;
+}
+
+.m_ */
