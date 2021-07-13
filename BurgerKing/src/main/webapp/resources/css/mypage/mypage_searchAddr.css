@@ -177,6 +177,7 @@ li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
 	background: rgb(0,0,0);
 	color: rgb(255,255,255);
 	height: 1.9rem;
+	/* height: 58px; */
 	min-width: 975px;
 	padding: 0.5rem 0;
 	font-family: 'S-CoreDream-5Medium';
@@ -203,6 +204,10 @@ li 사이에 선 추가(첫 번째 li 앞에는 선 추가되지 않게)
 .loc_container .loc .page-navi a {
 	/* position: relative; */
 	float: left;
+}
+
+.loc .page-navi>a>span {
+	color: #fff;
 }
 
 .loc_container .loc .page-navi a::before {
