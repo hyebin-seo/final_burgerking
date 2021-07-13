@@ -22,7 +22,7 @@
 	
 	      <h1>공지사항 수정</h1>
 	   
-	   <form method="post"
+	   <form method="post" 
 	      action="<%=request.getContextPath() %>/notice_update_ok.do">
 	      <c:set var="dto" value="${modify }" />
 	      
