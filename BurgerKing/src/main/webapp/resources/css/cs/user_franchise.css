@@ -12,6 +12,11 @@
      font-weight: normal;
      font-style: normal;
 }
+
+html {
+	font-size: 16px;
+}
+
 body{
 	min-height: 100%; 
 	color: #000; 
@@ -20,6 +25,7 @@ body{
 	word-break: keep-all;
 	margin: 0;
 }
+
 div{
 	display: block;
 }
@@ -51,10 +57,13 @@ div{
 }
 .branch_intro01 .msgbox{
 	width: 50%;
+	line-height: 160%;
 }
-.msgbox{
-	width: 572px;
+
+.msgbox p {
+	font-size: 1.25rem;
 }
+
 /*TASTE IS KING 글씨*/
 .branch_intro01 .keyowrd{
 	width: 572px;
@@ -74,6 +83,7 @@ div{
 h5.tit{
 	width: 572px;
 	height: 88px;
+	letter-spacing: -0.9px;
 }
 /*div박스 배경 가게 이미지*/
 .branch_intro01 .web_container{
@@ -82,24 +92,30 @@ h5.tit{
 	background: url(https://www.burgerking.co.kr/dist/img/bg_branch.145865e0.jpg)no-repeat 100% 100%;
 }
 .container01{
-	margin: 0 40px;
+	padding: 0 20px;
 }
 /*버거킹 글 설명*/
 .msgbox p { 
 	margin: 0;
 	font-family: 'S-CoreDream-5Medium';
 	width: 610px;
+	letter-spacing: -1.3px;
 }
+
+
+
+
 
 
 
 /*2번째 설명 부분*/
-.branch_intro02 .web_container .container01{
-	margin: 0;
+.branch_intro02 .web_container.container01{
+	margin: 0 auto;
+	max-width: 1184px;
+	padding: 20px 16px;
 }
 .branch_intro02 .msgbox{
-	width: 1152px;
-	 overflow: hidden;
+	overflow: hidden;
 }
 /*title*/
 .branch_intro02 .msgbox .tit{
@@ -107,30 +123,123 @@ h5.tit{
 	font-size: 3rem;
 	line-height: 125%;
 	font-family: 'S-CoreDream-9Black';
+	float : left;
 }
 p.WEB.tit{
-	width: 576px;
+	/* width: 576px; */
+	width: 50%;
+	float: left;
 }
+
 .branch_intro02 .msgbox .tit span {
     display: block;
 }
 .branch_intro02 .msgbox>* {
-	float : left;
+	
 	width: 50%;
 }
 
 
 /*설명*/
 .branch_intro02 .msgbox .txt{
-	width: 610px;
+	/* width: 610px; */
+	box-sizing: border-box;
+	width: 50%;
 	float: right;
 	padding-left: 10px; 
 	line-height: 160%;
 	font-family: 'S-CoreDream-5Medium';
-	
+	-webkit-text-size-adjust: none;
+	font-stretch: 100%;
 }
 
 .branch_intro02 .msgbox .txt p{
     margin-bottom: 25px;
-    
+    font-size: 1rem;
+    width: 100%;
+    letter-spacing: -0.9px;
+}
+
+
+
+
+/*입지조건, 임대 면적 박스*/
+dt {
+    display: block;
+}
+.branch_intro02 .condition{
+	position: relative;
+	height: 330px;
+	margin-top: 70px;
+	padding: 59px 65px; 
+	background: #fff url("../../img/cs/franchise.jpg") no-repeat 100% 0; 
+	overflow: hidden;
+}
+.branch_intro02 .condition:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 30px;
+	height: 100%; 
+	background: #fff url("../../img/cs/franchise_before.jpg");
+}
+
+/*입지조건 내용 전체*/
+.branch_intro02 .condition>* {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.branch_intro02 .condition .txtlist01 {
+    margin: 0;
+    padding-left: 65px;
+    line-height: 175%;
+   	font-family: 'S-CoreDream-5Medium';
+}
+.txtlist01 li {
+    position: relative;
+    padding-left: 12px;
+}
+
+
+/*입지조건 아이콘*/
+.branch_intro02 .condition .tit_ico{
+	margin-bottom: 12px; 
+	padding-left: 65px;
+	font-size: 1.625rem;
+	font-family: 'S-CoreDream-9Black';
+}
+.tit_ico:first-child {
+	margin-top: 0;
+}
+.tit_ico{
+	position: relative;
+	line-height: 40px;
+}
+.tit01{
+	margin: 45px 0 17px; 
+	font-weight: 700; 
+	color: #2e2e2e;
+}
+
+/*아이콘 이미지 붙이기 위한 요소들*/
+.tit_ico:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: 0;
+}
+/*입지조건 아이콘*/
+.branch_intro02 .condition .tit_ico.location:before{
+	background-image: url("../../img/cs/location.png");
+}
+/*임대면적 아이콘*/
+.branch_intro02 .condition .tit_ico.king:before {
+    background-image: url("../../img/cs/store.png");
 }
