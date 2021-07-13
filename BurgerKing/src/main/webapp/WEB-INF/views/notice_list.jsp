@@ -19,7 +19,7 @@
 	    
 	    <form method="post"
 	      action="<%=request.getContextPath() %>/notice_search.do">	      
-	      <!--  <input type="hidden" name="page" value="${Paging.getPage() }">-->
+	        <input type="hidden" name="page" value="${Paging.getPage() }">
 	      
 	      		<input type="hidden" name="field" value="search_list">
 	    		<input type="text" placeholder="제목  + 내용" class="search_bar" name = "keyword">

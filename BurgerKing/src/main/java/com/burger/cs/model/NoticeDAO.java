@@ -14,7 +14,7 @@ public interface NoticeDAO {
 	public int updateNotice(NoticeDTO dto);               // 게시물 수정 호출 추상메서드.
 	public int deleteNotice(int no);                     // 게시물 삭제 호출 추상메서드.
 	public void reSequence(int no);                     // 삭제 시 게시물 번호 재작업 추상메서드.
-	//public int searchNoticeCount(String field, String keyword);  // 검색된 내용에 대한 촐 게시물 수 확인 추상메서드.
-	//public List<NoticeDTO> searchNoticeList(PageDTO dto); // 게시물 검색 호출 추상메서드.
-	public List<NoticeDTO> searchNoticeList(String field, String keyword);
+	public int searchNoticeCount(String field, String keyword);  // 검색된 내용에 대한 촐 게시물 수 확인 추상메서드.
+	public List<NoticeDTO> searchNoticeList(PageDTO dto); // 게시물 검색 호출 추상메서드.
+	//public List<NoticeDTO> searchNoticeList(String field, String keyword);
 } 

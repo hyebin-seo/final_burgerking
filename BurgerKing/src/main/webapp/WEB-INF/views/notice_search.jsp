@@ -17,8 +17,8 @@
 	   
 	     <form method="post"
 	      action="<%=request.getContextPath() %>/notice_search.do">	      
-	      <!--  <input type="hidden" name="page" value="${Paging.getPage() }">-->
-	      
+	     		<input type="hidden" name="page" value="${Paging.getPage() }">
+	      		
 	      		<input type="hidden" name="field" value="search_list">
 	    		<input type="text" placeholder="제목  + 내용" class="search_bar" name = "keyword">
 	    	 	<button class="btn_search" type="submit"></button>
@@ -65,20 +65,20 @@
 	   </table>	   
 	   </div>
 	     <hr class="hr1">
-	      <%-- 페이징 처리 부분 --%>
+	     
 	<%-- 페이징 처리 부분 --%>
-   <%--    <div class="text">
+      <div class="text">
       <c:forEach begin="${Paging.getStartBlock() }"
                          end="${Paging.getEndBlock() }" var="i">
          <c:if test="${i == Paging.getPage() }">
-            <b class="page"><a href="notice_search.do?page=${i }">${i }</a></b>
+            <b class="page"><a href="notice_search.do?page=${i }&field=${field }&keyword=${keyword }">${i }</a></b>
          </c:if>
          
          <c:if test="${i != Paging.getPage() }">
-            <span class="page"><a href="notice_list.do?page=${i }">${i }</a></span>
+            <span class="page"><a href="notice_search.do?page=${i }&field=${field }&keyword=${keyword }">${i }</a></span>
          </c:if>
       </c:forEach>
-      </div> --%>
+      </div> 
 
 </body>
 </html>

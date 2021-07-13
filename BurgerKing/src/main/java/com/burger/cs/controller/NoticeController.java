@@ -201,18 +201,40 @@ public class NoticeController {
 	}
 
 	
-	@RequestMapping("notice_search.do")
-	public String search
-			(@RequestParam("field") String field,@RequestParam("keyword") String keyword, Model model) {
-		
-		List<NoticeDTO> list = 
-				this.dao.searchNoticeList(field,keyword);
-		
-		model.addAttribute("searchList", list);
-		
-		return "notice_search";
-	}
+	
+	  //@RequestMapping("notice_search.do") public String search
+	  //(@RequestParam("field") String field,@RequestParam("keyword") String keyword,
+	  //Model model) {
+	  
+	 // List<NoticeDTO> list = this.dao.searchNoticeList(field,keyword);
+	  
+	 // model.addAttribute("searchList", list);
+	  
+	  //return "notice_search"; }
+	 
 	 
 	
+	
+	  @RequestMapping("notice_search.do")
+	  public String search(@RequestParam("field") String field,
+	  
+	  @RequestParam("keyword") String keyword,
+	  
+	  @RequestParam("page") int nowPage, HttpServletRequest request, Model model) {
+	  	  
+	  // 검색분류와 검색어에 해당하는 게시글의 갯수를 DB에서 확인하는 작업 
+	 totalRecord = this.dao.searchNoticeCount(field, keyword); 
+	  PageDTO dto = new PageDTO(nowPage, rowsize, totalRecord, field, keyword);
+	  this.dao.searchNoticeList(dto); 
+	  List<NoticeDTO> pageList = this.dao.searchNoticeList(dto);
+	  model.addAttribute("field",field);
+	  model.addAttribute("keyword",keyword);
+	  model.addAttribute("searchList", pageList);
+	  model.addAttribute("Paging", dto);
+	  return "notice_search"; 
+	  }
+	 
+	 
+
 	
 }
