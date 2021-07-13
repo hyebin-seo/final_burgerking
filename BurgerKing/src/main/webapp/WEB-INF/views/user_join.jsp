@@ -67,24 +67,30 @@
 	  		
 	  		<div class="mb-3">
 	    		<label for="pwd" class="form-label">비밀번호</label>
-	    		<input type="password"  name="user_pwd" required class="form-control" id="pwd">
+	    		<input type="password"  name="user_pwd" required class="form-control pwd_check" id="pwd">
 	  		</div>
 	  		
 			<div class="mb-3">
 	    		<label for="pwd_check" class="form-label">비밀번호 확인</label>
-	    		<input type="password" name="user_pwd_check" required class="form-control" id="pwd_check" name="user_pwd">
+	    		<input type="password" name="user_pwd_check" required class="form-control pwd_check" id="pwd_check">
 	  			<span class="pwd_check_result">비밀번호가 일치하지 않습니다.</span>
 	  			<span class="pwd_check_result1">아주멌진 비밀번호입니다!</span>
 	  		</div>
 			
 			<div class="mb-3">
 	    		<label for="name" class="form-label">이름</label>
-	    		<input type="text" name="user_name" required class="form-control" id="name" name="user_id">
+	    		<input type="text" name="user_name" required class="form-control" id="name">
 	  		</div>
 	  		
 	  		<div class="mb-3">
 	    		<label for="phone" class="form-label">연락처</label>
-	    		<input type="text" name="user_phone" required class="form-control" id="phone" aria-describedby="emailHelp" name="user_id">
+	    		<input type="text" name="user_phone" required class="form-control" id="phone" aria-describedby="emailHelp">
+	    		<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+	  		</div>
+	  		
+	  		<div class="mb-3">
+	    		<label for="email" class="form-label">E-MAIL</label>
+	    		<input type="email" name="user_email" required class="form-control" id="email" aria-describedby="emailHelp">
 	    		<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
 	  		</div>
 	  		

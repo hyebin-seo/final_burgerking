@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/*
+ @미디어커리 max 768(반응형)
+*/
+@media screen and (max-width: 768px) {
+}
+
+/*  
+ 일반 
+*/
+html {
+	height: 100%;
+	min-height: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	margin-top: 0px;
+	padding-top: 0px;
+	width: 100%;
+	height: 100%;
+	font-size: 16px;
+	background-color: rgb(241,235,230);
+	
+}
+
+
+
+.login_section{
+	width: 60%;
+	margin: auto;
+	
+}
+
+
+
+
+
+
+.head_main{
+	
+	
+    position: sticky;
+	    width:100%;
+	    top:0;
+        height: 180px;
+    background-color: rgb(209, 57, 42);
+}
+
+
+
+
+.head_nav{
+    height: 70px;
+    background-color: black;
+    color: #fff;
+   
+}
+
+
+
+
+
+
+
+/* 비회원 주문 */
+
+.noid_order{
+    width: 100%;
+    height: 350px;
+    
+}
+
+
+
+/* 로그인 버튼 / 회원가입 버튼 */
+
+
+    
+    .page_navi {
+     margin-left:10%;
+    margin-right:10%;
+    float: left;
+    font-size: .875rem;
+}
+
+.page_navi>:before {
+    content: "";
+    float: left;
+    width: 4px;
+    height: 38px;
+    margin: 0 12px;
+    background: url(data:image/gif;base64,R0lGODlhBAAMAMQAAC8vLykpKWNjY3t7e3h4eAgICMDAwK+vr5+fn29vbxERER8fHzk5OQwMDCYmJqenp7S0tGpqauvr64SEhOjo6OXl5aurq7i4uAoKCuLi4qioqDQ0NAAAAAAAAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3RDlDMTkwQ0Y4NkYxMUU4OTQ3MUJFNDg0MTU3OTQ0RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3RDlDMTkwREY4NkYxMUU4OTQ3MUJFNDg0MTU3OTQ0RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdEOUMxOTBBRjg2RjExRTg5NDcxQkU0ODQxNTc5NDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdEOUMxOTBCRjg2RjExRTg5NDcxQkU0ODQxNTc5NDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAQADAAABSLg43DcoJENBZAJRBYZQwoGGV0cVm0cYXEKSYAzQZAOC1IIADs=) no-repeat 50%;
+}
+
+
+/* tab 기능 */
+ /*TAB CSS*/
+
+        ul.tabs {
+            margin: 0;
+            padding: 0;
+            float: left;
+            list-style: none;
+            height: 32px; /*--Set height of tabs--*/
+            border-bottom: 1px solid #999;
+            border-left: 1px solid #999;
+            width: 100%;
+        }
+        ul.tabs li {
+            float: left;
+            margin: 0;
+            padding: 0;
+            height: 31px; /*--Subtract 1px from the height of the unordered list--*/
+            line-height: 31px; /*--Vertically aligns the text within the tab--*/
+            border: 1px solid #999;
+            border-left: none;
+            margin-bottom: -1px; /*--Pull the list item down 1px--*/
+            overflow: hidden;
+            position: relative;
+            background: #e0e0e0;
+        }
+        ul.tabs li a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            font-size: 1.2em;
+            padding: 0 20px;
+            /*--Gives the bevel look with a 1px white border inside the list item--*/
+            border: 1px solid #fff; 
+            outline: none;
+        }
+        ul.tabs li a:hover {
+            background: #ccc;
+        }
+        html ul.tabs li.active, html ul.tabs li.active a:hover  {
+             /*--Makes sure that the active tab does not listen to the hover properties--*/
+            background: #fff;
+            /*--Makes the active tab look like it's connected with its content--*/
+            border-bottom: 1px solid #fff; 
+        }
+
+        /*Tab Conent CSS*/
+        .tab_container {
+            border: 1px solid #999;
+            border-top: none;
+            overflow: hidden;
+            clear: both;
+            float: left; 
+            width: 100%;
+            background: #fff;
+        }
+        .tab_content {
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+
