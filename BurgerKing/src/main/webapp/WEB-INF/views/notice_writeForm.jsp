@@ -18,20 +18,44 @@
   
 	   <br> <br>
 	
-	   <form method="post" enctype="multipart/form-data"
+	   <form method="post"
 	      action="<%=request.getContextPath() %>/notice_write_ok.do">
 	      
 	      <div class = "notice_write" align="center">
 	     <table class= "table2">
 	 		    <h1>공지사항 작성</h1>
 	         <tr id = "tr1">
+	
 	         	<th>공지제목</th>
 	         	<td> <input type="text" name="notice_title" size="100px"> </td>
 	      	 </tr>
 	      	 
-	      	  <tr>
+	      	   <tr>
 	           	<th>첨부파일1</th>
-	         	<td> <input type="file" name="notice_image" > </td>
+	         	<td> <input type="file" name="notice_image" >
+	         	
+	          </td>	  				
+	          
+	       <!--  <tr id = "tr1">  -->
+	        <%--  <div class="inputArea">
+ 				<label for="gdsImg">이미지</label>
+ 				<input type="file" id="gdsImg" name="notice_image" />
+			 <div class="select_img"><img src="" /></div>
+	         <script>
+ 				 $("#gdsImg").change(function(){
+  				 if(this.files && this.files[0]) {
+  				  var reader = new FileReader;
+   				 reader.onload = function(data) {
+   				  $(".select_img img").attr("src", data.target.result).width(500);        
+  					  }
+   					 reader.readAsDataURL(this.files[0]);
+  					 }
+ 					 });
+ 				</script>	   
+ 				
+ 				<%=request.getRealPath("/") %>
+ 				      
+	         </div> --%>
 	         </tr>
 	      	 
 	      	 

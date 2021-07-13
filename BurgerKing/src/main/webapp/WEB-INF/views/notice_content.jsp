@@ -36,6 +36,7 @@
 	      	<tr id ="tr3">	           
 	            <td id = "td3"> 	    	            		        	 
 	            	 <img src="<%=request.getContextPath()%>/notice_img/${dto.getNotice_image() }" class="img-fluid" alt=".." width="300px" height="300px" readonly>  
+	            	 ${dto.getNotice_image() }	
 	            </td>
 	      	 </tr>
  

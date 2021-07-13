@@ -12,8 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.burger.cs.model.NoticeDAO;
 import com.burger.cs.model.NoticeDTO;
@@ -22,6 +20,9 @@ import com.burger.cs.model.PageDTO;
 @Controller
 public class NoticeController {
 
+	@Autowired
+	private Notice_upload upload;
+		
 	@Autowired
 	private NoticeDAO dao;
 
@@ -60,29 +61,12 @@ public class NoticeController {
 	}
 
 	
-	  @RequestMapping("notice_write_ok.do") public void writeOk(NoticeDTO dto,
-	  HttpServletResponse response) throws IOException {
-	  
-	  int check = this.dao.insertNotice(dto);
-	  
-	  response.setContentType("text/html; charset-UTF-8");
-	  
-	  PrintWriter out = response.getWriter();
-	  
-	  
-	  
-	  if(check > 0) { out.println("<script>"); out.println("alert('공지사항 등록 완료')");
-	  out.println("location.href='notice_list.do'"); out.println("</script>");
-	  }else { out.println("<script>"); out.println("alert('공지사항 등록 실패')");
-	  out.println("history.back()"); out.println("</script>"); } }
-	 
-
+	
 	/*
-	 * @RequestMapping("notice_write_ok.do") public ModelAndView writeOk(NoticeDTO
-	 * dto, HttpServletResponse response, MultipartHttpServletRequest mRequest)
-	 * throws IOException {
+	 * @RequestMapping("notice_write_ok.do") public void writeOk(NoticeDTO dto,
+	 * HttpServletResponse response) throws IOException {
 	 * 
-	 * ModelAndView mav = new ModelAndView();
+	 * 
 	 * 
 	 * int check = this.dao.insertNotice(dto);
 	 * 
@@ -92,12 +76,39 @@ public class NoticeController {
 	 * 
 	 * 
 	 * 
+	 * if(check > 0) { out.println("<script>"); out.println("alert('공지사항 등록 완료')");
+	 * out.println("location.href='notice_list.do'"); out.println("</script>");
 	 * 
-	 * 
-	 * mav.setViewName("notice_list");
-	 * 
-	 * }
+	 * }else { out.println("<script>"); out.println("alert('공지사항 등록 실패')");
+	 * out.println("history.back()"); out.println("</script>"); } }
 	 */
+	  
+	  @RequestMapping("notice_write_ok.do") public void writeOk(NoticeDTO dto,
+			  HttpServletResponse response) throws IOException {
+			  		  	  
+			  int check = this.dao.insertNotice(dto);
+			  
+			  response.setContentType("text/html; charset-UTF-8");
+			  
+			  PrintWriter out = response.getWriter();
+			  		  
+			  if(check > 0) { out.println("<script>");
+			  out.println("alert('공지사항 등록 완료')");
+			  out.println("location.href='notice_list.do'");
+			  out.println("</script>");
+			  
+			  }else { out.println("<script>");
+			  out.println("alert('공지사항 등록 실패')");
+			  out.println("history.back()"); 
+			  out.println("</script>"); }
+		
+			
+			 
+	  }
+	  
+	
+
+	
 	@RequestMapping("notice_cont.do")
 	public String content(@RequestParam("no") int notice_no, @RequestParam("page") int nowPage, Model model) {
 
@@ -189,16 +200,19 @@ public class NoticeController {
 		}
 	}
 
+	
 	@RequestMapping("notice_search.do")
-	public String search(@RequestParam("field") String field, @RequestParam("keyword") String keyword,
-			@RequestParam("page") int nowPage, Model model) {
-
-		// 검색분류와 검색어에 해당하는 게시글의 갯수를 DB에서 확인하는 작업
-		// totalRecord = this.dao.searchNoticeCount(field, keyword);
-		//
-		PageDTO dto = new PageDTO(nowPage, rowsize, totalRecord, field, keyword);
-
-		this.dao.searchNoticeList(dto);
+	public String search
+			(@RequestParam("field") String field,@RequestParam("keyword") String keyword, Model model) {
+		
+		List<NoticeDTO> list = 
+				this.dao.searchNoticeList(field,keyword);
+		
+		model.addAttribute("searchList", list);
+		
 		return "notice_search";
 	}
+	 
+	
+	
 }

@@ -65,27 +65,9 @@
 		select count(*) from notice
 	</select> -->
 	
-	<select id="search_list" parameterType="com.burger.cs.model.PageDTO"
-								resultType="com.burger.cs.model.NoticeDTO">
-		<!-- 	select * from
-				(select n.*, row_number()
-				   over(order by notice_no desc) rnum
-				   from notice n) 
-				     where rnum >= #{startNo} and rnum <= #{endNo}  -->
-				     
-			<!-- select * from 
-				(select row_number()
-						over(order by notice_no desc) rnum, "
-						n.* from socks_notice n where notice_title like ?) "
-					where rnum >= ? and rnum <= ?"; -->	     		     
-		
-		<![CDATA[
-				
-			select * from
-				(select n.*, row_number()
-				   over(order by notice_no desc) rnum
-				   from notice n where notice_title like ?) 
-				     where rnum >= #{startNo} and rnum <= #{endNo} 	     		
-		]]>
+	<select id="search_list"  resultType="com.burger.cs.model.NoticeDTO">	
+		select * from notice where notice_title like 
+			'%' || #{keyword} || '%' or notice_cont like 
+			'%' || #{keyword} || '%'  order by notice_no desc
 	</select>
 </mapper>

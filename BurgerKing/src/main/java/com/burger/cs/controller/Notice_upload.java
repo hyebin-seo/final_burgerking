@@ -44,14 +44,14 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
  */
 
 @Service    // 해당 Upload 라는 클래스는 비지니스 로직을 수행하는 클래스
-public class notice_upload {
+public class Notice_upload {
 
-	public boolean fileUpload(MultipartHttpServletRequest mRequest) {
+	public static boolean fileUpload(MultipartHttpServletRequest mRequest) {
 		
 		boolean isUpload = false;
 		
 		String uploadPath = 
-				"C:\\NCS\\workspace(spring)\\BurgerKing\\src\\main\\webapp\\resources\\img\\notice";
+				"C:\\NCS\\download\\workspace(spring)\\final_burgerking\\BurgerKing\\src\\main\\webapp\\resources\\img\\notice\\";
 		
 		Calendar cal = Calendar.getInstance();
 		int year = cal.get(Calendar.YEAR);

@@ -27,7 +27,7 @@
 		</selectKey>
 		
 		insert into notice values(#{notice_no},
-		   #{notice_title}, #{notice_cont}, sysdate, default)
+		   #{notice_title}, #{notice_cont}, sysdate, default, #{notice_image})
 	
 	</insert>
 	
@@ -44,7 +44,9 @@
 	
 	<update id="edit" parameterType="com.burger.cs.model.NoticeDTO">
 		update notice set notice_title = #{notice_title},
-		    notice_cont = #{notice_cont} where notice_no = #{notice_no}
+		    notice_cont = #{notice_cont},
+		    	notice_image = #{notice_image}
+		    	 where notice_no = #{notice_no}
 	</update>
 	
 	<delete id="del" parameterType="int">
@@ -58,31 +60,14 @@
 		]]>
 	</update>
 	
-	<select id="count" resultType="int">
+<!-- count 아이디 중복됩니다
+ 	<select id="count" resultType="int">
 		select count(*) from notice
-	</select>
+	</select> -->
 	
-	<select id="search_list" parameterType="com.burger.cs.model.PageDTO"
-								resultType="com.burger.cs.model.NoticeDTO">
-		<!-- 	select * from
-				(select n.*, row_number()
-				   over(order by notice_no desc) rnum
-				   from notice n) 
-				     where rnum >= #{startNo} and rnum <= #{endNo}  -->
-				     
-			<!-- select * from 
-				(select row_number()
-						over(order by notice_no desc) rnum, "
-						n.* from socks_notice n where notice_title like ?) "
-					where rnum >= ? and rnum <= ?"; -->	     		     
-		
-		<![CDATA[
-				
-			select * from
-				(select n.*, row_number()
-				   over(order by notice_no desc) rnum
-				   from notice n where notice_title like ?) 
-				     where rnum >= #{startNo} and rnum <= #{endNo} 	     		
-		]]>
+	<select id="search_list"  resultType="com.burger.cs.model.NoticeDTO">	
+		select * from notice where notice_title like 
+			'%' || #{keyword} || '%' or notice_cont like 
+			'%' || #{keyword} || '%'  order by notice_no desc
 	</select>
 </mapper>
