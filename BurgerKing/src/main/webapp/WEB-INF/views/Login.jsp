@@ -21,24 +21,40 @@
 
 
 <script type="text/javascript">
-
+	
 </script>
 
 </head>
 <body>
-	<!-- 로그인페이지 header 및 상단고정 필수 -->
-	<header class="head_main">
-		<div class="head_menuWrap">
-		   <ul style="margin: 0; padding: 0; float: right; list-style: none; display: inline-block" >
-		      <li style="">브랜드 홈</li>
-		      <li>로그인</li>
-		      <li>고객센터</li>
-		   </ul>
+	<div class="app">
+		<!-- 로그인페이지 header 및 상단고정 필수 -->
+		<header class="head_main">
+			<div class="head_menuWrap">
+				<div style="margin-left: 10%; margin-right: 10%">
+
+					<a style=""><span>브랜드홈</span></a> <a style=""><span>로그인</span></a>
+
+					<a style=""><span>고객센터</span></a>
+
+				</div>
+
+				<div style="margin-left: 10%; margin-right: 10%">
+
+					<h1>
+						ㅁㄴㅇ<span>버거킹</span>
+					</h1>
+
+				</div>
+			</div>
+
+		</header>
+		<div class="head_nav">
+			<div class="page_navi">
+				<a href="#/home" class=""><span>HOME</span></a><a><span>로그인</span></a>
+			</div>
 		</div>
-           
-	</header>
-	<div class="head_nav">
-		<nav></nav>
+
+
 	</div>
 
 
@@ -61,35 +77,64 @@
 						일반로그인
 					</h3>
 					<div class="main">
-					 <!-- 아이디/비밀번호 작성한는곳 -->
-					 <form action="login_ifo.do" method="post">
-					 
-						<input type="text" name="user_id" placeholder="아이디[이메일]" id="userId"> <br>
+						<!-- 아이디/비밀번호 작성한는곳 -->
+						<form action="login_Ok.do" method="post">
 
-					    <input type="password" name="user_pwd" placeholder="비밀번호" id="myInput" size="30%" height="50px">
-					    <!-- 비밀번호 보이기/안보이기 기능 -->
-						<span class="buttonText" onclick="passwordShow()"> show </span><br>
-						<!-- 로그인 버튼 -->
-						<input type="submit" value="로그인">
-						<!-- 회원가입버튼 -->
-					
-						<input type="image" value="로그인" src="resources/img/login/login_t.png">
+							<p>
+								<input type="text" name="user_id" placeholder="아이디[이메일]"
+									id="userId" size="50">
+							</p>
+
+							<input type="password" name="user_pwd" placeholder="비밀번호"
+								id="myInput" size="50">
+							<!-- 비밀번호 보이기/안보이기 기능 -->
+							<p>
+								<span class="buttonText" onclick="passwordShow()"> show </span>
+							</p>
+							<div class="option_btn">
+								<span><input type="checkbox" name="fordCheckBox"
+									value="Ford">아이디 기억하기</span> <span><input
+									type="checkbox" name="fordCheckBox" value="Ford">자동로그인</span>
+
+							</div>
+
+
+							<!-- 로그인 버튼 -->
+							<div class="login_btn" style="margin-top: 2%;">
+								<input type="image" name="login"
+									src="resources/img/login/login_t.png" width="200px"
+									height="50px" class="login"> 
+									<input type="button" onclick="location.href='join_info_service.do'"
+									style="background: url('resources/img/login/join.png') no-repeat; background-size: contain; width: 30%; height: 50px;">
+							</div>
+
+							<div style="margin-top: 2%;">
+								<a href="find_id_pwd.do"><span>아이디 찾기</span></a> <a><span>비밀번호
+										찾기</span></a>
+							</div>
+
 						</form>
-						<button onclick="location.href='join_info_service.do'"><img src="resources/img/login/join.png"></button>
-						 <input type="checkbox"
-						id="idSaveCheck">아이디 기억하기
-						
-						
+
+
+
+
+
 					</div>
-					
+
 				</div>
-				
-				<div class="sns_login">
+
+				<div class="simple_login">
 					<h3>
 						<img
 							src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTE2NDkzODkwMzc3MTFFOTk5RDFFRjFEMEQzRUIyMDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTE2NDkzOEEwMzc3MTFFOTk5RDFFRjFEMEQzRUIyMDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBMTY0OTM4NzAzNzcxMUU5OTlEMUVGMUQwRDNFQjIwOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBMTY0OTM4ODAzNzcxMUU5OTlEMUVGMUQwRDNFQjIwOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpuJpi0AAAMsSURBVHjazJlLiFJhFMe/iQoaZwrEqDY9SDTaRE2hEi2qWbQIRDSJHAoLghhauSioRZsiQqiNDM1GYbDABJvKoLQnUeYiGiLIHkRB7RoqMyhspv+5cyQfN72f19eBH37c63fu3++c+z2OfbOzs6KXbZ7ocZtfagwPDzfrwwAsYDVYwj6/gc/gFfjSrON0Ov1PoKStBSNgF9hc/kNVLAdug8vgSbtDPASugjfgFLA3EEdmBUfBY/AMeEBfqwUuBhdBFjhlHlBlG8EVcAeYWyVwA3gODrfwpdrOo7lXr0By9BCsacMLOggugUCzAm3gBoe3XUapEgRHZAWuAtdBf4emuxDPCJoE0q+aAEs7OB+Xnrn8vxN1mR0E22S8OxwO4Xa7hdVqnZv4cjkRj8dFJpORcWPicI9UKC+txbySLALvwAqtXv1+v/D5fKr3otGoCIfDMiJJzCaeNZSVpDrE+2XE2e12RVyxWBShUEi4XC4FatM1ukejKxnq4/Vy8JCMN4/Ho3yOj4+LRCIh8vm8ArUjkYhyj0IvaS5gVBNIc90WGU8Wi0X5TKVSNfeSyWTFdyRsIa9WNS/JTllP/f1zsxCNWrXRNR07pB0gXD2CQz20DRxSG0Gz1t6Tk5PCYDBU7NsaWaFQEE6nU+sjzKytWD6CyzTvUMvEtanPAl6rK0I82GO7/RqBeT3estms8Hq9CtRugf2sFvhVj7dgMCimp6cVqK3TZkoDVi7wbQ+F9wP4VS1wSo/HQCAgjEajMJlMSlunTalNM/f0eLTZbCIWi7VqBO+qLXUveCfTbaP8u6YmkLY6ES0eaNKVNYk+9zkHVTesY+AYGKjnQWJFaMbO1dtuUZnifBfD+wDcanQmOdulXPwNRrUcmmgG38cdOmmUWi+1HjuzfHjqVPGQcv+C7ME9ykP+p83iJri41FTpY4zrJz/aIIyicwYcqDcIWopBcT6rZFoo7hPYDU40SiOt1SqqlG7lvHyvQ9h3cBqsAze1dJApp83wQYaOaXto568x9EXwiPN5JTgpkzLNlICLHPY496cS8Ho+tg7wNVrXPoLX4KmezXBfr/8N8VeAAQDWJtDHnaHaNgAAAABJRU5ErkJggg==">
 						간편로그인
 					</h3>
+					<ul class="list">
+						<li class="naver"><a href="#"><span>네이버</span></a></li>
+						<li class="kakao"><a><span>카카오</span></a></li>
+						<li class="apple"><a><span>apple</span></a></li>
+					</ul>
+
 				</div>
 			</div>
 		</div>
@@ -103,7 +148,8 @@
 		<jsp:include page="footer.jsp" />
 	</footer>
 
-<!-- js파일에 연결  -->
-<script type="text/javascript" src="resources/js/login/login.js"></script> 
+	<!-- js파일에 연결  -->
+	<script type="text/javascript" src="resources/js/login/login.js"></script>
+	</div>
 </body>
 </html>
