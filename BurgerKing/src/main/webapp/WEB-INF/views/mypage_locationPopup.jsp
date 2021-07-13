@@ -62,7 +62,7 @@
            
             <!-- 검색 결과 리스트 -->
             <div class="address_result" style="display: none;">
-                <p class="txt_result"><span><em>0</em>개의 검색결과가 있습니다.</span></p>
+                <!-- <p class="txt_result"><span><em>0</em>개의 검색결과가 있습니다.</span></p>
                 <div class="result_box">
                     <div class="nodata">검색 결과가 없습니다.<br>다시 입력해 주세요.</div>
                     <div class="board_paging">
@@ -78,12 +78,11 @@
                             </nav>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- 검색결과 페이징 -->
-                <div class="paginate" id="pageApi">
-                	
-                </div>
+                <!-- <div class="paginate" id="pageApi"></div> -->
+                
             </div>
             
             <div class="addr_detail" style="display: none;">
@@ -94,12 +93,12 @@
                     </dl>
                     <dl>
                         <dt><em class="txtbox02">지번</em></dt>
-                        <dd><span></span></dd>
+                        <dd><span> </span></dd>
                     </dl>
                 </div>
                 <div class="inp_detail">
-                    <div class="inpbox"><input type="text" maxlength="50" placeholder="상세주소를 입력하세요."><button type="button" class="btn_del01 " style="display: none;"><span>입력 텍스트 삭제</span></button></div>
-                    <div class="chk_my"><label><input type="checkbox" class="check02"><span>MY배달지 등록</span></label></div>
+                    <div class="inpbox"><input class="addr3" type="text" maxlength="50" placeholder="상세주소를 입력하세요."><button type="button" class="btn_del01 " style="display: none;"><span>입력 텍스트 삭제</span></button></div>
+                    <div class="chk_my"><label><input type="checkbox" class="check02"><span class="addLoc">MY배달지 등록</span></label></div>
                 </div>
             </div>
         </div>

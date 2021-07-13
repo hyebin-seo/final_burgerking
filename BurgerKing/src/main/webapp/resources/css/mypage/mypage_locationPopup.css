@@ -14,7 +14,7 @@ button {
     border: none;
     overflow: visible;
     cursor: pointer;
-}
+} 
 
 /*주소지 찾기 팝업*/
 .popWrap {
@@ -217,13 +217,16 @@ button {
 
 .addr_list .keyword {
     margin-bottom: 12px;
-    font-size: 1.5rem;
+    font-size: 22px;
     color: #000;
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .addr_list p {
     margin-bottom: 5px;
     font-family: 'S-CoreDream-5Medium';
+    font-size: 17px;
+    word-spacing: -1px;
 }
 
 .addr_list li {
@@ -267,6 +270,11 @@ button {
     color: #fff;
     background: #2e2e2e;
     border-radius: 5px;
+}
+
+.addr_list span {
+	font-size: 15px;
+	vertical-align: middle;
 }
 
 /* 지도보기 버튼 */
@@ -333,10 +341,7 @@ address, em {
     line-height: 130%;
 }
 
-.board_paging {
-    margin-top: 30px;
-    text-align: center;
-}
+
 
 article, aside, figure, footer, header, hgroup, nav, section {
     display: block;
@@ -359,6 +364,13 @@ article, aside, figure, footer, header, hgroup, nav, section {
     padding: 30px 38px;
 }
 
+
+/* 
+.addrbox {
+	box-sizing: border-box;
+}
+*/
+
 .srchaddrPop .addrbox dl {
     display: table;
     width: 100%;
@@ -370,12 +382,28 @@ article, aside, figure, footer, header, hgroup, nav, section {
     white-space: nowrap;
 }
 
+.srchaddrPop .addrbox dt, .srchaddrPop .resultaddr dd {
+	display: table-cell;
+}
+
+.srchaddrPop .addrbox dd {
+    padding-left: 15px;
+    font-size: 24px;
+    color: #898989; 
+    letter-spacing: -1.5px; 
+}
+
+.srchaddrPop .addrbox dd span {
+	font-family: 'S-CoreDream-5Medium';
+}
+
 .txtbox02 {
     height: 28px;
     padding: 0 7px;
     line-height: 28px;
     background: #8d8d8d;
     border-radius: 3px;
+    font-size: 15px;
 }
 
 .txtbox01, .txtbox02 {
@@ -390,12 +418,129 @@ article, aside, figure, footer, header, hgroup, nav, section {
     margin: 0;
 }
 
+
 .inp_detail {
     background: #fff;
 }
 
+.inpbox {
+	position: relative;
+}
+
+
+.addr_detail .inpbox input {
+	height: 60px;
+	font-size: 1rem;
+}
+
+.inpbox input {
+	width: 100%;
+	padding: 0 25px 3px 5px;
+}
+
+.inpbox input::placeholder {
+	color: rgb(205,205,205);
+	font-family: 'S-CoreDream-5Medium';
+}
+
+input[type=color], input[type=date], input[type=datetime], input[type=email], input[type=file], input[type=month], input[type=number], input[type=password], input[type=rang], input[type=search], input[type=tel], input[type=text], input[type=url] {
+    display: inline-block;
+    height: 66px;
+    margin: 0;
+    padding: 3px 10px 3px 4px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000;
+    vertical-align: middle;
+    background: url(../../img/mypage/img_input.png) repeat-x 0 100%;
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+
 .pop_btn.full_type {
     padding: 0;
+}
+
+input:focus-visible {
+	outline-offset: 0px;
+}
+
+.inpbox button {
+	width: 30px;
+	height: 63px;
+	margin: 0;
+}
+
+.inpbox button, .inpbox input~* {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+
+.btn_del01 {
+	text-indent: -9999em;
+	background: url(../../img/mypage/img_deleteBtn.png) no-repeat 50%;
+	background-size: 18px auto;
+}
+
+.addr_detail .chk_my {
+	margin: 20px 0 0;
+	font-size: 1rem;
+}
+
+label, label>span {
+	vertical-align: middle;
+}
+
+.addr_detail .chk_my input {
+	margin-right: 9px;
+}
+
+input[type=checkbox], input[type=radio] {
+    position: absolute;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
+input.check02+:before{
+	width: 32px;
+	height: 32px;
+	background: url(../../img/mypage/img_check.png) no-repeat 0;
+}
+
+input.check02.chekimg+:before{
+	width: 32px;
+	height: 32px;
+	background: url(../../img/mypage/img_checked.png) no-repeat 0;
+}
+
+input[type=checkbox]+:before, input[type=radio]+:before {
+    content: "";
+    display: inline-block;
+    margin-right: 13px;
+    vertical-align: middle;
+} 
+
+input[type=radio]+:before {
+	width: 25px;
+    height: 25px;
+}
+
+.chk_my .check02 span {
+	font-family: 'S-CoreDream-5Medium';
 }
 
 .pop_btn {
@@ -408,7 +553,7 @@ article, aside, figure, footer, header, hgroup, nav, section {
 }
 
 .pop_btn.full_type button span {
-	font-size: 30px;
+	font-size: 26px;
 }
 
 .popWrap .btn02:only-child {
@@ -446,7 +591,6 @@ article, aside, figure, footer, header, hgroup, nav, section {
     background-size: auto 100%;
     font-family: 'S-CoreDream-9Black';
 }
-
 
 .sub_popWrap {
     width: 100%;
@@ -507,4 +651,71 @@ article, aside, figure, footer, header, hgroup, nav, section {
 .map {
 	width: 100%;
     height: 100%;
+}
+
+
+/**/
+ul {
+	display: block;
+	list-style: none;
+	margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.board_paging {
+    margin-top: 30px;
+    text-align: center;
+    height: 36px;
+}
+
+.board_paging a {
+    display: inline-block;
+    min-width: 1.5em;
+    height: 36px;
+    padding: 0 3px;
+    font-size: 1rem;
+    line-height: 36px;
+    text-align: center;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.VuePagination{
+	width: 100%;
+	height: 36px;
+}
+
+.VuePagination__pagination-item-next-chunk a, .VuePagination__pagination-item-prev-chunk a {
+    width: 38px;
+    margin: 0 27px;
+    text-indent: -999em;
+    text-align: left;
+}
+
+.VuePagination__count, .VuePagination__pagination-item-next-page, .VuePagination__pagination-item-prev-page {
+    display: none!important;
+}
+
+.VuePagination__pagination-item-prev-chunk a {
+    background: url(../../img/mypage/img_paging_prev.png) no-repeat 50%;
+}
+
+.VuePagination__pagination-item-next-chunk a {
+    background: url(../../img/mypage/img_paging_next.png) no-repeat 50%;
+}
+
+.board_paging .active a, .board_paging .cur a {
+    font-weight: 700;
 }

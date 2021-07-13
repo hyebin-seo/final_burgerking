@@ -328,7 +328,7 @@
 			</div>
 		</div> -->
 	
-	<jsp:include page="locationPopup.jsp" flush="true"/>
+	<jsp:include page="mypage_locationPopup.jsp" flush="true"/>
 	<script src="resources/js/mypage/mypage_searchAddr.js"></script>
 	
 </body>
