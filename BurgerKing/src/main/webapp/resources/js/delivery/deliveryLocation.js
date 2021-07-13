@@ -52,6 +52,16 @@ $(function(){
 
 $(document).ready(function() {
 	$(".tab_cont_my").hide();
+	
+	//페이지 로딩 후 페이지네비게이션 변경
+	$(".page-navi").empty();
+	
+	var navi_str = "";
+	
+	navi_str += "<a href='delivery_home.do'><span>딜리버리</span></a>";
+	navi_str += "<a href='location.do'><span>배달지검색</span></a>";
+	
+	$(".page-navi").html(navi_str);
 });
 
 
