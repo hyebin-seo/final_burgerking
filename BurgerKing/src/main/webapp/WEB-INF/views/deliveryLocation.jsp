@@ -7,7 +7,8 @@
 <title>배달지설정</title>
 </head>
 <link href="resources/css/delivery/deliveryLocation.css"  rel="stylesheet"  type="text/css">
-<jsp:include page="deliveryHome.jsp" flush="true"/>
+<jsp:include page="deliveryHeader.jsp" flush="true"/>
+<jsp:include page="deliveryCart.jsp"/>
 <body>
 <!-- 주소지 찾기 -->
 <div class="contentsBox01 bg_w">
@@ -98,4 +99,5 @@
 <jsp:include page="locationPopup.jsp" flush="true"/>
 <script src="resources/js/delivery/deliveryLocation.js"></script>
 </body>
+<jsp:include page="footer.jsp" />
 </html>

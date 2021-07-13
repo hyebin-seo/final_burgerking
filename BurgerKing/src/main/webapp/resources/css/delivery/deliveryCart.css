@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+/* 딜리버리 주문내역/카트 내역 전체 배경 div */
+.order_container {
+	height: 124px;
+    font-size: 1.3rem;
+    color: #fff;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_personality.2ff1d0f9.gif) repeat-x top;
+    margin-top: 180px;
+}
+
+/* 딜리버리 주문내역/카트 내역 가운데 배치 div(너비는 바꿔야함) */
+.order {
+	margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1184px;
+}
+
+/* 마우스 포인터 손가락변경 */
+.order a {
+	cursor: pointer;
+}
+
+/* 두번째줄 글씨 변경 */
+.order dd {
+	margin-left: 0px;
+	font-family: 'S-CoreDream-5Medium';
+	font-size: 1.1rem;
+}
+
+/* 딜리버리 주문내역 div */
+.personal_order {
+    min-height: 80px;
+    padding-left: 89px;
+    background: url(../../img/delivery/personal_order.png) no-repeat 0;
+    display: inline-block;
+    /* width: 24%; */
+    position: absolute;
+    padding-top: 1%;
+    right: 67%;
+    top: 200px;
+    min-width: 150px;
+}
+
+/* 가운데 선 div */
+.center_bar {
+	background: url(../../img/delivery/center_bar.png) no-repeat 100%;
+    display: inline-block;
+    width: 3px;
+    height: 120px;
+    content: "";
+    position: absolute;
+    left: 50%;
+}
+
+/* 카트 내역 div */
+.personal_cart {
+    padding-left: 80px;
+    background: url(../../img/delivery/personal_cart.png) no-repeat 0;
+    display: inline-block;
+    /* width: 32%; */
+    position: absolute;
+    /* right: 19%; */
+    padding-top: 1%;
+    /* right: 517px; */
+    top: 200px;
+    min-width: 168px;
+    left: 60%;
+}
+
+/* 페이지네비/주소/총금액 전체 div */
+.loc_container {
+	background: rgb(0,0,0);
+    color: rgb(255,255,255);
+/*     height: 2.5rem; 63px; */
+    font-family: 'S-CoreDream-5Medium';
+    line-height: 33px;
+    padding: 15px 0;
+}
+
+/* 전체 div 안 a태그 */
+.loc_container a {
+	color: #fff;
+	float: left;
+	margin: 0;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* 페이지네비/주소/총금액 가운대 배치 div */
+.loc_container .loc {
+/* 	display: flex; */
+    justify-content: space-between;
+    height: 1.9rem;
+    font-size: 1rem;
+    max-width: 1184px;
+    margin: 0 auto;
+}
+
+/* 왼쪽 페이지 네비 */
+.loc_container .loc .page-navi {
+    float: left;
+    font-size: .875rem;
+}
+
+.page-navi>:first-child:before {
+	display: none;
+}
+
+/* 페이지 네비 >(꺽쇠) 이미지 */
+.page-navi>:before {
+	content:"";
+	float: left;
+    width: 4px;
+    height: 34px;
+    margin: 0 12px;
+    background: url(../../img/delivery/navi_right.gif) no-repeat 50%;
+}
+
+/* 오른쪽 배달지 설정 관련 div */
+.loc_container .loc .location {
+	float: right;
+    font-size: .875rem;
+}
+
+.location>* {
+    display: inline-block;
+    margin-left: 24px;
+    padding-left: 22px;
+    vertical-align: top;
+}
+
+/* 주소 선택  span */
+.location .addr {
+	max-width: 200px;
+    margin: 0;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+    overflow: hidden;
+    background: url(../../img/delivery/addr.png) no-repeat 0;
+}
+
+/* 지점 자동 선택 span */
+.location .shop {
+	padding-left: 26px;
+	background: url(../../img/delivery/shop.png) no-repeat 0;
+}
+
+/* 주소지 변경 버튼 */
+.location .btn {
+	margin-left: 20px;
+    padding-left: 0;
+}
+
+/* 주소지 변경 버튼 */
+.location .btn a {
+    display: inline-block;
+    width: 56px;
+    height: 34px;
+    padding: 0;
+    font-size: 1rem;
+    color: #000;
+    text-align: center;
+    line-height: 34px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* 모바일 화면 */
+@media (max-height: 500px) and (orientation: landscape), 
+	screen and (max-width: 768px) and (orientation: portrait) {
+	
+	.order_container {
+		display: none;
+	}
+	
+	.loc_container {
+	    position: relative;
+	    height: auto;
+	    min-height: 48px;
+	    padding: 0;
+	    line-height: normal;
+	    background: #3E3D3C;
+	    background-size: 100% 100%;
+	}
+	
+	.loc_container .loc {
+	    height: 100%;
+	    overflow: hidden;
+	    min-width: 320px;
+    	padding: 0;
+	}
+	
+	.loc_container .loc .page-navi {
+    	display: none;
+	}
+    
+    .loc_container .loc .location {
+	    display: table;
+	    float: none;
+	    width: 100%;
+	    padding: 5px 0;
+	}
+	
+	.loc .location>* {
+	    display: block;
+	    height: 20px;
+	    margin: 0;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	    padding-right: 16px;
+	    vertical-align: middle;
+	}
+	
+	.location .addr {
+	    max-width: inherit;
+	    padding-left: 40px;
+	    background: url(../../img/delivery/addr.png) no-repeat 16px;
+	    background-size: 16px auto;
+	    white-space: normal;
+	}
+	
+	.location .shop {
+	    margin-left: 12px;
+	    background: url(../../img/delivery/shop.png) no-repeat 0;
+	    background-size: 22px auto;
+	}
+	
+	.location .money {
+	    margin-left: 15px;
+	    padding-bottom: 0;
+	}
+	
+	.location .btn {
+   		margin: 0;
+	    float: right;
+	    padding-top: 0;
+	}
+	
+	.location .btn a {
+	    display: inline-block;
+	    width: 45px;
+	    height: 24px;
+	    margin-left: 5px;
+	    padding: 0;
+	    font-size: .75rem;
+	    line-height: 24px;
+	}
+	
+}

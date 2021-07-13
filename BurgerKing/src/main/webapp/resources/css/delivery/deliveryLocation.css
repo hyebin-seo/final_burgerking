@@ -29,7 +29,7 @@ a, div, li {
 
 body {
     min-height: 100%;
-    color: #000;
+/*     color: #000; */
     background: #f2ebe6;
     word-wrap: normal;
     word-break: keep-all;
@@ -83,11 +83,17 @@ body {
 
 .inpbox {
     position: relative;
+    background: url(../../img/delivery/search_under.png) repeat-x 0 100%;
+    height: 71px;
 }
 
 .inpbox input {
     width: 100%;
     padding: 0 25px 3px 5px;
+}
+
+input:focus {
+	outline:none;
 }
 
 input[type=color], input[type=date], input[type=datetime], input[type=email], input[type=file], input[type=month], input[type=number], input[type=password], input[type=rang], input[type=search], input[type=tel], input[type=text], input[type=url] {
@@ -100,7 +106,7 @@ input[type=color], input[type=date], input[type=datetime], input[type=email], in
     font-family: 'S-CoreDream-5Medium';
     color: #000;
     vertical-align: middle;
-    background: url(../../img/delivery/search_under.png) repeat-x 0 100%;
+/*     background: url(../../img/delivery/search_under.png) repeat-x 0 100%; */
     border: none;
     border-radius: 0;
     -webkit-box-sizing: border-box;

@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- 파비콘 -->
+<link rel="shortcut icon" href="resources/img/public/favicon.ico">
+<link rel="icon" href="resources/img/public/favicon.ico">
 <!-- 제이쿼리 CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <!-- 아이콘 CDN 링크 -->
@@ -15,23 +18,25 @@
 <div class="delivery_navbar">
 	 <div class="delivery_navbar_right_menu">
 	  	<ul style="padding-left: 70%;">
-	        <li><a href="">브랜드홈</a></li>
-	        <li class="border_li"><a href="">로그인</a></li>
+	        <li><a href="/burger/">브랜드홈</a></li>
+	        <li class="border_li"><a href="Login.do">로그인</a></li>
 	        <li class="border_li"><a href="">고객센터</a></li>
 	    </ul>
 	</div>
 	
 	<div class="logo_myinfo_all_div">
       <div class="delivery_navbar_logo">
-        <h1 class="king_logo"><span><b>딜리버리</b></span></h1>
+        <h1 class="king_logo"><a href="delivery_home.do"><span><b>딜리버리</b></span></a></h1>
       </div>
       
       <div class="delivery_navbar_myinfo">
+      	<a href="mypage_main.do">
 	      <div class="my_info_icon"><i class="fas fa-user-circle"></i></div>
 	      <div class="my_info_span_div">
 	        <div class="span_div"><span id="user_name_span">(비회원)</span> 님 안녕하세요.</div>
-	      	<div class="span_div"><a> <Strong>MY킹 바로가기 ></Strong> </a></div>
+	      	<div class="span_div"><Strong>MY킹 바로가기 ></Strong></div>
 	      </div>
+	    </a> 
 	  </div>
 	</div>
 	 
@@ -41,7 +46,7 @@
       </a>
       
       <div class="mob_delivery_navbar_logo">
-        <h1 class="mob_king_logo"><span>딜리버리</span></h1>
+        <h1 class="mob_king_logo"><a href="delivery_home.do"><span>딜리버리</span></a></h1>
       </div>
       
       <a href="#" class="delivery_navbar_cartBtn">

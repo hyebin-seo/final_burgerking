@@ -1,0 +1,712 @@
+@charset "UTF-8";
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+input:focus {
+	outline:none;
+}
+
+body {
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+/* 전체 회색 div */
+.ingredientPopWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+/*     font-family: 'S-CoreDream-5Medium'; */
+    font-family: 'S-CoreDream-9Black';
+}
+
+/* 정중앙 div */
+.popbox01, .popbox02 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 568px;
+    max-height: 95%;
+    margin-left: -284px;
+    padding-bottom: 84px;
+    background: #fff;
+    overflow: auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+.popbox_width02 {
+    width: 760px;
+    margin-left: -380px;
+}
+
+.popbox01.nobtn {
+    padding: 0;
+}
+
+.m_FullpopWrap .popbox01 {
+    background: #f2ebe6;
+}
+
+/* 팝업창 타이틀 */
+.pop_header01 {
+    position: relative;
+    height: 102px;
+    padding: 10px 40px;
+    font-size: 1.7rem;
+    text-align: center;
+    line-height: 83px;
+    background: #fff;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.pop_header01.st02 {
+    padding: 10px 38px;
+    text-align: left;
+}
+
+.popbox01 .title_btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+/* 팝업창 끄기 버튼 */
+.btn_close {
+    width: 40px;
+    height: 40px;
+    text-indent: -9999em;
+    background: url(../../img/delivery/location_close.png) no-repeat 50%;
+}
+
+.pop_header01 .btn_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+}
+
+.popbox01 .title_btn button {
+    width: 100px;
+    height: 100%;
+}
+
+.popcont {
+    max-height: 580px;
+    padding: 24px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.popbox01.nobtn .popcont {
+    max-height: 670px;
+}
+
+.popbox01.nobtn .popcont {
+    padding-bottom: 16px;
+}
+
+/* 원산지 타이틀*/
+.tit01 {
+    margin: 45px 0 17px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2e2e2e;
+}
+
+.tit_ico {
+    position: relative;
+    padding-left: 50px;
+    line-height: 40px;
+}
+
+.tit01.font_s01 {
+    /* font-size: 1.125rem; */
+}
+
+.tit01:first-child {
+    margin-top: 0;
+}
+
+/* 원산지 아이콘 */
+.tit_ico:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: 0;
+}
+
+.tit_ico.origin:before {
+    background-image: url(../../img/public/base.png);
+}
+
+.tit_ico>* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 원산지 내용 div */
+.container02 {
+    position: relative;
+    margin: 15px 0;
+    padding: 20px 50px;
+    font-size: 1.375rem;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.tit01.tit_ico+.container02 {
+    margin-top: 8px;
+}
+
+.popcont .container02.origin_info {
+    padding: 36px 44px;
+}
+
+/* 원산지 상세정보 */
+.origin_info dl {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 19px;
+    padding: 12px 0 0 105px;
+}
+
+.origin_info dl:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 66px;
+    height: 50px;
+/*     background: url("주소가 안따짐") no-repeat top; */
+}
+
+/* 쇠고기 아이콘 */
+.origin_info .cow:before {
+    background-image: url('https://www.burgerking.co.kr/dist/img/img_origin_cow.b18d0909.png');
+}
+
+.origin_info dt {
+    float: left;
+    width: 110px;
+/*     font-weight: bolder; */
+/*     font-family: 'S-CoreDream-9Black'; */
+    font-size: 1.125rem;
+}
+
+.origin_info dd {
+    margin-left: 110px;
+    font-size: 1.125rem;
+    line-height: 134%;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+/* 돼지 아이콘 */
+.origin_info .pig:before {
+    background-image: url('https://www.burgerking.co.kr/dist/img/img_origin_pig.5f9cde0f.png');
+}
+
+.origin_info dl:last-child {
+    margin: 0;
+}
+
+/* 닭고기 아이콘 */
+.origin_info .chicken:before {
+    top: 5px;
+    background-image: url('https://www.burgerking.co.kr/dist/img/img_origin_chicken.39adc5ed.png');
+}
+
+/* 칼로리 아이콘 */
+.tit_ico.kcal:before {
+    background-image: url(../../img/public/kcal.png);
+}
+
+/* 영양정보 전체 리스트 ul */
+.container02 .acc_list01 {
+	padding: 10px 0;
+    margin: -12px 0 0;
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* 영양정보 세부 li */
+.acc_list01>li {
+    margin-bottom: 16px;
+}
+
+
+.acc_tit {
+    position: relative;
+    padding: 10px 20px 10px 0;
+}
+
+/* 영양정보 세부 li 배경 밑줄 이미지 */
+.acc_list01 .acc_tit {
+    padding: 15px 0 18px;
+    font-size: 1.125rem;
+    background: url(../../img/delivery/search_under.png) repeat-x 0 100%;
+}
+
+/* li 열고 닫는 버튼 */
+.btn_acc {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999em;
+}
+
+.btn_acc:after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+/*     background: url(:after랑 이미지가 똑같음) no-repeat 50%; */
+    background-size: 15px auto;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transition: transform .3s linear;
+    -webkit-transition: -webkit-transform .3s linear;
+    transition: -webkit-transform .3s linear;
+    transition: transform .3s linear;
+    transition: transform .3s linear,-webkit-transform .3s linear;
+}
+
+.open .btn_acc:after {
+    -webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.acc_list01 .acc_tit .btn_acc:after {
+    right: 0;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    background: url(../../img/public/after_li.png) no-repeat 50%;
+    background-size: auto;
+}
+
+/* li 닫혀있을 때 세부 칼로리 정보 div*/
+.acc_cont {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+}
+
+/* li 열렸을 때 세부 칼로리 정보 div */
+.open .acc_cont {
+    height: auto;
+    overflow: inherit;
+    opacity: 1;
+}
+
+/* 세부 칼로리 정보 담긴 table */
+.info_table {
+    margin: 5px 0 25px;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 150%;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+}
+
+.info_table.st02 {
+    margin-top: 0;
+    line-height: 140%;
+}
+
+colgroup {
+    display: table-column-group;
+}
+
+col {
+    display: table-column;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.info_table thead tr {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+.info_table th {
+    font-weight: 400;
+    text-align: center;
+}
+
+.info_table thead th {
+    padding: 11px 1px 7px;
+}
+
+.info_table .alignl {
+    text-align: left!important;
+}
+
+.info_table.st02 td, .info_table.st02 th {
+    padding: 5px 1px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.info_table tbody td, .info_table tbody th {
+    height: 15px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.info_table.st02 td, .info_table.st02 th {
+    padding: 5px 1px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.info_table.st02 tbody th {
+    vertical-align: middle;
+    text-align: left;
+}
+/* 여기까지 칼로리 세부정보 관련 테이블 태그 */
+
+/* 안내사항 아이콘 */
+.tit_ico.info:before {
+    background-image: url(../../img/public/i_info.png);
+}
+
+/* 안내사항 ol */
+.txtlist02 {
+    margin: 20px 0;
+    padding-left: 8px;
+    line-height: 175%;
+}
+
+.txtlist02.order {
+    margin: 10px 0;
+    padding: 0;
+}
+
+.popcont .container02 .txtlist02 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.txtlist02.order li {
+    position: relative;
+    padding-left: 1.4em;
+    line-height: 143%;
+}
+
+.txtlist02.st02 li {
+    margin-bottom: 20px;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+/* 안내사항 안의 차례 번호 em*/
+.txtlist02.order .num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #000;
+}
+
+/* 알레르기 아이콘 */
+.tit_ico.allergy:before {
+    background-image: url(../../img/public/allergy.png);
+}
+
+
+/* 반응형 */
+@media (max-height: 500px) and (orientation: landscape),
+screen and (max-width: 768px) and (orientation: portrait) {
+
+	.popbox01 .nobtn {
+	    padding-bottom: 0!important;
+	}
+	
+	.m_FullpopWrap .popbox01 {
+	    position: relative;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    max-height: 100%;
+	    margin: 0;
+	    padding-top: 56px;
+	    padding-bottom: 56px;
+	    -webkit-transform: none;
+	    transform: none;
+	}
+	
+	.m_FullpopWrap .popbox01 {
+	    left: 10%;
+	    top: 10%;
+	    width: 80%;
+	    height: 80%;
+	}
+	
+	.m_FullpopWrap .popcont .container02 {
+		    padding: 20px 30px;
+	}
+	
+	.pop_header01 {
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    height: 54px;
+	    padding: 5px 16px;
+	    font-size: 1.125rem;
+	    line-height: normal;
+	    background: #fff;
+	    border-bottom: 1px solid #f7f7f7;
+	}
+	
+	.pop_header01.st02 {
+	    height: 48px;
+	    padding: 0 16px;
+	    background: #f8f8f8;
+	}
+	
+	.m_FullpopWrap .pop_header01 {
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 56px;
+	}
+	
+	.pop_header01>* {
+	    width: 100%;
+	    padding: 0 18px;
+	}
+	
+	.pop_header01.st02>* {
+	    padding-left: 0;
+	}
+	
+	.pop_header01.st02 .title_btn {
+	    left: auto;
+	    width: auto;
+	    padding: 0;
+	}
+	
+	.pop_header01 .btn_close, .popbox01 .title_btn button {
+	    position: static;
+	    width: 50px;
+	    background-size: 19px auto;
+	}
+	
+	.m_FullpopWrap .popcont {
+	    height: 100%;
+	    max-height: 100%!important;
+	    overflow: auto;
+	    -webkit-overflow-scrolling: touch;
+	}
+	
+	.popbox01.nobtn .popcont {
+	    max-height: 500px;
+	    padding: 16px;
+	}
+	
+	.container02 {
+	    position: relative;
+	    margin: 15px 0;
+	    padding: 20px 50px;
+	    font-size: 1rem;
+	    background: #fff;
+	    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+	    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+	}
+	
+	.tit01 {
+	    margin: 21px 0 8px;
+	    font-weight: 700;
+	    font-size: .75rem;
+	    color: #000;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	
+	.tit_ico {
+	    position: relative;
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    min-height: 28px;
+	    padding-left: 34px;
+	    line-height: 28px;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	
+	.tit01:first-child, .WEB:first-child+.tit01 {
+	    margin-top: 8px;
+	}
+	
+	.tit_ico:before {
+	    content: "";
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    width: 28px;
+	    height: 28px;
+	    background-repeat: no-repeat;
+	    background-position: 0;
+	    background-size: 100% auto;
+	}
+	
+	.tit01.tit_ico+.container02 {
+	    margin-top: 8px;
+	}
+	
+	.origin_info dl {
+	    position: relative;
+	    margin-bottom: 19px;
+	    padding-top: 0;
+	    padding-left: 28%;
+	}
+	
+	.origin_info dd {
+	    margin-left: 0;
+	    margin-top: 6px;
+	    font-size: .625rem;
+	    line-height: 128%;
+	}
+	
+	.container02 .acc_list01 {
+	    margin: 0;
+	    background: none;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	}
+	
+	.acc_list01>li {
+	    margin-bottom: 8px;
+	}
+	
+	.acc_list01 .acc_tit {
+	    padding: 10px 0 13px;
+	    font-size: .75rem;
+	    background-size: auto 3px;
+	}
+	
+	.acc_list01 .acc_tit .btn_acc:after {
+	    right: 0;
+	    width: 20px;
+	    height: 20px;
+	    margin-top: -10px;
+	    background-size: 12px auto;
+	}
+	
+	.info_table.st02 {
+	    margin-top: 0;
+	    font-size: 8px;
+	    line-height: 140%;
+	}
+
+	.txtlist02.order {
+	    margin: 5px 0;
+	    padding: 0;
+	}
+
+}

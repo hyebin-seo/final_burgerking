@@ -30,7 +30,7 @@ $(document).ready(function () {
 	        // 지도 생성
 	        var map = new naver.maps.Map('map', {
 				center: new naver.maps.LatLng(y, x), //지도를 열 좌표
-				zoom: 18
+				zoom: 19
 			});
 			
 	        // 지도에 해당 지역 마커(좌표/아이콘 설정)
