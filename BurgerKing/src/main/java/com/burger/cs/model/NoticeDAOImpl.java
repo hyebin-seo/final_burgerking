@@ -64,25 +64,25 @@ public class NoticeDAOImpl implements NoticeDAO {
 		this.sqlSession.update("seq", no);
 	}
 
+	@Override
+	public int searchNoticeCount(String field, String keyword) {
+		return this.sqlSession.selectOne("search_count",keyword);
+	}
+
+	@Override
+	public List<NoticeDTO> searchNoticeList(PageDTO dto) {
+		return this.sqlSession.selectList("search_list", dto);
+		
+	}
+
+	
+	
+	
 	/*
-	 * @Override public int searchNoticeCount(String keyword) {
+	 * @Override public List<NoticeDTO> searchNoticeList(String field, String
+	 * keyword) {
 	 * 
-	 * return this.sqlSession.selectOne(keyword);
-	 * 
-	 * }
-	 * 
-	 * @Override public List<NoticeDTO> searchNoticeList(PageDTO dto) {
-	 * 
-	 * return this.sqlSession.selectList("list", dto);
-	 * 
-	 * }
-	 */
-	
-	
-	  @Override public List<NoticeDTO> searchNoticeList(String field, String
-	  keyword) {
-	  
-	  return this.sqlSession.selectList(field, keyword); }
-	 
+	 * return this.sqlSession.selectList(field, keyword); }
+	 */	 
 	
 }
