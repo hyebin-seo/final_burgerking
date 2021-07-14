@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.store.model.StoreDAO">
+
+	<insert id="store_reigster" parameterType="com.burger.store.model.StoreDTO">
+
+		insert into king_store values(
+			#{store_key}, #{store_name}, #{store_addr}, #{store_contact},
+		    #{delivery}, #{kingorder}, #{allday}, #{morning}, #{parking}, #{drivethru},
+		    #{open_time}, #{delivery_time}, #{kingorder_time}, #{pi_x}, #{pi_y})
+	
+	</insert>
+	
+	<select id="near_store" parameterType="com.burger.store.model.StoreDTO"
+								resultType="com.burger.store.model.StoreDTO">
+		<![CDATA[
+			select * from (
+				select s.*, DISTANCE_WGS84(37.569917, 126.988082, pi_x, pi_y) as DISTANCE
+				from king_store s
+				where (pi_x between 37.569917-0.019 and 37.569917+0.019)
+				  and (pi_y between 126.988082-0.022 and 126.988082+0.022)
+				order by DISTANCE);
+		]]>
+	</select>
+	
+	
+	
+	
+</mapper>

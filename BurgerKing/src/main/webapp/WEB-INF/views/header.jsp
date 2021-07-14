@@ -4,16 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="shortcut icon" type="image/x-icon"
-	href="resources/img/main/fab.ico">
+<title>버거킹</title>
+<link rel="shortcut icon" type="image/x-icon" href="resources/img/public/favicon.ico">
 <!-- top nav부분 css -->
 
 <!-- top nav부분 css end-->
-<script src="https://kit.fontawesome.com/6584921572.js"
-	crossorigin="anonymous">
-	
-</script>
+<script src="https://kit.fontawesome.com/6584921572.js" crossorigin="anonymous"> </script>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -25,9 +21,10 @@
 	crossorigin="anonymous">
 	
 </script>
-</head>
-<body>
+<!-- 제이쿼리 CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/Main.css">
+</head>
 <body>
 	<header id="header1">
 		<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
@@ -66,7 +63,7 @@
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								매장소개 </a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">매장찾기</a></li>
+								<li><a class="dropdown-item" href="store.do">매장찾기</a></li>
 
 							</ul></li>
 
