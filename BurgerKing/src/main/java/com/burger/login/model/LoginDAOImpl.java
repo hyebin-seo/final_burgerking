@@ -40,8 +40,14 @@ public class LoginDAOImpl implements LoginDAO {
 	// 비밀번호 찾기
 	@Override
 	public UserDTO find_pwd(UserDTO dto) {
-		
+
 		return this.sqlSession.selectOne("find_pwd", dto);
+	}
+     //임시 비밀번호 인증후 비밀번호 바꾸기
+	@Override
+	public int change_pwd(UserDTO dto) {
+		
+		return this.sqlSession.update("auth_pwd", dto);
 	}
 
 }

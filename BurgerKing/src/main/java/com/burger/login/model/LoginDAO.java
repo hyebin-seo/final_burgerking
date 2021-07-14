@@ -17,6 +17,10 @@ public interface LoginDAO {
 	//pwd찾기 
 	public UserDTO find_pwd(UserDTO dto);
 	
+	//pwd 변경하기
+	
+	public int change_pwd(UserDTO dto);
+	
 	
 	
 

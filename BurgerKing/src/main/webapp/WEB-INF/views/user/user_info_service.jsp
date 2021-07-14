@@ -165,7 +165,7 @@ ul.join_box {
 
 <body>
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="../header.jsp" />
 
 	<form action="join.do" id="joinForm">
 		<ul class="join_box">

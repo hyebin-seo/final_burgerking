@@ -2,28 +2,35 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<!-- MyBatis와 관련된 스프링 설정 순서 -->
 	
-	<!-- 1. c3p0 커넥션풀 DataSource 클래스 설정 -->
-	<bean name="dataSource"
-	   class="com.mchange.v2.c3p0.ComboPooledDataSource">
+	<!-- 1. c3p0 (스프링 커넥션풀) DataSource 클래스 설정 -->
+	<bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@burgerkingdb.cejjwyykqq28.us-east-2.rds.amazonaws.com:1521:ORCL" />
-		<property name="user" value="admin" />
-		<property name="password" value="admin210706" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE" />
+		<property name="user" value="system" />
+		<property name="password" value="oracle" />
 	</bean>
 	
 	<!-- 2. SqlSessionFactory 클래스 설정 -->
-	<bean name="sqlSessionFactory"
-		  class="org.mybatis.spring.SqlSessionFactoryBean">
-		  <property name="dataSource" ref="dataSource" />
-		  <property name="mapperLocations" value="classpath:/mapper/*.xml" />
+	<bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- mapper의 위치는 mapper 패키지 안의 모든 xml 파일을 자동으로 연동? -->
+		<property name="mapperLocations" value="classpath:/mapper/*.xml" />
 	</bean>
-	    
-	<!-- 3.SqlSessionTemplate 클래스 설정 -->
-	<bean name="sqlSession"
-		  class="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
-	</bean>		
+	
+	<!-- 3. SqlSessionTemplate 클래스 설정 -->
+	<bean name="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<!-- 
+			public SqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+			    this(sqlSessionFactory, sqlSessionFactory.getConfiguration().getDefaultExecutorType());
+			  }
+			이렇게 되어있음! 생성자로 주입받음!
+		 -->
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+		
 	
 		<!-- 파일 업로드 관련 설정 -->
 	<bean id="multipartResolver"
@@ -31,5 +38,30 @@
 		<property name="maxUploadSize" value="10485760" /> <!-- 10MB -->
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
-		
+	
+	
+	<!-- 이메일 발송 bean 설정 -->
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" /> <!-- gmail을 사용 -->
+		<property name="port" value="587" />
+		<property name="username" value="hyeongjun3221@gmail.com" />
+		<property name="password" value="dksgudwns1!" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<bean id="preConfigureMessage" class="org.springframework.mail.SimpleMailMessage">
+	  
+		</bean>
 </beans>

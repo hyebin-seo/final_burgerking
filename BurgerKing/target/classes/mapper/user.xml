@@ -38,5 +38,13 @@
      select * from user_info where user_name = #{user_name} and user_email = #{user_email}
    
    </select>
+   
+   <update id="auth_pwd" parameterType="com.burger.login.model.UserDTO">
+   
+     update user_info set user_pwd = #{user_pwd} where user_email = #{user_email}
+     
+   </update>
+   
+  
   </mapper>
 
