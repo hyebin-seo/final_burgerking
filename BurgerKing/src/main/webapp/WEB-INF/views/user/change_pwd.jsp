@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +18,31 @@
 <!-- Lgoin.css 연결 -->
 <link rel="stylesheet" href="resources/css/user/find.css">
 
+<style type="text/css">
+/* 중복아이디 존재하지 않는경우 */
+.id_check_result1 {
+	color: green;
+	display: none;
+}
+/* 중복아이디 존재하는 경우 */
+.id_check_result2 {
+	color: red;
+	display: none;
+}
+
+.pwd_check_result {
+	color: red;
+	display: none;
+}
+
+.pwd_check_result1 {
+	color: green;
+	display: green;
+}
+</style>
 
 
-
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 
@@ -44,6 +64,8 @@
 		});
 
 	});
+	
+    alert('${msg}')
 </script>
 </head>
 <body>
@@ -62,7 +84,7 @@
 				<div style="margin-left: 10%; margin-right: 10%">
 
 					<h1>
-						ㅁㄴㅇ<span>버거킹</span>
+						멋진 벅킹!<span>버거킹</span>
 					</h1>
 
 				</div>
@@ -92,6 +114,7 @@
 		<div class="noid_order">
 
 			<div id="wrapper">
+			
 				<!--탭 메뉴 영역 -->
 
 				<ul class="tabs">
@@ -105,37 +128,61 @@
 					<div id="tab1" class="tab_content">
 						<!--Content-->
 						<div>
-							<h3>가입시 회원정보로 등록한 아이디는 <b>${user_id}</b> 입니다.  </h3>
+							<h3>
+								가입시 회원정보로 등록한 아이디는 <b>${user_id}</b> 입니다.
+							</h3>
 						</div>
 						<form action="find_id.do" method="post">
-							<div>
-								
-								
-							</div>
-							
-							</form>
+							<div></div>
+
+						</form>
 					</div>
 
 					<div id="tab2" class="tab_content">
 						<!--Content-->
-						<h1>tab2영역</h1>
-						내용 내용 내용 내용 내용 내용
+
+						<div>
+						<div>
+							<h3>
+								변경할 비밀번호를 작성해 주세요!!
+							</h3>
+						</div>
+							<form action="auth_pwdOk.do" method="post">
+								<div class="mb-3">
+									<label for="pwd" class="form-label">비밀번호</label> <input
+										type="password" name="user_pwd" required
+										class="form-control pwd_check" id="pwd">
+								</div>
+
+								<div class="mb-3">
+									<label for="pwd_check" class="form-label">비밀번호 확인</label> <input
+										type="password" required
+										class="form-control pwd_check" id="pwd_check">
+									<p>
+										<span class="pwd_check_result">비밀번호가 일치하지 않습니다.</span> <span
+											class="pwd_check_result1">아주멌진 비밀번호입니다!</span>
+									<p>
+									<input type="hidden" value="${user_email}" name="user_email">
+								</div>
+								<input type="submit" value="확인">
+							</form>
+						</div>
 					</div>
 
 				</div>
 
-				</form>
+
 			</div>
 		</div>
 	</section>
 
 
 	<footer>
-		<jsp:include page="footer.jsp" />
+		<jsp:include page="../footer.jsp" />
 	</footer>
 
 	<!-- js파일에 연결  -->
-	<script type="text/javascript" src="resources/js/login/login.js"></script>
-	</div>
+	<script type="text/javascript" src="resources/js/login/join.js"></script>
+	
 </body>
 </html>

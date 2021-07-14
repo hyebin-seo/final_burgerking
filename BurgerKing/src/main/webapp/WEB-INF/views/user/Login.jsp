@@ -145,7 +145,7 @@
 
 
 	<footer>
-		<jsp:include page="footer.jsp" />
+		<jsp:include page="../footer.jsp" />
 	</footer>
 
 	<!-- js파일에 연결  -->

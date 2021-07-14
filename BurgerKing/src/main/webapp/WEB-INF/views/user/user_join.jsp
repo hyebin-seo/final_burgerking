@@ -49,7 +49,7 @@
 </head>
 <body>
 
-   <jsp:include page="header.jsp" />
+   <jsp:include page="../header.jsp" />
 
 	
 	<div>
@@ -134,7 +134,7 @@
 		
 	</div>
 	<br><br>
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="../footer.jsp" />
 
 
 
