@@ -12,6 +12,8 @@
 
 <!-- 주소지 찾기 팝업 -->
 <div class="popWrap m_FullpopWrap">
+
+	<!-- 주소지 검색 -->
     <div class="popbox01">
         <div class="M_headerWrap">
             <div class="titleBar">
@@ -120,6 +122,7 @@
         </div>
     </div>
     
+    <!-- 별칭 지정 팝업 -->
     <div class="popbox01 " style="display: none;">
         <div class="popcont">
             <p class="poptxt01"><strong>별칭을 지정하여 <br><em>MY배달지</em>로 등록하세요.</strong></p>

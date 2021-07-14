@@ -28,10 +28,13 @@ button {
     z-index: 100;
 }
 
+/* 주소검색 팝업+별칭 지정 팝업 */
 .m_FullpopWrap .popbox01 {
-    background: #f2ebe6;
+    /* background: #f2ebe6; */
+    background: #fff;
 }
 
+/* 팝업창 */
 .popbox01, .popbox02 {
     position: absolute;
     left: 50%;
@@ -45,6 +48,81 @@ button {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
+.poptxt01 {
+	margin: 19px 0;
+	font-size: 1.4rem;
+	text-align: center;
+	line-height: 120%;
+}
+
+.inpbox {
+	position: relative;
+}
+
+.inpbox input {
+	width: 100%;
+	padding: 0 25px 3px 5px;
+}
+
+.page_count {
+	margin-top: 10px;
+	font-size: 16px;
+	text-align: right;
+}
+
+.c_btn:last-child {
+	margin-bottom: 0;
+}
+
+.c_btn {
+	text-align: center;
+}
+
+.pop_btn.item2 a, .pop_btn.item2 button {
+	box-sizing: border-box;
+	float: left;
+	width: 50%;
+	margin: 0;
+	font-size: 1.3rem;
+}
+
+.c_btn.item2 a, .c_btn.item2 button {
+	box-sizing: border-box;
+	float: left;
+	width: 50%;
+	/* width: calc(50% - 4px); */
+	font-size: 1.3rem;
+}
+
+.btn02.dark, .btn02.st02 {
+	background-color: #2e2e2e;
+}
+
+.pop_btn a, .pop_btn button {
+    border-radius: 0;
+}
+
+.btn02, .btn02.red {
+    display: inline-block;
+    height: 84px;
+    padding: 20px 10px;
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+    /* background: #e22219 url(https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png) repeat-x 0 0; */
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png) repeat-x 0 0;
+    background-size: auto 100%;
+}
+
+.btn02.red {
+	background: #e22219 url(https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png) repeat-x 0 0;
+}
+
+
+
 
 .popWrap .titleBar {
     position: relative;
@@ -190,6 +268,7 @@ button {
 .address_result {
     padding: 25px 38px 0;
     background: #f2ebe6;
+    width: 490px;
 }
 
 .address_result .txt_result span {

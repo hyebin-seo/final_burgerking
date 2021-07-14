@@ -241,6 +241,8 @@ function pageMake(jsonStr){
 	}	
 }
 
+var addr1;
+var addr2;
 
 // 주소 클릭 이벤트
 $(document).ready(function () {
@@ -278,13 +280,16 @@ $(document).ready(function () {
 			$(".btn_del01").css("display","");
 			
 			$(".btn02").prop("disabled", false);
-			$(".btn02").addClass("red");
+
+			// 별칭 팝업에서 취소/등록 버튼도 pop_btn>btn02이기 때문에
+			// 걔는 안 걸리고 배송지 설정 버튼만 걸리게 해줘야됨
+			$(".full_type>.btn02").addClass("red");
 			
 		}else{
 			$(".btn_del01").css("display","none");
 			
 			$(".btn02").prop("disabled", true);
-			$(".btn02").removeClass("red");
+			$(".full_type>.btn02").removeClass("red");
 		}
 			
 	});
@@ -300,6 +305,13 @@ $(document).ready(function () {
 			
 	});
 	
+	// '이 주소로 배달지 설정' 버튼 클릭시 두 번째 popbox01 (별칭 팝업창) div가 보이도록 하기
+	$(".btn02").on("click", function() {
+		
+		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "none");
+		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "");
+		
+	});
 	
 	// 클릭한 버튼의 주소를 가져오는 함수(도로명 주소, 지번 주소)
 	//$(document).on("click", "button[class='btn_detail']", function () {
@@ -369,6 +381,23 @@ $(document).ready(function () {
 	$(document).on("click", "button[class='btn_detail cls10']", function () {
 		console.log($(".addr_list.cls10 li p:nth-child(2)").first().text());
 		console.log($(".addr_list.cls10 li p:nth-child(3)").first().text());
+	});
+	
+	
+// * 배송지 팝업 창에서 사용하는 함수들 *
+	
+	// '취소' 버튼 클릭시 첫 번째 popbox01 (주소 검색 팝업창) div가 보이도록 하기
+	$(document).on("click", "a[class='btn02 m_btn01_s dark']", function() {
+		
+		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "");
+		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "none");	
+		
+		// MY배달지 등록 체크는 풀린 상태로 돌아가게
+		$(".chk_my .check02").removeAttr("checked");
+		$(".check02").removeClass("chekimg");
+		
+		// 상세주소는 입력한 거 그대로 있어야 되는데 지금도 그냥 잇음.
+		
 	});
 	 
 });
