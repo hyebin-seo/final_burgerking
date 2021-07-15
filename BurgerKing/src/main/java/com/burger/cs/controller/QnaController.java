@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class QnaController {
 
 	@RequestMapping("Qna.do")
-	public String MoveFranchise() {
+	public String qna() {
 		return "Qna";
+	}
+	
+	@RequestMapping("qna_popup.do")
+	public String qna_popup() {
+		return "qna_popup";
 	}
 }
 
