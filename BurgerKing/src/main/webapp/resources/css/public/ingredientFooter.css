@@ -64,6 +64,7 @@
 
 .txtlist01 li {
     position: relative;
+    list-style: disc;
 /*     padding-left: 12px; */
 }
 
