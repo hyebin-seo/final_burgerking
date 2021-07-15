@@ -157,7 +157,7 @@
 									<dd>
 										<div class="inpbox">
 											<label><input type="email"
-												placeholder="이메일주소를 입력해주세요" name="user_email" class="st02"
+												placeholder="이메일주소를 입력해주세요" name="user_id" class="st02"
 												required="required">
 												<button type="button" class="btn_del02" style=""></button></label>
 											<p class="txt" style="display: none;">핸드폰 번호를 입력해 주세요.</p>

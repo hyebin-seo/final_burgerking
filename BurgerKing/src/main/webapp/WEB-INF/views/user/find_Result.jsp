@@ -129,7 +129,7 @@
 								<p><span>임시비밀번호 : </span><input type="text" name="fake_pwd" required="required"
 									size="40" placeholder="발급받은 임시비밀번호를 입력해주세요"></p>
 									<input type="hidden" value="${db_pwd}" name="db_pwd">
-									<input type="hidden" value="${user_email}" name="user_email">
+									<input type="hidden" value="${user_id}" name="user_id">
                                 <input type="submit" value="확인">
 							</form>
 						</div>

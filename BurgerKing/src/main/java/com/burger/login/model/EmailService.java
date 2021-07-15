@@ -30,7 +30,7 @@ public class EmailService {
 			MimeMessageHelper messageHelper  = new MimeMessageHelper(message,true,"UTF-8");
 			
 			
-			messageHelper.setFrom("hyeongjun3221@gmail.com","안형준");
+			messageHelper.setFrom("@naver.com","안형준");
 		    messageHelper.setSubject(subject);
 		    messageHelper.setTo(to);
 		    messageHelper.setText(body);

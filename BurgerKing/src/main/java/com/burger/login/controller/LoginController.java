@@ -174,7 +174,7 @@ public class LoginController {
 			String msg = "아이디를 찾았습니다.";
 			model.addAttribute("msg", msg);
 			model.addAttribute("user_id", dto.getUser_id());
-			model.addAttribute("user_email", dto.getUser_email());
+			
 
 		}
 		return "user/find_Result";
@@ -213,12 +213,12 @@ public class LoginController {
 			String info = "안녕하세요." + dto.getUser_name() + "회원님\n 비밀번호 재설정을 위한 경로를 다음과 같이 보내드립니다." + "\n 아이디 :"
 					+ dto.getUser_id() + "" + "\n 임시비밀번호 :" + random;
 
-			EmailService.sendMail(dto.getUser_email(), "버거킹 임시비밀번호 변경 인증안내", info);
+			EmailService.sendMail(dto.getUser_id(), "버거킹 임시비밀번호 변경 인증안내", info);
 
 			String msg = "임시비밀번호를 발급했습니다.";
 			model.addAttribute("msg", msg);
 			model.addAttribute("db_pwd", random);
-			model.addAttribute("user_email", dto.getUser_email());
+			model.addAttribute("user_id", dto.getUser_id());
 
 		} else {
 			
@@ -237,7 +237,7 @@ public class LoginController {
 	// 임시비밀번호 맞는지 확인하는 작업.
 	@RequestMapping("auth_pwd.do")
 	public String auth(@RequestParam("fake_pwd") String fake_pwd, @RequestParam("db_pwd") String db_pwd,
-			@RequestParam("user_email") String user_email, HttpServletResponse response, Model model) throws Exception {
+			@RequestParam("user_id") String user_id, HttpServletResponse response, Model model) throws Exception {
 
 		
 
@@ -253,7 +253,7 @@ public class LoginController {
 		} else {
 			String msg = "확인되었습니다.";
 		     model.addAttribute("msg", msg);
-		     model.addAttribute("user_email", user_email);
+		     model.addAttribute("user_id", user_id);
 		    
 					
 		}

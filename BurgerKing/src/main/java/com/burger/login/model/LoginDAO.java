@@ -21,6 +21,11 @@ public interface LoginDAO {
 	
 	public int change_pwd(UserDTO dto);
 	
+	//카카카오로 회원가입시 DB 주입
+	public int kakaoJoin(UserDTO dto);
+	//카카오 아이디 확인.
+	public UserDTO kakaoidCheck(UserDTO dto);
+	
 	
 	
 

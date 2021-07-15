@@ -9,7 +9,7 @@
   <!-- 회원가입 메서드 -->
    <insert id="join_insert" parameterType="com.burger.login.model.UserDTO">
    
-     insert into user_info values (#{user_id}, #{user_pwd}, #{user_name}, #{user_phone}, #{user_addr}, sysdate, #{user_gender}, #{user_email})
+     insert into user_info values (#{user_id}, #{user_pwd}, #{user_name}, #{user_phone}, #{user_addr}, sysdate, #{user_gender})
    
    </insert>
    
@@ -35,16 +35,29 @@
    <!-- 비밀번호 찾기 -->
    <select id="find_pwd" resultType="com.burger.login.model.UserDTO">
      
-     select * from user_info where user_name = #{user_name} and user_email = #{user_email}
+     select * from user_info where user_name = #{user_name} and user_id = #{user_id}
    
    </select>
    
    <update id="auth_pwd" parameterType="com.burger.login.model.UserDTO">
    
-     update user_info set user_pwd = #{user_pwd} where user_email = #{user_email}
+     update user_info set user_pwd = #{user_pwd} where user_id = #{user_id}
      
    </update>
    
+    <!-- 카카오 회원가입 메서드 -->
+   <insert id="kakaoJoin" parameterType="com.burger.login.model.UserDTO">
+   
+     insert into user_info values (#{user_id},null, #{user_name}, null, null, sysdate, null)
+   
+   </insert>
+   
+   
+   <select id="kakaoidCheck" resultType="com.burger.login.model.UserDTO">
+   
+    select * from user_info where user_id = #{user_id} and user_name = #{user_name}
+    
+   </select>
   
   </mapper>
 

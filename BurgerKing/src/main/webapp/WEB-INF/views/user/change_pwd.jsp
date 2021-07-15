@@ -162,7 +162,7 @@
 										<span class="pwd_check_result">비밀번호가 일치하지 않습니다.</span> <span
 											class="pwd_check_result1">아주멌진 비밀번호입니다!</span>
 									<p>
-									<input type="hidden" value="${user_email}" name="user_email">
+									<input type="hidden" value="${user_id}" name="user_id">
 								</div>
 								<input type="submit" value="확인">
 							</form>

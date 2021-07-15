@@ -43,10 +43,10 @@
 	<!-- 이메일 발송 bean 설정 -->
 	<bean id="mailSender"
 		class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="host" value="smtp.gmail.com" /> <!-- gmail을 사용 -->
-		<property name="port" value="587" />
-		<property name="username" value="hyeongjun3221@gmail.com" />
-		<property name="password" value="dksgudwns1!" />
+		<property name="host" value="smtp.naver.com" /> <!-- gmail을 사용 -->
+		<property name="port" value="465" />
+		<property name="username" value="@naver.com" />  <!-- 송신이 되는 이메일 주소와 비밀번호를 작성 그러나 pop3설정 해주어야함  -->
+		<property name="password" value="" />
 		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.transport.protocol">smtp</prop>
@@ -54,7 +54,7 @@
 				<prop key="mail.smtp.starttls.enable">true</prop>
 				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
 				<prop key="mail.debug">true</prop>
-				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+				<prop key="mail.smtp.ssl.trust">smtp.naver.com</prop>
 				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
 			</props>
 		</property>

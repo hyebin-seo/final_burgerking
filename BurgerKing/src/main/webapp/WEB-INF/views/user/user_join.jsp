@@ -59,7 +59,7 @@
 		<form method="post" action="<%=request.getContextPath()%>/join_Ok.do" style="width: 25%; margin: auto; padding-top: 5vh;">
 	  		<div class="mb-3">
 	    		<label for="id" class="form-label">아이디</label>
-	    		<input type="text" name="user_id" required class="form-control" id="user_id">
+	    		<input type="email" name="user_id" required class="form-control" id="user_id" placeholder="아이디(이메일)를 입력해주세요!" >
 	    		<!-- 아이디 중복체크 결과 들어갈 부분 -->
 	  			<span class="id_check_result1">엄청나게 이쁜 아이디입니다!!</span>
 	  			<span class="id_check_result2">아이디가 이미 존재합니다.</span>
@@ -88,11 +88,6 @@
 	    		<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
 	  		</div>
 	  		
-	  		<div class="mb-3">
-	    		<label for="email" class="form-label">E-MAIL</label>
-	    		<input type="email" name="user_email" required class="form-control" id="email" aria-describedby="emailHelp">
-	    		<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-	  		</div>
 	  		
 	  		<div class="mb-3">
 	  			<label style="display: block; " for="addr" class="form-label">주소</label>
