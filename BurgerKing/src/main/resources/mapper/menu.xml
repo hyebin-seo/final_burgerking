@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.menu.model.MenuDAO">
+	
+	<select id="menuList" resultType="com.burger.menu.model.MenuDTO">
+		select * from menu where menu_cat = #{category}
+		and (menu_show = 'delivery' or menu_show = 'both')
+	</select>
+	
+</mapper>

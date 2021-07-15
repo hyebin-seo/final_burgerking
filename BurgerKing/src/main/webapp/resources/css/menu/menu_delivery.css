@@ -1,0 +1,396 @@
+@charset "UTF-8";
+
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+html {
+	font-size: 16px;
+	font-family: 'S-CoreDream-5Medium';
+}
+
+body {
+	color: #000;
+	word-wrap: normal;
+	word-break: keep-all;
+	min-height: 100%;
+	background: #f2ebe6;
+}
+
+body * {
+	font-family: 'S-CoreDream-5Medium';
+}
+
+a, div, li {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 900;
+	font-size: 1em;
+}
+
+h4 {
+	display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+em {
+	color: #e22219;
+}
+
+address, em {
+	font-style: normal;	
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align: top;
+}
+
+img {
+	border: none;
+}
+
+
+
+
+/* ***메뉴판 전체 영역*** */
+.contentsWrap {
+	min-height: 450px;
+	margin: 0 auto;	
+}
+
+/* ***까만 상단 영역*** */
+/* 아직 안 넣음 */
+
+
+/* ***메뉴판 영역*** */
+
+/* 전체 감싸기 */
+.contentsBox01 {
+	padding: 50px 0 45px;		/* (위아래 여백) */
+}
+
+/* 내용 감싸기 */
+.web_container {				/* (위아래 여백) */
+	max-width: 1184px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* 메뉴/카테고리 */
+.subtitWrap {
+	position: relative;
+	margin-bottom: 26px;
+}
+
+.contentsWrap .page_tit {	/* '메뉴' */
+	margin-bottom: 15px;
+	font-size: 2.5rem;
+	line-height: 100%;
+}
+
+.subtitWrap .tab01 {		/* 카테고리 */
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin: -17.5px 0 0;
+}
+
+.tab01 {
+	overflow: auto;
+}
+
+.tab01 ul {
+	display: table;
+}
+
+.tab01 li:first-child {
+	padding-left: 0;
+}
+
+.tab01 li {
+	position: relative;
+	display: table-cell;
+	padding: 0 18px;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.sustitWrap .tab01 button {
+	height: 35px;
+	font-size: 1.125rem;
+	border-width: 3px 0;
+}
+
+.tab01 button {
+	height: 54px;
+	padding: 5px 0;
+}
+
+.tab01 a, .tab01 button {
+	display: inline-block;
+	padding: 10px 1px;
+	font-weight: 700;
+	font-size: 1.375rem;
+	color: #b8b8b8;
+	border: o solid transparent;
+	border-width: 4px 0;
+}
+
+.tab01 a>*, .tab01 button>* {
+    vertical-align: middle;
+}
+
+/* 선택한 카테고리 */
+.tab01 li.on a, .tab01 li.on button {
+	color: #e22219;
+	border-bottom-color: #e22219;
+}
+
+
+/* 메뉴판 */
+
+.hide {
+	position: absolute!important;
+    left: -10000px;
+    top: -10000px;
+    visibility: hidden;
+}
+
+/* 데이터 없는 경우 */
+.bg02 .nodata, .bg_w .nodata {
+	color: silver;
+	background: url(https://www.burgerking.co.kr/dist/img/ico_nodata01_type02.e0a98f2b.png);
+}
+
+.nodata, .nodata .tit {
+	font-size: 1.5rem;
+	line-height: 150%;
+}
+
+.nodata {
+	padding: 370px 10px 10px;
+    color: #766e69;
+    text-align: center;
+    /* 이 부분 이미지 따오는 게 안 돼서 위에 이미지랑 동일한 거로 넣어놨습니당 */
+    background: url(https://www.burgerking.co.kr/dist/img/ico_nodata01_type02.e0a98f2b.png) no-repeat center 150px;
+    z-index: 10;
+}
+
+/* 메뉴 리스트 */
+.prdmenu_list {
+	margin-top: 60px;
+	padding-bottom: 46px;
+	overflow: hidden;
+}
+
+.prdmenu_list li {		/* each 메뉴 */
+	position: relative;
+    float: left;
+    width: 25%;
+    margin-bottom: 8px;
+    
+    /* 혜린 추가 */
+    /* 높이 없으니까 이름 긴 메뉴 밑에는 빈 칸으로 나와서 추가함! */
+    max-height: 259px;
+}
+
+.prdmenu_list .prd_img {	/* 메뉴 이미지 */
+	max-width: 220px;
+    height: 144px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.prd_mig {
+	position: relative;
+}
+
+/* NEW / BEST / null */
+.ico_flag_best, .ico_flag_new {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 49px;
+    height: 35px;
+    text-align: left;
+    text-indent: -9999em;
+ 	background: url(../../img/menu/img_new.png) no-repeat 0;
+}
+
+.prdmenu_list .prd_img img {
+	width: 100%;
+}
+
+.prdmenu_list .cont {		/* 메뉴 내용 */
+	min-height: 115px;
+	padding: 30px 5px 0;
+	text-align: center;
+}
+
+.prdmenu_list .tit {		/* 메뉴 이름 */
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+
+.predmenu_list .set_info {
+	font-size: 1rem;
+}
+
+.set_info {
+	display: block;
+    margin: 5px 0;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #8d8d8d;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+.prdmenu_list .price {
+    margin-top: 5px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #e22219;
+    white-space: nowrap;
+}
+
+.btn_detail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -99999em;
+    background: transparent;
+}
+
+
+/* 유의사항 */
+
+.tit03 {
+	position: relative;
+    margin: 25px 0;
+    padding: 12px 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #000;
+}
+
+.tit03>h2, .tit03>h3, .tit03>h4 {
+    margin-right: 10em;
+}
+
+.tit03 button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: 1.4em;
+    margin-top: -.7em;
+    font-size: 1.125rem;
+    color: #2e2e2e;
+}
+
+.btn_infoingredient {
+    position: relative;
+    padding: 0 0 0 24px;
+    background: url(../../img/menu/img_info.png) no-repeat 0;
+}
+
+.btn_infoingredient>* {
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.btn_infoingredient>:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background: url(../../img/menu/img_next.png) no-repeat 100%;
+}
+
+.txtlist01 {
+    margin: 7px 0 7px 5px;
+    line-height: 167%;
+}
+
+.txtlist01 li {
+    position: relative;
+    padding-left: 12px;
+}
+
+.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 1.67em;
+    background: url(../../img/menu/img_dot.png) no-repeat 0;
+}
+
+
+
+/* ***모바일 화면*** */
+/* 아직 안 넣음 */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.subtitWrap .tab01 li {
+		padding: 0 12px;
+	}
+	
+	.subtitWrap .tab01 button {
+		font-size: 1rem;
+	}
+	
+	subtitWrap .tab01 button {
+    font-size: 1rem;
+    
+    
+}
+}
