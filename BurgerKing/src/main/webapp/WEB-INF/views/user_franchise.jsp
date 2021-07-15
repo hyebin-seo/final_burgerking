@@ -92,6 +92,33 @@
 		</div>
 		
 	</div>
+		<div class="contentsBox01 bg_w branch_reg">
+			<div class="web_container">
+				<h5 class="tit_1">가맹점 신청방법</h5>
+				<ol class="step">
+					<li>
+						<strong>신청서 작성</strong>
+					</li>
+					<li>
+						<strong>신청서 접수</strong>
+					</li>
+					<li>
+						<strong>전화 상담</strong>
+					</li>
+					<li>
+						<strong>대면 상담</strong>
+					</li>
+				</ol>
+				<div class="c_btn">
+					<a class="btn01 red">
+						<span>신청서 작성</span>
+					</a>
+					<br>
+					<br>
+					<a href="mailto:kjsun124@naver.com?Subject=가맹점신청문의" target="_top">가맹점 신청 문의 : layeong.kang@bkr.co.kr </a>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -33,6 +33,7 @@ div{
 .hide{
 	display: none;
 }
+/*공통 속성 박스 구분*/
 .web_container{
 	box-sizing: border-box;
 	max-width: 1184px; 
@@ -172,7 +173,7 @@ dt {
 	height: 330px;
 	margin-top: 70px;
 	padding: 59px 65px; 
-	background: #fff url("../../img/cs/franchise.jpg") no-repeat 100% 0; 
+	background: #fff url("../../img/cs/franchise.jpg") no-repeat 100% 0;
 	overflow: hidden;
 }
 .branch_intro02 .condition:before {
@@ -242,4 +243,104 @@ dt {
 /*임대면적 아이콘*/
 .branch_intro02 .condition .tit_ico.king:before {
     background-image: url("../../img/cs/store.png");
+}
+
+/*가맹점 신청방법 부분*/
+.branch_reg {
+    padding: 96px 0 120px;
+    font-size: 1.625rem;
+    color: #89513a;
+    text-align: center;
+}
+/*가맹점 신청방법 타이틀*/
+.branch_reg .tit_1 {
+	font-family: 'S-CoreDream-9Black';
+    font-size: 3rem;
+    line-height: 100%; 
+    text-align: center;
+}
+/*가맹점 신청방법 단계*/
+.branch_reg .step {
+    margin: 62px 0 54px;
+    font-size: 1.625rem;
+    overflow: hidden;
+}
+strong {
+    font-weight: bold;
+}
+
+/*가맹점 모집 순서들 li - 첫 번째 사진 */
+.branch_reg .step li {
+	font-family: 'S-CoreDream-9Black';
+	list-style : none;
+    position: relative;
+    float: left;
+    width: 25%;
+    padding-top: 210px;
+    background: url(https://www.burgerking.co.kr/dist/img/ico_branch_step01.8f6ca023.png) no-repeat top;
+}
+
+/*두 번째 사진*/
+.branch_reg .step li:nth-child(2) {
+    background-image: url(https://www.burgerking.co.kr/dist/img/ico_branch_step02.61fa3c89.png);
+}
+/*세 번째 사진*/
+.branch_reg .step li:nth-child(3) {
+    background-image: url(https://www.burgerking.co.kr/dist/img/ico_branch_step03.0375f035.png);
+}
+/*네 번째 사진*/
+.branch_reg .step li:nth-child(4) {
+    background-image: url(https://www.burgerking.co.kr/dist/img/ico_branch_step04.65dc15e3.png);
+}
+
+/*가맹점 모집 사진 단계 li- 화살표*/
+.branch_reg .step li:after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 20px;
+    height: 188px;
+    background: url("../../img/cs/arrow.png") no-repeat 50%;
+}
+/*마지막 li요소는 화살표 보이지 않게*/
+.branch_reg .step li:last-child:after {
+    display: none;
+}
+
+/*신청서 작성 버튼 위치*/
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+/*버튼 이미지*/
+.btn01.red {
+    background: url("../../img/cs/button.png") no-repeat 0 0;
+    background-size: 100% 100%;
+}
+/*버튼 디자인*/
+.btn01 {
+	font-family: 'S-CoreDream-9Black';
+    display: inline-block;
+    width: 256px;
+    height: 68px;
+    font-size: 1.5rem;
+    padding: 12px 10px 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+a {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+   	font-family: 'S-CoreDream-5Medium';
+   	letter-spacing: -0.9px;
 }
