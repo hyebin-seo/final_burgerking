@@ -5,10 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>문의</title>
-<!-- 팝업 이벤트
-<script language="javascript">
-  function qna_popup() { window.open("qna_popup.jsp", "qna_popup", "width=400, height=300, left=400, top=400"); }
-  </script> -->
+<script src="resources/js/cs/qna.js"></script>
+
 <link rel="shortcut icon" type="image/x-icon"
 	href="resources/img/main/fab.ico">
 <link  href="resources/css/cs/qna.css"  rel="stylesheet"  type="text/css">
@@ -30,11 +28,11 @@
 				<a>
 					<strong>앱 이용안내 페이지</strong>
 				</a>
-				"와"
+				와
 				<a> 
 					<strong>FAQ 페이지</strong>
 				</a>
-				"에서도 도움을 받으실 수 있습니다."
+				에서도 도움을 받으실 수 있습니다.
   			 	</span>
   			 	</p>
   			 </div>
@@ -59,7 +57,7 @@
   		 				</dl>
   		 				 <div class = "cs_email">		 
   		 					<d1>
-  		 					 <button type="button" class = "btn_qna" onClick = "qna_popup();">
+  		 					 <button type="button" class = "btn_qna" onclick="qna_popup()">
   		 					<!-- <dt class="p1">온라인 문의</dt> -->
   		 					<span>온라인 문의</span>
   		 					</button>
