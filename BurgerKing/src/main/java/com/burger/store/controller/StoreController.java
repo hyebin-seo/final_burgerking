@@ -2,6 +2,8 @@ package com.burger.store.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,7 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.burger.store.model.SearchDTO;
 import com.burger.store.model.StoreDAO;
 import com.burger.store.model.StoreDTO;
 
@@ -39,13 +43,7 @@ public class StoreController {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter script = response.getWriter();
-		
-		System.out.println("dto-pi_x:"+dto.getPi_x());
-		System.out.println("dto-pi_y:"+dto.getPi_y());
-		
-		System.out.println("pi_x:"+pi_x);
-		System.out.println("pi_y:"+pi_y);
-		
+
 		int res = dao.insertStore(dto);
 
 		if(res > 0) {
@@ -54,12 +52,48 @@ public class StoreController {
 			script.println("</script>");
 		} else {
 			script.println("<script>");
-			script.println("alert('매장 등록 실패.')");
+			script.println("alert('매장등록실패')");
 			script.println("history.back()");
 			script.println("</script>");
 		}
 	}
 	
+	@RequestMapping("near_store.do")
+	@ResponseBody
+	public HashMap<String, Object> nearStoreOpen(SearchDTO dto) {
+
+		List<StoreDTO> list = dao.StoreMapSearch(dto);
+		
+		HashMap<String, Object> result = new HashMap <String, Object>();
+		result.put("storeCount", list.size());
+		result.put("store", list);
+		
+		return result;
+	}
 	
+	@RequestMapping("store_detail.do")
+	@ResponseBody
+	public HashMap<String, Object> storeDetailOpen(SearchDTO dto) {
+
+		StoreDTO sdto = dao.StoreDetailOpen(dto.getStore_key());
+		
+		HashMap<String, Object> result = new HashMap <String, Object>();
+		result.put("store", sdto);
+		
+		return result;
+	}
+	
+	@RequestMapping("store_name_search.do")
+	@ResponseBody
+	public HashMap<String, Object> store_name_search(SearchDTO dto) {
+
+		List<StoreDTO> list = dao.StoreNameSearch(dto);
+		
+		HashMap<String, Object> result = new HashMap <String, Object>();
+		result.put("storeCount", list.size());
+		result.put("store", list);
+		
+		return result;
+	}
 	
 }
