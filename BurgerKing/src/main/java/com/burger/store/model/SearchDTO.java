@@ -6,6 +6,10 @@ import lombok.Data;
 
 @Data
 public class SearchDTO {
+	private String store_key;
+	private String store_name;
+	private String store_addr;
+	private String store_contact;
 	private int delivery; 		//매장옵션-딜리버리
 	private int kingorder; 		//매장옵션-킹오더
 	private int allday; 		//매장옵션-24시간매장
