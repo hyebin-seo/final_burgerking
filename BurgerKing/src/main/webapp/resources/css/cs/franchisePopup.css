@@ -1,0 +1,412 @@
+@charset "UTF-8";
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+html {
+	font-size: 16px;
+}
+body {
+    min-height: 100%;
+    color: #000;
+    background: #f2ebe6;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+div{
+	display: block;
+}
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+	outline: none;
+}
+
+/* 정중앙 div */
+.popbox01, .popbox02 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 568px;
+    max-height: 95%;
+    margin-left: -284px;
+    padding-bottom: 84px;
+    background: #fff;
+    overflow: auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/*팝업창 타이틀 선*/
+.franchisePopWrap .titleBar {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+/*팝업창 타이틀 */
+.franchisePopWrap .titleBar .page_tit {
+    height: 104px;
+    margin: 0;
+    padding: 20px 70px 20px 40px;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 63px;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'S-CoreDream-9Black';
+}
+
+/*팝업창 닫기 버튼*/
+.popbox01 .title_btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.popbox01 .title_btn button {
+    width: 100px;
+    height: 100%;
+}
+
+.franchisePopWrap .btn_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/*팝업창 닫기 버튼*/
+.btn_close{
+	width: 40px;
+    height: 40px;
+    text-indent: -9999em;
+	background: url("../../img/cs/close.png")no-repeat 50%;
+	border: 0;
+}
+
+/*가맹 신청 입력 폼*/
+.nopadding {
+    padding: 0!important;
+}
+
+.popcont.nopadding .writeForm01:first-child {
+    padding-top: 10px;
+}
+
+.writeForm01 {
+	font-family: 'S-CoreDream-9Black';
+    padding: 30px 38px;
+    font-size: 1.25rem;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.dlist01 {
+    display: table;
+    width: 100%;
+}
+
+.dlist01>dl {
+    display: table-row;
+}
+/*생년월일&임대차 보유 유무*/
+.dlist01 dd, .dlist01 dt {
+    display: table-cell;
+    height: 70px;
+    padding: 5px 0;
+    vertical-align: middle;
+}
+/*생년월일&임대차 보유 유무*/
+.dlist01 dt {
+    width: 28%;
+    padding-right: 10px;
+    font-weight: 700;
+}
+
+/*생년월일&임대차 보유 유무*/
+.dlist01 dt.vtop {
+    height: 1em;
+    padding-top: 26px;
+    vertical-align: top;
+}
+
+.inp_birth {
+    overflow: hidden;
+}
+
+.inp_birth>* {
+    float: left;
+    width: 32%;
+}
+/*임대차 보유 유무 라디오버튼으로 바꿔야 하는데*/
+.dlist01 dt.vtop+dd {
+    height: 70px;
+}
+
+.formlistWrap.item3>label {
+    min-width: 32%;
+}
+
+.formlistWrap>label:last-child {
+    padding-right: 0;
+}
+
+.formlistWrap>label {
+    display: inline-block;
+    padding: 5px 5px 5px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+input[type=checkbox], input[type=radio] {
+    position: absolute;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
+input[type=checkbox]+:before, input[type=radio]+:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 13px;
+    vertical-align: middle;
+}
+
+input[type=radio]+:before {
+    background: url("../../img/cs/fran_radio.png")no-repeat 0;
+}
+input[type=radio]:checked+:before {
+    background-image: url("../../img/cs/fran_radiocheck.png");
+}
+/*보유시 임대차 목적물 면적*/
+.form_list>* {
+    float: left;
+    width: 48%;
+    width: calc(50% - 10px);
+}
+
+/*select*/
+.popcont .writeForm01 input, .popcont .writeForm01 select {
+    font-size: 1.25rem;
+}
+.inp_birth select {
+    width: 70%;
+}
+
+select.st03 {
+    padding-left: 2px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2e2e2e;
+}
+
+select {
+    margin: 0;
+    min-width: 4em;
+    max-width: 100%;
+    height: 64px;
+    padding: 0 32px 3px 0;
+    font-style: normal;
+    font-size: 1.75rem;
+    font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    background: url("../../img/cs/formline.png")repeat-x 0 100%,url("../../img/cs/select.jpg")no-repeat 100%;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+}
+
+
+/*input 박스 */
+.popcont .writeForm01 input, .popcont .writeForm01 select {
+    font-size: 1.25rem;
+}
+
+input[type=email]:only-child, input[type=number]:only-child, input[type=password]:only-child, input[type=search]:only-child, input[type=tel]:only-child, input[type=text]:only-child {
+    max-width: 100%;
+    width: 100%;
+}
+
+input[type=color], input[type=date], input[type=datetime], input[type=email], input[type=file], input[type=month], input[type=number], input[type=password], input[type=rang], input[type=search], input[type=tel], input[type=text], input[type=url] {
+    display: inline-block;
+    height: 66px;
+    margin: 0;
+    padding: 3px 10px 3px 4px;
+    font-weight: 400;
+    font-size: 1.375rem;
+   	font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    vertical-align: middle;
+    background: url("../../img/cs/formline.png") repeat-x 0 100%;
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    
+}
+/*추가 의견*/
+.dlist01+.dlist02 {
+    margin-top: 40px;
+}
+
+.dlist02 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: left;
+}
+
+textarea {
+    width: 100%;
+    padding: 30px 27px;
+   	font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    background: #f8f8f8;
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+}
+
+.page_count {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: right;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+/*약관동의*/
+label {
+    cursor: default;
+}
+
+.container01 {
+    padding: 20px 0;
+}
+
+.container02 {
+    position: relative;
+    margin: 15px 0;
+    padding: 20px 50px;
+    font-size: 1.375rem;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.container02>.auth_list {
+    padding: 0;
+    font-size: 1.25rem;
+}
+
+.auth_list .divide {
+    position: relative;
+    padding: 27px 0;
+}
+
+.auth_list:only-child>* {
+    margin-bottom: 0;
+}
+
+.auth_list>*>span, .auth_list label {
+    display: block;
+    margin-right: 3.5em;
+}
+
+.auth_list label {
+    position: relative;
+    padding-left: 50px;
+}
+
+.auth_list label>span {
+    display: inline;
+}
+
+label, label>span {
+    vertical-align: middle;
+}
+
+input[type=checkbox], input[type=radio] {
+    position: absolute;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
+
+.auth_list>* {
+    position: relative;
+    margin-bottom: 13px;
+    padding: 7px 0;
+}
+
+.auth_list>* {
+    position: relative;
+    margin-bottom: 13px;
+    padding: 7px 0;
+}
+
+.auth_list label>span:before {
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+input.check02+:before {
+    width: 32px;
+    height: 32px;
+    background-image: url("../../img/cs/input.png");
+}
+
+input.check02:checked+:before {
+    background-image: url("../../img/cs/input_check.png")
+}

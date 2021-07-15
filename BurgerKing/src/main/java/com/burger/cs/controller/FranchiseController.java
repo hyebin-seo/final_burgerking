@@ -10,4 +10,9 @@ public class FranchiseController {
 	public String MoveFranchise() {
 		return "user_franchise";
 	}
+	
+	@RequestMapping("Franchise_popup.do")
+	public String MoveFranchisepop() {
+		return "franchisePopup";
+	}
 }
