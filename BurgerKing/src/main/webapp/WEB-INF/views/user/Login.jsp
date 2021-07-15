@@ -81,7 +81,7 @@
 						<form action="login_Ok.do" method="post">
 
 							<p>
-								<input type="text" name="user_id" placeholder="아이디[이메일]"
+								<input type="email" name="user_id" placeholder="아이디[이메일]"
 									id="userId" size="50">
 							</p>
 
@@ -130,8 +130,8 @@
 						간편로그인
 					</h3>
 					<ul class="list">
-						<li class="naver"><a href="#"><span>네이버</span></a></li>
-						<li class="kakao"><a><span>카카오</span></a></li>
+						<li class="naver"><a href="${url}"><span>네이버</span></a></li>
+						<li class="kakao"><a href="https://kauth.kakao.com/oauth/authorize?client_id=af5dfe1033cca6782a64794f4eb1554c&redirect_uri=http://localhost:8765/burger/oauth&response_type=code"><span>카카오</span></a></li>
 						<li class="apple"><a><span>apple</span></a></li>
 					</ul>
 
