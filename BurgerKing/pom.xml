@@ -174,14 +174,6 @@
 			<version>2.4</version>
 		</dependency>
 
-		<!-- 카카오 회원가입 라이브러리 -->
-		<!-- 잭슨 -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.9.5</version>
-		</dependency>
-
 		<!-- httpcore(카카오) -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -219,7 +211,27 @@
 		</dependency>
 
 
-
+		<!--  JSON 방식으로 통신 ( MappingJackson2HttpMessageConverter) -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.0.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>2.0.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
 
 
 
