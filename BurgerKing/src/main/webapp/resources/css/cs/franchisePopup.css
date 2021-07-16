@@ -23,9 +23,9 @@ body {
     word-wrap: normal;
     word-break: keep-all;
 }
-div{
+/* div{
 	display: block;
-}
+} */
 a, div, li {
     -webkit-box-sizing: border-box;
     -o-box-sizing: border-box;
@@ -42,8 +42,21 @@ dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
     padding: 0;
 }
 
-input {
+input, select {
 	outline: none;
+}
+
+.franchisePopWrap{
+	display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+    /* font-family: 'S-CoreDream-5Medium'; */
+    font-family: 'S-CoreDream-9Black';
 }
 
 /* 정중앙 div */
@@ -51,10 +64,11 @@ input {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 568px;
+    width: 600px;
     max-height: 95%;
     margin-left: -284px;
-    padding-bottom: 84px;
+    /* 버튼 위치 때문에 일단 뺌 */
+   	/* padding-bottom: 84px;  */
     background: #fff;
     overflow: auto;
     -webkit-transform: translateY(-50%);
@@ -116,6 +130,13 @@ input {
 .popcont.nopadding .writeForm01:first-child {
     padding-top: 10px;
 }
+
+.popcont {
+    max-height: 580px;
+    padding: 24px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+} 
 
 .writeForm01 {
 	font-family: 'S-CoreDream-9Black';
@@ -320,6 +341,28 @@ textarea {
     font-family: 'S-CoreDream-5Medium';
 }
 
+/*약관 동의 체크 박스*/
+input[type=checkbox], input[type=radio] {
+    position: absolute;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
+input.check02+:before {
+    width: 32px;
+    height: 32px;
+    background-image: url("../../img/cs/input.png");
+}
+
+input.check02:checked+:before {
+    background-image: url("../../img/cs/input_check.png")
+}
+
 /*약관동의*/
 label {
     cursor: default;
@@ -327,16 +370,18 @@ label {
 
 .container01 {
     padding: 20px 0;
+    background: #f2ebe6;
 }
 
 .container02 {
     position: relative;
-    margin: 15px 0;
-    padding: 20px 50px;
+    margin: 10px 30px;
+    padding: 20px 30px;
     font-size: 1.375rem;
     background: #fff;
     -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
     box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .container02>.auth_list {
@@ -351,6 +396,35 @@ label {
 
 .auth_list:only-child>* {
     margin-bottom: 0;
+}
+/*의사요소*/
+.auth_list .divide:first-of-type:before {
+    display: none;
+} 
+
+.auth_list .divide:after, .auth_list .divide:before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: 0;
+    border-top: 2px dashed #e5e5e5;
+}
+
+.auth_list .divide:before {
+    top: -1px;
+}
+
+/*의사 after요소*/
+.auth_list .divide:after {
+    bottom: -1px;
+}
+
+.auth_list .divide:after, .auth_list .divide:before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: 0;
+    border-top: 2px dashed #e5e5e5;
 }
 
 .auth_list>*>span, .auth_list label {
@@ -371,22 +445,12 @@ label, label>span {
     vertical-align: middle;
 }
 
-input[type=checkbox], input[type=radio] {
-    position: absolute;
-    margin: 0;
-    vertical-align: middle;
-    font-size: 1em;
-    border: none;
-    border-radius: 0;
-    -webkit-appearance: none;
-    opacity: 0;
+.auth_list .acc_list {
+    margin-bottom: 0;
 }
 
-
-.auth_list>* {
-    position: relative;
-    margin-bottom: 13px;
-    padding: 7px 0;
+.auth_list:only-child>* {
+    margin-bottom: 0;
 }
 
 .auth_list>* {
@@ -401,12 +465,157 @@ input[type=checkbox], input[type=radio] {
     top: -3px;
 }
 
-input.check02+:before {
-    width: 32px;
-    height: 32px;
-    background-image: url("../../img/cs/input.png");
+.auth_list .acc_tit {
+    padding-right: 30px;
 }
 
-input.check02:checked+:before {
-    background-image: url("../../img/cs/input_check.png")
+.acc_tit {
+    position: relative;
+    padding: 10px 20px 10px 0;
+}
+.auth_list.open .acc_cont, .auth_list .open .acc_cont {
+    padding: 20px;
+}
+
+.auth_list .acc_cont {
+    padding: 0 20px;
+    font-size: 1rem;
+    line-height: 140%;
+    background: #f8f8f8;
+}
+
+.acc_cont {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;  /*내용 숨겨줌*/
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+}
+
+.open .acc_cont{
+	position: relative;
+    height: 100%;
+    overflow: hidden;
+    opacity: 100;  /*숨겨진 내용 보여줌*/
+}
+/*화살표 버튼*/
+.auth_list button>span {
+    padding: 4px 0;
+    border-bottom: 2px solid #000;
+}
+
+.popcont .container02>.auth_list button {
+    top: 0;
+    height: 100%;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.auth_list button {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    height: 1.6em;
+    margin-top: -.8em;
+    padding: 0 5px;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.btn_acc {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999em;
+}
+
+.auth_list .btn_acc:after {
+    right: 0;
+}
+
+.btn_acc:after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background : url("../../img/cs/fran_btn.png") no-repeat 50%;
+    background-size: 15px auto;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transition: transform .3s linear;
+    -webkit-transition: -webkit-transform .3s linear;
+    transition: -webkit-transform .3s linear;
+    transition: transform .3s linear;
+    transition: transform .3s linear,-webkit-transform .3s linear;
+}
+
+.open .btn_acc:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+/*버튼*/
+.pop_btn.full_type {
+    padding: 0;
+}
+
+.pop_btn {
+    /* position: absolute; */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.popWrap .btn02:only-child {
+    max-width: 100%;
+}
+
+.btn02:only-child {
+   width: 100%;
+   /*  max-width: 450px; */
+   max-width: 100%;
+}
+
+.pop_btn button {
+    line-height: normal;
+}
+.pop_btn a, .pop_btn button {
+    border-radius: 0;
+}
+
+.btn02, .btn02.red {
+    display: inline-block;
+    height: 84px;
+    padding: 20px 10px;
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+    background: #e22219 url(https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png) repeat-x 0 0;
+    background-size: auto 100%;
+}
+
+button {
+    margin: 0;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+input:disabled {
+    color: #cdcdcd;
+    background: #f1f1f1;
 }
