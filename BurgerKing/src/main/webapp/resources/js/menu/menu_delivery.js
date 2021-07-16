@@ -1,3 +1,38 @@
+/*$(function() {
+	
+	// 페이지 들어왔을 때 선택된 카테고리에 클래스 on 줘야함
+	$(".item3 li").removeClass("on");
+	
+	if($(".tab01 .item3 button").children("span").text() == ${category}){
+		$(this).parent("li").addClass("on");
+	}
+	
+});*/
+
+// 페이지 로딩 시 전달받은 카테고리에 클래스 on
+window.onload = function() {
+	
+	/*var nowCat = '<c:out value="${category}"/>';*/
+	var nowcat = $("#nowcat").val();
+	
+	if(nowcat == "올데이킹&치킨버거"){
+		nowcat="치킨버거";
+	}
+	
+	//alert(nowcat);
+	
+	$(".item3 li").removeClass("on");
+	
+	//alert($(".tab01 .item3 li:nth-child(2) .button").children("span").text());
+	
+	for(var i=1; i<=7; i++){
+		if($(".tab01 .item3 li:nth-child("+i+") .button").children("span").text() == nowcat){
+			$(".tab01 .item3 li:nth-child("+i+")").addClass("on");
+		}
+	}
+	
+}
+
 $(document).ready(function () {
 	
 	// 카테고리(li) 선택 시
@@ -31,6 +66,36 @@ $(document).ready(function () {
 		
 	});
 	
+	
+	/* 메뉴 선택 시 팝업 관련 */
+	// 메뉴 클릭 이벤트 (팝업)
+	$(document).on("click", ".btn_detail", function() {
+		
+		// 메뉴 번호 인자로 전달
+		menuSetOpen($(this).children("input").val());
+		
+	});
+	
+	$(document).on("click", ".btn_close", function() {
+		
+		$(".popWrap").remove();
+		
+	});
+	
+	
+	
+	/*$(".popWrap").css("display","none");
+	
+	$(document).on("click", ".btn_detail", function(){
+		$(".popWrap").css("display","");
+	});
+	
+	$(document).on("click", ".btn_close", function(){
+		$(".popWrap").css("display","none");
+	});*/
+	
+	//popSetting();
+	
 	// 클릭한 카테고리(class="on"인 li) 이름을 컨트롤러에 전달
 	/*$(".item3 .on .button").on("click", function () {
 		
@@ -48,103 +113,80 @@ $(document).ready(function () {
 });
 
 
-/*var totalCount = 0;
-var keyword_Custom = "";*/
+// 메뉴 세트 정보 불러오기
+function menuSetOpen(menu_no) {
+	$.ajax({
+		url : "menu_detail.do",
+		data : {"menu_no" : menu_no},
+		type: "post",
+		success: function(data){
+			setPopupMaking(data);
+		},
+		error: function(request, status, error){
+			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
 
-// 카테고리에 해당하는 메뉴 가져오기
-/*function makeListJson(jsonStr){
+
+function setPopupMaking(jsonStr) {
+	
+	var menu = jsonStr.setMenu;
 	
 	var htmlStr = "";
 	
-	// 메뉴 없으면 nodata div 출력
-	if(totalCount == 0) {
-		htmlStr += "<div class='nodata'><p><span>메뉴 준비중 입니다</span></p></div>"
-		htmlStr += "</div>";
-	} else {
-		// 메뉴판(딜리버리) 전체 div
-		$(jsonStr.results.juso).each(function(){
-			//메뉴 검색 결과 하나마다 li
-			htmlStr += "<ul class='prdmenu_list'>";
-		    htmlStr += "<li>";
-		    htmlStr += "<div class='prd_img'><em class=' ico_flag_new'></em>";
-		    htmlStr += "<span><img src='"+이미지경로+"' alt='제품' class style='display:inline; opacity:1;'></span></div>";
-		    htmlStr += "<div class='cont'>";
-		    htmlStr += "<p class='tit'><strong>"+메뉴이름+"</strong></p>";
-		    htmlStr += "<p class='set_info'><span>"+this.세트구성+"</span></p>";
-		    htmlStr += "<p class='price'><span><strong><em><span>"+this.가격+"</span></em></strong></span></p></div>";
-		    htmlStr += "<a class='btn_detail'><span>Details</span></a>";
-		    htmlStr += "</li>";
-		    htmlStr += "</ul></div>";
-		});
+	// 세트 메뉴 없으면 바로 장바구니로,,
+	// *********** 이건 나중에 ***********
+	if(menu != null) {
+		htmlStr += "<div class='popWrap m_FullpopWrap'>";
 		
-		//html()메소드로 초기화된 페이징 div 재부여
-		htmlStr += "<div class='board_paging'>";
-		htmlStr += "<div class='VuePagination'>";
-		htmlStr += "<nav class=''>";
-		htmlStr += "<ul class='pagination VuePagination__pagination'>";
-		htmlStr += "</ul>";
-		htmlStr += "<p class='VuePagination__count' style='display: none;'>0 records</p>";
-		htmlStr += "</nav>";
-		htmlStr += "</div>";
-		htmlStr += "</div>";
+		//
+		htmlStr += "<div class='popbox01 nobtn'>";
+		htmlStr += "<div class='M_headerWrap'>";
+		htmlStr += "<div class='titleBar'>";
+		htmlStr += "<h1 class='page_tit w_alignL'><span>메뉴 선택</span></h1>";
+		htmlStr += "<div class='title_btn'><button type='button' class='btn_close btn_head_close'><span>Close</span></button></div>";
+		htmlStr += "</div></div>";
+		htmlStr += "<div class='popcont nopadding'>";
+		htmlStr += "<div class='prd_intro'>";
+		htmlStr += "<div class='prd_img'>";
+		htmlStr += "<em class='prd_img'></em><span>이미지</span></div>";
+		htmlStr += "<div class='intro_txt'>";
+		htmlStr += "<h3 class='tit'><span>메뉴이름</span></h3>";
+		htmlStr += "<p class='subtxt'><span>멘트</span></p></div></div>";
 		
-		htmlStr += "</div>"; //resultbox end
+		htmlStr += "<ul class='menu_sub_list02'>";
+		htmlStr += "<li><div class='prd_img'><em class></em>";
+		htmlStr += "<span>이미지1</span></div>";
+		htmlStr += "<div class='cont'><p class='tit'><strong>세트이름1</strong></p>";
+		htmlStr += "<p class='set'><span>구성</span></p>";
+		htmlStr += "<p class='price'><strong><em><span>가격</span></em></strong></p></div>";
+		htmlStr += "<button type='button' class='btn_detail'><span>Details</span></button>";
+		htmlStr += "</li></ul>";
+		htmlStr += "</div></div></div>";
 		
-		count++;
 	}
 	
-	$(".address_result").css('display','');
-	$(".addr_searchguide").css('display','none');
-	$(".address_result").not('.addr_searchguide').html(htmlStr);	
+	$("body").append(htmlStr);
+}
+
+/*function popSetting() {
+	const menu_chosen = document.querySelector(".btn_detail");
+	const closeBtn = document.querySelector(".btn_close");
+	const popup = document.querySelector(".popWrap");
+	
+	//주소찾기 팝업 띄우기 액션
+	menu_chosen.addEventListener('click', onPopup);
+	//searchBtn.addEventListener('click', goPopup);
+	//주소찾기 팝업 X버튼 액션
+	closeBtn.addEventListener('click', offPopup);
 }*/
 
-//페이지 이동
-/*function goPage(pageNum){
-	document.form.currentPage.value=pageNum;
-	getAddr();
+/*function offPopup() {
+	popup.style.display ='none';
+}
+
+function onPopup() {
+	popup.style.display ='block';
 }*/
 
-//json타입 페이징 처리 (주소정보 리스트 makeListJson(jsonStr); 다음에서 호출)
-/*function pageMake(jsonStr){ 
-  	var total = Number(jsonStr.results.common.totalCount); // 총건수 
-	var pageNum = Number(document.form.currentPage.value); // 현재페이지
-	var paggingStr = "";
-	if(total < 10){
-	}else{
-		//var PAGEBLOCK=Number(document.form.countPerPage.value);
-		var PAGEBLOCK=6; // 하단 페이지 갯수
-		var pageSize=Number(document.form.countPerPage.value);
-		var totalPages = Math.floor((total-1)/pageSize) + 1;
-		var firstPage = Math.floor((pageNum-1)/PAGEBLOCK) * PAGEBLOCK + 1;		
-		
-		if( firstPage <= 0 ) firstPage = 1;	
-		
-		var lastPage = firstPage-1 + PAGEBLOCK;
-		
-		if( lastPage > totalPages ) lastPage = totalPages;		
-		
-		var nextPage = lastPage+1 ;
-		var prePage = firstPage-5 ;	
-
-		if( firstPage > PAGEBLOCK ){
-			paggingStr += "<li class='VuePagination__pagination-item page-item  VuePagination__pagination-item-prev-chunk'>";
-			paggingStr += "<a href='javascript:goPage("+prePage+");' class='page-link'>&lt;&lt;</a></li>";
-		}
-		
-		for( i=firstPage; i<=lastPage; i++ ){
-			if( pageNum == i ) {
-				paggingStr += "<li class='VuePagination__pagination-item page-item active'>";
-				paggingStr += "<a href='javascript:goPage("+i+");' class='page-link active' role='button'>"+i+"</a></li>";
-			} else {
-				paggingStr += "<li class='VuePagination__pagination-item page-item'>";
-				paggingStr += "<a href='javascript:goPage("+i+");' class='page-link' role='button'>"+i+"</a></li>";
-			}
-		}		
-		if( lastPage < totalPages ){
-			paggingStr += "<li class='VuePagination__pagination-item page-item  VuePagination__pagination-item-next-chunk'>";
-			paggingStr += "<a href='javascript:goPage("+nextPage+");' class='page-link'>&gt;&gt;</a></li>";
-		}
-		$(".VuePagination__pagination").html(paggingStr);
-			
-	} }
-*/

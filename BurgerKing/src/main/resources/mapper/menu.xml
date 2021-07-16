@@ -8,6 +8,7 @@
 	<select id="menuList" resultType="com.burger.menu.model.MenuDTO">
 		select * from menu where menu_cat = #{category}
 		and (menu_show = 'delivery' or menu_show = 'both')
+		order by menu_no
 	</select>
 	
 </mapper>

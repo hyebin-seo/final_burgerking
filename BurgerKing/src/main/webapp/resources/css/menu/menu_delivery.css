@@ -234,7 +234,7 @@ img {
     
     /* 혜린 추가 */
     /* 높이 없으니까 이름 긴 메뉴 밑에는 빈 칸으로 나와서 추가함! */
-    max-height: 259px;
+    /* max-height: 259px; */
 }
 
 .prdmenu_list .prd_img {	/* 메뉴 이미지 */
@@ -249,7 +249,18 @@ img {
 }
 
 /* NEW / BEST / null */
-.ico_flag_best, .ico_flag_new {
+.ico_flag_best {
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 49px;
+    height: 35px;
+    text-align: left;
+    text-indent: -9999em;
+	background-image: url(../../img/menu/img_best.png);
+}
+
+.ico_flag_new {
     position: absolute;
     left: 0;
     top: 0;
@@ -259,6 +270,18 @@ img {
     text-indent: -9999em;
  	background: url(../../img/menu/img_new.png) no-repeat 0;
 }
+
+/* best 이미지가 안 먹어서 아예 둘로 나눔 */
+/* .ico_flag_best, .ico_flag_new {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 49px;
+    height: 35px;
+    text-align: left;
+    text-indent: -9999em;
+ 	background: url(../../img/menu/img_new.png) no-repeat 0;
+} */
 
 .prdmenu_list .prd_img img {
 	width: 100%;
@@ -272,7 +295,8 @@ img {
 
 .prdmenu_list .tit {		/* 메뉴 이름 */
 	font-weight: 700;
-	font-size: 1.25rem;
+	/* font-size: 1.25rem; */
+	font-size: 1.15rem;
 }
 
 .predmenu_list .set_info {
@@ -283,18 +307,26 @@ img {
 	display: block;
     margin: 5px 0;
     font-weight: 400;
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
+    /* 혜린 추가 */
+    /* 글씨 똑같이 줬더니 너무 큼 */
+    font-size: 1rem;
     color: #8d8d8d;
     word-wrap: normal;
     word-break: keep-all;
 }
 
-.prdmenu_list .price {
+.prdmenu_list .price {		/* 가격 */
     margin-top: 5px;
     font-weight: 700;
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
     color: #e22219;
     white-space: nowrap;
+    
+    /* 추가 */
+    font-size: 1.15rem;		/* 너무 커서 글씨 좀 줄임 */
+    letter-spacing: -1px;
+    word-spacing: -2.5px;	/* 가격이랑 ~ 사이 간격 조정해서 줄임 */
 }
 
 .btn_detail {
@@ -310,7 +342,7 @@ img {
 
 /* 유의사항 */
 
-.tit03 {
+/* .tit03 {
 	position: relative;
     margin: 25px 0;
     padding: 12px 0;
@@ -372,7 +404,7 @@ img {
     width: 12px;
     height: 1.67em;
     background: url(../../img/menu/img_dot.png) no-repeat 0;
-}
+} */
 
 
 
