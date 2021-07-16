@@ -12,11 +12,16 @@ $(document).ready(function () {
 	   $(".map_searchWrap .searchWrap .container01").css("display","none");
 	   
 	   var sel_index = $(this).parent("li").index();
+	   console.log("선택한 탭 인덱스:"+sel_index);
 	   $(".map_searchWrap .container01").eq(sel_index).css("display","");
 	   
 	   if(sel_index == 0) {
 		   updateMap(global_map);
+	   } else if(sel_index == 2) {
+		   citySetting();
 	   }
+	   
+	   
    });
    
    $(".st04 option:eq(0)").prop("selected", true); //셀렉트 박스 첫번째 option 선택
@@ -64,11 +69,43 @@ $(document).ready(function () {
 	   getLocation();
    });
    
+   //특별/광역시 셀렉트 박스 이벤트
+   $(document).on("change", ".city_select", function () {
+	   gunguSetting($(this).val()+"");
+   });
+   
    //페이지 로딩시 버거킹 본점으로 맵 셋팅
    //mapSetting("서울특별시 종로구 종로 94");
    storeOpen("37.569917", "126.988082", 0);
    
 });
+
+function gunguSetting(parentkey) {
+	$.ajax({
+        url : "gungu_open.do",
+        data : {"parentkey" : parentkey},
+        type : "post",
+        async : false,
+        success : function(data){
+        	var gungulist = data.gungu;
+         	
+        	var gunguStr = "<option value=''>군, 구</option>";
+            $.each(gungulist , function(i, gungu){
+                gunguStr += "<option value='"+gungu.lockey+"'>"+gungu.name+"</option>";
+            });
+            
+            $(".gungu_select").html(gunguStr);
+        },
+        error : function(request,status,error){
+        	alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        }
+    });
+}
+
+function cityStoreOpen(city, gungu) {
+	var search_key = city + " " + gungu;
+}
+
 
 function addrChange(roadAddr_val) {
 	

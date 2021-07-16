@@ -77,7 +77,7 @@
                 <!-- 지역검색 탭 -->
                 <div class="container01" style="display: none;">
                     <div class="form_list">
-                        <select class="st04">
+                        <select class="st04 city_select">
                             <option value="" disabled="disabled">특별/광역시</option>
                             <option value="11">서울특별시</option>
                             <option value="21">부산광역시</option>
@@ -97,33 +97,9 @@
                             <option value="38">경상남도</option>
                             <option value="39">제주특별자치도</option>
                         </select>
-                        <select class="st04">
-                            <option value="">군, 구</option>
-						    <option value="11230">강남구</option>
-						    <option value="11250">강동구</option>
-						    <option value="11090">강북구</option>
-						    <option value="11160">강서구</option>
-						    <option value="11210">관악구</option>
-						    <option value="11050">광진구</option>
-						    <option value="11170">구로구</option>
-						    <option value="11180">금천구</option>
-						    <option value="11110">노원구</option>
-						    <option value="11100">도봉구</option>
-						    <option value="11060">동대문구</option>
-						    <option value="11200">동작구</option>
-						    <option value="11140">마포구</option>
-						    <option value="11130">서대문구</option>
-						    <option value="11220">서초구</option>
-						    <option value="11040">성동구</option>
-						    <option value="11080">성북구</option>
-						    <option value="11240">송파구</option>
-						    <option value="11150">양천구</option>
-						    <option value="11190">영등포구</option>
-						    <option value="11030">용산구</option>
-						    <option value="11120">은평구</option>
-						    <option value="11010">종로구</option>
-						    <option value="11020">중구</option>
-						    <option value="11070">중랑구</option>
+                        <select class="st04 gungu_select">
+							<!-- 군, 구 동적 생성 -->
+							<option value="">군, 구</option>
                         </select>
                     </div>
                 </div>

@@ -40,6 +40,11 @@ function addrChange() {
         var result = response.v2, // 검색 결과의 컨테이너
             items = result.addresses; // 검색 결과의 배열
             
+        if(items[0] == undefined) {
+        	alert("주소가 잘못되었습니다!");
+        	return;
+        }
+            
         // 리턴 받은 좌표 값 변수에 저장
         x = parseFloat(items[0].x);
         y = parseFloat(items[0].y);
@@ -75,36 +80,36 @@ function addrChange() {
 </head>
 <body>
 	   <form method="post" name="sform">
-		  <input type="hidden" name="pi_x" id="pi_x">
-		  <input type="hidden" name="pi_y" id="pi_y">
+		  <input type="hidden" name="pi_x" id="pi_x" required>
+		  <input type="hidden" name="pi_y" id="pi_y" required>
 	     <table>
 	     
 	         <tr>
 	         	<th>매장코드</th>
 	         	<td> 
 		         	
-		         	<input type="text" name="store_key" id="store_key">
+		         	<input type="text" name="store_key" id="store_key" required>
 	         	</td>
 	      	 </tr>
 	      	 
 	      	 <tr>
 	         	<th>매장명</th>
-	         	<td> <input type="text" name="store_name"> </td>
+	         	<td> <input type="text" name="store_name" required> </td>
 	      	 </tr> 
 	      	 
 	      	 <tr>
 	         	<th>매장주소</th>
-	         	<td> <input type="text" name="store_addr" id="store_addr"> </td>
+	         	<td> <input type="text" name="store_addr" id="store_addr" required> </td>
 	      	 </tr> 
 	      	 
 	      	 <tr>
 	         	<th>매장연락처</th>
-	         	<td> <input type="text" name="store_contact"> </td>
+	         	<td> <input type="text" name="store_contact" required> </td>
 	      	 </tr>
 	      	 
 	      	 <tr>
 	         	<th>오픈시간</th>
-	         	<td> <input type="text" name="open_time"> </td>
+	         	<td> <input type="text" name="open_time" required> </td>
 	      	 </tr> 
 	      	 
 	      	 <tr>
@@ -119,32 +124,32 @@ function addrChange() {
 	      	 
 	      	 <tr>
 	         	<th>딜리버리</th>
-	         	<td> <input type="text" name="delivery" value="1"> </td>
+	         	<td> <input type="text" name="delivery" value="1" required> </td>
 	      	 </tr> 
 	      	 
 	      	 <tr>
 	         	<th>킹오더</th>
-	         	<td> <input type="text" name="kingorder" value="1"> </td>
+	         	<td> <input type="text" name="kingorder" value="1" required> </td>
 	      	 </tr> 
 	      	 
 	      	 <tr>
 	         	<th>24시간</th>
-	         	<td> <input type="text" name="allday" value="0"> </td>
+	         	<td> <input type="text" name="allday" value="0" required> </td>
 	      	 </tr> 	
 	      	 
 	      	 <tr>
 	         	<th>아침</th>
-	         	<td> <input type="text" name="morning" value="0"> </td>
+	         	<td> <input type="text" name="morning" value="0" required> </td>
 	      	 </tr> 
 	      	 
 	      	 <tr>
 	         	<th>주차</th>
-	         	<td> <input type="text" name="parking" value="0"> </td>
+	         	<td> <input type="text" name="parking" value="0" required> </td>
 	      	 </tr> 	
 	      	 
 	      	 <tr>
 	         	<th>드라이브</th>
-	         	<td> <input type="text" name="drivethru" value="0"> </td>
+	         	<td> <input type="text" name="drivethru" value="0" required> </td>
 	      	 </tr> 						
 	
 	     </table>
