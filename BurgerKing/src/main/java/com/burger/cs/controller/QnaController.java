@@ -15,5 +15,10 @@ public class QnaController {
 	public String qna_popup() {
 		return "qna_popup";
 	}
+	
+	@RequestMapping("qna_ok.do")
+	public String qna_ok() {
+		return "qna_ok";
+	}
 }
 

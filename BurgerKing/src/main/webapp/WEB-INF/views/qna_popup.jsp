@@ -17,8 +17,8 @@
 			<div class="titleBar">
 				<h1 class="page_tit w_alignL">
 					<span>문의 작성</span></h1>
-						<div class="title_btn">
-							<button type="button" class="btn_close">
+						<div class="title_btn">						
+							<button type="button" class="btn_close" onclick="close_popup()">
 							<span>Close</span>
 							</button>
 						</div>
@@ -31,18 +31,19 @@
 						<div class="container02">
 						<p class="txt_info02 st02">정확한 연락처를 입력하셔야 신속한 처리가 가능합니다.</p>
 						<div class="inpbox">
-							<input type="text" placeholder="이름" maxlength="4" class="st02">
-								<button type="button" class="btn_del01" style="">
-									<span>입력 텍스트 삭제</span>
-								</button>
+							
+							<input type="text" placeholder="이름" maxlength="4" class="st02">								
+						 <button type="button" class="btn_del01" onclick= "del_text()"></button> 
+							
+							
 						</div>
 							<div class="inpbox">
-								<input type="text" placeholder="연락처" class="st02">
-									<button type="button" class="btn_del01" style="">
+								<input type="text" placeholder="연락처" class="st02-2">
+									<button type="button" class="btn_del01" style=""  onclick= "del_text2()">
 										<span>입력 텍스트 삭제</span>
 									</button></div><div class="inpbox">
-								<input type="text" placeholder="이메일" class="st02">
-									<button type="button" class="btn_del01" style="">
+								<input type="text" placeholder="이메일" class="st02-3">
+									<button type="button" class="btn_del01" style="" onclick= "del_text3()">
 										<span>입력 텍스트 삭제</span>
 									</button>
 								</div>
@@ -104,7 +105,7 @@
 											<span>0</span> / <span>1000</span>
 										</div>
 									</div>
-								<dl class="dlist01 st03">
+							<!-- 	<dl class="dlist01 st03">
 									<dt class="f_normal vtop m_vtop_form nowrap">파일첨부</dt>
 										<dd>
 											<div class="att_file">
@@ -116,13 +117,37 @@
 												</label>
 											</div>
 											<ul>
-										</ul>
+												<li>
+													<div class  = "att_file">
+														<div class = "file">
+														<span class="file_name"></span>
+													</div>
+													<button type="button" class="btn04 del">
+														<span>삭제</span>
+													</button>
+													</div>
+													</li>
+										</ul> 
 									<p class="txt05">
 										<em>파일은 최대 3개까지 첨부 가능합니다.</em>
 									</p>
 									</dd>
-								</dl>
-							</div>
+								</dl> -->
+								
+								
+	           
+	         	 <input type="file"  class="btn04">	         	
+	          	      	 	
+	         	 <input type="file"  class="btn_f" >	         	
+	          	 	
+	         	 <input type="file"  class="btn_f" >	         	
+	          	
+	          	<p class="txt05">
+						<em>파일은 최대 3개까지 첨부 가능합니다.</em>
+				</p>		  
+				</div>
+							
+							
 						<h2 class="tit01 tit_ico noti">
 							<span>약관동의</span>
 						</h2>
@@ -266,7 +291,7 @@
 					<p class="txtlist01">상담 문의가 급증 할 경우 답변처리가 다소 지연될 수 있음을 양해 바랍니다.</p>
 					</div>
 						<div class="pop_btn full_type">
-						<button type="button" class="btn02">
+						<button type="button" class="btn02" onclick="qna_ok()">
 						<span>온라인 문의 접수하기</span>
 						</button>
 					</div>
