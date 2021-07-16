@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.local.model.LocalDAO">
+	<select id="gungu_open" 
+		parameterType="com.burger.local.model.LocalDTO"
+		resultType="com.burger.local.model.LocalDTO">
+		
+		select * from local where parentkey = #{parentkey}
+		
+	</select>
+	
+</mapper>
