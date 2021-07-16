@@ -75,6 +75,10 @@
 					<h4 class="hide">프리미엄</h4>
 					
 					<c:set var="menuList" value="${menuList }" />
+					<%-- <c:set var="category" value="${cat }" /> --%>
+					<input id="nowcat" type="hidden"
+						value="${cat }">
+					<c:set var="menuNoList" value="${menuNoList }" />
 					
 					<!-- 데이터 없을 경우 -->
 					<c:if test="${empty menuList }">
@@ -92,7 +96,13 @@
 							<c:forEach items="${menuList }" var="dto">
 								<li>
 									<div class="prd_img">
-										<em class=" ico_flag_new"></em>
+										<c:if test="${dto.getMenu_type() == 'NEW' }">
+											<em class=" ico_flag_new"></em>
+										</c:if>
+										<c:if test="${dto.getMenu_type() == 'BEST' }">
+											<em class=" ico_flag_best"></em>
+										</c:if>
+										
 										<span>
 											<img src="${dto.getMenu_img() }" alt="제품" class style="display:inline; opacity:1;">
 										</span>
@@ -102,19 +112,30 @@
 											<strong>${dto.getMenu_name()}</strong>
 										</p>
 										<p class="set_info">
-											<span>
-												${dto.getMenu_member()}
-											</span>
+											<c:if test="${dto.getMenu_name() == '몬스터Ⅱ팩1' or
+															 dto.getMenu_name() == '몬스터Ⅱ팩2' or
+															 dto.getMenu_name() == '몬스터Ⅱ팩3'}">
+												<span>
+													${dto.getMenu_member()}
+												</span>
+											</c:if>
 										</p>
 										<p class="price">
 											<span>
 												<strong>
-													<em><span>${dto.getMenu_price()}</span></em>
+													<em><span>
+														<fmt:formatNumber value="${dto.getMenu_price()}"
+																type="currency" />
+														<c:forEach items="${menuNoList }" var="no">
+															<c:if test="${dto.getMenu_no() == no }">~</c:if>
+														</c:forEach>														
+													</span></em>
 												</strong>
 											</span>
 										</p>
 									</div>
 									<a class="btn_detail">
+										<input type="hidden" value="${dto.getMenu_no() }"/>
 										<span>Details</span>
 									</a>
 								</li>
@@ -124,7 +145,7 @@
 				</div>
 				
 				<!-- 2-3. 유의사항 -->
-				<div class="order_caution">
+				<!-- <div class="order_caution">
 					<div class="tit03">
 						<h4 class="WEB">유의사항</h4>
 						<button type="button" class="btn_infoingredient">
@@ -143,15 +164,20 @@
 						<li>내용</li>
 						<li>내용</li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		
 		<!-- 3. 모바일 화면 -->
 		<div class="contentsBox01 MOB"></div>
+		
+		<!-- 클릭하면 세트메뉴 선택 팝업창 -->
+		<!-- menuPopup -->
+		
 	</div>
-	
-<script src="resources/js/menu/menu_delivery.js"></script>
 
+<%-- <jsp:include page="menuPopup.jsp" flush="true" /> --%>
+<script src="resources/js/menu/menu_delivery.js"></script>
+<!-- <script src="resources/js/menu/menu_popup.js"></script> -->
 </body>
 </html>

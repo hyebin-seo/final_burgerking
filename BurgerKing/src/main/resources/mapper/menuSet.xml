@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.menu.model.MenuSetDAO">
+	
+	<select id="getMenuNoListInMenuSet" resultType="String">
+		select distinct menu_no from menu_set
+	</select>
+	
+	
+	<select id="getMenuSetList" resultType="com.burger.menu.model.MenuSetDTO">
+		select * from menu_set where menu_no = #{menu_no}
+	</select>
+	
+</mapper>
