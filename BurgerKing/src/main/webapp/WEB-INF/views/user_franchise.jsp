@@ -120,5 +120,6 @@
 			</div>
 		</div>
 	</div>
+	<jsp:include page="franchisePopup.jsp" />
 </body>
 </html>

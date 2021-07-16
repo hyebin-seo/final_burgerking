@@ -1,16 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>가맹점 모집</title>
-<link  href="resources/css/cs/franchisePopup.css"  rel="stylesheet"  type="text/css">
 
-</head>
-	
-<body>
+<link  href="resources/css/cs/franchisePopup.css"  rel="stylesheet"  type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 	<div class="franchisePopWrap m_FullpopWrap">
 		<div class="popbox01">
 			<div class="M_headerWrap">
@@ -55,7 +49,7 @@
 										<select class="st03">
 										<option value disabled="disabled" selected>선택</option>
 										<c:forEach begin="1" end="12" var="i">
-												<option>
+												<option value="${i }">
 													${i}
 												</option>
 										</c:forEach>
@@ -65,7 +59,7 @@
 										<select class="st03">
 										<option value disabled="disabled" selected>선택</option>
 										<c:forEach begin="1" end="31" var="i">
-												<option>
+												<option value="${i }">
 													${i}
 												</option>
 										</c:forEach>
@@ -105,11 +99,11 @@
 							<dt class="vtop m_vtop_form">임대차 목적물 보유 유무</dt>
 							<dd>
 							<div class="formlistWrap item3">
-								<label> 
+								<label class="radio_label"> 
 								<input type="radio" value="Y" checked="checked">
 								<strong>유</strong>
 								</label> 
-								<label> 
+								<label class="radio_label"> 
 								<input type="radio" value="N">
 								<strong>무</strong>
 								</label>
@@ -118,14 +112,15 @@
 						</dl>
 						<dl>
 							<dt class="vtop m_vtop_form">보유시 임대차 목적물 면적</dt>
+							<dd>
 							<div class="form_list">
-								<input type="tel" placeholder="숫자입력"> <select
-									class="st03">
+								<input type="tel" placeholder="숫자입력" class="area"> 
+								<select class="st03">
 									<option value="㎡" selected="selected">제곱미터</option>
 									<option value="평">평</option>
 								</select>
 							</div>
-							
+							</dd>
 						</dl>
 						<dl>
 							<dt class="nowrap">현재 종사 직업</dt>
@@ -135,11 +130,12 @@
 						</dl>
 					</div>
 					<dl class="dlist02">
-						<dt>추가 의견</dt>
+						<dt>추가 의견</dt><br>
 						<dd>
-							<textarea rows="5" cols="50" placeholder="내용입력" maxlength="500"></textarea>
+							<textarea id="text_content"rows="5" cols="50" placeholder="내용입력" maxlength="500"></textarea>
 							<div class="page_count">
 								<span>0</span>/ <span>500</span>
+								<!-- <span>###</span> -->
 							</div>
 						</dd>
 					</dl>
@@ -152,7 +148,7 @@
 									<span>약관동의</span>
 								</label>
 							</div>
-							<div class="acc_list">
+							<div class="acc_list toggle">
 								<div class="acc_tit">
 									<span>수집하는 개인정보 항목</span>
 									<button type="button" class="btn_acc">
@@ -167,24 +163,24 @@
 									이용기록, 접속로그, 쿠키, 접속IP정보.
 								</div>
 							</div>
-							<div class="acc_list">
+							<div class="acc_list toggle">
 								<div class="acc_tit">
 									<span>개인정보의 수집 및 이용목적</span>
-									<button type="button">
+									<button type="button" class="btn_acc">
 										<span>상세보기</span>
 									</button>
 								</div>
 								<div class="acc_cont">
 									<p>회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
-									<br> ο 수집항목<br>
+									<br>
 									<p>ο 가맹점 지원자에 대한 자격심사</p>
 									<p>ο 상담절차에 따른 연락업무 및 기타 관련 업무 처리 등</p>
 								</div>
 							</div>
-							<div class="acc_list">
+							<div class="acc_list toggle">
 								<div class="acc_tit">
 									<span>개인정보의 보유 및 파기</span>
-									<button type="button">
+									<button type="button" class="btn_acc">
 										<span>상세보기</span>
 									</button>
 								</div>
@@ -219,15 +215,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="pop_btn full_type">
+			</div>
+			<div class="pop_btn full_type">
 					<button type="button" class="btn02">
 						<span>신청서 작성</span>
 					</button>
-				</div>
 			</div>
 		</div>
 	</div>
-	
-	
-</body>
-</html>
+<script src="resources/js/cs/franchisePopup.js"></script>

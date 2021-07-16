@@ -26,9 +26,11 @@ body{
 	margin: 0;
 }
 
-div{
+/* div{
 	display: block;
-}
+} */
+
+
 /*안보이게 할거면 왜 자꾸 태그를 넣는지 모르겠다 코드 보기 쉬우라고인가*/
 .hide{
 	display: none;
