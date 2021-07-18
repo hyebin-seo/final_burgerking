@@ -1,3 +1,6 @@
+const popup = document.querySelector(".popbox01");
+const closeBtn = document.querySelector(".btn_close");
+const open_Btn = document.querySelector(".btn01");
 function close_popup() { 
 	window.close();
 }
@@ -41,8 +44,7 @@ function del_text3() {
 
 function open_toggle() { 
 
-
-
+	 
 
 }
 
@@ -52,4 +54,7 @@ function qna_ok() {
 	window.open("qna_ok.do", "qna_ok", "width=300, height=200, left=800, top=100, scrollbars=no, menubar=no, toolbar=no,  location=no, resizable=yes"); 
 
 }
+
+
+
 

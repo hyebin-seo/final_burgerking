@@ -160,13 +160,13 @@
 											<span>전체동의(필수)</span>
 										</label>
 								</div>
-							<div class="acc_list">
+							<div class="acc_list toggle">
 								<div class="acc_tit">
 									<label>
 										<input type="checkbox" class="check02">
 											<span>일반 개인정보 수집 및 활용에 관한 동의</span>
 									</label>
-										<button type="button" class="btn_acc">
+										<button type="button" class="btn_acc"  onclick="open_toggle()">
 											<span>상세보기</span>
 										</button>
 								</div>
