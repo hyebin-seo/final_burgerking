@@ -5,13 +5,13 @@
 		<!-- MyBatis와 관련된 스프링 설정 순서 -->
 	
 	<!-- 1. c3p0 (스프링 커넥션풀) DataSource 클래스 설정 -->
-	<bean name="dataSource"
-      class="com.mchange.v2.c3p0.ComboPooledDataSource">
-      <property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
-      <property name="jdbcUrl" value="jdbc:oracle:thin:@burgerkingdb.cejjwyykqq28.us-east-2.rds.amazonaws.com:1521:ORCL" />
-      <property name="user" value="admin" />
-      <property name="password" value="admin210706" />
-   </bean>
+	<bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE" />
+		<property name="user" value="system" />
+		<property name="password" value="oracle" />
+	</bean>
+	
 	
 	<!-- 2. SqlSessionFactory 클래스 설정 -->
 	<bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -45,8 +45,8 @@
 		class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.naver.com" /> <!-- gmail을 사용 -->
 		<property name="port" value="465" />
-		<property name="username" value="@naver.com" />  <!-- 송신이 되는 이메일 주소와 비밀번호를 작성 그러나 pop3설정 해주어야함  -->
-		<property name="password" value="" />
+		<property name="username" value="loveinghow@naver.com" />  <!-- 송신이 되는 이메일 주소와 비밀번호를 작성 그러나 pop3설정 해주어야함  -->
+		<property name="password" value="dksgudwns1!" />
 		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.transport.protocol">smtp</prop>
@@ -59,6 +59,23 @@
 			</props>
 		</property>
 	</bean>
+	
+	<!-- google Class Bean설정 추가 -->
+  <!-- 클라이언트ID와 보안비밀 세팅 -->
+  <bean id="googleConnectionFactory"
+  class="org.springframework.social.google.connect.GoogleConnectionFactory">
+    <constructor-arg value="105052386417-99g5i64m0bql3kehp3o3ubh8a5moq8e0.apps.googleusercontent.com" />
+    <constructor-arg value="Q8wH-egxs3wdtCvpl4_Mwa8s" />
+  </bean>
+
+  <!-- 승인된 자바스크립트 원본과 승인된 리디렉션 URI -->
+  <bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
+    <property name="scope" value="https://www.googleapis.com/auth/plus.login" />
+    <property name="redirectUri" value="http://localhost:8765/burger/googlecallback.do" />
+  </bean>
+  <!-- google Class Bean설정 추가 -->
+  
+  
 	
 	
 	<bean id="preConfigureMessage" class="org.springframework.mail.SimpleMailMessage">

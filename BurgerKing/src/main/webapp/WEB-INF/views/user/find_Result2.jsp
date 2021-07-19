@@ -1,90 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>로그인</title>
+<!-- 파비콘 -->
+<link rel="shortcut icon" type="image/x-icon"
+	href="resources/img/main/fab.ico">
 
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<link rel="stylesheet" href="resources/css/user/user_info.css">
-<script>
+<!-- 눈 아이콘 -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!-- Lgoin.css 연결 -->
+<link rel="stylesheet" href="resources/css/user/findResult.css">
 
 
 
 
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
-
-$(document).ready(function() {
-
-$('div.popWrap.m_FullpopWrap1').css('display','none');
-
-$('span.pop1').click(function(){
-	$('div.popWrap.m_FullpopWrap1').css('display','block');
-})
-
-$('button.btn02.dark').click(function() {
-	$('div.popWrap.m_FullpopWrap1').css('display','none');
-})
-
-$('button.btn02.agree').click(function() {
-	$('div.popWrap.m_FullpopWrap1').css('display','none');
-	$("input#chk1").prop('checked', true);
+<script type="text/javascript">
+	var type = "<c:out value='${sepwd}' />";
+	var idtype = "<c:out value='${seid}' />";
 	
-})
+	$(document).ready(function (){
 
-});
-
-$(document).ready(function() {
-
-	$('div.popWrap.m_FullpopWrap2').css('display','none');
-
-	$('span.pop2').click(function(){
-		$('div.popWrap.m_FullpopWrap2').css('display','block');
-	})
-
-	$('button.btn02.dark').click(function() {
-		$('div.popWrap.m_FullpopWrap2').css('display','none');
-	})
-
-	$('button.btn02.agree').click(function() {
-		$('div.popWrap.m_FullpopWrap2').css('display','none');
-		$("input#chk2").prop('checked', true);
+	if (type == "sepwd") {
 		
-	})
+		$("ul.item2 li").eq(0).removeClass("on"); //Remove any "active" class
+		$("ul.item2 li").eq(1).addClass("on");
 
+		$("div.tab_cont").hide(); //Hide all tab content
+
+		var activeTab = $("ul.item2 li").eq(1).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+
+		$(activeTab).fadeIn(); //Fade in the active ID content
+
+	}
+	
+	
+    $('ul.item2 li:first').click(function(){
+    	
+    	if(type = "sepwd"){
+    		
+    		location.href="find_id_pwd.do";
+    		
+    	}
+    })
+    
+    $('ul.item2 li:nth-child(2)').click(function(){
+    	
+    	if(idtype = "seid"){
+    		
+    		location.href="move_pwd.do?sepwd=sepwd";
+    		
+    	}
+    })
+    
 	});
 
 
-
-	$(document).ready(function() {
-
-		$("#chkAll").click(function() {
-			/*if ($("#chkAll").attr("checked")) {
-				$(".first").attr("checked", true)
-			}*/
-
-			var checked_all = $("#chkAll").is(':checked');
-
-			if (checked_all) {
-				$(".check02").prop('checked', true);
-			}
-		})
-		
-		
-		
-	})
-	
-	
-	
-
 </script>
-
 </head>
-
-
 <body>
 
 
@@ -164,82 +146,85 @@ $(document).ready(function() {
 				</div>
 			</div>
 			<div class="contentsWrap">
-				<div class="WEB locationWrap">
-					<div class="web_container">
-						<div class="page_navi">
-							<a href="#/deliveryHome" class=""><span>딜리버리</span></a><a
-								href="#/logout" class=""><span>로그인</span></a><a><span>회원가입</span></a><a><span>약관동의
-									및 본인인증</span></a>
-						</div>
-					</div>
-				</div>
 				<div class="contentsBox01">
-					<div class="web_container">
-						<div class="subtitWrap m_bg_basic">
-							<h2 class="page_tit">회원가입</h2>
+					<div class="web_container02">
+						<div class="subtitWrap">
+							<h2 class="page_tit">아이디/비밀번호 찾기</h2>
 						</div>
-						<form action="join.do" id="joinForm">
-							<div class="container01">
-								<h3 class="tit01 tit_ico noti">
-									<span>이용약관</span>
-								</h3>
-								<div class="container02 auth_list">
-									<div class="titbox">
-										<p>회원가입 약관 동의 및 본인인증을 진행합니다.</p>
-									</div>
-									<div>
-										<label><input type="checkbox" class="check02" id="chk1"
-											value="1" name="chk"><span>버거킹 이용약관(필수)</span></label>
-										<button type="button">
-											<span class="pop1">상세보기</span>
-										</button>
-									</div>
-									<div>
-										<label><input type="checkbox" class="check02" id="chk2"
-											value="2" name="chk"><span>개인정보처리방침(필수)</span></label>
-										<button type="button">
-											<span class="pop2">상세보기</span>
-										</button>
-									</div>
-									<div>
-										<label><input type="checkbox" class="check02"
-											value="3" name="chk"><span>E-mail 광고성 정보
-												동의(선택)</span></label>
-									</div>
-									<div class="st02">
-										<label><input type="checkbox" class="check02"
-											value="4" name="chk"><span>SMS 광고성 정보 동의(선택)</span></label><span
-											class="info">다양한 이벤트와 주문 정보를 보내 드립니다.</span>
-									</div>
-									<div class="divide">
-										<label><input type="checkbox" class="check02"
-											id="chkAll"><span>약관 전체 동의</span></label>
-									</div>
+						<div class="tab01 m_shadow">
+							<ul class="item2">
+								<li class="on"><a href="#tab1"> <span>아이디 찾기</span>
+								</a></li>
+								<li><a href="#tab2"> <span>비밀번호 찾기</span>
+								</a></li>
+							</ul>
+						</div>
+						<div class="tab_cont" id="tab1">
+							<h3 class="hide">아이디 찾기</h3>
+							<p class="MOB txt03">
+								가입시 회원정보로 등록한 <br>이름과 휴대폰 번호를 입력해 주세요.
+							</p>
+							<div class="container02 idpw_find_result">
+								<div class="msgBox">
+									<p class="tit">
+										<strong>아이디 찾기 완료</strong>
+									</p>
+									<p>
+										<strong>회원님</strong>의 아이디는 다음과 같습니다
+									</p>
 								</div>
-								<h3 class="MOB tit01 tit_ico man">
-									<span>본인인증</span>
-								</h3>
-								<div class="container02 auth_list">
-									<div class="titbox">
-										<p>약관 동의 후 휴대폰 본인인증을 진행해 주세요.</p>
-									</div>
-									<ul class="txtlist01">
-										<li>반드시 회원님의 본인명의로 된 휴대폰으로 인증을 진행해 주세요.</li>
-										<li>타인의 개인정보를 도용하여 가입 후 적발 시 서비스 이용에 제한을 받으며, 법적 제재를 받을 수
-											있습니다.</li>
-									</ul>
+								<div class="msgBox" style="display: none;">
+									<p class="tit">
+										<strong>비밀번호 재설정 경로 발송 완료</strong>
+									</p>
+									<p>
+										<strong>회원님</strong>의 이메일로 비밀번호 재설정 경로를 발송하였습니다.
+									</p>
 								</div>
-								<div class="c_btn">
-									<a class="btn01"><button>
-											<span>휴대폰 인증하기</span>
-										</button></a>
+								<div class="result">
+									<div>
+										<span>${user_id} 버거킹(으)로 회원가입 하셨습니다.</span>
+									</div>
 								</div>
 							</div>
-						</form>
+							<div class="c_btn m_item2">
+								<a class="btn01" href="move_pwd.do?sepwd=sepwd"><span>비밀번호
+										찾기</span></a><a href="Login.do" class="btn01 red"><span>로그인</span></a>
+							</div>
+
+						</div>
+						<div class="tab_cont" id="tab2">
+							<h3 class="hide">아이디/비밀번호 찾기</h3>
+							<div class="container02 idpw_find_result">
+								<div class="msgBox" style="display: none;">
+									<p class="tit">
+										<strong>아이디 찾기 완료</strong>
+									</p>
+									<p>
+										<strong>회원님</strong>의 아이디는 다음과 같습니다
+									</p>
+								</div>
+								<div class="msgBox">
+									<p class="tit">
+										<strong>비밀번호 재설정 경로 발송 완료</strong>
+									</p>
+									<p>
+										<strong>회원님</strong>의 이메일로 비밀번호 재설정 경로를 발송하였습니다.
+									</p>
+								</div>
+								<div class="result">
+									<div>
+										<span>${user_id } (으)로 회원가입 하셨습니다.</span>
+									</div>
+								</div>
+							</div>
+							<div class="c_btn m_item2">
+								<a class="btn01" href="/burger/"><span>홈바로가기</span></a><a
+									href="#/logout" class="btn01 red"><span>로그인</span></a>
+							</div>
+						</div>
 					</div>
 				</div>
-				<jsp:include page="pop1.jsp" />
-				<jsp:include page="pop2.jsp" />
 			</div>
 		</div>
 		<div class="footer">
@@ -284,5 +269,7 @@ $(document).ready(function() {
 	</div>
 
 
+	<!-- js파일에 연결  -->
+	<script type="text/javascript" src="resources/js/login/find_id_pwd2.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@
 	href="resources/img/main/fab.ico">
 	
 	<!-- Lgoin.css 연결 -->
-<link rel="stylesheet" href="resources/css/user/join.css">
+<link rel="stylesheet" href="resources/css/user/user_join.css">
 	
 
 

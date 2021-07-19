@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.burger.login.model.EmailService;
 import com.burger.login.model.LoginDAO;
+import com.burger.login.model.NaverLoginApi;
 import com.burger.login.model.UserDTO;
 
 @Controller
@@ -41,7 +42,7 @@ public class LoginController {
 	@RequestMapping("Login.do")
 	public String MoveLogin() {
 
-		return "user/Login";
+		return "user/bk_login";
 	}
 
 	@RequestMapping("join.do")
@@ -62,6 +63,22 @@ public class LoginController {
 		}
 
 	}
+	
+	//정보동의제공서  페이지 이동.
+			@RequestMapping("move_join.do")
+			public String join() {
+
+				return "user/join";
+			}
+	
+	
+	//정보동의제공서  페이지 이동.
+		@RequestMapping("join_info_service.do")
+		public String join_info_service() {
+
+			return "user/user_info_service";
+		}
+	
 
 	@RequestMapping("joins.do")
 
@@ -137,32 +154,38 @@ public class LoginController {
 
 	}
 
-//정보동의제공서  페이지 이동.
-	@RequestMapping("join_info_service.do")
-	public String join_info_service() {
 
-		return "user/user_info_service";
-	}
 
 //아이디 비밀번호 찾기 
 	@RequestMapping("find_id_pwd.do")
 
 	public String find_name_pwd() {
 
-		return "user/find_id_pwd";
+		return "user/find_id_pwd2";
 	}
 
 	// 아이디 찾기
 	@RequestMapping("find_id.do")
-	public String find_name(UserDTO dto, HttpServletResponse response, Model model) throws IOException {
+	public String find_name(UserDTO dto, HttpServletResponse response, HttpServletRequest request,Model model) throws IOException {
 
-		response.setContentType("text/html; charset=UTF-8");
-		// PrintWriter script = response.getWriter();
+		System.out.println("jsp2>> "+dto);
+		String seid = request.getParameter("seid");
+		
+		
+		
+		    dto = this.dao.find_id(dto);
+		
+		    
 
-		dto = this.dao.find_id(dto);
-
-		if (dto == null) {
-
+		if (dto != null) {
+			String msg = "아이디를 찾았습니다.";
+			
+			model.addAttribute("seid", seid);
+			model.addAttribute("user_id", dto.getUser_id());
+			return "user/find_Result2";
+			
+		} else {
+			
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
@@ -170,16 +193,21 @@ public class LoginController {
 			script.println("history.back()");
 			script.println("</script>");
 
-		} else {
-			String msg = "아이디를 찾았습니다.";
-			model.addAttribute("msg", msg);
-			model.addAttribute("user_id", dto.getUser_id());
-			
-
 		}
-		return "user/find_Result";
+		return null;
+		
 
 	} // 메서드 끝
+	
+	@RequestMapping("move_pwd.do")
+	public String move_pwd(Model model, HttpServletRequest request) {
+		
+	   String sepwd = request.getParameter("sepwd");
+	   System.out.println(sepwd);
+	   model.addAttribute("sepwd", sepwd);	
+		
+		return "user/find_id_pwd2";
+	}
 
 
 	// 비밀번호 찾아서 메일로 보내는 기능.
@@ -187,6 +215,8 @@ public class LoginController {
 	@RequestMapping("find_pwd.do")
 	public String sendSimpleMail(HttpServletRequest request, HttpServletResponse response, UserDTO dto, Model model)
 			throws Exception {
+		
+		String sepwd = request.getParameter("sepwd");
 
 		dto = this.dao.find_pwd(dto);
 
@@ -211,14 +241,20 @@ public class LoginController {
 			String random = s + num;
 
 			String info = "안녕하세요." + dto.getUser_name() + "회원님\n 비밀번호 재설정을 위한 경로를 다음과 같이 보내드립니다." + "\n 아이디 :"
-					+ dto.getUser_id() + "" + "\n 임시비밀번호 :" + random;
+					+ dto.getUser_id() + "" + "\n 임시비밀번호 :" + random + 
+					"비밀번호 재설정 경로 : http://localhost:8765/burger/auth_pwd.do?user_id="+dto.getUser_id();
 
 			EmailService.sendMail(dto.getUser_id(), "버거킹 임시비밀번호 변경 인증안내", info);
 
 			String msg = "임시비밀번호를 발급했습니다.";
 			model.addAttribute("msg", msg);
 			model.addAttribute("db_pwd", random);
+			
 			model.addAttribute("user_id", dto.getUser_id());
+			model.addAttribute(sepwd, "sepwd");
+
+			return "user/find_Result2";
+
 
 		} else {
 			
@@ -229,34 +265,18 @@ public class LoginController {
 			script.println("history.back()");
 			script.println("</script>");
 		}
+		return null;
 		
-		return "user/find_Result";
-
 	}
 
 	// 임시비밀번호 맞는지 확인하는 작업.
 	@RequestMapping("auth_pwd.do")
-	public String auth(@RequestParam("fake_pwd") String fake_pwd, @RequestParam("db_pwd") String db_pwd,
-			@RequestParam("user_id") String user_id, HttpServletResponse response, Model model) throws Exception {
+	public String auth(HttpServletResponse response, Model model, @RequestParam("user_id") String user_id) throws Exception {
 
+		System.out.println("user_id>>"+user_id);
 		
+     model.addAttribute("user_id", user_id);
 
-		if (!fake_pwd.equals(db_pwd)) {
-			
-			response.setContentType("text/html; charset=UTF-8");
-			PrintWriter script = response.getWriter();
-			
-			script.println("<script>");
-			script.println("alert('임시비밀번호가 틀렸습니다. 확인해주세요.')");
-			script.println("history.back()");
-			script.println("</script>");
-		} else {
-			String msg = "확인되었습니다.";
-		     model.addAttribute("msg", msg);
-		     model.addAttribute("user_id", user_id);
-		    
-					
-		}
 		
 		return "user/change_pwd";
 

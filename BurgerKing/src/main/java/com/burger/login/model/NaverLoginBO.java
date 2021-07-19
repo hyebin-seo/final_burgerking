@@ -54,7 +54,10 @@ public class NaverLoginBO {
     public OAuth2AccessToken getAccessToken(HttpSession session, String code, String state) throws Exception{
  
         /* Callback으로 전달받은 세선검증용 난수값과 세션에 저장되어있는 값이 일치하는지 확인 */
+    	System.out.println(session);
         String sessionState = getSession(session);
+        
+        System.out.println("ㄴ"+sessionState);
         if(StringUtils.pathEquals(sessionState, state)){
  
             OAuth20Service oauthService = new ServiceBuilder()
