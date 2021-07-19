@@ -12,6 +12,12 @@
 <link href="resources/css/store/storeHome.css"  rel="stylesheet"  type="text/css">
 <body>
 
+<div class="contentsBox01 MOB">
+	<div class="subtitWrap">
+		<h3 class="page_tit">매장찾기</h3>
+	</div>
+</div>
+
 <div class="loc_container">
 	<div class="loc">
 		<div class="page-navi">

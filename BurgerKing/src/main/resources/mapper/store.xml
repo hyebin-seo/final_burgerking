@@ -17,14 +17,31 @@
 	
 	<select id="near_store" parameterType="com.burger.store.model.SearchDTO"
 								resultType="com.burger.store.model.StoreDTO">
-		<![CDATA[
 			select * from (
-				select s.*, DISTANCE_WGS84(#{pi_x}, #{pi_y}, pi_x, pi_y) as DISTANCE
+				select s.*, DISTANCE_WGS84(#{pi_x}, #{pi_y}, pi_x, pi_y) as DISTANCE,
+				       DELIVERY || KINGORDER || ALLDAY || MORNING || PARKING || DRIVETHRU as checking
 				from king_store s
-				where (pi_x between #{pi_x}-0.019 and #{pi_x}+0.019)
-				  and (pi_y between #{pi_y}-0.022 and #{pi_y}+0.022)
+				where (pi_x between #{pi_x}-0.015 and #{pi_x}+0.015)
+				  and (pi_y between #{pi_y}-0.018 and #{pi_y}+0.018)
+				<if test='checking[1].equals("1")'>
+				  and DELIVERY = 1
+				</if>
+				<if test='checking[2].equals("1")'>
+				  and KINGORDER = 1
+				</if>
+				<if test='checking[3].equals("1")'>
+				  and ALLDAY = 1
+				</if>
+				<if test='checking[4].equals("1")'>
+				  and MORNING = 1
+				</if>
+				<if test='checking[5].equals("1")'>
+				  and PARKING = 1
+				</if>
+				<if test='checking[6].equals("1")'>
+				  and DRIVETHRU = 1
+				</if>
 				order by DISTANCE)
-		]]>
 	</select>
 	
 	<select id="store_detail" resultType="com.burger.store.model.StoreDTO">
@@ -33,9 +50,49 @@
 	
 	<select id="store_name_search" parameterType="com.burger.store.model.SearchDTO"
 								resultType="com.burger.store.model.StoreDTO">
-		<![CDATA[
+
 			select * from king_store where store_name like '%'||#{store_name}||'%'
-		]]>
+			<if test='checking[1].equals("1")'>
+				  and DELIVERY = 1
+			</if>
+			<if test='checking[2].equals("1")'>
+			  and KINGORDER = 1
+			</if>
+			<if test='checking[3].equals("1")'>
+			  and ALLDAY = 1
+			</if>
+			<if test='checking[4].equals("1")'>
+			  and MORNING = 1
+			</if>
+			<if test='checking[5].equals("1")'>
+			  and PARKING = 1
+			</if>
+			<if test='checking[6].equals("1")'>
+			  and DRIVETHRU = 1
+			</if>
+	</select>
+	
+	<select id="city_store" parameterType="com.burger.store.model.SearchDTO"
+								resultType="com.burger.store.model.StoreDTO">
+			select * from king_store where store_addr like '%'||#{store_addr}||'%'
+			<if test='checking[1].equals("1")'>
+				  and DELIVERY = 1
+			</if>
+			<if test='checking[2].equals("1")'>
+			  and KINGORDER = 1
+			</if>
+			<if test='checking[3].equals("1")'>
+			  and ALLDAY = 1
+			</if>
+			<if test='checking[4].equals("1")'>
+			  and MORNING = 1
+			</if>
+			<if test='checking[5].equals("1")'>
+			  and PARKING = 1
+			</if>
+			<if test='checking[6].equals("1")'>
+			  and DRIVETHRU = 1
+			</if>
 	</select>
 	
 </mapper>

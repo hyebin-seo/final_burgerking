@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+ul ul {
+    list-style-type: circle;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.footerWrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+/*     bottom: 0; */
+/*     height: 857px; */
+}
+
+.subWrap02 .footerWrap {
+    height: auto;
+}
+
+/* 풋터 전체 div */
+.footer {
+    height: 272px;
+    font-size: .875rem;
+    color: #818181;
+    background: #292929;
+}
+
+.footer .web_container {
+    position: relative;
+    max-width: 1184px;
+    padding: 47px 20px;
+}
+
+/* 이용약관/개인정보취급방침/법적고지 */
+.footer_menu {
+    position: absolute;
+    top: 42px;
+    right: 10px;
+}
+
+.footer_menu ul {
+    overflow: hidden;
+}
+
+.footer_menu li {
+    float: left;
+}
+
+.footer a {
+    color: #818181;
+}
+
+.footer_menu ul a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.footer_menu ul li a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 12px;
+    margin-top: -6px;
+    background: #3f3f3f;
+}
+
+/* 인재채용/가맹점모집 버튼 */
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+
+.footer_menu .c_btn {
+    margin: 0;
+    padding: 18px 10px;
+    overflow: hidden;
+}
+
+.c_btn *+*, .c_btn a+a {
+    margin-left: 6px;
+}
+
+.footer_menu .c_btn a {
+    float: left;
+    width: 49%;
+    width: calc(50% - 2px);
+    height: 32px;
+    margin: 0;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: .875rem;
+    line-height: 22px;
+    background: #434343;
+    border-radius: 4px;
+}
+
+.footer_menu .c_btn a:last-child {
+    float: right;
+}
+
+/* 제일 큰 로고(버거킹) */
+.footer .logo {
+    margin-bottom: 24px;
+}
+
+img {
+    border: none;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+.copyright p {
+    line-height: 170%;
+}
+
+/* sns 전체 div */
+.copyright .sns {
+    margin-top: 20px;
+}
+
+/* sns 아이콘 태그 */
+.copyright .sns a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin-right: 6px;
+    text-indent: -9999em;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% auto;
+}
+
+/* sns 아이콘 */
+.copyright .sns a.facebook {
+    background-image: url(../../img/main/facebook.png);
+}
+
+/* sns 아이콘 */
+.copyright .sns a.insta {
+    background-image: url(../../img/main/insta.png);
+}
+
+@media (max-height: 500px) and (orientation: landscape), 
+screen and (max-width: 768px) and (orientation: portrait) {
+
+.footer {
+    height: 100%;
+}
+
+.footer .web_container {
+    padding: 35px 16px!important;
+}
+
+.footer_menu {
+    position: static;
+}
+
+.footer_menu ul li {
+    width: 25%;
+}
+
+.footer_menu ul a {
+    display: block;
+    padding: 5px 0;
+    font-size: .875rem;
+}
+
+.footer_menu .c_btn {
+    padding: 12px 0;
+}
+
+.footer .logo {
+    height: 15px;
+    margin: 30px 0 17px;
+}
+
+.copyright p {
+    font-size: .75rem;
+    line-height: 150%;
+}
+
+.copyright .sns a {
+    width: 27.5px;
+    height: 27.5px;
+}
+
+
+
+}

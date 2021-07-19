@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,5 +96,19 @@ public class StoreController {
 		
 		return result;
 	}
+	
+	@RequestMapping("city_store.do")
+	@ResponseBody
+	public HashMap<String, Object> cityStoreOpen(SearchDTO dto) {
+
+		List<StoreDTO> list = dao.StoreLocSearch(dto);
+		
+		HashMap<String, Object> result = new HashMap <String, Object>();
+		result.put("storeCount", list.size());
+		result.put("store", list);
+		
+		return result;
+	}
+	
 	
 }

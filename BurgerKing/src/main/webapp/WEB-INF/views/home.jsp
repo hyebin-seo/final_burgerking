@@ -6,13 +6,28 @@
 <head>
 <meta charset="UTF-8">
 <title>버거킹</title>
-
-
 </head>
-  <!-- jsp:header -->
-  
-    <jsp:include page="header.jsp" />
 
+<!-- jsp:header -->
+<jsp:include page="header.jsp" />
+
+<!-- 부트스트랩 적용하면 css가 다 깨지는데 방법을 찾아야할거같아요-->
+
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+    crossorigin="anonymous" >
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+<link href="resources/css/Main.css"  rel="stylesheet"  type="text/css">
+<body>
+
+	
 	<!-- 본문 시작  -->
 	<section class="allPage">
 		<!-- 이벤트 배너판. 이벤트에 있는 페이지와 연동되어야 합니다. -->
@@ -28,6 +43,7 @@
 					data-bs-slide-to="2" aria-label="Slide 3"></button>
 				<button type="button" data-bs-target="#carouselExampleDark"
 					data-bs-slide-to="3" aria-label="Slide 4"></button>
+					
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active" data-bs-interval="10000">
@@ -79,10 +95,10 @@
 						src="resources/img/main/youtube1.png" style="width: 70%"></a></li>
 				<li><a href="https://www.facebook.com/burgerkingkorea"
 					target="_blank"> <img alt="youtube"
-						src="resources/img/main/facebook.png" style="width: 70%"></a></li>
+						src="resources/img/main/main_facebook.png" style="width: 70%"></a></li>
 				<li><a href="https://www.instagram.com/burgerkingkorea"
 					target="_blank"> <img alt="instargram"
-						src="resources/img/main/insta.png" style="width: 70%"></a></li>
+						src="https://www.burgerking.co.kr/dist/img/ico_home_sns_insta1.5e20069c.png" style="width: 70%"></a></li>
 			</ul>
 		</div>
 		<!-- SNS 이동 끝  -->
@@ -100,6 +116,25 @@
 			</div>
 		</div>
 		<!--app 및 딜리버리 끝 -->
+		
+		<!-- 매장찾기 -->
+		<div class="contentsBox01 home_searchshop">
+		    <div class="web_container">
+		        <h2 class="titl">매장찾기</h2>
+		        <p>고객님 주변에 있는 버거킹을 찾아보세요!</p>
+		        <div class="c_btn">
+		        	<a class="btn01 s red" href="store.do"><span>매장찾기</span></a>
+		        </div>
+		        <ul class="shop_categorylist">
+		            <li class="category_delivery"><span class="WEB">집에서 편안하게 <br>받을 수 있는</span><em>딜리버리</em></li>
+		            <li class="category_king"><span class="WEB">미리 주문하고 <br>픽업가능한</span><em>킹오더 </em></li>
+		            <li class="category_drive"><span class="WEB">차안에서 빠르게 <br>이용할 수 있는</span><em>드라이브 스루</em></li>
+		            <li class="category_24"><span class="WEB">24시간 언제든 <br>함께할 수 있는</span><em>24시간</em></li>
+		            <li class="category_morning"><span class="WEB">든든한 <br>아침을 도와줄</span><em>아침메뉴</em></li>
+		            <li class="category_parking"><span class="WEB">내 차와 함께 <br>올 수 있는</span><em>주차공간</em></li>
+		        </ul>
+		    </div>
+		</div>
 
 		<!-- 버거킹 대표번호 나오는 부분 -->
 		<div class="phone">
@@ -111,30 +146,46 @@
 	<!-- 본문   -->
 
 
-	<!-- foote 시작 -->
-	<footer class="footer">
-		<div class="info">
-
-			<div class="info_div">
-				<ul class="info_ul1">
-					<li>메뉴</li>
-					<li>매장</li>
-					<li>이벤트</li>
-					<li>브랜드 스토리</li>
-					<li>고객센터</li>
-				</ul>
-			</div>
-
-
-		</div>
-
-     <!-- footer:include -->
-     <jsp:include page="footer.jsp" />
-	</footer>
+	<!-- foote(sitemap) 시작 -->
+	<div class="WEB sitemap web_max">
+        <div class="web_container">
+            <ul class="menu">
+                <li><a><span>메뉴</span></a>
+                    <ul class="submenu"></ul>
+                </li>
+                <li><a><span>매장</span></a>
+                    <ul class="submenu">
+                        <li><a href="store.do"><span>매장찾기</span></a></li>
+                    </ul>
+                </li>
+                <li><a><span>이벤트</span></a>
+                    <ul class="submenu">
+                        <li><a><span>이벤트</span></a></li>
+                    </ul>
+                </li>
+                <li><a><span>브랜드 스토리</span></a>
+                    <ul class="submenu">
+                        <li><a><span>버거킹 스토리</span></a></li>
+                        <li><a><span>WHY 버거킹</span></a></li>
+                        <li><a><span>버거킹 News</span></a></li>
+                    </ul>
+                </li>
+                <li><a><span>고객센터</span></a>
+                    <ul class="submenu">
+                        <li><a><span>공지사항</span></a></li>
+                        <li><a><span>버거킹앱이용안내</span></a></li>
+                        <li><a href="faq_home.do?faq_cate=all"><span>FAQ</span></a></li>
+                        <li><a><span>문의</span></a></li>
+                        <li><a><span>가맹점모집</span></a></li>
+                        <li><a><span>인재채용</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 	<!-- foote 끝 -->
-
-
-
-
+	
 </body>
+	<!-- jsp:footer -->
+	<jsp:include page="footer.jsp" />
 </html>
