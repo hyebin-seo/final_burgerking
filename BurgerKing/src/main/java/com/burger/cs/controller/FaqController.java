@@ -50,6 +50,8 @@ public class FaqController {
 				model.addAttribute("List", pageList);
 				model.addAttribute("Paging", dto);
 				model.addAttribute("cate", faq_cate);
+				model.addAttribute("cat", "FAQ");
+				
 				System.out.println(dto);
 				
 		}else {
@@ -71,6 +73,8 @@ public class FaqController {
 				model.addAttribute("List", pageList);
 				model.addAttribute("Paging", dto);
 				model.addAttribute("cate", faq_cate);
+				model.addAttribute("cat", "FAQ");
+				
 				System.out.println("cateList >>> "+ dto);
 			
 		}

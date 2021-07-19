@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+html {
+	font-size: 16px;
+	font-family: 'S-CoreDream-5Medium';
+}
+
+html {
+	font-size: 16px;
+	font-family: 'S-CoreDream-5Medium';
+}
+
+body {
+	color: #000;
+	word-wrap: normal;
+	word-break: keep-all;
+	min-height: 100%;
+}
+
+body * {
+	font-family: 'S-CoreDream-5Medium';
+}
+
+a, div, li {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 900;
+	font-size: 1em;
+}
+
+h4 {
+	display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+/* ***메뉴판 전체 영역*** */
+.contentsWrap {
+	min-height: 450px;
+	margin: 0 auto;	
+}
+
+/* 내용 감싸기 */
+.web_container {				/* (위아래 여백) */
+	max-width: 1184px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.contentsWrap .page_tit {	/* '메뉴' */
+	margin-bottom: 15px;
+	font-size: 2.5rem;
+	line-height: 100%;
+	font-family: 'S-CoreDream-9Black';
+}
+
+.subtitWrap .tab01 {		/* 카테고리 */
+	font-family: 'S-CoreDream-9Black';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin: -17.5px 0 0;
+}
+
+.tab01 {
+	overflow: auto;
+}
+
+.tab01 ul {
+	display: table;
+}
+
+.tab01 li:first-child {
+	padding-left: 0;
+}
+
+.tab01 li {
+	position: relative;
+	display: table-cell;
+	padding: 0 18px;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+/* 메뉴/카테고리 */
+.subtitWrap {
+	position: relative;
+	margin-bottom: 26px;
+}
+
+.sustitWrap .tab01 button {
+	height: 35px;
+	font-size: 1.125rem;
+	border-width: 3px 0;
+}
+
+.tab01 button {
+	height: 54px;
+	padding: 5px 0;
+}
+
+.tab01 a, .tab01 button {
+	display: inline-block;
+	padding: 10px 1px;
+	font-weight: 700;
+	font-size: 1.375rem;
+	color: #b8b8b8;
+	border: o solid transparent;
+	border-width: 4px 0;
+}
+
+.tab01 a>*, .tab01 button>* {
+    vertical-align: middle;
+}
+
+/* 선택한 카테고리 */
+.tab01 li.on a, .tab01 li.on button {
+	color: #e22219;
+	border-bottom-color: #e22219;
+}
+
+.tab01 span:hover{
+	color:#000;
+}
+
+/*선택된 메뉴는 hover 먹으면 안되니까 똑같이 css 주기*/
+.tab01 li.on span:hover{
+	color: #e22219;
+	border-bottom-color: #e22219;
+}

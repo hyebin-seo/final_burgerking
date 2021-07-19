@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.cs.model.FranchiseDAO">
+	<insert id="fran_add" parameterType="com.burger.cs.model.FranchiseDTO">
+		<selectKey resultType="int" keyProperty="fran_no" order="BEFORE">
+			select count(*) + 1 from franchise
+		</selectKey>
+		insert into franchise values(#{fran_no},#{fran_name}, #{fran_birth},
+		 #{fran_phone}, #{fran_email}, #{fran_city}, #{fran_gu}, #{fran_possession}, 
+		 #{fran_area}, #{fran_job}, #{fran_opinion}, sysdate)
+		
+	</insert>
+</mapper>

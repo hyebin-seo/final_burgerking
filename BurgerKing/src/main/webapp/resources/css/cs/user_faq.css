@@ -13,6 +13,10 @@
      font-weight: normal;
      font-style: normal;
 }
+
+body{
+	background: #fff;
+}
 .faq_category{
 	height: 48px;
 	margin-bottom: 24px;

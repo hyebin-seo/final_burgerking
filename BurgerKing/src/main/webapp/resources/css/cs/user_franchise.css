@@ -107,10 +107,6 @@ h5.tit{
 
 
 
-
-
-
-
 /*2번째 설명 부분*/
 .branch_intro02 .web_container.container01{
 	margin: 0 auto;
@@ -206,6 +202,15 @@ dt {
     padding-left: 12px;
 }
 
+.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 1.67em;
+    background: url("../../img/cs/squere.png") no-repeat 0;
+}
 
 /*입지조건 아이콘*/
 .branch_intro02 .condition .tit_ico{
@@ -345,4 +350,8 @@ a {
     cursor: pointer;
    	font-family: 'S-CoreDream-5Medium';
    	letter-spacing: -0.9px;
+}
+
+.eventWrap .contentsBox01 {
+    padding: 50px 0 120px;
 }

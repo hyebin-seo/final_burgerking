@@ -14,6 +14,7 @@
   
 </head>
 <body>
+	<jsp:include page="cs_menu.jsp" />
 	<div class="faq_category">
 		<form method="post" action="faq_home.do">
 		<label class="switch01">

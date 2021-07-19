@@ -10,6 +10,7 @@
 <link  href="resources/css/cs/user_franchise.css"  rel="stylesheet"  type="text/css">
 </head>
 <body>
+	<jsp:include page="cs_menu.jsp" />
 	<div class="tab_cont">
 		<h4 class="hide">가맹점 모집</h4>
 		<div class="contentsBox01 bg_w branch_intro01">

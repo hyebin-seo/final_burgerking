@@ -4,7 +4,7 @@
 
 <link  href="resources/css/cs/franchisePopup.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+	<form method="post" action="Franchise_Ok.do" onsubmit="return dataCheck();">
 	<div class="franchisePopWrap m_FullpopWrap">
 		<div class="popbox01">
 			<div class="M_headerWrap">
@@ -25,7 +25,7 @@
 						<dl>
 							<dt>성명</dt>
 							<dd>
-								<input type="text" placeholder="이름">
+								<input type="text" placeholder="이름" name="fran_name">
 							</dd>
 						</dl>
 						<dl>
@@ -33,20 +33,20 @@
 							<dd>
 								<div class="inp_birth">
 									<div>
-										<select class="st03">
+										<select class="st03" name="year">
 											<option value disabled="disabled" selected>
 												선택
 											</option>
 											<c:set var="endYear" value="2021"/>
 											<c:forEach begin="0" end="99" var="i">
-												<option>
+												<option value="${endYear - i}">
 													${endYear - i}
 												</option>
 											</c:forEach>
 										</select> <strong>년</strong>
 									</div>
 									<div>
-										<select class="st03">
+										<select class="st03" name="month">
 										<option value disabled="disabled" selected>선택</option>
 										<c:forEach begin="1" end="12" var="i">
 												<option value="${i }">
@@ -56,7 +56,7 @@
 										</select> <strong>월</strong>
 									</div>
 									<div>
-										<select class="st03">
+										<select class="st03" name="day">
 										<option value disabled="disabled" selected>선택</option>
 										<c:forEach begin="1" end="31" var="i">
 												<option value="${i }">
@@ -73,25 +73,43 @@
 								전화번호<br>(연락처)
 							</dt>
 							<dd>
-								<input type="tel" placeholder="‘-’없이 입력">
+								<input type="tel" placeholder="‘-’없이 입력" name="fran_phone">
 							</dd>
 						</dl>
 						<dl>
 							<dt>이메일</dt>
 							<dd>
-								<input type="text" placeholder="이메일">
+								<input type="text" placeholder="이메일" name="fran_email">
 							</dd>
 						</dl>
 						<dl>
 							<dt>희망개설지역</dt>
 							<dd>
 								<div class="form_list">
-									<select class="st03">
-										<option>서울특별시</option>
-									</select> 
-									<select class="st03">
-										<option>강남구</option>
-									</select>
+									<select class="st03 city_select" name="fran_city">
+			                            <option value="" disabled="disabled">특별/광역시</option>
+			                            <option value="11">서울특별시</option>
+			                            <option value="21">부산광역시</option>
+			                            <option value="22">대구광역시</option>
+			                            <option value="23">인천광역시</option>
+			                            <option value="24">광주광역시</option>
+			                            <option value="25">대전광역시</option>
+			                            <option value="26">울산광역시</option>
+			                            <option value="29">세종특별자치시</option>
+			                            <option value="31">경기도</option>
+			                            <option value="32">강원도</option>
+			                            <option value="33">충청북도</option>
+			                            <option value="34">충청남도</option>
+			                            <option value="35">전라북도</option>
+			                            <option value="36">전라남도</option>
+			                            <option value="37">경상북도</option>
+			                            <option value="38">경상남도</option>
+			                            <option value="39">제주특별자치도</option>
+			                        </select>
+			                        <select class="st03 gungu_select" name="fran_gu">
+										<!-- 군, 구 동적 생성 -->
+										<option value="">군, 구</option>
+			                        </select>
 								</div>
 							</dd>
 						</dl>
@@ -100,11 +118,11 @@
 							<dd>
 							<div class="formlistWrap item3">
 								<label class="radio_label"> 
-								<input type="radio" value="Y" checked="checked">
+								<input type="radio" value="Y" checked="checked" name="fran_possession">
 								<strong>유</strong>
 								</label> 
 								<label class="radio_label"> 
-								<input type="radio" value="N">
+								<input type="radio" value="N" name="fran_possession">
 								<strong>무</strong>
 								</label>
 							</div>
@@ -114,8 +132,8 @@
 							<dt class="vtop m_vtop_form">보유시 임대차 목적물 면적</dt>
 							<dd>
 							<div class="form_list">
-								<input type="tel" placeholder="숫자입력" class="area"> 
-								<select class="st03">
+								<input type="tel" placeholder="숫자입력" class="area" name="area_no"> 
+								<select class="st03" name="area">
 									<option value="㎡" selected="selected">제곱미터</option>
 									<option value="평">평</option>
 								</select>
@@ -125,14 +143,14 @@
 						<dl>
 							<dt class="nowrap">현재 종사 직업</dt>
 							<dd>
-								<input type="text" placeholder="한글/영문 입력">
+								<input type="text" placeholder="한글/영문 입력" name="fran_job">
 							</dd>
 						</dl>
 					</div>
 					<dl class="dlist02">
 						<dt>추가 의견</dt><br>
 						<dd>
-							<textarea id="text_content"rows="5" cols="50" placeholder="내용입력" maxlength="500"></textarea>
+							<textarea name="fran_opinion" id="text_content"rows="5" cols="50" placeholder="내용입력" maxlength="500"></textarea>
 							<div class="page_count">
 								<span>0</span>/ <span>500</span>
 								<!-- <span>###</span> -->
@@ -144,7 +162,8 @@
 					<div class="container02">
 						<div class="auth_list accWrap01">
 							<div class="divide">
-								<label> <input type="checkbox" class="check02">
+								<label id="check_terms"> 
+									<input type="checkbox" class="check02" name="terms">
 									<span>약관동의</span>
 								</label>
 							</div>
@@ -217,10 +236,11 @@
 				</div>
 			</div>
 			<div class="pop_btn full_type">
-					<button type="button" class="btn02">
+					<button type="submit" class="btn02">
 						<span>신청서 작성</span>
 					</button>
 			</div>
 		</div>
 	</div>
+	</form>
 <script src="resources/js/cs/franchisePopup.js"></script>

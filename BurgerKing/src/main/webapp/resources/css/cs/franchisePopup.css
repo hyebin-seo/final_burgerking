@@ -46,6 +46,7 @@ input, select {
 	outline: none;
 }
 
+/*팝업창 뒤에 색깔 연한 회색 넣기*/
 .franchisePopWrap{
 	display: none;
     position: fixed;
@@ -619,3 +620,4 @@ input:disabled {
     color: #cdcdcd;
     background: #f1f1f1;
 }
+
