@@ -1,0 +1,382 @@
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font: normal 1em 'HGG', 'Malgun Gothic', '맑은 고딕', dotum,'돋움',sans-serif;
+    background: #f2ebe6;
+}
+
+div {
+    display: block;
+}
+
+.headerWrap {
+    padding: 20px 0 30px;
+    background: #fff;
+}
+
+.web_container02 {
+    max-width: 776px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.logo {
+    width: 83px;
+    height: 82px;
+    text-indent: -9999em;
+    background: url(https://www.burgerking.co.kr/static/images/logo_header.gif) no-repeat 0 0;
+}
+p, ul, li, ol, h1, h2, h3, h4, h5, h6, dl, dt, dd, em, figure {
+    margin: 0;
+    padding: 0;
+}
+user agent stylesheet
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+
+.contentsWrap {
+    max-width: 1144px;
+    margin: 0 auto;
+    padding: 50px 20px 20px;
+}
+
+.web_container02 {
+    max-width: 776px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.tit_ico {
+    position: relative;
+    padding-left: 50px;
+    line-height: 40px;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.tit_ico.key:before {
+    background-image: url(https://www.burgerking.co.kr/static/images/ico_tit_key.png);
+}
+.tit_ico:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.tit01.tit_ico + .container02 {
+    margin-top: 8px;
+}
+
+.container02 {
+    position: relative;
+    margin: 15px 0;
+    padding: 20px 50px;
+    font-size: 1.375rem;
+    background: #fff;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.dlist01 {
+    display: table;
+    width: 100%;
+}
+
+.dlist01 > dl {
+    display: table-row;
+}
+
+dl {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.dlist01 dt.vtop {
+    height: 1em;
+    padding-top: 26px;
+    vertical-align: top;
+}
+.dlist01 dt {
+    width: 28%;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+dlist01 dt, .dlist01 dd {
+    display: table-cell;
+    height: 70px;
+    padding: 5px 0;
+    vertical-align: middle;
+}
+
+.dlist01 dt.vtop + dd {
+    height: 70px;
+}
+.dlist01 dt, .dlist01 dd {
+    display: table-cell;
+    height: 70px;
+    padding: 5px 0;
+    vertical-align: middle;
+}
+
+dd {
+    display: block;
+    margin-inline-start: 40px;
+}
+
+.container02 .dlist01 .inpbox {
+    margin-bottom: 0;
+}
+.container02 .inpbox:first-of-type {
+    margin-top: 4px;
+}
+.container02 .inpbox {
+    margin: 4px 4px 13px;
+}
+.inpbox {
+    position: relative;
+}
+
+.inpbox > label {
+    display: block;
+}
+user agent stylesheet
+label {
+    cursor: default;
+}
+
+.inpbox input.st02 {
+    padding-left: 0;
+}
+.inpbox input {
+    width: 100%;
+    padding: 0 25px 3px 5px;
+}
+input[type=text], input[type=password], input[type=number], input[type=tel], input[type=rang], input[type=email], input[type=url], input[type=date], input[type=datetime], input[type=month], input[type=tel], input[type=search], input[type=color], input[type=file] {
+    display: inline-block;
+    height: 66px;
+    margin: 0;
+    padding: 3px 10px 3px 4px;
+    font-weight: normal;
+    font-size: 1.375rem;
+    font-family: 'HGG', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: url(https://www.burgerking.co.kr/static/images/bg_line01.png) repeat-x left bottom;
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+user agent stylesheet
+input[type="password" i] {
+    -webkit-text-security: disc !important;
+    padding: 1px 2px;
+}
+user agent stylesheet
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+.container02 .inpbox:last-child, .container02 .dlist01:last-child dl:last-child dt.WEB + dd .inpbox {
+    margin-bottom: 30px;
+}
+.container02 .inpbox {
+    margin: 4px 4px 13px;
+}
+.inpbox + .inpbox {
+    margin-top: 12px;
+}
+
+.inpbox .txt {
+    position: static;
+    margin-top: 12px;
+    font-size: 1rem;
+    color: #e22219;
+}
+
+.container02 .txtlist01 {
+    margin: 62px 0 20px;
+    font-size: 1rem;
+}
+.txtlist01 {
+    margin: 7px 0 7px 5px;
+    line-height: 167%;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.txtlist01 li {
+    position: relative;
+    padding-left: 12px;
+}
+li {
+    list-style: none;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 1.67em;
+    background: url(https://www.burgerking.co.kr/static/images/bul02.png) no-repeat left center;
+}
+
+.c_btn {
+    margin: 40px 0;
+    text-align: center;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.btn01.m.red {
+    background: url(https://www.burgerking.co.kr/static/images/bg_btn01_m_red.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+.btn01.m {
+    width: 216px;
+    height: 68px;
+    font-size: 1.5rem;
+    line-height: 46px;
+    background: url(./static/images/bg_btn01_m.png) no-repeat center center;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+.btn01.red {
+    background: url(./static/images/bg_btn01_normal_red.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+.btn01 {
+    display: inline-block;
+    width: 256px;
+    height: 68px;
+    font-size: 1.5rem;
+    padding: 12px 10px 10px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    background: url(./static/images/bg_btn01_normal.png) no-repeat center center;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+button {
+    margin: 0;
+    padding: 0;
+    font: normal 1em 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+user agent stylesheet
+button {
+    appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}

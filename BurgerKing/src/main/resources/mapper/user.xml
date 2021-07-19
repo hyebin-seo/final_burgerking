@@ -48,7 +48,7 @@
     <!-- 카카오 회원가입 메서드 -->
    <insert id="kakaoJoin" parameterType="com.burger.login.model.UserDTO">
    
-     insert into user_info values (#{user_id},null, #{user_name}, null, null, sysdate, null)
+     insert into user_info values (#{user_id},null, #{user_name}, null, null, sysdate, null)	
    
    </insert>
    
