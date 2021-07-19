@@ -14,7 +14,19 @@
 
 </head>
 <body>
-
+	<form name="cform" method="post" action="cart_insert.do">
+		<input type="hidden" name="set_no">
+		<input type="hidden" name="ing1" value="">
+		<input type="hidden" name="ing2" value="">
+		<input type="hidden" name="ing3" value="">
+		<input type="hidden" name="ing4" value="">
+		<input type="hidden" name="ing5" value="">
+		<input type="hidden" name="ing6" value="">
+		<input type="hidden" name="ing7" value="">
+		<input type="hidden" name="side" value="">
+		<input type="hidden" name="drink" value="">
+	</form>
+	
 	<!-- 메뉴판 내용 영역 -->
 	<div class="contentsWrap">
 	
@@ -176,8 +188,6 @@
 		
 	</div>
 
-<%-- <jsp:include page="menuPopup.jsp" flush="true" /> --%>
 <script src="resources/js/menu/menu_delivery.js"></script>
-<!-- <script src="resources/js/menu/menu_popup.js"></script> -->
 </body>
 </html>

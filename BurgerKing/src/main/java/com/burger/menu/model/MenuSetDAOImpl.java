@@ -25,5 +25,11 @@ public class MenuSetDAOImpl implements MenuSetDAO {
 		
 		return this.sqlSession.selectList("getMenuNoListInMenuSet");
 	}
+	
+	// 세트 메뉴 한 개 정보(menuSetDTO)를 반환
+	public MenuSetDTO getSetDetail(int set_no) {
+		
+		return this.sqlSession.selectOne("getSetDTO", set_no);
+	}
 
 }

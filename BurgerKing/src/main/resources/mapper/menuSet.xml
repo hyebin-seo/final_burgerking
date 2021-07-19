@@ -14,4 +14,8 @@
 		select * from menu_set where menu_no = #{menu_no}
 	</select>
 	
+	<select id="getSetDTO" resultType="com.burger.menu.model.MenuSetDTO">
+		select * from menu_set where set_no = #{set_no}
+	</select>
+	
 </mapper>
