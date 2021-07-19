@@ -7,21 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MenuDAOImpl implements MenuDAO {
-
+public class MenuOptionDAOImpl implements MenuOptionDAO {
+	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
-	
-	@Override
-	public List<MenuDTO> getMenuList(String category) {
-		
-		return this.sqlSession.selectList("menuList", category);
-	}
 
 	@Override
-	public MenuDTO getMenuDetail(int menu_no) {
+	public List<MenuOptionDTO> getMenuOptionList(String op_cat) {
 		
-		return this.sqlSession.selectOne("getMenuDetail", menu_no);
+		//System.out.println(op_cat+"impl 클래스까지 넘어오니?ㅜ");
+		
+		return this.sqlSession.selectList("sideList", op_cat);
 	}
+	
+	
 
 }

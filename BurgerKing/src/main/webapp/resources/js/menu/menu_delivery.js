@@ -1,3 +1,5 @@
+var form = document.cform;
+
 /*$(function() {
 	
 	// 페이지 들어왔을 때 선택된 카테고리에 클래스 on 줘야함
@@ -69,10 +71,12 @@ $(document).ready(function () {
 	
 	/* 메뉴 선택 시 팝업 관련 */
 	// 메뉴 클릭 이벤트 (팝업)
-	$(document).on("click", ".btn_detail", function() {
+	/*$(document).on("click", ".btn_detail", function() {*/
+	$(document).on("click", ".prdmenu_list .btn_detail", function() {
 		
 		// 메뉴 번호 인자로 전달
 		menuSetOpen($(this).children("input").val());
+		//alert($(this).children("input").val());
 		
 	});
 	
@@ -83,6 +87,63 @@ $(document).ready(function () {
 	});
 	
 	
+	/* 세트 메뉴 클릭시 팝업 */
+	$(document).on("click", ".menu_sub_list02 .btn_detail", function() {
+		
+		// 세트 메뉴 번호 인자로 전달
+		menuSideOpen($(this).val());
+		//alert($(this).val());
+		
+	});
+	
+	$(document).on("click", ".st02 .btn_close", function() {
+		
+		$(".popWrap").remove();
+		
+	});
+	
+	
+	/* 세트 단계 선택시 팝업 */
+	/*$(document).on("click", ".pop_btn.c_btn.item2 .btn02", function() {*/
+	$(document).on("click", ".pop_btn.c_btn .btn02", function() {
+		
+		//alert($(this).children("input").val());
+		if($(this).children("input").length){ //a
+			//alert("세트번호"+$(this).children("input").val().split(",")[0]);
+			
+			if($(this).children("input").val().split(",")[0] == "단품"){
+				form.submit();
+			}else{
+				sideOptionOpen($(this).children("input").val().split(",")[0], $(this).children("input").val().split(",")[1]);
+			}	
+		
+		}else{ //btn
+			//alert("세트번호"+$(this).val().split(",")[1]);
+			
+			if($(this).val().split(",")[0] == "단품"){
+				form.submit();
+			}else{
+				sideOptionOpen($(this).val().split(",")[0], $(this).val().split(",")[1]);
+			}
+					
+		}
+	});
+	
+	
+	$(document).on("click", "input[class='check02']", function () {
+		
+		// 클릭했을 때 체크 상태 => 해제 / 해제 상태 => 체크 로 바뀜!
+		if($(this).is(":checked")){
+			$(this).removeAttr("checked");
+			//$(this).removeClass("changeImg");
+			
+		} else {
+			$(this).attr("checked", "checked");
+			//$(this).addClass("changeImg");
+		}
+	});
+	
+	//var radio = $("input[name='option']:checked").val();
 	
 	/*$(".popWrap").css("display","none");
 	
@@ -112,6 +173,24 @@ $(document).ready(function () {
 	});*/
 });
 
+function noInsert(set_no) {
+	
+	alert(set_no);
+	
+	$("input[name='set_no']").val(set_no);
+	
+	//form.submit();
+}
+
+function sideInsert(radio) {
+	
+	alert(radio);
+	
+	$("input[name='side']").val(radio);
+	
+	//form.submit();
+}
+
 
 // 메뉴 세트 정보 불러오기
 function menuSetOpen(menu_no) {
@@ -129,15 +208,43 @@ function menuSetOpen(menu_no) {
 }
 
 
+function menuSideOpen(set_no) {
+	$.ajax({
+		url : "menu_side.do",
+		data : {"set_no" : set_no},
+		type: "post",
+		success: function(data){
+			sidePopupMaking(data);
+			//alert("ahdlf");
+		},
+		error: function(request, status, error){
+			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
+
+// 메뉴판에서 메뉴 클릭했을 때 세트메뉴(라지,세트,단품) 선택하는 팝업
 function setPopupMaking(jsonStr) {
 	
-	var menu = jsonStr.setMenu;
+	var menuDetail = jsonStr.menuDetail;	// 메뉴 상세
+	var list = jsonStr.setList;				// 세트메뉴 정보	
+	
+	//alert(list);
 	
 	var htmlStr = "";
 	
 	// 세트 메뉴 없으면 바로 장바구니로,,
 	// *********** 이건 나중에 ***********
-	if(menu != null) {
+	if(list.length == 0) {
+		alert("세트 메뉴 x 경우! 장바구니로 바로! 보내주세용~~~~~~");
+		
+		var form = document.cform;
+		$("input[name='set_no']").val(menuDetail.menu_no);
+		form.submit();
+		
+	}else if(list != null) {
+		
 		htmlStr += "<div class='popWrap m_FullpopWrap'>";
 		
 		//
@@ -150,25 +257,398 @@ function setPopupMaking(jsonStr) {
 		htmlStr += "<div class='popcont nopadding'>";
 		htmlStr += "<div class='prd_intro'>";
 		htmlStr += "<div class='prd_img'>";
-		htmlStr += "<em class='prd_img'></em><span>이미지</span></div>";
+		
+		if(menuDetail.menu_type == "NEW"){
+			htmlStr += "<em class='ico_flag_new'></em>";
+		}else if(menuDetail.menu_type == "BEST"){
+			htmlStr += "<em class='ico_flag_best'></em>";
+		}
+		
+		htmlStr += "<span><img src='"+menuDetail.menu_img+"' alt='제품' class style='display:inline; opacity: 1;'>";
+		htmlStr += "</span></div>";
 		htmlStr += "<div class='intro_txt'>";
-		htmlStr += "<h3 class='tit'><span>메뉴이름</span></h3>";
-		htmlStr += "<p class='subtxt'><span>멘트</span></p></div></div>";
+		htmlStr += "<h3 class='tit'><span>"+menuDetail.menu_name+"</span></h3>";
+		
+		if(menuDetail.menu_sentence != null) {
+			htmlStr += "<p class='subtxt'><span>"+menuDetail.menu_sentence+"</span></p></div></div>";
+		}else {
+			htmlStr += "<p class='subtxt'><span></span></p></div></div>";
+		}
 		
 		htmlStr += "<ul class='menu_sub_list02'>";
-		htmlStr += "<li><div class='prd_img'><em class></em>";
-		htmlStr += "<span>이미지1</span></div>";
-		htmlStr += "<div class='cont'><p class='tit'><strong>세트이름1</strong></p>";
-		htmlStr += "<p class='set'><span>구성</span></p>";
-		htmlStr += "<p class='price'><strong><em><span>가격</span></em></strong></p></div>";
-		htmlStr += "<button type='button' class='btn_detail'><span>Details</span></button>";
-		htmlStr += "</li></ul>";
-		htmlStr += "</div></div></div>";
 		
+		$.each(list , function(i, set){
+			htmlStr += "<li>";
+			htmlStr += "<div class='prd_img'>";
+			
+			// 세트메뉴에 따로 new, best 주려면 DB 바꿔야함!
+			/*if(menuDetail.menu_type == "NEW"){
+				htmlStr += "<em class='ico_flag_new'></em>";
+			}else if(menuDetail.menu_type == "BEST"){
+				htmlStr += "<em class='ico_flag_best'></em>";
+			}*/
+			
+			htmlStr += "<span><img src='"+set.set_img+"' alt='제품' class style='display:inline; opacity:1;'></span></div>";
+			htmlStr += "<div class='cont'><p class='tit'><strong>"+set.set_name+"</strong></p>";
+			
+			if(set.set_member != null) {
+				htmlStr += "<p class='set'><span>"+set.set_member+"</span></p>";
+			}
+			
+			htmlStr += "<p class='price'><strong><em><span>&#8361;"+set.set_price.toLocaleString()+"</span></em></strong></p></div>";
+			htmlStr += "<button type='button' class='btn_detail' value='"+set.set_no+"'><span>Details</span></button>";
+			htmlStr += "</li>";
+		});
+		
+		htmlStr += "</ul>";
+		htmlStr += "</div></div></div>";
 	}
 	
 	$("body").append(htmlStr);
 }
+
+// 단품->세트 / 세트->라지 업그레이드 여부 물어보는 팝업
+function sidePopupMaking(jsonStr) {
+	
+	var menu = jsonStr.menu;	// 현재 클릭한 세트의 메뉴 정보
+	var set = jsonStr.set;		// 현재 세트 DTO 정보
+	var up = jsonStr.up;		// 업그레이드 할 세트 정보
+	
+	//alert(set.set_no);
+	
+	var htmlStr = "";
+	// alert(set.set_no);
+	
+	// 카테고리가 사이드나 음료&디저트일 경우 세트 업그레이드 옵션이 없음. 클릭한 세트로 바로 장바구니 이동
+	if(menu.menu_cat=="사이드" || menu.menu_cat=="음료&디저트" || menu.menu_show == "delivery"){
+		alert("사이드나 음료&디저트/배달only는 클릭한 세트 바로 장바구니로 보내주면 됩니당");
+		
+		//$("input[name=set_no]").val(set.set_no);
+		//alert($("input[name=set_no]").val());
+		
+		//location.href="cart_insert.do?";
+		//var form = document.cform;
+		/*var form = $("<form></form>");
+		form.attr("name", "form");
+		form.attr("method", "post");
+		form.attr("action", "cart_insert.do");
+		form.append($("<input/>", {type:"hidden", name:"set_no", value:set.set_no}));
+		form.appendTo("body");*/
+		$("input[name='set_no']").val(set.set_no);
+		form.submit();
+		
+	// 그 외 카테고리일 경우 업그레이드 팝업
+	}else {
+		
+		//var form = document.cform;
+		
+		// 라지 세트를 선택했을 경우 바로 사이드 옵션 선택으로
+		// indexOf => 인자로 받은 문자의 위치를 인덱스로 반환
+		if(set.set_name.indexOf("라지")!=-1) {
+			
+			// 롱치킨버거 or 치즈버거 or 와퍼종류일때는 먼저 재료추가 팝업
+			if(menu.menu_name=="롱치킨버거" || menu.menu_name=="치즈버거" || menu.menu_name.indexOf("와퍼")!=-1){
+				
+				$("input[name='set_no']").val(set.set_no);
+				sideOptionOpen("재료", set.set_no);
+			
+			// 아닐 경우 바로 사이드L 팝업창
+			}else {
+				
+				$("input[name='set_no']").val(set.set_no);
+				//alert(menu.menu_name+"클릭햇다");
+				sideOptionOpen("사이드L", set.set_no);
+				// return;
+			}
+			
+		
+		// 그냥 세트를 클릭했을 경우 라지 세트로 업그레이드 할거냐는 팝업창
+		}else if(set.set_name.indexOf("세트")!=-1) {		// "라지"는 없는데 "세트"는 포함한 경우 = R 세트
+			
+			htmlStr += "<div class='popWrap'>";
+			
+			//
+			htmlStr += "<div class='popbox01'>";
+			htmlStr += "<div class='popcont'>";
+			htmlStr += "<p class='poptxt01 st02'>";
+			htmlStr += "<strong><em>700원</em>만 추가하면<br> 사이드와 음료를 라지 사이즈로<br> 즐기실 수 있어요!<br>업그레이드 하시겠습니까?</strong>";
+			htmlStr += "</p>";
+			htmlStr += "<div class='prdsetWrap'>";
+			htmlStr += "<div class='prd_img'>";
+			
+			if(up.menu_type == "NEW"){
+				htmlStr += "<em class='ico_flag_new'></em>";
+			}else if(up.menu_type == "BEST"){
+				htmlStr += "<em class='ico_flag_best'></em>";
+			}
+			
+			htmlStr += "<span><img src='"+up.set_img+"' alt='제품' class style='display:inline; opacity: 1;'>";
+			htmlStr += "</span></div>";
+			htmlStr += "<p class='tit'><strong>"+up.set_name+"</strong></p>";
+			
+			if(up.set_member != null) {
+				htmlStr += "<p class='set'><span>"+up.set_member+"</span></p></div></div>";
+			}else {
+				htmlStr += "<p class='set'><span></span></p></div></div>";
+			}
+			
+			htmlStr += "<div class='pop_btn c_btn item2'>";
+			htmlStr += "<a class='btn02 m_btn01_s dark' onclick=noInsert("+set.set_no+")>";
+			
+			// 업그레이드 X
+			// 롱치킨버거 or 치즈버거 or 와퍼종류일때는 먼저 재료추가 팝업
+			if(menu.menu_name=="롱치킨버거" || menu.menu_name=="치즈버거" || menu.menu_name.indexOf("와퍼")!=-1){
+				
+				htmlStr += "<input type='hidden' value='재료, "+set.set_no+"'>";
+			
+			// 아닐 경우 사이드R 팝업창
+			}else {
+				
+				htmlStr += "<input type='hidden' value='사이드R, "+set.set_no+"'>";
+			}
+			
+			htmlStr += "<span>아니오</span></a>";
+			
+			htmlStr += "<a class='btn02 m_btn01_s red' onclick=noInsert("+set.set_no+")>";
+			
+			// 롱치킨버거 or 치즈버거 or 와퍼종류일때는 먼저 재료추가 팝업
+			if(menu.menu_name=="롱치킨버거" || menu.menu_name=="치즈버거" || menu.menu_name.indexOf("와퍼")!=-1){
+				
+				htmlStr += "<input type='hidden' value='재료, "+set.set_no+"'>";
+			
+			// 아닐 경우 사이드L 팝업창
+			}else {
+				
+				htmlStr += "<input type='hidden' value='사이드L, "+set.set_no+"'>";
+			}
+			
+			/*htmlStr += "<a onclick=formInsert("+set.set_no+")><span>업그레이드 하기</span></a></a>"*/
+			htmlStr += "<span>업그레이드 하기</span></a>";
+			htmlStr += "</div></div></div></div>";
+		
+		// 단품을 선택했을 경우 세트로 업그레이드 할거냐는 팝업창
+		}else {
+			
+			htmlStr += "<div class='popWrap'>";
+			
+			//
+			htmlStr += "<div class='popbox01'>";
+			htmlStr += "<div class='popcont'>";
+			htmlStr += "<p class='poptxt01 st02'>";
+			htmlStr += "<strong><em>"+(up.set_price-set.set_price).toLocaleString()+"원</em>만 추가하면<br> 더 풍성하게 세트로<br> 즐기실 수 있어요!<br>업그레이드 하시겠습니까?</strong>";
+			htmlStr += "</p>";
+			htmlStr += "<div class='prdsetWrap'>";
+			htmlStr += "<div class='prd_img'>";
+			
+			if(up.menu_type == "NEW"){
+				htmlStr += "<em class='ico_flag_new'></em>";
+			}else if(up.menu_type == "BEST"){
+				htmlStr += "<em class='ico_flag_best'></em>";
+			}
+			
+			htmlStr += "<span><img src='"+up.set_img+"' alt='제품' class style='display:inline; opacity: 1;'>";
+			htmlStr += "</span></div>";
+			htmlStr += "<p class='tit'><strong>"+up.set_name+"</strong></p>";
+			
+			if(up.set_member != null) {
+				htmlStr += "<p class='set'><span>"+up.set_member+"</span></p></div></div>";
+			}else {
+				htmlStr += "<p class='set'><span></span></p></div></div>";
+			}
+			
+			htmlStr += "<div class='pop_btn c_btn item2'>";
+			htmlStr += "<a class='btn02 m_btn01_s dark' onclick=noInsert("+set.set_no+")>";
+			
+			htmlStr += "<input type='hidden' value='단품, "+set.set_no+"'>";
+			
+			htmlStr += "<span>아니오</span></a>";
+			htmlStr += "<a class='btn02 m_btn01_s red' onclick=noInsert("+set.set_no+")>";
+			
+			// 롱치킨버거 or 치즈버거 or 와퍼종류일때는 먼저 재료추가 팝업
+			if(menu.menu_name=="롱치킨버거" || menu.menu_name=="치즈버거" || menu.menu_name.indexOf("와퍼")!=-1){
+				
+				htmlStr += "<input type='hidden' value='재료, "+set.set_no+"'>";
+			
+			// 아닐 경우 사이드L 팝업창
+			}else {
+				
+				htmlStr += "<input type='hidden' value='사이드R, "+set.set_no+"'>";
+			}
+			
+			htmlStr += "<span>업그레이드 하기</span></a>";
+			htmlStr += "</div></div></div></div>";
+			
+		}
+	}
+
+	$(".popWrap").remove();
+	$("body").append(htmlStr);
+}
+
+//인자로 받은 옵션 카테고리(재료, 사이드l,r, 음료l,r)에 따른 옵션 리스트
+function sideOptionOpen(op, set_no) {
+	
+	//alert(op);
+	
+	$.ajax({
+		url : "menu_option.do",
+		data : {"op" : op, "set_no" : set_no},
+		type: "post",
+		success: function(data){
+			optionPopupMaking(data);
+		},
+		error: function(request, status, error){
+			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
+// 교환 옵션 팝업(재료, 사이드L,R, 음료L,R)
+function optionPopupMaking(jsonStr){
+	
+	// 먼저 떠있던 팝업창은 삭제~
+	$(".popWrap").remove();
+	
+	var list = jsonStr.optionList;	// 옵션 리스트
+	var op = jsonStr.op;			// 옵션 카테고리
+	var set = jsonStr.set;
+	
+	var htmlStr = "";
+	
+	if(op == "사이드L" || op == "사이드R"){
+		
+		htmlStr += "<div class='popWrap'>";
+		htmlStr += "<div class='popbox01'>";
+		htmlStr += "<div class='pop_header01 st02'>";
+		htmlStr += "<h1 class='m_cen'><span>사이드 변경</span></h1>";
+		htmlStr += "<button type='button' class='btn_close'></button>";
+		htmlStr += "</div>";
+		htmlStr += "<div class='popcont bg_basic container01'>";
+		htmlStr += "<ul class='menu_change'>";
+		
+		$.each(list , function(i, side){
+			
+			htmlStr += "<li>";
+			htmlStr += "<div class='prd_img'><img src='"+side.op_img+"' alt='사이드'></div>";
+			htmlStr += "<div class='cont'>";
+			htmlStr += "<p class='tit'><span>"+side.op_name+"</span></p>";
+			htmlStr += "<p class='price'><span>+</span><span>"+side.op_price+"</span><span class='unit'>원</span></p>";
+			htmlStr += "</div>";
+			htmlStr += "<label class='list_chk'>";
+			
+			if(i == 0){
+				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"' checked onclick='sideInsert("+side.op_no+")'><span>사이드 변경</span></label>";
+			}else{
+				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"' onclick='sideInsert("+side.op_no+")'><span>사이드 변경</span></label>";
+			}
+			
+			htmlStr += "</li>";
+			
+		});
+		
+		htmlStr += "</ul></div>";
+		htmlStr += "<div class='pop_btn c_btn'>";
+		
+		//var radio = $("input[name='option']:checked").val();
+		//alert("클릭된 사이드 번호"+radio);
+		
+		// 어차피 마지막 클릭한 값으로 덮어씌워지니까 클릭할 때마다 폼에 값 저장하는 걸로 햇습니다!
+		if(set.set_name.indexOf("라지")){
+			htmlStr += "<button type='button' class='btn02 red m_btn01_s' value='음료L,"+set.set_no+"'><span>선택</span></button></div>";
+		}else if(set.set_name.indexOf("세트")){
+			htmlStr += "<button type='button' class='btn02 red m_btn01_s' value='음료R,"+set.set_no+"'><span>선택</span></button></div>";
+		}
+		
+		htmlStr += "</div></div></div>";
+		
+	}else if(op == "재료") {
+		
+		htmlStr += "<div class='popWrap'>";
+		htmlStr += "<div class='popbox01'>";
+		htmlStr += "<div class='pop_header01 st02'>";
+		htmlStr += "<h1><span>재료를 추가해 더 맛있게 즐겨보세요!</span></h1>";
+		htmlStr += "<button type='button' class='btn_close'></button>";
+		htmlStr += "</div>";
+		htmlStr += "<div class='popcont bg_basic container01'>";
+		htmlStr += "<ul class='menu_sub_list check_mode'>";
+		
+		$.each(list , function(i, ing){
+			
+			htmlStr += "<li>";
+			htmlStr += "<input type='checkbox' title='재료 추가' class='check02'>";
+			htmlStr += "<div class='prd_img'><img src='"+ing.op_img+"' alt='재료'></div>";
+			htmlStr += "<div class='cont'>";
+			htmlStr += "<p class='tit'><span>"+ing.op_name+"</span></p>";
+			htmlStr += "<p class='price'><span>+</span><span>"+ing.op_price.toLocaleString()+"원</span></p>";
+			htmlStr += "</div></li>";
+			
+		});
+		
+		htmlStr += "</ul></div>";
+		htmlStr += "<div class='pop_btn c_btn item2'>";
+		
+		if(set.set_name.indexOf("라지")){
+			htmlStr += "<button type='button' class='btn02 dark m_btn01_s' value='사이드L, "+set.set_no+"'>";
+			htmlStr += "<span>추가안함</span></button>";
+			
+			htmlStr += "<button type='button' class='btn02 red m_btn01_s' value='사이드L, "+set.set_no+"'>";
+			htmlStr += "<span>추가하기</span></button></div>";
+			
+		}else if(set.set_name.indexOf("세트")){
+			htmlStr += "<button type='button' class='btn02 dark m_btn01_s' value='사이드R, "+set.set_no+"'>";
+			htmlStr += "<span>추가안함</span></button>";
+			
+			htmlStr += "<button type='button' class='btn02 red m_btn01_s' value='사이드R, "+set.set_no+"'>";
+			htmlStr += "<span>추가하기</span></button></div>";
+		}
+		
+		htmlStr += "</div></div></div>";
+		
+	}else if(op == "음료L" || op == "음료R"){
+		
+		htmlStr += "<div class='popWrap'>";
+		htmlStr += "<div class='popbox01'>";
+		htmlStr += "<div class='pop_header01 st02'>";
+		htmlStr += "<h1 class='m_cen'><span>음료 변경</span></h1>";
+		htmlStr += "<button type='button' class='btn_close'></button>";
+		htmlStr += "</div>";
+		htmlStr += "<div class='popcont bg_basic container01'>";
+		htmlStr += "<ul class='menu_change'>";
+		
+		$.each(list , function(i, side){
+			
+			htmlStr += "<li>";
+			htmlStr += "<div class='prd_img'><img src='"+side.op_img+"' alt='음료'></div>";
+			htmlStr += "<div class='cont'>";
+			htmlStr += "<p class='tit'><span>"+side.op_name+"</span></p>";
+			htmlStr += "<p class='price'><span>+</span><span>"+side.op_price+"</span><span class='unit'>원</span></p>";
+			htmlStr += "</div>";
+			htmlStr += "<label class='list_chk'>";
+			
+			if(i == 0){
+				htmlStr += "<input type='radio' name='option' value checked><span>사이드 변경</span></label>";
+			}else{
+				htmlStr += "<input type='radio' name='option' value><span>사이드 변경</span></label>";
+			}
+			
+			htmlStr += "</li>";
+			
+		});
+		
+		htmlStr += "</ul></div>";
+		htmlStr += "<div class='pop_btn c_btn'>";
+		htmlStr += "<button type='button' class='btn02 red m_btn01_s'><span>선택</span></button></div>";
+		htmlStr += "</div></div></div>";
+		
+	}else if(op == "단품") {
+		alert("장바구니로 바로!");
+	}
+	
+	$("body").append(htmlStr);
+}
+
+
+
 
 /*function popSetting() {
 	const menu_chosen = document.querySelector(".btn_detail");

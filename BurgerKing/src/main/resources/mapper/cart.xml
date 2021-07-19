@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.cart.model.CartDAO">
+	
+	<insert id="insertCart" parameterType="com.burger.cart.model.CartDTO">
+		<!-- insert into cart values((select count(*) from cart) + 1,
+			#{user_id}, #{set_no}, null, null,
+			null, null, null, null, null,
+			null, null, default, null) -->
+		 insert into cart values((select count(*) from cart) + 1,
+			#{user_id}, #{set_no}, #{ing1}, #{ing2},
+			#{ing3}, #{ing4}, #{ing5}, #{ing6}, #{ing7},
+			#{side}, #{drink}, default, #{total_price})
+	</insert>
+	
+</mapper>

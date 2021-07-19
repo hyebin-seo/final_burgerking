@@ -11,4 +11,8 @@
 		order by menu_no
 	</select>
 	
+	<select id="getMenuDetail" resultType="com.burger.menu.model.MenuDTO" parameterType="int">
+		select * from menu where menu_no = #{menu_no}
+	</select>
+	
 </mapper>

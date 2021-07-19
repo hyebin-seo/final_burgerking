@@ -8,4 +8,5 @@ public interface MenuSetDAO {
 	
 	public List<MenuSetDTO> getMenuSetList(int menu_no);
 
+	public MenuSetDTO getSetDetail(int set_no);
 }
