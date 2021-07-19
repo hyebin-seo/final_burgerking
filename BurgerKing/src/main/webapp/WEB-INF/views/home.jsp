@@ -12,19 +12,18 @@
 <jsp:include page="header.jsp" />
 
 <!-- 부트스트랩 적용하면 css가 다 깨지는데 방법을 찾아야할거같아요-->
-
 <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-    crossorigin="anonymous" >
+    crossorigin="anonymous" > 
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
 
-<link href="resources/css/Main.css"  rel="stylesheet"  type="text/css">
+<link href="resources/css/user/Main.css"  rel="stylesheet"  type="text/css">
 <body>
 
 	
