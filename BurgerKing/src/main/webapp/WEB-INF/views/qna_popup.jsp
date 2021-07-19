@@ -166,7 +166,7 @@
 										<input type="checkbox" class="check02">
 											<span>일반 개인정보 수집 및 활용에 관한 동의</span>
 									</label>
-										<button type="button" class="btn_acc"  onclick="open_toggle()">
+										<button type="button" class="btn_acc">
 											<span>상세보기</span>
 										</button>
 								</div>

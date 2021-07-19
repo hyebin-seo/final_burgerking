@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.cs.model.StoreDAO">
+	
+	 <select id="s_count" resultType="int">
+		select count(*) from store
+	</select>
+	
+	<select id="s_list" parameterType="com.burger.cs.model.PageDTO"
+								resultType="com.burger.cs.model.NStoreDTO">
+		<![CDATA[
+			select * from
+				(select n.*, row_number()
+				   over(order by store_no desc) rnum
+				   from store n) 
+				     where rnum >= #{startNo} and rnum <= #{endNo} 
+		]]>
+	</select>
+	
+	 <insert id="s_add" parameterType="com.burger.cs.model.NStoreDTO">
+		<selectKey resultType="int" keyProperty="store_no" order="BEFORE">
+			select count(*) + 1 from store
+		</selectKey>
+		
+		insert into store values(#{store_no},
+		   #{store_title}, #{store_cont}, sysdate, #{store_image})
+	
+	</insert>
+	
+	<update id="s_read" parameterType="int">
+		
+						where store_no = #{no}
+	</update>
+	
+	
+	<select id="s_content" parameterType="int" 
+							resultType="com.burger.cs.model.NStoreDTO">
+		select * from store where store_no = #{no}
+	</select>
+	
+	<update id="s_edit" parameterType="com.burger.cs.model.NStoreDTO">
+		update store set store_title = #{store_title},
+		    store_cont = #{store_cont},
+		    	store_image = #{store_image}
+		    	 where store_no = #{store_no}
+	</update>
+	
+	<delete id="s_del" parameterType="int">
+		delete from store where store_no = #{no}
+	</delete>
+	
+	<update id="s_seq" parameterType="int">
+		<![CDATA[
+			update store set store_no = store_no - 1
+					where store_no > #{no}
+		]]>
+	</update>
+	
+</mapper>

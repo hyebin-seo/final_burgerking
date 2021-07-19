@@ -1,0 +1,205 @@
+@charset "UTF-8";
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     
+}
+
+.hr1 {
+    border: 0;
+    height: 3px;
+    background: #000;
+   max-width: 70%;
+}
+
+.table1 {
+	 width : 70%;
+	 border-spacing:  30px;
+}
+
+
+
+.table1 th {
+		
+	font-family: 'S-CoreDream-9Black';
+	height: 30px;
+	font-size: 1.25rem;
+	text-align: center;	
+	background: #FAFAFA;		
+}
+
+.table1 td{
+	
+	height: 30px; 
+	padding: 5px;
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+	font-family: 'S-CoreDream-5Medium';
+	
+}
+
+.table2 {
+	 width : 70%;
+	 border-spacing:  30px;
+}
+
+
+#tr1 {		
+	font-family: 'S-CoreDream-5Medium';
+	height: 20px;
+	font-size: 1.5rem;
+	text-align: left;	
+	background: #FAFAFA;
+	width: 100%;	
+		
+}
+
+#tr2 {	
+	font-family: 'S-CoreDream-5Medium';
+	height: 10px;
+	font-size: 1.00rem;		
+	background: #FAFAFA;	
+	color: gray;
+	width: 100%;
+	
+}
+#tr3 {		
+	font-family: 'S-CoreDream-5Medium';
+	height: 20px;
+	font-size: 1.25rem;
+	text-align: left;	
+	background: #FAFAFA;
+	width: 100%;
+	
+		
+}
+
+
+
+
+#td1{
+	width: 100%;	
+	
+}
+
+#td2{
+	
+	width: 100%;			
+}
+
+#td2-2{
+	width: 100%;
+	text-align: right;
+}
+
+#td3{
+	width: 100%;	
+	padding-left: 70px;
+	padding-right: 70px;
+}
+
+
+.btn_search {
+		
+	width: 50px;
+	height: 60px;
+	background: url("../../img/cs/searchB.png") no-repeat;
+	background-size: 50px auto;
+	padding: 0;
+	border: 0;
+}
+
+.btn_list {
+		
+	width: 200px;
+	height: 60px;
+	background: url("../../img/cs/listB.png") no-repeat;
+	background-size: 200px 
+	padding: 0;
+	border: 0;
+	font-family: 'S-CoreDream-9Black';
+	font-size: 1.25rem;
+	color: white;
+}
+
+.search_bar {
+		
+	display: inline-block;
+    height: 50px;
+    width : 30%;
+    background: url(../../img/cs/barB.png) no-repeat bottom;
+    border: 0;
+    outline: none;
+    padding: 5px 10px 5px 5px;
+    font-weight: 400;
+    font-size: 30px;
+    font-family: 'S-CoreDream-5Medium';
+    text-align: left;
+    vertical-align: bottom;   
+    }
+
+
+/*페이징 디자인*/
+.text{
+   text-align: center; 
+}
+.page a{
+   height: 36px; 
+   padding: 3px; 
+   font-size: 1.25rem;
+   font-family: 'S-CoreDream-5Medium';
+   text-decoration: none; 
+   color : #000;
+   min-width: 1.5em;
+}
+
+
+
+
+
+
+ul.tabs{
+	
+	padding: 0px;
+	list-style: none;	
+	margin-left :45%;
+	margin-right:30%;
+	margin-bottom: -1.05%;
+	
+}
+
+ul.tabs li{
+	font-family: 'S-CoreDream-9Black';
+	font-size : 30px;
+ 	display: inline-block;
+	background: white;
+	color: gray;
+	padding: 21px;
+	cursor: pointer;
+	outline-style: solid;
+	
+}
+	
+ul.tabs li.current{
+	font-family: 'S-CoreDream-9Black';
+	background: white;
+	color: black;
+	
+}
+
+ .tab-content{
+    display: none;	
+	padding: 12px;
+} 
+
+.tab-content.current{
+	display: inherit;
+}

@@ -55,6 +55,26 @@ function qna_ok() {
 
 }
 
+function offPopup() {
+	popup.style.display ='none';
+}
 
+function onPopup() {
+	popup.style.display ='block';
+}
+
+$(function(){  
+    var article1 = (".acc_list .open");  
+    $(".acc_list .btn_acc").click(function() {  
+       var myArticle1 =$(this).parents(".toggle"); 
+        if($(myArticle1).hasClass('acc_list')) {  
+            $(article1).removeClass('open').addClass('acc_list');  
+            $(myArticle1).removeClass('acc_list').addClass('open');  
+        }  
+        else {  
+            $(myArticle1).addClass('acc_list').removeClass('open');  
+        }  
+    });  
+}); 
 
 
