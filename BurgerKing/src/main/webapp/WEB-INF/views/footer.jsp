@@ -1,74 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-    
+<link href="resources/css/public/footer.css"  rel="stylesheet"  type="text/css">
 
-    .one{
-        
-        height: 200px;
-        background-color: rgb(41, 41,41);
-    }
-  .two{
-     height: 30px;
-     padding-left: 10%;
-     margin: 0;
-  }
-
- .footer_img{
-height: 30px;
-  }
-  .two a{
-      float: right;
-      font-size: 24px;
-      vertical-align: middle;
-      border-right: 0.5px solid black;
-      color: white;
-  }
-  .sns_image{
-    padding-left: 10%;
-  }
-  .one p {
-     padding-left: 10%;
-     color: white;
-  }
-  
-</style>
-</head>
-
-
-<body>
-
-      
-        <div class="one">
-
-             <h1 class="two">
-                 <img class="footer_img" src="resources/img/login/logo.png">
-                <a style="color: white;"><span>이용약관</span></a> 
-                <a style="color: white;"><span>개인정보취급방침</span></a>
-                <a style="color: white;"><span>법적고지</span></a>
-            </h1>
-            <br>
-
-            <p>서울 종로구 삼봉로 71 G 타워 2층 주식회사 비케이알 | 전화주문 1599-0505 <a>인재채용</a><a>가맹점모집 </a></p>
-            <p><a>사업자 등록번호 101-86-76266</a> | [주]BKR 대표이사 문영주</p>
-            <p>Copyright 2019 BKR Co., Ltd. All right Reserved</p>
-
-
-            <div class="sns_image">
-                <img src="" alt="페이스북 이미지"></img>
-                <img src="" alt="인스타그램 이미지"></img>
+<div class="footerWrap">
+    <div class="footer">
+        <div class="web_container">
+            <div class="footer_menu">
+                <ul>
+                    <li><a><span>이용약관</span></a></li>
+                    <li><a><span>개인정보취급방침</span></a></li>
+                    <li><a><span>법적고지</span></a></li>
+                </ul>
+                <div class="c_btn"><a><span>인재채용</span></a><a><span>가맹점모집</span></a></div>
             </div>
-
-           
-             
-          
+            <div class="copyright">
+                <h2 class="logo"><img src="resources/img/main/bugerking_logo.gif" alt="BKR Logo"></h2>
+                <p>서울 종로구 삼봉로 71 G 타워 2층 주식회사 비케이알 | 전화주문 1599-0505</p>
+                <p><a>사업자 등록번호 101-86-76277</a> | (주)BKR 대표이사 문영주</p>
+                <p>Copyright 2019 BKR Co., Ltd. All right Reserved</p>
+                <div class="sns">
+                	<a href="https://www.facebook.com/burgerkingkorea" target="_blank" class="facebook">페이스북</a>
+                	<a href="https://www.instagram.com/burgerkingkorea" target="_blank" class="insta">인스타그램</a>
+                </div>
+            </div>
         </div>
-
-    
-</body>
-</html>
+        <!---->
+    </div>
+</div>

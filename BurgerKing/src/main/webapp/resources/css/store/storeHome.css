@@ -17,6 +17,7 @@
 
 body {
 	font-family: 'S-CoreDream-5Medium';
+    background: #f2ebe6;
 }
 
 a, div, li {
@@ -232,6 +233,11 @@ input[type=text], input[type=url] {
     padding-bottom: 0;
 }
 
+.mapWrap.search_close .btn_mapsearch_open:before {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
 /* 검색창 전체 div */
 .map_searchWrap {
     position: absolute;
@@ -247,6 +253,10 @@ input[type=text], input[type=url] {
     -webkit-transition: right .3s linear;
     transition: right .3s linear;
     z-index: 10;
+}
+
+.mapWrap.search_close .map_searchWrap {
+    right: -429px;
 }
 
 /* 검색창 상단 탭 전체 div */
@@ -1179,13 +1189,7 @@ button:focus {
 	}
 	
 	.loc_container {
-	    position: relative;
-	    height: auto;
-	    min-height: 48px;
-	    padding: 0;
-	    line-height: normal;
-	    background: #3E3D3C;
-	    background-size: 100% 100%;
+	    display: none;
 	}
 	
 	.loc_container .loc {
@@ -1202,6 +1206,10 @@ button:focus {
 	/* 지도영역 */
 	.MOB {
     	display: block!important;
+	}
+	
+	.contentsBox01 {
+	    padding: 0!important;
 	}
 	
 	.btn_gps, .btn_map_open {
@@ -1227,6 +1235,310 @@ button:focus {
 	
 	.w_alignL {
 	    text-align: left!important;
+	}
+	
+	.subtitWrap {
+	    min-height: 56px;
+	    margin: 0;
+	    padding: 20px 0 10px;
+	    background: #fff;
+	}
+	
+	.subtitWrap .page_tit {
+	    margin: 0;
+	    padding: 0 16px 10px;
+	    font-size: 1.5rem;
+	    text-align: center;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	
+	.mapWrap {
+	    position: relative;
+	    top: auto;
+	    bottom: 0;
+	    height: auto;
+	    min-width: 320px;
+	    min-height: 400px;
+	}
+	
+	.map_searchWrap {
+	    width: auto;
+	    min-height: 100%;
+	    padding: 0;
+	    border: none;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	}
+	
+	.map_searchWrap, .map_searchWrap .map_search_head {
+	    position: static;
+	    height: auto;
+	}
+	
+	.tab01 {
+	    overflow: auto;
+	}
+	
+	.tab01 ul {
+	    display: table;
+	    width: 100%;
+	    background: #fff;
+	}
+	
+	.mapWrap .tab01 button {
+	    height: 56px;
+	    font-size: 1rem;
+	}
+	
+	.mapWrap .searchWrap {
+	    border-top: 5px solid #f2ebe6;
+	}
+	
+	.shop_search_option {
+	    padding: 16px;
+	    border: none;
+	}
+	
+	.shop_search_option .btn_search_option {
+	    height: 24px;
+	    padding: 0 21px;
+	    font-weight: 400;
+	    font-size: .625rem;
+	    color: #fff;
+	    background: #2e2e2e;
+	    border-radius: 3px;
+	}
+	
+	.shop_search_option .btn_search_option>span {
+	    padding-right: 0;
+	}
+	
+	.shop_search_option .btn_search_option>span:after {
+	    content: "";
+	    width: 0px;
+	    height: 0px;
+	}
+	
+	
+	.shop_search_option .option_list {
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    border: none;
+	    z-index: 300;
+	}
+	
+	.m_FullpopWrap .popbox01 {
+	    position: relative;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    max-height: 100%;
+	    margin: 0;
+	    padding-top: 56px;
+	    padding-bottom: 56px;
+	    -webkit-transform: none;
+	    transform: none;
+	}
+	
+	.M_headerWrap {
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    background: #fff;
+	    z-index: 50;
+	}
+	
+	.M_headerWrap {
+	    line-height: normal;
+	}
+	
+	.titleBar {
+	    position: relative;
+	    padding: 0 45px;
+	    height: 57px;
+	    background: #fff;
+	    border-bottom: 1px solid #f7f7f7;
+	}
+	
+	.titleBar .page_tit {
+	    height: 100%;
+	    margin: 0;
+	    padding: 0;
+	    font-weight: 700;
+	    font-size: 1.125rem;
+	    text-align: center;
+	    line-height: 56px;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    overflow: hidden;
+	}
+	
+	.popWrap .titleBar .page_tit {
+	    background: #fff;
+	    text-align: center;
+	    box-sizing: border-box;
+	}
+	
+	.shop_search_option .option_list .page_tit {
+	    height: 100%;
+	    line-height: 36px;
+	}
+	
+	.popWrap .titleBar .title_btn {
+		left: 0;
+	    right: auto;
+	}
+	
+	.shop_search_option .option_list .btn_close {
+	    position: static;
+	}
+	
+	.popWrap .titleBar .title_btn button {
+	    width: 60px;
+	}
+	
+	.m_FullpopWrap .popcont {
+	    height: 100%;
+	    max-height: 100%!important;
+	    overflow: auto;
+	    font-size: 1rem;
+	}
+	
+	.check_list01>* {
+	    position: relative;
+	}
+	
+	.check_list01 li>label, .check_list01>label {
+	    position: relative;
+	    display: block;
+	    margin: 0;
+	    padding-left: 34px;
+	    padding-top: 9px;
+	    padding-bottom: 7px;
+	}
+	
+	.check_list01 input[type=checkbox], .check_list01 input[type=radio] {
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    height: 100%;
+	    opacity: 1;
+	}
+	
+	.pop_btn {
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: 0;
+	    padding: 15px 16px;
+	    overflow: hidden;
+	}
+	
+	.m_FullpopWrap .pop_btn {
+	    padding: 0;
+	    margin: 0;
+	}
+	
+	.shop_search_option+.container01 {
+	    padding: 0 16px 16px;
+	}
+	
+	.btn03 {
+	    height: 50px;
+	    font-size: 1rem;
+	}
+	
+	.map_searchWrap .search_result {
+	    min-height: 200px;
+	    padding: 17px 16px;
+	}
+	
+	.mapWrap.map_open .search_result {
+	    display: none;
+	}
+	
+	.nodata {
+	    padding: 172px 10px 10px;
+	    font-size: .875rem;
+	    line-height: 130%;
+	    text-align: center;
+	    color: #9a918c;
+	    background-size: 89px auto;
+	    z-index: 10;
+	}
+	
+	.map_searchWrap .search_result .nodata.st02 {
+	    padding-top: 100px;
+	}
+	
+	.nodata .tit, .nodata .txt {
+	    font-size: .875rem;
+	}
+	
+	.tit_result {
+	    position: relative;
+	    margin-bottom: 10px;
+	    font-size: .875rem;
+	    color: #2e2e2e;
+	}
+	
+	.list02>li {
+	    margin-bottom: 9px;
+	}
+	
+	.WEB {
+	    display: none!important;
+	}
+	
+	.btn_mapsearch_open {
+	    position: absolute;
+	    left: -24px;
+	    top: 50%;
+	    width: 25px;
+	    height: 64px;
+	    margin-top: -32px;
+	    text-indent: -9999em;
+	    background: #f8f8f8;
+	    border: 1px solid #2e2e2e;
+	    border-right-color: #f8f8f8;
+	    -webkit-box-shadow: 0 2px 4px rgb(0 0 0 / 48%);
+	    box-shadow: 0 2px 4px rgb(0 0 0 / 48%);
+	}
+	
+	.btn_gps, .btn_map_open {
+	    position: absolute;
+	    text-indent: -9999em;
+	}
+	
+	.btn_gps {
+	    left: 15px;
+	    top: 15px;
+	    width: 43px;
+	    height: 43px;
+	    background: url(../../img/store/mob_gps.png) no-repeat 0 0;
+	    background-size: 100% auto;
+	    z-index: 10;
+	}
+	
+	.mapWrap .api {
+    	position: relative;
+	    display: none;
+	    height: 960px;
+	}
+	
+	.mapWrap.map_open .api {
+	    display: block;
+	}
+	
+	#map {
+		height: 960px;
 	}
 
 }

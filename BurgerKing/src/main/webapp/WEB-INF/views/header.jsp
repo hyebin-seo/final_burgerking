@@ -5,102 +5,124 @@
 <head>
 <meta charset="UTF-8">
 <title>버거킹</title>
-<link rel="shortcut icon" type="image/x-icon" href="resources/img/public/favicon.ico">
-<!-- top nav부분 css -->
-
-<!-- top nav부분 css end-->
-<script src="https://kit.fontawesome.com/6584921572.js" crossorigin="anonymous"> </script>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-	crossorigin="anonymous">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-	crossorigin="anonymous">
-	
-</script>
 <!-- 제이쿼리 CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<link rel="stylesheet" type="text/css" href="resources/css/Main.css">
-</head>
-<body>
-	<header id="header1">
-		<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-			<div class="container-fluid">
-				<img src="resources/img/main/buger2.png" width="110" height="100"
-					class="bugerLog">
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+<link rel="shortcut icon" type="image/x-icon" href="resources/img/public/favicon.ico">
+<link href="resources/css/public/header.css"  rel="stylesheet"  type="text/css">
+<script type="text/javascript">
+var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+$(document).ready(function () {
+	console.log(isMobile);
+	
+	if(!isMobile) {
+		$(".GNBWrap ul").mouseover(function(){
+			$(".head_menuWrap").addClass("GNB_open");
+		});
+		
+		$(".GNBWrap ul").mouseleave(function(){
+			$(".head_menuWrap").removeClass("GNB_open");
+		});
+	}
+	
+	$(".btn_head_menu").click(function() {
+		$(".headerWrap").addClass("side_open");
+	});
+	
+	$(".btn_head_close").click(function() {
+		$(".headerWrap").removeClass("side_open");
+	});
+	
+	$(".GNBWrap li").click(function() {
+		$(this).toggleClass("menu_open");
+	});
+});
+
+function goDelivery() {
+	// 세션이 있으면 딜리버리로 바로 가야함(수정필요)
+	location.href="Login.do";
+}
+</script>
+
+<!-- pc -->
+<div class="headerWrap">
+    <div class="head_menuWrap">
+        <div class="web_container">
+        	<a href="/burger/" class="router-link-exact-active router-link-active">
+                <h1 class="WEB logo">버거킹 Logo</h1>
+            </a>
+            
+            <div class="MOB m_utilWrap">
+                <div class="m_top">
+                	<button class="btn_head_close"><span>Menu Close</span></button>
+                </div>
+            </div>
+            <div class="GNBWrap">
+                <ul>
+                    <li class=""><button type="button"><span>메뉴소개</span></button>
+                        <ul class="submenu">
+                            <li><a href="Login.do"><span>스페셜&amp;할인팩</span></a></li>
+                            <li><a><span>프리미엄</span></a></li>
+                            <li><a><span>와퍼</span></a></li>
+                            <li><a><span>주니어&amp;버거</span></a></li>
+                            <li><a><span>올데이킹&amp;치킨버거</span></a></li>
+                            <li><a><span>사이드</span></a></li>
+                            <li><a><span>음료&amp;디저트</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_open"><button type="button"><span>매장소개</span></button>
+                        <ul class="submenu">
+                            <li><a href="store.do"><span>매장찾기</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_open"><button type="button"><span>이벤트</span></button>
+                        <ul class="submenu">
+                            <li><a href="faq_home.do?faq_cate=all"><span>이벤트</span></a></li>
+                            <li class="MOB"><a><span>신규매장</span></a></li>
+                        </ul>
+                    </li>
+                    <li class=""><button type="button"><span>브랜드스토리</span></button>
+                        <ul class="submenu">
+                            <li><a><span>버거킹 스토리</span></a></li>
+                            <li><a><span>WHY 버거킹</span></a></li>
+                            <li><a><span>버거킹 NEWS</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="MOB"><button type="button"><span>고객센터</span></button>
+                        <ul class="submenu">
+                            <li><a><span>공지사항</span></a></li>
+                            <li><a><span>버거킹앱이용안내</span></a></li>
+                            <li><a href="faq_home.do?faq_cate=all"><span>FAQ</span></a></li>
+                            <li><a><span>문의</span></a></li>
+                            <li><a><span>가맹점모집</span></a></li>
+                            <li><a><span>인재채용</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <button type="button" class="btn_order" onclick="goDelivery()"><strong>딜리버리주문</strong></button>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<!-- 모바일 -->
+<div class="MOB M_headerWrap">
+	<div class="web_container">
+		<div class="titleBar noborder">
+			<a href="/burger/" class="router-link-exact-active router-link-active">
+				<h2 class="page_tit logo">Burger King</h2>
+			</a>
+			<div class="title_btn">
+				<button type="button" class="btn_head_menu">
+					<span>All Menu</span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-						<!--  <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li> -->
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								메뉴소개 </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="Login.do">스폐셜&할인팩</a></li>
-								<li><a class="dropdown-item" href="#">프리미엄</a></li>
-								<li><a class="dropdown-item" href="#">와퍼</a></li>
-								<li><a class="dropdown-item" href="#">주니어&버거</a></li>
-								<li><a class="dropdown-item" href="#">올데이&치킨버거</a></li>
-								<li><a class="dropdown-item" href="#">사이드</a></li>
-								<li><a class="dropdown-item" href="#">음료&디저트</a></li>
-								<!-- 선넣기  <li><hr class="dropdown-divider"></li> -->
-							</ul></li>
-
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								매장소개 </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="store.do">매장찾기</a></li>
-
-							</ul></li>
-
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								이벤트 </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="faq_home.do?faq_cate=all">이벤트</a></li>
-
-							</ul></li>
-
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								브랜드스토리 </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">버거킹 스토리</a></li>
-								<li><a class="dropdown-item" href="#">why 버거킹</a></li>
-								<li><a class="dropdown-item" href="#">버거킹 News</a></li>
-							</ul></li>
-                         <!-- Login.jsp로 이동! -->
-						<li class="nav-item"><a class="nav-link " href="Login.do"
-							role="button"> <img src="resources/img/main/delivery.png"
-								width="150">
-						</a></li>
-						<!-- disabled 메뉴가 왜 필요할까? 근데 그냥 냅둬봐야지 ㅋㅋㅋ<li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li> -->
-					</ul>
-
-				</div>
-				<div></div>
 			</div>
-		</nav>
-	</header>
-	<!-- header 마무리 -->
-
-</body>
-</html>
+			<div class="title_btn right">
+				<button type="button" class="btn_order">
+					<strong>딜리버리주문</strong>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

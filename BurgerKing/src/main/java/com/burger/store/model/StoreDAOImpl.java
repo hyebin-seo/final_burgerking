@@ -36,14 +36,12 @@ public class StoreDAOImpl implements StoreDAO{
 
 	@Override
 	public List<StoreDTO> StoreNameSearch(SearchDTO dto) {
-		// TODO Auto-generated method stub
 		return this.sqlSession.selectList("store_name_search", dto);
 	}
 
 	@Override
 	public List<StoreDTO> StoreLocSearch(SearchDTO dto) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.sqlSession.selectList("city_store", dto);
 	}
 
 	@Override

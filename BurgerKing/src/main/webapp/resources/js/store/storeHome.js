@@ -17,11 +17,11 @@ $(document).ready(function () {
 	   
 	   if(sel_index == 0) {
 		   updateMap(global_map);
-	   } else if(sel_index == 2) {
-		   citySetting();
 	   }
 	   
-	   
+	   // 탭 이동 시 매장 옵션 초기화
+	   $(".option_list .shoptype_list input[type='checkbox']").prop("checked", false);
+	   $(".option_list .shoptype_list input[type='checkbox']").eq(0).prop("checked", true);
    });
    
    $(".st04 option:eq(0)").prop("selected", true); //셀렉트 박스 첫번째 option 선택
@@ -39,15 +39,33 @@ $(document).ready(function () {
 	   $(".shop_search_option .option_list").css("display","none");
    });
    
+   // 매장 옵션 적용 버튼 클릭 이벤트
+   $(document).on("click", ".btn02", function () {
+	   if($(".mapWrap .tab01 li").eq(0).hasClass("on")) { //가까운매장
+		   updateMap(global_map);
+	   } else if($(".mapWrap .tab01 li").eq(1).hasClass("on")) { //매장명검색
+		   var searchName = $(".searchName").val();
+		   storeNameSearch(searchName);
+	   } else if($(".mapWrap .tab01 li").eq(2).hasClass("on")) { //지역검색
+		   cityStoreOpen($(".city_select option:selected").text(),
+				   $(".gungu_select option:selected").text());
+	   }
+	   
+	   $(".shop_search_option").removeClass("option_open");
+	   $(".shop_search_option .option_list").css("display","none");
+   });
+   
    //매장옵션 체크 박스 이미지
    $(document).on("click", ".option_list .shoptype_list .check02", function () {
 	   
-	   //선택한 체크 박스의 텍스트값(전체 일 때 나머지 체크 전부 풀기)
+	   //선택한 체크 박스의 텍스트값(전체 일 때 나머지 체크 전부 풀기/나머지일 때 전체 체크 풀기)
 	   var span_text = $(this).siblings('span').text();
 	   
 	   if(span_text == "전체"){
    			$(".option_list .shoptype_list .check02").prop("checked", false);
    			$(this).prop("checked", true);
+	   } else {
+		   $(".option_list .shoptype_list input[type='checkbox']").eq(0).prop("checked", false);
 	   }
    });
    
@@ -69,17 +87,60 @@ $(document).ready(function () {
 	   getLocation();
    });
    
-   //특별/광역시 셀렉트 박스 이벤트
+   // 매장명 검색 버튼 이벤트
+   $(document).on("click", ".btn_search02", function () {
+	   	var searchName = $(".searchName").val();
+	   	storeNameSearch(searchName);
+   });
+   
+   // 매장명 엔터 이벤트
+   $(".searchName").keydown(function(key) {
+      if (key.keyCode == 13) {
+   	   	var searchName = $(".searchName").val();
+   	   	storeNameSearch(searchName);
+      }
+   });
+   
+   //특별,광역시 셀렉트 박스 이벤트
    $(document).on("change", ".city_select", function () {
 	   gunguSetting($(this).val()+"");
    });
    
+   //군,구 셀렉트 박스 이벤트(지도 오픈)
+   $(document).on("change", ".gungu_select", function () {
+	   cityStoreOpen($(".city_select option:selected").text(),
+			   $(".gungu_select option:selected").text());
+   });
+   
+   // 검색 결과 on/off 슬라이드
+   $(document).on("click", ".btn_mapsearch_open, .btn_map_open", function () {
+	   $(".mapWrap").toggleClass("search_close map_open");
+   });
+   
+   
+   //페이지 로딩 시 매장옵션 전체 default
+   $(".option_list .shoptype_list input[type='checkbox']").eq(0).prop("checked", true);
+   
    //페이지 로딩시 버거킹 본점으로 맵 셋팅
-   //mapSetting("서울특별시 종로구 종로 94");
    storeOpen("37.569917", "126.988082", 0);
    
 });
 
+function optionSetting() {
+	var optionArr = [];
+
+	$(".shoptype_list input[type='checkbox']").each(function (i){
+		if($(this).is(':checked')) {
+			optionArr[i] = "1";
+		} else {
+			optionArr[i] = "0";
+		}
+	});
+	
+	return optionArr;
+}
+
+//군,구 셀렉트 박스 생성 함수
 function gunguSetting(parentkey) {
 	$.ajax({
         url : "gungu_open.do",
@@ -102,8 +163,109 @@ function gunguSetting(parentkey) {
     });
 }
 
+// 셀렉트박스 지역 선택 시 지도 생성
 function cityStoreOpen(city, gungu) {
-	var search_key = city + " " + gungu;
+   if(city == "") {
+	   alert("특별/광역시 선택 오류");
+	   return;
+   }
+   
+   if(gungu == "군, 구") {
+	   gungu = "";
+   }
+   
+   var search_key = city + " " + gungu;
+   console.log("지역 검색 파라메터:"+search_key);
+   
+   var checkingArr = optionSetting();
+	
+   var param = { "store_addr": search_key, "checking": checkingArr };
+	
+	$.ajax({
+        url : "city_store.do",
+        data : param,
+        type : "post",
+        async: false,
+        traditional: true,
+        success : function(data){
+        	var storelist = data.store;
+	        var storeCount = data.storeCount;
+	        
+	        if(storeCount == 0) {
+	        	searchResultMaking(data);
+	        	return;
+	        }
+	        
+        	var MARKER_ICON_URL = 'resources/img/delivery/map_marker.png';
+        	
+    		var map = new naver.maps.Map('map', {
+    		    center: new naver.maps.LatLng(storelist[0].pi_x, storelist[0].pi_y),
+    		    zoom: 15
+    		});
+    		
+    		global_map = map;
+
+    		var bounds = map.getBounds(),
+    		    southWest = bounds.getSW(),
+    		    northEast = bounds.getNE(),
+    		    lngSpan = northEast.lng() - southWest.lng(),
+    		    latSpan = northEast.lat() - southWest.lat();
+
+    		var markers = [],
+    	    	infoWindows = [];
+        	
+           $.each(storelist , function(i, store){
+        	   
+        	   var position = new naver.maps.LatLng(store.pi_x, store.pi_y);
+
+    		   var marker = new naver.maps.Marker({
+    		       map: map,
+    		       position: position,
+    		       title: store.store_name,
+    		       icon: {
+    		           url: MARKER_ICON_URL,
+    		           size: new naver.maps.Size(36, 49),
+    		           anchor: new naver.maps.Point(12, 37),
+    		           origin: new naver.maps.Point(0, 0)
+    		       },
+    		       zIndex: 100
+    		   });
+    		   
+    		   //마커 클릭 시 띄울 창
+    		   var infoWindow = new naver.maps.InfoWindow({
+    		        content: "<div style='width:150px;'><b>"+ store.store_name +"</b></div>"
+    		   });
+
+    		    markers.push(marker);
+    		    infoWindows.push(infoWindow);
+           });
+           
+           // 검색 결과 result div 셋팅
+           searchResultMaking(data);
+           
+	       //해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
+           this.getClickHandler=function(seq) {
+        	   return function(e) {
+	   		        var marker = markers[seq],
+	   		            infoWindow = infoWindows[seq];
+
+	   		        if (infoWindow.getMap()) {
+	   		            infoWindow.close();
+	   		        } else {
+	   		            infoWindow.open(map, marker);
+	   		        }
+	   		    }
+	   		}
+	   		
+	   		for (var i=0, ii=markers.length; i<ii; i++) {
+	   		    naver.maps.Event.addListener(markers[i], 'click', this.getClickHandler(i));
+	   		}
+        },
+        error : function(request,status,error){
+        	alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        }
+    });
+	
 }
 
 
@@ -165,6 +327,9 @@ function storeDetailOpen(storeKey) {
 
 function storeOpen(x, y, zoomval) {
 	var MARKER_ICON_URL = 'resources/img/delivery/map_marker.png';
+	var checkingArr = optionSetting();
+	
+	console.log("매장옵션:"+checkingArr);
 	
 	if(zoomval == 0) {
 		zoomval = 15;
@@ -186,13 +351,14 @@ function storeOpen(x, y, zoomval) {
 	var markers = [],
     	infoWindows = [];
 	
-	var param = { "pi_x": x, "pi_y": y  };
+	var param = { "pi_x": x, "pi_y": y, "checking" : checkingArr };
 	
 	$.ajax({
         url : "near_store.do",
         data : param,
         type : "post",
         async: false,
+        traditional: true,
         success : function(data){
            var storelist = data.store;
            var storeCount = data.storeCount;
@@ -304,24 +470,9 @@ function hideMarker(map, marker) {
     marker.setMap(null);
 }
 
-// 매장명 검색 버튼/엔터 이벤트
-$(document).ready(function () {
-	   $(document).on("click", ".btn_search02", function () {
-		   var searchName = $(".searchName").val();
-		   storeNameSearch(searchName);
-	   });
-	   
-	   $(".searchName").keydown(function(key) {
-           if (key.keyCode == 13) {
-        	   var searchName = $(".searchName").val();
-			   storeNameSearch(searchName);
-           }
-       });
-});
-
 // 매장명 검색
 function storeNameSearch(searchName) {
-
+   var checkingArr = optionSetting();
    console.log("검색 파라메터:"+searchName);
    
    if(searchName == "") {
@@ -329,13 +480,14 @@ function storeNameSearch(searchName) {
 	   return;
    }
 	
-   var param = { "store_name": searchName };
+   var param = { "store_name": searchName, "checking" : checkingArr };
 	
 	$.ajax({
         url : "store_name_search.do",
         data : param,
         type : "post",
         async: false,
+        traditional: true,
         success : function(data){
         	var storelist = data.store;
 	        var storeCount = data.storeCount;

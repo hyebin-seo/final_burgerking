@@ -1,0 +1,651 @@
+@charset "UTF-8";
+
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+body {
+	font-family: 'S-CoreDream-5Medium';
+}
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+a {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+button {
+    margin: 0;
+    font-family: 'S-CoreDream-9Black';
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+/* 헤더 전체 div */
+.head_menuWrap, .headerWrap {
+    background: #fff;
+}
+
+
+/* 헤더 메뉴 div */
+.head_menuWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 50;
+    font-family: 'S-CoreDream-9Black';
+}
+
+.head_menuWrap:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 2px 2px rgb(0 0 0 / 15%);
+    box-shadow: 0 2px 2px rgb(0 0 0 / 15%);
+    z-index: 2;
+}
+
+.head_menuWrap:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 5px;
+    background: url(../../img/main/head_menuWrap_after.png) repeat-x 0 0;
+}
+
+/* 마우스 오버 시 메뉴 오픈 클래스 부여 */
+.head_menuWrap.GNB_open:before {
+    height: 322px;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.head_menuWrap .web_container {
+    position: relative;
+    height: 120px;
+    padding-top: 24px;
+}
+
+/* 헤더 아이콘 */
+.head_menuWrap .logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 83px;
+    height: 82px;
+    text-indent: -9999em;
+    background: url('https://www.burgerking.co.kr/dist/img/logo_header.51e1a8b7.gif') no-repeat 0 0;
+}
+
+/* 모바일 아닐 때 안보임 */
+.MOB {
+    display: none!important;
+}
+
+/* 마우스 오버시 오픈 메뉴 */
+.GNB_open .GNBWrap:before {
+	content: "";
+    position: absolute;
+    right: -20px;
+    top: 298px;
+    width: 452px;
+    height: 120px;
+    background: url('https://www.burgerking.co.kr/dist/img/bg_login.819b3889.gif') no-repeat right -10px bottom;
+    z-index: 3;
+}
+
+/* 메뉴 전체 div */
+.GNBWrap {
+    position: relative;
+    margin-left: 15%;
+    padding-right: 180px;
+}
+
+/* 메뉴 안에 메뉴 목록 */
+.GNBWrap>ul {
+    float: left;
+    width: 94%;
+    max-width: 768px;
+}
+
+.GNBWrap>ul>li {
+    position: relative;
+    float: left;
+    width: 25%;
+    padding: 20px 0 0;
+    z-index: 11;
+}
+
+.GNBWrap ul a, .GNBWrap ul button {
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+/* 헤더에 나와 있는 메뉴  버튼 */
+.GNBWrap>ul>li>button {
+    width: 100%;
+    height: 75px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.375rem;
+    text-align: left;
+    line-height: 55px;
+    cursor: inherit;
+}
+
+.GNBWrap>ul>li>button>span {
+    display: inline-block;
+    padding-right: 19px;
+    background: url(../../img/main/header_menu.gif) no-repeat 100%;
+}
+
+/* 마우스 올리면 나타나는 서브메뉴 */
+.GNBWrap .submenu {
+	font-family: 'S-CoreDream-5Medium';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 100%;
+    height: 0;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.GNB_open .submenu {
+	height: 322px;
+    animation: gnb_show .3s linear forwards;
+	    animation-duration: 0.3s;
+	    animation-timing-function: linear;
+	    animation-delay: 0s;
+	    animation-iteration-count: 1;
+	    animation-direction: normal;
+	    animation-fill-mode: forwards;
+	    animation-play-state: running;
+	    animation-name: gnb_show;
+    z-index: 101;
+}
+
+.GNBWrap .submenu li {
+    margin-bottom: 5px;
+}
+
+.GNBWrap ul a, .GNBWrap ul button {
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+.GNBWrap .submenu a {
+    height: 25px;
+    font-size: .875rem;
+    line-height: 25px;
+}
+
+/* 딜리버리 주문 버튼 */
+.btn_join, .btn_order {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 160px;
+    height: 50px;
+    margin-top: -25px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    background: url('https://www.burgerking.co.kr/dist/img/btn_webhead_order.dd5f3d96.png') no-repeat 50%;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.btn_join>*, .btn_order>* {
+    display: inline-block;
+    padding: 0 20px 0 0;
+    background: url(../../img/main/btn_right.png) no-repeat 100%;
+}
+
+.GNBWrap:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    clear: both;
+}
+
+.title_btn {
+    display: none;
+}
+
+
+/* 모바일 */
+@media (max-height: 500px) and (orientation: landscape), 
+screen and (max-width: 768px) and (orientation: portrait) {
+	.headerWrap {
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    right: auto!important;
+	    width: 100%;
+	    height: 100%;
+	    background: #f8f8f8!important;
+	    overflow: auto;
+	    -webkit-overflow-scrolling: touch;
+	    -webkit-transform: translateX(-100%);
+	    transform: translateX(-100%);
+	    z-index: 100!important;
+	}
+	
+	.headerWrap.side_open {
+	    -webkit-animation: side_open .3s linear forwards;
+	}
+	
+	.headerWrap.side_close{
+		-webkit-animation:side_close .3s linear forwards;
+	}
+	
+	.headerWrap.side_open .head_personalWrap{
+		display:none
+	}
+	
+	@-webkit-keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+		
+	@keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+	
+	@-webkit-keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+	}
+	
+	@keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+	}
+	
+	.head_menuWrap {
+	    height: 100%;
+	}
+	
+	.headerWrap .head_menuWrap {
+	    background: #f8f8f8;
+	}
+	
+	.headerWrap .head_menuWrap .web_container {
+	    height: 100%;
+	    padding: 135px 0 0;
+	}
+	
+	.headerWrap .head_menuWrap .web_container {
+	    padding-top: 56px;
+	}
+	
+	.WEB {
+	    display: none!important;
+	}
+	
+	.MOB {
+	    display: block!important;
+	}
+	
+	.m_utilWrap {
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 135px;
+	    background: #fff;
+	    -webkit-box-shadow: 1px 1px 2px rgb(0 0 0 / 6%);
+	    box-shadow: 1px 1px 2px rgb(0 0 0 / 6%);
+	}
+	
+	.m_utilWrap {
+	    height: 56px;
+	}
+	
+	.m_utilWrap .m_top {
+	    position: relative;
+	    height: 56px;
+	}
+	
+	.btn_head_close {
+	    width: 60px;
+	    text-indent: -9999em;
+	    background: url(../../img/delivery/location_close.png) no-repeat 50%;
+	    background-size: 19px auto;
+	}
+	
+	.m_utilWrap .m_top>* {
+	    height: 56px;
+	}
+	
+	.GNBWrap {
+	    height: 100%;
+	    margin: 0;
+	    padding: 0;
+	    overflow: auto;
+	    -webkit-overflow-scrolling: touch;
+	}
+	
+	.headerWrap .GNBWrap {
+	    display: block;
+	}
+	
+	.headerWrap .GNBWrap ul {
+	    float: none;
+	    width: 100%;
+	    min-height: 90%;
+	    min-height: calc(100% - 70px);
+	    padding: 0 0 0 20px;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	
+	.GNBWrap .submenu {
+	    position: static;
+	}
+	
+	.GNBWrap .menu_open .submenu {
+	    height: auto;
+	    padding: 0 0 15px;
+	}
+	
+	.headerWrap .GNBWrap li {
+	    float: none;
+	    width: 100%;
+	    padding: 0;
+	    border-bottom: 1px solid #ebebeb;
+	}
+	
+	.headerWrap .GNBWrap a, .headerWrap .GNBWrap button {
+	    position: relative;
+	    padding-right: 35px;
+	    font-size: 1.25rem;
+	}
+	
+	.headerWrap .GNBWrap>ul>li>button {
+	    width: 100%;
+	    height: 62px;
+	    padding: 0;
+	}
+	
+	.headerWrap .GNBWrap button>span {
+	    padding-right: 0;
+	    background: none;
+	}
+	
+	.headerWrap .GNBWrap>ul>li>button:after {
+	    content: "";
+	    position: absolute;
+	    right: 22px;
+	    top: 50%;
+	    width: 12px;
+	    height: 12px;
+	    margin-top: -6px;
+	    background: url(../../img/store/right_btn.png) no-repeat 50%;
+	    background-size: auto 12px;
+	    -webkit-transform: none!important;
+	    transform: none!important;
+	}
+	
+	.GNB_open .GNBWrap:before {
+	    width: 0px;
+	    height: 0px;
+	}
+	
+	.GNBWrap .submenu {
+	    position: static;
+	}
+	
+	.headerWrap .GNBWrap ul {
+	    float: none;
+	    width: 100%;
+	    min-height: 90%;
+	    min-height: calc(100% - 70px);
+	    padding: 0 0 0 20px;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	
+	.GNBWrap .submenu li {
+	    margin: 0 0 6px;
+	    border: none;
+	}
+	
+	.GNBWrap .submenu a {
+	    display: block;
+	    height: 33px;
+	    padding-left: 12px;
+	    line-height: 33px;
+	}
+	
+	.headerWrap .GNBWrap button>span {
+	    padding-right: 0;
+	    background: none;
+	}
+	
+	.headerWrap .GNBWrap .btn_order {
+	    display: none;
+	}
+
+	.M_headerWrap {
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    background: #fff;
+	    z-index: 50;
+	    line-height: normal;
+	}
+	
+	.web_container {
+	    max-width: 1184px;
+	    margin: 0 auto;
+	    padding: 0 20px;
+	}
+	
+	.web_container, .web_container02 {
+	    min-width: 320px;
+	    padding: 0;
+	}
+	
+	.M_headerWrap .web_container {
+	    padding: 0;
+	}
+	
+	.titleBar {
+	    position: relative;
+	    padding: 0 45px;
+	    height: 57px;
+	    background: #fff;
+	    border-bottom: 1px solid #f7f7f7;
+	}
+	
+	.titleBar.noborder {
+	    border: none;
+	}
+	
+	.titleBar .page_tit {
+	    height: 100%;
+	    margin: 0;
+	    padding: 0;
+	    font-weight: 700;
+	    font-size: 1.125rem;
+	    text-align: center;
+	    line-height: 56px;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    overflow: hidden;
+	}
+	
+	.titleBar .page_tit.logo {
+	    text-indent: -9999em;
+	    background: url('https://www.burgerking.co.kr/dist/img/logo_header.51e1a8b7.gif') no-repeat 50%;
+	    background-size: 44px auto;
+	}
+	
+	.title_btn {
+	    display: block;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    height: 100%;
+	}
+	
+	.btn_head_list, .btn_head_menu {
+	    width: 60px;
+	    text-indent: -9999em;
+	}
+	
+	.btn_head_menu {
+	    background: url(../../img/main/head_menu.png) no-repeat 50%;
+	    background-size: 22px auto;
+	}
+	
+	.title_btn button {
+	    height: 100%;
+	}
+	
+	.btn_head_list, .btn_head_menu {
+	    width: 60px;
+	    text-indent: -9999em;
+	}
+	
+	.title_btn.right {
+	    left: auto;
+	    right: 0;
+	}
+	
+	.M_headerWrap .btn_order {
+	    right: 16px;
+	    width: 80px;
+	    height: 25px;
+	    margin-top: -12.5px;
+	    font-size: .625rem;
+	    line-height: normal;
+	    background-size: 100% 100%;
+	    white-space: nowrap;
+	}
+	
+	.M_headerWrap .btn_order>* {
+	    display: inline-block;
+	    padding: 2px 12px 0 0;
+	    line-height: 24px;
+	    background-size: 5px auto;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,9 +1,12 @@
+
+
 #header1 {
 	margin-top: 10%;
 }
 
 body {
 	background-color: #f1ebe6;
+	margin: 0 auto;
 }
 
 .navbar-nav {
@@ -16,16 +19,17 @@ body {
 
 
 .allPage {
-	margin-left: auto;
-	margin-right: auto;
-	width: 86%;
+	max-width: 1184px;
+	min-height: 450px;
+    margin: 0 auto;
+	margin-top: 136px;
 }
 
 /* sns 과련 제일큰 div css */
 .sns {
 	height: auto;
 	margin:0;
-	background-color: rgb(94, 54, 48);
+/* 	background-color: rgb(94, 54, 48); */
 }
 
 /* sns 과련 제일큰 div css , ul , li 줄세우고 간격 주기 */
@@ -94,19 +98,187 @@ body {
   .info_ul1{
   
   }
-  
-  
+
+/* 하단 사이트맵 전체 div */
+.sitemap {
+    height: 585px;
+    background: url('https://www.burgerking.co.kr/dist/img/bg_botmenu.3d4b484b.jpg') repeat-x top;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sitemap ul.menu {
+    min-height: 338px;
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+.sitemap ul.menu>li {
+    position: relative;
+    float: left;
+    width: 20%;
+}
+
+.sitemap ul.menu>li a {
+    display: block;
+    height: 28px;
+    padding-left: 24px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #89513a;
+    line-height: 28px;
+}
+
+.sitemap ul.menu>li:first-child a {
+    padding-left: 0;
+}
+
+.sitemap ul.menu .submenu {
+    margin-top: 15px;
+}
+
+li {
+    list-style: none;
+}
+
+.sitemap ul.menu .submenu a {
+    height: 32px;
+    font-size: 1rem;
+    line-height: 32px;
+}
+
+/* 매장찾기 */
+em {
+    font-style: normal;
+}
+
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.home_searchshop {
+    font-size: 1.5rem;
+    color: #2e2e2e;
+    text-align: center;
+    background: none;
+}
+
+.homeWrap .contentsBox01 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.homeWrap .web_container {
+    max-width: 1440px;
+    padding-left: 148px;
+    padding-right: 148px;
+}
+
+.home_searchshop>.web_container {
+    padding-top: 100px;
+    padding-bottom: 88px;
+    background: #fff;
+}
+
+.home_searchshop .tit {
+    margin-bottom: 16px;
+    font-size: 3rem;
+    line-height: 100%;
+}
+
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.home_searchshop .c_btn {
+    margin: 35px 0 55px;
+}
+
+.btn01 {
+    display: inline-block;
+    width: 256px;
+    height: 68px;
+    font-size: 1.5rem;
+    padding: 12px 10px 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+
+.btn01.s {
+    width: 120px;
+    height: 50px;
+    padding: 3px 10px;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+
+.btn01.s.red {
+    background: url('https://www.burgerking.co.kr/dist/img/bg_btn01_s_red.e9d9c88c.png') no-repeat 0 0;
+    background-size: 100% 100%;
+}
+
+.shop_categorylist {
+    overflow: hidden;
+}
+
+.shop_categorylist li {
+    float: left;
+    width: 16.666%;
+    padding: 100px 0 8px;
+    font-size: 1.125rem;
+    line-height: 134%;
+    background: url(../img/main/main_deli.gif) no-repeat top;
+    border-left: 1px solid #ededed;
+}
+
+.shop_categorylist li:first-child {
+    border: none;
+}
+
+.shop_categorylist em {
+	color: #e22219;
+    display: block;
+    font-weight: 700;
+}
+
+.shop_categorylist .category_king {
+    background-image: url(../img/main/main_king.gif);
+}
+
+.shop_categorylist .category_drive {
+    background-image: url(../img/main/main_drive.gif);
+}
+
+.shop_categorylist .category_24 {
+    background-image: url(../img/main/main_24.gif);
+}
+
+.shop_categorylist .category_morning {
+    background-image: url(../img/main/main_morning.gif);
+}
+
+.shop_categorylist .category_parking {
+    background-image: url(../img/main/main_parking.gif);
+}
+
+
 
 
 /* 반응형으로 만들대 필요한 것들  */
 
-@media screen and (max-width: 991px) { 
-	
-	
-		body {
-		background-color: red;	
-	}
-	
+@media (max-height: 500px) and (orientation: landscape),
+screen and (max-width: 768px) and (orientation: portrait) {
+
 	.allPage {
 	
 	width: auto;
@@ -122,7 +294,60 @@ body {
 	 display: none;	
 	}
 
+	.contentsBox01 {
+	    padding: 0!important;
+	}
 	
+	.home_searchshop {
+	    padding: 34px 0 20px;
+	    font-size: .75rem;
+	}
+	
+	.home_searchshop>.web_container {
+	    padding: 33px 0 25px;
+	}
+	
+	.home_searchshop .tit {
+	    margin-bottom: 10px;
+	    font-size: 1.5rem;
+	}
+	
+	.home_searchshop .c_btn {
+	    margin: 20px 0 0;
+	}
+	
+	.btn01 {
+	    width: auto;
+	    min-width: 158px;
+	    font-size: 1.125rem;
+	    background-size: 100% 100%!important;
+	}
+	
+	.btn01, .btn01.m {
+	    height: 48px;
+	    line-height: 26px;
+	}
+	
+	.btn01.s {
+	    height: 32px;
+	}
+	
+	.shop_categorylist li {
+	    width: 33%;
+	    margin-top: 36px;
+	    padding: 50px 0 0;
+	    font-size: .875rem;
+	    background-size: auto 45px;
+	    border: none;
+	}
+	
+	.shop_categorylist li>span {
+	    display: none;
+	}
+
+
+
+
 }
 
 

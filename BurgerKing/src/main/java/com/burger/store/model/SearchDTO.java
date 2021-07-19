@@ -16,10 +16,11 @@ public class SearchDTO {
 	private int morning; 		//매장옵션-아침메뉴
 	private int parking; 		//매장옵션-주차
 	private int drivethru;		//매장옵션-드라이브스루
+	private String[] checking;	// 매장옵션 전체 체크 여부 문자열
 	private String myLocation; 	// 현 위치
 	private String storeName; 	// 매장명
 	private String city; 		// 특별/광역시
-	private String district; 	// 군, 구
+	private String gungu; 		// 군, 구
 	private BigDecimal pi_x;	// x좌표
 	private BigDecimal pi_y;	// y좌표
 }
