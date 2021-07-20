@@ -1,10 +1,20 @@
-const popup = document.querySelector(".popbox01");
+const popup = document.querySelector(".qnaPopWrap");
 const closeBtn = document.querySelector(".btn_close");
 const open_Btn = document.querySelector(".btn01");
-function close_popup() { 
-	window.close();
+
+//가맹점 신청 팝업 띄우기 액션
+open_Btn.addEventListener('click', onPopup);
+
+//가맹점 신청 팝업 X버튼 액션
+closeBtn.addEventListener('click', offPopup);
+
+function offPopup() {
+	popup.style.display ='none';
 }
 
+function onPopup() {
+	popup.style.display ='block';
+}
 function del_text() { 
 	
 
@@ -38,10 +48,6 @@ function del_text3() {
 }
 }
 
-	
-
-	
-
 function open_toggle() { 
 
 	 
@@ -55,13 +61,6 @@ function qna_ok() {
 
 }
 
-function offPopup() {
-	popup.style.display ='none';
-}
-
-function onPopup() {
-	popup.style.display ='block';
-}
 
 $(function(){  
     var article1 = (".acc_list .open");  

@@ -42,6 +42,60 @@ body{
     height: 80%;
 }
 
+.qnaPopWrap{
+	position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+	
+}
+
+/*추가 실험*/
+/*팝업창 타이틀 선*/
+.qnaPopWrap .titleBar {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+/*팝업창 타이틀 */
+.qnaPopWrap .titleBar .page_tit {
+    height: 104px;
+    margin: 0;
+    padding: 20px 70px 20px 40px;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 63px;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'S-CoreDream-9Black';
+}
+
+.qnaPopWrap .btn_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/*팝업창 뒤에 색깔 연한 회색 넣기*/
+.qnaPopWrap{
+	display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+    /* font-family: 'S-CoreDream-5Medium'; */
+    font-family: 'S-CoreDream-9Black';
+}
+/*실험용 */
+
+
+
 .titleBar {
     position: relative;
     border-bottom: 1px solid #f2f2f2;

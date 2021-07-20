@@ -1,0 +1,381 @@
+@charset "UTF-8";
+
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+/*기본 공통 css*/
+body, html {
+    height: 100%;
+    min-height: 450px;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+}
+
+html {
+	font-size: 16px;
+	font-family: 'S-CoreDream-5Medium';
+}
+
+body {
+    min-height: 100%;
+    color: #000;
+    /* background: #f2ebe6; */
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+/* ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+ */
+li {
+    list-style: none;
+}
+
+/*브랜드 스토리 전체 감싸는 부분*/
+.tab_storyWrap {
+    margin-top: 60px;
+}
+
+/*브랜드 스토리 탭 부분*/
+.tab_storyBtn {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*탭 버튼이 선택되어서 on 클래스가 붙었을 경우*/
+.tab_storyBtn li.on {
+    border-bottom: none;
+}
+
+.tab_storyBtn li {
+    float: left;
+    width: 50%;
+    height: 80px; /*버튼 라인위해서 높이 지정?!*/
+    border-bottom: 2px solid #000;
+}
+
+/*on 클래스 붙었을 경우 버튼 스타일*/
+.tab_storyBtn li.on button {
+    border: 2px solid #000;
+    border-bottom: 0;
+    color: #000;
+    background: #fff;
+}
+/*on 클래스 없을 경우 버튼 스타일*/
+.tab_storyBtn li button {
+    width: 100%;
+    height: 100%;
+    padding: 23px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: silver;
+    background: #f2f2f2;
+    border-left: 1px solid #fff;
+    font-family :'S-CoreDream-9Black';
+}
+
+button {
+    margin: 0;
+    font-size: 1em;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+/*버튼 after*/
+.tab_storyBtn:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/*ABOUT 버거킹 부분*/
+.tab_aboutCon {
+    padding: 48px 20px 0;
+}
+
+.tab_aboutCon div {
+    padding-bottom: 120px;
+}
+/*첫 번째 div before*/
+.tab_aboutCon div:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 0;
+    padding-top: 42%;
+    background-size: cover;
+    margin-bottom: 48px;
+}
+/*첫 번째 이미지*/
+.about01:before {
+    background: url(https://www.burgerking.co.kr/dist/img/img_story01.33f0084e.jpg) 0 0 no-repeat;
+}
+
+.tab_aboutCon div:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/*h3 타이틀*/
+.tab_aboutCon div h3 {
+    font-size: 2.5rem;
+    width: 34%;
+    float: left;
+    line-height: 1.1;
+    font-family :'S-CoreDream-9Black';
+}
+/*ABOUT 버거킹 p태그 */
+.tab_aboutCon div p {
+    font-size: 1.065rem;
+    width: 66%;
+    float: right;
+    line-height: 1.6;
+    letter-spacing: -0.6px;
+}
+
+/*ABOUT 버거킹 두 번쨰 이미지*/
+.about02:before {
+    background: url(https://www.burgerking.co.kr/dist/img/img_story02.0e5ce49b.jpg) 0 0 no-repeat;
+}
+
+
+
+/*HISTORY CSS*/
+
+
+.tab_historyWrap {
+    overflow: hidden;
+}
+
+.tab_historyCon {
+    padding-top: 60px;
+}
+
+.history_bgBox {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.history_area {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.history_area:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.history_area h4 {
+    font-size: 3.7rem;
+    float: left;
+    display: inline-block;
+    vertical-align: top;
+    width: 17%;
+    line-height: 1.1;
+    font-family :'S-CoreDream-9Black';
+    letter-spacing: -5px;
+}
+/*history ul css*/
+.history_area ul {
+    width: 45%;
+    position: relative;
+    float: left;
+    padding-left: 50px;
+    display: inline-block;
+}
+/*history ul:before css*/
+.history_area ul:before {
+    display: block;
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background: #000;
+    left: 0;
+    top: 13px;
+}
+
+/*li 요소 마지막*/
+.history_area ul li:last-child {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 33px;
+    padding-bottom: 33px;
+}
+
+.history_area ul li {
+    width: 100%;
+    font-size: 1.125rem;
+    position: relative;
+    padding-bottom: 15px;
+    line-height: 1.6;
+}
+
+.history_area ul li:before {
+    display: block;
+    content: "";
+    width: 9px;
+    height: 9px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: -54px;
+}
+
+.history_area ul.lineNo:before {
+    display: none;
+}
+
+.history_area ul:before {
+    display: block;
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background: #000;
+    left: 0;
+    top: 13px;
+}
+
+.bdNo {
+    border-bottom: 0!important;
+}
+
+.tab_historyCon.hisBg01 .history_bgBox:after {
+    background: url(https://www.burgerking.co.kr/dist/img/img_history01.eacf28e5.png) 100% no-repeat;
+    background-size: cover;
+}
+
+.history_bgBox:after {
+    display: block;
+    content: "";
+    width: 558px;
+    min-width: 31%;
+    height: 360px;
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/*span 클래스 이름*/
+.MOB {
+    display: none!important;
+}
+/*span 클래스 이름*/
+.history_area ul li .WEB {
+    display: block;
+}
+
+
+/*두 번째 연혁 부분*/
+.tab_historyCon.hisBg02 {
+    background: #f8f5f2;
+    padding-bottom: 60px;
+}
+
+.history_area.alignL h4 {
+    float: right;
+    text-align: right;
+}
+
+.history_area.alignL ul {
+    float: right;
+    padding: 0 50px 0 0;
+}
+
+.history_area.alignL ul:before {
+    right: 0;
+    left: auto;
+}
+
+.history_area.alignL ul li {
+    text-align: right;
+}
+
+.history_area.alignL ul li:before {
+    right: -54px;
+    left: auto;
+}
+
+.history_area ul.h45 {
+    height: 45px;
+}
+
+.tab_historyCon.hisBg02 .history_bgBox:after {
+    left: auto;
+    right: 70%;
+    width: 458px;
+    height: 460px;
+    background: url(https://www.burgerking.co.kr/dist/img/img_history02.b70fd84e.png) 0 no-repeat;
+    background-size: cover;
+}
+
+/*3번째 연혁 부분*/
+.tab_historyCon.hisBg03 .history_bgBox:after {
+    width: 746px;
+    height: 295px;
+    background: url(https://www.burgerking.co.kr/dist/img/img_history03.2e3fa65c.png) 100% no-repeat;
+    background-size: cover;
+}
+
+
+/*아직 이 부분 없음*/
+.eventWrap .contentsBox01 {
+    padding: 50px 0 120px;
+}
