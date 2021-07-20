@@ -86,6 +86,7 @@
     padding: 24px 40px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    background-color: #fff;
 }
 
 .srchaddrPop {
@@ -390,6 +391,37 @@ article, aside, figure, footer, header, hgroup, nav, section {
     bottom: 0;
     margin: 0;
     overflow: hidden;
+    background-color: #fff;
+}
+
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+
+.btn02.dark, .btn02.st02 {
+    background-color: #2e2e2e;
+}
+
+.btn02.dark span {
+	color: #fff;
+}
+
+.c_btn.item2 a, .c_btn.item2 button {
+    float: left;
+    width: 49%;
+    width: calc(50% - 4px);
+}
+
+.pop_btn.item2 a, .pop_btn.item2 button {
+    float: left;
+    width: 50%;
+    margin: 0;
 }
 
 .popWrap .btn02:only-child {
@@ -426,6 +458,23 @@ article, aside, figure, footer, header, hgroup, nav, section {
     background: #e22219 url('https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png') repeat-x 0 0;
     background-size: auto 100%;
     font-family: 'S-CoreDream-9Black';
+}
+
+.pop_btn.item2 a, .pop_btn.item2 button {
+    float: left;
+    width: 50%;
+    margin: 0;
+}
+
+.c_btn.item2 a:last-child, .c_btn.item2 button:last-child {
+    float: right;
+}
+
+.page_count {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: right;
 }
 
 /* 지도보기 */
@@ -517,6 +566,13 @@ dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
     padding: 0;
 }
 
+.srchaddrPop .addrbox dd {
+    padding-left: 15px;
+    font-size: 1.5rem;
+    color: #898989;
+    font-family: 'S-CoreDream-5Medium';
+}
+
 .popWrap a {
     margin: 0;
     color: #000;
@@ -559,9 +615,447 @@ dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
     font-weight: 700;
 }
 
-
-@media screen and (min-width: 767px) {
-	.w_alignL {
-    text-align: left!important;
+.addr_detail .inpbox input {
+	display: inline-block;
+    height: 66px;
+    margin: 0;
+    padding: 3px 10px 3px 4px;
+    font-weight: 400;
+    font-size: 1.375rem;
+    font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    vertical-align: middle;
+/* 	background: url(../../img/delivery/search_under.png) repeat-x 0 100%; */
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
 }
+
+.srchaddrPop .addrbox dd {
+    padding-left: 15px;
+    font-size: 1.5rem;
+    color: #898989;
+}
+
+input[type=checkbox]+:before, input[type=radio]+:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 13px;
+    vertical-align: middle;
+}
+
+input[type=checkbox], input[type=radio] {
+    position: absolute;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
+input[type=checkbox]+:before {
+    background: url(../../img/mypage/img_check.png) no-repeat 0;
+}
+
+input.check02+:before{
+	width: 32px;
+	height: 32px;
+	background: url(../../img/mypage/img_check.png) no-repeat 0;
+}
+
+input.check02.chekimg+:before{
+	width: 32px;
+	height: 32px;
+	background: url(../../img/mypage/img_checked.png) no-repeat 0;
+}
+
+.addr_detail .chk_my {
+    margin: 20px 0 0;
+    font-size: 1.25rem;
+}
+
+label, label>span {
+    vertical-align: middle;
+}
+
+.addr_detail .chk_my input {
+    margin-right: 9px;
+}
+
+.srchaddrPop .addrbox dt, .srchaddrPop .resultaddr dd {
+    display: table-cell;
+}
+
+.poptxt01 {
+    margin: 19px 0;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 120%;
+}
+
+.inpbox button, .inpbox input~* {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.inpbox button {
+    width: 30px;
+    height: 63px;
+    margin: 0;
+}
+
+
+
+@media (max-height: 500px) and (orientation: landscape),
+screen and (max-width: 768px) and (orientation: portrait) {
+	
+	.w_alignL {
+	    text-align: left!important;
+	}
+	
+	.inpbox {
+	    height: 53px;
+	}
+	
+	.addr_detail .inpbox input {
+	    background: #f2ebe6;
+	}
+	
+	.m_FullpopWrap .popbox01 {
+	    position: relative;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    max-height: 100%;
+	    margin: 0;
+	    padding-top: 56px;
+	    padding-bottom: 56px;
+	    -webkit-transform: none;
+	    transform: none;
+	}
+	
+	.M_headerWrap {
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    background: #fff;
+	    z-index: 50;
+	}
+	
+	.M_headerWrap {
+	    line-height: normal;
+	}
+	
+	.titleBar {
+	    position: relative;
+	    padding: 0 45px;
+	    height: 57px;
+	    background: #fff;
+	    border-bottom: 1px solid #f7f7f7;
+	}
+	
+	.popWrap .titleBar .page_tit {
+	    height: 100%;
+	    padding: 0;
+	    font-size: 1.125rem;
+	    text-align: center;
+	    line-height: 55px;
+	}
+	
+	.title_btn {
+	    display: block;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    height: 100%;
+	}
+	
+	.popWrap .titleBar .title_btn {
+	    right: auto;
+	}
+	
+	.pop_header01 .btn_close, .popbox01 .title_btn button {
+	    position: static;
+	    width: 50px;
+	    background-size: 19px auto;
+	}
+	
+	.popWrap .titleBar .title_btn button {
+	    width: 60px;
+	}
+	
+	.m_FullpopWrap .popcont {
+		font-size: 1rem;
+	    height: 100%;
+	    max-height: 100%!important;
+	    overflow: auto;
+	    -webkit-overflow-scrolling: touch;
+	}
+	
+	.search_address {
+	    padding: 0;
+	}
+	
+	.searchWrap01 {
+	    margin-bottom: 8px;
+	    padding: 16px;
+	    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 3%);
+	    box-shadow: 0 1px 2px rgb(0 0 0 / 3%);
+	}
+	
+	.searchWrap01:last-child {
+	    margin-bottom: 0;
+	}
+	
+	.r_srch01.st02 {
+	    padding-right: 45px;
+	}
+	
+	.search_address input {
+	    height: 45px;
+	}
+	
+	.inpbox button, .inpbox input~* {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	}
+	
+	.inpbox button {
+	    width: 26px;
+	    height: 100%;
+	    margin-top: -3px;
+	}
+	
+	.btn_search02 {
+	    width: 40px;
+	    height: 40px;
+	    background-size: 36px auto;
+	}
+	
+	.search_address .btn_search02 {
+	    margin-top: -20px;
+	}
+	
+	.address_result {
+	    padding: 12px 16px 5px;
+	}
+	
+	.address_result .txt_result {
+	    margin-bottom: 5px;
+	    font-size: .75rem;
+	}
+	
+	.address_result .result_box {
+	    height: 233px;
+	    padding: 5px 14px;
+	}
+	
+	.addr_searchguide .result_box {
+	    padding: 16px 14px;
+	}
+	
+	.addr_searchguide .result_box li {
+	    float: none;
+	    width: 100%;
+	    min-height: inherit;
+	    margin-bottom: 18px;
+	    padding: 0;
+	}
+	
+	.addr_searchguide .result_box strong {
+	    margin-bottom: 2px;
+	}
+	
+	.addr_searchguide .result_box span {
+	    display: block;
+	    font-size: .75rem;
+	    color: #8d8d8d;
+	}
+	
+	.addr_searchguide .result_box li:last-child {
+	    margin: 0;
+	}
+	
+	.address_result {
+	    padding: 12px 16px 5px;
+	}
+	
+	.address_result .txt_result {
+	    margin-bottom: 5px;
+	    font-size: .75rem;
+	}
+	
+	.address_result .result_box {
+	    height: 233px;
+	    padding: 5px 14px;
+	}
+	
+	.nodata {
+	    padding: 172px 10px 10px;
+	    font-size: .875rem;
+	    line-height: 130%;
+	    text-align: center;
+	    color: #9a918c;
+	    background: url('https://www.burgerking.co.kr/dist/img/ico_nodata01.26f01a61.png') no-repeat center 60px;
+	    background-size: 89px auto;
+	    z-index: 10;
+	}
+	
+	.result_box .nodata {
+	    font-size: 1rem;
+	}
+	
+	.addr_list li {
+	    padding: 10px 0;
+	    font-size: .75rem;
+	}
+	
+	.address_result .addr_list>li {
+	    padding-right: 50px;
+	}
+	
+	.addr_list .keyword {
+	    margin-bottom: 3px;
+	    font-size: 1rem;
+	}
+	
+	.addr_list p {
+	    margin-bottom: 2px;
+	}
+	
+	.txtbox02, .txtbox02.st02 {
+	    height: 14px;
+	    padding: 0 4px;
+	    font-size: .5rem;
+	    line-height: 15px;
+	}
+	
+	.addr_list .btn04 {
+	    top: 11px;
+	}
+	
+	.btn04, .btn04_m {
+	    min-width: 36px;
+	    height: 24px;
+	    padding: 2px 6px 0;
+	    font-size: .625rem;
+	    color: #fff;
+	    text-align: center;
+	    background: #2e2e2e;
+	    border-radius: 3px;
+	}
+	
+	.board_paging {
+	    margin: 0;
+	    padding: 16px 0;
+	    text-align: center;
+	}
+	
+	.addr_detail>* {
+	    padding: 5px 16px;
+	}
+	
+	.srchaddrPop .addrbox dd {
+	    font-size: .875rem;
+	}
+	
+	.srchaddrPop .addrbox dl {
+	    margin-bottom: 3px;
+	}
+	
+	.addr_detail .addrbox dt {
+	    padding-left: 4px;
+	}
+	
+	.inp_detail {
+	    padding: 5px 16px 15px;
+	    background: transparent;
+	}
+	
+	.inpbox button, .inpbox input~* {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	}
+	
+	.inpbox button {
+	    width: 26px;
+	    height: 100%;
+	    margin-top: -3px;
+	}
+	
+	.addr_detail .chk_my {
+	    margin: 17px 0 0;
+	    font-size: .875rem;
+	}
+	
+	input[type=checkbox] {
+	    width: 22px;
+	    height: 22px;
+	    margin-right: 3px;
+	    background-size: 21px auto;
+	    border: none;
+	    opacity: 1;
+	}
+	
+	.m_FullpopWrap .pop_btn {
+	    padding: 0;
+	}
+	
+	.srchaddrPop .addrbox dd {
+	    font-size: .875rem;
+	}
+	
+	.addr_detail .inpbox input {
+	    height: 37px;
+	    font-size: 1rem;
+	}
+	
+	.addr_detail>* {
+	    padding: 5px 16px;
+	}
+
+	.addr_detail .addrbox dt {
+	    padding-left: 4px;
+	}
+	
+	.txtbox02, .txtbox02.st02 {
+	    height: 14px;
+	    padding: 0 4px;
+	    font-size: .5rem;
+	    line-height: 15px;
+	}
+	
+	.addr_detail .chk_my {
+	    margin: 17px 0 0;
+	    font-size: .875rem;
+	}
+	
+	input[type=checkbox] {
+	    width: 22px;
+	    height: 22px;
+	    margin-right: 3px;
+	    background-size: 21px auto;
+	    background: url(../../img/mypage/img_check.png) no-repeat 0;
+	    border: none;
+	    opacity: 1;
+	}
+	
+	input[type=checkbox], input[type=radio] {
+	    position: static;
+	}
+
 }

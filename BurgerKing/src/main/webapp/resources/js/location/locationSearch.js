@@ -232,3 +232,81 @@ function pageMake(jsonStr){
 	}	
 }
 
+var addr1;
+var addr2;
+
+$(document).ready(function () {
+	
+	// 상세 주소 입력란 변화 감지
+	$(document).on("propertychange change keyup paste input", "input[class='addr3']", function () {
+		
+		if($(".addr3").val().length!=0){
+			$(".btn_del01").css("display","");
+			$(".btn02").prop("disabled", false);
+			$(".full_type>.btn02").addClass("red");
+			
+		}else{
+			$(".btn_del01").css("display","none");
+			$(".btn02").prop("disabled", true);
+			$(".full_type>.btn02").removeClass("red");
+		}
+			
+	});
+	
+	// 클릭한 버튼의 주소를 가져오는 함수(도로명 주소, 지번 주소)
+	$(document).on("click", "button[class='btn_detail']", function () {
+
+		addr1 = $(this).siblings("p").eq(1).children("span").text();
+		addr2 = $(this).siblings("p").eq(2).children("span").text();
+		console.log(addr1);
+		console.log(addr2);
+		
+		// 선택한 주소 보이게
+		$(".addr_detail").show();
+		
+		//$(".addrbox dl:nth-child(1) dd span").html(addr1);
+		//$(".addrbox dl:nth-child(2) dd span").html(addr2);
+		$(".srchaddrPop .addrbox dd").eq(0).html("<span>"+addr1+"</span>");
+		$(".srchaddrPop .addrbox dd").eq(1).html("<span>"+addr2+"</span>");
+		
+	});
+	
+	// MY배달지 체크 관련 이벤트
+	$(document).on("click", "span[class='addLoc']", function () {
+		
+		if($(".chk_my .check02").is(":checked")){
+			$(".chk_my .check02").removeAttr("checked");
+			$(".check02").removeClass("chekimg");
+		} else {
+			$(".chk_my .check02").attr("checked", "checked");
+			$(".check02").addClass("chekimg");
+		}
+	});
+	
+	// '이 주소로 배달지 설정' 버튼 클릭 이벤트, MY배달지 등록 체크 시 별칭 지정 div display
+	$(".btn02").on("click", function() {
+		
+		if($(".chk_my .check02").is(":checked")){
+			$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "none");
+			$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "");
+		} else {
+			//체크해제면 바로 배달지 지정
+		}
+		
+	});
+	
+	// 별칭 지정 취소 클릭시 주소 검색 팝업창 div display
+	$(document).on("click", "a[class='btn02 m_btn01_s dark']", function() {
+		
+		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "");
+		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "none");	
+		
+		// MY배달지 등록 체크는 풀린 상태로
+		$(".chk_my .check02").removeAttr("checked");
+		$(".check02").removeClass("chekimg");
+		
+		// 상세주소는 입력한 거 그대로 있어야 되는데 지금도 그냥 잇음.
+		
+	});
+	 
+});

@@ -96,7 +96,10 @@ input:focus {
 	outline:none;
 }
 
-input[type=color], input[type=date], input[type=datetime], input[type=email], input[type=file], input[type=month], input[type=number], input[type=password], input[type=rang], input[type=search], input[type=tel], input[type=text], input[type=url] {
+input[type=color], input[type=date], input[type=datetime],
+input[type=email], input[type=file], input[type=month],
+input[type=number], input[type=password], input[type=rang],
+input[type=search], input[type=tel], input[type=text], input[type=url] {
     display: inline-block;
     height: 66px;
     margin: 0;
@@ -321,4 +324,181 @@ button {
     height: 100%;
     text-indent: -99999em;
     background: transparent;
+}
+
+@media (max-height: 500px) and (orientation: landscape),
+screen and (max-width: 768px) and (orientation: portrait) {
+
+.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}
+.subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.searchWrap01 {
+    margin-bottom: 8px;
+    padding: 16px;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 3%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 3%);
+}
+
+.r_srch01 {
+    padding-right: 126px;
+}
+
+.r_srch01 input {
+    height: 48px;
+    font-size: 1rem;
+}
+
+.inpbox button, .inpbox input~* {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.inpbox button {
+    width: 26px;
+    height: 100%;
+    margin-top: -3px;
+}
+
+
+.btn01_m, .btn02.btn01_m {
+    display: inline-block;
+    height: 48px;
+    padding: 12px 10px 10px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #fff;
+    text-align: center;
+    line-height: 26px;
+    background-size: 100% 100%;
+    border-radius: 4.5px;
+}
+
+.r_srch01 .btn_search01 {
+    width: 118px;
+    height: 48px;
+    margin-top: -24px;
+}
+
+
+.btn_search01>span {
+    padding-right: 26px;
+    background-size: 16px auto;
+}
+
+.contentsBox01 {
+    padding: 0!important;
+}
+
+.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}
+
+.tabfixWrap {
+    margin-top: 8px;
+    padding-top: 56px;
+}
+
+.tab01 {
+    overflow: auto;
+}
+
+.tab01 ul {
+    display: table;
+    width: 100%;
+    background: #fff;
+}
+
+.tab01 li {
+    display: table-cell;
+    padding: 0;
+}
+
+.tab01 .item2 li {
+    width: 50%;
+}
+
+.tab01 a, .tab01 button {
+    display: block;
+    width: 100%;
+    min-width: 4em;
+    height: 56px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    border-width: 3px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.nodata {
+    padding: 172px 10px 10px;
+    font-size: .875rem;
+    line-height: 130%;
+    text-align: center;
+    color: #9a918c;
+    background: url('https://www.burgerking.co.kr/dist/img/ico_nodata01.26f01a61.png') no-repeat center 60px;
+    background-size: 89px auto;
+    z-index: 10;
+}
+
+
+.container01:last-child {
+    padding-bottom: 23px;
+}
+
+.container01 .delivery_list {
+    padding: 0;
+}
+
+.delivery_list>li {
+    margin-bottom: 8px;
+    padding: 18px 20px;
+}
+
+.delivery_list .addr, .delivery_list .nick {
+    margin-right: 20px;
+    font-size: 1rem;
+}
+
+.delivery_list .addr>strong {
+    display: block;
+}
+
+.addr_old {
+    font-size: .75rem;
+    color: rgba(0,0,0,.5);
+}
+
+.addr_old .type {
+    margin-right: 4px;
+    padding: 4px 6px 2px;
+    font-weight: 700;
+    font-size: 8px;
+    color: #fff;
+    line-height: 100%;
+    vertical-align: middle;
+    background: #8d8d8d;
+    border-radius: 2px;
+}
+
+.inpbox {
+    height: 53px;
+}
+
 }

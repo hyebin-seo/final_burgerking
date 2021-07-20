@@ -78,8 +78,17 @@
                     </dl>
                 </div>
                 <div class="inp_detail">
-                    <div class="inpbox"><input type="text" maxlength="50" placeholder="상세주소를 입력하세요."><button type="button" class="btn_del01 " style="display: none;"><span>입력 텍스트 삭제</span></button></div>
-                    <div class="chk_my"><label><input type="checkbox" class="check02"><span>MY배달지 등록</span></label></div>
+                    <div class="inpbox">
+                    	<input class="addr3" type="text" maxlength="50" placeholder="상세주소를 입력하세요.">
+                    	<button type="button" class="btn_del01 " style="display: none;">
+                    	<span>입력 텍스트 삭제</span></button>
+                    </div>
+                    <div class="chk_my">
+                    	<label>
+                    		<input type="checkbox" class="check02">
+                    		<span class='addLoc'>MY배달지 등록</span>
+                    	</label>
+                    </div>
                 </div>
             </div>
         </div>
