@@ -62,7 +62,7 @@ public class NaverLoginBO {
  
             OAuth20Service oauthService = new ServiceBuilder()
                     .apiKey(CLIENT_ID)
-                    .apiSecret(CLIENT_SECRET)
+                    .apiSecret(CLIENT_SECRET)	
                     .callback(REDIRECT_URI)
                     .state(state)
                     .build(NaverLoginApi.instance());

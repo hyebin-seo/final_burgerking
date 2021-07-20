@@ -51,15 +51,15 @@ public class LoginDAOImpl implements LoginDAO {
 	}
 
 	@Override
-	public int kakaoJoin(UserDTO dto) {
+	public int snsJoin(UserDTO dto) {
 		
-		return this.sqlSession.insert("kakaoJoin",dto);
+		return this.sqlSession.insert("snsJoin",dto);
 	}
     //카카오 아이디 중복체크
 	@Override
-	public UserDTO kakaoidCheck(UserDTO dto) {
+	public UserDTO snsidCheck(UserDTO dto) {
 		
-		return this.sqlSession.selectOne("kakaoidCheck", dto);
+		return this.sqlSession.selectOne("snsidCheck", dto);
 	}
 
 }

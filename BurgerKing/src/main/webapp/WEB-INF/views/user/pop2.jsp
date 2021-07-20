@@ -292,7 +292,7 @@
 			<button type="button" class="btn02 dark">
 				<span>취소</span>
 			</button>
-			<button type="button" class="btn02 agree">
+			<button type="button" class="btn02 agree2">
 				<span>동의</span>
 			</button>
 		</div>

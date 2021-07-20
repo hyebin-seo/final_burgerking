@@ -41,7 +41,7 @@ h3 {
         <h1>${userId}님 로그인 성공입니다</h1>
         <h1>${nickname}님 로그인 성공입니다</h1>
         
-        <input type="button" value="로그아웃" onclick="location.href='/logout'">
+        <input type="button" value="로그아웃" onclick="location.href='logout.do'">
     </c:if>
 
 

@@ -9,7 +9,7 @@
   <!-- 회원가입 메서드 -->
    <insert id="join_insert" parameterType="com.burger.login.model.UserDTO">
    
-     insert into user_info values (#{user_id}, #{user_pwd}, #{user_name}, #{user_phone}, #{user_addr}, sysdate, #{user_gender})
+     insert into user_info values (#{user_id}, #{user_pwd}, #{user_name}, #{user_phone}, #{user_addr}, sysdate, #{user_gender}, default)
    
    </insert>
    
@@ -45,15 +45,15 @@
      
    </update>
    
-    <!-- 카카오 회원가입 메서드 -->
-   <insert id="kakaoJoin" parameterType="com.burger.login.model.UserDTO">
+    <!-- sns 회원가입 메서드 -->
+   <insert id="snsJoin" parameterType="com.burger.login.model.UserDTO">
    
-     insert into user_info values (#{user_id},null, #{user_name}, null, null, sysdate, null)	
+     insert into user_info values (#{user_id},null, #{user_name}, null, null, sysdate, null, #{sns_flag})	
    
    </insert>
    
    
-   <select id="kakaoidCheck" resultType="com.burger.login.model.UserDTO">
+   <select id="snsidCheck" resultType="com.burger.login.model.UserDTO">
    
     select * from user_info where user_id = #{user_id} and user_name = #{user_name}
     
