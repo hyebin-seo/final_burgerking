@@ -4,14 +4,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.burger.cs.model.StoreDAO">
+<mapper namespace="com.burger.event.model.StoreDAO">
 	
 	 <select id="s_count" resultType="int">
 		select count(*) from store
 	</select>
 	
-	<select id="s_list" parameterType="com.burger.cs.model.PageDTO"
-								resultType="com.burger.cs.model.NStoreDTO">
+	<select id="s_list" parameterType="com.burger.event.model.PageDTO"
+								resultType="com.burger.event.model.NStoreDTO">
 		<![CDATA[
 			select * from
 				(select n.*, row_number()
@@ -21,7 +21,7 @@
 		]]>
 	</select>
 	
-	 <insert id="s_add" parameterType="com.burger.cs.model.NStoreDTO">
+	 <insert id="s_add" parameterType="com.burger.event.model.NStoreDTO">
 		<selectKey resultType="int" keyProperty="store_no" order="BEFORE">
 			select count(*) + 1 from store
 		</selectKey>
@@ -38,11 +38,11 @@
 	
 	
 	<select id="s_content" parameterType="int" 
-							resultType="com.burger.cs.model.NStoreDTO">
+							resultType="com.burger.event.model.NStoreDTO">
 		select * from store where store_no = #{no}
 	</select>
 	
-	<update id="s_edit" parameterType="com.burger.cs.model.NStoreDTO">
+	<update id="s_edit" parameterType="com.burger.event.model.NStoreDTO">
 		update store set store_title = #{store_title},
 		    store_cont = #{store_cont},
 		    	store_image = #{store_image}

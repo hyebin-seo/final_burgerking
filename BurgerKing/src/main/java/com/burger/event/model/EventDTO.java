@@ -1,4 +1,4 @@
-package com.burger.cs.model;
+package com.burger.event.model;
 
 import java.util.Date;
 

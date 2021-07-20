@@ -1,10 +1,12 @@
-package com.burger.cs.model;
+package com.burger.event.model;
 
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.burger.cs.model.PageDTO;
 
 @Repository
 public class NStoreDAOImpl implements NStoreDAO {

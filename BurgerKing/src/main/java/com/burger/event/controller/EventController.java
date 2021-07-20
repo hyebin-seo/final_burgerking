@@ -1,4 +1,4 @@
-package com.burger.cs.controller;
+package com.burger.event.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,9 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.burger.cs.model.EventDAO;
-import com.burger.cs.model.EventDTO;
 import com.burger.cs.model.PageDTO;
+import com.burger.event.model.EventDAO;
+import com.burger.event.model.EventDTO;
 
 
 @Controller

@@ -46,13 +46,12 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 @Service    // 해당 Upload 라는 클래스는 비지니스 로직을 수행하는 클래스
 public class Notice_upload {
 
-	public static boolean fileUpload(MultipartHttpServletRequest mRequest) {
-		
+	public String fileUpload(MultipartHttpServletRequest mRequest) {
+		String originalFileName = "";
 		boolean isUpload = false;
 		
 		String uploadPath = 
-				"C:\\NCS\\download\\workspace(spring)\\final_burgerking\\BurgerKing\\src\\main\\webapp\\resources\\img\\notice\\";
-		
+				"C:\\NCS\\download\\workspace(spring)\\final_burgerking\\BurgerKing\\src\\main\\webapp\\resources\\img\\notice\\";				
 		Calendar cal = Calendar.getInstance();
 		int year = cal.get(Calendar.YEAR);
 		int month = cal.get(Calendar.MONTH) + 1;
@@ -67,7 +66,9 @@ public class Notice_upload {
 			MultipartFile mFile = mRequest.getFile(uploadFileName);
 			
 			// 업로드한 파일의 이름을 구하는 메서드
-			String originalFileName = mFile.getOriginalFilename();
+			originalFileName = mFile.getOriginalFilename();
+			
+			
 			
 			// 실제적으로 물리적인 파일의 저장이 필요함. - 일단은 폴더를 만들자.
 			// homedir = ........\\resources\\upload\\2021-07-06
@@ -105,6 +106,7 @@ public class Notice_upload {
 			}
 		}  // while 문 end
 		
-		return isUpload;
+		System.out.println("upload>>"+originalFileName);
+		return originalFileName;
 	}
 }

@@ -12,6 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.burger.cs.model.NoticeDAO;
 import com.burger.cs.model.NoticeDTO;
@@ -22,7 +25,7 @@ public class NoticeController {
 
 	@Autowired
 	private Notice_upload upload;
-		
+
 	@Autowired
 	private NoticeDAO dao;
 
@@ -60,13 +63,9 @@ public class NoticeController {
 		return "notice_writeForm";
 	}
 
-	
-	
 	/*
 	 * @RequestMapping("notice_write_ok.do") public void writeOk(NoticeDTO dto,
 	 * HttpServletResponse response) throws IOException {
-	 * 
-	 * 
 	 * 
 	 * int check = this.dao.insertNotice(dto);
 	 * 
@@ -74,41 +73,52 @@ public class NoticeController {
 	 * 
 	 * PrintWriter out = response.getWriter();
 	 * 
-	 * 
-	 * 
 	 * if(check > 0) { out.println("<script>"); out.println("alert('공지사항 등록 완료')");
-	 * out.println("location.href='notice_list.do'"); out.println("</script>");
+	 * out.println("location.href='notice_list.do'"); out.println("</script>"); }
+	 * else { out.println("<script>"); out.println("alert('공지사항 등록 실패')");
+	 * out.println("history.back()"); out.println("</script>"); }
 	 * 
-	 * }else { out.println("<script>"); out.println("alert('공지사항 등록 실패')");
-	 * out.println("history.back()"); out.println("</script>"); } }
+	 * }
 	 */
-	  
-	  @RequestMapping("notice_write_ok.do") public void writeOk(NoticeDTO dto,
-			  HttpServletResponse response) throws IOException {
-			  		  	  
-			  int check = this.dao.insertNotice(dto);
-			  
-			  response.setContentType("text/html; charset-UTF-8");
-			  
-			  PrintWriter out = response.getWriter();
-			  		  
-			  if(check > 0) { out.println("<script>");
-			  out.println("alert('공지사항 등록 완료')");
-			  out.println("location.href='notice_list.do'");
-			  out.println("</script>");
-			  
-			  }else { out.println("<script>");
-			  out.println("alert('공지사항 등록 실패')");
-			  out.println("history.back()"); 
-			  out.println("</script>"); }
-		
-			
-			 
-	  }
-	  
-	
 
-	
+	@RequestMapping("notice_write_ok.do")
+	public void uploadOk(MultipartHttpServletRequest mRequest, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+
+		NoticeDTO dto = new NoticeDTO();
+
+		String aa = request.getParameter("notice_title");
+		String bb = request.getParameter("notice_cont");
+
+		String ff = upload.fileUpload(mRequest);
+
+		dto.setNotice_title(aa);
+		dto.setNotice_cont(bb);
+		dto.setNotice_image(ff);
+		
+		
+		
+		
+		int check = this.dao.insertNotice(dto);
+
+		response.setContentType("text/html; charset-UTF-8");
+
+		PrintWriter out = response.getWriter();
+
+		if (check > 0) {
+			out.println("<script>");
+			out.println("alert('공지사항 등록 완료')");
+			out.println("location.href='notice_list.do'");
+			out.println("</script>");
+		} else {
+			out.println("<script>");
+			out.println("alert('공지사항 등록 실패')");
+			out.println("history.back()");
+			out.println("</script>");
+		}
+
+	}
+
 	@RequestMapping("notice_cont.do")
 	public String content(@RequestParam("no") int notice_no, @RequestParam("page") int nowPage, Model model) {
 
@@ -200,41 +210,33 @@ public class NoticeController {
 		}
 	}
 
-	
-	
-	  //@RequestMapping("notice_search.do") public String search
-	  //(@RequestParam("field") String field,@RequestParam("keyword") String keyword,
-	  //Model model) {
-	  
-	 // List<NoticeDTO> list = this.dao.searchNoticeList(field,keyword);
-	  
-	 // model.addAttribute("searchList", list);
-	  
-	  //return "notice_search"; }
-	 
-	 
-	
-	
-	  @RequestMapping("notice_search.do")
-	  public String search(@RequestParam("field") String field,
-	  
-	  @RequestParam("keyword") String keyword,
-	  
-	  @RequestParam("page") int nowPage, HttpServletRequest request, Model model) {
-	  	  
-	  // 검색분류와 검색어에 해당하는 게시글의 갯수를 DB에서 확인하는 작업 
-	 totalRecord = this.dao.searchNoticeCount(field, keyword); 
-	  PageDTO dto = new PageDTO(nowPage, rowsize, totalRecord, field, keyword);
-	  this.dao.searchNoticeList(dto); 
-	  List<NoticeDTO> pageList = this.dao.searchNoticeList(dto);
-	  model.addAttribute("field",field);
-	  model.addAttribute("keyword",keyword);
-	  model.addAttribute("searchList", pageList);
-	  model.addAttribute("Paging", dto);
-	  return "notice_search"; 
-	  }
-	 
-	 
+	// @RequestMapping("notice_search.do") public String search
+	// (@RequestParam("field") String field,@RequestParam("keyword") String keyword,
+	// Model model) {
 
-	
+	// List<NoticeDTO> list = this.dao.searchNoticeList(field,keyword);
+
+	// model.addAttribute("searchList", list);
+
+	// return "notice_search"; }
+
+	@RequestMapping("notice_search.do")
+	public String search(@RequestParam("field") String field,
+
+			@RequestParam("keyword") String keyword,
+
+			@RequestParam("page") int nowPage, HttpServletRequest request, Model model) {
+
+		// 검색분류와 검색어에 해당하는 게시글의 갯수를 DB에서 확인하는 작업
+		totalRecord = this.dao.searchNoticeCount(field, keyword);
+		PageDTO dto = new PageDTO(nowPage, rowsize, totalRecord, field, keyword);
+		this.dao.searchNoticeList(dto);
+		List<NoticeDTO> pageList = this.dao.searchNoticeList(dto);
+		model.addAttribute("field", field);
+		model.addAttribute("keyword", keyword);
+		model.addAttribute("searchList", pageList);
+		model.addAttribute("Paging", dto);
+		return "notice_search";
+	}
+
 }

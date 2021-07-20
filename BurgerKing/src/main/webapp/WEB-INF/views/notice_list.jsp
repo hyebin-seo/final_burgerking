@@ -13,7 +13,7 @@
 
 </head>
 <body>
-			
+		<jsp:include page="cs_menu.jsp" />	
 	  	<div class = "notice_list" align="center">
 	    <table class = "table1">
 	    
