@@ -27,34 +27,63 @@ public class MenuController {
 
 	@Autowired
 	private MenuSetDAO setDao;
-	
+
 	@Autowired
 	private MenuOptionDAO optionDao;
+
 	
-
-	@RequestMapping("/menu_delivery.do")
-	public String delivery_menu(HttpServletRequest request, Model model) {
-
+	@RequestMapping("/menu_delivery.do") public String
+	delivery_menu(HttpServletRequest request, Model model) {
+	
 		String cat;
-
+		
 		if (request.getParameter("cat") != null) {
 			cat = request.getParameter("cat");
 		} else {
-			cat = "스페셜&할인팩";
+			cat = "스페셜&할인팩"; 
 		}
-
+		
 		System.out.println(cat);
-
+		 
 		// 카테고리에 해당하는 메뉴 조회(딜리버리 메뉴)
 		List<MenuDTO> menuList = this.menuDao.getMenuList(cat);
 		// 세트가 있는 메뉴들의 메뉴번호 리스트
 		List<String> menuNoList = this.setDao.getMenuNoListInMenuSet();
+		 
+		model.addAttribute("menuList", menuList); model.addAttribute("menuNoList",
+		menuNoList); model.addAttribute("cat", cat);
+		 
+		return "menu_delivery"; 
+	 }
+	
 
-		model.addAttribute("menuList", menuList);
-		model.addAttribute("menuNoList", menuNoList);
-		model.addAttribute("cat", cat);
+	@RequestMapping("menu_list.do")
+	@ResponseBody
+	public HashMap<String, Object> menuList(String category) {
 
-		return "menu_delivery";
+		System.out.println("ajax 호출됨");
+		
+		if (category == null) { 
+			category = "스페셜&할인팩"; 
+		}
+		
+		System.out.println(category);
+		
+		 
+		// 카테고리에 해당하는 메뉴 조회(딜리버리 메뉴)
+		List<MenuDTO> menuList = this.menuDao.getMenuList(category);
+		// 세트가 있는 메뉴들의 메뉴번호 리스트
+		List<String> menuNoList = this.setDao.getMenuNoListInMenuSet();
+		
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		result.put("menuList", menuList);
+		result.put("menuNoList", menuNoList);
+		result.put("category", category);
+		result.put("size", menuList.size());
+		
+		System.out.println(menuList.size());
+		
+		return result;
 	}
 
 	@RequestMapping("menu_detail.do")
@@ -71,46 +100,41 @@ public class MenuController {
 		return result;
 	}
 
-	
-	 @RequestMapping("menu_side.do")
-	 @ResponseBody
-	 public HashMap<String, Object> menuSide(int set_no) {
-	 
-	 MenuSetDTO set = this.setDao.getSetDetail(set_no);
-	 MenuDTO menu = this.menuDao.getMenuDetail(set.getMenu_no());
-	 MenuSetDTO upgrade = this.setDao.getSetDetail(set_no - 1);
-	 
-	 HashMap<String, Object> result = new HashMap <String, Object>();
-	 result.put("set", set);
-	 result.put("up", upgrade);
-	 result.put("menu", menu);
-	 System.out.println(set.getSet_name());
-	 
-	 return result;
-	 }
-	 
-	 
-	 @RequestMapping("menu_option.do")
-	 @ResponseBody
-	 public HashMap<String, Object> menuOption(String op, int set_no) {
+	@RequestMapping("menu_side.do")
+	@ResponseBody
+	public HashMap<String, Object> menuSide(int set_no) {
 
-	 //System.out.println("옵션 카테고리 >"+ op);
-	 System.out.println("세트번호"+set_no);
-	 // 옵션 카테고리에 속하는 옵션 리스트 반환
-	 List<MenuOptionDTO> optionList = this.optionDao.getMenuOptionList(op);
-	 MenuSetDTO set = this.setDao.getSetDetail(set_no);
-	 
-	 
-	 
-	 HashMap<String, Object> result = new HashMap <String, Object>();
-	 result.put("optionList", optionList);
-	 result.put("op", op);
-	 result.put("set", set);
-	 
-	 //System.out.println(setDto.getSet_name());
-	 
-	 return result;
-	 }
-	 
+		MenuSetDTO set = this.setDao.getSetDetail(set_no);
+		MenuDTO menu = this.menuDao.getMenuDetail(set.getMenu_no());
+		MenuSetDTO upgrade = this.setDao.getSetDetail(set_no - 1);
+
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		result.put("set", set);
+		result.put("up", upgrade);
+		result.put("menu", menu);
+		System.out.println(set.getSet_name());
+
+		return result;
+	}
+
+	@RequestMapping("menu_option.do")
+	@ResponseBody
+	public HashMap<String, Object> menuOption(String op, int set_no) {
+
+		// System.out.println("옵션 카테고리 >"+ op);
+		System.out.println("세트번호" + set_no);
+		// 옵션 카테고리에 속하는 옵션 리스트 반환
+		List<MenuOptionDTO> optionList = this.optionDao.getMenuOptionList(op);
+		MenuSetDTO set = this.setDao.getSetDetail(set_no);
+
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		result.put("optionList", optionList);
+		result.put("op", op);
+		result.put("set", set);
+
+		// System.out.println(setDto.getSet_name());
+
+		return result;
+	}
 
 }

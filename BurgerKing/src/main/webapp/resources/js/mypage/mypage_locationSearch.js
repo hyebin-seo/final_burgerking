@@ -1,3 +1,5 @@
+var form = document.lform;
+
 var totalCount_Custom = 0;
 var keyword_Custom = "";
 
@@ -114,6 +116,7 @@ function makeListJson(jsonStr){
 		// 주소결과 전체 div / 검색 결과 수
 		htmlStr2 += "<p class='txt_result'><span><em>"+totalCount_Custom+"</em>개의 검색결과가 있습니다.</span></p>";
 		htmlStr2 += "<div class='result_box'>";
+		
 		$(jsonStr.results.juso).each(function(){
 			//주소 검색 결과 한 건마다 li
 			htmlStr2 += "<ul class='addr_list cls"+count+"'>";
@@ -121,10 +124,13 @@ function makeListJson(jsonStr){
 		    htmlStr2 += "<p class='keyword'><strong>"+keyword_Custom+"</strong></p>";
 		    htmlStr2 += "<p><span>"+this.roadAddr+"</span></p>";
 		    htmlStr2 += "<p><em class='txtbox02 st02'>지번</em><span>"+this.jibunAddr+"</span></p>";
-		    htmlStr2 += "<button type='button' class='btn_detail cls"+count+"'><span>Details</span></button>";
+		    //htmlStr2 += "<button type='button' class='btn_detail cls"+count+"'><span>Details</span></button>";
+		    htmlStr2 += "<button type='button' class='btn_detail' value="+count+"><span>Details</span></button>";
 		    htmlStr2 += "<button type='button' class='btn04' value='"+this.roadAddr+"'><span>지도보기</span></button>";
 		    htmlStr2 += "</li>";
 		    htmlStr2 += "</ul>";
+		    
+		    count++;
 		});
 		
 		//html()메소드로 초기화된 페이징 div 재부여
@@ -140,7 +146,7 @@ function makeListJson(jsonStr){
 		
 		htmlStr2 += "</div>"; //resultbox end
 		
-		count++;
+		
 	}
 	
 	$(".address_result").css('display','');
@@ -241,30 +247,34 @@ function pageMake(jsonStr){
 	}	
 }
 
-var addr1;
-var addr2;
 
-// 주소 클릭 이벤트
+
+// 주소 이벤트
 $(document).ready(function () {
 	
-	// 체크박스 체크 표시
-	// 주소 클릭 함수 밖으로 빼야 함! 주소 클릭 시 얘까지 실행되는 게 아니니까!
-	$(document).on("click", "span[class='addLoc']", function () {
-		//alert("asdsad");
-		//$("input:checkbox[class='check02']").prop("checked", true);
-		//$(".chk_my .check02").prop("checked", true);
+	
+	// 클릭한 버튼의 주소를 가져오는 함수(도로명 주소, 지번 주소)
+	$(document).on("click", "button[class='btn_detail']", function () {
 		
-		// 클릭했을 때 체크 상태 => 해제 / 해제 상태 => 체크 로 바뀜!
-		if($(".chk_my .check02").is(":checked")){
-			$(".chk_my .check02").removeAttr("checked");
-			$(".check02").removeClass("chekimg");
-			//$(".btn02").prop("disabled", false);
-			//$(".btn02").addClass("red");
-		} else {
-			$(".chk_my .check02").attr("checked", "checked");
-			//$(".check02+:before").css("background", "url(../../img/mypage/img_checked.png)");
-			$(".check02").addClass("chekimg");
-		}
+		//alert($(this).val());
+		
+		//alert($(".addr_list.cls"+$(this).val()+" li p:nth-child(2)").first().text());
+		//alert($(".addr_list.cls"+$(this).val()+" li p:nth-child(3)").first().text().substr(2));
+		
+		// 지번 주소 앞에 '지번'이라고 붙어나와서 앞에 두 글자는 자름!
+		//var addr1 = $(".addr_list.cls1"+$(this).val()+" li p:nth-child(2)").first().text();
+		//var addr2 = $(".addr_list.cls1"+$(this).val()+" li p:nth-child(3)").first().text().substr(2);
+		
+		//alert(addr1);
+		
+		// 선택한 주소 보이게
+		$(".addr_detail").show();
+		
+		$(".addrbox dl:nth-child(1) dd span").html($(".addr_list.cls"+$(this).val()+" li p:nth-child(2)").first().text())
+		$(".addrbox dl:nth-child(2) dd span").html($(".addr_list.cls"+$(this).val()+" li p:nth-child(3)").first().text().substr(2))
+		
+		//location.href='mypage_addMyLocation.do';
+		
 	});
 	
 	
@@ -280,7 +290,7 @@ $(document).ready(function () {
 			$(".btn_del01").css("display","");
 			
 			$(".btn02").prop("disabled", false);
-
+			
 			// 별칭 팝업에서 취소/등록 버튼도 pop_btn>btn02이기 때문에
 			// 걔는 안 걸리고 배송지 설정 버튼만 걸리게 해줘야됨
 			$(".full_type>.btn02").addClass("red");
@@ -294,6 +304,7 @@ $(document).ready(function () {
 			
 	});
 	
+	
 	// x(입력 텍스트 삭제) 버튼 클릭했을 때
 	// 상세주소 텍스트 사라짐, x버튼 숨김, 배달지 등록 버튼 비활성화(색상 회색)
 	$(".btn_del01").on("click", function () {
@@ -305,92 +316,86 @@ $(document).ready(function () {
 			
 	});
 	
-	// '이 주소로 배달지 설정' 버튼 클릭시 두 번째 popbox01 (별칭 팝업창) div가 보이도록 하기
-	$(".btn02").on("click", function() {
-		
-		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "none");
-		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "");
-		
-	});
 	
-	// 클릭한 버튼의 주소를 가져오는 함수(도로명 주소, 지번 주소)
-	//$(document).on("click", "button[class='btn_detail']", function () {
-	$(document).on("click", "button[class='btn_detail cls1']", function () {
-		/*alert("뀨");
-		alert($(".addr_list").text());
-		alert($(".addr_list cls"+count+"li .keyword").text());*/
-		/*var btn_val = $(this).val();
-		console.log("btnval():"+btn_val);*/
-		console.log($(".addr_list.cls1 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls1 li p:nth-child(3)").first().text().substr(2));
+	// 체크박스 체크 표시
+	// 주소 클릭 함수 밖으로 빼야 함! 주소 클릭 시 얘까지 실행되는 게 아니니까!
+	$(document).on("click", "span[class='addLoc']", function () {
 		
-		// 지번 주소 앞에 '지번'이라고 붙어나와서 앞에 두 글자는 자름!
-		addr1 = $(".addr_list.cls1 li p:nth-child(2)").first().text();
-		addr2 = $(".addr_list.cls1 li p:nth-child(3)").first().text().substr(2);
+		//$("input:checkbox[class='check02']").prop("checked", true);
+		//$(".chk_my .check02").prop("checked", true);
 		
-		// 선택한 주소 보이게
-		$(".addr_detail").show();
-		
-		$(".addrbox dl:nth-child(1) dd span").html(addr1)
-		$(".addrbox dl:nth-child(2) dd span").html(addr2)
-		
-		/*location.href='mypage_addMyLocation.do';*/
+		// 클릭했을 때 체크 상태 => 해제 / 해제 상태 => 체크 로 바뀜!
+		if($(".chk_my .check02").is(":checked")){
+		//if($("input#mycheck.check02").prop("checked")==true){
+			//alert("체크 돼잇던 상태"+$(".chk_my .check02").is(":checked"));
+			//alert($(".chk_my .check02").hasClass("chekimg"));
+			$(".chk_my .check02").removeAttr("checked");
+			$(".check02").removeClass("chekimg");
+			//alert($("input#mycheck.check02.chekimg").is(":checked"));
+			//$(".btn02").prop("disabled", false);
+			//$(".btn02").addClass("red");
+		} else {
+			//alert("체크 안 돼잇던 상태"+$(".chk_my .check02").is(":checked"));
+			//alert($(".chk_my .check02").hasClass("chekimg"));
+			$(".chk_my .check02").attr("checked", "checked");
+			//$(".check02+:before").css("background", "url(../../img/mypage/img_checked.png)");
+			$(".check02").addClass("chekimg");
+			//alert($("input#mycheck.check02.chekimg").is(":checked"));
+		}
 		
 	});
 	
-	$(document).on("click", "button[class='btn_detail cls2']", function () {
-		console.log($(".addr_list.cls2 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls2 li p:nth-child(3)").first().text());
-	});
 	
-	$(document).on("click", "button[class='btn_detail cls3']", function () {
-		console.log($(".addr_list.cls3 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls3 li p:nth-child(3)").first().text());
-	});
-	
-	$(document).on("click", "button[class='btn_detail cls4']", function () {
-		console.log($(".addr_list.cls4 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls4 li p:nth-child(3)").first().text());
-	});
-	
-	$(document).on("click", "button[class='btn_detail cls5']", function () {
-		console.log($(".addr_list.cls5 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls5 li p:nth-child(3)").first().text());
-	});
-	
-	$(document).on("click", "button[class='btn_detail cls6']", function () {
-		console.log($(".addr_list.cls6 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls6 li p:nth-child(3)").first().text());
-	});
-	
-	$(document).on("click", "button[class='btn_detail cls7']", function () {
-		console.log($(".addr_list.cls7 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls7 li p:nth-child(3)").first().text());
-	});
-	
-	$(document).on("click", "button[class='btn_detail cls8']", function () {
-		console.log($(".addr_list.cls8 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls8 li p:nth-child(3)").first().text());
-	});
-	
-	$(document).on("click", "button[class='btn_detail cls9']", function () {
-		console.log($(".addr_list.cls9 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls9 li p:nth-child(3)").first().text());
-	});
-	
-	$(document).on("click", "button[class='btn_detail cls10']", function () {
-		console.log($(".addr_list.cls10 li p:nth-child(2)").first().text());
-		console.log($(".addr_list.cls10 li p:nth-child(3)").first().text());
+	// '이 주소로 배달지 설정' 버튼 클릭시 
+	$(".search .btn02").on("click", function() {
+		
+		//alert($(".addrbox dl:nth-child(1) dd").children("span").text());
+		//alert($(".addrbox dl:nth-child(2) dd").children("span").text());
+		//alert($(".inpbox .addr3").val());
+		
+		//alert("결과"+$(".chk_my .check02").is(":checked"));
+		//alert("클래스유무"+$(".chk_my .check02").hasClass("chekimg"));
+		
+		$("input[name='loc_addr1']").val($(".addrbox dl:nth-child(1) dd").children("span").text());
+		$("input[name='loc_addr2']").val($(".addrbox dl:nth-child(2) dd").children("span").text());
+		$("input[name='loc_addr3']").val($(".inpbox .addr3").val());
+		
+		//alert($("input#mycheck.check02.chekimg").is(":checked"));
+		
+		// my배달지 설정에 체크 되어잇으면
+		//if($("#mycheck").is(":checked")) {
+		if($(".chk_my .check02").hasClass("chekimg")) {
+			$("input[name='loc_my']").val("y");
+			
+			//$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "none");
+			//$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "");
+			
+			// 두 번째 popbox01 (별칭 팝업창) div가 보이도록 하기
+			$(".search").css("display", "none");
+			$(".nick").css("display", "block");
+			
+		// my배달지 등록 안 하는 경우
+		}else {
+			
+			$("input[name='loc_my']").val("n");
+			
+			alert("이 주소를 배송지로 하고 바로 메뉴 화면으로 이동");
+		}
+		
 	});
 	
 	
-// * 배송지 팝업 창에서 사용하는 함수들 *
+	// **********************************************
+	// * 별칭 팝업 창에서 사용하는 함수들 *
 	
 	// '취소' 버튼 클릭시 첫 번째 popbox01 (주소 검색 팝업창) div가 보이도록 하기
 	$(document).on("click", "a[class='btn02 m_btn01_s dark']", function() {
 		
-		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "");
-		$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "none");	
+		//$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "");
+		//$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "none");	
+		
+		$(".search").css("display", "block");
+		$(".nick").css("display", "none");
 		
 		// MY배달지 등록 체크는 풀린 상태로 돌아가게
 		$(".chk_my .check02").removeAttr("checked");
@@ -399,5 +404,57 @@ $(document).ready(function () {
 		// 상세주소는 입력한 거 그대로 있어야 되는데 지금도 그냥 잇음.
 		
 	});
-	 
+	
+	// 별칭 입력 햇을 때만 우측에 x 버튼 보이게
+	$(document).on("propertychange change keyup paste input", ".nick .inpbox input", function () {
+		
+		if($(".nick .inpbox input").val().length!=0){
+			
+			$(".btn_del01").css("display","");
+			
+			$(".btn02").prop("disabled", false);
+			
+			// 별칭 팝업에서 취소/등록 버튼도 pop_btn>btn02이기 때문에
+			// 걔는 안 걸리고 배송지 설정 버튼만 걸리게 해줘야됨
+			$(".full_type>.btn02").addClass("red");
+			
+		}else{
+			$(".btn_del01").css("display","none");
+			
+			$(".btn02").prop("disabled", true);
+			$(".full_type>.btn02").removeClass("red");
+		}
+			
+	});
+	
+	
+	// x(입력 텍스트 삭제) 버튼 클릭했을 때
+	// 상세주소 텍스트 사라짐, x버튼 숨김, 배달지 등록 버튼 비활성화(색상 회색)
+	$(".btn_del01").on("click", function () {
+		
+		$(".nick .inpbox input").val(null);
+		$(".btn_del01").css("display","none");
+		$(".btn02").prop("disabled", true);
+		$(".btn02").removeClass("red");
+			
+	});
+	
+	
+	// 등록 버튼 클릭했을 때
+	$(".btn02.m_btn01_s").on("click", function () {
+		
+		if($(".nick .inpbox input").val().length != 0) {
+			//alert($(".nick .inpbox input").val());
+			
+			$("input[name='loc_nickname']").val($(".nick .inpbox input").val());
+			form.submit();
+			
+		}else {
+			alert("별칭을 입력하세요 대화창 만들어야 함");
+		}
+			
+	});
+	
+	
+	
 });
