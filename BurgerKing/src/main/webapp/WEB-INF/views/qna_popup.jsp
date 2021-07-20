@@ -160,7 +160,7 @@
 											<span>전체동의(필수)</span>
 										</label>
 								</div>
-							<div class="acc_list">
+							<div class="acc_list toggle">
 								<div class="acc_tit">
 									<label>
 										<input type="checkbox" class="check02">
