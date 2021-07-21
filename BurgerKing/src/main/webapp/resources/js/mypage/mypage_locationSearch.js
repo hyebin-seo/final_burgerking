@@ -326,18 +326,12 @@ $(document).ready(function () {
 		
 		// 클릭했을 때 체크 상태 => 해제 / 해제 상태 => 체크 로 바뀜!
 		if($(".chk_my .check02").is(":checked")){
-		//if($("input#mycheck.check02").prop("checked")==true){
-			//alert("체크 돼잇던 상태"+$(".chk_my .check02").is(":checked"));
-			//alert($(".chk_my .check02").hasClass("chekimg"));
-			$(".chk_my .check02").removeAttr("checked");
+			//$(".chk_my .check02").removeAttr("checked");
 			$(".check02").removeClass("chekimg");
-			//alert($("input#mycheck.check02.chekimg").is(":checked"));
 			//$(".btn02").prop("disabled", false);
 			//$(".btn02").addClass("red");
 		} else {
-			//alert("체크 안 돼잇던 상태"+$(".chk_my .check02").is(":checked"));
-			//alert($(".chk_my .check02").hasClass("chekimg"));
-			$(".chk_my .check02").attr("checked", "checked");
+			//$(".chk_my .check02").attr("checked", "checked");
 			//$(".check02+:before").css("background", "url(../../img/mypage/img_checked.png)");
 			$(".check02").addClass("chekimg");
 			//alert($("input#mycheck.check02.chekimg").is(":checked"));
@@ -365,7 +359,6 @@ $(document).ready(function () {
 		// my배달지 설정에 체크 되어잇으면
 		//if($("#mycheck").is(":checked")) {
 		if($(".chk_my .check02").hasClass("chekimg")) {
-			$("input[name='loc_my']").val("y");
 			
 			//$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "none");
 			//$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "");
@@ -376,8 +369,6 @@ $(document).ready(function () {
 			
 		// my배달지 등록 안 하는 경우
 		}else {
-			
-			$("input[name='loc_my']").val("n");
 			
 			alert("이 주소를 배송지로 하고 바로 메뉴 화면으로 이동");
 		}
@@ -398,7 +389,7 @@ $(document).ready(function () {
 		$(".nick").css("display", "none");
 		
 		// MY배달지 등록 체크는 풀린 상태로 돌아가게
-		$(".chk_my .check02").removeAttr("checked");
+		//$(".chk_my .check02").removeAttr("checked");
 		$(".check02").removeClass("chekimg");
 		
 		// 상세주소는 입력한 거 그대로 있어야 되는데 지금도 그냥 잇음.
@@ -441,10 +432,9 @@ $(document).ready(function () {
 	
 	
 	// 등록 버튼 클릭했을 때
-	$(".btn02.m_btn01_s").on("click", function () {
+	$(".btn02.m_btn01_s.submit").on("click", function () {
 		
 		if($(".nick .inpbox input").val().length != 0) {
-			//alert($(".nick .inpbox input").val());
 			
 			$("input[name='loc_nickname']").val($(".nick .inpbox input").val());
 			form.submit();
@@ -454,7 +444,5 @@ $(document).ready(function () {
 		}
 			
 	});
-	
-	
 	
 });

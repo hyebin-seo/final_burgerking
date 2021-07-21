@@ -1,0 +1,399 @@
+@charset "UTF-8";
+
+html {
+    font-size: 16px;
+}
+
+body, html {
+    height: 100%;
+    min-height: 450px;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    min-height: 100%;
+    color: #000;
+    background: #f2ebe6;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+em {
+    color: #e22219;
+}
+
+address, em {
+    font-style: normal;
+}
+
+label, label>span {
+    vertical-align: middle;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+.contentsWrap .page_tit {
+	margin-bottom: 15px;
+	font-size: 2.5rem;
+	line-height: 100%;
+}
+
+.contentsBox01 {
+	padding: 50px 0 45px;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.contentsWrap .page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+}
+
+.subtitWrap .r_option.st02 {
+    font-size: 1.75rem;
+}
+
+.subtitWrap .r_option {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-left: 15em;
+    font-size: 1.25rem;
+}
+
+.container01 {
+	padding: 20px 0;
+}
+
+.nodata.st03 {
+    padding-bottom: 200px;
+    border-bottom: 1px solid #e4ded9;
+}
+
+.nodata, .nodata .tit {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.nodata {
+    padding: 370px 10px 10px;
+    color: #766e69;
+    text-align: center;
+    background: url(https://www.burgerking.co.kr/dist/img/ico_nodata01.26f01a61.png) no-repeat center 150px;
+    z-index: 10;
+}
+
+.my_list {
+    overflow: hidden;
+}
+
+.my_list>li:nth-child(odd) {
+    clear: both;
+}
+
+.my_list>li {
+    float: left;
+    width: 48%;
+    width: calc(50% - 8px);
+    min-height: 200px;
+}
+
+.cart_list01>li {
+    position: relative;
+    margin-bottom: 21px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+}
+
+.cart_list01.my_list .cont {
+    padding: 27px 30px 10px;
+}
+
+.cart_list01 .cont {
+    padding: 32px 64px 0;
+}
+
+.my_list .option_chk.checked, .my_list .option_chk.checked+*, .my_list .option_chk input:checked~* {
+    color: #000;
+}
+
+.my_list .option_chk {
+    color: rgba(0,0,0,.6);
+}
+
+.cart_list01 .option_chk {
+    display: block;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+input[type=checkbox], input[type=radio] {
+    position: absolute;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
+input[type=radio]+:before {
+    background: url(../../img/mypage/mypage_defaultLoc.png) no-repeat 0;
+}
+
+input[type=checkbox]+:before, input[type=radio]+:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 13px;
+    vertical-align: middle;
+}
+
+.my_list .option_chk.checked, .my_list .option_chk.checked+*, .my_list .option_chk input:checked~* {
+    color: #000;
+}
+
+.cart_list01.my_list .option_chk~* {
+    padding-left: 36px;
+    color: rgba(0,0,0,.6);
+}
+
+.my_list .option_cont {
+    font-size: 1.125rem;
+}
+
+.my_list .my_titWrap {
+    display: block;
+    margin: 15px 0 22px;
+}
+
+.cart_list01 .my_titWrap {
+    display: table;
+    width: 100%;
+    margin: 10px 0 5px;
+}
+
+.my_list .my_titWrap .tit {
+    font-size: 1.5rem;
+}
+
+.my_list .option_cont p {
+    margin-top: 4px;
+}
+
+.my_list .my_titWrap>* {
+    display: inline-block;
+}
+
+.cart_list01 .my_titWrap>* {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cart_list01 .my_titWrap>:nth-child(2) {
+    padding-left: 10px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.cart_list01 .option_chk input {
+    width: 25px;
+    margin-right: 0;
+}
+
+.my_list .option_chk.checked, .my_list .option_chk.checked+*, .my_list .option_chk input:checked~* {
+    color: #000;
+}
+
+.my_list .option_chk.checked+* .btn04 {
+    background-color: #2e2e2e;
+}
+
+.my_list .option_chk+* .btn04 {
+    background-color: #828282;
+}
+
+.btn04 {
+    display: inline-block;
+    min-width: 3.5em;
+    height: 36px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #fff;
+    background: #2e2e2e;
+    border-radius: 5px;
+}
+
+.cart_list01.my_list .addr {
+    margin-top: 20px;
+    line-height: 134%;
+}
+
+.cart_list01.my_list .addr>* {
+    display: block;
+}
+
+.cart_list01 .btn_del02 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+}
+
+.btn_del02, .btn_view01 {
+    height: 40px;
+    text-indent: -9999em;
+}
+
+.btn_del02 {
+    width: 30px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjJFRDY1N0JGQ0Y5MTFFODg4NzM5RURBODNFREU5MUUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjJFRDY1N0NGQ0Y5MTFFODg4NzM5RURBODNFREU5MUUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCMkVENjU3OUZDRjkxMUU4ODg3MzlFREE4M0VERTkxRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCMkVENjU3QUZDRjkxMUU4ODg3MzlFREE4M0VERTkxRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PlnEs3gAAAEpSURBVHjapJbrCsIwDIXb+fo6q8iYuzjE2x5OBNFfImiDqQTpknQOAmPN+c66dmfLzOeY+Nr4uvvKfVmTfoBmhowamV947+tFqkw0saihjD6YVD8DoQqlicXeGAPY5jowCLUSTCz2DOlv0DRnGqCWAyYWxzgtsE2GC8w1Ln5M4NwJmg2yvwvdCQJHTKRZd3QXUZOtYsoSfBuDU5OdAOBqx8GpyX4E/KCBU5NDAvyYAqcmJwX8xMEzweShuJHniNxS7Sj1zonBuxGL3GlMNG+1+u2NZUuryCUpf9pYdsGFRhCGZJUS9IUsS+GVICgiYVcImipocqGxZOK6FLRTaDxr7oJZN272F8NMtU74ZDbMo40maDPio99yyQona/zlcH/8tjhkrAP8LcAAmXEtfUz/kBEAAAAASUVORK5CYII=) no-repeat 50%;
+}
+
+.cart_list01>li:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+.info_command_UI {
+    position: relative;
+    margin-top: 45px;
+    padding-right: 450px;
+}
+
+.txtlist01 {
+    margin: 7px 0 7px 5px;
+    line-height: 167%;
+}
+
+.txtlist01 li {
+    position: relative;
+    padding-left: 12px;
+}
+
+.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 1.67em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTFGRkE3RDFGRUE0MTFFOEFCOENFQzQxOTMxNjA2NUUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTFGRkE3RDJGRUE0MTFFOEFCOENFQzQxOTMxNjA2NUUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMUZGQTdDRkZFQTQxMUU4QUI4Q0VDNDE5MzE2MDY1RSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMUZGQTdEMEZFQTQxMUU4QUI4Q0VDNDE5MzE2MDY1RSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhpEwS4AAAAlSURBVHjaYmBgYPAE4mdQDGKDGf+h+Bm6wHOQgBeU8QTEBggwAJCaDFM5ZBXGAAAAAElFTkSuQmCC) no-repeat 0;
+}
+
+.info_command_UI .c_btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.info_command_UI .c_btn button:only-child {
+    width: 256px;
+}
+.info_command_UI .c_btn button {
+    width: 216px;
+    margin-left: 10px;
+}
+.btn01.red {
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_normal_red.810b0753.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+.btn01 {
+    display: inline-block;
+    width: 256px;
+    height: 68px;
+    font-size: 1.5rem;
+    padding: 12px 10px 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_normal.192da552.png) no-repeat 50%;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+
+.btn01.ico>* {
+    position: relative;
+    padding-right: 32px;
+}
+
+.btn01.ico.add>:after {
+    background: url(../../img/mypage/img_plus.png) no-repeat 100%;
+}
+
+.btn01.ico>:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+}
+
