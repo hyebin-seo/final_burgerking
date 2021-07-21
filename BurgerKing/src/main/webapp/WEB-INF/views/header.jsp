@@ -76,7 +76,7 @@ function goDelivery() {
                     </li>
                     <li class="menu_open"><button type="button"><span>이벤트</span></button>
                         <ul class="submenu">
-                            <li><a href="faq_home.do?faq_cate=all"><span>이벤트</span></a></li>
+                            <li><a href="event_list.do"><span>이벤트</span></a></li>
                             <li class="MOB"><a><span>신규매장</span></a></li>
                         </ul>
                     </li>
@@ -89,12 +89,10 @@ function goDelivery() {
                     </li>
                     <li class="MOB"><button type="button"><span>고객센터</span></button>
                         <ul class="submenu">
-                            <li><a><span>공지사항</span></a></li>
-                            <li><a><span>버거킹앱이용안내</span></a></li>
+                            <li><a href="notice_list.do"><span>공지사항</span></a></li>
                             <li><a href="faq_home.do?faq_cate=all"><span>FAQ</span></a></li>
-                            <li><a><span>문의</span></a></li>
+                            <li><a href="qna.do"><span>문의</span></a></li>
                             <li><a href="Franchise.do"><span>가맹점모집</span></a></li>
-                            <li><a><span>인재채용</span></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -118,7 +116,7 @@ function goDelivery() {
 				</button>
 			</div>
 			<div class="title_btn right">
-				<button type="button" class="btn_order">
+				<button type="button" class="btn_order" onclick="goDelivery()">
 					<strong>딜리버리주문</strong>
 				</button>
 			</div>
