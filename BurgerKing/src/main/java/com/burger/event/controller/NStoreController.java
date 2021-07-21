@@ -1,4 +1,4 @@
-package com.burger.cs.controller;
+package com.burger.event.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.burger.cs.model.PageDTO;
-import com.burger.cs.model.NStoreDAO;
-import com.burger.cs.model.NStoreDTO;
+import com.burger.event.model.NStoreDAO;
+import com.burger.event.model.NStoreDTO;
 
 
 @Controller

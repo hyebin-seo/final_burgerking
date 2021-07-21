@@ -4,14 +4,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.burger.cs.model.EventDAO">
+<mapper namespace="com.burger.event.model.EventDAO">
 	
 	 <select id="e_count" resultType="int">
 		select count(*) from event
 	</select>
 	
-	<select id="e_list" parameterType="com.burger.cs.model.PageDTO"
-								resultType="com.burger.cs.model.EventDTO">
+	<select id="e_list" parameterType="com.burger.event.model.PageDTO"
+								resultType="com.burger.event.model.EventDTO">
 		<![CDATA[
 			select * from
 				(select n.*, row_number()
@@ -21,7 +21,7 @@
 		]]>
 	</select>
 	
-	 <insert id="e_add" parameterType="com.burger.cs.model.EventDTO">
+	 <insert id="e_add" parameterType="com.burger.event.model.EventDTO">
 		<selectKey resultType="int" keyProperty="event_no" order="BEFORE">
 			select count(*) + 1 from event
 		</selectKey>
@@ -38,11 +38,11 @@
 	
 	
 	<select id="e_content" parameterType="int" 
-							resultType="com.burger.cs.model.EventDTO">
+							resultType="com.burger.event.model.EventDTO">
 		select * from event where event_no = #{no}
 	</select>
 	
-	<update id="e_edit" parameterType="com.burger.cs.model.EventDTO">
+	<update id="e_edit" parameterType="com.burger.event.model.EventDTO">
 		update event set event_title = #{event_title},
 		    event_cont = #{event_cont},
 		    	event_image = #{event_image}

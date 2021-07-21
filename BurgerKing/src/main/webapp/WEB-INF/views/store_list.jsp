@@ -7,27 +7,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
+<link  href="resources/css/cs/store.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/event.js"></script>
 
 </head>
 <body>
-		
-		
-		<div class="container">
-		
-		<ul class="tabs">
-		<li class="tab-link current" data-tab="tab-1">이벤트</li>
-		<li class="tab-link" data-tab="tab-2">신규매장</li>
+		<jsp:include page="cs_menu.jsp" />
+		<ul class="tab_storyBtn m_shadow">
+		<li class="">
+		<button type="button" onclick="location.href='event_list.do'">이벤트</button>
+		</li>
+		<li class="on"><button type="button" onclick="location.href='store_list.do'">신규매장</button>
+		</li>
 		</ul>
+		
 	  	
-	  	<div id="tab-1" class="tab-content current">
+	 
 	  	<div class = "store_list" align="center">
 	    <table class = "table1">
 	         
 	   
-	   	<hr class="hr1">
+	   
 	      <tr>
 	         <th>NO.</th> <th>매장이름</th>
 	      	 <th>날짜</th> 
@@ -81,14 +82,8 @@
          </c:if>
       </c:forEach>
       </div>
-   </div>
-	   <br>
-	   
-	   <div id="tab-2" class="tab-content">
-	   	<hr class="hr1">
-	   </div>
-	   
-	</div>
+   
+	
 	
 
 </body>

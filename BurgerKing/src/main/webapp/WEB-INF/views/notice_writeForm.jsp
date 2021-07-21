@@ -13,14 +13,14 @@
 
 </head>
 <body>
-
+	<jsp:include page="cs_menu.jsp" />
 	<hr class="hr1">
 	  
   
 	   <br> <br>
 	
 	   <form method="post" 
-	      action="<%=request.getContextPath() %>/notice_write_ok.do">
+	      action="<%=request.getContextPath() %>/notice_write_ok.do" enctype="multipart/form-data">
 	      
 	      <div class = "notice_write" align="center">
 	     <table class= "table2">
@@ -33,12 +33,13 @@
 	      	 
 	      	   <tr>
 	           	<th>첨부파일1</th>
-	         	<td> <input type="file" name="notice_image" >
-	         	
-	          </td>	  				
+	         	<td> <input type="file" name="notice_image">	         	
+	          </td>	  	
+	          </tr>			
 	          
+	           
 	       <!--  <tr id = "tr1">  -->
-	        <%--  <div class="inputArea">
+	         <%--  <div class="inputArea">
  				<label for="gdsImg">이미지</label>
  				<input type="file" id="gdsImg" name="notice_image" />
 			 <div class="select_img"><img src="" /></div>
@@ -56,8 +57,8 @@
  				
  				<%=request.getRealPath("/") %>
  				      
-	         </div> --%>
-	         </tr>
+	         </div>  --%>
+	        
 	      	 
 	      	 
 	      	 <tr id = "tr1">

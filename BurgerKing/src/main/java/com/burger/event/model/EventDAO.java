@@ -1,6 +1,8 @@
-package com.burger.cs.model;
+package com.burger.event.model;
 
 import java.util.List;
+
+import com.burger.cs.model.PageDTO;
 
 
 
