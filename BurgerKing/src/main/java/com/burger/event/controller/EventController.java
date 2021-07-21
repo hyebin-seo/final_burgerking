@@ -12,15 +12,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.burger.cs.model.PageDTO;
 import com.burger.event.model.EventDAO;
 import com.burger.event.model.EventDTO;
 
 
+
+
 @Controller
 public class EventController {
 
+	
+	@Autowired
+	private Event_upload upload;
+	
 	@Autowired
 	private EventDAO dao;
 
@@ -59,28 +66,64 @@ public class EventController {
 	}
 
 	  
-	  @RequestMapping("event_write_ok.do") public void writeOk(EventDTO dto,
-			  HttpServletResponse response) throws IOException {
-			  		  	  
-			  int check = this.dao.insertEvent(dto);
-			  
-			  response.setContentType("text/html; charset-UTF-8");
-			  
-			  PrintWriter out = response.getWriter();
-			  		  
-			  if(check > 0) { out.println("<script>");
-			  out.println("alert('공지사항 등록 완료')");
-			  out.println("location.href='event_list.do'");
-			  out.println("</script>");
-			  
-			  }else { out.println("<script>");
-			  out.println("alert('공지사항 등록 실패')");
-			  out.println("history.back()"); 
-			  out.println("</script>"); }
+	/*
+	 * @RequestMapping("event_write_ok.do") public void writeOk(EventDTO dto,
+	 * HttpServletResponse response) throws IOException {
+	 * 
+	 * int check = this.dao.insertEvent(dto);
+	 * 
+	 * response.setContentType("text/html; charset-UTF-8");
+	 * 
+	 * PrintWriter out = response.getWriter();
+	 * 
+	 * if(check > 0) { out.println("<script>"); out.println("alert('이벤트 등록 완료')");
+	 * out.println("location.href='event_list.do'"); out.println("</script>");
+	 * 
+	 * }else { out.println("<script>"); out.println("alert('이벤트 등록 실패')");
+	 * out.println("history.back()"); out.println("</script>"); }
+	 * 
+	 * 
+	 * 
+	 * }
+	 */
+	  
+	@RequestMapping("event_write_ok.do")
+	public void uploadOk(MultipartHttpServletRequest mRequest, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+
+		EventDTO dto = new EventDTO();
+
+		String aa = request.getParameter("event_title");
+		String bb = request.getParameter("event_cont");
+
+		String ff = upload.fileUpload(mRequest);
+
+		dto.setEvent_title(aa);
+		dto.setEvent_cont(bb);
+		dto.setEvent_image(ff);
 		
-			
-			 
-	  }
+		
+		
+		
+		int check = this.dao.insertEvent(dto);
+
+		response.setContentType("text/html; charset-UTF-8");
+
+		PrintWriter out = response.getWriter();
+
+		if (check > 0) {
+			out.println("<script>");
+			out.println("alert('이벤트 등록 완료')");
+			out.println("location.href='event_list.do'");
+			out.println("</script>");
+		} else {
+			out.println("<script>");
+			out.println("alert('이벤트 등록 실패')");
+			out.println("history.back()");
+			out.println("</script>");
+		}
+
+	}
 	  
 	
 
@@ -125,12 +168,12 @@ public class EventController {
 
 		if (check > 0) {
 			out.println("<script>");
-			out.println("alert('공지사항 수정 완료')");
+			out.println("alert('이벤트 수정 완료')");
 			out.println("location.href='event_cont.do?no=" + dto.getEvent_no() + "&page=" + nowPage + "'");
 			out.println("</script>");
 		} else {
 			out.println("<script>");
-			out.println("alert('공지사항 수정 실패 ')");
+			out.println("alert('이벤트 수정 실패 ')");
 			out.println("history.back()");
 			out.println("</script>");
 		}
@@ -165,12 +208,12 @@ public class EventController {
 		if (check > 0) {
 			this.dao.reSequence(event_no);
 			out.println("<script>");
-			out.println("alert('공지사항 삭제 완료')");
+			out.println("alert('이벤트 삭제 완료')");
 			out.println("location.href='event_list.do?page=" + nowPage + "'");
 			out.println("</script>");
 		} else {
 			out.println("<script>");
-			out.println("alert('공지사항 삭제 실패')");
+			out.println("alert('이벤트 삭제 실패')");
 			out.println("history.back()");
 			out.println("</script>");
 		}

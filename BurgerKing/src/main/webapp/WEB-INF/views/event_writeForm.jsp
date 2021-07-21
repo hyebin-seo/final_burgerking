@@ -20,7 +20,7 @@
 	   <br> <br>
 	
 	   <form method="post" 
-	      action="<%=request.getContextPath() %>/event_write_ok.do">
+	      action="<%=request.getContextPath() %>/event_write_ok.do" enctype="multipart/form-data">
 	      
 	      <div class = "event_write" align="center">
 	     <table class= "table2">

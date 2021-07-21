@@ -13,6 +13,7 @@
 </head>
 <body>
 	
+	<jsp:include page="cs_menu.jsp" />
 	<hr class="hr1">	
 	  
 	  	<div class="notice_content" align="center">	   
@@ -35,11 +36,7 @@
 	      	
 	      	<tr id ="tr3">	           
 	            <td id = "td3"> 	    	            		        	 
- 	            	  <img src="file:///C:/NCS/download/workspace(spring)/final_burgerking/BurgerKing/src/main/webapp/resources/img/notice/2S.jpg"  alt=".." width="300px" height="300px" readonly>   
-	            	  
-	            	
-	            	
-	            
+ 	           		 <img src="../../burger/resources/img/notice/${dto.getNotice_image() }"  alt="이미지없음" width="800px;" height="800px;" style="margin-left: 10%"   readonly>  	            			            
 	            </td>
 	      	 </tr>
  

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.burger.cs.model.PageDTO;
 import com.burger.event.model.NStoreDAO;
@@ -21,6 +22,9 @@ import com.burger.event.model.NStoreDTO;
 @Controller
 public class NStoreController {
 
+	@Autowired
+	private Store_upload upload;
+	
 	@Autowired
 	private NStoreDAO dao;
 
@@ -59,28 +63,63 @@ public class NStoreController {
 	}
 
 	  
-	  @RequestMapping("store_write_ok.do") public void writeOk(NStoreDTO dto,
-			  HttpServletResponse response) throws IOException {
-			  		  	  
-			  int check = this.dao.insertStore(dto);
-			  
-			  response.setContentType("text/html; charset-UTF-8");
-			  
-			  PrintWriter out = response.getWriter();
-			  		  
-			  if(check > 0) { out.println("<script>");
-			  out.println("alert('공지사항 등록 완료')");
-			  out.println("location.href='store_list.do'");
-			  out.println("</script>");
-			  
-			  }else { out.println("<script>");
-			  out.println("alert('공지사항 등록 실패')");
-			  out.println("history.back()"); 
-			  out.println("</script>"); }
-		
-			
-			 
-	  }
+	/*
+	 * @RequestMapping("store_write_ok.do") public void writeOk(NStoreDTO dto,
+	 * HttpServletResponse response) throws IOException {
+	 * 
+	 * int check = this.dao.insertStore(dto);
+	 * 
+	 * response.setContentType("text/html; charset-UTF-8");
+	 * 
+	 * PrintWriter out = response.getWriter();
+	 * 
+	 * if(check > 0) { out.println("<script>"); out.println("alert('공지사항 등록 완료')");
+	 * out.println("location.href='store_list.do'"); out.println("</script>");
+	 * 
+	 * }else { out.println("<script>"); out.println("alert('공지사항 등록 실패')");
+	 * out.println("history.back()"); out.println("</script>"); }
+	 * 
+	 *} 
+	 */
+	  
+
+@RequestMapping("store_write_ok.do")
+public void uploadOk(MultipartHttpServletRequest mRequest, HttpServletRequest request, HttpServletResponse response)
+		throws Exception {
+
+	NStoreDTO dto = new NStoreDTO();
+
+	String aa = request.getParameter("store_title");
+	String bb = request.getParameter("store_cont");
+
+	String ff = upload.fileUpload(mRequest);
+
+	dto.setStore_title(aa);
+	dto.setStore_cont(bb);
+	dto.setStore_image(ff);
+	
+	
+	
+	
+	int check = this.dao.insertStore(dto);
+
+	response.setContentType("text/html; charset-UTF-8");
+
+	PrintWriter out = response.getWriter();
+
+	if (check > 0) {
+		out.println("<script>");
+		out.println("alert('상점 등록 완료')");
+		out.println("location.href='store_list.do'");
+		out.println("</script>");
+	} else {
+		out.println("<script>");
+		out.println("alert('이벤트 등록 실패')");
+		out.println("history.back()");
+		out.println("</script>");
+	}
+
+}
 	  
 	
 

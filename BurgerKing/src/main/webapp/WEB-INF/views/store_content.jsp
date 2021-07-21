@@ -33,8 +33,7 @@
 	      	
 	      	<tr id ="tr3">	           
 	            <td id = "td3"> 	    	            		        	 
-	            	 <img src="<%=request.getContextPath()%>/store_img/${dto.getStore_image() }" class="img-fluid" alt=".." width="300px" height="300px" readonly>  
-	            	 ${dto.getStore_image() }	
+ 	           		 <img src="../../burger/resources/img/nstore/${dto.getStore_image() }"  alt="이미지없음" width="800px;" height="800px;" style="margin-left: 10%"   readonly>  	            			            
 	            </td>
 	      	 </tr>
  

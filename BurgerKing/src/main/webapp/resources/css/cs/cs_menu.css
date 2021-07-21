@@ -27,9 +27,6 @@ body {
 	min-height: 100%;
 }
 
-body * {
-	font-family: 'S-CoreDream-5Medium';
-}
 
 a, div, li {
 	box-sizing: border-box;

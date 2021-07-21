@@ -72,7 +72,8 @@ public class Notice_upload {
 			
 			// 실제적으로 물리적인 파일의 저장이 필요함. - 일단은 폴더를 만들자.
 			// homedir = ........\\resources\\upload\\2021-07-06
-			String homedir = uploadPath + year + "-" + month + "-" + day;
+			 String homedir = uploadPath;
+			
 			
 			File path1 = new File(homedir);
 			
@@ -85,7 +86,7 @@ public class Notice_upload {
 			
 			if(saveFileName != null && !saveFileName.equals("")) {
 				saveFileName = 
-						System.currentTimeMillis() + "_" + saveFileName;
+						saveFileName;
 				
 				
 				try {
