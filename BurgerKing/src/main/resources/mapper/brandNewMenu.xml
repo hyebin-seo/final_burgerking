@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.brandStory.model.newMenuDAO">
+	<select id="newMenuCount" resultType="int">
+		select count(*) from brand_newMenu
+	</select>
+	
+	<select id="NewMenuList" parameterType="com.burger.brandStory.model.PageDTO"
+								resultType="com.burger.brandStory.model.newMenuDTO">
+		<![CDATA[
+			select * from
+				(select n.*, row_number()
+				   over(order by newMenu_no) rnum
+				   from brand_newMenu n) 
+				     where rnum >= #{startNo} and rnum <= #{endNo} 
+		]]>
+	</select>
+
+</mapper>

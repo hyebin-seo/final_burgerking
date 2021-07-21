@@ -189,7 +189,7 @@
 						<li><a><span>공지사항</span></a></li>
 						<li><a><span>버거킹앱이용안내</span></a></li>
 						<li><a href="faq_home.do?faq_cate=all"><span>FAQ</span></a></li>
-						<li><a><span>문의</span></a></li>
+						<li><a href="Franchise.do"><span>문의</span></a></li>
 						<li><a><span>가맹점모집</span></a></li>
 						<li><a><span>인재채용</span></a></li>
 					</ul></li>

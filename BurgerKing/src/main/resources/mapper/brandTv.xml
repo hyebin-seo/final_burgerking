@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.brandStory.model.brandTvDAO">
+	
+	<select id="getTvList" resultType="com.burger.brandStory.model.brandTvDTO">
+		<![CDATA[
+			select * from brand_tv order by tv_no
+		]]>
+	</select>
+	
+	<select id="video" resultType="com.burger.brandStory.model.brandTvDTO">
+		<![CDATA[
+			select * from brand_tv where tv_no = #{tv_no} 
+		]]>
+	</select>
+	
+	
+
+</mapper>

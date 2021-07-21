@@ -83,9 +83,9 @@ function goDelivery() {
                     </li>
                     <li class=""><button type="button"><span>브랜드스토리</span></button>
                         <ul class="submenu">
-                            <li><a><span>버거킹 스토리</span></a></li>
-                            <li><a><span>WHY 버거킹</span></a></li>
-                            <li><a><span>버거킹 NEWS</span></a></li>
+                            <li><a href="brandStory.do"><span>버거킹 스토리</span></a></li>
+                            <li><a href="whyBurgerking.do"><span>WHY 버거킹</span></a></li>
+                            <li><a href="burgerkingNews.do"><span>버거킹 NEWS</span></a></li>
                         </ul>
                     </li>
                     <li class="MOB"><button type="button"><span>고객센터</span></button>
@@ -94,7 +94,7 @@ function goDelivery() {
                             <li><a><span>버거킹앱이용안내</span></a></li>
                             <li><a href="faq_home.do?faq_cate=all"><span>FAQ</span></a></li>
                             <li><a><span>문의</span></a></li>
-                            <li><a><span>가맹점모집</span></a></li>
+                            <li><a href="Franchise.do"><span>가맹점모집</span></a></li>
                             <li><a><span>인재채용</span></a></li>
                         </ul>
                     </li>
