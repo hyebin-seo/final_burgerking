@@ -1,0 +1,663 @@
+@charset "UTF-8";
+
+body {
+    min-height: 100%;
+    color: #000;
+    background: #f2ebe6;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input[type=color], input[type=date], input[type=datetime], input[type=email], input[type=file], input[type=month], input[type=number], input[type=password], input[type=rang], input[type=search], input[type=tel], input[type=text], input[type=url] {
+    display: inline-block;
+    height: 66px;
+    margin: 0;
+    padding: 3px 10px 3px 4px;
+    font-weight: 400;
+    font-size: 1.375rem;
+    color: #000;
+    vertical-align: middle;
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+button {
+    margin: 0;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+.contentsBox01 {
+	font-family: 'S-CoreDream-5Medium';
+    padding: 50px 0 45px;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.contentsBox01 .page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+}
+
+.nodata {
+    padding: 370px 10px 10px;
+    color: #766e69;
+    text-align: center;
+    background: url('https://www.burgerking.co.kr/dist/img/ico_nodata01.26f01a61.png') no-repeat center 150px;
+    z-index: 10;
+}
+
+.nodata, .nodata .tit {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.nodata .txt_c01 {
+    color: #9a918c;
+}
+
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+
+.nodata .c_btn {
+    margin-top: 15%;
+}
+
+.btn01 {
+    display: inline-block;
+    width: 256px;
+    height: 68px;
+    font-size: 1.5rem;
+    padding: 12px 10px 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    background: url('https://www.burgerking.co.kr/dist/img/bg_btn01_normal.192da552.png') no-repeat 50%;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+
+.btn01.ico>* {
+    position: relative;
+    padding-right: 32px;
+}
+
+.container01 {
+    padding: 20px 0;
+}
+
+.allchk01 {
+    position: relative;
+    margin-bottom: 24px;
+    padding-right: 3em;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: rgba(0,0,0,.4);
+}
+
+label, label>span {
+    vertical-align: middle;
+}
+
+input[type=checkbox], input[type=radio] {
+    position: absolute;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
+.allchk01 input {
+    margin-right: 7px;
+}
+
+label, label>span {
+    vertical-align: middle;
+}
+
+.allchk01 input:checked+span {
+    color: #000;
+}
+
+input[type=checkbox]+:before, input[type=radio]+:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 13px;
+    vertical-align: middle;
+}
+
+input[type=checkbox]+:before {
+    background: url(../../img/mypage/img_check.png) no-repeat 0;
+}
+
+input.check02+:before{
+	width: 32px;
+	height: 32px;
+	background: url(../../img/mypage/img_check.png) no-repeat 0;
+}
+
+input[type=checkbox]:checked+:before{
+	width: 32px;
+	height: 32px;
+	background: url(../../img/mypage/img_checked.png) no-repeat 0;
+}
+
+input.check02:checked+:before{
+	width: 32px;
+	height: 32px;
+	background: url(../../img/mypage/img_checked.png) no-repeat 0;
+}
+
+input[type=checkbox], input[type=radio] {
+    position: absolute;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
+.btn04 {
+    display: inline-block;
+    min-width: 3.5em;
+    height: 36px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #fff;
+    background: #2e2e2e;
+    border-radius: 5px;
+}
+
+.allchk01 .rcen_btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    min-width: 38px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.allchk01 .btn04 {
+    height: 44px;
+    margin-left: 22px;
+    font-size: 1.25rem;
+}
+
+.btn_my {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    text-indent: -9999em;
+    background: #2e2e2e url(../../img/delivery/my_menu_btn.png) no-repeat 50%;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.allchk01 .btn04 .num:before {
+    content: "(";
+}
+
+.allchk01 .btn04 .num:after {
+    content: ")";
+}
+
+.cart_list01>li {
+    position: relative;
+    margin-bottom: 21px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+}
+
+.cart_list01 .cont {
+    padding: 32px 64px 0;
+}
+
+.cart_list01 .menu_titWrap {
+    position: relative;
+    min-height: 178px;
+    padding: 50px 320px 20px 0;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.cart_list01 .menu_titWrap .menu_name {
+    position: relative;
+    display: block;
+    padding-left: 50px;
+}
+
+.cart_list01 .menu_titWrap input {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cart_list01 .menu_titWrap .menu_name>* {
+    display: block;
+}
+
+.cart_list01 .menu_titWrap .tit {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: #000;
+    line-height: 100%;
+}
+
+.cart_list01 .menu_titWrap input+:before {
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+.set_info {
+    display: block;
+    margin: 5px 0;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #8d8d8d;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+.cart_list01 .menu_titWrap .set_info {
+    margin: 11px 0 13px;
+}
+
+.cart_list01 .price {
+    margin-top: 34px;
+    font-size: 2rem;
+}
+
+.cart_list01 .menu_titWrap .set_info+.price {
+    margin-top: 13px;
+}
+
+.cart_list01 .prd_img {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 254px;
+    height: 191px;
+    overflow: hidden;
+}
+
+img {
+	border: none;
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+.setmenu_detail {
+    padding: 33px 0 23px;
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+.setmenu_detail dl {
+    position: relative;
+    padding: 14px 20% 14px 0;
+    font-size: 1.375rem;
+    line-height: 164%;
+}
+
+.setmenu_detail dt {
+    float: left;
+    width: 120px;
+    padding-right: 10px;
+    color: #737373;
+}
+
+.setmenu_detail dd {
+    margin-left: 130px;
+}
+
+.setmenu_detail .list, .setmenu_detail .list li {
+    overflow: hidden;
+}
+
+.setmenu_detail .list li, .setmenu_detail div.list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.btn04.h02 {
+    min-width: 72px;
+    height: 44px;
+    font-size: 1.25rem;
+}
+
+.setmenu_detail .btn_edit {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: 1.25rem;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.quantity, .quantity>* {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cart_list01 .quantity {
+    position: absolute;
+    left: 64px;
+    bottom: 60px;
+}
+
+.cart_list01 .quantity .tit {
+    float: left;
+    width: 130px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #000;
+    line-height: 39px;
+}
+
+.num_set {
+    position: relative;
+    display: inline-block;
+    width: 135px;
+    height: 39px;
+    padding: 0 39px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+}
+
+.cart_list01 .quantity .num_set {
+    float: right;
+}
+
+.btn_minus {
+    background: #d9d9d9 url(../../img/delivery/minus_btn.png) no-repeat 50%;
+}
+
+.num_set button {
+    position: absolute;
+    top: 0;
+    width: 39px;
+    height: 100%;
+    text-indent: -9999em;
+    background-color: #d9d9d9!important;
+}
+
+.num_set .btn_minus {
+    left: 0;
+}
+
+input[readonly=readonly] {
+    color: #434343;
+}
+
+.num_set input {
+    width: 100%;
+    height: 100%;
+    padding: 0!important;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-align: center;
+    background: none!important;
+}
+
+.btn_plus {
+	background: #d9d9d9 url(../../img/delivery/plus_btn.png) no-repeat 50%;
+}
+
+.num_set .btn_plus {
+    right: 0;
+}
+
+.cart_list01 .sumWrap {
+    display: table;
+    width: 100%;
+    height: 143px;
+    padding: 12px 64px 12px 50%;
+    background: none;
+    overflow: hidden;
+}
+
+.cart_list01 .sumWrap dl {
+    display: table-row;
+    height: auto;
+}
+
+.sumWrap {
+    height: 96px;
+    padding: 12px 55px 12px 44px;
+    background: #fff;
+}
+
+.sumWrap dl {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.sumWrap dd {
+    padding-left: 20px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #e2231a;
+    text-align: right;
+}
+
+.sumWrap dd, .sumWrap dt {
+    display: table-cell;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.sumWrap dt {
+    font-weight: 700;
+    font-size: 1.625rem;
+}
+
+.cart_list01 .sumWrap dt {
+    font-size: 1.25rem;
+    text-align: right;
+}
+
+.cart_list01 .sumWrap dd {
+    width: 40%;
+    font-size: 1.75rem;
+    color: #000;
+}
+
+address, em {
+    font-style: normal;
+}
+
+em {
+    color: #e22219;
+}
+
+.cart_list01 .sumWrap .discount {
+    height: auto;
+    margin-top: -30px;
+}
+
+.cart_list01 .sumWrap .discount dt {
+    font-size: 1.125rem;
+}
+
+.cart_list01 .sumWrap .discount dd {
+    font-size: 1.5rem;
+}
+
+.btn_del02 {
+    width: 30px;
+    background: url(../../img/delivery/location_close.png) no-repeat 50%;
+}
+
+.btn_del02, .btn_view01 {
+    height: 40px;
+    text-indent: -9999em;
+}
+
+.cart_list01 .btn_del02 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+}
+
+.cart_list01>li:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+.cartinfo {
+    position: relative;
+    margin-top: 45px;
+    padding-right: 450px;
+}
+
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.c_btn:first-child {
+    margin-top: 0;
+}
+
+.cartinfo .c_btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.c_btn.item2 a, .c_btn.item2 button {
+    float: left;
+    width: 49%;
+    width: calc(50% - 4px);
+}
+
+.cartinfo .c_btn button {
+    width: 216px;
+    margin-left: 10px;
+}
+
+.btn01.ico>:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+}
+
+.btn01.ico.add>:after {
+	background: url(../../img/delivery/plus_btn.png) no-repeat 100%;
+}
+
+.cartinfo .c_btn button {
+    width: 216px;
+    margin-left: 10px;
+}
+
+.btn01.m.red {
+    background: url('https://www.burgerking.co.kr/dist/img/bg_btn01_m_red.a7587241.png') no-repeat 0 0;
+    background-size: 100% 100%;
+}
+
+.c_btn.item2 a:last-child, .c_btn.item2 button:last-child {
+    float: right;
+}
+
+.txtlist01 {
+    margin: 7px 0 7px 5px;
+    line-height: 167%;
+}
+
+.txtlist01 li {
+    position: relative;
+    padding-left: 12px;
+    list-style: disc;
+}
+
+
+
+
+
+
+
+
+
+
+

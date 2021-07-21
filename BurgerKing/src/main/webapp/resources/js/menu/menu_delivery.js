@@ -110,10 +110,27 @@ $(document).ready(function () {
 		
 	});
 	
+	// 음료 선택 후 "선택" 버튼 누르면 음료 번호 저장 후 폼 제출까지
+	$(document).on("click", ".pop_btn.c_btn .btn02.drink", function() {
+		
+		//alert("여기까지 되냐고");
+		
+		//alert($(".list_chk.drink").children("input").val());
+		//alert($(".list_chk.drink input[name=option]:checked").val());
+		
+		var op_no = $(".list_chk.drink input[name=option]:checked").val();
+		
+		drinkInsert(op_no);
+		
+	});
 	
-	/* 세트 단계 선택시 팝업 */
+	
+	/* 세트 단계 선택시 팝업 라지/일반/단품 선택 후 뜨는 팝업창*/
 	/*$(document).on("click", ".pop_btn.c_btn.item2 .btn02", function() {*/
-	$(document).on("click", ".pop_btn.c_btn .btn02", function() {
+	$(document).on("click", ".btn02", function() {
+		if($(this).hasClass("drink")) {
+			return;
+		}
 		
 		//alert($(this).children("input").val());
 		if($(this).children("input").length){ //a
@@ -126,7 +143,7 @@ $(document).ready(function () {
 			}	
 		
 		}else{ //btn
-			alert("세트번호"+$(this).val().split(",")[1]);
+			console.log("세트번호"+$(this).val().split(",")[1]);
 			
 			if($(this).val().split(",")[0] == "단품"){
 				form.submit();
@@ -145,25 +162,13 @@ $(document).ready(function () {
 		
 		sideInsert(radio);
 		
+		sideOptionOpen($(this).val().split(",")[0], $(this).val().split(",")[1]);
+		
 	})
-	
-	// 음료 선택 후 "선택" 버튼 누르면 음료 번호 저장 후 폼 제출까지
-	$(document).on("click", ".pop_btn.c_btn .btn02.drink", function() {
-		
-		//alert("여기까지 되냐고");
-		
-		//alert($(".list_chk.drink").children("input").val());
-		//alert($(".list_chk.drink input[name=option]:checked").val());
-		
-		var op_no = $(".list_chk.drink input[name=option]:checked").val();
-		
-		drinkInsert(op_no);
-		
-	});
 	
 	// 재료 추가 부분
 	$(document).on("click", "input[type='checkbox']", function () {
-		alert("지금 클릭한 체크박스:"+$(this).val());
+		console.log("지금 클릭한 체크박스:"+$(this).val());
 		// 클릭했을 때 체크 상태 => 해제 / 해제 상태 => 체크 로 바뀜!
 		if($(this).is(":checked")){
 			//$(this).removeAttr("checked");
@@ -176,9 +181,12 @@ $(document).ready(function () {
 //					
 //				}
 //			}
-			$("input[name='ing"+$(this).val()+"']").val($(this).val());
-			alert($("input[name='ing"+$(this).val()+"']").val());
-			
+			//$("input[name='ing"+$(this).val()+"']").val($(this).val());
+			console.log($("input[name='ing"+$(this).val()+"']").val());
+			var addtext = $(this).siblings('.cont');
+			console.log(addtext);
+			console.log("재료추가:"+addtext.children('.tit').text());
+			$("input[name='ing"+$(this).val()+"']").val(addtext.children('.tit').text());
 		} else {
 			//$(this).attr("checked", "checked");
 			//$(this).addClass("changeImg");
@@ -190,7 +198,7 @@ $(document).ready(function () {
 //				}
 //			}
 			$("input[name='ing"+$(this).val()+"']").val("");
-			alert($("input[name='ing"+$(this).val()+"']").val());
+			console.log($("input[name='ing"+$(this).val()+"']").val());
 			
 		}
 	});
@@ -230,17 +238,17 @@ $(document).ready(function () {
 // 선택한 세트번호 폼 입력
 function noInsert(set_no) {
 	
-	alert(set_no);
+	console.log("noInsert세트번호:"+set_no);
 	
 	$("input[name='set_no']").val(set_no);
-	
+	$("input[name='menu_flag']").val("set");
 	//form.submit();
 }
 
 //선택한 사이드번호 폼 입력
 function sideInsert(radio) {
 	
-	alert(radio);
+	console.log("sideInsert사이드번호:"+radio);
 	
 	$("input[name='side']").val(radio);
 	
@@ -250,7 +258,7 @@ function sideInsert(radio) {
 //선택한 음료번호 폼 입력(제출)
 function drinkInsert(op_no) {
 	
-	alert("음료번호"+op_no);
+	console.log("drinkInsert음료번호:"+op_no);
 	
 	$("input[name='drink']").val(op_no);
 	
@@ -389,10 +397,11 @@ function setPopupMaking(jsonStr) {
 	// 세트 메뉴 없으면 바로 장바구니로,,
 	// *********** 이건 나중에 ***********
 	if(list.length == 0) {
-		alert("세트 메뉴 x 경우! 장바구니로 바로! 보내주세용~~~~~~");
+		console.log("세트 메뉴 x 경우! 장바구니로 바로! 보내주세용~~~~~~");
 		
 		var form = document.cform;
 		$("input[name='set_no']").val(menuDetail.menu_no);
+		$("input[name='menu_flag']").val("single");
 		form.submit();
 		
 	}else if(list != null) {
@@ -473,7 +482,7 @@ function sidePopupMaking(jsonStr) {
 	
 	// 카테고리가 사이드나 음료&디저트일 경우 세트 업그레이드 옵션이 없음. 클릭한 세트로 바로 장바구니 이동
 	if(menu.menu_cat=="사이드" || menu.menu_cat=="음료&디저트" || menu.menu_show == "delivery"){
-		alert("사이드나 음료&디저트/배달only는 클릭한 세트 바로 장바구니로 보내주면 됩니당");
+		console.log("사이드나 음료&디저트/배달only는 클릭한 세트 바로 장바구니로 보내주면 됩니당");
 		
 		//$("input[name=set_no]").val(set.set_no);
 		//alert($("input[name=set_no]").val());
@@ -487,6 +496,7 @@ function sidePopupMaking(jsonStr) {
 		form.append($("<input/>", {type:"hidden", name:"set_no", value:set.set_no}));
 		form.appendTo("body");*/
 		$("input[name='set_no']").val(set.set_no);
+		$("input[name='menu_flag']").val("set");
 		form.submit();
 		
 	// 그 외 카테고리일 경우 업그레이드 팝업
@@ -545,7 +555,7 @@ function sidePopupMaking(jsonStr) {
 			}
 			
 			htmlStr += "<div class='pop_btn c_btn item2'>";
-			htmlStr += "<a class='btn02 m_btn01_s dark' onclick=noInsert("+set.set_no+")>";
+			htmlStr += "<a class='btn02 m_btn01_s dark upgradebtn' onclick=noInsert("+set.set_no+")>";
 			
 			// 업그레이드 X
 			// 롱치킨버거 or 치즈버거 or 와퍼종류일때는 먼저 재료추가 팝업
@@ -561,7 +571,7 @@ function sidePopupMaking(jsonStr) {
 			
 			htmlStr += "<span>아니오</span></a>";
 			
-			htmlStr += "<a class='btn02 m_btn01_s red' onclick=noInsert("+set.set_no+")>";
+			htmlStr += "<a class='btn02 m_btn01_s red upgradebtn' onclick=noInsert("+set.set_no+")>";
 			
 			// 롱치킨버거 or 치즈버거 or 와퍼종류일때는 먼저 재료추가 팝업
 			if(menu.menu_name=="롱치킨버거" || menu.menu_name=="치즈버거" || menu.menu_name.indexOf("와퍼")!=-1){
@@ -609,12 +619,12 @@ function sidePopupMaking(jsonStr) {
 			}
 			
 			htmlStr += "<div class='pop_btn c_btn item2'>";
-			htmlStr += "<a class='btn02 m_btn01_s dark' onclick=noInsert("+set.set_no+")>";
+			htmlStr += "<a class='btn02 m_btn01_s dark upgradebtn' onclick=noInsert("+set.set_no+")>";
 			
 			htmlStr += "<input type='hidden' value='단품, "+set.set_no+"'>";
 			
 			htmlStr += "<span>아니오</span></a>";
-			htmlStr += "<a class='btn02 m_btn01_s red' onclick=noInsert("+set.set_no+")>";
+			htmlStr += "<a class='btn02 m_btn01_s red upgradebtn' onclick=noInsert("+set.set_no+")>";
 			
 			// 롱치킨버거 or 치즈버거 or 와퍼종류일때는 먼저 재료추가 팝업
 			if(menu.menu_name=="롱치킨버거" || menu.menu_name=="치즈버거" || menu.menu_name.indexOf("와퍼")!=-1){
@@ -689,9 +699,9 @@ function optionPopupMaking(jsonStr){
 			htmlStr += "<label class='list_chk side'>";
 			
 			if(i == 0){
-				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"' checked><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' value='"+side.op_name+"' checked><span>사이드 변경</span></label>";
 			}else{
-				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"'><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' value='"+side.op_name+"'><span>사이드 변경</span></label>";
 			}
 			
 			htmlStr += "</li>";
@@ -777,9 +787,9 @@ function optionPopupMaking(jsonStr){
 			htmlStr += "<label class='list_chk drink'>";
 			
 			if(i == 0){
-				htmlStr += "<input type='radio' name='option' checked value='"+side.op_no+"'><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' checked value='"+side.op_name+"'><span>사이드 변경</span></label>";
 			}else{
-				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"'><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' value='"+side.op_name+"'><span>사이드 변경</span></label>";
 			}
 			
 			htmlStr += "</li>";
@@ -793,7 +803,7 @@ function optionPopupMaking(jsonStr){
 		
 	}else if(op == "단품") {
 		
-		alert("장바구니로 바로!");
+		console.log("장바구니로 바로!");
 	}
 	
 	$("body").append(htmlStr);

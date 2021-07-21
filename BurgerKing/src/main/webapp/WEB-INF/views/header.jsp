@@ -39,8 +39,7 @@ $(document).ready(function () {
 });
 
 function goDelivery() {
-	// 세션이 있으면 딜리버리로 바로 가야함(수정필요)
-	location.href="Login.do";
+	location.href="delivery_home.do";
 }
 </script>
 

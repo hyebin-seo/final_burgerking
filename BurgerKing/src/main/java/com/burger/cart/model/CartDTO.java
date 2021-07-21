@@ -19,5 +19,5 @@ public class CartDTO {
 	private String drink;
 	private int amount;
 	private int total_price;
-
+	private String menu_flag;
 }
