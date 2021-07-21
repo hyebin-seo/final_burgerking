@@ -11,8 +11,8 @@
 <title>Insert title here</title>
 </head>
 
-<jsp:include page="deliveryHeader.jsp" flush="true"/>
-<jsp:include page="deliveryCart.jsp"/>
+<jsp:include page="delivery/deliveryHeader.jsp" flush="true"/>
+<jsp:include page="delivery/deliveryCart.jsp"/>
 
 <body>
 
@@ -88,7 +88,7 @@
 	</div>
 
 </body>
-<jsp:include page="locationPopup.jsp" flush="true"/>
+<jsp:include page="location/locationPopup.jsp" flush="true"/>
 <script src="resources/js/mypage/mypage_myLocation.js"></script>
 <jsp:include page="footer.jsp" />
 

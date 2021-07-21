@@ -123,15 +123,12 @@ public class LoginController {
 		dto = this.dao.checkId_pwd(dto);
 
 		if (dto != null) {
-
+			session.setAttribute("memberSession", dto);
+			
 			script.println("<script>");
 			script.println("alert('로그인을 축하합니다.')");
+			script.println("location.href='delivery_home.do'");
 			script.println("</script>");
-			
-			
-			session.setAttribute("memberSession", dto);
-			return "delivery/deliveryHome";
-
 		} else {
 			script.println("<script>");
 			script.println("alert('아이디 및 비밀번호를 확인해주세요.')");

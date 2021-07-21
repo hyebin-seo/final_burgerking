@@ -12,8 +12,8 @@
 <title>마이킹</title>
 </head>
 
-<jsp:include page="deliveryHeader.jsp" flush="true"/>
-<jsp:include page="deliveryCart.jsp"/>
+<jsp:include page="delivery/deliveryHeader.jsp" flush="true"/>
+<jsp:include page="delivery/deliveryCart.jsp"/>
 
 <body>
 	
