@@ -184,8 +184,7 @@
 										<label><span class="hide">Password</span><input
 											placeholder="비밀번호" type="password" name="user_pwd"
 											class="user_pwd">
-											<button type="button" tabindex="-1" class="btn_view01"
-												id="button1">
+											<button type="button" tabindex="-1" class="btn_view01">
 												<span>입력 텍스트 보기</span>
 											</button></label>
 									</div>

@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.el.parser.AstDotSuffix;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
@@ -27,9 +29,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.burger.login.model.EmailService;
+import com.burger.login.model.Guest_Order;
 import com.burger.login.model.LoginDAO;
 import com.burger.login.model.NaverLoginApi;
 import com.burger.login.model.UserDTO;
+
+import net.nurigo.java_sdk.Coolsms;
+import net.nurigo.java_sdk.api.Message;
 
 @Controller
 public class LoginController {
@@ -343,5 +349,62 @@ public class LoginController {
 		
 		return"user/guest_login";
 	}
+	
+	
+	//문자를 보내주는 메서드 
+	//문자를 보낼때 맵핑되는 메소드
+    @RequestMapping("sendSms.do")
+    @ResponseBody
+      public HashMap<String, String> sendSms(HttpServletRequest request) throws Exception {
+    	
+    	//
+    	String guest_phone = request.getParameter("guest_phone");
+    	
+    	//난수설정 
+    	String s = "";
+		Random r1 = new Random();
+		int num = r1.nextInt(999999); // 랜덤난수설정
+       
+		String random = s + num;
+		//난수설정 
+		
+		
+
+        HashMap<String, String> set = new HashMap<String, String>();
+       
+        set.put("random", random);
+
+    
+        
+        
+        System.out.println("set??"+set);
+        
+       
+       
+        return set;
+      }	
+    
+    // guest주문에대한 인적사항을 DB에저장한다.
+    @RequestMapping("guest_order")
+    @ResponseBody
+    public String guest_order(HttpServletRequest request, String guest_name) {
+    	
+   
+    	String guest_pwd = request.getParameter("guest_pwd");
+    	
+    	System.out.println("name"+guest_name);
+    	System.out.println("pwd"+guest_pwd);
+    			
+    			
+        
+    	
+   
+    
+    	
+    	
+    	
+    	return "";
+    }
+
 
 }

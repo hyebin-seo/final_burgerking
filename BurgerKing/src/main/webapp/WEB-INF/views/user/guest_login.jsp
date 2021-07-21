@@ -21,20 +21,7 @@
 
 
 
-<script type="text/javascript">
-$(function(){  
-    var article1 = (".acc_list .open");  
-    $(".acc_list .btn_acc").click(function() {  
-       var myArticle1 =$(this).parents(".toggle"); 
-        if($(myArticle1).hasClass('acc_list')) {  
-            $(article1).removeClass('open').addClass('acc_list');  
-            $(myArticle1).removeClass('acc_list').addClass('open');  
-        }  
-        else {  
-            $(myArticle1).addClass('acc_list').removeClass('open');  
-        }  
-    });  
-});
+<script type="text/javascript" src="resources/js/login/guest_login.js">
 </script>
 
 </head>
@@ -133,7 +120,7 @@ $(function(){
 						<div class="accWrap01">
 							<div class="container02 auth_list acc_list toggle">
 								<div class="acc_tit ">
-									<label><input type="checkbox" class="check02"><span>버거킹
+									<label><input type="checkbox" class="check02 auth"><span>버거킹
 											이용약관</span></label>
 									<button type="button" class="btn_acc">
 										<span>상세보기</span>
@@ -172,7 +159,7 @@ $(function(){
 									<dd>
 										<div class="inpbox st02">
 											<input type="text" placeholder="받는 분의 이름을 입력해 주세요."
-												class="st02">
+												class="st02 name">
 											<button type="button" class="btn_del01 "
 												style="display: none;">
 												<span>입력 텍스트 삭제</span>
@@ -180,47 +167,41 @@ $(function(){
 										</div>
 									</dd>
 								</dl>
-								<dl>
-									<dt class="WEB">휴대폰 번호</dt>
+								<dl class="WEB phone">
+									<dt>휴대폰 번호</dt>
 									<dd>
 										<div class="inpbox st02">
-											<input type="text" placeholder="핸드폰 번호를 입력해 주세요" class="st02">
+											<input type="text" placeholder="핸드폰 번호를 입력해 주세요"
+												class="st02 phone">
 										</div>
 									</dd>
 								</dl>
-								<dl style="display: none;">
-									<dt class="WEB">인증번호</dt>
+								<dl class="WEB auth" id="authNumber">
+									<dt class="WEB auth">인증번호</dt>
 									<dd>
 										<div class="inpbox st02">
-											<input type="text" placeholder="인증번호를 입력하세요." class="st02"><em
-												class="time"></em>
-										</div>
-									</dd>
-								</dl>
-								<dl style="display: none;">
-									<dt class="WEB">인증번호</dt>
-									<dd>
-										<div class="inpbox st02">
-											<input type="text" readonly="readonly" class="st02"><em
-												class="tag st02"><span>인증완료</span></em>
+											<input type="text" placeholder="인증번호를 입력하세요."
+												class="st02 auth"><em class="time"></em>
+												<em class="tag st02"><span>인증완료</span></em>
 										</div>
 									</dd>
 								</dl>
 							</div>
 						</div>
 						<div class="c_btn">
-							<div>
-								<button type="button" class="btn01 l m_btn01">
+							<div class="move">
+								<button type="button" class="btn01 l m_btn01 move">
 									<span>인증번호 발송</span>
 								</button>
 							</div>
-							<div style="display: none;">
-								<button type="button" class="btn01 l m_btn01">
+
+							<div style="display: none;" class="check">
+								<button type="button" class="btn01 l m_btn01 check">
 									<span>인증번호 확인</span>
 								</button>
 							</div>
-							<div style="display: none;">
-								<button type="button" class="btn01 l m_btn01">
+							<div style="display: none;" class="rerrange">
+								<button type="button" class="btn01 l m_btn01 rerrange">
 									<span>재설정</span>
 								</button>
 							</div>
@@ -238,14 +219,14 @@ $(function(){
 									<dd>
 										<div class="inpbox">
 											<input placeholder="4~6자리 이내의 숫자로만 입력하세요." maxlength="6"
-												type="password" class="st02">
+												type="password" class="st02 pwd">
 											<button type="button" tabindex="-1" class="btn_view01">
 												<span>입력 텍스트 보기</span>
 											</button>
 										</div>
 										<div class="inpbox">
 											<input placeholder="비밀번호를 다시 입력하세요." maxlength="6"
-												type="password" class="st02">
+												type="password" class="st02 pwd_check">
 											<button type="button" tabindex="-1" class="btn_view01">
 												<span>입력 텍스트 보기</span>
 											</button>
@@ -257,7 +238,7 @@ $(function(){
 						<p class="MOB txt04">주문 내역 확인을 위한 비밀번호를 입력하세요.</p>
 						<div class="c_btn">
 							<div>
-								<button type="button" class="btn01 l m_btn01">
+								<button type="button" class="btn01 l m_btn01 guest_order">
 									<span>비회원 주문</span>
 								</button>
 							</div>
