@@ -23,12 +23,12 @@ public class DeliveryController {
 		
 		model.addAttribute("orderList", orderList);
 		
-		return "deliveryHome";
+		return "delivery/deliveryHome";
 	}
 	
 	@RequestMapping("location.do")
 	public String location() {
 		
-		return "deliveryLocation";
+		return "delivery/deliveryLocation";
 	}
 }

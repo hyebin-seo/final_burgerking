@@ -33,7 +33,7 @@
       	<a href="mypage_main.do">
 	      <div class="my_info_icon"><i class="fas fa-user-circle"></i></div>
 	      <div class="my_info_span_div">
-	        <div class="span_div"><span id="user_name_span">${memberSession.getUser_id()}</span> 님 안녕하세요.</div>
+	        <div class="span_div"><span id="user_name_span">${memberSession.user_name}</span> 님 안녕하세요.</div>
 	      	<div class="span_div"><Strong>MY킹 바로가기 ></Strong></div>
 	      </div>
 	    </a> 

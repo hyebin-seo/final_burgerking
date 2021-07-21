@@ -40,7 +40,7 @@ $(document).ready(function () {
    });
    
    // 매장 옵션 적용 버튼 클릭 이벤트
-   $(document).on("click", ".btn02", function () {
+   $(document).on("click", ".optionbtn", function () {
 	   if($(".mapWrap .tab01 li").eq(0).hasClass("on")) { //가까운매장
 		   updateMap(global_map);
 	   } else if($(".mapWrap .tab01 li").eq(1).hasClass("on")) { //매장명검색

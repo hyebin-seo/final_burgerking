@@ -23,6 +23,6 @@
 <jsp:include page="menu_delivery.jsp"/>	 
 	 
 </body>
-<jsp:include page="ingredientFooter.jsp" />
-<jsp:include page="footer.jsp" />
+<jsp:include page="../ingredient/ingredientFooter.jsp" />
+<jsp:include page="../footer.jsp" />
 </html>
