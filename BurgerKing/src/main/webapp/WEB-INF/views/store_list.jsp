@@ -7,13 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link  href="resources/css/cs/store.css"  rel="stylesheet"  type="text/css">
+<link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/event.js"></script>
 
 </head>
 <body>
 		<jsp:include page="cs_menu.jsp" />
+		
 		<ul class="tab_storyBtn m_shadow">
 		<li class="">
 		<button type="button" onclick="location.href='event_list.do'">이벤트</button>
@@ -29,22 +30,21 @@
 	         
 	   
 	   
-	      <tr>
-	         <th>NO.</th> <th>매장이름</th>
-	      	 <th>날짜</th> 
-	      </tr>
+	      
 	      
 	      <c:set var="list" value="${List }" />
 	      <c:if test="${!empty list }">
 	         <c:forEach items="${list }" var="dto">
-	            <tr align="center">
-	               <td> ${dto.getStore_no() } </td>
-	         	   <td> <a href="<%=request.getContextPath() %>/store_cont.do?no=${dto.getStore_no() }&page=${Paging.getPage() }">
-	         						${dto.getStore_title() }</a></td>
-	               
-	               <td> <fmt:formatDate value="${dto.getStore_regdate() }"
-	               				pattern="yyyy-MM-dd"/>
-	               				
+	            <tr id = "tr0">
+	               	<td id = "td0"> 
+	               		<a href="<%=request.getContextPath() %>/store_cont.do?no=${dto.getStore_no() }&page=${Paging.getPage() }">	               			
+	               		<img src="../../burger/resources/img/nstore/${dto.getStore_image() }"  alt="이미지없음" width="450px;" height="200px;">
+	              				<br>	               					
+	               			<p><fmt:formatDate value="${dto.getStore_regdate() }"
+	               				pattern="yyyy-MM-dd"/></p>
+	            		</a>
+	            		
+	            		</td>
 	            </tr>
 	         </c:forEach>
 	      </c:if>
@@ -87,4 +87,5 @@
 	
 
 </body>
+	
 </html>

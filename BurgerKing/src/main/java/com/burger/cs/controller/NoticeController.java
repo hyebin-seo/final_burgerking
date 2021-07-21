@@ -138,6 +138,9 @@ public class NoticeController {
 	@RequestMapping("notice_update.do")
 	public String modify(@RequestParam("no") int notice_no, @RequestParam("page") int nowPage, Model model) {
 
+		
+		
+		
 		// 게시글 상세내역 조회하는 메서드 호출
 		NoticeDTO dto = this.dao.noticeCont(notice_no);
 

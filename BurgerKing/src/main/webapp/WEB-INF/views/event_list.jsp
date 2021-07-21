@@ -13,7 +13,8 @@
 
 </head>
 <body>
-		<jsp:include page="cs_menu.jsp" />
+		  <jsp:include page="cs_menu.jsp" />  
+		
 		<ul class="tab_storyBtn m_shadow">
 		<li class="on">
 		<button type="button" onclick="location.href='event_list.do'">이벤트</button>
@@ -27,22 +28,21 @@
 	         
 	   
 	   	
-	      <tr>
-	         <th>NO.</th> <th>이벤트제목</th>
-	      	 <th>날짜</th> 
-	      </tr>
+	    
 	      
 	      <c:set var="list" value="${List }" />
 	      <c:if test="${!empty list }">
 	         <c:forEach items="${list }" var="dto">
-	            <tr align="center">
-	               <td> ${dto.getEvent_no() } </td>
-	         	   <td> <a href="<%=request.getContextPath() %>/event_cont.do?no=${dto.getEvent_no() }&page=${Paging.getPage() }">
-	         						${dto.getEvent_title() }</a></td>
-	               
-	               <td> <fmt:formatDate value="${dto.getEvent_regdate() }"
-	               				pattern="yyyy-MM-dd"/>
-	               				
+	            <tr id = "tr0">
+	               	<td id = "td0"> 
+	               		<a href="<%=request.getContextPath() %>/event_cont.do?no=${dto.getEvent_no() }&page=${Paging.getPage() }">	               			
+	               		<img src="../../burger/resources/img/event/${dto.getEvent_image() }"  alt="이미지없음" width="450px;" height="200px;">
+	              				<br>	               					
+	               			<p><fmt:formatDate value="${dto.getEvent_regdate() }"
+	               				pattern="yyyy-MM-dd"/></p>
+	            		</a>
+	            		
+	            		</td>
 	            </tr>
 	         </c:forEach>
 	      </c:if>

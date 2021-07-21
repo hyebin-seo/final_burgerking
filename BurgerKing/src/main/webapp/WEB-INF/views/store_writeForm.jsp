@@ -20,7 +20,7 @@
 	   <br> <br>
 	
 	   <form method="post" 
-	      action="<%=request.getContextPath() %>/store_write_ok.do">
+	      action="<%=request.getContextPath() %>/store_write_ok.do" enctype="multipart/form-data">
 	      
 	      <div class = "store_write" align="center">
 	     <table class= "table2">

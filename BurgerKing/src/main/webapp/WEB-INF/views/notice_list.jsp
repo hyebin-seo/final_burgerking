@@ -10,7 +10,7 @@
 <link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
+<jsp:include page="header.jsp" />
 </head>
 <body>
 		<jsp:include page="cs_menu.jsp" />	
@@ -83,11 +83,11 @@
          </c:if>
       </c:forEach>
       </div>
-   </div>
-	   <br>
+      <br>
 	   
-	</div>
+	
 
 
 </body>
+<jsp:include page="footer.jsp" />
 </html>

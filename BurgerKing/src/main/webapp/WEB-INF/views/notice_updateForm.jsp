@@ -39,8 +39,11 @@
 	         <tr id = "tr1">
 	         	<th>공지사진</th>
 	         	<td> 
-					<textarea rows="30" cols="100" name="notice_image">${dto.getNotice_image() }</textarea>
-	         	</td>
+					<textarea rows="1" cols="10" name="notice_image" readonly>${dto.getNotice_image() }</textarea>
+	         	</td> 
+	         	
+	         	<!-- <td> <input type="file" name="notice_image"> </td>	  --> 	
+	          			
 	         </tr>
 	         
 	         <tr id = "tr1">
