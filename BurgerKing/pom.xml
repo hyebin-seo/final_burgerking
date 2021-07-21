@@ -247,6 +247,14 @@
 		</dependency>
 		<!-- 구글 소셜 로그인 구현 -->
 
+		<!-- 보인인증 문자보내기 -->
+
+		<dependency>
+			<groupId>net.nurigo</groupId>
+			<artifactId>javaSDK</artifactId>
+			<version>2.2</version>
+		</dependency>
+
 
 
 

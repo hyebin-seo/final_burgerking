@@ -61,9 +61,11 @@ $(document).ready(function(){
   
      if( $('input.user_pwd').is(':password')){
      $('input.user_pwd').attr('type', 'text');
+     $('button.btn_view01').addClass('on');
     
      }else{
       $('input.user_pwd').attr('type', 'password');
+      $('button.btn_view01').removeClass('on');
      }
     
     
