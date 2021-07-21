@@ -13,16 +13,15 @@
 <!-- 주소지 찾기 팝업 -->
 <div class="popWrap m_FullpopWrap">
 
-	<form name="lform">
+	<form name="lform" method="post" action="location_insert.do">
 		<input type="hidden" name="loc_addr1">
 		<input type="hidden" name="loc_addr2">
 		<input type="hidden" name="loc_addr3">
-		<input type="hidden" name="loc_my">
 		<input type="hidden" name="loc_nickname">
 	</form>
 
 	<!-- 주소지 검색 -->
-    <div class="popbox01">
+    <div class="popbox01 search">
         <div class="M_headerWrap">
             <div class="titleBar">
                 <h1 class="page_tit w_alignL"><span>배달 받을 주소</span></h1>
@@ -137,7 +136,7 @@
             <div class="inpbox"><input type="text" placeholder="" maxlength="10"><button type="button" class="btn_del01 " style="display: none;"><span>입력 텍스트 삭제</span></button></div>
             <div class="page_count"><span>0</span> / <span>10</span></div>
         </div>
-        <div class="pop_btn c_btn item2"><a class="btn02 m_btn01_s dark"><span>취소</span></a><a class="btn02 m_btn01_s red"><span>등록</span></a></div>
+        <div class="pop_btn c_btn item2"><a class="btn02 m_btn01_s dark"><span>취소</span></a><a class="btn02 m_btn01_s submit red"><span>등록</span></a></div>
     </div>
     
 </div>
