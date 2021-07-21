@@ -54,14 +54,23 @@ $('a.btn01.m.red').click(function() {
 /* 눈 이미지 아이콘 바꾸기 */
 
 
-$('button.btn_view01').click(function() {
+$(document).ready(function(){
 
-
-	$('input.user_pwd').attr('type', 'text');
-
-
+   $('button.btn_view01').click(function() {
+   
+  
+     if( $('input.user_pwd').is(':password')){
+     $('input.user_pwd').attr('type', 'text');
+    
+     }else{
+      $('input.user_pwd').attr('type', 'password');
+     }
+    
+    
+    
 });
 
+})/*메서드 종료*/
 
 $('div.tab_cont').hide();
 $("div.tab_cont:first").show()

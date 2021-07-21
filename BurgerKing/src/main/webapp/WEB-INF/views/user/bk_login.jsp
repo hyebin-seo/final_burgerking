@@ -208,14 +208,14 @@
 								<h3 class="tit01 tit_ico lock">간편 로그인</h3>
 								<ul class="list">
 									<li class="naver"><a
-										href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=PBfH9QlMrv7_rQytnQD7&redirect_uri=http%3A%2F%2Flocalhost%3A8765%2Fburger%2Fcallback.do&state=219ab51e-0bf6-48de-b66d-131cb5f52c77"><span>네이버
+										href="${url }"><span>네이버
 												로그인</span></a></li>
 									<li class="kakao"><a
 										href="https://kauth.kakao.com/oauth/authorize?client_id=af5dfe1033cca6782a64794f4eb1554c&redirect_uri=http://localhost:8765/burger/oauth&response_type=code"><span>카카오톡
 												로그인</span></a></li>
 									<li class="apple"><a
-										href="https://accounts.google.com/o/oauth2/auth?client_id=105052386417-99g5i64m0bql3kehp3o3ubh8a5moq8e0.apps.googleusercontent.com&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login&redirect_uri=http%3A%2F%2Flocalhost%3A8765%2Fburger%2Fgooglecallback.do"><span>애플
-												로그인</span></a></li>
+										href="https://accounts.google.com/o/oauth2/auth?client_id=105052386417-99g5i64m0bql3kehp3o3ubh8a5moq8e0.apps.googleusercontent.com&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login&redirect_uri=http%3A%2F%2Flocalhost%3A8765%2Fburger%2Fgooglecallback.do">
+										    <span>구글 로그인</span></a></li>
 								</ul>
 							</div>
 						</div>
@@ -240,7 +240,7 @@
 								<p>회원가입 없이 비회원으로 주문이 가능합니다.</p>
 							</div>
 							<div class="c_btn">
-								<a href="#/guestLogin" class="btn01 l"><span>비회원 주문</span></a>
+								<a href="guestLogin.do" class="btn01 l"><span>비회원 주문</span></a>
 							</div>
 						</div>
 						<div class="tab_cont" id="tab2">

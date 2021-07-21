@@ -3,6 +3,7 @@ package com.burger.login.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -49,8 +50,9 @@ public class LoginController {
 	public void join(@RequestParam("chk") ArrayList<String> valueArr, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter script = response.getWriter();
+	
 
-		if (!valueArr.contains("1") || !valueArr.contains("2")) {
+		if (!valueArr.contains("1") || !valueArr.contains("2") || valueArr == null) {
 			script.println("<script>");
 			script.println("alert('필수항목을 체크해주셔야합니다.')");
 			script.println("history.back()");
@@ -114,7 +116,7 @@ public class LoginController {
 
 	// 로그인 메서드
 	@RequestMapping("login_Ok.do")
-	public void login_ok(UserDTO dto, HttpServletResponse response) throws IOException {
+	public String login_ok(UserDTO dto, HttpServletResponse response, HttpSession session) throws IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter script = response.getWriter();
 
@@ -123,8 +125,12 @@ public class LoginController {
 		if (dto != null) {
 
 			script.println("<script>");
-			script.println("location.href=/burger/");
+			script.println("alert('로그인을 축하합니다.')");
 			script.println("</script>");
+			
+			
+			session.setAttribute("memberSession", dto);
+			return "deliveryHome";
 
 		} else {
 			script.println("<script>");
@@ -132,6 +138,8 @@ public class LoginController {
 			script.println("history.back()");
 			script.println("</script>");
 		}
+		
+		return null;
 
 	}
 
@@ -211,6 +219,34 @@ public class LoginController {
 
 
 	// 비밀번호 찾아서 메일로 보내는 기능.
+	@RequestMapping("auth_mail.do")
+	@ResponseBody
+	public HashMap<String, Object> auth_mail(HttpServletRequest request) {
+		
+		String user_email = request.getParameter("user_email");
+		String s = "";
+		Random r1 = new Random();
+		int num = r1.nextInt(999999); // 랜덤난수설정
+
+		String random = s + num;
+		
+		String info = "안녕하세요. 고객님\n 보인인증을 위한 번호를 다음과 같이 보내드립니다." 
+				 + "\n 보인인증번호 :"+random;
+		
+		EmailService.sendMail(user_email, "보인인증", info);
+		
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		
+		result.put("random", random);
+		
+		System.out.println(user_email);
+		System.out.println(info);
+		System.out.println(result);
+		
+		
+		return result;
+}
+	
 
 	@RequestMapping("find_pwd.do")
 	public String sendSimpleMail(HttpServletRequest request, HttpServletResponse response, UserDTO dto, Model model)
@@ -302,6 +338,13 @@ public class LoginController {
 			script.println("</script>");
 		}
 
+	}
+	
+	@RequestMapping("guestLogin.do")
+	public String guestLogin() {
+		
+		
+		return"user/guest_login";
 	}
 
 }

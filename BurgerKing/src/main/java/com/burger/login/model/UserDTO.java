@@ -15,6 +15,7 @@ public class UserDTO {
    private String user_addr2;
    private String user_date;
    private String user_gender;
+   private String sns_flag;
  
 	
 }

@@ -10,77 +10,11 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <link rel="stylesheet" href="resources/css/user/user_info.css">
-<script>
-
-
-
-
-
-
-$(document).ready(function() {
-
-$('div.popWrap.m_FullpopWrap1').css('display','none');
-
-$('span.pop1').click(function(){
-	$('div.popWrap.m_FullpopWrap1').css('display','block');
-})
-
-$('button.btn02.dark').click(function() {
-	$('div.popWrap.m_FullpopWrap1').css('display','none');
-})
-
-$('button.btn02.agree').click(function() {
-	$('div.popWrap.m_FullpopWrap1').css('display','none');
-	$("input#chk1").prop('checked', true);
-	
-})
-
-});
-
-$(document).ready(function() {
-
-	$('div.popWrap.m_FullpopWrap2').css('display','none');
-
-	$('span.pop2').click(function(){
-		$('div.popWrap.m_FullpopWrap2').css('display','block');
-	})
-
-	$('button.btn02.dark').click(function() {
-		$('div.popWrap.m_FullpopWrap2').css('display','none');
-	})
-
-	$('button.btn02.agree').click(function() {
-		$('div.popWrap.m_FullpopWrap2').css('display','none');
-		$("input#chk2").prop('checked', true);
-		
-	})
-
-	});
-
-
-
-	$(document).ready(function() {
-
-		$("#chkAll").click(function() {
-			/*if ($("#chkAll").attr("checked")) {
-				$(".first").attr("checked", true)
-			}*/
-
-			var checked_all = $("#chkAll").is(':checked');
-
-			if (checked_all) {
-				$(".check02").prop('checked', true);
-			}
-		})
-		
-		
-		
-	})
-	
-	
-	
+<script type="text/javascript" src="resources/js/login/user_info_service.js">
 
 </script>
+
+
 
 </head>
 
@@ -178,68 +112,68 @@ $(document).ready(function() {
 						<div class="subtitWrap m_bg_basic">
 							<h2 class="page_tit">회원가입</h2>
 						</div>
-						<form action="join.do" id="joinForm">
-							<div class="container01">
-								<h3 class="tit01 tit_ico noti">
-									<span>이용약관</span>
-								</h3>
-								<div class="container02 auth_list">
-									<div class="titbox">
-										<p>회원가입 약관 동의 및 본인인증을 진행합니다.</p>
-									</div>
-									<div>
-										<label><input type="checkbox" class="check02" id="chk1"
-											value="1" name="chk"><span>버거킹 이용약관(필수)</span></label>
-										<button type="button">
-											<span class="pop1">상세보기</span>
-										</button>
-									</div>
-									<div>
-										<label><input type="checkbox" class="check02" id="chk2"
-											value="2" name="chk"><span>개인정보처리방침(필수)</span></label>
-										<button type="button">
-											<span class="pop2">상세보기</span>
-										</button>
-									</div>
-									<div>
-										<label><input type="checkbox" class="check02"
-											value="3" name="chk"><span>E-mail 광고성 정보
-												동의(선택)</span></label>
-									</div>
-									<div class="st02">
-										<label><input type="checkbox" class="check02"
-											value="4" name="chk"><span>SMS 광고성 정보 동의(선택)</span></label><span
-											class="info">다양한 이벤트와 주문 정보를 보내 드립니다.</span>
-									</div>
-									<div class="divide">
-										<label><input type="checkbox" class="check02"
-											id="chkAll"><span>약관 전체 동의</span></label>
-									</div>
+						<!-- <form action="join.do" id="joinForm"> -->
+						<div class="container01">
+							<h3 class="tit01 tit_ico noti">
+								<span>이용약관</span>
+							</h3>
+							<div class="container02 auth_list">
+								<div class="titbox">
+									<p>회원가입 약관 동의 및 본인인증을 진행합니다.</p>
 								</div>
-								<h3 class="MOB tit01 tit_ico man">
-									<span>본인인증</span>
-								</h3>
-								<div class="container02 auth_list">
-									<div class="titbox">
-										<p>약관 동의 후 휴대폰 본인인증을 진행해 주세요.</p>
-									</div>
-									<ul class="txtlist01">
-										<li>반드시 회원님의 본인명의로 된 휴대폰으로 인증을 진행해 주세요.</li>
-										<li>타인의 개인정보를 도용하여 가입 후 적발 시 서비스 이용에 제한을 받으며, 법적 제재를 받을 수
-											있습니다.</li>
-									</ul>
+								<div>
+									<label><input type="checkbox" class="check02" id="chk1"
+										value="1" name="chk"><span>버거킹 이용약관(필수)</span></label>
+									<button type="button">
+										<span class="pop1">상세보기</span>
+									</button>
 								</div>
-								<div class="c_btn">
-									<a class="btn01"><button>
-											<span>휴대폰 인증하기</span>
-										</button></a>
+								<div>
+									<label><input type="checkbox" class="check02" id="kch2"
+										value="2" name="chk"><span>개인정보처리방침(필수)</span></label>
+									<button type="button">
+										<span class="pop2">상세보기</span>
+									</button>
+								</div>
+								<div>
+									<label><input type="checkbox" class="check02" value="3"
+										name="chk"><span>E-mail 광고성 정보 동의(선택)</span></label>
+								</div>
+								<div class="st02">
+									<label><input type="checkbox" class="check02" value="4"
+										name="chk"><span>SMS 광고성 정보 동의(선택)</span></label><span
+										class="info">다양한 이벤트와 주문 정보를 보내 드립니다.</span>
+								</div>
+								<div class="divide">
+									<label><input type="checkbox" class="check02"
+										id="chkAll"><span>약관 전체 동의</span></label>
 								</div>
 							</div>
-						</form>
+							<h3 class="MOB tit01 tit_ico man">
+								<span>본인인증</span>
+							</h3>
+							<div class="container02 auth_list">
+								<div class="titbox">
+									<p>약관 동의 후  메일인증을 진행해 주세요.</p>
+								</div>
+								<ul class="txtlist01">
+									<li>반드시 회원님의 본인명의로 된 메일로 인증을 진행해 주세요.</li>
+									<li>타인의 개인정보를 도용하여 가입 후 적발 시 서비스 이용에 제한을 받으며, 법적 제재를 받을 수
+										있습니다.</li>
+								</ul>
+							</div>
+							<div class="c_btn">
+								<a class="btn01 auth"><button>
+										<span>메일 인증하기</span>
+									</button></a>
+							</div>
+						</div>
+						<!-- </form> -->
 					</div>
 				</div>
 				<jsp:include page="pop1.jsp" />
 				<jsp:include page="pop2.jsp" />
+				<jsp:include page="pop3.jsp" />
 			</div>
 		</div>
 		<div class="footer">
@@ -270,6 +204,7 @@ $(document).ready(function() {
 							class="facebook">페이스북</a><a
 							href="https://www.instagram.com/burgerkingkorea" target="_blank"
 							class="insta">인스타그램</a>
+							
 					</div>
 				</div>
 			</div>
@@ -282,6 +217,8 @@ $(document).ready(function() {
 	<!---->
 	<a href="#app" class="btn_top" style="display: none;">Top</a>
 	</div>
+
+
 
 
 </body>
