@@ -15,14 +15,9 @@
 <jsp:include page="deliveryCart.jsp"/>
 <body>
 
-<%-- 	<c:forEach items="${orderList }" var="orderList">
-	      <h4>${orderList.order_no }</h4>
-	      <h4>${orderList.user_id }</h4>
-	 </c:forEach> --%>
-	 
 <jsp:include page="menu_delivery.jsp"/>	 
 	 
 </body>
-<jsp:include page="ingredientFooter.jsp" />
-<jsp:include page="footer.jsp" />
+<jsp:include page="../ingredient/ingredientFooter.jsp" />
+<jsp:include page="../footer.jsp" />
 </html>

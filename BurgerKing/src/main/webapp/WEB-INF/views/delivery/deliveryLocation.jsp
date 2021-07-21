@@ -96,8 +96,8 @@
         </div>
     </div>
 </div>
-<jsp:include page="locationPopup.jsp" flush="true"/>
+<jsp:include page="../location/locationPopup.jsp" flush="true"/>
 <script src="resources/js/delivery/deliveryLocation.js"></script>
 </body>
-<jsp:include page="footer.jsp" />
+<jsp:include page="../footer.jsp" />
 </html>

@@ -10,10 +10,27 @@
 			#{user_id}, #{set_no}, null, null,
 			null, null, null, null, null,
 			null, null, default, null) -->
-		 insert into cart values((select count(*) from cart) + 1,
+		 insert into cart values((select max(cart_no+1) from cart),
 			#{user_id}, #{set_no}, #{ing1}, #{ing2},
 			#{ing3}, #{ing4}, #{ing5}, #{ing6}, #{ing7},
-			#{side}, #{drink}, default, #{total_price})
+			#{side}, #{drink}, default, #{total_price}, #{menu_flag})
 	</insert>
+	
+	<select id="cart_open" parameterType="com.burger.cart.model.CartDTO"
+						   resultType="com.burger.cart.model.CartDTO">
+		select * from cart where user_id = #{user_id} order by cart_no desc
+	</select>
+	
+	<select id="cart_menu_open" resultType="com.burger.cart.model.AllMenuDTO">
+		select * from menu where menu_no = #{set_no}
+	</select>
+	
+	<select id="cart_set_open" resultType="com.burger.cart.model.AllMenuDTO">
+		select * from menu_set where set_no = #{set_no}
+	</select>
+	
+	<delete id="cart_delete" parameterType="int">
+		delete from cart where cart_no = #{cart_no}
+	</delete>
 	
 </mapper>

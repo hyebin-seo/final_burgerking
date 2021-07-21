@@ -16,7 +16,7 @@
 			</div>
 		</a>
 		<div class="center_bar"> </div>
-		<a>
+		<a href="cart.do">
 			<div class="personal_cart">
 				<dl>
 					<dt>

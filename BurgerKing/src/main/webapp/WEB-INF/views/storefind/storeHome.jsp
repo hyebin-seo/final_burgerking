@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>매장찾기</title>
 </head>
-<jsp:include page="header.jsp"/>
+<jsp:include page="../header.jsp"/>
 <script src="resources/js/store/storeHome.js"></script>
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7l0mvlbzl6&submodules=geocoder"></script>
 <link href="resources/css/store/storeHome.css"  rel="stylesheet"  type="text/css">
@@ -60,7 +60,7 @@
                                     <li><label><input type="checkbox" class="check02"><span><span class="shop_type drive">드라이브스루</span></span></label></li>
                                 </ul>
                             </div>
-                            <div class="pop_btn full_type"><button type="button" class="btn02 st04"><span>적용</span></button></div>
+                            <div class="pop_btn full_type"><button type="button" class="btn02 st04 optionbtn"><span>적용</span></button></div>
                         </div>
                     </div>
                 </div>

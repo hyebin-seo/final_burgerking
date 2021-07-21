@@ -25,6 +25,8 @@
 		<input type="hidden" name="ing7" value="">
 		<input type="hidden" name="side" value="">
 		<input type="hidden" name="drink" value="">
+		<input type="hidden" name="menu_flag" value="set">
+		<input type="hidden" name="user_id" value="${memberSession.user_id}">
 	</form>
 	
 	<!-- 메뉴판 내용 영역 -->

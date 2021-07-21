@@ -28,13 +28,13 @@ public class StoreController {
 	@RequestMapping("store.do")
 	public String main() {
 		
-		return "storeHome";
+		return "storefind/storeHome";
 	}
 	
 	@RequestMapping("store_register.do")
 	public String register() {
 		
-		return "storeRegister";
+		return "storefind/storeRegister";
 	}
 	
 	@RequestMapping("store_register_ok.do")

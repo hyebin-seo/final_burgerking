@@ -130,7 +130,7 @@ public class LoginController {
 			
 			
 			session.setAttribute("memberSession", dto);
-			return "deliveryHome";
+			return "delivery/deliveryHome";
 
 		} else {
 			script.println("<script>");

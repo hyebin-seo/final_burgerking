@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- 파비콘 -->
@@ -19,7 +20,12 @@
 	 <div class="delivery_navbar_right_menu">
 	  	<ul style="padding-left: 70%;">
 	        <li><a href="/burger/">브랜드홈</a></li>
-	        <li class="border_li"><a href="Login.do">로그인</a></li>
+	        <c:if test="${!empty memberSession }">
+	        	<li class="border_li"><a href="logout.do">로그아웃</a></li>
+	        </c:if>
+	        <c:if test="${empty memberSession }">
+	        	<li class="border_li"><a href="Login.do">로그인</a></li>
+	        </c:if>
 	        <li class="border_li"><a href="">고객센터</a></li>
 	    </ul>
 	</div>
@@ -33,7 +39,7 @@
       	<a href="mypage_main.do">
 	      <div class="my_info_icon"><i class="fas fa-user-circle"></i></div>
 	      <div class="my_info_span_div">
-	        <div class="span_div"><span id="user_name_span">${memberSession.getUser_id()}</span> 님 안녕하세요.</div>
+	        <div class="span_div"><span id="user_name_span">${memberSession.user_name}</span> 님 안녕하세요.</div>
 	      	<div class="span_div"><Strong>MY킹 바로가기 ></Strong></div>
 	      </div>
 	    </a> 
