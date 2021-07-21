@@ -962,20 +962,6 @@ input[type=checkbox], input[type=radio] {
 	display: none;
 }
 
-input.check02:checked+:before {
-    background: url(../../img/menu/menu_checked.png);
-}
-
-input[type=checkbox]:checked+:before {
-    background: url(../../img/menu/menu_checked.png);
-} 
-
-input.check02+:before {
-    width: 32px;
-    height: 32px;
-    background: url(../../img/menu/menu_check.png);
-}
-
 input[type=checkbox]+:before, input[type=radio]+:before {
     content: "";
     display: inline-block;
@@ -984,6 +970,37 @@ input[type=checkbox]+:before, input[type=radio]+:before {
     margin-right: 13px;
     vertical-align: middle;
 }
+
+input.check02+:before {
+    width: 32px;
+    height: 32px;
+    background: url(../../img/menu/menu_check.png);
+}
+
+input.check02:checked+:before {
+	width: 32px;
+    height: 32px;
+    background: url(../../img/menu/menu_checked.png);
+}
+
+.menu_sub_list.check_mode li>input:checked~.cont:before {
+    background-image: url(../../img/menu/menu_checked.png);
+}
+
+.menu_sub_list.check_mode input~.cont:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0;
+    background: url(../../img/menu/menu_check.png) no-repeat 0;
+}
+
+/* input[type=checkbox]:checked+:before {
+    background: url(../../img/menu/menu_checked.png);
+}  */
 
 .menu_sub_list .prd_img {
     position: absolute;

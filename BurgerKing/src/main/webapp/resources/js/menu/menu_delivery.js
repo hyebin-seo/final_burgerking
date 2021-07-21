@@ -14,8 +14,14 @@ var form = document.cform;
 // 페이지 로딩 시 전달받은 카테고리에 클래스 on
 window.onload = function() {
 	
-	/*var nowCat = '<c:out value="${category}"/>';*/
 	var nowcat = $("#nowcat").val();
+	
+	// 이 부분 추가함!
+	if(nowcat == null) {
+		nowcat="스페셜&할인팩";
+		
+		getMenuList(nowcat);
+	}
 	
 	if(nowcat == "올데이킹&치킨버거"){
 		nowcat="치킨버거";
@@ -63,8 +69,10 @@ $(document).ready(function () {
 		// => POST방식으로 변경(form) OR 특수문자를 코드로 변환
 		// & -> %26
 		// ** 컨트롤러에 카테고리네임 전달
-		location.href=
-			'menu_delivery.do?cat='+cat.replace(/&/g,"%26");
+		//location.href='menu_delivery.do?cat='+cat.replace(/&/g,"%26");
+		
+		// ajax 호출
+		getMenuList(cat);
 		
 	});
 	
@@ -118,7 +126,7 @@ $(document).ready(function () {
 			}	
 		
 		}else{ //btn
-			//alert("세트번호"+$(this).val().split(",")[1]);
+			alert("세트번호"+$(this).val().split(",")[1]);
 			
 			if($(this).val().split(",")[0] == "단품"){
 				form.submit();
@@ -130,16 +138,60 @@ $(document).ready(function () {
 	});
 	
 	
-	$(document).on("click", "input[class='check02']", function () {
+	// 사이드 선택 후 "선택" 버튼 누르면 사이드 번호 저장
+	$(document).on("click", ".pop_btn.c_btn .btn02.side", function() {
 		
+		var radio = $(".list_chk.side input[name=option]:checked").val();
+		
+		sideInsert(radio);
+		
+	})
+	
+	// 음료 선택 후 "선택" 버튼 누르면 음료 번호 저장 후 폼 제출까지
+	$(document).on("click", ".pop_btn.c_btn .btn02.drink", function() {
+		
+		//alert("여기까지 되냐고");
+		
+		//alert($(".list_chk.drink").children("input").val());
+		//alert($(".list_chk.drink input[name=option]:checked").val());
+		
+		var op_no = $(".list_chk.drink input[name=option]:checked").val();
+		
+		drinkInsert(op_no);
+		
+	});
+	
+	// 재료 추가 부분
+	$(document).on("click", "input[type='checkbox']", function () {
+		alert("지금 클릭한 체크박스:"+$(this).val());
 		// 클릭했을 때 체크 상태 => 해제 / 해제 상태 => 체크 로 바뀜!
 		if($(this).is(":checked")){
-			$(this).removeAttr("checked");
+			//$(this).removeAttr("checked");
 			//$(this).removeClass("changeImg");
+			//alert("-"+$(this).val());
+			
+//			for(var i=1; i<=7; i++){
+//				//alert(i);
+//				if($(this).val == i){
+//					
+//				}
+//			}
+			$("input[name='ing"+$(this).val()+"']").val($(this).val());
+			alert($("input[name='ing"+$(this).val()+"']").val());
 			
 		} else {
-			$(this).attr("checked", "checked");
+			//$(this).attr("checked", "checked");
 			//$(this).addClass("changeImg");
+			//alert("+"+$(this).val());
+			
+//			for(var i=1; i<=7; i++){
+//				if($(this).val == i){
+//					$("input[name='ing"+$(this).val()+"']").val($(this).val());
+//				}
+//			}
+			$("input[name='ing"+$(this).val()+"']").val("");
+			alert($("input[name='ing"+$(this).val()+"']").val());
+			
 		}
 	});
 	
@@ -173,6 +225,9 @@ $(document).ready(function () {
 	});*/
 });
 
+
+
+// 선택한 세트번호 폼 입력
 function noInsert(set_no) {
 	
 	alert(set_no);
@@ -182,6 +237,7 @@ function noInsert(set_no) {
 	//form.submit();
 }
 
+//선택한 사이드번호 폼 입력
 function sideInsert(radio) {
 	
 	alert(radio);
@@ -191,6 +247,32 @@ function sideInsert(radio) {
 	//form.submit();
 }
 
+//선택한 음료번호 폼 입력(제출)
+function drinkInsert(op_no) {
+	
+	alert("음료번호"+op_no);
+	
+	$("input[name='drink']").val(op_no);
+	
+	form.submit();
+	
+}
+
+
+// 카테고리 해당 메뉴 리스트 불러오기
+function getMenuList(category){
+	$.ajax({
+		url : "menu_list.do",
+		data : {"category" : category},
+		type: "post",
+		success: function(data){
+			menuMaking(data);
+		},
+		error: function(request, status, error){
+			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
 
 // 메뉴 세트 정보 불러오기
 function menuSetOpen(menu_no) {
@@ -223,6 +305,76 @@ function menuSideOpen(set_no) {
 	});
 }
 
+// 카테고리 해당하는 메뉴 리스트 뿌려주는 함수
+function menuMaking(jsonStr) {
+	
+	//alert("menuList 받아오는 것까지 되나?");
+	
+	var list = jsonStr.menuList;
+	var menuNoList = jsonStr.menuNoList;
+	var cat = jsonStr.category;
+	var size = jsonStr.size;
+	
+	var htmlStr = "";
+	
+	//htmlStr += "<div class='tab_cont'>";
+	htmlStr += "<h4 class='hide'>프리미엄</h4>";
+	htmlStr += "<input id='nowcat' type='hidden' value='"+cat+"'>";
+	
+	// 메뉴 결과 없으면 nodata div
+	if(size == 0){
+		htmlStr += "<div class='nodata' style=''>";
+		htmlStr += "<p><span>메뉴 준비중입니다</span></p>";
+		htmlStr += "</div>";
+	}else {
+		htmlStr += "<ul class='prdmenu_list'>";
+		
+		$.each(list , function(i, menu){
+			htmlStr += "<li>";
+			htmlStr += "<div class='prd_img'>";
+				
+			if(menu.menu_type == "NEW"){
+				htmlStr += "<em class='ico_flag_new'></em>";
+			}else if(menu.menu_type == "BEST"){
+				htmlStr += "<em class='ico_flag_best'></em>";
+			}
+			
+			htmlStr += "<span><img src='"+menu.menu_img+"' alt='제품' class style='display:inline; opacity:1;'></span>";
+			htmlStr += "</div>";
+			
+			htmlStr += "<div class='cont'>";
+			htmlStr += "<p class='tit'><strong>"+menu.menu_name+"</strong></p>";
+			htmlStr += "<p class='set_info'>";
+			
+			if(menu.menu_name == "몬스터Ⅱ팩1" || menu.menu_name == "몬스터Ⅱ팩2" || menu.menu_name == "몬스터Ⅱ팩3") {
+				htmlStr += "<span>"+menu.menu_member+"</span>";
+			}
+			
+			htmlStr += "</p>";
+			
+			htmlStr += "<p class='price'>";
+			htmlStr += "<span><strong><em><span>&#8361;"+menu.menu_price.toLocaleString();
+			
+			$.each(menuNoList , function(i, no){
+				if(menu.menu_no == no) {
+					htmlStr += "~";
+				}
+			});
+			
+			htmlStr += "</span></em></strong></span></p></div>";
+			htmlStr += "<a class='btn_detail'>";
+			htmlStr += "<input type='hidden' value='"+menu.menu_no+"'>";
+			htmlStr += "<span>Details</span>";
+			htmlStr += "</a>";
+			
+		});
+		
+		htmlStr += "</ul></div>";
+		
+	}
+	
+	$(".tab_cont").html(htmlStr);
+}
 
 // 메뉴판에서 메뉴 클릭했을 때 세트메뉴(라지,세트,단품) 선택하는 팝업
 function setPopupMaking(jsonStr) {
@@ -534,12 +686,12 @@ function optionPopupMaking(jsonStr){
 			htmlStr += "<p class='tit'><span>"+side.op_name+"</span></p>";
 			htmlStr += "<p class='price'><span>+</span><span>"+side.op_price+"</span><span class='unit'>원</span></p>";
 			htmlStr += "</div>";
-			htmlStr += "<label class='list_chk'>";
+			htmlStr += "<label class='list_chk side'>";
 			
 			if(i == 0){
-				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"' checked onclick='sideInsert("+side.op_no+")'><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"' checked><span>사이드 변경</span></label>";
 			}else{
-				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"' onclick='sideInsert("+side.op_no+")'><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"'><span>사이드 변경</span></label>";
 			}
 			
 			htmlStr += "</li>";
@@ -552,11 +704,10 @@ function optionPopupMaking(jsonStr){
 		//var radio = $("input[name='option']:checked").val();
 		//alert("클릭된 사이드 번호"+radio);
 		
-		// 어차피 마지막 클릭한 값으로 덮어씌워지니까 클릭할 때마다 폼에 값 저장하는 걸로 햇습니다!
 		if(set.set_name.indexOf("라지")){
-			htmlStr += "<button type='button' class='btn02 red m_btn01_s' value='음료L,"+set.set_no+"'><span>선택</span></button></div>";
+			htmlStr += "<button type='button' class='btn02 red m_btn01_s side' value='음료L,"+set.set_no+"'><span>선택</span></button></div>";
 		}else if(set.set_name.indexOf("세트")){
-			htmlStr += "<button type='button' class='btn02 red m_btn01_s' value='음료R,"+set.set_no+"'><span>선택</span></button></div>";
+			htmlStr += "<button type='button' class='btn02 red m_btn01_s side' value='음료R,"+set.set_no+"'><span>선택</span></button></div>";
 		}
 		
 		htmlStr += "</div></div></div>";
@@ -575,7 +726,7 @@ function optionPopupMaking(jsonStr){
 		$.each(list , function(i, ing){
 			
 			htmlStr += "<li>";
-			htmlStr += "<input type='checkbox' title='재료 추가' class='check02'>";
+			htmlStr += "<input type='checkbox' title='재료 추가' class='check02' value='"+ing.op_no+"'>";
 			htmlStr += "<div class='prd_img'><img src='"+ing.op_img+"' alt='재료'></div>";
 			htmlStr += "<div class='cont'>";
 			htmlStr += "<p class='tit'><span>"+ing.op_name+"</span></p>";
@@ -623,12 +774,12 @@ function optionPopupMaking(jsonStr){
 			htmlStr += "<p class='tit'><span>"+side.op_name+"</span></p>";
 			htmlStr += "<p class='price'><span>+</span><span>"+side.op_price+"</span><span class='unit'>원</span></p>";
 			htmlStr += "</div>";
-			htmlStr += "<label class='list_chk'>";
+			htmlStr += "<label class='list_chk drink'>";
 			
 			if(i == 0){
-				htmlStr += "<input type='radio' name='option' value checked><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' checked value='"+side.op_no+"'><span>사이드 변경</span></label>";
 			}else{
-				htmlStr += "<input type='radio' name='option' value><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' value='"+side.op_no+"'><span>사이드 변경</span></label>";
 			}
 			
 			htmlStr += "</li>";
@@ -637,10 +788,11 @@ function optionPopupMaking(jsonStr){
 		
 		htmlStr += "</ul></div>";
 		htmlStr += "<div class='pop_btn c_btn'>";
-		htmlStr += "<button type='button' class='btn02 red m_btn01_s'><span>선택</span></button></div>";
+		htmlStr += "<button type='button' class='btn02 red m_btn01_s drink'><span>선택</span></button></div>";
 		htmlStr += "</div></div></div>";
 		
 	}else if(op == "단품") {
+		
 		alert("장바구니로 바로!");
 	}
 	

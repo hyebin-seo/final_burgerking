@@ -84,26 +84,26 @@
 				
 				<!-- 2-2. 메뉴판 -->
 				<div class="tab_cont">
-					<h4 class="hide">프리미엄</h4>
+					<%-- <h4 class="hide">프리미엄</h4>
 					
 					<c:set var="menuList" value="${menuList }" />
-					<%-- <c:set var="category" value="${cat }" /> --%>
+					<c:set var="category" value="${cat }" />
 					<input id="nowcat" type="hidden"
 						value="${cat }">
-					<c:set var="menuNoList" value="${menuNoList }" />
+					<c:set var="menuNoList" value="${menuNoList }" /> --%>
 					
 					<!-- 데이터 없을 경우 -->
-					<c:if test="${empty menuList }">
+					<%-- <c:if test="${empty menuList }">
 						<!-- <div class="nodata" style="display: none;"> -->
 						<div class="nodata" style="">
 							<p>
 								<span>메뉴 준비중 입니다</span>
 							</p>
 						</div>
-					</c:if>
+					</c:if> --%>
 					
 					<!-- 데이터 있는 경우 -->
-					<c:if test="${!empty menuList }">
+					<%-- <c:if test="${!empty menuList }">
 						<ul class="prdmenu_list">
 							<c:forEach items="${menuList }" var="dto">
 								<li>
@@ -153,7 +153,7 @@
 								</li>
 							</c:forEach>
 						</ul>
-					</c:if>
+					</c:if> --%>
 				</div>
 				
 				<!-- 2-3. 유의사항 -->
@@ -177,8 +177,8 @@
 						<li>내용</li>
 					</ul>
 				</div> -->
-			</div>
-		</div>
+			<!-- </div> -->
+		<!-- </div> -->
 		
 		<!-- 3. 모바일 화면 -->
 		<div class="contentsBox01 MOB"></div>
@@ -186,7 +186,7 @@
 		<!-- 클릭하면 세트메뉴 선택 팝업창 -->
 		<!-- menuPopup -->
 		
-	</div>
+	<!-- </div> -->
 
 <script src="resources/js/menu/menu_delivery.js"></script>
 </body>
