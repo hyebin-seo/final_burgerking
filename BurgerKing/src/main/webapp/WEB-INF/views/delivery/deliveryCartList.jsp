@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,28 +19,31 @@
         <div class="subtitWrap m_bg_basic">
             <h2 class="page_tit">딜리버리 카트</h2>
         </div>
-        <c:if test="${empty cartlist }">
-	        <div class="nodata">
-	        	<span class="txt_c01">카트에 담긴 메뉴가 없습니다</span>
-	            <div class="c_btn">
-	            	<button type="button" class="btn01 ico add">
-	            		<span>메뉴 추가</span>
-	            	</button>
-	            </div>
-	        </div>
-        </c:if>
-        
+        <c:choose>
+	      <c:when test="${empty cartlist }">
+	      	<div class="nodata">
+	      </c:when>
+		  <c:otherwise>
+			<div class="nodata" style="display: none;">
+		  </c:otherwise>
+        </c:choose>
+        	<span class="txt_c01">카트에 담긴 메뉴가 없습니다</span>
+            <div class="c_btn">
+            	<button type="button" class="btn01 ico add" onclick="location.href='delivery_home.do'">
+            		<span>메뉴 추가</span>
+            	</button>
+            </div>
+        </div>
+       
+       <c:if test="${!empty cartlist }">
         <div class="container01 cartWrap" style="">
             
             <div class="allchk01">
             	<label>
             	<input type="checkbox" class="check02"><span>전체선택 <span></span></span></label>
                 <div class="rcen_btn">
-                	<button type="button" class="btn_my">
-                		<span>MY세트 등록</span>
-                	</button>
-                	<button type="button" class="btn04">
-                		<span>삭제 </span><span class="num">2</span>
+                	<button type="button" class="btn04" onclick="javascript:cartAllDelete('${memberSession.user_id }');">
+                		<span> 전체삭제 </span>
                 	</button>
                 </div>
             </div>
@@ -89,12 +94,14 @@
                         			<span class="price">
                                     	<strong>
                                     		<span>
+                                    		  <fmt:formatNumber pattern="#,###,###">
                                     			<c:if test="${cart.menu_flag == 'single' }">
 	                        						${menuinfo.menu_price }
 	                        					</c:if>
 	                        					<c:if test="${cart.menu_flag == 'set' }">
 	                        						${menuinfo.set_price }
 	                        					</c:if>
+	                        				  </fmt:formatNumber>
                                     		</span>
                                     		<span class="unit">원</span>
                                     	</strong>
@@ -121,49 +128,84 @@
                                     	<c:if test="${(empty cart.ing1) && (empty cart.ing2) && (empty cart.ing3) && (empty cart.ing4) && (empty cart.ing5) && (empty cart.ing6) && (empty cart.ing7)}">
                                         	<li>추가 없음</li>
                                         </c:if>
-                                        <c:if test="${cart.ing1 != ''}">
-                                        	<li>${cart.ing1 }</li>
+                                        <c:if test="${!empty cart.ing1}">
+                                        	<li>
+                                        		<span class="txt">롱베이컨 2장</span>
+                                        		<strong class="amount">+<span class="oprice">1,200</span>
+                                        		<span class="unit">원</span></strong>
+                                        	</li>
                                         </c:if>
-                                        <c:if test="${cart.ing2 != ''}">
-                                        	<li>${cart.ing2 }</li>
+                                        <c:if test="${!empty cart.ing2}">
+                                        	<li>
+                                        		<span class="txt">할라피뇨4 추가</span>
+                                        		<strong class="amount">+<span class="oprice">800</span>
+                                        		<span class="unit">원</span></strong>
+                                        	</li>
                                         </c:if>
-                                        <c:if test="${cart.ing3 != ''}">
-                                        	<li>${cart.ing3 }</li>
+                                        <c:if test="${!empty cart.ing3}">
+                                        	<li>
+                                        		<span class="txt">롱베이컨 1장</span>
+                                        		<strong class="amount">+<span class="oprice">600</span>
+                                        		<span class="unit">원</span></strong>
+                                        	</li>
                                         </c:if>
-                                        <c:if test="${cart.ing4 != ''}">
-                                        	<li>${cart.ing4 }</li>
+                                        <c:if test="${!empty cart.ing4}">
+                                        	<li>
+                                        		<span class="txt">치즈 2장</span>
+                                        		<strong class="amount">+<span class="oprice">600</span>
+                                        		<span class="unit">원</span></strong>
+                                        	</li>
                                         </c:if>
-                                        <c:if test="${cart.ing5 != ''}">
-                                        	<li>${cart.ing5 }</li>
+                                        <c:if test="${!empty cart.ing5}">
+                                        	<li>
+                                        		<span class="txt">올엑스트라</span>
+                                        		<strong class="amount">+<span class="oprice">400</span>
+                                        		<span class="unit">원</span></strong>
+                                        	</li>
                                         </c:if>
-                                        <c:if test="${cart.ing6 != ''}">
-                                        	<li>${cart.ing6 }</li>
+                                        <c:if test="${!empty cart.ing6}">
+                                        	<li>
+                                        		<span class="txt">할라피뇨4 추가</span>
+                                        		<strong class="amount">+<span class="oprice">400</span>
+                                        		<span class="unit">원</span></strong>
+                                        	</li>
                                         </c:if>
-                                        <c:if test="${cart.ing7 != ''}">
-                                        	<li>${cart.ing7 }</li>
+                                        <c:if test="${!empty cart.ing7}">
+                                        	<li>
+                                        		<span class="txt">치즈 1장</span>
+                                        		<strong class="amount">+<span class="oprice">300</span>
+                                        		<span class="unit">원</span></strong>
+                                        	</li>
                                         </c:if>
                                     </ul>
-                                    <button type="button" class="btn04 h02 btn_edit"><span>변경</span></button>
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>사이드</dt>
                                 <dd>
                                     <div class="list">
+                                      <c:if test="${empty cart.side }">
+                                      	<span class="txt">변경 없음</span>
+                                      </c:if>
+                                      <c:if test="${!empty cart.side }">
                                     	<span class="txt">${cart.side }</span>
-                                    	<strong class="amount">+<span>0</span><span class="unit">원</span></strong>
+                                    	<strong class="amount">+<span>${cart.side_price }</span><span class="unit"> 원</span></strong>
+                                      </c:if>
                                     </div>
-                                    <button type="button" class="btn04 h02 btn_edit"><span>변경</span></button>
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>음료</dt>
                                 <dd>
                                     <div class="list">
+                                      <c:if test="${empty cart.drink }">
+                                      	<span class="txt">변경 없음</span>
+                                      </c:if>
+                                      <c:if test="${!empty cart.drink }">
                                     	<span class="txt">${cart.drink }</span>
-                                    	<strong class="amount">+<span>0</span><span class="unit">원</span></strong>
+                                    	<strong class="amount">+<span>${cart.drink_price }</span><span class="unit"> 원</span></strong>
+                                      </c:if>
                                     </div>
-                                    <button type="button" class="btn04 h02 btn_edit"><span>변경</span></button>
                                 </dd>
                             </dl>
                         </div>
@@ -171,9 +213,9 @@
                         <div class="quantity">
                         	<strong class="tit">수량</strong>
                             <div class="num_set">
-                            	<button type="button" class="btn_minus"><span>-</span></button>
-                            	<input type="number" readonly="readonly" value="${cart.amount }">
-                            	<button type="button" class="btn_plus"><span>+</span></button>
+                    			<button type="button" class="btn_minus" value="${cart.cart_no }"><span>-</span></button>
+                           		<input type="number" readonly="readonly" value="${cart.amount }">
+                           		<button type="button" class="btn_plus" value="${cart.cart_no }"><span>+</span></button>
                             </div>
                         </div>
                     </div>
@@ -182,13 +224,15 @@
                         <dl>
                             <dt>합계금액</dt>
                             <dd><strong><em>
-                            	<span>
+                            	<span class="pricespan sumprice${cart.cart_no }">
+                            	  <fmt:formatNumber pattern="#,###,###">
                             		<c:if test="${cart.menu_flag == 'single' }">
                       						${menuinfo.menu_price * cart.amount }
                       				</c:if>
                       				<c:if test="${cart.menu_flag == 'set' }">
-                      						${menuinfo.set_price * cart.amount}
+                      						${(menuinfo.set_price * cart.amount) + cart.drink_price + cart.side_price}
                       				</c:if>
+                      			  </fmt:formatNumber>
                             	</span>
                             	<span class="unit">원</span>
                             </em></strong></dd>
@@ -207,13 +251,18 @@
             <div class="sumWrap">
                 <dl>
                     <dt>총 주문금액</dt>
-                    <dd><strong><em><span>34,400</span><span class="unit">원</span></em></strong></dd>
+                    <dd>
+                    	<strong><em>
+                    	  <span class="totalprice"></span>
+                    		<span class="unit">원</span>
+                    	</em></strong>
+                    </dd>
                 </dl>
             </div>
             
             <div class="cartinfo">
                 <div class="c_btn item2">
-                	<button type="button" class="btn01 m ico add"><span>메뉴 추가</span></button>
+                	<button type="button" class="btn01 m ico add" onclick="location.href='delivery_home.do'"><span>메뉴 추가</span></button>
                 	<button type="button" class="btn01 m red"><span>주문하기</span></button>
                 </div>
                 <ul class="txtlist01">
@@ -223,6 +272,7 @@
             </div>
             
         </div>
+      </c:if>
     </div>
 </div>
 </body>

@@ -27,6 +27,8 @@
 		<input type="hidden" name="drink" value="">
 		<input type="hidden" name="menu_flag" value="set">
 		<input type="hidden" name="user_id" value="${memberSession.user_id}">
+		<input type="hidden" name="side_price" value="">
+		<input type="hidden" name="drink_price" value="">
 	</form>
 	
 	<!-- 메뉴판 내용 영역 -->

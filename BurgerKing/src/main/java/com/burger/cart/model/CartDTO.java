@@ -20,4 +20,6 @@ public class CartDTO {
 	private int amount;
 	private int total_price;
 	private String menu_flag;
+	private String side_price;
+	private String drink_price;
 }

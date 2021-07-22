@@ -38,4 +38,8 @@ public class CartDAOImpl implements CartDAO {
 		return this.sqlSession.delete("cart_delete", cart_no);
 	}
 
+	@Override
+	public int cartAllDelete(String user_id) {
+		return this.sqlSession.delete("cart_all_delete", user_id);
+	}
 }

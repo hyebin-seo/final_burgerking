@@ -30,30 +30,45 @@ public class CartController {
 	private CartDAO cartDao;
 	
 	@RequestMapping("cart.do")
-	public String goCart(CartDTO cart, Model model, HttpServletRequest request) {
+	public String goCart(CartDTO cart, Model model, 
+							HttpServletRequest request, 
+							HttpServletResponse response) throws IOException {
 		
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("memberSession");
-		cart.setUser_id(dto.getUser_id());
+		PrintWriter script = response.getWriter();
 		
-		List<CartDTO> list = cartDao.cartOpen(cart);
-		List<Object> menulist = new ArrayList<>();
+		if(dto == null) {
+			
+			script.println("<script>");
+			script.println("location.href='Login.do'");
+			script.println("</script>");
+			
+		} else {
 		
-		for(int i=0; i<list.size(); i++) {
-			AllMenuDTO amenuDto;
-			if(list.get(i).getMenu_flag().equals("single")) {
-				amenuDto = cartDao.cartMenuOpen(list.get(i).getSet_no());
-			} else {
-				amenuDto = cartDao.cartSetOpen(list.get(i).getSet_no());
+			cart.setUser_id(dto.getUser_id());
+			
+			List<CartDTO> list = cartDao.cartOpen(cart);
+			List<Object> menulist = new ArrayList<>();
+			
+			for(int i=0; i<list.size(); i++) {
+				AllMenuDTO amenuDto;
+				if(list.get(i).getMenu_flag().equals("single")) {
+					amenuDto = cartDao.cartMenuOpen(list.get(i).getSet_no());
+				} else {
+					amenuDto = cartDao.cartSetOpen(list.get(i).getSet_no());
+				}
+				amenuDto.setMenu_flag(list.get(i).getMenu_flag());
+				menulist.add(amenuDto);
 			}
-			amenuDto.setMenu_flag(list.get(i).getMenu_flag());
-			menulist.add(amenuDto);
+			
+			model.addAttribute("cartlist", list);
+			model.addAttribute("menulist", menulist);
+			
+			return "delivery/deliveryCartList";
 		}
 		
-		model.addAttribute("cartlist", list);
-		model.addAttribute("menulist", menulist);
-		
-		return "delivery/deliveryCartList";
+		return null;
 	}
 	
 	@RequestMapping("cart_insert.do")
@@ -82,6 +97,15 @@ public class CartController {
 	public int cartDelete(String cart_no) {
 
 		int res = cartDao.cartDelete(cart_no);
+		
+		return res;
+	}
+	
+	@RequestMapping("cartAllDelete.do")
+	@ResponseBody
+	public int cartAllDelete(String user_id) {
+
+		int res = cartDao.cartAllDelete(user_id);
 		
 		return res;
 	}

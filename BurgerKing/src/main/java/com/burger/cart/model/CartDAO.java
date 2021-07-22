@@ -9,4 +9,5 @@ public interface CartDAO {
 	public AllMenuDTO cartMenuOpen(String set_no);
 	public AllMenuDTO cartSetOpen(String set_no);
 	public int cartDelete(String cart_no);
+	public int cartAllDelete(String user_id);
 }
