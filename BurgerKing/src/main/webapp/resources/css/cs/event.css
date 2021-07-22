@@ -14,10 +14,204 @@
      font-style: normal;
 }
 
-body{
-	
-	 font-family: 'S-CoreDream-9Black';
+body {
+    min-height: 100%;
+    color: #000;
+    background: #f2ebe6;
+    word-wrap: normal;
+    word-break: keep-all;
 }
+
+
+element.style {
+}
+.eventWrap .contentsBox01 {
+    padding: 50px 0 120px;
+}
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+.bg_w {
+    background: #fff;
+}
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.contentsWrap .page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.subtitWrap .tab01 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin: -17.5px 0 0;
+}
+.tab01 {
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.tab01 ul {
+    display: table;
+}
+
+.tab01 li:first-child {
+    padding-left: 0;
+}
+.tab01 li {
+    position: relative;
+    display: table-cell;
+    padding: 0 18px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.subtitWrap .tab01 button {
+    height: 35px;
+    font-size: 1.125rem;
+    border-width: 3px 0;
+}
+.tab01 button {
+    height: 54px;
+    padding: 5px 0;
+}
+.tab01 a, .tab01 button {
+    display: inline-block;
+    padding: 10px 1px;
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: #b8b8b8;
+    border: 0 solid transparent;
+    border-width: 4px 0;
+}
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+button, table td, table th {
+    padding: 0;
+}
+
+.tab01 li.on a, .tab01 li.on button {
+    color: #e22219;
+    border-bottom-color: #e22219;
+}
+
+.tab01 a>*, .tab01 button>* {
+    vertical-align: middle;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    list-style: none;
+}
+
+.tab_storyBtn {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tab_storyBtn li.on {
+    border-bottom: none;
+}
+.tab_storyBtn li {
+    float: left;
+    width: 50%;
+    border-bottom: 2px solid #000;
+}
+
+.tab_storyBtn li.on button {
+    border: 2px solid #000;
+    border-bottom: 0;
+    color: #000;
+    background: #fff;
+}
+.tab_storyBtn li button {
+    width: 100%;
+    height: 100%;
+    padding: 23px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: silver;
+    background: #f2f2f2;
+    border-left: 1px solid #fff;
+}
+
+.tab_storyBtn li.on+li button {
+    border-left: none;
+}
+
+.tab_storyBtn:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+
+
+
+
+
+
+
+.eventBox {
+    margin-top: 40px;
+}
+
+.eventBox li:nth-child(2n-1) {
+    margin-right: 50px;
+}
+.eventBox li {
+    float: left;
+    width: calc(50% - 25px);
+    margin-bottom: 50px;
+}
+
+
+.eventBox:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
 .hr1 {
     border: 0;
     height: 3px;
@@ -27,8 +221,10 @@ body{
 
 .table1 {
 	 width : 100%;
-	 border-spacing:  30px;
-	 
+	 /* border-spacing:  30px;
+	  */
+	 margin-top: 5%;
+	
 }
 
 
@@ -45,7 +241,7 @@ body{
 .table1 td{
 	
 	height: 30px; 
-	padding: 5px;
+	padding: 0px;
 	font-size: 20px;
 	text-align: center;
 	vertical-align: middle;
@@ -59,7 +255,7 @@ body{
 }
 
 #tr0{
-	display: inline-block;
+	/* display: inline-block; */
 	
 } 
 
@@ -131,7 +327,6 @@ p{
 	padding-right: 70px;
 }
 
-
 .btn_search {
 		
 	width: 50px;
@@ -186,118 +381,6 @@ p{
    min-width: 1.5em;
 }
 
-
-
-
-
-
-/* ul.tabs{
-	
-	padding: 0px;
-	list-style: none;	
-	margin-left :45%;
-	margin-right:30%;
-	margin-bottom: -1.05%;
-	
-}
-
-ul.tabs li{
-	font-family: 'S-CoreDream-9Black';
-	font-size : 30px;
- 	display: inline-block;
-	background: white;
-	color: gray;
-	padding: 21px;
-	cursor: pointer;
-	outline-style: solid;
-	
-}
-	
-ul.tabs li.current{
-	font-family: 'S-CoreDream-9Black';
-	background: white;
-	color: black;
-	
-}
-
- .tab-content{
-    display: none;	
-	padding: 12px;
-} 
-
-.tab-content.current{
-	display: inherit;
-}
- */
- 
- 
-.tab_storyBtn {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 70%;
-    margin-left: 13%;
-}
-
-ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-}
-
-li {
-    list-style: none;
-}
-
-.tab_storyBtn li.on {
-    border-bottom: none;
-}
-.tab_storyBtn li {
-    float: left;
-    width: 50%;   
-    border-bottom: 2px solid #000;
-}
-a, div, li {
-    -webkit-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.tab_storyBtn li.on button {
-    border: 2px solid #000;
-    border-bottom: 0;
-    color: #000;
-    background: #fff;
-}
-.tab_storyBtn li button {
-    width: 100%;
-    height: 70px; 
-    padding: 23xp;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: silver;
-    background: #f2f2f2;
-    border-left: 1px solid #fff;
-    
-}
-
-button {
-	
-    margin: 0;
-    font-size: 1em;
-    color: #000;
-    vertical-align: middle;
-    background: 0;
-    border: none;
-    overflow: visible;
-    cursor: pointer;
-    
-}
-
-.tab_storyBtn li.on+li button {
-    border-left: none;
+::marker {
+   display: none;
 }

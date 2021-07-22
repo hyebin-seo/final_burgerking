@@ -53,6 +53,7 @@ public class NoticeController {
 
 		model.addAttribute("List", pageList);
 		model.addAttribute("Paging", dto);
+		model.addAttribute("cat", "공지사항");
 
 		return "notice_list";
 	}

@@ -26,16 +26,21 @@
 	     <table class= "table2">
 	 		    <h1>이벤트 작성</h1>
 	         <tr id = "tr1">
-	
-	         	<th>이벤트제목</th>
+	        	
+	         <th>이벤트제목</th>
 	         	<td> <input type="text" name="event_title" size="100px"> </td>
 	      	 </tr>
 	      	 
-	      	   <tr>
-	           	<th>첨부파일1</th>
-	         	<td> <input type="file" name="event_image" >
-	         	
-	          </td>	  				
+	      	  <tr>
+	           	<th>이벤트 상세이미지</th>
+	         	<td> <input type="file" name="event_image"></td>	         	
+	         </tr>		  				
+	          
+	         <tr>
+	          <th>썸네일</th>
+	         	<td> <input type="file" name="event_thum" > </td>
+	      	 </tr>
+	          
 	          
 	       <!--  <tr id = "tr1">  -->
 	        <%--  <div class="inputArea">
@@ -57,7 +62,7 @@
  				<%=request.getRealPath("/") %>
  				      
 	         </div> --%>
-	         </tr>
+	         
 	      	 
 	      	 
 	      	 <tr id = "tr1">
@@ -79,6 +84,7 @@
 	      	 	   <input type="reset" class="btn_list" value="다시작성">
 	      	    </td>
 	      	 </tr>
+	      	
 	   	  </div>
 	   </form>
 	</div>

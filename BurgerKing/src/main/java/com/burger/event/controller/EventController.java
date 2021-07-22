@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.burger.cs.model.PageDTO;
@@ -27,6 +28,9 @@ public class EventController {
 	
 	@Autowired
 	private Event_upload upload;
+	
+	@Autowired
+	private Event_upload2 upload2;
 	
 	@Autowired
 	private EventDAO dao;
@@ -66,41 +70,34 @@ public class EventController {
 	}
 
 	  
-	/*
-	 * @RequestMapping("event_write_ok.do") public void writeOk(EventDTO dto,
-	 * HttpServletResponse response) throws IOException {
-	 * 
-	 * int check = this.dao.insertEvent(dto);
-	 * 
-	 * response.setContentType("text/html; charset-UTF-8");
-	 * 
-	 * PrintWriter out = response.getWriter();
-	 * 
-	 * if(check > 0) { out.println("<script>"); out.println("alert('이벤트 등록 완료')");
-	 * out.println("location.href='event_list.do'"); out.println("</script>");
-	 * 
-	 * }else { out.println("<script>"); out.println("alert('이벤트 등록 실패')");
-	 * out.println("history.back()"); out.println("</script>"); }
-	 * 
-	 * 
-	 * 
-	 * }
-	 */
-	  
 	@RequestMapping("event_write_ok.do")
-	public void uploadOk(MultipartHttpServletRequest mRequest, HttpServletRequest request, HttpServletResponse response)
+	public void uploadOk(MultipartHttpServletRequest mRequest, HttpServletRequest request, HttpServletResponse response, MultipartFile event_image, MultipartFile event_thum)
 			throws Exception {
 
 		EventDTO dto = new EventDTO();
 
 		String aa = request.getParameter("event_title");
 		String bb = request.getParameter("event_cont");
-
-		String ff = upload.fileUpload(mRequest);
-
+	
+		/*
+		 * String ff = "event1.png"; String ee = "thum1.png";
+		 */
+		
+		String ff = event_image.getOriginalFilename();
+		System.out.println(ff);
+		String ee = event_thum.getOriginalFilename();
+		System.out.println(ee);
+		
+		String zz = upload.fileUpload(mRequest); 
+		 
+							
+		
 		dto.setEvent_title(aa);
-		dto.setEvent_cont(bb);
+		dto.setEvent_cont(bb);		
+							
+
 		dto.setEvent_image(ff);
+		dto.setEvent_thum(ee);	
 		
 		
 		
@@ -125,6 +122,13 @@ public class EventController {
 
 	}
 	  
+	
+	  
+	
+	
+	
+
+	
 	
 
 	

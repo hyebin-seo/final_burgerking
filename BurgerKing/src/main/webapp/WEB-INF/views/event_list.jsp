@@ -7,23 +7,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="resources/img/public/favicon.ico">
 <link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/event.js"></script>
-
+		<%-- <jsp:include page="header.jsp" /> --%>
 </head>
 <body>
-		  <jsp:include page="cs_menu.jsp" />  
 		
-		<ul class="tab_storyBtn m_shadow">
-		<li class="on">
-		<button type="button" onclick="location.href='event_list.do'">이벤트</button>
-		</li>
-		<li class=""><button type="button" onclick="location.href='store_list.do'">신규매장</button>
-		</li>
-		</ul>
-	  	
-	  	<div class = "event_list" align="center">
+		<jsp:include page="event_menu.jsp" />	
+		 <div class="contentsBox01 bg_w">
+		 	<div class="web_container">
+		 		
+					<ul class="tab_storyBtn m_shadow">
+						<li class="on">
+							<button type="button" onclick="location.href='event_list.do'">이벤트</button>
+						</li>
+					
+						<li class="">
+						<button type="button" onclick="location.href='store_list.do'">신규매장</button>						
+						</li>
+					</ul>
+				<div class="tab_cont m_bg_basic">
+					<div class = "event_list" align="center">
 	    <table class = "table1">
 	         
 	   
@@ -34,9 +40,10 @@
 	      <c:if test="${!empty list }">
 	         <c:forEach items="${list }" var="dto">
 	            <tr id = "tr0">
-	               	<td id = "td0"> 
+	               	<td id = "td0" rowspan="2"> 
+	               	
 	               		<a href="<%=request.getContextPath() %>/event_cont.do?no=${dto.getEvent_no() }&page=${Paging.getPage() }">	               			
-	               		<img src="../../burger/resources/img/event/${dto.getEvent_image() }"  alt="이미지없음" width="450px;" height="200px;">
+	               		<img src="../../burger/resources/img/event/${dto.getEvent_thum() }"  alt="이미지없음" width="530px;" height="210px;">
 	              				<br>	               					
 	               			<p><fmt:formatDate value="${dto.getEvent_regdate() }"
 	               				pattern="yyyy-MM-dd"/></p>
@@ -56,17 +63,18 @@
 	      </c:if>
 	      
 	      <tr>
-	         <td colspan="4" align="right">
-	            <input type="button" class="btn_list" value="이벤트작성"
-	                 onclick="location.href='event_write.do'">
-	         </td>
+	         
 	      </tr>
 	      
 	   </table>
+	   		
 	   </div>
 	  
 	   <hr class="hr1">
-	   <%-- 페이징 처리 부분 --%>
+	    		<div align="center">
+	            <input type="button" class="btn_list" value="이벤트작성"
+	                 onclick="location.href='event_write.do'">
+	         	</div>
 	<%-- 페이징 처리 부분 --%>
       <div class="text">
       <c:forEach begin="${Paging.getStartBlock() }"
@@ -80,7 +88,8 @@
          </c:if>
       </c:forEach>
       </div>
- 
+				
+				</div>
 	
 
 </body>

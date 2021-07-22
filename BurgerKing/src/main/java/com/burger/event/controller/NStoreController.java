@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.burger.cs.model.PageDTO;
@@ -84,7 +85,7 @@ public class NStoreController {
 	  
 
 @RequestMapping("store_write_ok.do")
-public void uploadOk(MultipartHttpServletRequest mRequest, HttpServletRequest request, HttpServletResponse response)
+public void uploadOk(MultipartHttpServletRequest mRequest, HttpServletRequest request, HttpServletResponse response, MultipartFile store_image, MultipartFile store_thum)
 		throws Exception {
 
 	NStoreDTO dto = new NStoreDTO();
@@ -92,11 +93,17 @@ public void uploadOk(MultipartHttpServletRequest mRequest, HttpServletRequest re
 	String aa = request.getParameter("store_title");
 	String bb = request.getParameter("store_cont");
 
-	String ff = upload.fileUpload(mRequest);
+	String ff = store_image.getOriginalFilename();
+	System.out.println(ff);
+	String ee = store_thum.getOriginalFilename();
+	System.out.println(ee);
 
+	String zz = upload.fileUpload(mRequest); 
+	
 	dto.setStore_title(aa);
 	dto.setStore_cont(bb);
 	dto.setStore_image(ff);
+	dto.setStore_thum(ee);
 	
 	
 	

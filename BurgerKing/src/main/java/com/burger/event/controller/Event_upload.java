@@ -50,8 +50,17 @@ public class Event_upload {
 		String originalFileName = "";
 		boolean isUpload = false;
 		
-		String uploadPath = 
-				"C:\\NCS\\download\\workspace(spring)\\final_burgerking\\BurgerKing\\src\\main\\webapp\\resources\\img\\event\\";				
+		
+		
+		  String uploadPath =
+		  "C:\\NCS\\download\\workspace(spring)\\final_burgerking\\BurgerKing\\src\\main\\webapp\\resources\\img\\event\\";
+		 		
+		
+		/*
+		 * String uploadPath =
+		 * "C:\\NCS\\download\\workspace(spring)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\BurgerKing\\resources\\img\\event\\";
+		 */
+		 		
 		Calendar cal = Calendar.getInstance();
 		int year = cal.get(Calendar.YEAR);
 		int month = cal.get(Calendar.MONTH) + 1;
@@ -85,8 +94,7 @@ public class Event_upload {
 			String saveFileName = originalFileName;
 			
 			if(saveFileName != null && !saveFileName.equals("")) {
-				saveFileName = 
-						saveFileName;
+				saveFileName = saveFileName;
 				
 				
 				try {
@@ -105,9 +113,10 @@ public class Event_upload {
 					e.printStackTrace();
 				}
 			}
+			System.out.println("upload>>"+originalFileName);
 		}  // while 문 end
 		
-		System.out.println("upload>>"+originalFileName);
+		
 		return originalFileName;
 	}
 }

@@ -7,7 +7,7 @@ window.onload = function() {
 	//alert($(".tab01 .item3 li:nth-child(2) .button").children("span").text());
 	
 	for(var i=1; i<=4; i++){
-		if($(".tab01 .item3 li:nth-child("+i+") .button").children("span").text() == nowcat){
+		if($(".tab01 .item3 li:nth-child("+i+") button").children("span").text() == nowcat){
 			$(".tab01 .item3 li:nth-child("+i+")").addClass("on");
 		}
 	}
@@ -27,9 +27,9 @@ $(document).ready(function () {
 		// cs_카테고리
 		var cs_menu = $(this).children("span").text();
 		
-		if(cs_menu == "공지사항"){
+		if(cs_menu == ""){
 			
-			location.href = "notice_list.do";
+			location.href = "event_list.do";
 			
 		}else if(cs_menu == "FAQ") {
 			
