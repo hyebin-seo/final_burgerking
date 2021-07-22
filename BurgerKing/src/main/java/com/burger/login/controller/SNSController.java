@@ -76,13 +76,12 @@ public class SNSController {
 				int check = this.dao.snsJoin(dto);
 			}
 
-			session.setAttribute("userId", user_id);
-			session.setAttribute("nickname", user_name);
+			session.setMaxInactiveInterval(60*120); // 120분간유효
 			session.setAttribute("access_Token", access_Token);
 			session.setAttribute("memberSession", dto);
 
 		}
-		return "deliveryHome";
+		return "delivery/deliveryHome";
 
 	}
 
@@ -160,7 +159,7 @@ public class SNSController {
 			if (kakaoDTO == null) {
 				int check = this.dao.snsJoin(dto);
 			}
-
+			session.setMaxInactiveInterval(60*120); // 120분간유효
 			session.setAttribute("memberSession", dto);
 
 		}
@@ -189,7 +188,7 @@ public class SNSController {
 		System.out.println(url);
 
 		/* 생성한 인증 URL을 Model에 담아서 전달 */
-		return "deliveryHome";
+		return "delivery/deliveryHome";
 	}
 
 	// 구글 Callback호출 메소드
@@ -232,10 +231,9 @@ public class SNSController {
 				int check = this.dao.snsJoin(dto);
 			}
 
-			session.setAttribute("userId", user_id);
-			session.setAttribute("nickname", user_name);
-			session.setAttribute("access_Token", accessToken);
+			session.setMaxInactiveInterval(60*120); // 120분간유효
 			session.setAttribute("memberSession", dto);
+			
 
 		}
 
@@ -248,7 +246,7 @@ public class SNSController {
 		response.setHeader("Pragma", "no-cache");
 
 		// 저는 성공하면 메인페이지로 리다이렉트합니다.
-		return "deliveryHome";
+		return "delivery/deliveryHome";
 	}
 
 }

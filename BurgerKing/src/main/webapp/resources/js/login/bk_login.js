@@ -12,24 +12,24 @@ $('a.btn01.m.red').click(function() {
 
 
 
-	var form = document.createElement("form");
-
-	form.setAttribute("charset", "UTF-8");
-
-	form.setAttribute("method", "Post"); // Get 또는 Post 입력
-
-	form.setAttribute("action", "login_Ok.do");
-
-
-	var hiddenField = document.createElement("input");
-
-	hiddenField.setAttribute("type", "hidden");
-
-	hiddenField.setAttribute("name", "user_id");
-
-	hiddenField.setAttribute("value", user_id);
-
-	form.appendChild(hiddenField);
+		var form = document.createElement("form");
+	
+		form.setAttribute("charset", "UTF-8");
+	
+		form.setAttribute("method", "Post"); // Get 또는 Post 입력
+	
+		form.setAttribute("action", "login_Ok.do");
+	
+	
+		var hiddenField = document.createElement("input");
+	
+		hiddenField.setAttribute("type", "hidden");
+	
+		hiddenField.setAttribute("name", "user_id");
+	
+		hiddenField.setAttribute("value", user_id);
+	
+		form.appendChild(hiddenField);
 
 
 	hiddenField = document.createElement("input");
@@ -42,7 +42,7 @@ $('a.btn01.m.red').click(function() {
 
 	form.appendChild(hiddenField);
 
-	document.body.appendChild(form);
+		
 
 
 
@@ -92,6 +92,7 @@ $('ul.item2 li').click(function() {
 
 
 });
+
 
 
 

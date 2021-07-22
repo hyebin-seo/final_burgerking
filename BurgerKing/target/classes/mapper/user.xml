@@ -9,7 +9,7 @@
   <!-- 회원가입 메서드 -->
    <insert id="join_insert" parameterType="com.burger.login.model.UserDTO">
    
-     insert into user_info values (#{user_id}, #{user_pwd}, #{user_name}, #{user_phone}, #{user_addr}, sysdate, #{user_gender}, default)
+     insert into user_info values (#{user_id}, #{user_pwd}, #{user_name}, #{user_phone}, #{user_addr}, sysdate, #{user_gender}, null, default)
    
    </insert>
    
@@ -48,7 +48,7 @@
     <!-- sns 회원가입 메서드 -->
    <insert id="snsJoin" parameterType="com.burger.login.model.UserDTO">
    
-     insert into user_info values (#{user_id},null, #{user_name}, null, null, sysdate, null, #{sns_flag})	
+     insert into user_info values (#{user_id},null, #{user_name}, null, null, sysdate, null, #{sns_flag}, default)	
    
    </insert>
    

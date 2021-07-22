@@ -69,7 +69,7 @@
 		<form method="post" action="<%=request.getContextPath()%>/join_Ok.do" style="width: 25%; margin: auto; padding-top: 5vh;">
 	  		<div class="mb-3">
 	    		<label for="id" class="form-label">아이디</label>
-	    		<input type="email" name="user_id" required class="form-control" id="user_id" placeholder="아이디(이메일)를 입력해주세요!" >
+	    		<input type="email" name="user_id" required class="form-control" id="user_id" placeholder="아이디(이메일)를 입력해주세요!" value="${user_id}" readonly="readonly" >
 	    		<!-- 아이디 중복체크 결과 들어갈 부분 -->
 	  			<span class="id_check_result1">엄청나게 이쁜 아이디입니다!!</span>
 	  			<span class="id_check_result2">아이디가 이미 존재합니다.</span>
@@ -84,7 +84,7 @@
 	    		<label for="pwd_check" class="form-label">비밀번호 확인</label>
 	    		<input type="password" name="user_pwd_check" required class="form-control pwd_check" id="pwd_check">
 	  			<span class="pwd_check_result">비밀번호가 일치하지 않습니다.</span>
-	  			<span class="pwd_check_result1">아주멌진 비밀번호입니다!</span>
+	  			<span class="pwd_check_result1">아주 멋진 비밀번호입니다!</span>
 	  		</div>
 			
 			<div class="mb-3">

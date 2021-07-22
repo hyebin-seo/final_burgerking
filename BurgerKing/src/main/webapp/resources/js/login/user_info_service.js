@@ -51,61 +51,78 @@ $(document).ready(function() {
 	$('p.auth_check').css('display', 'none');
 
 	$('a.btn01.auth').click(function() {
-	    
-	    if($('#chk1').is(':checked') && $('#kch2').is(':checked')){
-	    
-	    $('div.popWrap.m_FullpopWrap3').css('display', 'block');
-		$('div.auth_check').css('display', 'none');
-	    }else{
-	     
-	     alert('필수약관에 동의해주시길 바랍니다.');
-	    
-	    }
-		
+
+		if ($('#chk1').is(':checked') && $('#kch2').is(':checked')) {
+
+			$('div.popWrap.m_FullpopWrap3').css('display', 'block');
+			$('div.auth_check').css('display', 'none');
+		} else {
+
+			alert('필수약관에 동의해주시길 바랍니다.');
+
+		}
+
 	})
 
 	$('button.btn02.dark').click(function() {
 		$('div.popWrap.m_FullpopWrap3').css('display', 'none');
+		location.reload();
 	})
 
 
 
 	$('button.btn02.auth').click(function() {
-		alert('입력하신 메일로 송신했습니다.');
-		$('div.auth_check').css('display', 'block')
-		$('button.btn02.auth').css('display', 'none')
 
-
-		var user_email = $("input.auth_real").val();	// #user_id에 입력되는 값
-
-		/*	ajaxFunction(user_email);*/
-
-		var data = { "user_email": user_email };
+		let user_email = $("input.auth_real").val();	// #user_id에 입력되는 값
 
 
 		$.ajax({
-			url: "auth_mail.do",
+			url: "idcheck.do",
 			type: "post",
-			data: data,
+			data: { "user_id": user_email},
 			success: function(data) {
 				console.log("ajax 성공여부!!")
 
-				check(data);
+				if (data === "fail") {
+					alert("중복된 이메일이 있습니다.")
+				} else {
+					alert('입력하신 메일로 송신했습니다.');
+					$('div.auth_check').css('display', 'block')
+					$('button.btn02.auth').css('display', 'none')
 
-			} //success 종료.
+					
+					$.ajax({
+						url: "auth_mail.do",
+						type: "post",
+						data: {"user_email": user_email },
+						success: function(data) {
+							console.log("ajax 성공여부!!")
+
+							check(data);
+
+						} //success 종료.
+					});
+
+				}
+
+			}
 		});
 
 
 
+
+
+
 	})
-	
-	
+
+
 	$('button.btn02.auth_agree').click(function() {
+		var user_email = $("input.auth_real").val();
 
 		var auth_fake = $("input.auth_fake").val();	// #user_id에 입력되는 값
 
 		if (auth_real === auth_fake) {
-			location.href = 'joins.do';
+			location.href = 'joins.do?user_id=' + user_email;
 		} else {
 
 			alert('확인되지 않는 번호입니다.')
@@ -114,7 +131,7 @@ $(document).ready(function() {
 
 
 	});
-	
+
 
 
 });
@@ -145,7 +162,7 @@ function check(jsonStr) {
 
 $(document).ready(function() {
 
-	
+
 
 
 
@@ -169,11 +186,36 @@ $(document).ready(function() {
 			$(".first").attr("checked", true)
 		}*/
 
+
+
 		var checked_all = $("#chkAll").is(':checked');
 
 		if (checked_all) {
 			$(".check02").prop('checked', true);
+		} else {
+			$(".check02").prop('checked', false);
 		}
 	})
 
+
+
+
+	$(".check02").click(function() {
+
+		let count = $("input:checkbox[name=chk]:checked").length;
+
+		if (count < 4) {
+			$("#chkAll").prop('checked', false);
+		} else {
+			$("#chkAll").prop('checked', true);
+		}
+
+
+
+	})
 })
+
+
+
+
+

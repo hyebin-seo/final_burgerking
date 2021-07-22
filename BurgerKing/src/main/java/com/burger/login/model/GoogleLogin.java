@@ -28,7 +28,7 @@ public class GoogleLogin {
         postParams.add(new BasicNameValuePair("grant_type", "authorization_code"));
         postParams.add(new BasicNameValuePair("client_id", "105052386417-99g5i64m0bql3kehp3o3ubh8a5moq8e0.apps.googleusercontent.com"));
         postParams.add(new BasicNameValuePair("client_secret", "Q8wH-egxs3wdtCvpl4_Mwa8s"));
-        postParams.add(new BasicNameValuePair("redirect_uri", "http://localhost:8765/burger/googlecallback.do")); // 리다이렉트 URI
+        postParams.add(new BasicNameValuePair("redirect_uri", "http://localhost:8585/burger/googlecallback.do")); // 리다이렉트 URI
         postParams.add(new BasicNameValuePair("code", autorize_code)); // 로그인 과정중 얻은 code 값
  
         final HttpClient client = HttpClientBuilder.create().build();
