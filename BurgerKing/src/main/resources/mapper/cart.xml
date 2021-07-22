@@ -13,7 +13,8 @@
 		 insert into cart values((select max(cart_no+1) from cart),
 			#{user_id}, #{set_no}, #{ing1}, #{ing2},
 			#{ing3}, #{ing4}, #{ing5}, #{ing6}, #{ing7},
-			#{side}, #{drink}, default, #{total_price}, #{menu_flag})
+			#{side}, #{drink}, default, #{total_price}, 
+			#{menu_flag}, #{side_price}, #{drink_price})
 	</insert>
 	
 	<select id="cart_open" parameterType="com.burger.cart.model.CartDTO"
@@ -31,6 +32,10 @@
 	
 	<delete id="cart_delete" parameterType="int">
 		delete from cart where cart_no = #{cart_no}
+	</delete>
+	
+	<delete id="cart_all_delete">
+		delete from cart where user_id = #{user_id}
 	</delete>
 	
 </mapper>

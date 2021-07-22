@@ -248,9 +248,10 @@ function noInsert(set_no) {
 //선택한 사이드번호 폼 입력
 function sideInsert(radio) {
 	
-	console.log("sideInsert사이드번호:"+radio);
+	console.log("sideInsert사이드:"+radio);
 	
-	$("input[name='side']").val(radio);
+	$("input[name='side']").val(radio.split("^")[0]);
+	$("input[name='side_price']").val(radio.split("^")[1]);
 	
 	//form.submit();
 }
@@ -258,10 +259,10 @@ function sideInsert(radio) {
 //선택한 음료번호 폼 입력(제출)
 function drinkInsert(op_no) {
 	
-	console.log("drinkInsert음료번호:"+op_no);
+	console.log("drinkInsert음료:"+op_no);
 	
-	$("input[name='drink']").val(op_no);
-	
+	$("input[name='drink']").val(op_no.split("^")[0]);
+	$("input[name='drink_price']").val(op_no.split("^")[1]);
 	form.submit();
 	
 }
@@ -699,9 +700,9 @@ function optionPopupMaking(jsonStr){
 			htmlStr += "<label class='list_chk side'>";
 			
 			if(i == 0){
-				htmlStr += "<input type='radio' name='option' value='"+side.op_name+"' checked><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' value='"+side.op_name+"^"+side.op_price+"' checked><span>사이드 변경</span></label>";
 			}else{
-				htmlStr += "<input type='radio' name='option' value='"+side.op_name+"'><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' value='"+side.op_name+"^"+side.op_price+"'><span>사이드 변경</span></label>";
 			}
 			
 			htmlStr += "</li>";
@@ -787,9 +788,9 @@ function optionPopupMaking(jsonStr){
 			htmlStr += "<label class='list_chk drink'>";
 			
 			if(i == 0){
-				htmlStr += "<input type='radio' name='option' checked value='"+side.op_name+"'><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' checked value='"+side.op_name+"^"+side.op_price+"'><span>사이드 변경</span></label>";
 			}else{
-				htmlStr += "<input type='radio' name='option' value='"+side.op_name+"'><span>사이드 변경</span></label>";
+				htmlStr += "<input type='radio' name='option' value='"+side.op_name+"^"+side.op_price+"'><span>사이드 변경</span></label>";
 			}
 			
 			htmlStr += "</li>";
