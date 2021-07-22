@@ -1,0 +1,529 @@
+@charset "UTF-8";
+
+html {
+	font-size: 16px;
+	font-family: 'S-CoreDream-5Medium';
+}
+
+body {
+	color: #000;
+	word-wrap: normal;
+	word-break: keep-all;
+	min-height: 100%;
+	background: #f2ebe6;
+}
+
+body, html {
+	height: 100%;
+	min-height: 450px;
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: none;
+}
+
+a {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+em {
+    color: #e22219;
+}
+
+address, em {
+    font-style: normal;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+img {
+    border: none;
+}
+
+strong {
+	font-family: 'S-CoreDream-9Black';
+}
+
+/* 메뉴판 전체 영역 */
+.contentsWrap {
+    min-height: 450px;
+    margin: 0 auto;
+    
+    /* 추가 */
+	margin-top: 120px;		/* 헤더 영역만큼 띄우기 */
+}
+
+/* 까만 영역 */
+.locationWrap {
+    height: 58px;
+    padding: 10px 0;
+    color: #fff;
+    line-height: 38px;
+    background: #000;
+}
+
+.locationWrap .web_container {
+    overflow: hidden;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page_navi {
+    float: left;
+    font-size: .875rem;
+}
+
+.locationWrap a {
+    color: #fff;
+}
+
+.page_navi>* {
+    float: left;
+}
+
+.page_navi>:before {
+    content: "";
+    float: left;
+    width: 4px;
+    height: 38px;
+    margin: 0 12px;
+    background: url(../../img/mypage/img_arrow2.gif) no-repeat 50%;
+}
+
+/* 베너 - 메뉴 이미지 */
+.prd_intro {
+    height: 400px;
+    color: #fff;
+    background: #130101 url(https://www.burgerking.co.kr/dist/img/bg_prd_detailintro.4e4e1753.png) no-repeat 50%;
+}
+
+.prd_intro .web_container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.prd_intro .intro_txt {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    width: 55%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+.prd_intro .intro_txt .tit {
+    display: block;
+    font-size: 3.75rem;
+    line-height: 100%;
+}
+
+.prd_intro .intro_txt .subtxt {
+    margin-top: 14px;
+    font-size: 1.375rem;
+}
+
+.prd_intro .prd_img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 504px;
+    height: 330px;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: -165px;
+    text-align: right;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.prd_img {
+    position: relative;
+}
+
+.prd_intro .prd_img .ico_flag_new {
+    background-image: url(https://www.burgerking.co.kr/dist/img/ico_flag_new02.250255f3.png);
+}
+
+.prd_intro .prd_img .ico_flag_best, .prd_intro .prd_img .ico_flag_new {
+    left: 14px;
+    top: 24px;
+    width: 69px;
+    height: 50px;
+}
+
+.ico_flag_best, .ico_flag_new {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 49px;
+    height: 35px;
+    text-align: left;
+    text-indent: -9999em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAjCAYAAAA9guKMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTMzNDI2ODM0NkYzMTFFOUFBNjFBMDU0MkUxQkI0NEIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTMzNDI2ODQ0NkYzMTFFOUFBNjFBMDU0MkUxQkI0NEIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MzM0MjY4MTQ2RjMxMUU5QUE2MUEwNTQyRTFCQjQ0QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MzM0MjY4MjQ2RjMxMUU5QUE2MUEwNTQyRTFCQjQ0QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ph+Xt7oAAAj3SURBVHjaxFl7cFTV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) no-repeat 0;
+}
+
+.prd_intro .prd_img>span, .prd_intro .prd_img>span img {
+    height: 100%;
+}
+
+/* 배너 밑에 메뉴 목록으로 가기, 영양 정보 있는 부분 */
+.menu_subinfoWrap {
+    height: 88px;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_menu_subinfoWrap.23f3cf83.png) repeat top;
+}
+
+.menu_subinfoWrap>.web_container {
+    position: relative;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.menu_subinfoWrap .btn_back {
+    display: inline-block;
+    height: 48px;
+    padding-left: 28px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #fff;
+    line-height: 48px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAARCAYAAAAL4VbbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUQ4NzhBNTlGRTI1MTFFOEIxNDVCQzVDNEQyODY5NkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUQ4NzhBNUFGRTI1MTFFOEIxNDVCQzVDNEQyODY5NkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5RDg3OEE1N0ZFMjUxMUU4QjE0NUJDNUM0RDI4Njk2QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5RDg3OEE1OEZFMjUxMUU4QjE0NUJDNUM0RDI4Njk2QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pp7gdXgAAACkSURBVHjafJJbCsJADEX7W8FH19D6WIp7sOsQXZz4Yym2rsLnMtIbysA03kngDAycwCRzMxHJHObgAHK9e+IC3GSsK5h5YiPTOjNxScQfKJnYGvELdvbNTPyAbXBi8e6JQVaxM+IbbOw8epzkv/ZsS3oU4GHkp07P5FTDC1RMVlagJw1rJodh+9SwqR9kayxT2WANRy918Y9evNTFea5DngcBBgAXPnMRb39nLgAAAABJRU5ErkJggg==) no-repeat 0;
+}
+
+.nutrition_info {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -25px;
+    overflow: hidden;
+}
+
+.nutrition_info button {
+    float: left;
+    height: 44px;
+    padding: 5px 17px 5px 19px;
+    font-size: 1.25rem;
+    color: #252423;
+    background: #fff;
+    border-radius: 6px;
+}
+
+.nutrition_info button>* {
+    position: relative;
+    display: inline-block;
+    padding-right: 28px;
+}
+
+.btn_nutrition>:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    background: url(../../img/menu/img_nutrition.png) no-repeat 100%;
+}
+
+
+/* 세트 메뉴 부분 */
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.bg_w {
+    background: #fff;
+}
+
+.txt_menudetail_intro {
+    padding: 60px 50px;
+    font-size: 1.75rem;
+    line-height: 150%;
+    text-align: center;
+}
+
+.prd_submenu {
+    text-align: center;
+}
+
+.prdmenu_list {
+    margin-top: 60px;
+    padding-bottom: 46px;
+    overflow: hidden;
+}
+
+.prd_submenu li:last-child {
+    border-right: none;
+}
+
+.prd_submenu li {
+    position: relative;
+    float: none;
+    display: inline-block;
+    width: 33%;
+    margin: 0 -2px;
+    vertical-align: top;
+}
+
+.prdmenu_list li {
+    position: relative;
+    float: left;
+    width: 25%;
+    margin-bottom: 8px;
+}
+
+/* 추가 : float: left가 먼저 먹어서 얘한테 따로 다시 줫습니다 */
+.prdmenu_list.prd_submenu.m_bg_basic li {
+	float: none;
+}
+
+.prd_submenu .prd_img {
+    max-width: 296px;
+    height: 194px;
+    overflow: hidden;
+}
+
+.prdmenu_list .prd_img {
+    max-width: 220px;
+    height: 144px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.prdmenu_list .prd_img img {
+    width: 100%;
+}
+
+.prd_submenu .cont {
+    min-height: 165px;
+    padding: 40px 10px 10px;
+}
+
+.prdmenu_list .cont {
+    min-height: 115px;
+    padding: 30px 5px 0;
+    text-align: center;
+}
+
+.prd_submenu .tit {
+    font-size: 2rem;
+}
+
+.prdmenu_list .tit {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.prd_submenu .tit>* {
+    display: block;
+}
+
+.prd_submenu .set {
+    margin-top: 20px;
+    font-size: 1.25rem;
+}
+
+/* 해당 카테고리의 다른 메뉴 부분 */
+.other_menuWrap {
+	padding: 0;
+}
+
+.other_menuWrap .web_container {
+    position: relative;
+    padding: 75px 0 0;
+    text-align: center;
+}
+
+.other_menuWrap .titbox {
+    padding: 0;
+    font-size: 2.25rem;
+    text-align: center;
+}
+
+.titbox {
+    position: relative;
+    padding-right: 5em;
+}
+
+.othermenu_list {
+    position: static;
+    height: 290px;
+    margin-top: 55px;
+    padding: 0 0 40px;
+}
+
+.othermenu_list .slick-slider {
+    padding: 0 70px;
+}
+
+.slick-list, .slick-slider {
+    position: relative;
+    display: block;
+}
+
+.slick-slider {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn_swiper.btn_prev {
+    left: 0;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAASCAYAAACAa1QyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODAxMzg1QzMwRkZCMTFFOTkxRTg5NUQ3MEIwQUQ4M0YiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODAxMzg1QzQwRkZCMTFFOTkxRTg5NUQ3MEIwQUQ4M0YiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MDEzODVDMTBGRkIxMUU5OTFFODk1RDcwQjBBRDgzRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MDEzODVDMjBGRkIxMUU5OTFFODk1RDcwQjBBRDgzRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsYoigoAAADKSURBVHjalNM9CsJAEIbhVTsbD2AhivgDFpEIQYgsFh7S03gKrUUJ+IMxRsVO/RYmsCwzGx14muDLmiGrVPl0YANraP/we9WDPXzIDro1TzCEFTStZw2oS8EIjtYJhRdoLhjDmQmesOCCCaRMcJdOmELGBDeIuWAGORNcIeKCPjyY4AIhF1ShQtx5E3G0cFpKyxEnppd2w4yWJE4kbDCnZYkT0hLc0Pz9uS8M4CR8FdoXmu/vwITLsqsxgMQKtv/cqeIStsyDrwADAGivWhMCwURPAAAAAElFTkSuQmCC) no-repeat 50%;
+}
+
+.btn_swiper {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+    text-indent: -9999em;
+    z-index: 10;
+}
+
+.slick-slider .slick-list, .slick-slider .slick-track {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.slick-list {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-list, .slick-slider {
+    position: relative;
+    display: block;
+}
+
+.slick-slider .slick-list, .slick-slider .slick-track {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.slick-slide, .slick-slide>div, .slick-track, .tutorial>*, .tutorial>*>* {
+    height: 100%;
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.othermenu_list .slick-slide {
+    position: relative;
+    float: left;
+    width: 25%;
+}
+
+.othermenu_list .prd_img {
+    max-width: 216px;
+    height: 142px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slick-slide img {
+    display: block;
+}
+.slick-slide img {
+    margin: 0 auto;
+}
+
+.othermenu_list .cont {
+    padding: 20px 15px;
+}
+
+.btn_detail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -99999em;
+    background: transparent;
+}
+
+.btn_swiper.btn_next {
+    right: 0;
+    background: url(../../img/menu/img_next.png) no-repeat 50%;
+}
+

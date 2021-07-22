@@ -60,7 +60,7 @@
 				<div class="myking_info">
 					<div class="member_info">
 						<p class="user">
-							<strong>user 님!</strong>
+							<strong>${memberSession.user_name } 님!</strong>
 							<span>반갑습니다</span>
 						</p>
 						<a>
@@ -73,7 +73,7 @@
 							<dt>나의 쿠폰</dt>
 							<dd>
 								<strong>0장</strong>
-								<a href="#" class="btn_detail">
+								<a href="coupon_list.do?user_id=${memberSession.user_id }" class="btn_detail">
 									<span>details</span>
 								</a>
 							</dd>
@@ -83,10 +83,23 @@
 							<dt>나의 스탬프</dt>
 							<dd>
 								<strong>0개</strong>
-								<a href="#" class="btn_detail">
+								<a href="stamp_list.do?user_id=${memberSession.user_id }" class="btn_detail">
 									<span>details</span>
 								</a>
 							</dd>
+						</dl>
+						
+						<dl class="qmenu_myplace">
+							<dt>MY배달지</dt>
+							<dd>
+								<strong>0장</strong>
+								<a href="location_list.do?user_id=${memberSession.user_id }" class="btn_detail">
+									<span>details</span>
+								</a>
+							</dd>
+							<!-- <a href="location_list.do?user_id=홍길동" class>
+								<span>MY배달지</span>
+							</a> -->
 						</dl>
 					</div>
 				</div>			<!-- .myking_info end -->
@@ -150,6 +163,7 @@
 					</a>
 				</div>
 				
+				<!-- 
 				<div class="qmenuWrap02">
 					<ul>
 						<li class="qmenu_myset">
@@ -164,7 +178,7 @@
 							</a>
 						</li>
 					</ul>
-				</div>		<!-- .qmenuWrap02 end -->
+				</div> -->		<!-- .qmenuWrap02 end --> 
 			</div>			<!-- .web_container.container01 end -->
 		</div>				<!-- .contentsBox01 end -->
 	</div>			<!-- .contentsWrap end (내용영역 끝) -->

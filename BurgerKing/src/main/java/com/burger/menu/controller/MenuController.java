@@ -32,8 +32,71 @@ public class MenuController {
 	private MenuOptionDAO optionDao;
 
 	
-	@RequestMapping("/menu_delivery.do") public String
-	delivery_menu(HttpServletRequest request, Model model) {
+	// 얘는 브랜드홈 메뉴 가는 것!
+	@RequestMapping("/menu_brand.do")
+	public String brand_menu(String category, Model model) {
+		
+		if (category == null) { 
+			category = "스페셜&할인팩"; 
+		}
+		
+		// 카테고리에 해당하는 메뉴 조회(딜리버리 메뉴)
+		List<MenuDTO> menuList = this.menuDao.getMenuList(category);
+		
+		model.addAttribute("menuList", menuList);
+		model.addAttribute("category", category);
+		model.addAttribute("size", menuList.size());
+		
+		return "menu_brand";
+	}
+	
+	// 브랜드홈 메뉴 가는 것! getBrandMenuList() 안에서 brand, both인 메뉴들만 뽑아옵니당~
+	@RequestMapping("brandMenu_list.do")
+	@ResponseBody
+	public HashMap<String, Object> brandMenuList(String category) {
+
+		if (category == null) { 
+			category = "스페셜&할인팩"; 
+		}
+		
+		// 카테고리에 해당하는 메뉴 조회(브랜드 메뉴)
+		List<MenuDTO> menuList = this.menuDao.getBrandMenuList(category);
+		
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		result.put("menuList", menuList);
+		result.put("category", category);
+		result.put("size", menuList.size());
+		
+		System.out.println(menuList.size());
+		
+		return result;
+	}
+	
+	
+	// (브랜드 메뉴) 메뉴 클릭시 메뉴디테일 페이지로 이동
+	@RequestMapping("go_menuDetail.do")
+	public String goMenuDetail(int menu_no, Model model) {
+		
+		// 1. 클릭한 메뉴 DTO
+		MenuDTO menuDTO = this.menuDao.getMenuDetail(menu_no);
+		// 2. 세트 메뉴가 있으면 세트 메뉴 리스트
+		List<MenuSetDTO> setList = this.setDao.getMenuSetList(menu_no);
+		// 3. 같은 카테고리에 있는 메뉴들의 리스트
+		List<MenuDTO> sameCatMenuList = this.menuDao.getBrandMenuList(menuDTO.getMenu_cat());
+		
+		//System.out.println(sameCatMenuList.size());
+		
+		model.addAttribute("dto", menuDTO);
+		model.addAttribute("setList", setList);
+		model.addAttribute("catMenuList", sameCatMenuList);
+		
+		return "menuDetail";
+	}
+	
+	
+	// 얘는 딜리버리 메뉴 가는 거라서 getMenuList() 안에서 delivery, both인 메뉴들만 뽑아옵니당~
+	@RequestMapping("/menu_delivery.do")
+	public String delivery_menu(HttpServletRequest request, Model model) {
 	
 		String cat;
 		

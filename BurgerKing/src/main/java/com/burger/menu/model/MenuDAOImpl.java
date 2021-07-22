@@ -24,4 +24,10 @@ public class MenuDAOImpl implements MenuDAO {
 		return this.sqlSession.selectOne("getMenuDetail", menu_no);
 	}
 
+	@Override
+	public List<MenuDTO> getBrandMenuList(String category) {
+		
+		return this.sqlSession.selectList("brandMenuList", category);
+	}
+
 }

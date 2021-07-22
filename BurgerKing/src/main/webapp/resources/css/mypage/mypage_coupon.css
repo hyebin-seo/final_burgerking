@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.contentsWrap {
+	min-height: 450px;
+	margin: 0 auto;
+}
+
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.contentsWrap .page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+}
+
+.subtitWrap .r_option {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-left: 15em;
+    font-size: 1.25rem;
+}
+
+.txt01 {
+    margin: 5px 0;
+    font-size: 1.125rem;
+}
+
+em {
+    color: #e22219;
+}
+
+address, em {
+    font-style: normal;
+}
+
+.container01 {
+    padding: 20px 0;
+}
+
+.nodata, .nodata .tit {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.nodata {
+    padding: 370px 10px 10px;
+    color: #766e69;
+    text-align: center;
+    background: url(https://www.burgerking.co.kr/dist/img/ico_nodata01.26f01a61.png) no-repeat center 150px;
+    z-index: 10;
+}
+
+.coupon_list {
+    padding-top: 26px;
+    overflow: hidden;
+}
+
+.coupon_list+.c_btn {
+    margin-top: 14px;
+}
+
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.btn01 {
+    display: inline-block;
+    width: 256px;
+    height: 68px;
+    font-size: 1.5rem;
+    padding: 12px 10px 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_normal.192da552.png) no-repeat 50%;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+
+a.more>*, button.more>* {
+    position: relative;
+    padding-right: 38px;
+}
+
