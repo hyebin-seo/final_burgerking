@@ -90,8 +90,10 @@ public class LoginController {
 
 	@RequestMapping("joins.do")
 
-	public String joins() throws IOException {
-
+	public String joins(@RequestParam("user_id")String user_id, Model model) throws IOException {
+        
+		
+		model.addAttribute("user_id", user_id);
 		return "user/user_join";
 	}
 
@@ -99,7 +101,9 @@ public class LoginController {
 	@RequestMapping("join_Ok.do")
 	public void joinOk(UserDTO dto, HttpServletResponse response) throws IOException {
 
-		dto.setUser_addr(dto.getZipcode() + dto.getUser_addr1() + dto.getUser_addr2());
+		dto.setUser_addr(dto.getUser_zipcode() + dto.getUser_addr1() + dto.getUser_addr2());
+		
+		System.out.println(dto);
 
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter script = response.getWriter();
@@ -129,12 +133,11 @@ public class LoginController {
 		dto = this.dao.checkId_pwd(dto);
 
 		if (dto != null) {
+			
+			session.setMaxInactiveInterval(60*120); // 120분간유효
 			session.setAttribute("memberSession", dto);
 			
-			script.println("<script>");
-			script.println("alert('로그인을 축하합니다.')");
-			script.println("location.href='delivery_home.do'");
-			script.println("</script>");
+			
 		} else {
 			script.println("<script>");
 			script.println("alert('아이디 및 비밀번호를 확인해주세요.')");
@@ -142,7 +145,7 @@ public class LoginController {
 			script.println("</script>");
 		}
 		
-		return null;
+		return "delivery/deliveryHome";
 
 	}
 
@@ -385,26 +388,24 @@ public class LoginController {
       }	
     
     // guest주문에대한 인적사항을 DB에저장한다.
-    @RequestMapping("guest_order")
-    @ResponseBody
-    public String guest_order(HttpServletRequest request, String guest_name) {
-    	
-   
-    	String guest_pwd = request.getParameter("guest_pwd");
-    	
-    	System.out.println("name"+guest_name);
-    	System.out.println("pwd"+guest_pwd);
-    			
-    			
-        
+    @RequestMapping("guest_order.do")
+    
+    public void guest_order(HttpServletRequest request, HttpServletResponse response,HttpSession session,UserDTO dto) throws IOException {
     	
    
     
+    	System.out.println(dto);
     	
+    	response.setContentType("text/html; charset=UTF-8");
+		PrintWriter script = response.getWriter();
+		session.setAttribute("memberSession", dto);
+		script.println("<script>");
+		script.println("location.href='delivery_home.do'");
+		script.println("</script>");
     	
-    	
-    	return "";
-    }
+  
+    
+    }	
 
 
 }

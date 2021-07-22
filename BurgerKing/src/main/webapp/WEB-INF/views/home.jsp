@@ -6,22 +6,43 @@
 <head>
 <meta charset="UTF-8">
 <title>버거킹</title>
+<script type="text/javascript">
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {  
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+</script>
 </head>
 
 <!-- jsp:header -->
 <jsp:include page="header.jsp" />
 
 <!-- 부트스트랩 적용하면 css가 다 깨지는데 방법을 찾아야할거같아요-->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-	crossorigin="anonymous">
-
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-	crossorigin="anonymous"></script>
+	
 
 <link href="resources/css/user/Main.css" rel="stylesheet"
 	type="text/css">
@@ -31,45 +52,37 @@
 	<!-- 본문 시작  -->
 	<section class="allPage">
 		<!-- 이벤트 배너판. 이벤트에 있는 페이지와 연동되어야 합니다. -->
-		<div id="carouselExampleDark" class="carousel slide"
-			data-bs-ride="carousel" style="text-align: center">
-			<div class="carousel-indicators">
-				<button type="button" data-bs-target="#carouselExampleDark"
-					data-bs-slide-to="0" class="active" aria-current="true"
-					aria-label="Slide 1"></button>
-				<button type="button" data-bs-target="#carouselExampleDark"
-					data-bs-slide-to="1" aria-label="Slide 2"></button>
-				<button type="button" data-bs-target="#carouselExampleDark"
-					data-bs-slide-to="2" aria-label="Slide 3"></button>
-				<button type="button" data-bs-target="#carouselExampleDark"
-					data-bs-slide-to="3" aria-label="Slide 4"></button>
+		<div class="slideshow-container">
 
-			</div>
-			<div class="carousel-inner">
-				<div class="carousel-item active" data-bs-interval="10000">
-					<img src="resources/img/main/6.png" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item" data-bs-interval="2000">
-					<img src="resources/img/main/7.png" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="resources/img/main/1.png" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="resources/img/main/2.png" class="d-block w-100" alt="...">
-				</div>
-			</div>
-			<button class="carousel-control-prev" type="button"
-				data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button"
-				data-bs-target="#carouselExampleDark" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
+            <div class="mySlides fade first">
+              <div class="numbertext">1 / 3</div>
+              <img src="resources/img/main/2.png" style="width:100%">
+              
+            </div>
+            
+            <div class="mySlides fade second">
+              <div class="numbertext">2 / 3</div>
+              <img src="resources/img/main/3.png" style="width:100%">
+              
+            </div>
+            
+            <div class="mySlides fade third">
+              <div class="numbertext">3 / 3</div>
+              <img src="resources/img/main/4.png" style="width:100%">
+              
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
 		<!-- 이벤트 배너판 end. -->
 
 

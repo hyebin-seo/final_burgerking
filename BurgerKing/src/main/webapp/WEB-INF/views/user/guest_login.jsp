@@ -22,8 +22,12 @@
 
 
 <script type="text/javascript" src="resources/js/login/guest_login.js">
-</script>
 
+</script>
+<script type="text/javascript">
+
+
+ </script>
 </head>
 <body>
 	<div id="app">
@@ -112,6 +116,7 @@
 					</div>
 				</div>
 				<div class="contentsBox01">
+				<form action="guest_order.do" method="post" name="guest">
 					<div class="web_container02 container01">
 						<h2 class="tit02 WEB">비회원 주문</h2>
 						<h2 class="tit01 tit_ico man">
@@ -153,13 +158,14 @@
 							<span>비회원 설정</span>
 						</h2>
 						<div class="container02">
+						 
 							<div class="dlist01">
 								<dl>
 									<dt class="WEB">이름</dt>
 									<dd>
 										<div class="inpbox st02">
 											<input type="text" placeholder="받는 분의 이름을 입력해 주세요."
-												class="st02 name">
+												class="st02 name" name="user_name">
 											<button type="button" class="btn_del01 "
 												style="display: none;">
 												<span>입력 텍스트 삭제</span>
@@ -172,7 +178,7 @@
 									<dd>
 										<div class="inpbox st02">
 											<input type="text" placeholder="핸드폰 번호를 입력해 주세요"
-												class="st02 phone">
+												class="st02 phone" name="user_phone">
 										</div>
 									</dd>
 								</dl>
@@ -187,6 +193,7 @@
 									</dd>
 								</dl>
 							</div>
+							
 						</div>
 						<div class="c_btn">
 							<div class="move">
@@ -219,7 +226,7 @@
 									<dd>
 										<div class="inpbox">
 											<input placeholder="4~6자리 이내의 숫자로만 입력하세요." maxlength="6"
-												type="password" class="st02 pwd">
+												type="password" class="st02 pwd" name="user_pwd">
 											<button type="button" tabindex="-1" class="btn_view01">
 												<span>입력 텍스트 보기</span>
 											</button>
@@ -238,13 +245,16 @@
 						<p class="MOB txt04">주문 내역 확인을 위한 비밀번호를 입력하세요.</p>
 						<div class="c_btn">
 							<div>
-								<button type="button" class="btn01 l m_btn01 guest_order">
+								<button type="button" class="btn01 l m_btn01 guest_order" onclick="go()">
 									<span>비회원 주문</span>
 								</button>
 							</div>
 						</div>
 					</div>
+					<input type="hidden" value="guest" name="right">
+					</form>
 				</div>
+				
 			</div>
 			<div class="footer">
 				<div class="web_container">
