@@ -275,10 +275,10 @@ $(document).ready(function () {
 	$(document).on("click", "span[class='addLoc']", function () {
 		
 		if($(".chk_my .check02").is(":checked")){
-			$(".chk_my .check02").removeAttr("checked");
+			//$(".chk_my .check02").removeAttr("checked");
 			$(".check02").removeClass("chekimg");
 		} else {
-			$(".chk_my .check02").attr("checked", "checked");
+			//$(".chk_my .check02").attr("checked", "checked");
 			$(".check02").addClass("chekimg");
 		}
 	});

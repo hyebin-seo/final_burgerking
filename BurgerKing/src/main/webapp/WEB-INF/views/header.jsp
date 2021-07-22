@@ -60,13 +60,13 @@ function goDelivery() {
                 <ul>
                     <li class=""><button type="button"><span>메뉴소개</span></button>
                         <ul class="submenu">
-                            <li><a href="Login.do"><span>스페셜&amp;할인팩</span></a></li>
-                            <li><a><span>프리미엄</span></a></li>
-                            <li><a><span>와퍼</span></a></li>
-                            <li><a><span>주니어&amp;버거</span></a></li>
-                            <li><a><span>올데이킹&amp;치킨버거</span></a></li>
-                            <li><a><span>사이드</span></a></li>
-                            <li><a><span>음료&amp;디저트</span></a></li>
+                            <li><a href="menu_brand.do?category=스페셜&amp;할인팩"><span>스페셜&amp;할인팩</span></a></li>
+                            <li><a href="menu_brand.do?category=프리미엄"><span>프리미엄</span></a></li>
+                            <li><a href="menu_brand.do?category=와퍼"><span>와퍼</span></a></li>
+                            <li><a href="menu_brand.do?category=주니어&amp;버거"><span>주니어&amp;버거</span></a></li>
+                            <li><a href="menu_brand.do?category=올데이킹&amp;치킨버거"><span>올데이킹&amp;치킨버거</span></a></li>
+                            <li><a href="menu_brand.do?category=사이드"><span>사이드</span></a></li>
+                            <li><a href="menu_brand.do?category=음료&amp;디저트"><span>음료&amp;디저트</span></a></li>
                         </ul>
                     </li>
                     <li class="menu_open"><button type="button"><span>매장소개</span></button>

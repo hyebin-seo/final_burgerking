@@ -1,0 +1,419 @@
+@charset "UTF-8";
+
+.web_container {
+	max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.MOB {
+    display: none!important;
+}
+
+@media screen and (min-width: 767px) {
+.subtitWrap .page_tit.st02 {
+    padding: 20px 0 23px;
+    border-bottom: 3px solid #000;
+	}
+}
+
+.contentsWrap .page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+}
+
+.stamp_banner {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ============================= */
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.stamp_status {
+    position: relative;
+    padding: 9px 0 0;
+}
+
+.stamp_status .tit {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+strong {
+	font-family: 'S-CoreDream-9Black';
+}
+
+.stamp_status .info {
+    margin: 5px 0;
+    font-size: 1.25rem;
+    color: #010101;
+}
+
+.stamp_list {
+    max-width: 900px;
+    margin: 98px auto 0;
+    overflow: hidden;
+}
+
+.stamp_list li {
+    float: left;
+    width: 20%;
+    height: 134px;
+    margin-bottom: 48px;
+}
+
+.stamp_list li:nth-child(5n) .stamp {
+    background-image: url(https://www.burgerking.co.kr/dist/img/bg_stamp_coupon_off.f56a025e.png);
+}
+
+.stamp {
+    position: relative;
+    width: 134px;
+    height: 134px;
+    margin: 0 auto;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_stamp_off.09d33730.png) no-repeat top;
+    background-size: 100% auto;
+}
+
+.stamp>* {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 36px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #7f7873;
+    line-height: 100%;
+    opacity: 0;
+}
+
+.stamp em.coupon {
+    text-align: center;
+    opacity: 1;
+}
+
+.stamp_status .c_btn {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    margin: 0;
+}
+
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.stamp_status .c_btn button {
+    width: 106px;
+    height: 44px;
+    font-size: 1.25rem;
+}
+
+.btn04 {
+    display: inline-block;
+    min-width: 3.5em;
+    height: 36px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #fff;
+    background: #2e2e2e;
+    border-radius: 5px;
+}
+
+.stamp_titWrap {
+    position: relative;
+    margin: 110px 0 35px;
+    font-size: 2.5rem;
+}
+
+.stamp_titWrap .txt {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.25rem;
+    line-height: 100%;
+    text-align: right;
+}
+
+.stamp_titWrap .txt p:first-child {
+    margin-top: 0;
+}
+
+.stamp_titWrap .txt p {
+    margin-top: 10px;
+}
+
+.ico_i02 {
+    width: 18px;
+    min-height: 18px;
+    text-align: left;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDNGQzM5NEYyQUI0MTFFOUIwMENFRjUzOThBNERENzAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDNGQzM5NTAyQUI0MTFFOUIwMENFRjUzOThBNERENzAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowM0ZDMzk0RDJBQjQxMUU5QjAwQ0VGNTM5OEE0REQ3MCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowM0ZDMzk0RTJBQjQxMUU5QjAwQ0VGNTM5OEE0REQ3MCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgG0CM4AAAEYSURBVHjarFTtEYIwDK09F2CFOkJXqCPgCDgC/OQnK+AIOIKMoCPACDACpt6LF2tB5Xx3OT6SvOaRhE1Zlooh7g2Zw9WSjWQ3sp7srCLQwXNCVpF1ZBkIWpAY4UtDoq2oxp9cI3mH02PIEOfji1COr+SKgBA5ZEp4kgG+F2kVKjlGiCokSnipB/iM/LBT5FSGk8EBLlKFL6+T3ftCGiOFxIc0O9fSBWmMFt/XatyMah04L9HqT9BgTVbmc96o0cp0JZET6/Ox/ZMcvNn2o+01Xv5C5OAzcrIL6I2tSMGlByvSwNc/K0JVFvvWLEwyL+2A+Xr/jRCZP3WPEzqQ5sJqvM+xk0X0NyIGzAec0Ekjqmvhi27BXYABAJX6UW+3NdlMAAAAAElFTkSuQmCC) no-repeat 50%;
+    background-size: 18px auto;
+}
+
+.ico_i, .ico_i02 {
+    display: inline-block;
+    height: 1rem;
+    margin-right: 7px;
+    text-indent: -9999em;
+    vertical-align: middle;
+}
+
+.stamp_coupon_list {
+    padding-bottom: 55px;
+}
+
+/* 이것은 위에서 먹고 잇는 게 아닌가..? 왜 또 써야되지 */
+li {
+    list-style: none;
+}
+
+em {
+    color: #e22219;
+}
+
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.bg_w {
+    background: #fff;
+}
+
+.stamp_introWrap {
+    position: relative;
+    padding: 35px 280px 70px 0;
+    font-size: 1.25rem;
+    border-bottom: 2px solid #f2f2f2;
+}
+
+.stamp_introWrap .tit {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.stamp_introWrap p {
+    line-height: 150%;
+}
+
+.stamp_introWrap .c_btn {
+    position: absolute;
+    right: 0;
+    bottom: 85px;
+}
+
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+
+.btn01.red {
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_normal_red.810b0753.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+
+.btn01 {
+    display: inline-block;
+    width: 256px;
+    height: 68px;
+    font-size: 1.5rem;
+    padding: 12px 10px 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_normal.192da552.png) no-repeat 50%;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+
+.stemp_guide {
+    padding: 78px 0 20px;
+}
+
+.stemp_guide .tit {
+    font-size: 2.5rem;
+}
+
+.step_guide {
+    margin-top: 40px;
+    font-size: 1.375rem;
+    line-height: 150%;
+    overflow: hidden;
+}
+
+.step_guide li {
+    float: left;
+    width: 48%;
+    width: calc(50% - 18px);
+    margin-bottom: 25px;
+}
+
+.step_guide .guide_img {
+    text-align: center;
+}
+
+.step_guide .step_txt {
+    min-height: 60px;
+    margin-top: 20px;
+    font-size: 1.375rem;
+}
+
+.step_guide p {
+    margin-bottom: 15px;
+}
+
+.step_guide .num {
+    margin-right: 5px;
+}
+
+.tit04 {
+    margin: 25px 0;
+    padding-bottom: 14px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #000;
+}
+
+.txtlist01 {
+    margin: 7px 0 7px 5px;
+    line-height: 167%;
+}
+
+.txtlist01 li {
+    position: relative;
+    padding-left: 12px;
+}
+
+.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 1.67em;
+    background: url(../../img/menu/img_dot.png) no-repeat 0;
+}
+
+.popWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+}
+
+.popbox01, .popbox02 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 568px;
+    max-height: 95%;
+    margin-left: -284px;
+    padding-bottom: 84px;
+    background: #fff;
+    overflow: auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.popcont {
+    max-height: 580px;
+    padding: 24px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tit_coupon {
+    margin: 0 8px;
+    padding: 152px 0 0;
+    font-weight: 700;
+    font-size: 1.875rem;
+    color: #010101;
+    text-align: center;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAA/CAYAAABdA76NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkQ2QTc4NTcwQzM2MTFFOThEMzlFNzk0QkEwMTRFRkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkQ2QTc4NTgwQzM2MTFFOThEMzlFNzk0QkEwMTRFRkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCRDZBNzg1NTBDMzYxMUU5OEQzOUU3OTRCQTAxNEVGQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCRDZBNzg1NjBDMzYxMUU5OEQzOUU3OTRCQTAxNEVGQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Piwn/GIAAAP4SURBVHja7JxdSFRBFMenMvuwIiqhKIo+oKjAioIKiz58MIjCBwlDUER6MHppkaCQPggsiGgfqoeyIHAzhCR6qA1CzUhK0QfpIXuIQioq2BbpQ0q3c/RcuA7T7t65c/fO3PXA73HP3vnP7Hz859xlLBgxB1gKTGUTMRrFQDuQIH4Ct4C52SrIKuCBTRCeN9kmDjb2EjCURBSLpmwQZDJQBXxMQxCLEWBHkEXBxvU4EMROD4kaqMBVJkI9n3BBdZBEweU35lIQiy+Uz1FM0VQYnFzzge0KcuUBucATE0fIRqBQMGo+Kxo1gySOMbEIaACGae/B71yrFQlzwRRBsPdC1JP2BoQEy3S3S1H+UAdoHyXA2/804jvNLfxy7WZleqm7IGuBx2k05Ibgs00uhLmtqyDzgKs0pNNpyF9gg2BP80NSmGu6CZID1ABfJRrzTJDvjKQwzTqJshd47XLSLOVyzgTeS+TBz0zSwQ64r2iJxQZN5/KXSeba6Zcgs2ivMKRIFIs67nuw5zsk8rRnetTI2AFOwAl3Cfedm2lD6DTXyUyJshXo8kgQO42C774pkQf3Qie8HDmq7AAnDdrGPcNCIC6Zrw3Yp9KnmQGccrGfcEOXoCG1LnN+AO7RHuu4rChlkkulSiq4Z5oG9CsclVuc2gGtPgti8UlgOB1QmL8znfkn32YHJDSiXvCsUYX5y1PZATHNBLH4Dazknnmdg3NYKgZoTzYuipLYATrRIujQsML85+yJj2n4s0lGkeAE/01R7l/AMkxaQEf9hEH00endHjUK819k5FckDOSowOboU5T7KSZ8bqgw+NOZz4mzR1FuPHSO3rckDCUsmIhbFOS9zGibb6owuEyv54RZQcu6bE60TlZbm7m4weJEBaOm3oXQlfZEIYOFQQ5ywsymI4STHC8EJrzSA5kf9FMb7FHhwEItS3ZO2m/4qKkV2KDJjDSs1ztLdkrKiBosTJwMLN5lHBFYDBEy3NKONQoPZH7QIGhTIxtfYVUoa0odIm/0CvDKMGGGySy3x2I6HFcxxWVnBZzqutMhmEg9rcMr9+DeyCsOZ/pirdIAUfBqeLcft44PNRUkRr5Sjl/XsZs0PC/hFcgCHaoZdLFAW8nz1SYiPguCHVPCNAy/XL9Bskm0LU2948PGDXe12ldf9mZQlE4682gfyzN01TKQyg7QLcIeC4J2wHnRjaDOkeuxDdrs1A7QKeo8EATtgF3M8MBKyneKBMEa4CMsQG+hlboUBE/p+NJnIN90bZMU5ZF1bxPUwKsGJ8UAaAcUsyyJ62naAXhvlVV/L4A1cd1JtvHa2AF+BL78cJqNlYda1dx32Vhh40RQ5AWlIf8EGABX7Dw9IvjpWQAAAABJRU5ErkJggg==) no-repeat center 56px;
+}
+
+.tit_coupon+.txt02 {
+    margin: 12px 0 36px;
+    font-size: 1.5rem;
+    line-height: 134%;
+}
+
+.popWrap .txt02 {
+    font-size: 1.5rem;
+}
+
+.txt02, .txt03 {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.pop_btn.full_type {
+    padding: 0;
+}
+
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+
+.pop_btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.popWrap .btn02:only-child {
+    max-width: 100%;
+}
+
+.btn02:only-child {
+    width: 100%;
+    max-width: 450px;
+}
+
+.btn02.dark, .btn02.st02 {
+    background-color: #2e2e2e;
+}
+
+.pop_btn button {
+    line-height: normal;
+}
+.pop_btn a, .pop_btn button {
+    border-radius: 0;
+}
+.btn02, .btn02.red {
+    display: inline-block;
+    height: 84px;
+    padding: 20px 10px;
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+    background: #e22219 url(https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png) repeat-x 0 0;
+    background-size: auto 100%;
+}
+

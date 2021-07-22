@@ -15,4 +15,10 @@
 		select * from menu where menu_no = #{menu_no}
 	</select>
 	
+	<select id="brandMenuList" resultType="com.burger.menu.model.MenuDTO">
+		select * from menu where menu_cat = #{category}
+		and (menu_show = 'brand' or menu_show = 'both')
+		order by menu_no
+	</select>
+	
 </mapper>

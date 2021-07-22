@@ -1,0 +1,270 @@
+@charset "UTF-8";
+
+html {
+	font-size: 16px;
+	font-family: 'S-CoreDream-5Medium';
+}
+
+body {
+	color: #000;
+	word-wrap: normal;
+	word-break: keep-all;
+	min-height: 100%;
+	background: #f2ebe6;
+}
+
+body, html {
+	height: 100%;
+	min-height: 450px;
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: none;
+}
+
+a {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+em {
+    color: #e22219;
+}
+
+address, em {
+    font-style: normal;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+img {
+    border: none;
+}
+
+
+
+
+/* ***메뉴판 전체 영역*** */
+.contentsWrap {
+	min-height: 450px;
+	margin: 0 auto;	
+	
+	/* 추가 */
+	margin-top: 120px;		/* 헤더 영역만큼 띄우기 */
+}
+
+.locationWrap {
+    height: 58px;
+    padding: 10px 0;
+    color: #fff;
+    line-height: 38px;
+    background: #000;
+}
+
+.locationWrap .web_container {
+    overflow: hidden;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page_navi {
+    float: left;
+    font-size: .875rem;
+}
+
+.locationWrap a {
+    color: #fff;
+}
+
+.page_navi>* {
+    float: left;
+}
+
+.page_navi>:before {
+    content: "";
+    float: left;
+    width: 4px;
+    height: 38px;
+    margin: 0 12px;
+    background: url(../../img/mypage/img_arrow2.gif) no-repeat 50%;
+}
+
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.bg_w {
+    background: #fff;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.contentsWrap .page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+}
+
+.subtitWrap .tab01 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin: -17.5px 0 0;
+}
+
+.tab01 {
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.tab01 ul {
+    display: table;
+}
+
+.tab01 li:first-child {
+    padding-left: 0;
+}
+
+.tab01 li {
+    position: relative;
+    display: table-cell;
+    padding: 0 18px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.tab01 li.on a, .tab01 li.on button {
+    color: #e22219;
+    border-bottom-color: #e22219;
+}
+
+.subtitWrap .tab01 button {
+    height: 35px;
+    font-size: 1.125rem;
+    border-width: 3px 0;
+}
+
+.tab01 button {
+    height: 54px;
+    padding: 5px 0;
+}
+
+.tab01 a, .tab01 button {
+    display: inline-block;
+    padding: 10px 1px;
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: #b8b8b8;
+    border: 0 solid transparent;
+    border-width: 4px 0;
+}
+
+.tab01 a>*, .tab01 button>* {
+    vertical-align: middle;
+}
+
+.hide {
+    position: absolute!important;
+    left: -10000px;
+    top: -10000px;
+    visibility: hidden;
+}
+
+.prdmenu_list {
+    margin-top: 60px;
+    padding-bottom: 46px;
+    overflow: hidden;
+}
+
+.prdmenu_list li {
+    position: relative;
+    float: left;
+    width: 25%;
+    margin-bottom: 8px;
+}
+
+.prdmenu_list .prd_img {
+    max-width: 220px;
+    height: 144px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.prd_img {
+    position: relative;
+}
+
+.prdmenu_list .prd_img img {
+    width: 100%;
+}
+
+.prdmenu_list .cont {
+    min-height: 115px;
+    padding: 30px 5px 0;
+    text-align: center;
+}
+
+.prdmenu_list .tit {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.btn_detail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -99999em;
+    background: transparent;
+}
+

@@ -38,7 +38,8 @@ public class LotacionController {
 	@RequestMapping("/location_insert.do")
 	public void insertLocation(LocationDTO loc) {
 		
-		loc.setUser_id("홍길동");
+		// 이 부분 다시 확인해보기
+		//loc.setUser_id("홍길동");
 		
 		this.locationDao.insertLocation(loc);
 		
@@ -59,6 +60,19 @@ public class LotacionController {
 		result.put("size", myLocList.size());
 		
 		return result;	
+	}
+	
+	
+	// 일단 마이페이지에서 쿠폰, 스탬프 페이지 이동하는 거 보려고 여기에 씀!
+	// DB 만들면 거기 컨트롤러로 옮기기 ★★★★★★★★★★★★
+	@RequestMapping("stamp_list.do")
+	public String stamp(String user_id) {
+		return "mypage_myStamp";
+	}
+	
+	@RequestMapping("coupon_list.do")
+	public String coupon(String user_id) {
+		return "mypage_myCoupon";
 	}
 
 }

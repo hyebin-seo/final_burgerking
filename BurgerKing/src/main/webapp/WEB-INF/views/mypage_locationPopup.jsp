@@ -14,6 +14,7 @@
 <div class="popWrap m_FullpopWrap">
 
 	<form name="lform" method="post" action="location_insert.do">
+		<input type="hidden" name="user_id" value="${memberSession.user_id }">
 		<input type="hidden" name="loc_addr1">
 		<input type="hidden" name="loc_addr2">
 		<input type="hidden" name="loc_addr3">
