@@ -3,8 +3,7 @@
 
 <link rel="shortcut icon" type="image/x-icon"
 	href="resources/img/main/fab.ico">
-<!-- <link  href="resources/css/cs/qna_popup.css"  rel="stylesheet"  type="text/css"> -->
-<link  href="resources/css/cs/qnaPopup.css"  rel="stylesheet"  type="text/css">
+<link  href="resources/css/cs/qnaPopup.css"  rel="stylesheet"  type="text/css"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>	
 	<div class="qnaPopWrap m_Fullpopwrap">
@@ -28,23 +27,23 @@
 			<div class="container02">
 				<p class="txt_info02 st02">정확한 연락처를 입력하셔야 신속한 처리가 가능합니다.</p>
 				<div class="inpbox">
-					<input type="text" placeholder="이름" maxlength="4" class="st02">								
+					<input type="text" placeholder="이름" maxlength="4" class="st02 name_clean">								
 					<!-- <button type="button" class="btn_del01" onclick= "del_text()"> -->
-					<button type="button" class="btn_del01">
+					<button type="button" class="btn_del01" onclick= "del_name()">
 						<span>입력 텍스트 삭제</span>
 					</button> 
 				</div>
 				<div class="inpbox">
-					<input type="text" placeholder="연락처" class="st02">
+					<input type="text" placeholder="연락처" class="st02 tel_clean">
 					<!-- <button type="button" class="btn_del01" style=""  onclick= "del_text2()"> -->
-					<button type="button" class="btn_del01" style>					
+					<button type="button" class="btn_del01" onclick= "del_tel()">					
 							<span>입력 텍스트 삭제</span>
 					</button>
 				</div>
 				<div class="inpbox">
-					<input type="text" placeholder="이메일" class="st02">
+					<input type="text" placeholder="이메일" class="st02 email_clean">
 					<!-- <button type="button" class="btn_del01" style="" onclick= "del_text3()"> -->
-					<button type="button" class="btn_del01" style>
+					<button type="button" class="btn_del01" onclick= "del_email()">
 						<span>입력 텍스트 삭제</span>
 					</button>
 				</div>
@@ -106,7 +105,7 @@
 					</button>
 				</div>
 				<div class="inpbox">
-					<textarea rows="9" cols="50" placeholder="관계 법령에 저촉되거나 사회통념등에 어긋나는 내용 (예> 개인정보 보안, 불충분한 증거/귀책 사유에 대한 개인 음해성/음란성 비방, 의도적인 업무방해 등) 또는 광고성 게시물은 별도의 사전 통보 없이 답변이 되지 않을 수 있으며, 등록된 의견은 처리가 시작되면 수정이 불가하오니 이 점 양지하여 주시기 바랍니다." maxlength="1000"></textarea>
+					<textarea id="text_content" rows="9" cols="50" placeholder="관계 법령에 저촉되거나 사회통념등에 어긋나는 내용 (예> 개인정보 보안, 불충분한 증거/귀책 사유에 대한 개인 음해성/음란성 비방, 의도적인 업무방해 등) 또는 광고성 게시물은 별도의 사전 통보 없이 답변이 되지 않을 수 있으며, 등록된 의견은 처리가 시작되면 수정이 불가하오니 이 점 양지하여 주시기 바랍니다." maxlength="1000"></textarea>
 					<div class="page_count">
 						<span>0</span> / <span>1000</span>
 					</div>
@@ -116,14 +115,15 @@
 					<dd>
 						<div class="att_file">
 							<label class="file">
-								<input type="file" accept="image/*">
+								<input type="file" accept="image/*" id="fileUpload" name="upload[]" multiple> 
+								<!-- <input type="hidden" class="cls"> -->
 								<button type="button" class="btn04">
 									<span>파일선택</span>
 								</button>
 							</label>
 						</div>
-						<ul><!-- 파일 첨부하면 생기는 영역 -->
-							<li>
+						<ul id="fileList"><!-- 파일 첨부하면 생기는 영역 -->
+							<!-- <li>
 								<div class  = "att_file">
 									<div class = "file">
 										<span class="file_name"></span>
@@ -132,14 +132,13 @@
 										<span>삭제</span>
 									</button>
 								</div>
-							</li>
-						</ul>
+							</li>  -->
+						</ul><!-- 파일 첨부하면 생기는 영역 end -->
 						<p class="txt05">
 							<em>파일은 최대 3개까지 첨부 가능합니다.</em>
 						</p>
 					</dd>
-				</dl>
-								
+				</dl>				
 	         	<!--  <input type="file"  class="btn04">	         	
 	          	      	 	
 	         	 <input type="file"  class="btn_f" >	         	
@@ -154,18 +153,18 @@
 			<span>약관동의</span>
 		</h2>
 		<div class="container02">
-				<p class="txt_info02 st02">문의접수를 위해 약관동의가 필요합니다.</p>
+			<p class="txt_info02 st02">문의접수를 위해 약관동의가 필요합니다.</p>
 			<div class="auth_list accWrap01">
 				<div class="divide">
 					<label>
-						<input type="checkbox" class="check02">
+						<input type="checkbox" class="check02" id="chkAll">
 							<span>전체동의(필수)</span>
 					</label>
 				</div>
 				<div class="acc_list toggle">
 					<div class="acc_tit">
 						<label>
-							<input type="checkbox" class="check02">
+							<input type="checkbox" class="check02" name="chk">
 							<span>일반 개인정보 수집 및 활용에 관한 동의</span>
 						</label>
 						<button type="button" class="btn_acc">
@@ -193,7 +192,7 @@
 				<div class="acc_list toggle">
 					<div class="acc_tit">
 						<label>
-							<input type="checkbox" class="check02">
+							<input type="checkbox" class="check02" name="chk">
 							<span>민감정보 수집 및 활용에 관한 동의</span>
 						</label>
 						<button type="button" class="btn_acc">
@@ -222,7 +221,7 @@
 				<div class="acc_list toggle">
 					<div class="acc_tit">
 						<label>
-							<input type="checkbox" class="check02">
+							<input type="checkbox" class="check02" name="chk">
 								<span>일반 개인정보의 제3자 제공에 관한 동의</span>
 						</label>
 						<button type="button" class="btn_acc">
@@ -258,7 +257,7 @@
 				<div class="acc_list toggle">
 					<div class="acc_tit">
 						<label>
-							<input type="checkbox" class="check02">
+							<input type="checkbox" class="check02" name="chk">
 								<span>민감 개인정보의 제 3자 제공에 관한 동의</span>
 						</label>
 							<button type="button" class="btn_acc">
@@ -298,10 +297,10 @@
 		</p>
 		</div>
 		<div class="pop_btn full_type">
-			<button type="button" class="btn02" onclick="qna_ok()">
+			<button type="button" class="btn02">
 				<span>온라인 문의 접수하기</span>
 			</button>
 		</div>
 	</div>
-</div>
-<!-- <script src="resources/js/cs/qna_popup.js"></script> -->
+</div><!-- qnaPopWrap m_Fullpopwrap end -->
+<script src="resources/js/cs/qna_popup.js"></script>

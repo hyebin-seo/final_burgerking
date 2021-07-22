@@ -13,6 +13,7 @@
 
 </head>
 <body>
+	<jsp:include page="cs_menu.jsp" />
 	<div class = "tab_cont">
 	<h4 class = "hide">문의</h4>
 	<div class = "contentsBox01 bg_w CS_intro">
@@ -57,7 +58,7 @@
   		 				</dd>
   		 			</dl>
   		 			<dl class = "cs_email">		 
-  		 				<dt>온라인 문의</dt>
+  		 				<dt class="btn01">온라인 문의</dt>
   		 					<dd>
   		 						<p>
   		 							서비스를 이용하시면서 궁금하시거나
@@ -91,6 +92,6 @@
   	</div>
   	<!--  -->
 <!--   </div> -->
-  		 <jsp:include page="qna_popup.jsp" /> 
+  <jsp:include page="qna_popup.jsp" /> 
 </body>
 </html>

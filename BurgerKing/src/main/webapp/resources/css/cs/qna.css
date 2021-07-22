@@ -27,7 +27,6 @@ body{
 	word-wrap:normal; 
 	word-break: keep-all;
 	margin: 0;
-	font-family: 'S-CoreDream-5Medium';
 }
 
 a, div, li {
@@ -90,6 +89,7 @@ li {
     background: url(https://www.burgerking.co.kr/dist/img/bg_CS.c6388a10.jpg) no-repeat 100% 100%;
     word-wrap: normal;
     word-break: keep-all;
+    font-family: 'S-CoreDream-5Medium';
     
 }
 
@@ -99,6 +99,7 @@ li {
     font-size: 3rem;
     color: #773a2c;
     line-height: 112.5%;
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .CS_intro .tit>span {
@@ -118,10 +119,21 @@ li {
 }    
 .help_info dt {
     font-weight: 700;
+    font-family: 'S-CoreDream-9Black';
+    letter-spacing: -1px;
 }
 
 .help_info dd {
     margin: 13px 0;
+}
+
+dd>div>strong{
+	font-family: 'S-CoreDream-9Black';
+    letter-spacing: -1px;
+}
+dd>p{
+	font-family: 'S-CoreDream-5Medium';
+	letter-spacing: -1px;
 }
 
 /*둘 사이 간격 띄워줌 (대표 소비자 상담/ 온라인 문의)*/
@@ -157,6 +169,7 @@ li {
     position: relative;
     margin-top: 60px;
     padding-left: 85px;
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .help_info li:before {
@@ -176,6 +189,9 @@ li {
 
 .help_info li>strong {
     margin-top: 5px;
+   	font-family: 'S-CoreDream-5Medium';
+   	font-size: 1rem;
+   	letter-spacing: -1px;
 }
 
 .help_info li.shop:before {

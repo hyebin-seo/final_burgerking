@@ -8,7 +8,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="resources/img/public/favicon.ico">
 <link href="resources/css/brandStory/burgerkingTv.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="resources/js/brandStory/bugerkingTv.js"></script>
+<script src="resources/js/brandStory/burgerkingTv.js"></script>
 </head>
 <body>
 	<div class="web_container">
