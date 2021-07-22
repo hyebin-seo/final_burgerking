@@ -27,7 +27,7 @@
 		</selectKey>
 		
 		insert into event values(#{event_no},
-		   #{event_title}, #{event_cont}, sysdate, #{event_image})
+		   #{event_title}, #{event_cont}, sysdate, #{event_image}, #{event_thum})
 	
 	</insert>
 	

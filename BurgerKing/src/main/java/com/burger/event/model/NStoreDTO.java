@@ -13,5 +13,6 @@ public class NStoreDTO {
 	private String store_cont;	
 	private Date store_regdate;
 	private String store_image;
+	private String store_thum;
 	
 }

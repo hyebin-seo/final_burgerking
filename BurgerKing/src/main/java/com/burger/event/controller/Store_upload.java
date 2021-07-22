@@ -51,7 +51,13 @@ public class Store_upload {
 		boolean isUpload = false;
 		
 		String uploadPath = 
-				"C:\\NCS\\download\\workspace(spring)\\final_burgerking\\BurgerKing\\src\\main\\webapp\\resources\\img\\nstore\\";				
+				"C:\\NCS\\download\\workspace(spring)\\final_burgerking\\BurgerKing\\src\\main\\webapp\\resources\\img\\nstore\\";		
+		
+
+		/*
+		 * String uploadPath =
+		 * "C:\\NCS\\download\\workspace(spring)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\BurgerKing\\resources\\img\\nstore\\";
+		 */
 		Calendar cal = Calendar.getInstance();
 		int year = cal.get(Calendar.YEAR);
 		int month = cal.get(Calendar.MONTH) + 1;
@@ -85,8 +91,7 @@ public class Store_upload {
 			String saveFileName = originalFileName;
 			
 			if(saveFileName != null && !saveFileName.equals("")) {
-				saveFileName = 
-						saveFileName;
+				saveFileName = saveFileName;
 				
 				
 				try {
@@ -105,9 +110,10 @@ public class Store_upload {
 					e.printStackTrace();
 				}
 			}
+			System.out.println("upload>>"+originalFileName);
 		}  // while 문 end
 		
-		System.out.println("upload>>"+originalFileName);
+		
 		return originalFileName;
 	}
 }

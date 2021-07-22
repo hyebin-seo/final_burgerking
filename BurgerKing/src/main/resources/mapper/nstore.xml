@@ -27,7 +27,7 @@
 		</selectKey>
 		
 		insert into store values(#{store_no},
-		   #{store_title}, #{store_cont}, sysdate, #{store_image})
+		   #{store_title}, #{store_cont}, sysdate, #{store_image}, #{store_thum})
 	
 	</insert>
 	

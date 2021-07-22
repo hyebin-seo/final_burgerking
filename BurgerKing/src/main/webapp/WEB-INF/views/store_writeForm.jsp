@@ -31,11 +31,16 @@
 	         	<td> <input type="text" name="store_title" size="100px"> </td>
 	      	 </tr>
 	      	 
-	      	   <tr>
-	           	<th>첨부파일1</th>
-	         	<td> <input type="file" name="store_image" >
-	         	
-	          </td>	  				
+	      	 <tr>
+	           	<th>스토어 상세사진</th>
+	         	<td> <input type="file" name="store_image" ></td>	 
+	         </tr>
+	         
+	         <tr>
+	           	<th>스토어 썸네일</th>
+	         	<td> <input type="file" name="store_thum" ></td>	 
+	         </tr>
+	           				
 	          
 	       <!--  <tr id = "tr1">  -->
 	        <%--  <div class="inputArea">
@@ -57,7 +62,7 @@
  				<%=request.getRealPath("/") %>
  				      
 	         </div> --%>
-	         </tr>
+	         
 	      	 
 	      	 
 	      	 <tr id = "tr1">

@@ -13,5 +13,6 @@ public class EventDTO {
 	private String event_cont;	
 	private Date event_regdate;
 	private String event_image;
+	private String event_thum;
 	
 }
