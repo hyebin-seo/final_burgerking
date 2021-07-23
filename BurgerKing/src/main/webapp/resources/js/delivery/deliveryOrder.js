@@ -15,6 +15,8 @@ $(document).ready(function() {
 			$(this).addClass("close");
 		}
 		
+		//if($(this))
+		
 	});
 	
 	
