@@ -243,10 +243,10 @@ public class LoginController {
 
 		String random = s + num;
 		
-		String info = "안녕하세요. 고객님\n 보인인증을 위한 번호를 다음과 같이 보내드립니다." 
-				 + "\n 보인인증번호 :"+random;
+		String info = "안녕하세요. 고객님\n 본인인증을 위한 번호를 다음과 같이 보내드립니다." 
+				 + "\n 본인인증번호 :"+random;
 		
-		EmailService.sendMail(user_email, "보인인증", info);
+		EmailService.sendMail(user_email, "본인인증", info);
 		
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		
@@ -290,8 +290,8 @@ public class LoginController {
 			String random = s + num;
 
 			String info = "안녕하세요." + dto.getUser_name() + "회원님\n 비밀번호 재설정을 위한 경로를 다음과 같이 보내드립니다." + "\n 아이디 :"
-					+ dto.getUser_id() + "" + "\n 임시비밀번호 :" + random + 
-					"비밀번호 재설정 경로 : http://localhost:8765/burger/auth_pwd.do?user_id="+dto.getUser_id();
+					+ dto.getUser_id()+ 
+					"비밀번호 재설정 경로 : http://localhost:8585/burger/auth_pwd.do?user_id="+dto.getUser_id();
 
 			EmailService.sendMail(dto.getUser_id(), "버거킹 임시비밀번호 변경 인증안내", info);
 
@@ -324,7 +324,7 @@ public class LoginController {
 
 		System.out.println("user_id>>"+user_id);
 		
-     model.addAttribute("user_id", user_id);
+        model.addAttribute("user_id", user_id);
 
 		
 		return "user/change_pwd";
@@ -377,10 +377,28 @@ public class LoginController {
        
 		String random = s + num;
 		//난수설정 
-		
-		
+		//문자보내는API
+        String api_key = "NCS7DA99XQHE2RLT"; //위에서 받은 api key를 추가
+        String api_secret = "1PCO7UNCSH6LNSO6H9P67UVMSPYKEG9D";  //위에서 받은 api secret를 추가
+        Message coolsms = new Message(api_key, api_secret);
 
         HashMap<String, String> set = new HashMap<String, String>();
+        set.put("to", guest_phone); // 수신번호
+
+        set.put("from", "01063082509"); // 발신번호
+        set.put("text", random); // 문자내용
+        set.put("type", "sms"); // 문자 타입
+
+        System.out.println(set);
+
+        JSONObject result = (JSONObject) coolsms.send(set); // 보내기&전송결과받기
+        
+        System.out.println(result);
+        System.out.println(set);
+        
+       
+       
+       
        
         set.put("random", random);
 

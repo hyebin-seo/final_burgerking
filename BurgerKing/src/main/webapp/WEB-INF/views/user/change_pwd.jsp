@@ -20,7 +20,12 @@
 
 
 
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script type="text/javascript" src="resources/js/login/change_pwd.js">
+
+</script>
 
 </head>
 <body>
@@ -41,7 +46,7 @@
                     <!-- //sub page title -->
                     
                     <!-- sub page contents -->
-                    <form action="auth_pwdOk.do" method="post">
+                    <form action="auth_pwdOk.do" method="post" name="auth">
                     <div class="container01">
                         <h3 class="tit01 tit_ico key"><span>비밀번호 입력</span></h3>
                         <div class="container02">
@@ -50,13 +55,13 @@
                                     <dt class="vtop">새 비밀번호</dt>
                                     <dd>
                                         <div class="inpbox">
-                                            <label><input type="password" id="newPassword" onkeyup="fnKeyDown1()" class="st02" placeholder="새 비밀번호 확인" name="user_pwd">
+                                            <label><input type="password" id="newPassword" class="st02" placeholder="새 비밀번호 확인" name="user_pwd">
                                                 <!-- <button type="button" class="btn_view01 on"><span>입력 텍스트 보기</span></button> -->
                                             </label>
                                             <p class="txt " id="pwText1"><span>새 비밀번호 확인에 비밀번호를 입력해 주세요.</span></p>
                                         </div>
                                         <div class="inpbox">
-                                            <label><input type="password" id="confirmPassword" onkeydown="fnKeyDown2()" class="st02" placeholder="새 비밀번호 확인">
+                                            <label><input type="password" id="confirmPassword" class="st02" placeholder="새 비밀번호 확인">
                                                 <!-- <button type="button" class="btn_view01 on"><span>입력 텍스트 보기</span></button> -->
                                             </label>
                                             <p class="txt " id="pwText2"><span>새 비밀번호 확인에 비밀번호를 입력해 주세요.</span></p> 
@@ -75,7 +80,7 @@
                         </div>
                         
                         <div class="c_btn">
-                            <button id="btnSave" class="btn01 m red"><span>변경</span></button>
+                            <button  type="button" id="btnSave" class="btn01 m red"><span>변경</span></button>
                         </div>
                         <!-- //tab contents -->
                     </div>

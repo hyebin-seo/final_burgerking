@@ -84,7 +84,7 @@
 						</h1>
 						<div class="WEB utilWrap">
 							<a href="/burger/"><span>브랜드홈</span></a><a style="display: none;"><span>로그아웃</span></a><a
-								style="display: none;"><span>MY킹</span></a><a><span>로그인</span></a><a><span>고객센터</span></a>
+								style="display: none;"><span>MY킹</span></a><a href="Login.do"><span>로그인</span></a><a><span>고객센터</span></a>
 						</div>
 						<div class="MOB m_utilWrap">
 							<div class="m_top">
@@ -101,7 +101,7 @@
 										<strong><span> 고객</span>(비회원)</strong> 님
 									</p>
 									<div class="btn_area">
-										<a class="btn04"><span>회원가입</span></a><a class="btn04"><span>로그인</span></a>
+										<a class="btn04" href="move_join.do"><span>회원가입</span></a><a class="btn04" href="Login.do"><span>로그인</span></a>
 									</div>
 								</div>
 							</div>
@@ -110,15 +110,15 @@
 									<strong>WHERE TASTE IS KING</strong><br>버거킹과 함께하는 맛있는 세계!
 								</p>
 								<div class="btn_area">
-									<a class="btn04"><span>회원가입</span></a><a class="btn04"><span>로그인</span></a>
+									<a class="btn04" href="move_join.do"><span>회원가입</span></a><a class="btn04" href="Login.do"><span>로그인</span></a>
 								</div>
 							</div>
 						</div>
 						<div class="WEB on_cont join">
-							<a class="btn_join"><strong>회원가입</strong></a>
+							<a class="btn_join" href="move_join.do"><strong>회원가입</strong></a>
 						</div>
 						<div class="WEB off_cont join">
-							<a class="btn_join"><strong>회원가입</strong></a>
+							<a class="btn_join" href="move_join.do"><strong>회원가입</strong></a>
 						</div>
 						<div class="MOB GNBWrap">
 							<ul>
@@ -154,7 +154,7 @@
 					<div class="web_container">
 						<div class="page_navi">
 							<a href="#/deliveryHome" class=""><span>딜리버리</span></a><a
-								href="#/logout" class=""><span>로그인</span></a><a><span>아이디/비밀번호
+								href="Login.do" class=""><span>로그인</span></a><a><span>아이디/비밀번호
 									찾기</span></a>
 						</div>
 					</div>
@@ -211,8 +211,8 @@
 															style="display: none;">
 															<span>입력 텍스트 삭제</span>
 														</button></label>
-													<p class="txt">휴대폰 번호를 입력해 주세요.</p>
-													<p class="txt" style="display: none;">휴대폰 번호를 모두 입력해
+													<p class="txt phone">휴대폰 번호를 입력해 주세요.</p>
+													<p class="txt check_phone" style="display: none;">휴대폰 번호를 모두 입력해
 														주세요.</p>
 												</div>
 											</dd>
@@ -255,12 +255,12 @@
 											<dd>
 												<div class="inpbox">
 													<label><input type="text" placeholder="이름"
-														name="user_name" class="st02">
+														name="user_name" class="st02 pwd_name">
 														<button type="button" class="btn_del01"
 															style="display: none;">
 															<span>입력 텍스트 삭제</span>
 														</button></label>
-													<p class="txt">이름을 입력해 주세요.</p>
+													<p class="txt pwd">이름을 입력해 주세요.</p>
 												</div>
 											</dd>
 										</dl>
@@ -269,13 +269,13 @@
 											<dd>
 												<div class="inpbox">
 													<label><input type="text" placeholder="이메일 주소"
-														name="user_id" class="st02">
+														name="user_id" class="st02 pwd_email">
 														<button type="button" class="btn_del01 "
 															style="display: none;">
 															<span>입력 텍스트 삭제</span>
 														</button></label>
-													<p class="txt">이메일 주소를 입력해 주세요.</p>
-													<p class="txt" style="display: none;">정확한 이메일 주소를 입력해
+													<p class="txt email">이메일 주소를 입력해 주세요.</p>
+													<p class="txt email_check" style="display: none;">정확한 이메일 주소를 입력해
 														주세요.</p>
 												</div>
 											</dd>

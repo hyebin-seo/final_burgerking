@@ -14,7 +14,7 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-function currentSlide(n) {  
+function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
@@ -32,9 +32,7 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
-
 </script>
 </head>
 
@@ -70,7 +68,7 @@ function showSlides(n) {
               <div class="numbertext">3 / 3</div>
               <img src="resources/img/main/4.png" style="width:100%">
               
-            </div>
+            </div>	
             
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -78,11 +76,7 @@ function showSlides(n) {
             </div>
             <br>
             
-            <div style="text-align:center">
-              <span class="dot" onclick="currentSlide(1)"></span> 
-              <span class="dot" onclick="currentSlide(2)"></span> 
-              <span class="dot" onclick="currentSlide(3)"></span> 
-            </div>
+           
 		<!-- 이벤트 배너판 end. -->
 
 
@@ -174,42 +168,42 @@ function showSlides(n) {
 		<!-- 버거킹 대표번호 나오는 부분  끝(이미지처리)-->
 
 	</section>
-	<!-- 본문   -->
-
-
+	<!-- 본문  -->
+    	
+      
 	<!-- foote(sitemap) 시작 -->
-	<div class="WEB sitemap web_max">
-		<div class="web_container">
-			<ul class="menu">
-				<li><a><span>메뉴</span></a>
-					<ul class="submenu"></ul></li>
-				<li><a><span>매장</span></a>
-					<ul class="submenu">
-						<li><a href="store.do"><span>매장찾기</span></a></li>
-					</ul></li>
-				<li><a><span>이벤트</span></a>
-					<ul class="submenu">
-						<li><a href="event_list.do"><span>이벤트</span></a></li>
-					</ul></li>
-				<li><a><span>브랜드 스토리</span></a>
-					<ul class="submenu">
-						<li><a href="brandStory.do"><span>버거킹 스토리</span></a></li>
-						<li><a href="whyBurgerking.do"><span>WHY 버거킹</span></a></li>
-						<li><a href="burgerkingNews.do"><span>버거킹 News</span></a></li>
-					</ul></li>
-				<li><a><span>고객센터</span></a>
-					<ul class="submenu">
-						<li><a href="notice_list.do"><span>공지사항</span></a></li>
-						<li><a href="faq_home.do?faq_cate=all"><span>FAQ</span></a></li>
-						<li><a href="Qna.do"><span>문의</span></a></li>
-						<li><a href="Franchise.do"><span>가맹점모집</span></a></li>
-					</ul></li>
-			</ul>
-		</div>
-	</div>
+	 <div class="WEB sitemap web_max">
+            <div class="web_container">
+                <ul class="menu">
+                    <li><a><span>메뉴</span></a>
+                        <ul class="submenu"></ul></li>
+                    <li><a><span>매장</span></a>
+                        <ul class="submenu">
+                            <li><a href="store.do"><span>매장찾기</span></a></li>
+                        </ul></li>
+                    <li><a><span>이벤트</span></a>
+                        <ul class="submenu">
+                            <li><a href="event_list.do"><span>이벤트</span></a></li>
+                        </ul></li>
+                    <li><a><span>브랜드 스토리</span></a>
+                        <ul class="submenu">
+                            <li><a href="brandStory.do"><span>버거킹 스토리</span></a></li>
+                            <li><a href="whyBurgerking.do"><span>WHY 버거킹</span></a></li>
+                            <li><a href="burgerkingNews.do"><span>버거킹 News</span></a></li>
+                        </ul></li>
+                    <li><a><span>고객센터</span></a>
+                        <ul class="submenu">
+                            <li><a href="notice_list.do"><span>공지사항</span></a></li>
+                            <li><a href="faq_home.do?faq_cate=all"><span>FAQ</span></a></li>
+                            <li><a href="Qna.do"><span>문의</span></a></li>
+                            <li><a href="Franchise.do"><span>가맹점모집</span></a></li>
+                        </ul></li>
+                </ul>
+            </div>
+        </div>
 	<!-- foote 끝 -->
-
+      <jsp:include page="footer.jsp" /	>
 </body>
 <!-- jsp:footer -->
-<jsp:include page="footer.jsp" />
+
 </html>
