@@ -901,3 +901,13 @@ div.txtlist01:before, p.txtlist01:before {
     background: #e22219 url(https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png) repeat-x 0 0;
     background-size: auto 100%;
 }
+
+/*매장 선택 disabled css*/
+.chosenStore:disabled {
+    color: #cdcdcd;
+    background: #f1f1f1;
+}
+
+.btndisabled:disabled {
+    background: silver;
+}

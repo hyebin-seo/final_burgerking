@@ -11,7 +11,7 @@
 		</selectKey>
 		insert into franchise values(#{fran_no},#{fran_name}, #{fran_birth},
 		 #{fran_phone}, #{fran_email}, #{fran_city}, #{fran_gu}, #{fran_possession}, 
-		 #{fran_area}, #{fran_job}, #{fran_opinion}, sysdate)
+		 #{fran_area}, #{fran_job}, #{fran_opinion}, sysdate, default)
 		
 	</insert>
 </mapper>

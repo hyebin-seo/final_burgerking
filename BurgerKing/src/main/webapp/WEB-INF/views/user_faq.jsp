@@ -8,6 +8,7 @@
 <title>FAQ</title>
 <link rel="shortcut icon" type="image/x-icon"
 	href="resources/img/main/fab.ico">
+<!-- <link  href="resources/css/cs/user_faq.css"  rel="stylesheet"  type="text/css"> -->
 <link  href="resources/css/cs/user_faq.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/user_faq.js" type="text/javascript"></script>
@@ -49,8 +50,8 @@
 		</label>
 		</form>
 	</div>
-	<div class="faq_list">
-		<table class="flist01 acc_type">
+	<div class="board_list">
+		<table class="tlist01 acc_type">
 			<colgroup>
 				<col style="width: 10%;">
 				<col style="width: 20%;">
@@ -67,13 +68,15 @@
 	        	 <c:forEach items="${list }" var="dto">
 			<tbody class="acc_body">
 				<tr class="acc_tit_tr">
-					<td class="no">${dto.getFaq_no() }</td>
-					<td class="kind">
+					<td class="WEB">${dto.getFaq_no() }</td>
+					<td class="category">
 						<span>${dto.getFaq_kind() }</span>
 					</td>
 					<td>
 						<div class="acc_tit">
 						<span class="tit">${dto.getFaq_title() }</span>
+						<button type="tit" >수정</button>
+						<button type="tit" >삭제</button>
 						<button type="button" class="btn_acc">
 							<span>FAQ 내용 보기</span>
 						</button>
@@ -114,6 +117,8 @@
 	      </c:if>
 	   </c:forEach>
 	   </div>
+	    <input type="button" class="btn_list" value="FAQ작성">
 	</div>
+	<jsp:include page="faq_write.jsp"/>
 </body>
 </html>

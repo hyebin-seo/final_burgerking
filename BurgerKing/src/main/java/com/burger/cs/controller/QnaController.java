@@ -3,6 +3,8 @@ package com.burger.cs.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @Controller
 public class QnaController {
@@ -15,6 +17,13 @@ public class QnaController {
 	
 	@RequestMapping("qna_popup.do")
 	public String qna_popup() {
+		return "qna_popup";
+	}
+	
+	@RequestMapping("inputRemove.do")
+	public String inputRemove(MultipartHttpServletRequest request ,MultipartFile qna_image) {
+		
+		System.out.println(qna_image);
 		return "qna_popup";
 	}
 	

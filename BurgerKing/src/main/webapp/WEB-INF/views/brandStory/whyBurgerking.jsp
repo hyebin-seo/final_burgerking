@@ -11,6 +11,7 @@
 <script src="resources/js/brandStory/whyBurgerking.js"></script>
 </head>
 <body>
+	<jsp:include page="brandStory_menu.jsp"/>
 	<div class="web_container">
 		<div class="tab_cont">
 			<ul class="tab03 item5">

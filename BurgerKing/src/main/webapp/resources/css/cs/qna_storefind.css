@@ -55,8 +55,13 @@ button, table td, table th {
 li {
     list-style: none;
 }
+
+input, select {
+	outline: none;
+}
 /*매장찾기 팝업*/
 .qnaStorepopWrap {
+	display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -78,7 +83,7 @@ li {
     width: 568px;
     max-height: 95%;
     margin-left: -284px;
-    padding-bottom: 84px;
+    /* padding-bottom: 84px; */
     background: #fff;
     overflow: auto;
     -webkit-transform: translateY(-50%);
@@ -492,7 +497,7 @@ address, em {
 }
 
 .pop_btn {
-    position: absolute;
+   /* position: absolute; 버튼 위치 때문에 일단 뺌 */
     left: 0;
     right: 0;
     bottom: 0;
@@ -506,7 +511,7 @@ address, em {
 
 .btn02:only-child {
     width: 100%;
-    max-width: 450px;
+    max-width: 100%;
 }
 
 .pop_btn button {

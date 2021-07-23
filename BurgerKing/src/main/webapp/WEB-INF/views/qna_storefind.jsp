@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link  href="resources/css/cs/qna_storefind.css"  rel="stylesheet"  type="text/css"> 
+<link  href="resources/css/cs/qna_storefind.css"  rel="stylesheet"  type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <title>문의</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 						<span>매장검색</span>
 					</h1>
 					<div class="title_btn">	
-						<button type="button" class="btn_close">
+						<button type="button" class="btn_close storefindclose">
 							<span>Close</span>
 						</button>
 					</div>
@@ -30,7 +31,7 @@
 							<div class="container01">
 								<div class="r_srch01 st02">
 									<div class="inpbox">
-										<input type="text">
+										<input type="text" class="searchName">
 										<button type="button" class="btn_del01">
 											<span>입력 텍스트 삭제</span>
 										</button>
@@ -46,14 +47,14 @@
 						<div class="tit_result">
 							<p>
 								<em>
-									<span>1</span>
+									<span>0</span>
 									개
 								</em>
 								의 검색 결과가 있습니다
 							</p>
 						</div><!-- tit_result end -->
-						<ul class="list02">
-							<li>
+						<!-- <ul class="list02">
+							   <li>
 								<div class="shop_detail02">
 									<p class="tit">
 										<strong>신정네거리역점</strong>
@@ -68,7 +69,7 @@
 										<p>
 											<span>070-7438-6521</span>
 										</p>
-									</div><!-- subinfo end -->
+									</div>subinfo end
 									<ul class="shoptype_list ico_type">
 										<li>
 											<span class="shop_type delivery">
@@ -99,14 +100,14 @@
 											<span class="shop_type drive">
 												드라이브스루
 											</span>
-										</li>
-									</ul><!-- shoptype_list ico_type end -->
-								</div><!-- shop_detail02 end -->
+										</li>   
+									</ul>shoptype_list ico_type end
+								</div>shop_detail02 end
 								<a class="btn_detail">
 									<span>Details</span>
 								</a>
 							</li>
-						</ul>
+						</ul> -->
 					</div><!-- container01 search_result end -->
 				</div><!--map_searchWrap end -->
 				<div class="pop_btn full_type">
@@ -118,4 +119,5 @@
 		</div><!-- popbox01 m_bg_basic -->
 	</div><!-- qnaStorepopWrap m_FullpopWrap end -->
 </div><!-- 잠깐 넣었음 css때문에 -->
+<script src="resources/js/cs/qna_storefind.js"></script>
 </body>
