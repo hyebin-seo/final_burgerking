@@ -93,7 +93,7 @@
 							<dt>MY배달지</dt>
 							<dd>
 								<strong>0장</strong>
-								<a href="location_list.do?user_id=${memberSession.user_id }" class="btn_detail">
+								<a href="myLocation.do?user_id=${memberSession.user_id }" class="btn_detail">
 									<span>details</span>
 								</a>
 							</dd>

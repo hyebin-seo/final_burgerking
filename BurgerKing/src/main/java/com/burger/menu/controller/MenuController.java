@@ -40,8 +40,11 @@ public class MenuController {
 			category = "스페셜&할인팩"; 
 		}
 		
-		// 카테고리에 해당하는 메뉴 조회(딜리버리 메뉴)
-		List<MenuDTO> menuList = this.menuDao.getMenuList(category);
+		System.out.println(category);
+		
+		
+		// 카테고리에 해당하는 메뉴 조회(브랜드 메뉴)
+		List<MenuDTO> menuList = this.menuDao.getBrandMenuList(category);
 		
 		model.addAttribute("menuList", menuList);
 		model.addAttribute("category", category);
@@ -130,9 +133,6 @@ public class MenuController {
 			category = "스페셜&할인팩"; 
 		}
 		
-		System.out.println(category);
-		
-		 
 		// 카테고리에 해당하는 메뉴 조회(딜리버리 메뉴)
 		List<MenuDTO> menuList = this.menuDao.getMenuList(category);
 		// 세트가 있는 메뉴들의 메뉴번호 리스트

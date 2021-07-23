@@ -1,6 +1,7 @@
 var totalCount_Custom = 0;
 var keyword_Custom = "";
 
+var form = document.lform;
 
 //페이지 이동 후 검색어를 변경하는 경우 페이지 값을 1로 초기화
 $(".font_s01").on("change keyup paste", function(){
@@ -286,6 +287,11 @@ $(document).ready(function () {
 	// '이 주소로 배달지 설정' 버튼 클릭 이벤트, MY배달지 등록 체크 시 별칭 지정 div display
 	$(".btn02").on("click", function() {
 		
+		// 폼에 도로명주소, 지번주소, 상세주소 값 입력
+		$("input[name='loc_addr1']").val($(".addrbox dl:nth-child(1) dd").children("span").text());
+		$("input[name='loc_addr2']").val($(".addrbox dl:nth-child(2) dd").children("span").text());
+		$("input[name='loc_addr3']").val($(".inpbox .addr3").val());
+		
 		if($(".chk_my .check02").is(":checked")){
 			$(".popWrap.m_FullpopWrap>.popbox01:nth-child(1)").css("display", "none");
 			$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "");
@@ -307,6 +313,60 @@ $(document).ready(function () {
 		
 		// 상세주소는 입력한 거 그대로 있어야 되는데 지금도 그냥 잇음.
 		
+	});
+	
+	// 별칭 입력 햇을 때만 우측에 x 버튼 보이게
+	$(document).on("propertychange change keyup paste input", ".nick .inpbox input", function () {
+		
+		if($(".nick .inpbox input").val().length!=0){
+			
+			$(".btn_del01").css("display","");
+			
+			$(".btn02").prop("disabled", false);
+			
+			// 별칭 팝업에서 취소/등록 버튼도 pop_btn>btn02이기 때문에
+			// 걔는 안 걸리고 배송지 설정 버튼만 걸리게 해줘야됨
+			$(".full_type>.btn02").addClass("red");
+			
+		}else{
+			$(".btn_del01").css("display","none");
+			
+			$(".btn02").prop("disabled", true);
+			$(".full_type>.btn02").removeClass("red");
+		}
+			
+	});
+	
+	
+	// x(입력 텍스트 삭제) 버튼 클릭했을 때
+	// 상세주소 텍스트 사라짐, x버튼 숨김, 배달지 등록 버튼 비활성화(색상 회색)
+	$(".btn_del01").on("click", function () {
+		
+		$(".nick .inpbox input").val(null);
+		$(".btn_del01").css("display","none");
+		$(".btn02").prop("disabled", true);
+		$(".btn02").removeClass("red");
+			
+	});
+	
+	
+	// 등록 버튼 클릭했을 때
+	$(".btn02.m_btn01_s.submit").on("click", function () {
+		
+		if($(".nick .inpbox input").val().length != 0) {
+			
+			$("input[name='loc_nickname']").val($(".nick .inpbox input").val());
+			// 현재 경로의 .do 앞(location OR myLocation)
+			$("input[name='path']").val(window.location.pathname.split("/").pop().split(".")[0]);
+			
+			alert(window.location.pathname.split("/").pop().split(".")[0]);
+			
+			form.submit();
+			
+		}else {
+			alert("별칭을 입력하세요 대화창 만들어야 함");
+		}
+			
 	});
 	 
 });

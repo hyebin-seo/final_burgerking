@@ -2,7 +2,7 @@
 
 html {
 	font-size: 16px;
-	font-family: 'S-CoreDream-5Medium';
+	font-family: 'S-CoreDream-9Black';
 }
 
 body {
@@ -135,6 +135,16 @@ img {
     background: url(../../img/mypage/img_arrow2.gif) no-repeat 50%;
 }
 
+/* 추가: 첫 번째 a 앞에는 > 없애기 */
+.page_navi>a:first-child:before {
+    content: "";
+    float: left;
+    width: 0;
+    height: 38px;
+    margin: 0;
+}
+
+/* 하얀 영역 */
 .contentsBox01 {
     padding: 50px 0 45px;
 }
@@ -150,7 +160,8 @@ img {
 
 .contentsWrap .page_tit {
     margin-bottom: 15px;
-    font-size: 2.5rem;
+    font-family: 'S-CoreDream-9Black';
+    font-size: 2.3rem;
     line-height: 100%;
 }
 
@@ -163,7 +174,10 @@ img {
 
 .tab01 {
     margin-bottom: 20px;
-    overflow: auto;
+    /* overflow: auto; */
+    
+    /* 추가 : 카테고리명 영역에 스크롤 생겨서 바꿈 */
+    overflow: hidden;
 }
 
 .tab01 ul {
@@ -189,8 +203,12 @@ img {
 
 .subtitWrap .tab01 button {
     height: 35px;
-    font-size: 1.125rem;
+    /* font-size: 1.125rem; */
     border-width: 3px 0;
+    
+    /* 추가 : 카테고리명 잘려서 글씨 크기 줄임 */
+    font-size: 1.07rem;
+    letter-spacing: -1px;
 }
 
 .tab01 button {
@@ -198,9 +216,21 @@ img {
     padding: 5px 0;
 }
 
+
+.tab01 button {
+	height: 54px;
+	padding: 5px 0;	
+}
+
+/* 추가 : 마우스오버 시 검정색 */
+.tab01 button:hover {
+	color: #000;
+}
+
 .tab01 a, .tab01 button {
     display: inline-block;
-    padding: 10px 1px;
+    /* 카테고리명 위치 때문에 없앰 */
+    /* padding: 10px 1px; */
     font-weight: 700;
     font-size: 1.375rem;
     color: #b8b8b8;

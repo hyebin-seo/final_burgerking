@@ -137,6 +137,15 @@ strong {
     background: url(../../img/mypage/img_arrow2.gif) no-repeat 50%;
 }
 
+/* 추가 */
+.page_navi>a:first-child:before {
+    content: "";
+    float: left;
+    width: 0;
+    height: 38px;
+    margin: 0;
+}
+
 /* 베너 - 메뉴 이미지 */
 .prd_intro {
     height: 400px;
@@ -274,6 +283,9 @@ strong {
     position: relative;
     display: inline-block;
     padding-right: 28px;
+    
+    /* 추가 */
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .btn_nutrition>:after {
@@ -318,6 +330,15 @@ strong {
     border-right: none;
 }
 
+.prd_submenu li:nth-child(2) {
+    border: 1px solid #e9e9e9;
+    border-width: 0 1px;
+}
+
+.prd_submenu li:last-child {
+    border-right: none;
+}
+
 .prd_submenu li {
     position: relative;
     float: none;
@@ -334,9 +355,10 @@ strong {
     margin-bottom: 8px;
 }
 
-/* 추가 : float: left가 먼저 먹어서 얘한테 따로 다시 줫습니다 */
+/* 추가 */
 .prdmenu_list.prd_submenu.m_bg_basic li {
-	float: none;
+	float: none;	 /* float: left가 먼저 먹어서 다시 줌 */
+	width: 33%;	 	/* width: 25%가 먼저 먹어서 다시 줌 */
 }
 
 .prd_submenu .prd_img {
@@ -346,10 +368,10 @@ strong {
 }
 
 .prdmenu_list .prd_img {
-    max-width: 220px;
-    height: 144px;
+    /* max-width: 220px; */
+    /* height: 144px; */
     margin: 0 auto;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .prdmenu_list .prd_img img {
@@ -362,18 +384,20 @@ strong {
 }
 
 .prdmenu_list .cont {
-    min-height: 115px;
-    padding: 30px 5px 0;
+    /* min-height: 115px; */
+    /* padding: 30px 5px 0; */
     text-align: center;
 }
 
 .prd_submenu .tit {
-    font-size: 2rem;
+    /* font-size: 2rem; */
+    
+    font-size: 1.85rem;
 }
 
 .prdmenu_list .tit {
     font-weight: 700;
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
 }
 
 .prd_submenu .tit>* {
@@ -382,7 +406,10 @@ strong {
 
 .prd_submenu .set {
     margin-top: 20px;
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
+    
+    font-size: 1.15rem;
+    letter-spacing: -1px;
 }
 
 /* 해당 카테고리의 다른 메뉴 부분 */
@@ -405,6 +432,12 @@ strong {
 .titbox {
     position: relative;
     padding-right: 5em;
+}
+
+/* 추가 */
+.titbox h3 {
+	font-size: 0.9em;
+	font-family: 'S-CoreDream-9Black'
 }
 
 .othermenu_list {
