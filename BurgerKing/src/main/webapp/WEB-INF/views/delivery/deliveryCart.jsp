@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     
 <link href="resources/css/delivery/deliveryCart.css"  rel="stylesheet"  type="text/css">
 
@@ -21,11 +23,13 @@
 				<dl>
 					<dt>
 						<strong>카트</strong>
-						<em class="count" style="display: none;">
-							<span>0</span>
-						</em>
 					</dt>
-					<dd>카트에 담은 상품이 없습니다.</dd>
+					<c:if test="${empty cartlist }">
+						<dd>카트에 담은 상품이 없습니다.</dd>
+					</c:if>
+					<c:if test="${!empty cartlist }">
+						<dd>총 ${fn:length(cartlist) }건의 상품이 담겨 있습니다.</dd>
+					</c:if>
 				</dl>
 			</div>
 		</a>

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.burger.delivery.model.DeliveryDAO;
 import com.burger.delivery.model.DeliveryDTO;
@@ -26,11 +27,7 @@ public class DeliveryController {
 	public String moveDelivery(Model model, 
 								HttpServletRequest request,
 								HttpServletResponse response) throws IOException {
-		
-		List<DeliveryDTO> orderList = this.dao.gerOrderList("hong");
-		
-		model.addAttribute("orderList", orderList);
-		
+
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("memberSession");
 		PrintWriter script = response.getWriter();
@@ -50,5 +47,27 @@ public class DeliveryController {
 	public String location() {
 		
 		return "delivery/deliveryLocation";
+	}
+	
+	@RequestMapping("delivery_order.do")
+	public String order(@RequestParam("menuArr") String[] menuArr,
+						Model model, 
+						HttpServletRequest request,
+						HttpServletResponse response) throws IOException {
+
+		HttpSession session = request.getSession();
+		UserDTO dto = (UserDTO) session.getAttribute("memberSession");
+		PrintWriter script = response.getWriter();
+		
+		if(dto != null) {
+			model.addAttribute("menuArr", menuArr);
+			return "delivery/deliveryOrder";
+		} else {
+			script.println("<script>");
+			script.println("location.href='Login.do'");
+			script.println("</script>");
+		}
+		
+		return null;
 	}
 }

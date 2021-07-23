@@ -46,16 +46,18 @@ $(document).ready(function() {
 		} else {
 			$(".check02").not($(this)).prop("checked", false);
 		}
+		totalPriceSetting();
 	});
 	
 	// 개인 선택
 	$(document).on("click", ".menu_name > .check02", function () {
 		$(".allchk01 > label > .check02").prop("checked", false);
+		totalPriceSetting();
 	});
 	
+	$(".check02").prop("checked", true);
 	itemPriceSetting();
 	totalPriceSetting();
-	$(".check02").prop("checked", true);
 });
 
 //개별금액 셋팅
@@ -84,9 +86,26 @@ function totalPriceSetting() {
 	
 	var sum = 0;
 	
-	$(".pricespan").each(function(index, item){
-        sum += Number(delComma($(item).text().trim()));
-    })
+	/*$(".pricespan").each(function(index, item){
+		
+		var li = $(item).parent("li");
+		console.log("li: "+li);
+		var chkbox = $(".check02").eq($(item).index());
+		console.log("chkbox: "+chkbox);
+		if(chkbox.is(':checked')) {
+			sum += Number(delComma($(item).text().trim()));
+		}
+    });*/
+    
+	$(".cart_list01 > li").each(function(index, item){
+		
+		var chkbox = $(item).find(".check02");
+		var pricespan = $(item).find(".pricespan");
+		
+		if(chkbox.is(':checked')) {
+			sum += Number(delComma(pricespan.text().trim()));
+		}
+    });
     
     sum = addComma(sum);
     
@@ -144,4 +163,79 @@ function cartAllDelete(userid) {
         	alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
         }
     });
+}
+
+function goOrder() {
+	// create element (form)
+	
+	var menuArr = [];
+	var menu_index = 0;
+	
+	$(".cart_list01 > li").each(function(index, item){
+		
+		var chkbox = $(item).find(".check02");
+		
+		if(chkbox.is(':checked')) {
+			
+			var menuno = $(item).attr("class"); //메뉴번호
+			var menuname = $(item).find(".tit > strong > span").text().trim(); //메뉴이름
+			var menuinfo = $(item).find(".set_info").text().trim(); //메뉴정보
+			
+			var detail = $(item).find(".ingspan"); //재료추가정보
+			var detailStr = "";
+			
+			detail.each(function(index, item){
+				detailStr += $(item).text().trim() +" 추가";
+				
+				if(index != detail.length-1) {
+					detailStr += ", ";
+				}
+			});
+			
+			var side = $(item).find(".sidespan").text().trim(); //사이드정보
+			
+			var drink = $(item).find(".drinkspan").text().trim(); //음료수 정보
+			
+			var mount = Number($(item).find(".num_set > input[type='number']").val().trim()); //수량
+			
+			var pricespan = $(item).find(".pricespan"); 
+			
+			var price = Number(delComma(pricespan.text().trim())); //개별 합계가격
+			
+			/*console.log("메뉴번호: "+menuno);
+			console.log("메뉴이름: "+menuname);
+			console.log("메뉴정보: "+menuinfo);
+			console.log("재료추가정보: "+detailStr);
+			console.log("사이드정보: "+side);
+			console.log("음료수정보: "+drink);
+			console.log("수량: "+mount);
+			console.log("개별 합계가격: "+price);
+			console.log("==========================");*/
+			
+			menuArr[menu_index] = menuno+"^"+menuname+"^"+
+								  menuinfo+"^"+detailStr+"^"+
+								  side+drink+"^"+mount+"^"+price;
+			menu_index++;
+		}
+    });
+	
+	var newForm = document.createElement('form'); 
+	
+	newForm.name = 'newForm'; 
+	newForm.method = 'post'; 
+	newForm.action = 'delivery_order.do'; 
+	
+	var input1 = document.createElement('input');
+	var input2 = document.createElement('input');
+	
+	input1.setAttribute("type", "hidden");
+	input1.setAttribute("name", "menuArr");
+	input1.setAttribute("value", menuArr);
+
+	newForm.appendChild(input1);
+	
+	document.body.appendChild(newForm);
+	
+	newForm.submit();
+	
 }
