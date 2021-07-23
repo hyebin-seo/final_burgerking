@@ -31,4 +31,9 @@ public class FaqDAOImpl implements FaqDAO {
 	public int getListcateCount(String faq_cate) {
 		return this.sqlSession.selectOne("faqcatecount",faq_cate);
 	}
+
+	@Override
+	public int insertFaq(FaqDTO dto) {
+		return this.sqlSession.insert("insertFaq", dto);
+	}
 }

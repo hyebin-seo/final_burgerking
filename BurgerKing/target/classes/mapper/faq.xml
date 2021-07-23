@@ -35,4 +35,14 @@
 	<select id="faqcatecount" parameterType="com.burger.cs.model.PageDTO" resultType="int">
 		select count(*) from faq where faq_cate=#{faq_cate}
 	</select>
+	
+	<insert id="insertFaq" parameterType="com.burger.cs.model.FaqDTO">
+		<selectKey resultType="int" keyProperty="faq_no" order="BEFORE">
+			select count(*) + 1 from faq
+		</selectKey>
+		
+		insert into faq values(#{faq_no},
+		   #{faq_title}, #{faq_cont},#{faq_kind}, #{faq_cate})
+	
+	</insert>
 </mapper>

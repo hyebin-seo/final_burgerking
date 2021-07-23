@@ -978,7 +978,14 @@ label {
 
 
 
+input:disabled {
+    color: #cdcdcd;
+    background: #f1f1f1;
+}
 
+.btn04:disabled {
+    background: silver;
+}
 
 
 

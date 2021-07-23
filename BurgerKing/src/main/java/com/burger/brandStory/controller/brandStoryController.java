@@ -31,12 +31,14 @@ public class brandStoryController {
 	private final int rowsize = 12;
 	
 	@RequestMapping("brandStory.do")
-	public String MoveBrand() {
+	public String MoveBrand(Model model) {
+		model.addAttribute("cat", "버거킹 스토리");
 		return "brandStory/burgerkingStory";
 	}
 	
 	@RequestMapping("whyBurgerking.do")
-	public String MoveWhyBurgerking() {
+	public String MoveWhyBurgerking(Model model) {
+		model.addAttribute("cat", "WHY 버거킹");
 		return "brandStory/whyBurgerking";
 	}
 	
@@ -60,6 +62,7 @@ public class brandStoryController {
 
 		model.addAttribute("NewMenuList", NewMenuList);
 		model.addAttribute("Paging", dto);
+		model.addAttribute("cat", "버거킹 NEWS");
 		
 		return "brandStory/burgerkingNews";
 	}
@@ -88,6 +91,7 @@ public class brandStoryController {
 		result.put("video",dto);
 		
 		System.out.println(result);
+		model.addAttribute("cat", "버거킹 NEWS");
 		
 		return result;
 	}

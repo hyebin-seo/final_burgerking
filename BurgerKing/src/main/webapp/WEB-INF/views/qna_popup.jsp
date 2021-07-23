@@ -6,6 +6,7 @@
 <link  href="resources/css/cs/qnaPopup.css"  rel="stylesheet"  type="text/css"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>	
+<form method="post" action="" enctype="multipart/form-data" onsubmit="return dataCheck();">
 	<div class="qnaPopWrap m_Fullpopwrap">
 	<div class="popbox01 m_bg_basic">
 		<div class="M_headerWrap">
@@ -27,21 +28,21 @@
 			<div class="container02">
 				<p class="txt_info02 st02">정확한 연락처를 입력하셔야 신속한 처리가 가능합니다.</p>
 				<div class="inpbox">
-					<input type="text" placeholder="이름" maxlength="4" class="st02 name_clean">								
+					<input name="qna_name" type="text" placeholder="이름" maxlength="4" class="st02 name_clean">								
 					<!-- <button type="button" class="btn_del01" onclick= "del_text()"> -->
 					<button type="button" class="btn_del01" onclick= "del_name()">
 						<span>입력 텍스트 삭제</span>
 					</button> 
 				</div>
 				<div class="inpbox">
-					<input type="text" placeholder="연락처" class="st02 tel_clean">
+					<input name="qna_phone" type="text" placeholder="연락처" class="st02 tel_clean">
 					<!-- <button type="button" class="btn_del01" style=""  onclick= "del_text2()"> -->
 					<button type="button" class="btn_del01" onclick= "del_tel()">					
 							<span>입력 텍스트 삭제</span>
 					</button>
 				</div>
 				<div class="inpbox">
-					<input type="text" placeholder="이메일" class="st02 email_clean">
+					<input name="qna_email" type="text" placeholder="이메일" class="st02 email_clean">
 					<!-- <button type="button" class="btn_del01" style="" onclick= "del_text3()"> -->
 					<button type="button" class="btn_del01" onclick= "del_email()">
 						<span>입력 텍스트 삭제</span>
@@ -79,17 +80,17 @@
 						</dt>
 						<dd>
 							<div>
-								<input type="text" readonly="readonly" class="st02">
+								<input type="text" readonly="readonly" class="st02 chosenStore storefindopen">
 							</div>
 							<div class="form_rtxt">
 								<div>
-									<button type="button" class="btn04 st02">
+									<button type="button" class="btn04 st02 storefindopen2 btndisabled">
 										<span>매장찾기</span>
 									</button>
 								</div>
 								<div class="alignr">
 									<label>
-										<input type="checkbox">
+										<input type="checkbox" class="storeNone" value="N">
 											<span>매장 선택 안함</span>
 									</label>
 								</div>
@@ -99,13 +100,13 @@
 				</div>
 				<hr class="divder">
 				<div class="inpbox">
-					<input type="text" placeholder="제목" class="st02">
+					<input name="qna_title" type="text" placeholder="제목" class="st02">
 					<button type="button" class="btn_del01" style="display: none;">
 						<span>입력 텍스트 삭제</span>
 					</button>
 				</div>
 				<div class="inpbox">
-					<textarea id="text_content" rows="9" cols="50" placeholder="관계 법령에 저촉되거나 사회통념등에 어긋나는 내용 (예> 개인정보 보안, 불충분한 증거/귀책 사유에 대한 개인 음해성/음란성 비방, 의도적인 업무방해 등) 또는 광고성 게시물은 별도의 사전 통보 없이 답변이 되지 않을 수 있으며, 등록된 의견은 처리가 시작되면 수정이 불가하오니 이 점 양지하여 주시기 바랍니다." maxlength="1000"></textarea>
+					<textarea name="qna_content" id="text_content" rows="9" cols="50" placeholder="관계 법령에 저촉되거나 사회통념등에 어긋나는 내용 (예> 개인정보 보안, 불충분한 증거/귀책 사유에 대한 개인 음해성/음란성 비방, 의도적인 업무방해 등) 또는 광고성 게시물은 별도의 사전 통보 없이 답변이 되지 않을 수 있으며, 등록된 의견은 처리가 시작되면 수정이 불가하오니 이 점 양지하여 주시기 바랍니다." maxlength="1000"></textarea>
 					<div class="page_count">
 						<span>0</span> / <span>1000</span>
 					</div>
@@ -115,8 +116,7 @@
 					<dd>
 						<div class="att_file">
 							<label class="file">
-								<input type="file" accept="image/*" id="fileUpload" name="upload[]" multiple> 
-								<!-- <input type="hidden" class="cls"> -->
+								<input class="file" type="file" accept="image/*" name="qna_image" onchange="onFileUpload(event)"> 
 								<button type="button" class="btn04">
 									<span>파일선택</span>
 								</button>
@@ -135,7 +135,7 @@
 							</li>  -->
 						</ul><!-- 파일 첨부하면 생기는 영역 end -->
 						<p class="txt05">
-							<em>파일은 최대 3개까지 첨부 가능합니다.</em>
+							<em>파일은 1개만 첨부 가능합니다.</em>
 						</p>
 					</dd>
 				</dl>				
@@ -157,7 +157,7 @@
 			<div class="auth_list accWrap01">
 				<div class="divide">
 					<label>
-						<input type="checkbox" class="check02" id="chkAll">
+						<input type="checkbox" class="check02" id="chkAll" name=terms>
 							<span>전체동의(필수)</span>
 					</label>
 				</div>
@@ -297,10 +297,12 @@
 		</p>
 		</div>
 		<div class="pop_btn full_type">
-			<button type="button" class="btn02">
+			<button type="submit" class="btn02">
 				<span>온라인 문의 접수하기</span>
 			</button>
 		</div>
 	</div>
 </div><!-- qnaPopWrap m_Fullpopwrap end -->
+</form>
 <script src="resources/js/cs/qna_popup.js"></script>
+<jsp:include page="qna_storefind.jsp"/>

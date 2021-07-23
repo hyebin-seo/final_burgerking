@@ -1,8 +1,11 @@
 package com.burger.cs.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -84,5 +87,47 @@ public class FaqController {
 		return "user_faq";
 	}
 	
+	@RequestMapping("faqWrite.do")
+	public void MoveFranchise(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		FaqDTO dto = new FaqDTO(); 
+		
+		String faq_title = request.getParameter("faq_title"); 
+		String faq_cont = request.getParameter("faq_cont");
+		String faq_split = request.getParameter("faq_kind"); 
+		
+		String faq_kind = faq_split.split(",")[0];
+		String faq_cate = faq_split.split(",")[1];
+		
+		System.out.println(faq_title);
+		System.out.println(faq_cont);
+		System.out.println(faq_kind);
+		System.out.println(faq_cate);
+		
+		dto.setFaq_title(faq_title); 
+		dto.setFaq_cont(faq_cont);
+		dto.setFaq_kind(faq_kind);
+		dto.setFaq_cate(faq_cate);
+		
+		int check = this.dao.insertFaq(dto); 
+		
+		response.setContentType("text/html; charset-UTF-8");
+
+		PrintWriter out = response.getWriter();
+		
+		if (check > 0) {
+			out.println("<script>");
+			out.println("alert('FAQ 등록 완료')");
+			out.println("location.href='faq_home.do?faq_cate=all'");
+			out.println("</script>");
+		} else {
+			out.println("<script>");
+			out.println("alert('FAQ 등록 실패')");
+			out.println("history.back()");
+			out.println("</script>");
+		}
+		
+		
+	}
 	
 }

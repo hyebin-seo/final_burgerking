@@ -1,6 +1,6 @@
 $(function(){  
-    var article = (".flist01 .show");  
-    $(".flist01 .acc_tit_tr .acc_tit").click(function() {  
+    var article = (".tlist01 .show");  
+    $(".tlist01 .acc_tit_tr .acc_tit").click(function() {  
         var myArticle =$(this).parents().next("tr");  
         if($(myArticle).hasClass('acc_cont')) {  
             $(article).removeClass('show').addClass('acc_cont');  
@@ -12,8 +12,8 @@ $(function(){
     });  
 });  
 $(function(){  
-    var article1 = (".flist01 .open");  
-    $(".flist01 .acc_tit_tr .acc_tit").click(function() {  
+    var article1 = (".tlist01 .open");  
+    $(".tlist01 .acc_tit_tr .acc_tit").click(function() {  
         var myArticle1 =$(this).parents("tbody");  
         if($(myArticle1).hasClass('acc_body')) {  
             $(article1).removeClass('open').addClass('acc_body');  

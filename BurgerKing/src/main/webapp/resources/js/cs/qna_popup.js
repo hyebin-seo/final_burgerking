@@ -16,6 +16,8 @@ function onPopup() {
 	popup.style.display ='block';
 }
 
+
+
 /*버튼 클릭시 input 내용 삭제*/
 function del_name() { 
 	
@@ -109,43 +111,23 @@ $(document).ready(function() {
 		 $("#chkAll").prop('checked',true);
 		 }
 	})
+	
+	// 매장 선택 안함 눌렀을 때 disabled 시켜보자
+	$(".storeNone").click(function () {
+		
+		alert('선택');
+		
+		if(this.checked){
+			$(".chosenStore").attr("disabled", true);
+			$(".chosenStore").val(""); // input에 있는 값을 지워보자
+			$(".btndisabled").attr("disabled", true);
+		}else{
+			$(".chosenStore").attr("disabled", false);
+			$(".btndisabled").attr("disabled", false);
+		}
+	});
 
 })
-
-
-/*$(function(){
-	
-	var count = 0;
-	
-	
-	//여기부터
-    $("#fileUpload").change(function(){
-    	 count++;
-    	 console.log($("#fileUpload")[0].files);
-    	 fileList = $("#fileUpload")[0].files;
-    	 
-    	 if(count > 3) {
-    		 alert("파일은 최대 3개까지만 첨부 가능합니다.");
-    		 return;
-    	 }
-    	 
-    	 alert(fileList[0].name);
-    	 
-    	 if($(".cls").val().length == 0) {
-    		 $(".cls").val(fileList[0].name);
-    	 }else {
-    		 $(".cls").val($(".cls").val()+","+fileList[0].name);
-    	 }
-    	 
-    	 alert($(".cls").val());
-    	 fileListTag = '';
-    	    for(i = 0; i < count; i++){
-    	        fileListTag += "<li><div class ='att_file'><div class = 'file'><span class='file_name'>"+$(".cls").val().split(",")[i]+"</span></div><button type='button' class='btn04 del'><span>삭제</span></button></div></li>";
-    	    }
-    	    $('#fileList').html(fileListTag);
-    });
-    //여기까지
-});*/
 
 
 /*$(function(){
@@ -153,14 +135,70 @@ $(document).ready(function() {
 	    console.log($("#fileUpload")[0].files);
 	    fileList = $("#fileUpload")[0].files;
 	    fileListTag = '';
-	    for(i = 0; i < fileList.length; i++){
-	    	fileListTag += "<li><div class ='att_file'><div class = 'file'><span class='file_name'>"+fileList[i].name+"</span></div><button type='button' class='btn04 del'><span>삭제</span></button></div></li>";
-	    }
-	    $('#fileList').html(fileListTag);
+	    //for(i = 0; i < fileList.length; i++){
+	    //	fileListTag += "<li><div class ='att_file'><div class = 'file'><span class='file_name'>"+fileList[i].name+"</span></div><button type='button' class='btn04 del'><span>삭제</span></button></div></li>";
+	    //}
+	    //$('#fileList').html(fileListTag);
 	});
 });
 */
 
+//input에 선택된 파일 업로드 (파일은 1개만 처리)
+var onFileUpload = function(event) {
+	var input = event.target;
+	var file = input.files[0];
+	console.log(input.files[0]);
+	console.log(file.name);
+	var fileListTag = "<li><div class ='att_file'><div class = 'file'><span class='file_name'>"+file.name+"</span></div><button type='button' class='btn04 del' onclick='resetFile()'><span>삭제</span></button></div></li>";
+	$('#fileList').html(fileListTag);
+};
+
+//input 파일 초기화 시켜주는 버튼	
+function resetFile() {
+	alert('파일 삭제 버튼 실행');
+	const file = document.querySelector('input.file');
+	file.value = '';
+	console.log(file.name);
+	$('#fileList > li').remove();
+}
 
 
-
+// 문의 접수하기 전에 데이터 체크 하기 
+function dataCheck() {
+	
+	var email_check = $('input[name=qna_email]').val();
+	var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+	
+	if($("input[name='qna_name']").val() ==''){
+		alert("이름을 입력하세요");
+		return false;
+	}
+	else if($("input[name='qna_phone']").val() ==''){
+		alert("연락처를 입력하세요"); 
+		return false;
+	}else if( !regExp.test($("input[name='qna_phone']").val())){
+		alert("정확한 연락처를 입력하세요"); 
+		return false;
+	}
+	else if($("input[name='qna_email']").val() ==''){
+		alert("이메일을 입력하세요"); 
+		return false;
+	}else if(email_check == '' || email_check.indexOf('@') == -1 || email_check.indexOf('.') == -1) {
+		alert("이메일을 정확히 입력하세요"); 
+		return false;
+	}
+	else if($("input[name='qna_title']").val() ==''){
+		alert("제목을 입력하세요"); 
+		return false;
+	}
+	else if($("textarea[name='qna_content']").val() ==''){
+		alert("내용을 입력하세요"); 
+		return false;
+	}
+	else if($("input:checkbox[name=terms]").is(':checked') == false){
+		alert("필수약관에 동의해 주세요.");
+		return false;
+	}
+	
+	return true;
+}

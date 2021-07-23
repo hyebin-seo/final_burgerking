@@ -21,4 +21,5 @@ public class FranchiseDTO {
 	private String fran_job; 
 	private String fran_opinion; // 추가 의견
 	private String fran_regdatea; // 신청일 
+	private String fran_status; // 상태 (접수 완료가 기본 값)
 }
