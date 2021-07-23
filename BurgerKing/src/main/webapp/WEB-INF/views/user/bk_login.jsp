@@ -16,7 +16,7 @@
 	rel="stylesheet">
 <!-- Lgoin.css 연결 -->
 <link rel="stylesheet" href="resources/css/user/Login2.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="resources/js/login/bk_login.js"></script>
 
 

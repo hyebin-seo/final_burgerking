@@ -243,10 +243,10 @@ public class LoginController {
 
 		String random = s + num;
 		
-		String info = "안녕하세요. 고객님\n 보인인증을 위한 번호를 다음과 같이 보내드립니다." 
-				 + "\n 보인인증번호 :"+random;
+		String info = "안녕하세요. 고객님\n 본인인증을 위한 번호를 다음과 같이 보내드립니다." 
+				 + "\n 본인인증번호 :"+random;
 		
-		EmailService.sendMail(user_email, "보인인증", info);
+		EmailService.sendMail(user_email, "본인인증", info);
 		
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		
@@ -290,8 +290,8 @@ public class LoginController {
 			String random = s + num;
 
 			String info = "안녕하세요." + dto.getUser_name() + "회원님\n 비밀번호 재설정을 위한 경로를 다음과 같이 보내드립니다." + "\n 아이디 :"
-					+ dto.getUser_id() + "" + "\n 임시비밀번호 :" + random + 
-					"비밀번호 재설정 경로 : http://localhost:8765/burger/auth_pwd.do?user_id="+dto.getUser_id();
+					+ dto.getUser_id()+ 
+					"비밀번호 재설정 경로 : http://localhost:8585/burger/auth_pwd.do?user_id="+dto.getUser_id();
 
 			EmailService.sendMail(dto.getUser_id(), "버거킹 임시비밀번호 변경 인증안내", info);
 
@@ -324,7 +324,7 @@ public class LoginController {
 
 		System.out.println("user_id>>"+user_id);
 		
-     model.addAttribute("user_id", user_id);
+        model.addAttribute("user_id", user_id);
 
 		
 		return "user/change_pwd";

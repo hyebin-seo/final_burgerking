@@ -164,7 +164,7 @@ public class SNSController {
 
 		}
 
-		return "deliveryHome";
+		return "delivery/deliveryHome";
 	}
 
 	@Autowired

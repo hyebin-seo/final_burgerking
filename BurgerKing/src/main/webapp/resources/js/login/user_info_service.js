@@ -157,7 +157,7 @@ var auth_real = "";
 function check(jsonStr) {
 	auth_real = jsonStr.random;
 
-	alert(auth_real);
+	
 }
 
 $(document).ready(function() {

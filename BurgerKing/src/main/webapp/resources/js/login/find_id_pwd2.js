@@ -44,6 +44,7 @@ $('button.btn_view01').click(function() {
 		});
 	
 	
+	/* 아이디 찾기*/	
 	
 	$('input.st02.user_name').keyup(function(){
 	  
@@ -60,20 +61,52 @@ $('button.btn_view01').click(function() {
 	
 	   
 	     if($('input.st02.user_phone').val() != ""){
-	        $('p.txt:nth-child(2)').css('display','none');
+	        $('p.txt.phone').css('display','none');
 	        if($('input.st02.user_phone').val().length < 11){
-	         $('p.txt:nth-child(3)').css('display','inline-block');
+	         $('p.txt.check_phone').css('display','block');
 	        }else{
-	          $('p.txt:nth-child(2)').css('display','none');
-	          $('p.txt:nth-child(3)').css('display','none');
+	          $('p.txt.phone').css('display','none');
+	          $('p.txt.check_phone').css('display','none');
 	        }
 	       
 	     }else{
-	      $('p.txt:nth-child(2)').css('display','inline-block');
-	       $('p.txt:nth-child(3)').css('display','none');
+	       $('p.txt.phone').css('display','block');
+	        $('p.txt.check_phone').css('display','none');
 	     }
 	});
 	
+  /* 비밀번호 찾기*/	
+	
+	$('input.st02.pwd_name').keyup(function(){
+	  
+	   
+	     if($('input.st02.pwd_name').val() != ""){
+	        $('p.txt.pwd').css('display','none');
+	     }else{
+	       $('p.txt.pwd').css('display','inline-block');
+	     }
+	});
+	
+	
+	
+	$('input.st02.pwd_email').keyup(function(){
+	
+	
+	   
+	     if($('input.st02.pwd_email').val() != ""){
+	        $('p.txt.email').css('display','none');
+	        if($('input.st02.pwd_email').val().indexOf("@") === -1){
+	         $('p.txt.email_check').css('display','inline-block');
+	        }else{
+	            $('p.txt.email').css('display','none');
+	          $('p.txt.email_check').css('display','none');
+	        }
+	       
+	     }else{
+	         $('p.txt.email_check').css('display','none');
+	      $('p.txt.email').css('display','block');
+	     }
+	});
 	
 	
 	

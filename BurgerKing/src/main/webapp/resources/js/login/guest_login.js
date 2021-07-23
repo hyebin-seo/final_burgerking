@@ -79,7 +79,7 @@ $(document).ready(function() {
 
 	function check(jsonStr) {
 		auth_real = jsonStr.random;
-		alert(auth_real);
+	
 	}
 
 
@@ -157,7 +157,7 @@ function go() {
 	if (guest_pwd != '' && pwd_check != '') {
 		if (guest_pwd === pwd_check) {
 
-			alert('안녕');
+			
 
 
           var form = document.guest
