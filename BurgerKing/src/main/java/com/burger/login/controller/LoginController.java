@@ -377,10 +377,28 @@ public class LoginController {
        
 		String random = s + num;
 		//난수설정 
-		
-		
+		//문자보내는API
+        String api_key = "NCS7DA99XQHE2RLT"; //위에서 받은 api key를 추가
+        String api_secret = "1PCO7UNCSH6LNSO6H9P67UVMSPYKEG9D";  //위에서 받은 api secret를 추가
+        Message coolsms = new Message(api_key, api_secret);
 
         HashMap<String, String> set = new HashMap<String, String>();
+        set.put("to", guest_phone); // 수신번호
+
+        set.put("from", "01063082509"); // 발신번호
+        set.put("text", random); // 문자내용
+        set.put("type", "sms"); // 문자 타입
+
+        System.out.println(set);
+
+        JSONObject result = (JSONObject) coolsms.send(set); // 보내기&전송결과받기
+        
+        System.out.println(result);
+        System.out.println(set);
+        
+       
+       
+       
        
         set.put("random", random);
 
