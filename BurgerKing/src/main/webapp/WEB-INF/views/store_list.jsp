@@ -11,11 +11,13 @@
 <link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/event.js"></script>
-		<%-- <jsp:include page="header.jsp" /> --%>
+		<jsp:include page="header.jsp" />	
+		
 </head>
 <body>
-		
-		<jsp:include page="event_menu.jsp" />	
+		<div id = "menu_m">
+		<jsp:include page="store_menu.jsp" />	
+		</div>
 		 <div class="contentsBox01 bg_w">
 		 	<div class="web_container">
 		 		
@@ -40,12 +42,13 @@
 	      <c:if test="${!empty list }">
 	         <c:forEach items="${list }" var="dto">
 	            <tr id = "tr0">
-	               	<td id = "td0" rowspan="2"> 
+	               	<td id = "td0" rowspan="2" >
+	               
 	               	
 	               		<a href="<%=request.getContextPath() %>/store_cont.do?no=${dto.getStore_no() }&page=${Paging.getPage() }">	               			
 	               		<img src="../../burger/resources/img/nstore/${dto.getStore_thum() }"  alt="이미지없음" width="530px;" height="210px;">
 	              				<br>	               					
-	               			<p><fmt:formatDate value="${dto.getStore_regdate() }"
+	               			<p id= "p2"><fmt:formatDate value="${dto.getStore_regdate() }"
 	               				pattern="yyyy-MM-dd"/></p>
 	            		</a>
 	            		
@@ -70,11 +73,13 @@
 	   		
 	   </div>
 	  
-	   <hr class="hr1">
-	    		<div align="center">
+	  	<div align="center">
 	            <input type="button" class="btn_list" value="스토어작성"
 	                 onclick="location.href='store_write.do'">
 	         	</div>
+	         	
+	   <hr class="hr1">
+	    		
 	<%-- 페이징 처리 부분 --%>
       <div class="text">
       <c:forEach begin="${Paging.getStartBlock() }"
@@ -93,4 +98,7 @@
 	
 
 </body>
+<div id = "footer_m">
+<jsp:include page="footer.jsp" />
+</div>
 </html>

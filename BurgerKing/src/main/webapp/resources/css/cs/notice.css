@@ -16,11 +16,11 @@
     border: 0;
     height: 3px;
     background: #000;
-   max-width: 100%;
+    max-width: 70%;
 }
 
 .table1 {
-	 width : 100%;
+	 width : 70%;
 	 border-spacing:  30px;
 	 
 }
@@ -53,6 +53,13 @@
 }
 
 
+#menu_m{
+	margin-top: 5%;
+}
+
+#footer_m{
+	margin-top: 5%;
+}
 #tr1 {		
 	font-family: 'S-CoreDream-5Medium';
 	height: 20px;
@@ -135,7 +142,7 @@
 		
 	display: inline-block;
     height: 50px;
-    width : 50%;
+    width : 30%;
     background: url(../../img/cs/barB.png) no-repeat bottom;
     border: 0;
     outline: none;

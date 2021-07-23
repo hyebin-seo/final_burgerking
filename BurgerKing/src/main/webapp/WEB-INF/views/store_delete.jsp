@@ -10,8 +10,13 @@
 <link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+	<jsp:include page="header.jsp" />
 <body>
 
+	<div id = "menu_m">
+		<jsp:include page="store_menu.jsp" />	
+	  	</div>
+	  	
 	<div align="center">
 	  
 	      <h1>매장 삭제시 복구되지 않습니다.</h1>
@@ -40,4 +45,7 @@
 	</div>
 
 </body>
+<div id = "footer_m">
+<jsp:include page="footer.jsp" />
+</div>
 </html>

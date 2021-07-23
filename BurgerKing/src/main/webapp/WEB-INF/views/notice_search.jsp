@@ -10,8 +10,11 @@
 <link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+	<jsp:include page="header.jsp" />	
 <body>
+	<div id = "menu_m">
 	<jsp:include page="cs_menu.jsp" />
+	</div>
 	<div class = "notice_search" align="center">	     
 	   <table class = "table1">
 	   
@@ -81,4 +84,5 @@
       </div> 
 
 </body>
+<jsp:include page="footer.jsp" />
 </html>

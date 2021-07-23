@@ -25,24 +25,20 @@ $(document).ready(function () {
 		$(this).parent("li").addClass("on");
 		
 		// cs_카테고리
-		var cs_menu = $(this).children("span").text();
+		var event_menu = $(this).children("span").text();
 		
-		if(cs_menu == ""){
+		if(event_menu == "전체"){
 			
 			location.href = "event_list.do";
 			
-		}else if(cs_menu == "FAQ") {
+		}else if(event_menu == "진행중") {
 			
-			location.href = "faq_home.do?faq_cate=all";	
+			location.href = "event_ing.do";	
 			
-		}else if(cs_menu == "문의") {
+		}else {
 			
-			location.href = "Qna.do"; 
-			
-		}else {		// 가맹점문의
-			location.href = "Franchise.do";
-		}
-		
+			location.href = "event_end.do"; 			
+		}		
 	});
 	
 });

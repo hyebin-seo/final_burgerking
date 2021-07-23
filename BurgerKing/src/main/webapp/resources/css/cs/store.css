@@ -272,3 +272,8 @@ button {
 .tab_storyBtn li.on+li button {
     border-left: none;
 }
+
+#p2{
+	 font-family: 'S-CoreDream-9Black';
+	 float: left;
+}

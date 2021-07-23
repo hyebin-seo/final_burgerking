@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*폰트 적용*/
+폰트 적용
 @font-face {
      font-family: 'S-CoreDream-9Black';
      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
@@ -14,7 +14,7 @@
      font-style: normal;
 }
 
-body {
+ body {
     min-height: 100%;
     color: #000;
     background: #f2ebe6;
@@ -22,12 +22,20 @@ body {
     word-break: keep-all;
 }
 
+#menu_m{
+	margin-top: 5%;
+}
+
+#footer_m{
+	margin-top: 5%;
+}
 
 element.style {
 }
 .eventWrap .contentsBox01 {
     padding: 50px 0 120px;
 }
+
 .contentsBox01 {
     padding: 50px 0 45px;
 }
@@ -72,6 +80,7 @@ dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
     top: 50%;
     margin: -17.5px 0 0;
 }
+
 .tab01 {
     margin-bottom: 20px;
     overflow: auto;
@@ -101,6 +110,7 @@ dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
     height: 54px;
     padding: 5px 0;
 }
+
 .tab01 a, .tab01 button {
     display: inline-block;
     padding: 10px 1px;
@@ -219,14 +229,14 @@ ul {
    max-width: 100%;
 }
 
-.table1 {
+ .table1 {
 	 width : 100%;
-	 /* border-spacing:  30px;
-	  */
+	 /* border-spacing:  30px; */
+	 
 	 margin-top: 5%;
 	
 }
-
+ 
 
 
 .table1 th {
@@ -238,27 +248,23 @@ ul {
 	background: #FAFAFA;		
 }
 
-.table1 td{
+
+
+ #tr0{
+
 	
-	height: 30px; 
-	padding: 0px;
-	font-size: 20px;
-	text-align: center;
-	vertical-align: middle;
-	font-family: 'S-CoreDream-5Medium';
-	
-}
+} 
+ 
 
 .table2 {
 	 width : 70%;
 	 border-spacing:  30px;
 }
 
-#tr0{
-	/* display: inline-block; */
-	
-} 
 
+
+  
+ 
 
 a{	  
    font-size: 1.25rem;
@@ -267,7 +273,8 @@ a{
   		
 }
 
-p{
+
+#p2{
 	 font-family: 'S-CoreDream-9Black';
 	 float: left;
 }
@@ -367,7 +374,7 @@ p{
     }
 
 
-/*페이징 디자인*/
+
 .text{
    text-align: center; 
 }
@@ -379,8 +386,24 @@ p{
    text-decoration: none; 
    color : #000;
    min-width: 1.5em;
-}
+   
+} 
+
+
 
 ::marker {
    display: none;
 }
+
+/* 
+.table1 td{
+	
+	height: 200px; 	
+	padding: 0px;
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+	font-family: 'S-CoreDream-5Medium';
+	
+} */
+ 

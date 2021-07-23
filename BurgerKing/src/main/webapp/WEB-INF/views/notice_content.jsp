@@ -10,11 +10,15 @@
 <title>Insert title here</title>
 <link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<jsp:include page="header.jsp" />
 </head>
 <body>
 	
+	<div id = "menu_m">
 	<jsp:include page="cs_menu.jsp" />
-	<hr class="hr1">	
+	</div>
+	<hr class="hr1">
+		
 	  
 	  	<div class="notice_content" align="center">	   
 	    <table class= "table2">
@@ -88,4 +92,7 @@
 	
 
 </body>
+<div id = "footer_m">
+<jsp:include page="footer.jsp" />
+</div>
 </html>

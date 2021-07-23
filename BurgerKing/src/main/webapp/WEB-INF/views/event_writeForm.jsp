@@ -10,10 +10,13 @@
 <title>Insert title here</title>
 <link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+	<jsp:include page="header.jsp" />	
 </head>
 <body>
-
+	<div id = "menu_m">
+		<jsp:include page="store_menu.jsp" />	
+	  </div>
+	  	
 	<hr class="hr1">
 	  
   
@@ -25,20 +28,34 @@
 	      <div class = "event_write" align="center">
 	     <table class= "table2">
 	 		    <h1>이벤트 작성</h1>
-	         <tr id = "tr1">
-	        	
-	         <th>이벤트제목</th>
-	         	<td> <input type="text" name="event_title" size="100px"> </td>
+	         
+	         <tr id = "tr1">	        	
+	         	<th>이벤트제목</th>
+	         		<td> <input type="text" name="event_title" size="100px"> </td>
 	      	 </tr>
+	      	 
+	      	 
+	      	 <tr id = "tr1">
+	      	 	 <th>카테고리</th>
+	         		<!-- <td> <input type="text" name="event_cat" size="100px"> </td> -->
+	         		<td>
+	         		<select name = "event_cat">
+	         		<option value="진행중">진행중</option>
+	         		<option value="종료">종료</option>
+	         		</select>
+	         		</td>		
+	      	 </tr>
+	      	 
+	      	 
 	      	 
 	      	  <tr>
 	           	<th>이벤트 상세이미지</th>
-	         	<td> <input type="file" name="event_image"></td>	         	
-	         </tr>		  				
+	         		<td> <input type="file" name="event_image"></td>	         	
+	         	</tr>		  				
 	          
 	         <tr>
-	          <th>썸네일</th>
-	         	<td> <input type="file" name="event_thum" > </td>
+	         	 <th>썸네일</th>
+	         		<td> <input type="file" name="event_thum" > </td>
 	      	 </tr>
 	          
 	          
@@ -90,4 +107,7 @@
 	</div>
 
 </body>
+<div id = "footer_m">
+<jsp:include page="footer.jsp" />
+</div>
 </html>

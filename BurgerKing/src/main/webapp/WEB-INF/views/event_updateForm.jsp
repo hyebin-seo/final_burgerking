@@ -10,9 +10,16 @@
 <title>Insert title here</title>
 <link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<jsp:include page="header.jsp" />	
+	
 </head>
 <body>
 
+	<div id = "menu_m">
+		<jsp:include page="event_menu.jsp" />	
+	  	</div>
+	  	
 	<hr class="hr1">	
    
     <br> <br>
@@ -36,12 +43,7 @@
 	         	          value="${dto.getEvent_title() }" size="100px"> </td>
 	         </tr>
 	         
-	         <tr id = "tr1">
-	         	<th>이벤트사진</th>
-	         	<td> 
-					<textarea rows="30" cols="100" name="event_image">${dto.getEvent_image() }</textarea>
-	         	</td>
-	         </tr>
+	         
 	         
 	         <tr id = "tr1">
 	         	<th>이벤트내용</th>
@@ -50,6 +52,16 @@
 	         	</td>
 	         </tr>
 	      	 
+	      	  <tr id = "tr1">
+	      	 	 <th>카테고리</th>
+	         		<!-- <td> <input type="text" name="event_cat" size="100px"> </td> -->
+	         		<td>
+	         		<select name = "event_cat">
+	         		<option value="진행중">진행중</option>
+	         		<option value="종료">종료</option>
+	         		</select>
+	         		</td>		
+	      	 </tr>
 	        
 	    
 	      </table>
@@ -66,4 +78,7 @@
 	</div>
 
 </body>
+<div id = "footer_m">
+<jsp:include page="footer.jsp" />
+</div>
 </html>

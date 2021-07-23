@@ -42,12 +42,11 @@
 		select * from store where store_no = #{no}
 	</select>
 	
-	<update id="s_edit" parameterType="com.burger.event.model.NStoreDTO">
+	 <update id="s_edit" parameterType="com.burger.event.model.NStoreDTO">
 		update store set store_title = #{store_title},
-		    store_cont = #{store_cont},
-		    	store_image = #{store_image}
+		    store_cont = #{store_cont}		    	
 		    	 where store_no = #{store_no}
-	</update>
+	</update> 
 	
 	<delete id="s_del" parameterType="int">
 		delete from store where store_no = #{no}
