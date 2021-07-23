@@ -127,17 +127,22 @@ public class LoginController {
 	// 로그인 메서드
 	@RequestMapping("login_Ok.do")
 	public String login_ok(UserDTO dto, HttpServletResponse response, HttpSession session) throws IOException {
+		
+		
+		System.out.println("dto>>"+dto);
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter script = response.getWriter();
 
 		dto = this.dao.checkId_pwd(dto);
+		
+		System.out.println("check>>"+dto);
 
 		if (dto != null) {
 			
 			session.setMaxInactiveInterval(60*120); // 120분간유효
 			session.setAttribute("memberSession", dto);
 			
-			
+			return "delivery/deliveryHome";
 		} else {
 			script.println("<script>");
 			script.println("alert('아이디 및 비밀번호를 확인해주세요.')");
@@ -145,7 +150,9 @@ public class LoginController {
 			script.println("</script>");
 		}
 		
-		return "delivery/deliveryHome";
+		
+		
+		return null;
 
 	}
 

@@ -16,8 +16,9 @@
 	rel="stylesheet">
 <!-- Lgoin.css 연결 -->
 <link rel="stylesheet" href="resources/css/user/Login2.css">
-
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="resources/js/login/bk_login.js"></script>
+
 
 
 
@@ -172,6 +173,8 @@
 								<legend>로그인</legend>
 								<h3 class="tit01 tit_ico key02">일반 로그인</h3>
 								<div class="cont">
+								<!-- 7/23 form 태그 추가(s에서 안먹힘) -->
+								<form action="login_Ok.do" name="form" method="post">
 									<div class="inpbox">
 										<label><span class="hide">ID</span><input type="text"
 											placeholder="아이디 (이메일)" name="user_id" class="user_id">
@@ -188,15 +191,18 @@
 												<span>입력 텍스트 보기</span>
 											</button></label>
 									</div>
+									
 									<div class="login_option">
 										<label class="checkbox"><input type="checkbox"><span>아이디
 												저장</span></label><label class="checkbox"><input type="checkbox"><span>자동
 												로그인</span></label>
 									</div>
 									<div class="c_btn item2">
-										<a class="btn01 m red"><span class="jun">로그인</span></a> <a
+										<a class="btn01 m red" onclick="go()"><span class="jun">로그인</span></a> <a
 											href="move_join.do" class="btn01 m"><span>회원가입</span></a>
 									</div>
+									</form>
+									<!-- 7/23 form 태그 추가(s에서 안먹힘) -->
 									<div class="login_menu">
 										<a href="find_id_pwd.do" class=""><span>아이디 찾기</span></a><a
 											href="move_pwd.do?sepwd=sepwd" class=""><span>비밀번호 찾기</span></a>
@@ -346,6 +352,6 @@
 		<!---->
 		<a href="#app" class="btn_top" style="display: none;">Top</a>
 	</div>
-	<script type="text/javascript" src="resources/js/login/bk_login.js"></script>
+	
 </body>
 </html>
