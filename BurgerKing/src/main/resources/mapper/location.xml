@@ -6,9 +6,9 @@
 <mapper namespace="com.burger.location.model.LocationDAO">
 	
 	<insert id="insertLocation" parameterType="com.burger.location.model.LocationDTO">
-		insert into my_location values((select count(*) from my_location) + 1,
-			#{user_id}, #{loc_addr1}, #{loc_addr2}, #{loc_addr3},
-			#{loc_nickname}, default)
+		insert into my_location values((select max(loc_no+1) from my_location),
+		#{user_id}, #{loc_addr1}, #{loc_addr2}, #{loc_addr3},
+		#{loc_nickname}, default)
 	</insert>
 	
 	<select id="myLocList" resultType="com.burger.location.model.LocationDTO">

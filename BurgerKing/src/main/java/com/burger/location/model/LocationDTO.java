@@ -13,5 +13,6 @@ public class LocationDTO {
 	private String loc_my;
 	private String loc_nickname;
 	private String loc_default;
+	private String path;			// 경로 전달하기 위한 멤버. DB에는 없습니당
 
 }

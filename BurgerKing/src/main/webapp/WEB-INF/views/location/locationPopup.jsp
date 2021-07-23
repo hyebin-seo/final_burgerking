@@ -10,7 +10,15 @@
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7l0mvlbzl6&submodules=geocoder"></script>
 <body>
 
-
+<!-- MY배송지 등록하기 위한 폼 -->
+<form name="lform" method="post" action="location_insert.do">
+	<input type="hidden" name="user_id" value="${memberSession.user_id }">
+	<input type="hidden" name="loc_addr1">
+	<input type="hidden" name="loc_addr2">
+	<input type="hidden" name="loc_addr3">
+	<input type="hidden" name="loc_nickname">
+	<input type="hidden" name="path">
+</form>
 
 <!-- 주소지 찾기 팝업 -->
 <div class="popWrap m_FullpopWrap">
@@ -111,13 +119,13 @@
         </div>
     </div>
     
-    <div class="popbox01 " style="display: none;">
+    <div class="popbox01 nick" style="display: none;">
         <div class="popcont">
             <p class="poptxt01"><strong>별칭을 지정하여 <br><em>MY배달지</em>로 등록하세요.</strong></p>
             <div class="inpbox"><input type="text" placeholder="" maxlength="10"><button type="button" class="btn_del01 " style="display: none;"><span>입력 텍스트 삭제</span></button></div>
             <div class="page_count"><span>0</span> / <span>10</span></div>
         </div>
-        <div class="pop_btn c_btn item2"><a class="btn02 m_btn01_s dark"><span>취소</span></a><a class="btn02 m_btn01_s red"><span>등록</span></a></div>
+        <div class="pop_btn c_btn item2"><a class="btn02 m_btn01_s dark"><span>취소</span></a><a class="btn02 m_btn01_s submit red"><span>등록</span></a></div>
     </div>
 </div>
 

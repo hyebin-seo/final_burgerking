@@ -1,3 +1,22 @@
+const openBtn = document.querySelector(".btn_nutrition");
+const closeBtn = document.querySelector(".btn_close");
+const popup = document.querySelector(".ingredientPopWrap");
+
+// 팝업 띄우기 액션
+openBtn.addEventListener('click', onPopup);
+// 팝업 X버튼 액션
+closeBtn.addEventListener('click', offPopup);
+
+function offPopup() {
+	popup.style.display ='none';
+}
+
+function onPopup() {
+	popup.style.display ='block';
+}
+
+
+
 $(document).ready(function () {
 	
 	// 이전(<) 버튼을 클릭했을 때

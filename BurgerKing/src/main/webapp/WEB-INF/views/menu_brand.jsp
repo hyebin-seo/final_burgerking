@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,7 @@
 		<div class="WEB locationWrap">
 			<div class="web_container">
 				<div class="page_navi">
-					<a href="#" class>
+					<a href="/burger/" class>
 						<span>HOME</span>
 					</a>
 					<span>메뉴소개</span>
@@ -78,8 +79,8 @@
 					</div>
 				</div>
 				<div class="tab_cont">
-					<%-- <h4 class="hide">프리미엄</h4>
-					<input id="nowcat" type='hidden' value='${cat }'>
+					<h4 class="hide">프리미엄</h4>
+					<input id="nowcat" type="hidden" value="${cat }">
 					<ul class="prdmenu_list">
 						<c:forEach items="${list }" var="menu">
 							<li>
@@ -105,7 +106,7 @@
 								</a>
 							</li>
 						</c:forEach>
-					</ul> --%>
+					</ul>
 				</div>
 			</div>
 		</div>		<!-- 메뉴판 영역 끝 -->

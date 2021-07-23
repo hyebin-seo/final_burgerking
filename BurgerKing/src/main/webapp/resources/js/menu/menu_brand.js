@@ -3,10 +3,13 @@ window.onload = function() {
 	
 	var nowcat = $("#nowcat").val();
 	
+	//alert(nowcat);
+	
 	if(nowcat == null) {
 		nowcat="스페셜&할인팩";
 		
-		getMenuList(nowcat);
+		//getMenuList(nowcat);
+		location.href="menu_brand.do?category="+nowcat.replace(/&/g,"%26");
 	} 
 	
 	$(".tab01 li").removeClass("on");
@@ -32,9 +35,9 @@ $(document).ready(function () {
 		var cat = $(this).children("span").text();
 		
 		// ajax 호출
-		getMenuList(cat);
+		//getMenuList(cat);
 		
-		//location.href="menu_brand.do?category="+cat.replace(/&/g,"%26");
+		location.href="menu_brand.do?category="+cat.replace(/&/g,"%26");
 		
 	});
 	

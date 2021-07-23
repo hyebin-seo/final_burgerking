@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +18,7 @@
 	<c:set var="dto" value="${dto }" />
 	<c:set var="setList" value="${setList }" />
 	<c:set var="catMenuList" value="${catMenuList }" />
+	<c:set var="cat" value="${dto.getMenu_cat() }" />
 	
 	<input type="hidden" class="catMenuListSize" value="${catMenuList.size() }">
 	
@@ -23,18 +26,18 @@
 		<div class="WEB locationWrap">
 			<div class="web_container">
 				<div class="page_navi">
-					<a href="#" class>
+					<a href="/burger/" class>
 						<span>HOME</span>
 					</a>
-					<a href="#" class>
+					<a href="menu_brand.do?category=${fn:replace(cat, '&', '%26')}" class>
 						<span>메뉴소개</span>
 					</a>
-					<a href="#" class>
+					<a href="menu_brand.do?category=${fn:replace(cat, '&', '%26')}" class>
 						<span>${dto.getMenu_cat() }</span>
 					</a>
-					<a href="#" class>
-						<span>${dto.getMenu_name() }</span>
-					</a>
+					<span>
+						${dto.getMenu_name() }
+					</span>
 				</div>
 			</div>
 		</div>
@@ -44,7 +47,7 @@
 					<strong class="tit">
 						<span>${dto.getMenu_name() }</span>
 					</strong>
-					<p>
+					<p class="subtxt">
 						<span>${dto.getMenu_sentence() }</span>
 					</p>
 				</div>
@@ -58,7 +61,7 @@
 		</div>
 		<div class="contentsBox02 menu_subinfoWrap">
 			<div class="web_container">
-				<a class="btn_back">
+				<a class="btn_back" href="menu_brand.do?category=${fn:replace(cat, '&', '%26')}">
 					<span>메뉴 목록으로 돌아가기</span>
 				</a>
 				<div class="nutrition_info">
@@ -286,6 +289,7 @@
 		</div>
 	</div>
 
+<jsp:include page="ingredient/ingredientPopup.jsp" />
 <script src="resources/js/menu/menuDetail.js"></script>
 </body>
 <!-- 감자 인클루드하기 -->
