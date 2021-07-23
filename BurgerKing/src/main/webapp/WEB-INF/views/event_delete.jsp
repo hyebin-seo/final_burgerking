@@ -9,9 +9,14 @@
 <title>Insert title here</title>
 <link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<jsp:include page="header.jsp" />	
 </head>
 <body>
 
+	<div id = "menu_m">
+		<jsp:include page="event_menu.jsp" />	
+	 </div>
+	  	
 	<div align="center">
 	  
 	      <h1>이벤트 삭제시 복구되지 않습니다.</h1>
@@ -40,4 +45,7 @@
 	</div>
 
 </body>
+<div id = "footer_m">
+<jsp:include page="footer.jsp" />
+</div>
 </html>

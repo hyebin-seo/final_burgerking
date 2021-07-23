@@ -10,10 +10,12 @@
 <link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
+		<jsp:include page="header.jsp" />	
 </head>
 <body>
+		<div id = "menu_m">
 		<jsp:include page="cs_menu.jsp" />	
+	  	</div>
 	  	<div class = "notice_list" align="center">
 	    <table class = "table1">
 	    
@@ -89,5 +91,7 @@
 
 
 </body>
+<div id = "footer_m">
 <jsp:include page="footer.jsp" />
+</div>
 </html>

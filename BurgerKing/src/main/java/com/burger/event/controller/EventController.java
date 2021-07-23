@@ -63,6 +63,56 @@ public class EventController {
 		return "event_list";
 	}
 	
+	@RequestMapping("event_ing.do")
+	public String list2(HttpServletRequest request, Model model) {
+
+		int page = 1; // 현재 페이지 변수
+
+		if (request.getParameter("page") != null) {
+			page = Integer.parseInt(request.getParameter("page"));
+		} else {
+			page = 1; // 처음으로 "게시물 전체 목록" 태그를 클릭한 경우
+		}
+
+		// DB상의 전체 게시물의 수를 확인하는 작업.
+		totalRecord = this.dao.getListCount();
+
+		PageDTO dto = new PageDTO(page, rowsize, totalRecord);
+
+		// 페이지에 해당하는 게시물을 가져오는 메서드 호출
+		List<EventDTO> pageList = this.dao.getEventList2(dto);
+
+		model.addAttribute("List", pageList);
+		model.addAttribute("Paging", dto);
+
+		return "event_ing";
+	}
+	
+	@RequestMapping("event_end.do")
+	public String list3(HttpServletRequest request, Model model) {
+
+		int page = 1; // 현재 페이지 변수
+
+		if (request.getParameter("page") != null) {
+			page = Integer.parseInt(request.getParameter("page"));
+		} else {
+			page = 1; // 처음으로 "게시물 전체 목록" 태그를 클릭한 경우
+		}
+
+		// DB상의 전체 게시물의 수를 확인하는 작업.
+		totalRecord = this.dao.getListCount();
+
+		PageDTO dto = new PageDTO(page, rowsize, totalRecord);
+
+		// 페이지에 해당하는 게시물을 가져오는 메서드 호출
+		List<EventDTO> pageList = this.dao.getEventList3(dto);
+
+		model.addAttribute("List", pageList);
+		model.addAttribute("Paging", dto);
+
+		return "event_end";
+	}
+	
 	@RequestMapping("event_write.do")
 	public String write() {
 
@@ -78,6 +128,7 @@ public class EventController {
 
 		String aa = request.getParameter("event_title");
 		String bb = request.getParameter("event_cont");
+		String cc = request.getParameter("event_cat");
 	
 		/*
 		 * String ff = "event1.png"; String ee = "thum1.png";
@@ -94,6 +145,7 @@ public class EventController {
 		
 		dto.setEvent_title(aa);
 		dto.setEvent_cont(bb);		
+		dto.setEvent_cat(cc);		
 							
 
 		dto.setEvent_image(ff);

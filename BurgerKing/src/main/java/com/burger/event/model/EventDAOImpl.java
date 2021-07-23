@@ -25,6 +25,18 @@ public class EventDAOImpl implements EventDAO {
 	}
 
 	@Override
+	public List<EventDTO> getEventList2(PageDTO dto) {
+		return this.sqlSession.selectList("e_list2", dto);
+	}
+	
+
+	@Override
+	public List<EventDTO> getEventList3(PageDTO dto) {
+		return this.sqlSession.selectList("e_list3", dto);
+	}
+
+	
+	@Override
 	public int insertEvent(EventDTO dto) {
 		return this.sqlSession.insert("e_add", dto);
 	}
@@ -55,6 +67,8 @@ public class EventDAOImpl implements EventDAO {
 		this.sqlSession.update("e_seq", no);
 		
 	}
+
+	
 	
 	
 

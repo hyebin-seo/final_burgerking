@@ -171,12 +171,12 @@ public void uploadOk(MultipartHttpServletRequest mRequest, HttpServletRequest re
 
 		if (check > 0) {
 			out.println("<script>");
-			out.println("alert('공지사항 수정 완료')");
+			out.println("alert('스토어 수정 완료')");
 			out.println("location.href='store_cont.do?no=" + dto.getStore_no() + "&page=" + nowPage + "'");
 			out.println("</script>");
 		} else {
 			out.println("<script>");
-			out.println("alert('공지사항 수정 실패 ')");
+			out.println("alert('스토어 수정 실패 ')");
 			out.println("history.back()");
 			out.println("</script>");
 		}

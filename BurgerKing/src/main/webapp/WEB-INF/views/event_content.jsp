@@ -11,8 +11,13 @@
 <link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+	<jsp:include page="header.jsp" />	
 <body>
 	
+	<div id = "menu_m">
+		<jsp:include page="event_menu.jsp" />	
+	 </div>
+	  	
 	<hr class="hr1">	
 	  
 	  	<div class="event_content" align="center">	   
@@ -85,4 +90,8 @@
 	
 
 </body>
+
+<div id = "footer_m">
+<jsp:include page="footer.jsp" />
+</div>
 </html>

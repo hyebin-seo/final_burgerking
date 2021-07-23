@@ -11,11 +11,14 @@
 <link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/event.js"></script>
-		<%-- <jsp:include page="header.jsp" /> --%>
+		<jsp:include page="header.jsp" />
 </head>
 <body>
 		
+		<div id = "menu_m">
 		<jsp:include page="event_menu.jsp" />	
+	  	</div>
+	  		
 		 <div class="contentsBox01 bg_w">
 		 	<div class="web_container">
 		 		
@@ -45,7 +48,7 @@
 	               		<a href="<%=request.getContextPath() %>/event_cont.do?no=${dto.getEvent_no() }&page=${Paging.getPage() }">	               			
 	               		<img src="../../burger/resources/img/event/${dto.getEvent_thum() }"  alt="이미지없음" width="530px;" height="210px;">
 	              				<br>	               					
-	               			<p><fmt:formatDate value="${dto.getEvent_regdate() }"
+	               			<p id = "p2"><fmt:formatDate value="${dto.getEvent_regdate() }"
 	               				pattern="yyyy-MM-dd"/></p>
 	            		</a>
 	            		
@@ -69,12 +72,12 @@
 	   </table>
 	   		
 	   </div>
-	  
-	   <hr class="hr1">
 	    		<div align="center">
 	            <input type="button" class="btn_list" value="이벤트작성"
 	                 onclick="location.href='event_write.do'">
 	         	</div>
+	   <hr class="hr1">
+	  
 	<%-- 페이징 처리 부분 --%>
       <div class="text">
       <c:forEach begin="${Paging.getStartBlock() }"
@@ -91,6 +94,12 @@
 				
 				</div>
 	
+</div>
+
+</div>
 
 </body>
+<div id = "footer_m">
+<jsp:include page="footer.jsp" />
+</div>
 </html>
