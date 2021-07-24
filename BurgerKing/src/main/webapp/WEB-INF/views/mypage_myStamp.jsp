@@ -40,13 +40,9 @@
 				</h2>
 				<p class="info">
 					<span class="m_block">
-						세트 메뉴 주문 시
-						<strong><em>스탬프 1개</em></strong>,
+						메뉴 주문 시
+						<strong><em>스탬프 1개</em></strong>
 					</span>
-					팩 메뉴 주문 시
-					<strong>
-						<em>스탬프 2개</em>
-					</strong>
 					를 드립니다.
 				</p>
 				<ol class="stamp_list">

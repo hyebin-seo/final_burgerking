@@ -74,6 +74,7 @@ button, table td, table th {
 	line-height: 100%;
 }
 
+/* MY배달지 내용 영역 */
 .contentsBox01 {
 	padding: 50px 0 45px;
 }
@@ -89,7 +90,7 @@ button, table td, table th {
     margin-bottom: 26px;
 }
 
-.contentsWrap .page_tit {
+.contentsBox01 .page_tit {
     margin-bottom: 15px;
     font-size: 2.5rem;
     line-height: 100%;
@@ -144,12 +145,24 @@ button, table td, table th {
     min-height: 200px;
 }
 
+.my_list .option_chk, .my_list .option_chk+*, .my_list .option_chk input~* {
+    color: #000;
+}
+
 .cart_list01>li {
     position: relative;
     margin-bottom: 21px;
     background: #fff;
     -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
     box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+}
+
+.my_list>li:nth-child(2n) {
+    float: right;
+}
+
+.my_list>li:nth-child(odd) {
+    clear: both;
 }
 
 .cart_list01.my_list .cont {
@@ -208,7 +221,8 @@ input[type=checkbox]+:before, input[type=radio]+:before {
 
 .cart_list01.my_list .option_chk~* {
     padding-left: 36px;
-    color: rgba(0,0,0,.6);
+    /* 추가: 글씨색이 이걸로 먹고 있어서 뺌이요 */
+    /* color: rgba(0,0,0,.6); */
 }
 
 .my_list .option_cont {
@@ -239,7 +253,8 @@ input[type=checkbox]+:before, input[type=radio]+:before {
 }
 
 .cart_list01 .my_titWrap>* {
-    display: table-cell;
+    /* 추가: 별칭변경 버튼 위치때문에 주석처리 합니당 */
+    /* display: table-cell; */
     vertical-align: middle;
 }
 
@@ -259,6 +274,11 @@ input[type=checkbox]+:before, input[type=radio]+:before {
 }
 
 .my_list .option_chk.checked+* .btn04 {
+    background-color: #2e2e2e;
+}
+
+/* 추가 */
+#change_nick {
     background-color: #2e2e2e;
 }
 
@@ -401,3 +421,85 @@ input[type=checkbox]+:before, input[type=radio]+:before {
     margin-top: -10px;
 }
 
+
+/* 별칭변경 팝업 이름 바꿔서 css 추가 */
+.popWrap02 {
+	display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+}
+
+.popWrap02 .titleBar {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.popWrap02 .titleBar .page_tit {
+    height: 104px;
+    margin: 0;
+    padding: 20px 70px 20px 40px;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 63px;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.popWrap02 .btn_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.popWrap .btn02:only-child {
+    max-width: 100%;
+}
+
+.popWrap .titleBar {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.popWrap .titleBar .page_tit {
+    height: 104px;
+    margin: 0;
+    padding: 20px 70px 20px 40px;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 63px;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.popWrap a {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popWrap .titleBar .page_tit {
+	    height: 100%;
+	    padding: 0;
+	    font-size: 1.125rem;
+	    text-align: center;
+	    line-height: 55px;
+	}
+	
+.popWrap .titleBar .title_btn {
+    right: auto;
+}
+
+.popWrap .titleBar .title_btn button {
+	    width: 60px;
+}

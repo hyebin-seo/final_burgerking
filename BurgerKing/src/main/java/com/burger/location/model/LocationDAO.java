@@ -10,4 +10,10 @@ public interface LocationDAO {
 
 	public void deleteLocation(int loc_no);
 	
+	public void noDefaultLoc(String user_id);
+	
+	public void setDefaultLoc(int loc_no);
+	
+	public void changeLocName(LocationDTO loc);
+	
 }

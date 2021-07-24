@@ -19,4 +19,16 @@
 		delete from my_location where loc_no = #{loc_no}
 	</delete>
 	
+	<update id="setDefaultLoc">
+		update my_location set loc_default = 'y' where loc_no = #{loc_no}
+	</update>
+	
+	<update id="noDefaultLoc">
+		update my_location set loc_default = 'n' where user_id = #{user_id}
+	</update>
+	
+	<update id="changeLocName" parameterType="com.burger.location.model.LocationDTO">
+		update my_location set loc_nickname = #{loc_nickname}
+		where loc_no = #{loc_no}
+	</update>
 </mapper>
