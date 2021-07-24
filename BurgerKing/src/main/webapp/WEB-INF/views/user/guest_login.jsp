@@ -105,6 +105,53 @@
 					</div>
 				</div>
 			</div>
+			<div class="WEB on_cont head_personalWrap">
+				<div class="web_container">
+					<div class="personal_logoff" style="display: none;">
+						<p>WHERE TASTE IS KING! 버거킹과 함께하는 맛있는 세계!</p>
+						<a><strong>회원가입하고 혜택받기</strong></a>
+						<div class="btn_area">
+							<a><strong>로그인</strong></a><a><strong>비회원 주문내역</strong></a>
+						</div>
+					</div>
+					<div class="personal_logon " style="display: none;">
+						<a><div class="personal_order">
+								<dl>
+									<dt>
+										<strong>딜리버리 주문내역</strong>
+									</dt>
+									<dd>주문내역이 없습니다.</dd>
+								</dl>
+							</div></a><a><div class="personal_cart">
+								<dl>
+									<dt>
+										<strong>카트</strong><em class="count" style="display: none;"><span>0</span></em>
+									</dt>
+									<dd>카트에 담은 상품이 없습니다</dd>
+								</dl>
+							</div></a>
+					</div>
+				</div>
+			</div>
+			<div class="MOB M_headerWrap">
+				<div class="web_container">
+					<div class="MOB titleBar st02">
+						<h1 class="page_tit logo_type">
+							<span>버거킹</span>
+						</h1>
+						<div class="title_btn">
+							<button type="button" class="btn_head_menu">
+								<span>All Menu</span>
+							</button>
+						</div>
+						<div class="title_btn right" style="display: none;">
+							<button type="button" class="btn_head_cart">
+								<span>카트</span><em class="count" style="display: none;"><span>0</span></em>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="contentsWrap">
 				<div class="WEB locationWrap">
 					<div class="web_container">

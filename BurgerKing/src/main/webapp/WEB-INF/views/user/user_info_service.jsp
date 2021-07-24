@@ -10,8 +10,9 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <link rel="stylesheet" href="resources/css/user/user_info.css">
-<script type="text/javascript" src="resources/js/login/user_info_service.js">
-
+<script type="text/javascript"
+	src="resources/js/login/user_info_service.js">
+	
 </script>
 
 
@@ -81,7 +82,7 @@
 								</li>
 								<!---->
 								<li class=""><button type="button">
-										<span>고객센터</span>
+										<span>고객센터</span>	
 									</button>
 									<ul class="submenu">
 										<li><a><span>공지사항</span></a></li>
@@ -97,6 +98,7 @@
 					</div>
 				</div>
 			</div>
+			
 			<div class="contentsWrap">
 				<div class="WEB locationWrap">
 					<div class="web_container">
@@ -154,7 +156,7 @@
 							</h3>
 							<div class="container02 auth_list">
 								<div class="titbox">
-									<p>약관 동의 후  메일인증을 진행해 주세요.</p>
+									<p>약관 동의 후 메일인증을 진행해 주세요.</p>
 								</div>
 								<ul class="txtlist01">
 									<li>반드시 회원님의 본인명의로 된 메일로 인증을 진행해 주세요.</li>
@@ -204,7 +206,7 @@
 							class="facebook">페이스북</a><a
 							href="https://www.instagram.com/burgerkingkorea" target="_blank"
 							class="insta">인스타그램</a>
-							
+
 					</div>
 				</div>
 			</div>
