@@ -22,7 +22,7 @@
     left: 50%;
     top: 50%;
     width: 568px;
-    max-height: 95%;
+    /* max-height: 95%; */
     margin-left: -284px;
     padding-bottom: 84px;
     background: #fff;
@@ -729,7 +729,7 @@ input[type=color], input[type=date], input[type=datetime], input[type=email], in
     padding: 3px 10px 3px 4px;
     font-weight: 400;
     font-size: 1.375rem;
-    font-family: HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    font-family: 'S-CoreDream-5Medium';
     color: #000;
     vertical-align: middle;
     /*

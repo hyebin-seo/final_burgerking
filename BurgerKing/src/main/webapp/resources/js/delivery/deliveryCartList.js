@@ -188,7 +188,7 @@ function goOrder() {
 				detailStr += $(item).text().trim() +" 추가";
 				
 				if(index != detail.length-1) {
-					detailStr += ", ";
+					detailStr += "/";
 				}
 			});
 			
@@ -201,8 +201,8 @@ function goOrder() {
 			var pricespan = $(item).find(".pricespan"); 
 			
 			var price = Number(delComma(pricespan.text().trim())); //개별 합계가격
-			
-			/*console.log("메뉴번호: "+menuno);
+
+			console.log("메뉴번호: "+menuno);
 			console.log("메뉴이름: "+menuname);
 			console.log("메뉴정보: "+menuinfo);
 			console.log("재료추가정보: "+detailStr);
@@ -210,11 +210,12 @@ function goOrder() {
 			console.log("음료수정보: "+drink);
 			console.log("수량: "+mount);
 			console.log("개별 합계가격: "+price);
-			console.log("==========================");*/
 			
 			menuArr[menu_index] = menuno+"^"+menuname+"^"+
 								  menuinfo+"^"+detailStr+"^"+
-								  side+drink+"^"+mount+"^"+price;
+								  side+"^"+drink+"^"+mount+"^"+price;
+			console.log(menuArr[menu_index]);
+			console.log("==========================");
 			menu_index++;
 		}
     });
@@ -226,7 +227,6 @@ function goOrder() {
 	newForm.action = 'delivery_order.do'; 
 	
 	var input1 = document.createElement('input');
-	var input2 = document.createElement('input');
 	
 	input1.setAttribute("type", "hidden");
 	input1.setAttribute("name", "menuArr");

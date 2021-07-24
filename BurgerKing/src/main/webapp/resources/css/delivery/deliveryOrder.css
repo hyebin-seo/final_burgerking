@@ -352,7 +352,7 @@ input[type=radio]:checked+:before {
 }
 
 .tit_ico.burger:before {
-    background-image: url(../../img/delivery/burger_black.png);
+    background-image: url();
 }
 
 .txt_order_menus {
@@ -441,7 +441,7 @@ input[type=radio]:checked+:before {
 }
 
 .order_accWrap .cart_list01 .cont {
-    padding: 56px 0 0;
+    padding: 40px 0 0;
 }
 
 .cart_list01 .menu_titWrap {
@@ -492,7 +492,13 @@ input[type=radio]:checked+:before {
 
 .order_accWrap.open .cart_list01 .price {
     margin-top: 3px;
-    opacity: 1;
+    /* opacity: 1; */
+    color: rgb(226, 34, 25);
+    /* right: 0px; */
+    /* position: absolute; */
+    margin-bottom: 25px;
+    float: right;
+}
 }
 
 .setmenu_detail {
@@ -623,6 +629,37 @@ input[type=radio]:checked+:before {
     height: 0;
 }
 
+.order_list .info, .order_list .menu_info {
+    margin-top: 25px;
+    font-size: 1rem;
+    color: #737373;
+    line-height: 167%;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.order_list .menu_info {
+    margin-top: 20px;
+}
+
+.tag.st03 {
+    color: #2e2e2e;
+    background: url(../../img/delivery/mount_right.png),
+    			url(../../img/delivery/mount_left.png);
+    background-size: auto 100%,auto 100%;
+    font-weight: bolder;
+}
+
+.tag, .tag>* {
+    display: inline-block;
+}
+
+.order_list .order_count {
+    position: absolute;
+    right: 0;
+    top: 54px;
+    padding: 5px;
+}
+
 .order_accWrap .c_btn, .order_accWrap .c_btn:last-child {
     margin: 32px 0 0;
 }
@@ -653,6 +690,12 @@ input[type=radio]:checked+:before {
 
 .order_accWrap.open .btn_orderacc .close {
     display: inline;
+}
+
+.order_accWrap.open .acc_tit {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .tit_ico.money:before {

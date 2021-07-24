@@ -15,7 +15,21 @@
 <jsp:include page="deliveryCart.jsp"/>
 <body>
 
-<jsp:include page="menu_delivery.jsp"/>	 
+<c:if test="${!empty delivery_addr }">
+	<jsp:include page="menu_delivery.jsp"/>	 
+</c:if>
+<c:if test="${empty delivery_addr }">
+	<div class="web_container">
+	    <div class="subtitWrap">
+	        <h3 class="page_tit">메뉴</h3>
+	    </div>
+	    <div class="tab_cont">
+	        <div class="nodata ">
+	            <p><span>메뉴 준비중 입니다</span></p>
+	        </div>
+	    </div>
+	</div>
+</c:if>
 	 
 </body>
 <jsp:include page="../ingredient/ingredientFooter.jsp" />

@@ -95,4 +95,16 @@
 			</if>
 	</select>
 	
+	<select id="delivery_store" parameterType="com.burger.store.model.SearchDTO"
+								resultType="com.burger.store.model.StoreDTO">
+		select * from (
+				select s.*, DISTANCE_WGS84(#{pi_x}, #{pi_y}, pi_x, pi_y) as DISTANCE
+				from king_store s
+				where (pi_x between #{pi_x}-0.008 and #{pi_x}+0.008)
+				  and (pi_y between #{pi_y}-0.025 and #{pi_y}+0.025)
+				  and DELIVERY = 1
+                  and ROWNUM = 1
+				order by DISTANCE)
+	</select>
+	
 </mapper>

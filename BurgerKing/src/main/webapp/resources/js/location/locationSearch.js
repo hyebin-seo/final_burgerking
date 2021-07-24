@@ -57,7 +57,8 @@ $(document).ready(function () {
 
 //지도보기 끄기
 $(".popWrap .btn_close").on("click", function(){
-	$(".sub_popWrap").css('display','none');
+	//$(".popWrap").css('display','none');
+	$(".popWrap").hide();
 });
 
 
@@ -93,6 +94,63 @@ function getAddr(){
 	    	alert("에러발생");
 	    }
 	});
+}
+
+//도로명 주소를 좌표 값으로 변환(API)
+function addrChange(roadAddr_val) {
+	
+	naver.maps.Service.geocode({
+        query: roadAddr_val
+    }, function(status, response) {
+        if (status !== naver.maps.Service.Status.OK) {
+            return alert('Something wrong!');
+        }
+
+        var result = response.v2, // 검색 결과의 컨테이너
+            items = result.addresses; // 검색 결과의 배열
+            
+        // 리턴 받은 좌표 값 변수에 저장
+        let x = parseFloat(items[0].x);
+        let y = parseFloat(items[0].y);
+        
+        $.ajax({
+            url : "delivery_store.do",
+            data : { "pi_x": y, "pi_y": x },
+            type : "post",
+            //async : false,
+            success : function(data){
+            	if(data.store != null) {
+            		goDelivery(data, roadAddr_val);
+            	} else {
+            		alert("해당 배달지에 딜리버리 가능한 지점이 없습니다.");
+            	}
+            },
+            error : function(request,status,error){
+            	alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+            }
+        });
+        
+    });
+
+}
+
+//배달지 세션 저장 호출
+function goDelivery(data, roadAddr) {
+	
+	var store = data.store;
+	
+	var storeForm = document.storeForm;
+	console.log("상세 주소:"+addr3);
+	
+	$(".store_key").val(store.store_key);
+	$(".store_name").val(store.store_name);
+	$(".store_addr").val(store.store_addr);
+	$(".store_contact").val(store.store_contact);
+	$(".pi_x").val(store.pi_x);
+	$(".pi_y").val(store.pi_y);
+	$(".delivery_addr").val(roadAddr+"\, "+addr3);
+	
+	storeForm.submit();
 }
 
 //주소 검색 후 요소 생성
@@ -235,6 +293,7 @@ function pageMake(jsonStr){
 
 var addr1;
 var addr2;
+var addr3;
 
 $(document).ready(function () {
 	
@@ -245,7 +304,7 @@ $(document).ready(function () {
 			$(".btn_del01").css("display","");
 			$(".btn02").prop("disabled", false);
 			$(".full_type>.btn02").addClass("red");
-			
+			addr3 = $(".addr3").val();
 		}else{
 			$(".btn_del01").css("display","none");
 			$(".btn02").prop("disabled", true);
@@ -269,6 +328,8 @@ $(document).ready(function () {
 		//$(".addrbox dl:nth-child(2) dd span").html(addr2);
 		$(".srchaddrPop .addrbox dd").eq(0).html("<span>"+addr1+"</span>");
 		$(".srchaddrPop .addrbox dd").eq(1).html("<span>"+addr2+"</span>");
+		
+		$(".srchaddrPop").scrollTop($(document).height());
 		
 	});
 	
@@ -297,6 +358,7 @@ $(document).ready(function () {
 			$(".popWrap.m_FullpopWrap>.popbox01:nth-child(2)").css("display", "");
 		} else {
 			//체크해제면 바로 배달지 지정
+			addrChange(addr1);
 		}
 		
 	});

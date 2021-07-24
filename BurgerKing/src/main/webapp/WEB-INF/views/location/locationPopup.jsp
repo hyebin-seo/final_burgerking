@@ -129,6 +129,15 @@
     </div>
 </div>
 
+<form name="storeForm" method="post" action="delivery_addr.do">
+	<input type="hidden" name="store_key" class="store_key">
+	<input type="hidden" name="store_name" class="store_name">
+	<input type="hidden" name="store_addr" class="store_addr">
+	<input type="hidden" name="store_contact" class="store_contact">
+	<input type="hidden" name="pi_x" class="pi_x">
+	<input type="hidden" name="pi_y" class="pi_y">
+	<input type="hidden" name="delivery_addr" class="delivery_addr">
+</form>
 <script src="resources/js/location/locationSearch.js"></script>
 </body>
 </html>

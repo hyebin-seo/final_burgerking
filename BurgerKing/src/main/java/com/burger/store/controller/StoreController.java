@@ -110,5 +110,15 @@ public class StoreController {
 		return result;
 	}
 	
-	
+	@RequestMapping("delivery_store.do")
+	@ResponseBody
+	public HashMap<String, Object> delivery_store(SearchDTO dto) {
+
+		StoreDTO sdto = dao.deliveryStoreOpen(dto);
+		
+		HashMap<String, Object> result = new HashMap <String, Object>();
+		result.put("store", sdto);
+		
+		return result;
+	}
 }

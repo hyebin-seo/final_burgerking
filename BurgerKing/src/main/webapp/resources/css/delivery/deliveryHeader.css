@@ -33,6 +33,27 @@ a {
   color: white;
 }
 
+input[type=text], input[type=url] {
+    display: inline-block;
+    height: 66px;
+    margin: 0;
+    padding: 3px 10px 3px 4px;
+    font-weight: 400;
+    font-size: 1.375rem;
+    font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    vertical-align: middle;
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+/*     background: url(../../img/delivery/search_under.png) repeat-x 0 100%; */
+}
+
 
 /* 데스크탑 딜리버리 헤더 start*/
 /* 헤더 전체 div */
@@ -175,6 +196,120 @@ a {
 
 .mob_delivery_navbar_logo {
 	display: none;
+}
+
+.popcont {
+    max-height: 580px;
+    padding: 24px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.popcont.pd02 {
+    padding: 15px 24px;
+}
+
+.addr_chk {
+    margin: 20px 56px;
+    padding: 92px 0 28px;
+    text-align: center;
+    background: url(../../img/delivery/marker_black.png) no-repeat top;
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+.txt02, .txt03 {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.addr_chk+.txt02 {
+    margin: 20px 0;
+}
+
+.addrPopWrap .txt02 {
+    font-size: 1.5rem;
+}
+
+.addr_chk dt {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #e22219;
+}
+
+.addr_chk dd {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 1.875rem;
+    color: #010101;
+    line-height: 127%;
+}
+
+
+.addrPopWrap {
+	display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 300;
+}
+
+.c_btn:last-child {
+	margin-bottom: 0;
+}
+
+.pop_btn {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.c_btn {
+	margin: 40px 0 80px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.pop_btn.item2 a, .pop_btn.item2 button {
+    float: left;
+    width: 50%;
+    margin: 0;
+}
+
+.addrbtn.dark, .addrbtn.st02 {
+    background-color: #2e2e2e;
+}
+.pop_btn a, .pop_btn button {
+    border-radius: 0;
+}
+.addrbtn, .addrbtn.red {
+    display: inline-block;
+    height: 84px;
+    padding: 20px 10px;
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+    background: #e22219 url(https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png) repeat-x 0 0;
+    background-size: auto 100%;
+}
+
+.c_btn.item2 a:last-child, .c_btn.item2 button:last-child {
+	float: right;
+}
+
+.addrPopWrap .btn_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
 }
 
 /* 데스크탑 딜리버리 헤더 end*/
@@ -341,6 +476,68 @@ a {
    .my_info_icon {
 		display: none;
    }
+   
+   .popcont {
+	    padding: 16px 16px 0;
+	    max-height: 450px;
+	    font-size: 1rem;
+	    overflow-y: auto;
+	    -webkit-overflow-scrolling: touch;
+	}
+	
+	.popcont.pd02 {
+	    padding: 15px 24px;
+	}
+	
+	.addr_chk {
+	    margin: 20px 0 12px;
+	    padding: 60px 0 22px;
+	    background-size: 30px auto;
+	}
+	
+	.addr_chk dt {
+	    font-size: .75rem;
+	}
+	
+	.addr_chk dd {
+	    margin-top: 8px;
+	    font-size: 1.125rem;
+	    color: #010101;
+	    line-height: 123%;
+	}
+	
+	.addr_chk+.txt02 {
+	    margin: 12px 0 0;
+	}
+	
+	.popbox02 .botfixWrap button, .addrPopWrap .txt02 {
+	    font-size: 1rem;
+	}
+	
+	.pop_btn {
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: 0;
+	    padding: 15px 16px;
+	    overflow: hidden;
+	}
+	
+	.m_btn01_s {
+	    min-width: 120px;
+	    height: 50px!important;
+	    padding: 10px!important;
+	    font-size: 1.125rem!important;
+	    line-height: 30px!important;
+	    background-size: 100% 100%!important;
+	    border-radius: 0;
+	}
+	
+	.pop_btn.item2 a, .pop_btn.item2 button {
+	    width: calc(50% - 6px);
+	    min-width: inherit;
+	}
 
 }
 /* 모바일 딜리버리 헤더 end*/

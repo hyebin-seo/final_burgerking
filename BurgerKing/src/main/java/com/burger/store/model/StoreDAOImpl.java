@@ -49,6 +49,10 @@ public class StoreDAOImpl implements StoreDAO{
 		return this.sqlSession.selectOne("store_detail", store_key);
 	}
 
-	
+	@Override
+	public StoreDTO deliveryStoreOpen(SearchDTO dto) {
+		return this.sqlSession.selectOne("delivery_store", dto);
+	}
+
 
 }

@@ -46,6 +46,7 @@ body {
 
 /* 전체 회색 div */
 .ingredientPopWrap {
+	display: none;
     position: fixed;
     left: 0;
     top: 0;

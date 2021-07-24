@@ -18,16 +18,16 @@
 			</div>
 		</a>
 		<div class="center_bar"> </div>
-		<a href="cart.do">
+		<a <c:if test="${!empty delivery_addr }">href="cart.do"</c:if>>
 			<div class="personal_cart">
 				<dl>
 					<dt>
 						<strong>카트</strong>
 					</dt>
-					<c:if test="${empty cartlist }">
+					<c:if test="${empty delivery_addr }">
 						<dd>카트에 담은 상품이 없습니다.</dd>
 					</c:if>
-					<c:if test="${!empty cartlist }">
+					<c:if test="${!empty delivery_addr}">
 						<dd>총 ${fn:length(cartlist) }건의 상품이 담겨 있습니다.</dd>
 					</c:if>
 				</dl>
@@ -46,13 +46,20 @@
 		
 		<div class="location">
 			<span class="addr">
+			   <c:if test="${empty delivery_addr }">
 				<span>배달지를 선택하세요</span>
+			   </c:if>
+			   <c:if test="${!empty delivery_addr }">
+				<span>${delivery_addr }</span>
+			   </c:if>
 			</span>
 			<span class="shop">
+			   <c:if test="${empty delivery_addr }">
 				<span>지점</span>
-			</span>
-			<span class="money">
-				최소주문금액  : 12,000원 / 배달팁 : 0원
+			   </c:if>
+			   <c:if test="${!empty delivery_addr }">
+				<span>${addrSession.store_name }</span>
+			   </c:if>
 			</span>
 			<span class="btn">
 				<a href="javascript:locationModify();">

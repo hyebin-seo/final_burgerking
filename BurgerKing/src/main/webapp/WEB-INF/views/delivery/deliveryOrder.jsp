@@ -24,7 +24,7 @@
             <div class="container02 deli_info01">
                 <div class="addrWrap01">
                     <p class="txt_addr">
-                    	<span>${addrSession.addr }</span>
+                    	<span>${delivery_addr }</span>
                     	<span></span>
                     </p>
                     <button type="button" class="btn04 h02 rbtn"><span>변경</span></button>
@@ -36,13 +36,13 @@
                     </dl>
                     <dl>
                         <dt>매장</dt>
-                        <dd><input type="text" readonly="readonly" value="${addrSession.store }"></dd>
+                        <dd><input type="text" readonly="readonly" value="${addrSession.store_name }"></dd>
                     </dl>
                     <dl class="memo">
                         <dt>요청사항</dt>
                         <dd>
                             <div class="inp_bytes">
-                                <div><input type="text" placeholder="요청사항을 입력하세요" maxlength="50"></div>
+                                <div><input type="text" class="claim" placeholder="요청사항을 입력하세요" maxlength="50"></div>
                                 <div class="txt_byte"><span>0</span>/<span>50</span></div>
                             </div>
                         </dd>
@@ -52,97 +52,33 @@
             <div class="tit01 tit_ico burger tit_ordermenu">
                 <h2><span>주문정보</span></h2>
             </div>
-            <div class="container02 order_accWrap">
-                <div class="acc_tit">
-                    <p class="tit"><strong><span>몬스터X 라지세트</span></strong></p>
-                </div>
-                <ul class="cart_list01">
-                  <c:forEach items="${menuArr}" var="menuarr" varStatus="status">
-                  	<c:set var="menu" value="${fn:split(menuarr,'^')}" />
+            <div class="container02 order_accWrap open">
+                <ul class="cart_list01 order_list">
+                  <c:forEach items="${menulist }" var="menu" varStatus="s">
                     <li>
-                        <div class="cont">
-                            <div class="menu_titWrap">
-                                <div class="menu_name">
-                                    <p class="tit"><strong>
-                                            <!----><span>${menu[1] }</span></strong></p>
-                                    <p class="set_info"><span></span></p><span class="price">
-                                        <!----><strong><span>${menu[7] }</span></strong></span>
-                                    <!---->
-                                </div>
-                            </div>
-                            <div class="setmenu_detail">
-                                <dl>
-                                    <dt>재료추가</dt>
-                                    <dd>
-                                        <ul class="list">
-                                            <li>${menu[3] }</li>
-                                        </ul><button type="button" class="btn04 h02 btn_edit"><span>변경</span></button>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>사이드</dt>
-                                    <dd>
-                                        <div class="list">
-	                                        <span class="txt">${menu[4] }</span>
-	                                        <strong class="amount">+<span>400</span>
-	                                        <span class="unit">원</span></strong>
-                                        </div>
-                                        <button type="button" class="btn04 h02 btn_edit"><span>변경</span></button>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>음료</dt>
-                                    <dd>
-                                        <div class="list">
-                                        	<span class="txt">${menu[5] }</span>
-                                        	<strong class="amount">+<span>0</span>
-                                        	<span class="unit">원</span></strong>
-                                        </div>
-                                        <button type="button" class="btn04 h02 btn_edit"><span>변경</span></button>
-                                    </dd>
-                                </dl>
-                            </div>
-                            <div class="quantity"><strong class="tit">수량</strong>
-                                <div class="num_set">
-                                	<button type="button" class="btn_minus"><span>-</span></button>
-                                	<input type="number" readonly="readonly" value="${menu[6] }">
-                                	<button type="button" class="btn_plus"><span>+</span></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sumWrap">
-                            <dl>
-                                <dt>합계금액</dt>
-                                <dd>
-                                	<strong>
-                                		<em>
-                                			<span>${menu[7] }</span><span class="unit">원</span>
-                                		</em>
-                                	</strong>
-                                </dd>
-                            </dl>
-                            <dl class="discount" style="display: none;">
-                                <dt><em>쿠폰할인</em></dt>
-                                <dd>
-                                	<strong>
-                                		<em>-<span>0</span>
-	                                		<span class="unit">원</span>
-	                                	</em>
-                                	</strong>
-                                </dd>
-                            </dl>
-                        </div>
+                      <div class="cont">
+                  		<p class="tit">
+                  			<strong>${menu.menu_name }</strong>
+                  		</p>
+                  		<p class="menu_info">
+                  			${menu.menu_info }
+                  		</p>
+                  		<p class="menu_info">
+                  			<span class="txt">${menu.detailStr }
+                  				<c:if test="${menu.side != '변경 없음' }">, ${menu.side }, </c:if>${menu.drink }</span>
+                  			<span class="order_count tag st03">
+                  			<span>수량 ${menu.menu_mount }개</span></span>
+                  		</p>
+                  		<p class="price">
+                  			<strong>
+                  				<span class="price_span"><fmt:formatNumber pattern="#,###,###">${menu.menu_price }</fmt:formatNumber></span>
+                  				<span class="unit">원</span>
+                  			</strong>
+                  		</p>
+                  	  </div>
                     </li>
-                  </c:forEach>
+                 </c:forEach> <!-- 전체 배열 for end-->
                 </ul>
-                <div class="c_btn">
-                  <button type="button" class="btn01 fs btn_orderacc">
-                	<span>
-                		<span class="txt">주문 전체보기</span>
-                		<span class="txt close">닫기</span>
-                	</span>
-                  </button>
-                 </div>
             </div>
             
             <h2 class="tit01 tit_ico money"><span>최종 결제금액</span></h2>
@@ -151,15 +87,15 @@
                 <div class="order_payment_list">
                     <dl class="tot">
                         <dt>최종 결제금액</dt>
-                        <dd><em><span>12,800</span><span class="unit">원</span></em></dd>
+                        <dd><em><span class="total_span">12,800</span><span class="unit">원</span></em></dd>
                     </dl>
                     <dl>
                         <dt>제품금액</dt>
-                        <dd><span>12,800</span><span class="unit">원</span></dd>
+                        <dd><span class="allprice_span">12,800</span><span class="unit">원</span></dd>
                     </dl>
                     <dl>
                         <dt>할인금액</dt>
-                        <dd><span>0</span><span class="unit">원</span></dd>
+                        <dd><span class="discount_span">0</span><span class="unit">원</span></dd>
                     </dl>
                 </div>
             </div>
@@ -230,7 +166,7 @@
             <div class="totamountWrap">
                 <dl>
                     <dt>총 결제금액</dt>
-                    <dd><strong>￦12,800</strong></dd>
+                    <dd><strong>￦<span class="total_span">12,800</span></strong></dd>
                 </dl>
                 <div class="c_btn m_item2">
                 	<button type="button" class="btn01 m"><span>취소</span></button>

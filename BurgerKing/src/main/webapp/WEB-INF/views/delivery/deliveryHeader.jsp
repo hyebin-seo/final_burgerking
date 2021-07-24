@@ -14,6 +14,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 <link href="resources/css/delivery/deliveryHeader.css"  rel="stylesheet"  type="text/css">
 
+<input type="hidden" id="head_delivery_addr" value="${delivery_addr }">
+
+<div class="addrPopWrap">
+	<div class="popbox01">
+		<button type="button" class="btn_close" style="z-index: 100;" onclick="addrWrapHide();"></button>
+		<div class="popcont pd02">
+			<dl class="addr_chk">
+				<dt>배달지 주소</dt>
+				<dd>
+					<strong><span> 선택된 주소가 없습니다 </span></strong>
+				</dd>
+			</dl>
+			<p class="txt02">배달받을 주소를 검색해보세요!</p>
+		</div>
+		<div class="pop_btn c_btn item2">
+			<a class="addrbtn m_btn01_s dark" href="javascript:addrWrapHide();"><span>취소</span></a>
+			<a class="addrbtn m_btn01_s red" href="location.do"><span>배달지 검색</span></a>
+		</div>
+	</div>
+</div>
 
 
 <div class="delivery_navbar">

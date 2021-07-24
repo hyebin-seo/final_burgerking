@@ -14,3 +14,31 @@ function onClick() {
 function offClick() {
 	menu.style.display ='none';
 }
+
+$(document).ready(function() {
+	
+	var url = $(location).attr('href');
+	var arSplitUrl = url.split("/");    //   "/" 로 전체 url 을 나눈다
+	var nArLength = arSplitUrl.length;
+	var arFileName = arSplitUrl[nArLength-1];   // 나누어진 배열의 맨 끝 컨트롤러 액션명
+	console.log("현재 경로:"+arFileName);
+	if(arFileName == "delivery_home.do") {
+		addrCheck();
+	}
+		
+});
+
+function addrCheck() {
+	console.log("배달지 주소 체킹 함수 실행");
+	var delivery_addr = $("#head_delivery_addr").val();
+	
+	if(delivery_addr == "") {
+		$(".addrPopWrap").show();
+	} else {
+		$(".addrPopWrap").hide();
+	}
+}
+
+function addrWrapHide() {
+	$(".addrPopWrap").hide();
+}

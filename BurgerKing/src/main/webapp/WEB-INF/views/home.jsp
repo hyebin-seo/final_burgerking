@@ -202,7 +202,7 @@ function showSlides(n) {
             </div>
         </div>
 	<!-- foote 끝 -->
-      <jsp:include page="footer.jsp" /	>
+      <jsp:include page="footer.jsp" />
 </body>
 <!-- jsp:footer -->
 

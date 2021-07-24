@@ -26,6 +26,43 @@ body {
 	z-index: 4;
 }
 
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-top: 30px;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.web_container .page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+}
+
+.nodata {
+    padding: 370px 10px 10px;
+    color: #766e69;
+    text-align: center;
+    background: url('https://www.burgerking.co.kr/dist/img/ico_nodata01_type02.e0a98f2b.png') no-repeat center 150px;
+    z-index: 10;
+}
+
+.nodata, .nodata .tit {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.bg02 .nodata, .bg_w .nodata {
+    color: silver;
+    background-image: url('https://www.burgerking.co.kr/dist/img/ico_nodata01_type02.e0a98f2b.png');
+}
+
 /* 모바일 화면 */
 @media (max-height: 500px) and (orientation: landscape), 
 	screen and (max-width: 768px) and (orientation: portrait) {
