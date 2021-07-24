@@ -30,4 +30,22 @@ public class LocationDAOImpl implements LocationDAO {
 		this.sqlSession.delete("deleteLocation", loc_no);
 	}
 
+	@Override
+	public void setDefaultLoc(int loc_no) {
+		
+		this.sqlSession.update("setDefaultLoc", loc_no);
+	}
+
+	@Override
+	public void noDefaultLoc(String user_id) {
+		
+		this.sqlSession.update("noDefaultLoc", user_id);
+	}
+
+	@Override
+	public void changeLocName(LocationDTO loc) {
+		
+		this.sqlSession.update("changeLocName", loc);
+	}
+
 }

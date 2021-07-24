@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,8 @@
 <jsp:include page="delivery/deliveryCart.jsp"/>
 
 <body>
+	
+	<c:set var="myLocSize" value="${myLocSize }" />
 	
 	<!-- 내용 영역 -->
 	<div class="contentsWrap">
@@ -92,8 +95,8 @@
 						<dl class="qmenu_myplace">
 							<dt>MY배달지</dt>
 							<dd>
-								<strong>0장</strong>
-								<a href="myLocation.do?user_id=${memberSession.user_id }" class="btn_detail">
+								<strong>${myLocSize }개</strong>
+								<a href="myLocation.do" class="btn_detail">
 									<span>details</span>
 								</a>
 							</dd>

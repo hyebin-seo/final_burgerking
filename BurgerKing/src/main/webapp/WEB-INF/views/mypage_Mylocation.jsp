@@ -39,18 +39,25 @@
 						<li>
 							<div class="cont">
 								<label class="option_chk">
-									<input type="radio" name="chk" value="3445249">
+									<!-- <input type="radio" name="chk" value="3445249"> -->
+									<c:if test="${loc.getLoc_default() == 'y'}">
+									<input type="radio" checked="checked" name="chk" value="${loc.getLoc_no() }">
+									</c:if>
+									<c:if test="${loc.getLoc_default() == 'n'}">
+									<input type="radio" name="chk" value="${loc.getLoc_no() }">
+									</c:if>
 									<span>
 										기본배달지
 									</span>
 								</label>
 								<div class="option_cont">
 									<div class="my_titWrap">
-										<p class="tit">
+										<p class="tit cls${loc.getLoc_no() }">
 											<strong>${loc.getLoc_nickname() }</strong>
 										</p>
 										<div class="btn">
-											<button type="button" class="btn04">
+											<button type="button" class="btn04 change_nick" id="change_nick"
+													value="${loc.getLoc_nickname() },${loc.getLoc_no() }">
 												<span>별칭변경</span>
 											</button>
 										</div>
@@ -83,6 +90,34 @@
 						</button>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 별칭변경 팝업 -->
+	<div class="popWrap02" id="change_nick_pop" style="display: none;">
+		<div class="popbox01">
+			<div class="popcont">
+				<p class="poptxt01">
+					<strong>별칭을 지정해보세요.</strong>
+				</p>
+				<div class="inpbox">
+					<input type="text" maxlength="10">
+					<button type="button" class="btn_del01 " style>
+						<span>입력 텍스트 삭제</span>
+					</button>
+				</div>
+				<div class="page_count">
+					<span>2</span> / <span>10</span>
+				</div>
+			</div>
+			<div class="pop_btn c_btn item2">
+				<a class="btn02 m_btn01_s dark cancel">
+					<span>취소</span>
+				</a>
+				<a class="btn02 m_btn01_s red changeOk">
+					<span>등록</span>
+				</a>
 			</div>
 		</div>
 	</div>
