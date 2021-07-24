@@ -1,5 +1,6 @@
 package com.burger.login.controller;
 
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletResponse;
@@ -42,7 +43,10 @@ public class SNSController {
 	private kakao_restapi kakao_restapi = new kakao_restapi();
 
 	@RequestMapping(value = "/oauth", produces = "application/json")
-	public String kakaoLogin(@RequestParam("code") String code, Model model, HttpSession session) {
+	public void kakaoLogin(@RequestParam("code") String code, Model model, HttpSession session, HttpServletResponse response) throws Exception {
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter script = response.getWriter();
 		System.out.println("로그인 할때 임시 코드값");
 		// 카카오 홈페이지에서 받은 결과 코드
 		System.out.println("code>>" + code);
@@ -78,10 +82,18 @@ public class SNSController {
 
 			session.setMaxInactiveInterval(60*120); // 120분간유효
 			session.setAttribute("access_Token", access_Token);
-			session.setAttribute("memberSession", dto);
+			session.setAttribute("memberSession", kakaoDTO);
+			script.println("<script>");
+			script.println("location.href='delivery_home.do'");
+			script.println("</script>");
 
+		}else{
+			script.println("<script>");
+			script.println("alert('오류가 발생했습니다.')");
+			script.println("history.back()");
+			script.println("</script>");
 		}
-		return "delivery/deliveryHome";
+		
 
 	}
 
@@ -122,50 +134,64 @@ public class SNSController {
 	}
 
 	// 네이버 로그인 성공시 callback호출 메소드
-	@RequestMapping(value = "callback.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
-			throws Exception {
+		@RequestMapping(value = "callback.do", method = { RequestMethod.GET, RequestMethod.POST })
+		public void callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session, HttpServletResponse response)
+				throws Exception {
 
-		OAuth2AccessToken oauthToken;
-		oauthToken = naverLoginBO.getAccessToken(session, code, state);
-		// 로그인 사용자 정보를 읽어온다.
+			
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter script = response.getWriter();
+			OAuth2AccessToken oauthToken;
+			oauthToken = naverLoginBO.getAccessToken(session, code, state);
+			// 로그인 사용자 정보를 읽어온다.
 
-		apiResult = naverLoginBO.getUserProfile(oauthToken);
+			apiResult = naverLoginBO.getUserProfile(oauthToken);
 
-		model.addAttribute("result", apiResult);
+			model.addAttribute("result", apiResult);
 
-		/* 네이버 로그인 성공 페이지 View 호출 */
-		JSONParser parser = new JSONParser();
-		Object obj = parser.parse(apiResult);
-		JSONObject jsonObj = (JSONObject) obj;
+			/* 네이버 로그인 성공 페이지 View 호출 */
+			JSONParser parser = new JSONParser();
+			Object obj = parser.parse(apiResult);
+			JSONObject jsonObj = (JSONObject) obj;
 
-		JSONObject response_obj = (JSONObject) jsonObj.get("response");
-		
-		if ((String) response_obj.get("id") != null) {
+			JSONObject response_obj = (JSONObject) jsonObj.get("response");
+			
+			if ((String) response_obj.get("id") != null) {
 
-			UserDTO dto = new UserDTO();
-			String user_name = (String) response_obj.get("name");
-			String user_id = (String) response_obj.get("id");
-			// 저장하기
+				UserDTO dto = new UserDTO();
+				String user_name = (String) response_obj.get("name");
+				String user_id = (String) response_obj.get("id");
+				// 저장하기
 
-			dto.setUser_id(user_id);
-			dto.setUser_name(user_name);
-			dto.setSns_flag("naver");
+				dto.setUser_id(user_id);
+				dto.setUser_name(user_name);
+				dto.setSns_flag("naver");
 
-			System.out.println(dto);
+				System.out.println(dto);
 
-			UserDTO kakaoDTO = this.dao.snsidCheck(dto);
+				UserDTO kakaoDTO = this.dao.snsidCheck(dto);
 
-			if (kakaoDTO == null) {
-				int check = this.dao.snsJoin(dto);
+				if (kakaoDTO == null) {
+					int check = this.dao.snsJoin(dto);
+				}
+				
+				
+				session.setMaxInactiveInterval(60*120); // 120분간유효
+				session.setAttribute("memberSession", kakaoDTO);
+				script.println("<script>");
+				script.println("location.href='delivery_home.do'");
+				script.println("</script>");
+
+			}else {
+				
+				script.println("<script>");
+				script.println("alert('오류가 발생했습니다.')");
+				script.println("history.back()");
+				script.println("</script>");
 			}
-			session.setMaxInactiveInterval(60*120); // 120분간유효
-			session.setAttribute("memberSession", dto);
 
+		
 		}
-
-		return "delivery/deliveryHome";
-	}
 
 	@Autowired
 	private GoogleConnectionFactory googleConnectionFactory;
@@ -188,15 +214,16 @@ public class SNSController {
 		System.out.println(url);
 
 		/* 생성한 인증 URL을 Model에 담아서 전달 */
-		return "delivery/deliveryHome";
+		return null;
 	}
 
 	// 구글 Callback호출 메소드
 	@RequestMapping(value = "googlecallback.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public String googleCallback(Model model, @RequestParam String code, HttpSession session,
+	public void googleCallback(Model model, @RequestParam String code, HttpSession session,
 			HttpServletResponse response) throws Exception {
 
-	
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter script = response.getWriter();
 
 		// Access Token 발급
 		JsonNode jsonToken = GoogleLogin.getAccessToken(code);
@@ -232,21 +259,20 @@ public class SNSController {
 			}
 
 			session.setMaxInactiveInterval(60*120); // 120분간유효
-			session.setAttribute("memberSession", dto);
-			
+			session.setAttribute("memberSession", kakaoDTO);
+			script.println("<script>");
+			script.println("location.href='delivery_home.do'");
+			script.println("</script>");
 
+		}else {
+			script.println("<script>");
+			script.println("alert('오류가 발생했습니다.')");
+			script.println("history.back()");
+			script.println("</script>");
+			
 		}
 
-		// 사용자 정보 출력
-
-		// 받아온 사용자 정보를 view에 전달
-		response.setHeader("Expires", "Sat, 6 May 1995 12:00:00 GMT");
-		response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
-		response.addHeader("Cache-Control", "post-check=0, pre-check=0");
-		response.setHeader("Pragma", "no-cache");
-
-		// 저는 성공하면 메인페이지로 리다이렉트합니다.
-		return "delivery/deliveryHome";
 	}
+
 
 }
