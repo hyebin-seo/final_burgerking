@@ -8,3 +8,6 @@ BurgerKing/target/classes/com/burger/
 BurgerKing/.settings/org.eclipse.core.runtime.prefs
 BurgerKing/src/main/webapp/WEB-INF/spring/root-context.xml.rej
 BurgerKing/target/classes/com/burger
+.settings/
+.project
+.classpath
