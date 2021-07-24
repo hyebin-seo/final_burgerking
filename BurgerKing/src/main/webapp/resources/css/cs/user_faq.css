@@ -230,3 +230,46 @@ button {
 	min-width: 1.5em;
 }
 
+
+.btn_list {
+		
+	width: 200px;
+	height: 60px;
+	background: url("../../img/cs/listB.png") no-repeat;
+	background-size: 200px 
+	padding: 0;
+	border: 0;
+	font-family: 'S-CoreDream-9Black';
+	font-size: 1.25rem;
+	color: white;
+}
+
+/*수정 삭제 버튼 디자인*/
+.btn_list2 {
+		
+	width: 100px;
+	height: 30px;
+	background: url("../../img/cs/listB.png") no-repeat;
+	background-size: 200px 
+	padding: 0;
+	border: 0;
+	font-family: 'S-CoreDream-9Black';
+	font-size: 1rem;
+	color: white;
+}
+
+/* .update_btn{
+	position: absolute;
+	right: 17%;
+}
+
+.del_btn{
+	position: absolute;
+	right: 5%;
+} */
+
+
+.btn_div{
+	text-align: right;
+	padding-right: 5px;
+}

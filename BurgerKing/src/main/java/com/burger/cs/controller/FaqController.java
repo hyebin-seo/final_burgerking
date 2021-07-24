@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.burger.cs.model.FaqDAO;
 import com.burger.cs.model.FaqDTO;
 import com.burger.cs.model.PageDTO;
+import com.burger.login.model.UserDTO;
 
 @Controller
 public class FaqController {
@@ -29,6 +31,15 @@ public class FaqController {
 	@RequestMapping("faq_home.do")
 	public String list(HttpServletRequest request,@RequestParam("faq_cate") String faq_cate,
 			Model model) {
+		HttpSession session = request.getSession();
+		
+		UserDTO userDto = (UserDTO) session.getAttribute("memberSession");
+		
+		
+		
+		System.out.println("123>>"+userDto);
+		
+		
 		
 		System.out.println("faq_cate >>>" + faq_cate);
 		
@@ -88,7 +99,7 @@ public class FaqController {
 	}
 	
 	@RequestMapping("faqWrite.do")
-	public void MoveFranchise(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void insertFaq(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		FaqDTO dto = new FaqDTO(); 
 		
@@ -129,5 +140,84 @@ public class FaqController {
 		
 		
 	}
+	
+	@RequestMapping("faq_update.do")
+	public String updateFaq(@RequestParam("no") int faq_no, @RequestParam("page") int nowPage, @RequestParam("category") String category, Model model) {
+
+	
+		// 게시글 상세내역 조회하는 메서드 호출
+		FaqDTO dto = this.dao.getFaqCont(faq_no);
+
+		model.addAttribute("faqUpdate", dto);
+		model.addAttribute("page", nowPage);
+		model.addAttribute("category", category);
+
+		return "faq_updateForm";
+
+	}
+	
+	
+	@RequestMapping("faq_updateOk.do")
+	public void updateOkFaq(FaqDTO dto, @RequestParam("page") int nowPage, @RequestParam("category") String category, HttpServletResponse response)
+			throws IOException {
+		
+		int check = this.dao.updateFaq(dto);
+		
+		response.setContentType("text/html; charset=UTF-8");
+
+		PrintWriter out = response.getWriter();
+
+		if (check > 0) {
+			out.println("<script>");
+			out.println("alert('FAQ 수정 완료')");
+			out.println("location.href='faq_home.do?faq_cate="+category+"&page="+nowPage+"'");
+			out.println("</script>");
+		} else {
+			out.println("<script>");
+			out.println("alert('FAQ 수정 실패 ')");
+			out.println("history.back()");
+			out.println("</script>");
+		}
+	}
+	
+	@RequestMapping("faq_delete.do")
+	public String deleteFaq(@RequestParam("no") int faq_no, @RequestParam("page") int nowPage, @RequestParam("category") String category, Model model) {
+
+		// 게시글 상세내역 조회하는 메서드 호출
+		FaqDTO dto = this.dao.getFaqCont(faq_no);
+
+		model.addAttribute("faqDelete", dto);
+		model.addAttribute("page", nowPage);
+		model.addAttribute("category", category);
+
+		return "faq_deleteForm";
+
+	}
+	
+	@RequestMapping("faq_deleteOk.do")
+	public void deleteOkFaq(@RequestParam("faq_no") int faq_no, @RequestParam("page") int nowPage, @RequestParam("category") String category, HttpServletResponse response) throws IOException {
+
+		response.setContentType("text/html; charset=UTF-8");
+
+		PrintWriter out = response.getWriter();
+
+		int check = 0;
+
+		check = this.dao.deleteFaq(faq_no);
+		
+		if (check > 0) {
+			this.dao.reFaqNo(faq_no);
+			out.println("<script>");
+			out.println("alert('FAQ 삭제 완료')");
+			out.println("location.href='faq_home.do?faq_cate="+category+"&page="+nowPage+"'");
+			out.println("</script>");
+		} else {
+			out.println("<script>");
+			out.println("alert('FAQ 삭제 실패')");
+			out.println("history.back()");
+			out.println("</script>");
+		}
+	}
+
 	
 }
