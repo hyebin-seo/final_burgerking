@@ -60,12 +60,15 @@
 	         </tr>
 	      </c:if>
 	      
-	      <tr>
-	         <td colspan="4" align="right">
-	            <input type="button" class="btn_list" value="공지작성"
-	                 onclick="location.href='notice_write.do'">
-	         </td>
-	      </tr>
+	      <c:if test="${memberSession.getRight() == 'admin1'}">
+	     	 <tr>
+	        	 <td colspan="4" align="right">
+	            	<input type="button" class="btn_list" value="공지작성"
+	                	 onclick="location.href='notice_write.do'">
+	         	 </td>
+	      	 </tr>
+	      </c:if>
+	      
 	      
 	   </table>
 	   </div>
