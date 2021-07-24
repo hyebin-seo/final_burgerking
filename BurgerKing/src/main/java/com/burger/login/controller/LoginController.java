@@ -141,8 +141,9 @@ public class LoginController {
 			
 			session.setMaxInactiveInterval(60*120); // 120분간유효
 			session.setAttribute("memberSession", dto);
-			
-			return "delivery/deliveryHome";
+			script.println("<script>");
+			script.println("location.href='delivery_home.do'");			
+			script.println("</script>");
 		} else {
 			script.println("<script>");
 			script.println("alert('아이디 및 비밀번호를 확인해주세요.')");
