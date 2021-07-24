@@ -37,3 +37,13 @@ function paging_faq(page) {
 	console.log("faq_home.do?faq_cate="+checkValue+"&page="+page);
 	location.href="faq_home.do?faq_cate="+checkValue+"&page="+page;
 }
+
+function test() {
+	alert("테스트");
+}
+
+$(document).ready(function () {
+	/*function test() {
+		alert("테스트");
+	}*/
+});

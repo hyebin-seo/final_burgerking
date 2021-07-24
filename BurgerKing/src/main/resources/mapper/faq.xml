@@ -45,4 +45,26 @@
 		   #{faq_title}, #{faq_cont},#{faq_kind}, #{faq_cate})
 	
 	</insert>
+	
+	<select id="fqaCont" parameterType="int" 
+							resultType="com.burger.cs.model.FaqDTO">
+		select * from faq where faq_no = #{no}
+	</select>
+	
+	<update id="updateFaq" parameterType="com.burger.cs.model.FaqDTO">
+		update faq set faq_title = #{faq_title},
+		    faq_cont = #{faq_cont}
+		    	 where faq_no = #{faq_no}
+	</update>
+	
+	<delete id="deleteFaq" parameterType="int">
+		delete from faq where faq_no = #{no}
+	</delete>
+	
+	<update id="reFaqNo" parameterType="int">
+		<![CDATA[
+			update faq set faq_no = faq_no - 1
+					where faq_no > #{no}
+		]]>
+	</update>
 </mapper>

@@ -12,10 +12,11 @@
 <link  href="resources/css/cs/user_faq.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/user_faq.js" type="text/javascript"></script>
-  
+ 
 </head>
 <body>
 	<jsp:include page="cs_menu.jsp" />
+	${memberSession.getRight()} 
 	<div class="faq_category">
 		<form method="post" action="faq_home.do">
 		<label class="switch01">
@@ -75,8 +76,6 @@
 					<td>
 						<div class="acc_tit">
 						<span class="tit">${dto.getFaq_title() }</span>
-						<button type="tit" >수정</button>
-						<button type="tit" >삭제</button>
 						<button type="button" class="btn_acc">
 							<span>FAQ 내용 보기</span>
 						</button>
@@ -87,6 +86,13 @@
 					<td colspan="3">
 						<div class="text_area">
 						${dto.getFaq_cont() }
+						</div>
+						<div class="btn_div">
+						 <c:if test="${memberSession.getRight() == 'admin1'}">
+						<input class="btn_list2 update_btn" type="button" value="수정" onclick="location.href='faq_update.do?category=${cate }&no=${dto.getFaq_no() }&page=${Paging.getPage() }'">
+						<input class="btn_list2 del_btn" type="button" value="삭제" onclick="if(confirm('FAQ를 삭제 하시겠습니까?')) {
+																							location.href='faq_delete.do?category=${cate }&no=${dto.getFaq_no() }&page=${Paging.getPage() }'
+																		}else{return;}"></c:if>
 						</div>
 					</td>
 				</tr>
@@ -117,7 +123,10 @@
 	      </c:if>
 	   </c:forEach>
 	   </div>
+	   <c:if test="${memberSession.getRight() == 'admin1'}">
 	    <input type="button" class="btn_list" value="FAQ작성">
+	    </c:if>
+	    </div>
 	</div>
 	<jsp:include page="faq_write.jsp"/>
 </body>

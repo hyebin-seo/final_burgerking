@@ -36,4 +36,24 @@ public class FaqDAOImpl implements FaqDAO {
 	public int insertFaq(FaqDTO dto) {
 		return this.sqlSession.insert("insertFaq", dto);
 	}
+
+	@Override
+	public FaqDTO getFaqCont(int no) {
+		return this.sqlSession.selectOne("fqaCont", no);
+	}
+
+	@Override
+	public int updateFaq(FaqDTO dto) {
+		return this.sqlSession.update("updateFaq", dto);
+	}
+
+	@Override
+	public int deleteFaq(int no) {
+		return this.sqlSession.delete("deleteFaq", no);
+	}
+
+	@Override
+	public void reFaqNo(int no) {
+		this.sqlSession.update("reFaqNo", no);	
+	}
 }
