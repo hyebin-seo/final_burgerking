@@ -68,17 +68,20 @@
 	      	 <hr class="hr1">
 	         <td colspan="2" align="center">
 	         
+	         	<c:if test="${memberSession.getRight() == 'admin1'}">
+	            
 	            <input type="button" class="btn_list" value="이벤트수정"
 	                onclick="location.href='event_update.do?no=${dto.getEvent_no() }&page=${page }'">
-	                 
+	            </c:if>  
 	            <input type="button" class="btn_list" value = "목록보기"	                
 	                onclick="location.href='event_list.do?page=${page }'">
 	            
+	            <c:if test="${memberSession.getRight() == 'admin1'}">
 	            <input type="button" class="btn_list" value="이벤트삭제"
 	                onclick="if(confirm('이벤트를 삭제 하시겠습니까?')) {
 	                				location.href='event_delete.do?no=${dto.getEvent_no() }&page=${page }'
 	                		 }else {return; }">
-	          
+	          </c:if>
 	            
 	         </td>
 	         

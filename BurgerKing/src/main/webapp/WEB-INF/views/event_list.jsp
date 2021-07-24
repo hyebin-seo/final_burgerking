@@ -72,10 +72,12 @@
 	   </table>
 	   		
 	   </div>
+	   		<c:if test="${memberSession.getRight() == 'admin1'}">
 	    		<div align="center">
-	            <input type="button" class="btn_list" value="이벤트작성"
-	                 onclick="location.href='event_write.do'">
+	            	<input type="button" class="btn_list" value="이벤트작성"
+	                	 onclick="location.href='event_write.do'">
 	         	</div>
+	        </c:if>
 	   <hr class="hr1">
 	  
 	<%-- 페이징 처리 부분 --%>

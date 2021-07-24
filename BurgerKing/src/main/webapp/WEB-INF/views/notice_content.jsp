@@ -68,19 +68,25 @@
 	      <tr>
 	      	 </table>
 	      	 <hr class="hr1">
+	      	 
+	      	 
 	         <td colspan="2" align="center">
 	         
+	         	<c:if test="${memberSession.getRight() == 'admin1'}">
 	            <input type="button" class="btn_list" value="공지수정"
 	                onclick="location.href='notice_update.do?no=${dto.getNotice_no() }&page=${page }'">
-	                 
+	             </c:if>    
+	             
 	            <input type="button" class="btn_list" value = "목록보기"	                
 	                onclick="location.href='notice_list.do?page=${page }'">
 	            
+	            
+	              <c:if test="${memberSession.getRight() == 'admin1'}">
 	            <input type="button" class="btn_list" value="공지삭제"
 	                onclick="if(confirm('공지사항을 삭제 하시겠습니까?')) {
 	                				location.href='notice_delete.do?no=${dto.getNotice_no() }&page=${page }'
 	                		 }else {return; }">
-	          
+	          	</c:if>
 	            
 	         </td>
 	         
