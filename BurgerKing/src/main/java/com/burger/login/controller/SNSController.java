@@ -102,6 +102,8 @@ public class SNSController {
 		kakao_restapi.kakaoLogout((String) session.getAttribute("access_Token"));
 		session.removeAttribute("access_Token");
 		session.removeAttribute("userId");
+		session.removeAttribute("addrSession");
+		session.removeAttribute("delivery_addr");
 		session.invalidate();
 		return "home";
 	}
