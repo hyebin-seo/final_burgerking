@@ -2,7 +2,9 @@ package com.burger.cs.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.burger.cs.model.FranchiseDAO;
 import com.burger.cs.model.FranchiseDTO;
+import com.burger.cs.model.PageDTO;
 
 @Controller
 public class FranchiseController {
 	
 	@Autowired
 	private FranchiseDAO dao; 
+	
+	private int totalRecord = 0;
+	private final int rowsize = 8;
 	
 	@RequestMapping("Franchise.do")
 	public String MoveFranchise(Model model) {
@@ -54,6 +60,35 @@ public class FranchiseController {
 			
 		} //insertFranchise end
 	
+	@RequestMapping("AdminFranchise.do")
+	public String ListAdminFranchise(HttpServletRequest request, Model model) {
+		
+		int page = 1; // 현재 페이지 변수
+
+		if (request.getParameter("page") != null) {
+			page = Integer.parseInt(request.getParameter("page"));
+		} else {
+			page = 1; // 처음으로 "게시물 전체 목록" 태그를 클릭한 경우
+		}
+		
+		// DB상의 전체 게시물의 수를 확인하는 작업.
+		totalRecord = this.dao.getListCount();
+
+		PageDTO dto = new PageDTO(page, rowsize, totalRecord);
+		
+		// 페이지에 해당하는 게시물을 가져오는 메서드 호출
+		List<FranchiseDTO> FranchiseList = this.dao.getFranchiseList(dto);
+		
+		model.addAttribute("List", FranchiseList);
+		model.addAttribute("Paging", dto);
+		
+		return "admin_franchise";
+	}
 	
+	@RequestMapping("AdminFranchiseCont.do")
+	public String AdminFranchiseCont(Model model) {
+		
+		return "admin_franchiseCont";
+	}
 	
 }

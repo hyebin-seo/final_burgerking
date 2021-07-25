@@ -14,4 +14,19 @@
 		 #{fran_area}, #{fran_job}, #{fran_opinion}, sysdate, default)
 		
 	</insert>
+	
+	<select id="FranchiseCount" resultType="int">
+		select count(*) from franchise
+	</select>
+	
+	<select id="FranchiseList" parameterType="com.burger.cs.model.PageDTO"
+								resultType="com.burger.cs.model.FranchiseDTO">
+		<![CDATA[
+			select * from
+				(select n.*, row_number()
+				   over(order by fran_no desc) rnum
+				   from franchise n) 
+				     where rnum >= #{startNo} and rnum <= #{endNo} 
+		]]>
+	</select>
 </mapper>

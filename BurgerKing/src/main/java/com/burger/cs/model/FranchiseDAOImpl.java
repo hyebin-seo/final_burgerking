@@ -1,5 +1,7 @@
 package com.burger.cs.model;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,6 +15,16 @@ public class FranchiseDAOImpl implements FranchiseDAO{
 	@Override
 	public int insertFranchise(FranchiseDTO dto) {
 		return this.sqlSession.insert("fran_add", dto);
+	}
+
+	@Override
+	public int getListCount() {
+		return this.sqlSession.selectOne("FranchiseCount");
+	}
+
+	@Override
+	public List<FranchiseDTO> getFranchiseList(PageDTO dto) {
+		return this.sqlSession.selectList("FranchiseList", dto);
 	}
 
 }

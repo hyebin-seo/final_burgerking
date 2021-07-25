@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/*폰트 적용*/
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+/*공통요소*/
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    color: #000;
+    /* background: #f2ebe6; */
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+body, html {
+    height: 100%;
+    min-height: 450px;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+}
+
+html{
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.hide {
+    font-family: 'S-CoreDream-9Black';
+    font-size: 2rem;
+}
+
+.board_list {
+    padding-bottom: 75px;
+}
+
+.tlist01 {
+    border-bottom: 2px solid #000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+}
+
+.tlist01 thead tr {
+    background: #fafafa;
+    border: 0 solid #000;
+    border-width: 2px 0;
+    border-bottom-color: #e5e5e5;
+}
+
+.tlist01 thead th {
+    height: 50px;
+    font-size: 1.25rem;
+    text-align: center;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.tlist01 tbody td, .tlist01 tbody th {
+    height: 56px;
+    padding: 10px;
+    font-size: 1.125rem;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+.tlist01 a {
+    display: block;
+    text-align: center;
+}
+
+
+/*페이지*/
+.text{
+	text-align: center; 
+}
+.page a{
+	height: 36px; 
+	padding: 0 3px; 
+	font-size: 1.25rem;
+	font-family: 'S-CoreDream-5Medium';
+	text-decoration: none; 
+	color : #000;
+	min-width: 1.5em;
+}
+
+
+
+
+/*검색 결과 없을 떄 css*/
+.tlist01 .nodata {
+    padding-bottom: 210px;
+}
+
+.bg02 .nodata, .bg_w .nodata {
+    color: silver;
+    background-image: url(../img/ico_nodata01_type02.e0a98f2b.png);
+}
+
+.nodata, .nodata .tit {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.nodata {
+    padding: 370px 10px 10px;
+    color: #766e69;
+    text-align: center;
+    background: url(../img/ico_nodata01.26f01a61.png) no-repeat center 150px;
+    z-index: 10;
+}
+
+
+
