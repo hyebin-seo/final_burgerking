@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,13 +60,16 @@
   		 				</dd>
   		 			</dl>
   		 			<dl class = "cs_email">		 
-  		 				<dt class="btn01">온라인 문의</dt>
+  		 				<dt class="btn01">온라인 문의</dt> 
   		 					<dd>
   		 						<p>
   		 							서비스를 이용하시면서 궁금하시거나
   		 							<br>
   		 							불편한 사항은 온라인으로 접수 해주세요
   		 						</p>
+  		 						<c:if test="${memberSession.getRight() == 'admin1'}">
+  		 						<input type = "button" value="문의리스트" onclick="location.href='qna_list.do'">
+  		 						</c:if>
   		 						<div class="btn_area">
   		 							<br>
   		 							<br>
@@ -90,6 +95,9 @@
   		 	</div>
   		 </div>
   	</div>
+  	
+  
+  	
   	<!--  -->
 <!--   </div> -->
   <jsp:include page="qna_popup.jsp" /> 
