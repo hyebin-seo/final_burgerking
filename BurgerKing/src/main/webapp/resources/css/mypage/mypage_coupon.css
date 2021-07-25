@@ -7,6 +7,7 @@
 
 .contentsBox01 {
     padding: 50px 0 45px;
+    background-color: #f2ebe6;
 }
 
 .web_container {
@@ -24,6 +25,11 @@
     margin-bottom: 15px;
     font-size: 2.5rem;
     line-height: 100%;
+}
+
+.page_tit {
+	font-family: 'S-CoreDream-9Black';
+	font-size: 2.25rem;
 }
 
 .subtitWrap .r_option {
@@ -103,3 +109,75 @@ a.more>*, button.more>* {
     padding-right: 38px;
 }
 
+/* 쿠폰 리스트 스타일 */
+.coupon_list>.couponLi {
+	list-style: none;
+	/* background-color: #fff; */
+	width: 48%;
+	float: left;
+}
+
+.coupon_list>li:nth-child(odd) {
+	clear: both;
+}
+
+.coupon_list>li:nth-child(2n) {
+    float: right;
+}
+
+.mycoupon {
+	height: 250px;
+	background-color: #fff;
+}
+
+.coupon_detail {
+	float: left;
+	border-right: #d3d3d3 dashed;
+	width: 75%;
+	margin-top: 10%;
+	margin-left: 3%;
+}
+
+.coupon_img {
+	float: left;
+}
+.coupon_img img {
+	width: 200px;
+}
+
+.coupon_cont {
+	float: left;
+	margin-right: 10%;
+	font-size: 20px;
+	font-family: 'S-CoreDream-9Black';
+}
+
+.coupon_price {
+	float: right;
+	font-size: 19px;
+    margin-top: 10%;
+    margin-right: 5%;
+    font-family: 'S-CoreDream-9Black';
+}
+
+.coupon_cont {
+	float: right;
+}
+
+.coupon_cont p:nth-child(1) {
+	font-size : 22px;
+}
+
+.coupon_cont p:nth-child(2) {
+	font-size : 16px;
+	/* font-family: 'S-CoreDream-5Medium'; */
+}
+
+.coupon_price p:nth-child(1) {
+	color: #d3d3d3;
+	text-decoration: line-through;
+}
+
+.coupon_price p:nth-child(2) {
+	color: #E22219;
+}

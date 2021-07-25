@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.stamp.model.StampDAO">
+	
+	<select id="getStampList" resultType="com.burger.stamp.model.StampDTO">
+		select * from my_stamp where user_id = #{user_id}
+	</select>
+	
+	<delete id="minus5Stamp" parameterType="String">
+		<![CDATA[
+		delete from my_stamp
+		where user_id = #{user_id}
+		and stamp_count > (select max(stamp_count - 5) from my_stamp where user_id = #{user_id})
+		]]>
+	</delete>
+	
+	<delete id="minus10Stamp" parameterType="String">
+		<![CDATA[
+		delete from my_stamp
+		where user_id = #{user_id}
+		and stamp_count > (select max(stamp_count - 10) from my_stamp where user_id = #{user_id})
+		]]>
+	</delete>
+	
+</mapper>
