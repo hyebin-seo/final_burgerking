@@ -46,7 +46,7 @@
 	         						${dto.getNotice_title() }</a></td>
 	               
 	               <td> <fmt:formatDate value="${dto.getNotice_regdate() }"
-	               				pattern="yyyy-MM-dd"/>
+	               				pattern="yyyy-MM-dd"/></td>
 	               	<td> ${dto.getNotice_hit() } </td>			
 	            </tr>
 	         </c:forEach>

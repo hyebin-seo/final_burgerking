@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.burger.cs.model.QnaDAO">
+
+	<select id="q_count" resultType="int">
+		select count(*) from qna
+	</select>
+	
+	<select id="q_list" parameterType="com.burger.cs.model.PageDTO"
+								resultType="com.burger.cs.model.QnaDTO">
+		<![CDATA[
+			select * from
+				(select n.*, row_number()
+				   over(order by qna_no desc) rnum
+				   from qna n) 
+				     where rnum >= #{startNo} and rnum <= #{endNo} 
+		]]>
+	</select>
+
+
+
+
+	<insert id="q_add" parameterType="com.burger.cs.model.QnaDTO">
+		<selectKey resultType="int" keyProperty="qna_no" order="BEFORE">
+			select count(*) + 1 from qna
+		</selectKey>
+		
+		insert into qna values(#{qna_no}, #{qna_name}, #{qna_phone},
+		 #{qna_mail}, #{qna_field}, #{qna_store}, #{qna_title}, #{qna_cont}, 
+		 #{qna_file}, sysdate)
+	
+	</insert>
+
+
+
+		
+		 
+	<select id="q_content" parameterType="int" 
+							resultType="com.burger.cs.model.QnaDTO">
+		select * from qna where qna_no = #{no}
+	</select>
+	
+</mapper>
