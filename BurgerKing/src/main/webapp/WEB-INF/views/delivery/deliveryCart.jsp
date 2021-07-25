@@ -18,16 +18,16 @@
 			</div>
 		</a>
 		<div class="center_bar"> </div>
-		<a <c:if test="${!empty delivery_addr }">href="cart.do"</c:if>>
+		<a <c:if test="${!empty addrSession }">href="cart.do"</c:if>>
 			<div class="personal_cart">
 				<dl>
 					<dt>
 						<strong>카트</strong>
 					</dt>
-					<c:if test="${empty delivery_addr }">
+					<c:if test="${empty addrSession }">
 						<dd>카트에 담은 상품이 없습니다.</dd>
 					</c:if>
-					<c:if test="${!empty delivery_addr}">
+					<c:if test="${!empty addrSession}">
 						<dd>총 ${fn:length(cartlist) }건의 상품이 담겨 있습니다.</dd>
 					</c:if>
 				</dl>
@@ -46,18 +46,18 @@
 		
 		<div class="location">
 			<span class="addr">
-			   <c:if test="${empty delivery_addr }">
+			   <c:if test="${empty addrSession }">
 				<span>배달지를 선택하세요</span>
 			   </c:if>
-			   <c:if test="${!empty delivery_addr }">
+			   <c:if test="${!empty addrSession }">
 				<span>${delivery_addr }</span>
 			   </c:if>
 			</span>
 			<span class="shop">
-			   <c:if test="${empty delivery_addr }">
+			   <c:if test="${empty addrSession }">
 				<span>지점</span>
 			   </c:if>
-			   <c:if test="${!empty delivery_addr }">
+			   <c:if test="${!empty addrSession }">
 				<span>${addrSession.store_name }</span>
 			   </c:if>
 			</span>

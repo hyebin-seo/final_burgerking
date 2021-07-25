@@ -1,0 +1,508 @@
+@charset "UTF-8";
+
+body {
+    min-height: 100%;
+    color: #000;
+    background: #f2ebe6;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+body, html {
+    height: 100%;
+    min-height: 450px;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.contentsWrap {
+    min-height: 450px;
+    margin: 0 auto;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+.bg_w {
+    background: #fff;
+}
+
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.MOB {
+    display: none!important;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.contentsWrap .page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+}
+
+.container01 {
+    padding: 20px 0;
+}
+
+.orderstatusWrap {
+    margin-bottom: -5px;
+    padding-top: 20px;
+    background: #fff;
+}
+
+.resultBox {
+    min-height: 165px;
+    padding: 10px 240px 0 0;
+    font-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: 90%;
+}
+
+.resultBox.delivery {
+    background-image: url('https://www.burgerking.co.kr/dist/img/ico_order_result_delivery.1efcaeb3.png');
+}
+
+em {
+    color: #e22219;
+}
+
+.resultBox .txt_stat {
+    font-weight: 700;
+}
+
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+
+.resultBox .c_btn {
+    margin-top: 20px;
+    text-align: left;
+}
+
+button {
+    margin: 0;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.btn01 {
+    display: inline-block;
+    width: 256px;
+    height: 68px;
+    font-size: 1.5rem;
+    padding: 12px 10px 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    background: url('https://www.burgerking.co.kr/dist/img/bg_btn01_normal.192da552.png') no-repeat 50%;
+    background-size: 100% 100%;
+
+}
+
+.tit01 {
+    margin: 45px 0 17px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2e2e2e;
+}
+
+.titbox {
+    position: relative;
+    padding-right: 5em;
+}
+
+.tit01:first-child {
+    margin-top: 0;
+}
+
+.tit_ico {
+    position: relative;
+    padding-left: 50px;
+    line-height: 40px;
+}
+
+.tit_ico:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: 0;
+}
+
+.tit_ico.list:before {
+    background-image: url('../../resource/img/delivery/orderlist_icon.png');
+}
+
+.tit_ico>* {
+    margin: 0;
+    padding: 0;
+}
+
+.rcen_btn {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.rbot_btn, .rcen_btn {
+    position: absolute;
+    right: 0;
+}
+
+.order_list {
+    padding: 4px 64px 2px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+}
+
+
+.order_list .prd_img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 254px;
+    height: 167px;
+    margin-top: -83.5px;
+}
+
+.order_list .prd_img>span {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+.order_list .cont {
+    padding: 52px 0 16px;
+}
+
+.order_list .tit {
+    position: relative;
+    padding-right: 3em;
+    font-size: 1.75rem;
+}
+
+.order_list .price {
+    font-size: 1.75rem;
+}
+
+.order_list .info, .order_list .menu_info {
+    margin-top: 25px;
+    font-size: 1.125rem;
+    color: #737373;
+    line-height: 167%;
+}
+
+.order_list .menu_info {
+    margin-top: 20px;
+}
+
+.tag.st03 {
+    color: #2e2e2e;
+    background: url(../../img/delivery/mount_right.png),
+    			url(../../img/delivery/mount_left.png);
+    background-size: auto 100%,auto 100%;
+    font-weight: bolder;
+}
+
+.tag, .tag>* {
+    display: inline-block;
+}
+
+.tag>* {
+    height: 32px;
+    padding: 4px 5px;
+    line-height: 26px;
+    background: #762824;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.order_list .order_count {
+    position: absolute;
+    right: 0;
+    top: 54px;
+}
+
+.tag.st03>* {
+    background: #e8e8e8;
+}
+
+.tit_ico:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: 0;
+}
+
+.tit_ico.burger:before {
+    background-image: url(../../img/delivery/burger_black.png);
+}
+
+.tit_ico>* {
+    margin: 0;
+    padding: 0;
+}
+
+.tit01.tit_ico+.container02 {
+    margin-top: 8px;
+}
+
+.order_list_sum .titbox02 {
+    position: relative;
+    margin-top: -55px;
+    padding: 32px 4em 28px 0;
+    border-bottom: 2px dashed #e6e6e6;
+}
+
+.order_list_sum .tit {
+    margin: 0;
+    font-size: 1.375rem;
+}
+
+.order_list_sum .titbox02 .tit {
+    font-size: 1.75rem;
+}
+
+.order_list_sum .tit .tag {
+    position: absolute;
+    right: 64px;
+    top: 50%;
+    margin-top: -16px;
+}
+
+.order_list_sum .titbox02 .tag {
+    right: 0;
+}
+
+.order_list_sum .cont {
+    padding-top: 22px;
+}
+
+.order_list_sum .cont .info {
+    display: table;
+    width: 100%;
+    font-size: 1.375rem;
+}
+
+.order_list_sum .cont .info>* {
+    display: table-cell;
+    padding-right: 10px;
+    vertical-align: top;
+}
+
+.order_list_sum .cont .info dt {
+    opacity: .6;
+}
+
+.order_list_sum .cont .info dd {
+    margin-top: 15px;
+}
+
+.order_list_sum .cont .info>:last-child {
+    padding-right: 0;
+}
+
+.tit_ico.money:before {
+	background-image: url(../../img/delivery/money_black.png);
+}
+
+.tit01.tit_ico+.container02 {
+    margin-top: 8px;
+}
+
+.order_payment_list .group {
+    position: relative;
+    margin-bottom: 17px;
+    padding-bottom: 17px;
+}
+
+
+.container02.pd02 {
+    padding: 55px 64px;
+}
+
+.order_payment_list.w_st02 {
+    padding-bottom: 95px;
+}
+
+.order_payment_list.w_st02>div {
+    display: table;
+    width: 100%;
+    font-size: 1.375rem;
+}
+
+.order_payment_list.w_st02 dl {
+    display: table-cell;
+    width: auto;
+    margin: 0;
+    padding-right: 16px;
+    vertical-align: top;
+    border: none;
+}
+
+.order_payment_list dd, .order_payment_list dt {
+    display: table-cell;
+    padding: 1px 0;
+    vertical-align: middle;
+}
+
+.order_payment_list.w_st02 dd, .order_payment_list.w_st02 dt {
+    display: block;
+    text-align: left;
+}
+
+.order_payment_list.w_st02 dt {
+    opacity: .6;
+}
+
+.order_payment_list.w_st02 dl {
+    display: table-cell;
+    width: auto;
+    margin: 0;
+    padding-right: 16px;
+    vertical-align: top;
+    border: none;
+}
+
+.order_payment_list.w_st02 .tot02 {
+    position: absolute;
+    left: 64px;
+    right: 64px;
+    bottom: 0;
+    height: 107px;
+    padding: 0;
+    text-align: right;
+    border-top: 2px dashed #e5e5e5;
+}
+
+.order_payment_list.w_st02 .tot02>* {
+    display: inline;
+    font-size: 1.375rem;
+    line-height: 107px;
+    opacity: 1;
+}
+
+.order_payment_list.w_st02 dl:last-child {
+    padding-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-height: 500px) and (orientation: landscape), 
+screen and (max-width: 768px) and (orientation: portrait) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,4 +14,6 @@ public class OrderMenuDTO {
 	private String detailStr; //재료추가 정보
 	private String side;
 	private String drink;
+	private String cart_no;
+	private String menu_img;
 }

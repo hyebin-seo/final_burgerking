@@ -33,6 +33,10 @@ function totalPriceSetting() {
 	
 	$(".allprice_span").text(addComma(sum));
 	$(".total_span").text(addComma(sum));
+	
+	$(".order_price").val(sum);
+	$(".pay_price").val(sum);
+	
 }
 
 //천단위 콤마 부여
@@ -45,4 +49,15 @@ function addComma(value){
 function delComma(value){
     value = value.toString().replace(/,/g, '');
     return value; 
+}
+
+//주문하기
+function goOrder() {
+	
+	var payment = $('input[name="paymentType"]:checked').val();
+	
+	$(".pay_way").val(payment);
+	
+	var orderForm = document.orderForm;
+	orderForm.submit();
 }

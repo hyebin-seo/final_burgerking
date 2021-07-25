@@ -177,7 +177,7 @@ function goOrder() {
 		
 		if(chkbox.is(':checked')) {
 			
-			var menuno = $(item).attr("class"); //메뉴번호
+			
 			var menuname = $(item).find(".tit > strong > span").text().trim(); //메뉴이름
 			var menuinfo = $(item).find(".set_info").text().trim(); //메뉴정보
 			
@@ -201,6 +201,10 @@ function goOrder() {
 			var pricespan = $(item).find(".pricespan"); 
 			
 			var price = Number(delComma(pricespan.text().trim())); //개별 합계가격
+			
+			var cartno = $(item).attr("class"); //카트번호
+			var menuno = $(".menu_no_inp"+cartno).val().trim(); //메뉴번호
+			var menuimg = $(".menu_img"+cartno).val().trim(); //메뉴이미지
 
 			console.log("메뉴번호: "+menuno);
 			console.log("메뉴이름: "+menuname);
@@ -210,10 +214,12 @@ function goOrder() {
 			console.log("음료수정보: "+drink);
 			console.log("수량: "+mount);
 			console.log("개별 합계가격: "+price);
+			console.log("카트번호: "+cartno);
+			console.log("메뉴이미지: "+menuimg);
 			
 			menuArr[menu_index] = menuno+"^"+menuname+"^"+
 								  menuinfo+"^"+detailStr+"^"+
-								  side+"^"+drink+"^"+mount+"^"+price;
+								  side+"^"+drink+"^"+mount+"^"+price+"^"+cartno+"^"+menuimg;
 			console.log(menuArr[menu_index]);
 			console.log("==========================");
 			menu_index++;
