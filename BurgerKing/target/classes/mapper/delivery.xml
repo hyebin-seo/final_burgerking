@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.burger.delivery.model.DeliveryDAO">
-	<select id="orderList" resultType="com.burger.delivery.model.DeliveryDTO">
+<!-- 	<select id="orderList" resultType="com.burger.delivery.model.DeliveryDTO">
 		select * from order_list where user_id = 'hong'
-	</select>
+	</select> -->
 </mapper>

@@ -58,6 +58,13 @@
     select * from user_info where user_id = #{user_id} and user_name = #{user_name}
     
    </select>
+   
+   
+   <select id="order_check" resultType="com.burger.delivery.model.OrderListDTO">
+   
+    select * from orderlist where order_no = #{order_no} and order_pwd = #{order_pwd}
+    
+   </select>
   
   </mapper>
 

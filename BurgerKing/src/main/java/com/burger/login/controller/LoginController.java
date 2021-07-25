@@ -28,6 +28,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.burger.brandStory.model.newMenuDAO;
+import com.burger.delivery.model.OrderListDTO;
 import com.burger.login.model.EmailService;
 import com.burger.login.model.Guest_Order;
 import com.burger.login.model.LoginDAO;
@@ -431,6 +433,41 @@ public class LoginController {
     	
   
     
+    }	
+    
+    
+ // guest주문에대한 주문 정보를 조회하는 메서드
+    @RequestMapping("order_check.do")
+    @ResponseBody
+    public String order_check(HttpServletRequest request, HttpServletResponse response,HttpSession session,OrderListDTO dto) throws IOException {
+    	
+    	
+    	System.out.println("1"+dto);
+    	
+        dto = this.dao.order_check(dto);   
+        
+        System.out.println("dto>>+"+dto);
+        
+         if(dto != null) {
+        	  
+        	
+     		return "sucess";
+        	 
+         }else {
+        	 
+        	return "fail";
+         	 
+         }
+     	
+//    	response.setContentType("text/html; charset=UTF-8");
+//		PrintWriter script = response.getWriter();
+//		
+//		script.println("<script>");
+//		script.println("location.href='delivery_home.do'");
+//		script.println("</script>");
+    	
+  
+       
     }	
 
 

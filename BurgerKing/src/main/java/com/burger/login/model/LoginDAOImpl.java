@@ -5,6 +5,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.burger.delivery.model.OrderListDTO;
+
 @Repository
 public class LoginDAOImpl implements LoginDAO {
 
@@ -60,6 +62,14 @@ public class LoginDAOImpl implements LoginDAO {
 	public UserDTO snsidCheck(UserDTO dto) {
 		
 		return this.sqlSession.selectOne("snsidCheck", dto);
+	}
+
+	@Override
+	public OrderListDTO order_check(OrderListDTO dto) {
+		
+		return this.sqlSession.selectOne("order_check", dto);
+				
+				
 	}
 
 }
