@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.page_tit {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    line-height: 100%;
+    font-family: 'S-CoreDream-9Black';
+}
+
+.order_list .prd_img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 254px;
+    height: 167px;
+    margin-top: -83.5px;
+}
+
+.order_list .cont {
+    padding: 52px 0 16px;
+}
+
+.order_list .tit {
+    position: relative;
+    padding-right: 3em;
+    font-size: 1.75rem;
+}
+
+.order_list .tit > strong{
+    position: relative;
+    padding-right: 3em;
+    font-size: 1.75rem;
+    font-family: 'S-CoreDream-9Black';
+}
+
+.order_list .tit .tag {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -16px;
+    font-size: 1.125rem;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.order_list .info dd, .order_list .info dt {
+    display: inline;
+}
+
+.order_list .info dt:after {
+    content: ":";
+    margin: 0 5px 0 3px;
+}
+
+a {
+    margin: 0;
+    /* color: #000; */
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+} 
+
+.btn_detail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -99999em;
+    background: transparent;
+}
+
+.nodata, .nodata .tit {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.nodata {
+    padding: 370px 10px 10px;
+    color: #766e69;
+    text-align: center;
+    background: url('https://www.burgerking.co.kr/dist/img/ico_nodata01.26f01a61.png') no-repeat center 150px;
+    z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

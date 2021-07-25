@@ -33,6 +33,14 @@ a, div, li {
     box-sizing: border-box;
 }
 
+li {
+    list-style: none;
+}
+
+address, em {
+    font-style: normal;
+}
+
 .contentsWrap {
     min-height: 450px;
     margin: 0 auto;
@@ -46,6 +54,17 @@ dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 900;
     font-size: 1em;
+}
+
+button {
+    margin: 0;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .bg_w {
@@ -81,6 +100,16 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px 0;
 }
 
+.container02 {
+    position: relative;
+    margin: 15px 0;
+    padding: 20px 50px;
+    font-size: 1.375rem;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
 .orderstatusWrap {
     margin-bottom: -5px;
     padding-top: 20px;
@@ -97,6 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .resultBox.delivery {
     background-image: url('https://www.burgerking.co.kr/dist/img/ico_order_result_delivery.1efcaeb3.png');
+    font-family: 'S-CoreDream-9Black';
 }
 
 em {
@@ -181,7 +211,7 @@ button {
 }
 
 .tit_ico.list:before {
-    background-image: url('../../resource/img/delivery/orderlist_icon.png');
+    background-image: url(../../img/delivery/orderlist_icon.png);
 }
 
 .tit_ico>* {
@@ -206,6 +236,15 @@ button {
     -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
     box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
 }
+
+.order_list>li {
+    position: relative;
+    min-height: 224px;
+    padding-left: 315px;
+    border-bottom: 2px dashed #e6e6e6;
+}
+
+
 
 
 .order_list .prd_img {
@@ -235,10 +274,19 @@ img {
     position: relative;
     padding-right: 3em;
     font-size: 1.75rem;
+    font-family: 'S-CoreDream-9Black';
 }
 
 .order_list .price {
     font-size: 1.75rem;
+    font-family: 'S-CoreDream-9Black';
+}
+
+.order_list_sum {
+    padding: 55px 64px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
 }
 
 .order_list .info, .order_list .menu_info {
@@ -250,6 +298,15 @@ img {
 
 .order_list .menu_info {
     margin-top: 20px;
+}
+
+.tag {
+    padding: 0 5px;
+    font-size: 1rem;
+    color: #fff;
+    line-height: normal;
+    background-size: auto 100%,auto 100%;
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .tag.st03 {
@@ -317,6 +374,7 @@ img {
 .order_list_sum .tit {
     margin: 0;
     font-size: 1.375rem;
+    font-family: 'S-CoreDream-9Black';
 }
 
 .order_list_sum .titbox02 .tit {
@@ -341,7 +399,7 @@ img {
 .order_list_sum .cont .info {
     display: table;
     width: 100%;
-    font-size: 1.375rem;
+    font-size: 1.2rem;
 }
 
 .order_list_sum .cont .info>* {
@@ -356,6 +414,7 @@ img {
 
 .order_list_sum .cont .info dd {
     margin-top: 15px;
+    font-family: 'S-CoreDream-9Black';
 }
 
 .order_list_sum .cont .info>:last-child {
@@ -375,6 +434,32 @@ img {
     margin-bottom: 17px;
     padding-bottom: 17px;
 }
+
+.order_payment_list dd {
+    font-weight: 700;
+    text-align: right;
+    font-family: 'S-CoreDream-9Black';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 769px) {
 
 
 .container02.pd02 {
@@ -424,6 +509,12 @@ img {
     border: none;
 }
 
+.order_payment_list.w_st02 .tot02 dd {
+    margin-left: .5em;
+    font-size: 2.375rem;
+    font-family: 'S-CoreDream-9Black';
+}
+
 .order_payment_list.w_st02 .tot02 {
     position: absolute;
     left: 64px;
@@ -445,31 +536,10 @@ img {
 .order_payment_list.w_st02 dl:last-child {
     padding-right: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-height: 500px) and (orientation: landscape), 
-screen and (max-width: 768px) and (orientation: portrait) {
-
-
-
-
+	
+.order_payment_list.w_st02 dd {
+    margin-top: 15px;
+}
 
 
 

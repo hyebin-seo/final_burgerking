@@ -15,10 +15,10 @@
 <jsp:include page="deliveryCart.jsp"/>
 <body>
 
-<c:if test="${!empty delivery_addr }">
+<c:if test="${!empty addrSession }">
 	<jsp:include page="menu_delivery.jsp"/>	 
 </c:if>
-<c:if test="${empty delivery_addr }">
+<c:if test="${empty addrSession }">
 	<div class="web_container">
 	    <div class="subtitWrap">
 	        <h3 class="page_tit">메뉴</h3>

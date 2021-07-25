@@ -7,13 +7,13 @@
 
 <div class="order_container">
 	<div class="order">
-		<a>
+		<a href="orderList.do">
 			<div class="personal_order">
 				<dl>
 					<dt>
 					<strong>딜리버리 주문내역</strong>
 					</dt>
-					<dd>주문내역이 없습니다.</dd>
+						<dd>최근 주문내역 조회</dd>
 				</dl>
 			</div>
 		</a>
@@ -24,12 +24,7 @@
 					<dt>
 						<strong>카트</strong>
 					</dt>
-					<c:if test="${empty addrSession }">
-						<dd>카트에 담은 상품이 없습니다.</dd>
-					</c:if>
-					<c:if test="${!empty addrSession}">
-						<dd>총 ${fn:length(cartlist) }건의 상품이 담겨 있습니다.</dd>
-					</c:if>
+						<dd>나의 장바구니</dd>
 				</dl>
 			</div>
 		</a>

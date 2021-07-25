@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>주문완료</title>
+<title>주문내역</title>
 </head>
 <jsp:include page="deliveryHeader.jsp" flush="true"/>
 <jsp:include page="deliveryCart.jsp"/>
@@ -23,8 +23,8 @@
             <div class="container01">
                 <div class="orderstatusWrap">
                     <div class="resultBox delivery" style="">
-                    	<span class="tit"><strong>${orderDTO.order_no }</strong></span>
-                    	<div class="c_btn"><em class="txt_stat">&nbsp;<span>주문완료</span></em></div>
+                    	<span class="tit"><strong>${orderDTO.order_date }</strong></span>
+                    	<div class="c_btn"><em class="txt_stat"><span>주문완료</span></em></div>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                             </p>
                             <p class="price">
                             	<strong>
-                            		<span>${menu.menu_price }</span>
+                            		<span><fmt:formatNumber pattern="#,###,###">${menu.menu_price }</fmt:formatNumber></span>
                             		<span class="unit">원</span>
                             	</strong>
                             </p>
@@ -112,7 +112,7 @@
                         <div>
                             <dl>
                                 <dt>주문금액</dt>
-                                <dd><span>${orderDTO.order_price }</span><span class="unit">원</span></dd>
+                                <dd><span><fmt:formatNumber pattern="#,###,###">${orderDTO.order_price }</fmt:formatNumber></span><span class="unit">원</span></dd>
                             </dl>
                             <dl class="group">
                                 <dt>쿠폰</dt>
@@ -124,7 +124,7 @@
                             </dl>
                             <dl class="tot02">
                                 <dt>결제금액</dt>
-                                <dd><em><span>${orderDTO.pay_price }</span><span class="unit">원</span></em></dd>
+                                <dd><em><span><fmt:formatNumber pattern="#,###,###">${orderDTO.pay_price }</fmt:formatNumber></span><span class="unit">원</span></em></dd>
                             </dl>
                             <dl>
                                 <dt>스탬프지급</dt>
@@ -136,7 +136,11 @@
                 <div class="c_btn m_item2"></div>
             </div>
         </div>
+        <div class="c_btn m_item2">
+          <button type="button" class="btn01 m" onclick="location.href='orderList.do'"><span>주문목록</span></button>
+   		</div>
     </div>
+    
 </div>
 </body>
 <jsp:include page="../footer.jsp" />

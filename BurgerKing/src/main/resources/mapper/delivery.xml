@@ -4,8 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.burger.delivery.model.DeliveryDAO">
- 	<select id="orderList" resultType="com.burger.delivery.model.OrderListDTO">
-		select * from orderlist where user_id = #{user_id}
+ 	<select id="orderList_open" resultType="com.burger.delivery.model.OrderListDTO">
+		select * from orderlist where order_id = #{user_id} order by order_date desc
 	</select>
 	
 	<select id="order_detail_open" resultType="com.burger.delivery.model.OrderListDTO">

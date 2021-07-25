@@ -17,4 +17,6 @@ public class OrderListDTO {
 	private String order_date;
 	private String order_claim;
 	private String store_phone;
+	private String order_name;
+	private String order_img;
 }

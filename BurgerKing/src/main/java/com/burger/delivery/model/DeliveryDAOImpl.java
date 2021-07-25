@@ -13,8 +13,8 @@ public class DeliveryDAOImpl implements DeliveryDAO {
 	private SqlSessionTemplate sqlSession;
 	
 	@Override
-	public List<DeliveryDTO> gerOrderList(String user_id) {
-		return this.sqlSession.selectList("orderList", user_id);
+	public List<OrderListDTO> gerOrderList(String user_id) {
+		return this.sqlSession.selectList("orderList_open", user_id);
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -92,9 +93,25 @@ public class DeliveryController {
 	}
 	
 	@RequestMapping("location.do")
-	public String location() {
+	public String location(Model model, 
+			HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
+			
+		HttpSession session = request.getSession();
+		UserDTO udto = (UserDTO) session.getAttribute("memberSession");
+		PrintWriter script = response.getWriter();
 		
-		return "delivery/deliveryLocation";
+		if(udto != null) {
+			List<OrderListDTO> olist = dao.gerOrderList(udto.getUser_id());
+			model.addAttribute("orderList", olist);
+			return "delivery/deliveryLocation";
+		} else {
+			script.println("<script>");
+			script.println("location.href='Login.do'");
+			script.println("</script>");
+		}
+		
+		return null;
 	}
 	
 	@RequestMapping("delivery_order.do")
@@ -191,7 +208,7 @@ public class DeliveryController {
 				model.addAttribute("menulist", list);
 				model.addAttribute("orderDTO", orderDto);
 				
-				//stampDao.insertStamp(udto.getUser_id());
+				stampDao.insertStamp(udto.getUser_id());
 				script.println("<script>");
 				script.println("location.href='orderDetail.do?no="+order_no+"'");
 				script.println("</script>");
@@ -217,6 +234,41 @@ public class DeliveryController {
 		model.addAttribute("orderDTO", orderDto);
 		
 		return "delivery/deliveryOrderDetail";
+	}
+	
+	@RequestMapping("orderList.do")
+	public String orderDetail(Model model, 
+							HttpServletRequest request,
+							HttpServletResponse response) throws IOException {
+		
+		HttpSession session = request.getSession();
+		UserDTO udto = (UserDTO) session.getAttribute("memberSession");
+		PrintWriter script = response.getWriter();
+		
+		if(udto != null) {
+			List<OrderListDTO> olist = dao.gerOrderList(udto.getUser_id());
+			
+			for(int i=0; i<olist.size(); i++) {
+				List<OrderMenuDTO> mlist = dao.orderMenuOpen(olist.get(i).getOrder_no());
+				if(mlist.size() == 1) {
+					olist.get(i).setOrder_name(mlist.get(0).getMenu_name());
+				} else if(mlist.size() > 1){
+					olist.get(i).setOrder_name(mlist.get(0).getMenu_name()+" 외 "+(mlist.size()-1)+"건");
+				}
+				olist.get(i).setOrder_img(mlist.get(0).getMenu_img());
+			}
+			
+			
+			model.addAttribute("orderList", olist);
+			
+			return "delivery/deliveryOrderList";
+		} else {
+			script.println("<script>");
+			script.println("location.href='Login.do'");
+			script.println("</script>");
+		}
+		
+		return null;
 	}
 	
 }
