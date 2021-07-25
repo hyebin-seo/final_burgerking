@@ -4,7 +4,32 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.burger.delivery.model.DeliveryDAO">
-<!-- 	<select id="orderList" resultType="com.burger.delivery.model.DeliveryDTO">
-		select * from order_list where user_id = 'hong'
-	</select> -->
+ 	<select id="orderList" resultType="com.burger.delivery.model.OrderListDTO">
+		select * from orderlist where user_id = #{user_id}
+	</select>
+	
+	<select id="order_detail_open" resultType="com.burger.delivery.model.OrderListDTO">
+		select * from orderlist where order_no = #{order_no}
+	</select>
+	
+	<select id="order_menu_list" resultType="com.burger.delivery.model.OrderMenuDTO">
+		select * from ordermenu where order_no = #{order_no}
+	</select>
+	
+	<insert id="order_insert" parameterType="com.burger.delivery.model.OrderListDTO">
+
+		insert into orderlist values(
+			#{order_no}, #{order_id}, #{order_addr}, #{order_phone}, #{order_pwd},
+			#{order_claim}, #{store_name}, #{order_price}, #{pay_price}, #{pay_way},
+			#{pay_coupon}, sysdate, #{store_phone})
+	
+	</insert>
+	
+	<insert id="order_menu_insert" parameterType="com.burger.delivery.model.OrderMenuDTO">
+
+		insert into ordermenu values((select max(order_menu_no+1) from ordermenu),
+			#{order_no},#{menu_no},#{menu_name},#{menu_price},#{menu_info},
+			#{menu_mount},#{detailStr},#{side},#{drink},#{menu_img})
+	
+	</insert>
 </mapper>

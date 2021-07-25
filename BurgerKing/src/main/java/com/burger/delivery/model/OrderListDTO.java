@@ -16,4 +16,5 @@ public class OrderListDTO {
 	private String pay_coupon;
 	private String order_date;
 	private String order_claim;
+	private String store_phone;
 }

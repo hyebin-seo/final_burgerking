@@ -52,6 +52,7 @@
             <ul class="cart_list01">
               <c:forEach items="${cartlist }" var="cart">
                	<input type="hidden" class="cart_no" value="${cart.cart_no }">
+               	
               	<c:if test="${cart.menu_flag == 'single' }">
               		<c:forEach items="${menulist }" var="menu" varStatus="status">
               			<c:if test="${cart.set_no == menu.menu_no }">
@@ -70,6 +71,7 @@
                
                
                 <li class="${cart.cart_no }">
+                  <input type="hidden" class="menu_no_inp${cart.cart_no }" value="${cart.set_no }">
                     <div class="cont">
                         <div class="menu_titWrap">
                         	<label class="menu_name">
@@ -78,9 +80,11 @@
                         				<strong><span>
                         					<c:if test="${cart.menu_flag == 'single' }">
                         						${menuinfo.menu_name }
+                        						<input type="hidden" class="menu_img${cart.cart_no }" value="${menuinfo.menu_img }">
                         					</c:if>
                         					<c:if test="${cart.menu_flag == 'set' }">
                         						${menuinfo.set_name }
+                        						<input type="hidden" class="menu_img${cart.cart_no }" value="${menuinfo.set_img }">
                         					</c:if>
                         				</span></strong>
                         			</span>

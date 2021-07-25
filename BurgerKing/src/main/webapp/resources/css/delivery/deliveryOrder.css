@@ -352,7 +352,7 @@ input[type=radio]:checked+:before {
 }
 
 .tit_ico.burger:before {
-    background-image: url();
+    background-image: url(../../img/delivery/burger_black.png);
 }
 
 .txt_order_menus {

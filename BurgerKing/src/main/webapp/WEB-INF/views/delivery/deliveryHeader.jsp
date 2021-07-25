@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 <link href="resources/css/delivery/deliveryHeader.css"  rel="stylesheet"  type="text/css">
 
-<input type="hidden" id="head_delivery_addr" value="${delivery_addr }">
+<input type="hidden" id="head_delivery_addr" value="${addrSession.store_name }">
 
 <div class="addrPopWrap">
 	<div class="popbox01">

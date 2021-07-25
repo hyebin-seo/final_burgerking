@@ -19,6 +19,7 @@
         <div class="subtitWrap m_bg_basic">
             <h2 class="page_tit">주문하기</h2>
         </div>
+        <form name="orderForm" method="post" action="delivery_order_ok.do">
         <div class="container01 orderWrap">
             <h2 class="tit01 tit_ico delivery"><span>배달정보</span></h2>
             <div class="container02 deli_info01">
@@ -42,7 +43,7 @@
                         <dt>요청사항</dt>
                         <dd>
                             <div class="inp_bytes">
-                                <div><input type="text" class="claim" placeholder="요청사항을 입력하세요" maxlength="50"></div>
+                                <div><input type="text" name="order_claim" class="claim" placeholder="요청사항을 입력하세요" maxlength="49"></div>
                                 <div class="txt_byte"><span>0</span>/<span>50</span></div>
                             </div>
                         </dd>
@@ -53,8 +54,22 @@
                 <h2><span>주문정보</span></h2>
             </div>
             <div class="container02 order_accWrap open">
+            	<input type="hidden" name="order_price" class="order_price" value="">
+            	<input type="hidden" name="pay_price" class="pay_price" value="">
+            	<input type="hidden" name="pay_way" class="pay_way"  value="">
+            	<input type="hidden" name="pay_coupon" class="pay_coupon"  value="no">
                 <ul class="cart_list01 order_list">
                   <c:forEach items="${menulist }" var="menu" varStatus="s">
+                  	<input type="hidden" name="menuList[${s.index }].menu_no" value="${menu.menu_no }">
+                  	<input type="hidden" name="menuList[${s.index }].menu_name" value="${menu.menu_name }">
+                  	<input type="hidden" name="menuList[${s.index }].menu_price" value="${menu.menu_price }">
+                  	<input type="hidden" name="menuList[${s.index }].menu_info" value="${menu.menu_info }">
+                  	<input type="hidden" name="menuList[${s.index }].menu_mount" value="${menu.menu_mount }">
+                  	<input type="hidden" name="menuList[${s.index }].detailStr" value="${menu.detailStr }">
+                  	<input type="hidden" name="menuList[${s.index }].side" value="${menu.side }">
+                  	<input type="hidden" name="menuList[${s.index }].drink" value="${menu.drink }">
+                  	<input type="hidden" name="menuList[${s.index }].cart_no" value="${menu.cart_no }">
+                  	<input type="hidden" name="menuList[${s.index }].menu_img" value="${menu.menu_img }">
                     <li>
                       <div class="cont">
                   		<p class="tit">
@@ -117,17 +132,17 @@
                     <ul class="easy_payment_list">
                         <li class="naver" style="">
                         	<label>
-                        		<input type="radio" name="paymentType" value="02"><span>네이버페이</span>
+                        		<input type="radio" name="paymentType" value="네이버페이"><span>네이버페이</span>
                         	</label>
                         </li>
                         <li class="kakao" style="">
                         	<label>
-                        		<input type="radio" name="paymentType" value="05"><span>카카오페이</span>
+                        		<input type="radio" name="paymentType" value="카카오페이"><span>카카오페이</span>
                         	</label>
                         </li>
                         <li class="payco" style="">
                         	<label>
-                        		<input type="radio" name="paymentType" value="07"><span>페이코</span>
+                        		<input type="radio" name="paymentType" value="페이코"><span>페이코</span>
                         	</label>
                         </li>
                     </ul>
@@ -149,7 +164,7 @@
             <div class="payment_tabcont w_none" style="">
                 <h3 class="tit01 tit_ico phone"><span>카드결제</span></h3>
                 <div class="container02">
-                    <div class="check_list01"><label><input type="radio" name="paymentType" value="08"><span>신용카드 결제</span></label></div>
+                    <div class="check_list01"><label><input type="radio" name="paymentType" value="신용카드 결제"><span>신용카드 결제</span></label></div>
                 </div>
             </div>
             
@@ -157,8 +172,8 @@
                 <h3 class="tit01 tit_ico deliveryman"><span>만나서 결제 </span></h3>
                 <div class="container02">
                     <ul class="check_list01">
-                        <li><label><input type="radio" name="paymentType" value="21"><span>현장에서 신용카드 결제</span></label></li>
-                        <li><label><input type="radio" name="paymentType" value="23"><span>현장에서 현금 결제</span></label></li>
+                        <li><label><input type="radio" name="paymentType" value="현장에서 신용카드 결제"><span>현장에서 신용카드 결제</span></label></li>
+                        <li><label><input type="radio" name="paymentType" value="현장에서 현금 결제"><span>현장에서 현금 결제</span></label></li>
                     </ul>
                 </div>
             </div>
@@ -169,12 +184,13 @@
                     <dd><strong>￦<span class="total_span">12,800</span></strong></dd>
                 </dl>
                 <div class="c_btn m_item2">
-                	<button type="button" class="btn01 m"><span>취소</span></button>
-                	<button type="button" class="btn01 m red"><span>결제하기</span></button>
+                	<button type="button" class="btn01 m" onclick="location.href='cart.do'"><span>취소</span></button>
+                	<button type="button" class="btn01 m red" onclick="javascript:goOrder();"><span>결제하기</span></button>
                 </div>
             </div>
             
         </div>
+        </form>
     </div>
 </div>
 <script src="resources/js/delivery/deliveryOrder.js"></script>
