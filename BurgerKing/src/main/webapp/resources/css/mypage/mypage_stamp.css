@@ -1,5 +1,28 @@
 @charset "UTF-8";
 
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+em {
+    color: #e22219;
+}
+
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+button, table td, table th {
+    padding: 0;
+}
+
 .web_container {
 	max-width: 1184px;
     margin: 0 auto;
@@ -38,6 +61,9 @@
 /* ============================= */
 .contentsBox01 {
     padding: 50px 0 45px;
+    
+    /* 추가 */
+    background-color: #f2ebe6;
 }
 
 .stamp_status {
@@ -78,6 +104,10 @@ strong {
     background-image: url(https://www.burgerking.co.kr/dist/img/bg_stamp_coupon_off.f56a025e.png);
 }
 
+.stamp_list li:nth-child(5n) .stamp.on {
+    background-image: url(https://www.burgerking.co.kr/dist/img/bg_stamp_coupon_on.13b99150.png);
+}
+
 .stamp {
     position: relative;
     width: 134px;
@@ -85,6 +115,15 @@ strong {
     margin: 0 auto;
     background: url(https://www.burgerking.co.kr/dist/img/bg_stamp_off.09d33730.png) no-repeat top;
     background-size: 100% auto;
+}
+
+.stamp.on {
+	position: relative;
+    width: 134px;
+    height: 134px;
+    margin: 0 auto;
+	background: url(https://www.burgerking.co.kr/dist/img/bg_stamp_on.f294add1.png) no-repeat top;
+	background-size: 100% auto;
 }
 
 .stamp>* {
@@ -244,6 +283,7 @@ em {
     background-size: 100% 100%;
     border-radius: 0;
 }
+
 
 .stemp_guide {
     padding: 78px 0 20px;
@@ -417,3 +457,45 @@ em {
     background-size: auto 100%;
 }
 
+
+/* 쿠폰 스타일 */
+.mycoupon {
+	background-color: #fff;
+}
+
+.mycoupon>* {
+	font-family: 'S-CoreDream-5Medium';
+}
+
+.coupon_tit {
+	padding: 1rem 0 1rem 2rem;
+	text-align: left;
+	font-size: 1.2rem;
+	background-color: rgb(248,248,248);
+}
+
+.mycoupon {
+	text-align: center;
+}
+
+.mycoupon_img {
+	width: 100%;
+	padding-top: 3rem;
+	/* width: 200px; */
+	text-align: center;
+}
+
+.mycoupon_img img {
+	width: 150px;
+}
+
+.mycoupon_name {
+	font-size: 1.2rem;
+	font-family: 'S-CoreDream-9Black';
+	padding-top: 3rem;
+}
+
+.mycoupon_btn {
+	padding-top: 2rem;
+	padding-bottom: 3rem;
+}

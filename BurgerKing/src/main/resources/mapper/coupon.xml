@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.burger.coupon.model.CouponDAO">
+	
+	<insert id="insertCoupon" parameterType="com.burger.coupon.model.CouponDTO">
+		insert into my_coupon values((select nvl(max(coupon_no + 1), 1) from my_coupon),
+		#{user_id}, sysdate, #{coupon_type})
+	</insert>
+	
+	<select id="couponList" parameterType="String"
+			resultType="com.burger.coupon.model.CouponDTO">
+		select * from my_coupon order by coupon_date desc
+	</select>
+	
+</mapper>

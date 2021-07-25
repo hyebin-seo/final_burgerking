@@ -21,7 +21,7 @@ import com.burger.location.model.LocationDTO;
 import com.burger.login.model.UserDTO;
 
 @Controller
-public class LotacionController {
+public class LocationController {
 	
 	@Autowired
 	private LocationDAO locationDao;
@@ -154,17 +154,7 @@ public class LotacionController {
 	}
 	
 	
-	// 일단 마이페이지에서 쿠폰, 스탬프 페이지 이동하는 거 보려고 여기에 씀!
-	// DB 만들면 거기 컨트롤러로 옮기기 ★★★★★★★★★★★★
-	@RequestMapping("stamp_list.do")
-	public String stamp(String user_id) {
-		return "mypage_myStamp";
-	}
 	
-	@RequestMapping("coupon_list.do")
-	public String coupon(String user_id) {
-		return "mypage_myCoupon";
-	}
 	
 	
 	

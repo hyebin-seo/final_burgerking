@@ -19,6 +19,8 @@
 <body>
 	
 	<c:set var="myLocSize" value="${myLocSize }" />
+	<c:set var="myStampSize" value="${myStampSize }" />
+	<c:set var="myCouponSize" value="${myCouponSize }" />
 	
 	<!-- 내용 영역 -->
 	<div class="contentsWrap">
@@ -66,7 +68,7 @@
 							<strong>${memberSession.user_name } 님!</strong>
 							<span>반갑습니다</span>
 						</p>
-						<a>
+						<a href="change_info.do">
 							<span>정보변경</span>
 						</a>
 					</div>
@@ -75,8 +77,8 @@
 						<dl class="info_coupon">
 							<dt>나의 쿠폰</dt>
 							<dd>
-								<strong>0장</strong>
-								<a href="coupon_list.do?user_id=${memberSession.user_id }" class="btn_detail">
+								<strong>${myCouponSize }장</strong>
+								<a href="myCoupon.do" class="btn_detail">
 									<span>details</span>
 								</a>
 							</dd>
@@ -85,8 +87,8 @@
 						<dl class="info_stamp">
 							<dt>나의 스탬프</dt>
 							<dd>
-								<strong>0개</strong>
-								<a href="stamp_list.do?user_id=${memberSession.user_id }" class="btn_detail">
+								<strong>${myStampSize }개</strong>
+								<a href="myStamp.do" class="btn_detail">
 									<span>details</span>
 								</a>
 							</dd>

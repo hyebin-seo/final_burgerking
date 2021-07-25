@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,9 @@
 <jsp:include page="delivery/deliveryHeader.jsp" flush="true"/>
 <jsp:include page="delivery/deliveryCart.jsp"/>
 <body>
+	
+	<!-- 페이지 이동시 컨트롤러에서 전달한 데이터들 -->
+	<c:set var="stampList" value="${myStampList }" />
 	
 	<!-- 배너 이미지 -->
 	<div class="contentsBox02">
@@ -35,7 +39,7 @@
 				<h2 class="tit">
 					<strong>
 						나의 스탬프
-						<em><span>0</span>개</em>
+						<em><span>${stampList.size() }</span>개</em>
 					</strong>
 				</h2>
 				<p class="info">
@@ -46,116 +50,161 @@
 					를 드립니다.
 				</p>
 				<ol class="stamp_list">
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon" style="display:none;">쿠폰</em>
-						</div>
-					</li>
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon" style="display:none;">쿠폰</em>
-						</div>
-					</li>
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon" style="display:none;">쿠폰</em>
-						</div>
-					</li>
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon" style="display:none;">쿠폰</em>
-						</div>
-					</li>
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon">쿠폰</em>
-						</div>
-					</li>
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon" style="display:none;">쿠폰</em>
-						</div>
-					</li>
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon" style="display:none;">쿠폰</em>
-						</div>
-					</li>
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon" style="display:none;">쿠폰</em>
-						</div>
-					</li>
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon" style="display:none;">쿠폰</em>
-						</div>
-					</li>
-					<li class>
-						<div class="stamp">
-							<span>스탬프</span>
-							<em class="coupon">쿠폰</em>
-						</div>
-					</li>
+					<!-- stamp가 10개 이하일때 -->
+					<c:if test="${stampList.size() <= 10 }">
+						<c:forEach begin="1" end="${stampList.size() }" var="i">
+							<li class>
+								<div class="stamp on">
+									<span>스탬프</span>
+									<c:if test="${i != 5 && i != 10 }">
+										<em class="coupon" style="display:none;">쿠폰</em>
+									</c:if>
+									<c:if test="${i == 5 || i == 10 }">
+										<em class="coupon">쿠폰</em>
+									</c:if>
+								</div>
+							</li>
+						</c:forEach>
+						<c:forEach begin="${stampList.size()+1 }" end="10" var="j">
+							<li class>
+								<div class="stamp">
+									<span>스탬프</span>
+									<c:if test="${j != 5 && j != 10 }">
+										<em class="coupon" style="display:none;">쿠폰</em>
+									</c:if>
+									<c:if test="${j == 5 || j == 10 }">
+										<em class="coupon">쿠폰</em>
+									</c:if>
+								</div>
+							</li>
+						</c:forEach>
+					</c:if>
+					<!-- stamp가 10개 초과일때 -->
+					<c:if test="${stampList.size() > 10 }">
+						<c:forEach begin="1" end="${stampList.size() - 10 }" var="i">
+							<li class>
+								<div class="stamp on">
+									<span>스탬프</span>
+									<c:if test="${i != 5 && i != 10 }">
+										<em class="coupon" style="display:none;">쿠폰</em>
+									</c:if>
+									<c:if test="${i == 5 || i == 10 }">
+										<em class="coupon">쿠폰</em>
+									</c:if>
+								</div>
+							</li>
+						</c:forEach>
+						<c:forEach begin="${stampList.size()-10 + 1 }" end="10" var="j">
+							<li class>
+								<div class="stamp">
+									<span>스탬프</span>
+									<c:if test="${j != 5 && j != 10 }">
+										<em class="coupon" style="display:none;">쿠폰</em>
+									</c:if>
+									<c:if test="${j == 5 || j == 10 }">
+										<em class="coupon">쿠폰</em>
+									</c:if>
+								</div>
+							</li>
+						</c:forEach>
+					</c:if>				
 				</ol>
-				<div class="c_btn">
+				<!-- 적립내역 기능 삭제 -->
+				<!-- <div class="c_btn">
 					<button type="button" class="btn04 btn01_m02 red">
 						<span>적립내역</span>
 					</button>
-				</div>
+				</div> -->
 			</div>
-			<div class="stamp_couponWrap" style="display:none;">
-				<div class="stamp_titWrap">
-					<p class="tit">
-						<strong>쿠폰을 선택해주세요</strong>
-					</p>
-					<div class="txt">
-						<p>
-							<strong>
-								<em><span>0</span>개</em>
-							</strong>
-							의 쿠폰이 있습니다
+			
+			<!-- 쿠폰 발급가능할때만 보여줌 -->
+			<c:if test="${stampList.size() > 5}">
+				<div class="stamp_couponWrap">
+					<div class="stamp_titWrap">
+						<p class="tit">
+							<strong>쿠폰을 선택해주세요</strong>
 						</p>
-						<p>
-							<span class="ico_i02 WEB">ⓘ</span>
-							쿠폰은 받으신 날로 부터 30일 동안 유효합니다 
-						</p>
+						<div class="txt">
+							<p>
+								<strong>
+									<em><span>1</span>개</em>
+								</strong>
+								의 쿠폰이 있습니다
+							</p>
+							<p>
+								<span class="ico_i02 WEB">ⓘ</span>
+								쿠폰은 받으신 날로 부터 30일 동안 유효합니다 
+							</p>
+						</div>
 					</div>
+					<ul class="stamp_coupon_list">
+						<li class="mycoupon">
+							<div class="coupon_tit">
+								<strong>1번</strong>
+								<span>&nbsp;&nbsp;쿠폰 받기를 선택해 쿠폰을 받으세요</span>
+							</div>
+							<c:if test="${stampList.size() > 5 && stampList.size() < 10}">
+								<div class="mycoupon_img">
+									<span>
+										<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/menu/normal/0e25fe9d-25c1-40a2-b273-3076b2bb4470.png" alt="쿠폰" class style>
+									</span>
+								</div>
+								<div class="mycoupon_name">
+									<p>와퍼주니어세트</p>
+								</div>
+								<div  class="mycoupon_btn">
+								<button type="button" class="btn01 getCoupon"
+										value="coupon5">
+									<span>쿠폰받기</span>
+								</button>
+							</div>
+							</c:if>
+							<c:if test="${stampList.size() >= 10}">
+								<div class="mycoupon_img">
+									<span>
+										<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/menu/normal/ccf7bc1f-a4c1-4d41-bd3f-74552918196f.png" alt="쿠폰" class style>
+									</span>
+								</div>
+								<div  class="mycoupon_name">
+									<p>기네스와퍼세트</p>
+								</div>
+								<div  class="mycoupon_btn">
+								<button type="button" class="btn01 getCoupon"
+										value="coupon10">
+									<span>쿠폰받기</span>
+								</button>
+							</div>
+							</c:if>
+						</li>
+					</ul>
 				</div>
-				<ul class="stamp_coupon_list"></ul>
-			</div>
+			</c:if>
 		</div>
 	</div>
 	
 	<!-- 사용설명 -->
 	<div class="contentsBox01 bg_w">
 		<div class="web_container">
-			<div class="stamp_introWrap">
-				<h3 class="tit">
-					아직 스탬프가<em>부족</em>해요
-				</h3>
-				<p>
-					스탬프를 <strong>5개 이상</strong> 모으면 쿠폰이 지급됩니다.<br>
-					팩 또는 세트 메뉴를 <strong>버거킹 웹/앱에서 주문</strong>해 보세요.
-				</p>
-				<p>
-					※단품, 콤보 및 쿠폰, 전자상품권을 통한 할인 구매 시 스탬프 적립이 되지 않습니다. 그 외 할인 프로모션의 경우 정책에 따라 적립되지 않을 수 있습니다.
-				</p>
-				<div class="c_btn">
-					<a href="#" class="btn01 red">
-						<span>지금 주문하기</span>
-					</a>
+			<!-- 쿠폰 발급 가능할 때는 안 보여줌 -->
+			<c:if test="${stampList.size() <= 5}">
+				<div class="stamp_introWrap">
+					<h3 class="tit">
+						아직 스탬프가<em>부족</em>해요
+					</h3>
+					<p>
+						스탬프를 <strong>5개 이상</strong> 모으면 쿠폰이 지급됩니다.<br>
+						팩 또는 세트 메뉴를 <strong>버거킹 웹/앱에서 주문</strong>해 보세요.
+					</p>
+					<p>
+						※단품, 콤보 및 쿠폰, 전자상품권을 통한 할인 구매 시 스탬프 적립이 되지 않습니다. 그 외 할인 프로모션의 경우 정책에 따라 적립되지 않을 수 있습니다.
+					</p>
+					<div class="c_btn">
+						<a href="#" class="btn01 red">
+							<span>지금 주문하기</span>
+						</a>
+					</div>
 				</div>
-			</div>
+			</c:if>
 			<div class="stemp_guide">
 				<h3 class="tit">스탬프 적립 및 쿠폰 사용 방법</h3>
 				<ol class="WEB step_guide">
@@ -286,5 +335,6 @@
 	</div>
 
 </body>
+<script src="resources/js/mypage/mypage_myStamp.js"></script>
 <jsp:include page="footer.jsp" />
 </html>
