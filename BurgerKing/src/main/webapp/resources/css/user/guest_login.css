@@ -2426,7 +2426,7 @@ input[type=color], input[type=date], input[type=datetime], input[type=email], in
     padding: 20px 10px 22px;
     font-size: 1.625rem;
     line-height: 34px;
-    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_l_m.397f410c.png) no-repeat 50%;
+    background: url(https://www.burgerking.co.kr/dist/i	mg/bg_btn01_l_m.397f410c.png) no-repeat 50%;
     background-size: 100% 100%;
 }
 .btn01.l, .btn01.m {
@@ -2590,5 +2590,4 @@ input[type=color], input[type=date], input[type=datetime], input[type=email], in
 
 
 
-}
 	

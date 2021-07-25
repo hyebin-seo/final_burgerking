@@ -1,5 +1,7 @@
 package com.burger.login.model;
 
+import com.burger.delivery.model.OrderListDTO;
+
 public interface LoginDAO {
 	
 	//회원가입
@@ -26,6 +28,10 @@ public interface LoginDAO {
 	//sns아이디 확인.
 	public UserDTO snsidCheck(UserDTO dto);
 	
+	
+	//비회원 주문 확인 
+	
+	public OrderListDTO order_check(OrderListDTO dto);
 	
 	
 
