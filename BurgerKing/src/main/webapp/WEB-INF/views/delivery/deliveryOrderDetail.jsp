@@ -24,7 +24,7 @@
                 <div class="orderstatusWrap">
                     <div class="resultBox delivery" style="">
                     	<span class="tit"><strong>${orderDTO.order_no }</strong></span>
-                    	<em class="txt_stat">&nbsp;<span>주문완료</span></em>
+                    	<div class="c_btn"><em class="txt_stat">&nbsp;<span>주문완료</span></em></div>
                     </div>
                 </div>
             </div>
