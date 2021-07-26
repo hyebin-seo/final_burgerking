@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.burger.cs.model.FranchiseDAO;
 import com.burger.cs.model.FranchiseDTO;
+import com.burger.cs.model.NoticeDTO;
 import com.burger.cs.model.PageDTO;
 
 @Controller
@@ -85,10 +87,68 @@ public class FranchiseController {
 		return "admin_franchise";
 	}
 	
+	
 	@RequestMapping("AdminFranchiseCont.do")
-	public String AdminFranchiseCont(Model model) {
+	   public String AdminFranchiseCont(@RequestParam("no") int fran_no,  @RequestParam("page") int nowPage, Model model) {
+	      
+	      FranchiseDTO dto = this.dao.getFranchiseCont(fran_no);
+	      
+	      model.addAttribute("franchiseCont", dto);
+	      
+	      System.out.println("dto>>>"+dto);
+	      
+	      model.addAttribute("page", nowPage);
+	      
+	      return "admin_franchiseCont";
+	   }
+	
+	@RequestMapping("FranchiseUpdate.do")
+	public void FranchiseUpdate(@RequestParam("no") int fran_no, @RequestParam("page") int nowPage, HttpServletResponse response) throws IOException {
+	
+		int check = this.dao.updateFranchise(fran_no);
 		
-		return "admin_franchiseCont";
+		response.setContentType("text/html; charset=UTF-8");
+
+		PrintWriter out = response.getWriter();
+
+		if (check > 0) {
+			out.println("<script>");
+			out.println("alert('가맹 승인 완료')");
+			out.println("location.href='AdminFranchiseCont.do?no=" + fran_no + "&page=" + nowPage + "'");
+			out.println("</script>");
+		} else {
+			out.println("<script>");
+			out.println("alert('가맹 승인 실패 ')");
+			out.println("history.back()");
+			out.println("</script>");
+		}
 	}
+	
+	@RequestMapping("FranchiseDelete.do")
+	public void deleteOk(@RequestParam("no") int fran_no, @RequestParam("page") int nowPage, HttpServletResponse response) throws IOException {
+
+		response.setContentType("text/html; charset=UTF-8");
+
+		PrintWriter out = response.getWriter();
+
+		int check = 0;
+
+		check = this.dao.deleteFranchise(fran_no);
+		
+		if (check > 0) {
+			this.dao.reFranchiseNO(fran_no);
+			out.println("<script>");
+			out.println("alert('가맹 신청서 삭제 완료')");
+			out.println("location.href='AdminFranchise.do?page=" + nowPage + "'");
+			out.println("</script>");
+		} else {
+			out.println("<script>");
+			out.println("alert('가맹 신청서 삭제 실패')");
+			out.println("history.back()");
+			out.println("</script>");
+		}
+	}
+
+
 	
 }

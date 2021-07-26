@@ -55,12 +55,6 @@ li {
     list-style: none;
 }
 
-.web_container {
-    max-width: 1184px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 
 /*탭 메뉴*/
 .tab_storyBtn {
@@ -142,6 +136,10 @@ iframe {
 }
 
 /*영상 목록 메뉴 부분*/
+.list{
+ width: 1144px;
+}
+
 .movie_list .tab01 {
     overflow: hidden;
 }
@@ -224,7 +222,7 @@ button, table td, table th {
     position: relative;
     float: left;
     width: 23.5%;
-    margin: 0 2% 10px 0;
+    margin: 0 1.5% 10px 0;
     text-align: center;
 }
 
@@ -303,7 +301,194 @@ img {
 }
 
 
-/*이미지 크기를 위해 임시적으로 줌*/
-.thumb{
+ /*이미지 크기를 위해 임시적으로 줌*/
+/* .thumb{
 	width: 268.833px;
-}
+} */
+
+
+/*반응형*/
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn {
+    border-bottom: 1px solid #f2f2f2;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_shadow {
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li {
+    position: relative;
+    border: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li.on button {
+    border: 0;
+    color: #000;
+    background: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li button {
+    padding: 15px 0;
+    font-size: .938em;
+    background: none;
+    border-bottom: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -6px;
+    content: "";
+    width: 1px;
+    height: 12px;
+    background: #e4e4e4;
+}}
+
+/*2021 메뉴*/
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01:last-child {
+    padding-bottom: 23px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01 {
+    padding: 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.TV_movie {
+    padding: 12px 0 28px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.TV_movie .tit {
+    display: block;
+    margin-bottom: 17px;
+    font-size: 1.375rem;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 {
+    overflow: auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list .tab01 ul {
+    float: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 ul {
+    display: table;
+    width: 100%;
+    background: #fff;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list .tab01 li {
+    width: 14%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 li {
+    display: table-cell;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list .tab01 button {
+    width: auto;
+    min-width: 1em;
+    height: 40px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 a, .tab01 button {
+    display: block;
+    width: 100%;
+    min-width: 4em;
+    height: 56px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    border-width: 3px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+/*영상 목록*/
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list .list {
+    margin-top: 15px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list .list li:nth-child(odd) {
+    clear: both;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list .list li {
+    position: relative;
+    float: left;
+    width: 49%;
+    width: calc(50% - 6px);
+    margin: 0 0 5px;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=radio] {
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkU0OUIzMDUwOTFGMTFFOTkwMzBEQzAyMzMyMTAyRjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkU0OUIzMDYwOTFGMTFFOTkwMzBEQzAyMzMyMTAyRjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RTQ5QjMwMzA5MUYxMUU5OTAzMERDMDIzMzIxMDJGNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RTQ5QjMwNDA5MUYxMUU5OTAzMERDMDIzMzIxMDJGNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Phhti8oAAAI3SURBVHjazFdbS5tBEE32i7HGxtQLthpFKEJvIAqCL/35eQlK6+XBFkRRUIkWSk1r0VzqWThbJsNGNl93sQMHkv2W3bMzZ2dmi4VwKwHzwBwwBVSAMX7rALfADfANuAK6IYsWA+ZMAqtAHcgCyfaAc+AI+JWXgAHeAK/5O4/1gWPgK38HE7Cn3qSrY5gNzY7PGz4CNWALGPd8+03X2ji3gXt65xkwQX0sUh/a7oAm8OMxAvbkH4GyZ+Mv3PxPgK4siXckJc0SbkhPSAIZN9dubwGfQlWtbs0axavD0aBQB1T9FlhQk0+A3WECChDgJa/qtBgfZ9iuJQHr+g3lkQtgL4IA7UZVwtkLrt9xBN5zUMa8mfPkw0gsMywu9HbvVsbBDXXXD7Ra/9H61NArMfbchjjjYF2dfr8Q36z4lkT6tgduZ8x0NTHx1Akkgdl8MSP+d4wSR4FJJpXptacMb4C0dkICeu2KEcqU2SqV6bVLpvDEZjwptpxwP71213hKZDUhAb32rfEIYy4hAb32jfHc+XpgqzaquTI9cC0NG8ieGJzwTIxhy6pR6bla0OeHmqpWZxGLUYktnrzytrm5cNXwJ7AiXD/GBHUZicC6SsF9Njl/y3GH7GaUYssR6sIHHk7aMfuBgY7oO/BSNaPTDE0rRzhKPPmKpyp+dr3lKE3pIVkna0rztuUuw1VjtOWpHiaW7HbowyT20+yEb4qRnmb/xePUp2p7S2apk4pILF31PG+FPmQeBBgA+HyIj95kU20AAAAASUVORK5CYII=) no-repeat 0;
+    background-size: 16px auto;
+    border: none;
+    opacity: 1;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=checkbox], input[type=radio] {
+    position: static;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list .list .tit {
+    margin-top: 10px;
+    font-size: .8125rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list .list li:nth-child(2n) {
+    float: right;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list .list li{
+    width: 347px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.movie_list ul.list{
+    width: 706px;
+}}
+
+
+
+
+

@@ -54,3 +54,4 @@ function brandVideo(jsonStr) {
 	//$(".TV_movie").html("");
 	$(".TV_movie").html(htmlStr);
 }
+

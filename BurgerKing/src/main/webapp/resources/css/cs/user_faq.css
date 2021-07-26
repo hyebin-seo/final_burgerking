@@ -273,3 +273,227 @@ button {
 	text-align: right;
 	padding-right: 5px;
 }
+
+
+
+/*반응형*/
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.faq_category {
+    margin: 12px 16px 6px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.faq_category label {
+    float: left;
+    width: 32%;
+    margin: 0 0 6px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.switch01 {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=radio]:checked {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Nzk0M0ExNzMwOTFGMTFFOUI1REZGQjM5NjBBODc2OEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Nzk0M0ExNzQwOTFGMTFFOUI1REZGQjM5NjBBODc2OEYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3OTQzQTE3MTA5MUYxMUU5QjVERkZCMzk2MEE4NzY4RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3OTQzQTE3MjA5MUYxMUU5QjVERkZCMzk2MEE4NzY4RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrYCYzIAAAIwSURBVHjaxJfNS0JBEMCfmlqR1SG62CVKKOgQ/QdC6KHuZXTsav4ZfhyCjql0VDtX1zq+KEitrtoHBGIdyjTKDjULY9iw+97u84UDP9DZmdl9+zE769DkZQRYAYLAIjANjGHbK3ALlIBT4BhoajbJLJDBgN+SNNEn0EvHg0AC+FTomNIGkhhLSWaAYg8dU0o4k1KyBNQEge5xVkLAFODFvTEHhIE4UBX41jC26XrXBR1vAi6JD3ACEfShcepGMzGEU0WdDoFRC3uIzUyOE68MDPMckhzjXfwiq+IAdjhxU7xN1yZGBxigV2ExCpzT8eeIZojBA+DT7BO2HI+kj2yn0cdJMhsGwTzANqADb4iOOo+B3xbpo9X5yDXScGew2/0m+aGINjwZwHTdbc9Oi5YmyoTBlxclk45XECPBW4YzogwLnKMKmS8qiLFM7M6Z8okoRVOoKwxAN1jCbrtnjXPZiKZP5VL6EMRw0+Po1P5HvmQN2QAaRDchsL1UGMCNQD9J/jfYACpEuSBwzikMIC/Qz5P/VTaAK6IMCpzTeJGYCYu3Z3AKqK2tiahkcIpcokRkJRXHgAv0a+LvmIVU/HvNZzkFyH9fRvtm13HBxus4b3Yd970g6ZRk5X6WZGZFaUShKF23UpTKluVxLMv9mNvd+DuEbZVeyvLumSjb+DC5VnmYdD/NkjY8zVJWnma8x2lLoeN3zC0BmWOisqtXyfN8HNteMM2yZTsBjmSf5z8CDADf/o0PCoy8vAAAAABJRU5ErkJggg==);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.switch01 input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=radio] {
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkU0OUIzMDUwOTFGMTFFOTkwMzBEQzAyMzMyMTAyRjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkU0OUIzMDYwOTFGMTFFOTkwMzBEQzAyMzMyMTAyRjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RTQ5QjMwMzA5MUYxMUU5OTAzMERDMDIzMzIxMDJGNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RTQ5QjMwNDA5MUYxMUU5OTAzMERDMDIzMzIxMDJGNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Phhti8oAAAI3SURBVHjazFdbS5tBEE32i7HGxtQLthpFKEJvIAqCL/35eQlK6+XBFkRRUIkWSk1r0VzqWThbJsNGNl93sQMHkv2W3bMzZ2dmi4VwKwHzwBwwBVSAMX7rALfADfANuAK6IYsWA+ZMAqtAHcgCyfaAc+AI+JWXgAHeAK/5O4/1gWPgK38HE7Cn3qSrY5gNzY7PGz4CNWALGPd8+03X2ji3gXt65xkwQX0sUh/a7oAm8OMxAvbkH4GyZ+Mv3PxPgK4siXckJc0SbkhPSAIZN9dubwGfQlWtbs0axavD0aBQB1T9FlhQk0+A3WECChDgJa/qtBgfZ9iuJQHr+g3lkQtgL4IA7UZVwtkLrt9xBN5zUMa8mfPkw0gsMywu9HbvVsbBDXXXD7Ra/9H61NArMfbchjjjYF2dfr8Q36z4lkT6tgduZ8x0NTHx1Akkgdl8MSP+d4wSR4FJJpXptacMb4C0dkICeu2KEcqU2SqV6bVLpvDEZjwptpxwP71213hKZDUhAb32rfEIYy4hAb32jfHc+XpgqzaquTI9cC0NG8ieGJzwTIxhy6pR6bla0OeHmqpWZxGLUYktnrzytrm5cNXwJ7AiXD/GBHUZicC6SsF9Njl/y3GH7GaUYssR6sIHHk7aMfuBgY7oO/BSNaPTDE0rRzhKPPmKpyp+dr3lKE3pIVkna0rztuUuw1VjtOWpHiaW7HbowyT20+yEb4qRnmb/xePUp2p7S2apk4pILF31PG+FPmQeBBgA+HyIj95kU20AAAAASUVORK5CYII=) no-repeat 0;
+    background-size: 16px auto;
+    border: none;
+    opacity: 1;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=checkbox], input[type=radio] {
+    position: static;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.switch01 input:checked+* {
+    background: #2e2e2e;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.faq_category label>span {
+    padding: 5px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.switch01 input+* {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: .8125rem;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    background: #8d8d8d;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.faq_category label:nth-child(3n - 1) {
+    margin: 0 2% 6px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.switch01 input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}}
+
+/*테이블*/
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.board_list {
+    padding: 0 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.board_list .tlist01.acc_type {
+    width: auto;
+    margin: 0 -16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type, .tlist01.acc_type>* {
+    display: block;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01 {
+    border-bottom: 1px solid #000;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type colgroup, .tlist01.acc_type thead {
+    display: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type td, .tlist01.acc_type th, .tlist01.acc_type tr {
+    display: block;
+    height: auto;
+    padding: 0;
+    font-size: .875rem;
+    text-align: left;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01 thead tr {
+    border-width: 1px 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type td, .tlist01.acc_type th, .tlist01.acc_type tr {
+    display: block;
+    height: auto;
+    padding: 0;
+    font-size: .875rem;
+    text-align: left;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01 thead th {
+    height: 20px;
+    padding: 5px;
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01 tbody td, .tlist01 tbody th {
+    height: 19px;
+    padding: 9px 5px;
+    font-size: .6875rem;
+    text-align: center;
+    vertical-align: middle;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01 tbody tr {
+    border-top: 1px solid #e5e5e5;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type .acc_tit_tr {
+    position: relative;
+    padding: 24px 42px 23px 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type .acc_tit_tr td.category {
+    margin-bottom: 5px;
+    font-size: .75rem;
+    color: #898989;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type .acc_tit_tr td.category:before {
+    content: "[";
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type .acc_tit_tr td.category:after {
+    content: "]";
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type .acc_tit {
+    position: static;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type .acc_tit_tr .btn_acc:after {
+    right: 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type .acc_cont {
+    border: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type .open .show>* {
+    padding: 14px 0;
+    font-size: .875rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tlist01.acc_type .open .show .text_area {
+    padding: 0 16px;
+}}
+
+
+
+
+
+
+

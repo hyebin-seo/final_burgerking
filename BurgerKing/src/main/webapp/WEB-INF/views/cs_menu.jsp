@@ -7,15 +7,10 @@
 <link href="resources/css/cs/cs_menu.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/cs_menu.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1" />	
 </head>
 <body>
-	<!-- 메뉴판 내용 영역 -->
-	<div class="contentsWrap eventWrap">
-		
 		<input type="hidden" id="nowcat" value="${cat }">
-		
-		<!-- 1. 까만 영역 -->
-		<div class="locationWrap WEB"></div>
 
 		<!-- 2. 메뉴판 영역 -->
 			<div class="contentsBox01 bg_w">

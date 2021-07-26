@@ -74,6 +74,7 @@ public class brandStoryController {
 		List<brandTvDTO> tvList = this.tvdao.getTvList();
 
 		model.addAttribute("tvList", tvList);
+		model.addAttribute("cat", "버거킹 NEWS");
 		
 		return "brandStory/burgerkingTv";
 	}

@@ -40,7 +40,7 @@
 	         		<c:forEach items="${list }" var="dto">
 						<tr>
 							<td><span>${dto.getFran_no() }</span></td>
-							<td><a>${dto.getFran_name() }</a></td>
+							<td><a href="<%=request.getContextPath()%>/AdminFranchiseCont.do?no=${dto.getFran_no() }&page=${Paging.getPage()}">${dto.getFran_name() }</a></td>
 							<td><span>${dto.getFran_phone() }</span></td>
 							<td><span>${dto.getFran_email() }</span></td>
 							<td><span>${dto.getFran_possession() }</span></td>

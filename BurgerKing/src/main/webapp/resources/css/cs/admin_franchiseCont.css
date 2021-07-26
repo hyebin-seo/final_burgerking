@@ -111,3 +111,20 @@ button, table td, table th {
     display: block;
     text-align: center;
 }
+
+.btn_list {
+		
+	width: 200px;
+	height: 60px;
+	background: url("../../img/cs/listB.png") no-repeat;
+	background-size: 200px 
+	padding: 0;
+	border: 0;
+	font-family: 'S-CoreDream-9Black';
+	font-size: 1.25rem;
+	color: white;
+}
+
+.btn_flock{
+	text-align: center;
+}

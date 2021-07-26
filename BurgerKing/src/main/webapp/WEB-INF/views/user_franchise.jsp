@@ -4,30 +4,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />	
 <title>가맹점모집</title>
-<link rel="shortcut icon" type="image/x-icon"
-	href="resources/img/main/fab.ico">
+<link rel="shortcut icon" type="image/x-icon" href="resources/img/public/favicon.ico">
 <link  href="resources/css/cs/user_franchise.css"  rel="stylesheet"  type="text/css">
 </head>
 <body>
+	<jsp:include page="franchiselocation.jsp" />
 	<jsp:include page="cs_menu.jsp" />
 	<div class="tab_cont">
 		<h4 class="hide">가맹점 모집</h4>
 		<div class="contentsBox01 bg_w branch_intro01">
 			<div class="web_container">
 				<div class="msgbox">
-					<p class="keyowrd">
+					<p class="keyword">
 						<strong>TASTE IS KING</strong>
 					</p>
 					<h5 class="tit">
 						<span>버거킹이 여러분과</span>
 						<span>함께 새로운 성공을 준비합니다.</span>
 					</h5>
-					<p>세계 최대 글로벌 외식 브랜드 중 하나인 버거킹은 1954년 미국</p>
+					<!-- <p>세계 최대 글로벌 외식 브랜드 중 하나인 버거킹은 1954년 미국</p>
 					<p>마이애미에서 시작하여 괄목할 만한 성장과 함께 1,400만명 이상의</p>
 					<p>버거킹 매니아들에게 큰 사랑을 받고 있습니다. 'TASTE IS KING'이라는  </p>
 					<p>슬로건으로 그 어떤 햄버거보다 최고의 맛과 품질을 선보이고 있으며  </p>
-					<p>고객을 위한 버거킹의 최고의 서비스는 앞으로도 계속 될 것입니다.</p>
+					<p>고객을 위한 버거킹의 최고의 서비스는 앞으로도 계속 될 것입니다.</p> -->
+					
+					<p>세계 최대 글로벌 외식 브랜드 중 하나인 버거킹은 1954년 미국
+					마이애미에서 시작하여 괄목할 만한 성장과 함께 1,400만명 이상의
+					버거킹 매니아들에게 큰 사랑을 받고 있습니다. 'TASTE IS KING'이라는 
+					슬로건으로 그 어떤 햄버거보다 최고의 맛과 품질을 선보이고 있으며  
+					고객을 위한 버거킹의 최고의 서비스는 앞으로도 계속 될 것입니다.</p>
 					
 				</div>
 			</div>
@@ -41,6 +48,13 @@
 						<span>버거킹과 함께</span>
 						<span>새로운 성공의 파트너가 </span>
 						<span>되시길 기원합니다.</span>
+					</strong>
+				</p>
+				<p class="MOB tit">
+					<strong>
+					버거킹과 함께 새로운 성공의 파트너가
+					<br>
+					되시길 기원합니다.
 					</strong>
 				</p>
 				<div class="txt">
@@ -95,7 +109,7 @@
 	</div>
 		<div class="contentsBox01 bg_w branch_reg">
 			<div class="web_container">
-				<h5 class="tit_1">가맹점 신청방법</h5>
+				<h5 class="tit">가맹점 신청방법</h5>
 				<ol class="step">
 					<li>
 						<strong>신청서 작성</strong>

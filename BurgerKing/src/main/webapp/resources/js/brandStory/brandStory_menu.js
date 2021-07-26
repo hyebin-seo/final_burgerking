@@ -27,7 +27,7 @@ $(document).ready(function () {
 		// brandStory_menu_카테고리
 		var brandStory_menu = $(this).children("span").text();
 		
-		if(brandStory_menu == "브랜드 스토리"){
+		if(brandStory_menu == "버거킹 스토리"){
 			
 			location.href = "brandStory.do";
 			

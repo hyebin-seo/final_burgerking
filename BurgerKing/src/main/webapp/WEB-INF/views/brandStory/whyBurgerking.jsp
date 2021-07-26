@@ -9,8 +9,10 @@
 <link href="resources/css/brandStory/whyBurgerking.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/brandStory/whyBurgerking.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1" />	
 </head>
 <body>
+	<jsp:include page="whyBurgerkinglocation.jsp"/>
 	<jsp:include page="brandStory_menu.jsp"/>
 	<div class="web_container">
 		<div class="tab_cont">

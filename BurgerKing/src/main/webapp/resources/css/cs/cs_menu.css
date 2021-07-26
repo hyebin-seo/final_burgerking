@@ -76,6 +76,18 @@ li {
     margin-bottom: 26px;
 }
 
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{#app {
+    min-width: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01, .subWrap02 {
+    min-width: 320px;
+    padding-top: 0!important;
+    padding-bottom: 350px;
+}}
+
 /*고객센터 타이틀*/
 .contentsWrap .page_tit {
     margin-bottom: 15px;
@@ -162,3 +174,98 @@ button, table td, table th {
 /* .tab01 a>*, .tab01 button>* {
     vertical-align: middle;
 } 이 부분 빼면 선이 조금 간격이 생김*/
+
+/*반응형*/
+
+@media screen and (min-width: 375px) and (max-width: 767px)
+{html {
+    font-size: 17px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{div .subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01:last-child {
+    margin-bottom: -10px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 {
+    position: static;
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 {
+    overflow: auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_shadow {
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 ul {
+    display: table;
+    width: 100%;
+    background: #fff;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 li {
+    display: table-cell;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 button {
+    height: 56px;
+    border-width: 3px 0;
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 a, .tab01 button {
+    display: block;
+    width: 100%;
+    min-width: 4em;
+    height: 56px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    border-width: 3px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
