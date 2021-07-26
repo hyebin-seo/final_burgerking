@@ -9,7 +9,7 @@ $(".font_s01").on("change keyup paste", function(){
 });
 
 //지도보기 버튼 액션
-$(document).ready(function () {
+$(document).ready(function () { 
 	$(document).on("click", "button[class='btn04']", function () {
 		var roadAddr_val = $(this).val();
 
@@ -291,6 +291,33 @@ function pageMake(jsonStr){
 	}	
 }
 
+//최근 배달지로 배달지 설정
+function recentAddrSetting(store_name, delivery_addr) {
+	var newForm = document.createElement('form'); 
+	
+	newForm.name = 'newForm'; 
+	newForm.method = 'post'; 
+	newForm.action = 'recent_addr.do'; 
+	
+	var input1 = document.createElement('input');
+	var input2 = document.createElement('input');
+	
+	input1.setAttribute("type", "hidden");
+	input1.setAttribute("name", "store_name");
+	input1.setAttribute("value", store_name);
+	
+	input2.setAttribute("type", "hidden");
+	input2.setAttribute("name", "delivery_addr");
+	input2.setAttribute("value", delivery_addr); 
+
+	newForm.appendChild(input1);
+	newForm.appendChild(input2);
+	
+	document.body.appendChild(newForm);
+	
+	newForm.submit();
+}
+
 var addr1;
 var addr2;
 var addr3;
@@ -429,6 +456,17 @@ $(document).ready(function () {
 			alert("별칭을 입력하세요 대화창 만들어야 함");
 		}
 			
+	});
+	
+	$(document).on("click", ".btn_detail9", function () {
+		var cont = $(this).siblings(".cont");
+		var delivery_addr = cont.find(".recent_order_addr").text().trim();
+		var store_name = cont.find(".recent_order_store").text().trim();
+		
+		console.log("최근 배달지:"+delivery_addr);
+		console.log("최근 지점:"+store_name);
+		
+		recentAddrSetting(store_name, delivery_addr);
 	});
 	 
 });

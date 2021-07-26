@@ -244,8 +244,9 @@ button {
     border-bottom: 2px dashed #e6e6e6;
 }
 
-
-
+.order_list>li:last-child {
+    border: none;
+}
 
 .order_list .prd_img {
     position: absolute;

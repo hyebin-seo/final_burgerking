@@ -56,14 +56,14 @@
                         <li>
                             <div class="cont">
                                 <p class="addr">
-                                	<strong>${order.order_addr }</strong>
+                                	<strong class="recent_order_addr">${order.order_addr }</strong>
                                 </p>
                                 <div class="addr_old">
                                 	<em class="type"><span>지점</span></em>
-                                	<span>${order.store_name }</span>
+                                	<span class="recent_order_store">${order.store_name }</span>
                                 </div>
                             </div>
-                            <button type="button" class="btn_detail">
+                            <button type="button" class="btn_detail9">
                             	<span>배달지로 설정</span>
                             </button>
                         </li>

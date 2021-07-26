@@ -54,5 +54,10 @@ public class StoreDAOImpl implements StoreDAO{
 		return this.sqlSession.selectOne("delivery_store", dto);
 	}
 
+	@Override
+	public StoreDTO recentStoreOpen(String store_name) {
+		return this.sqlSession.selectOne("recent_store_name", store_name);
+	}
+	
 
 }

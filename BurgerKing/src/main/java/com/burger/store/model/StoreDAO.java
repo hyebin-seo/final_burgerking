@@ -11,4 +11,5 @@ public interface StoreDAO {
 	public List<StoreDTO> StoreNameSearch(SearchDTO dto); // 매장명 검색 추상메서드.
 	public List<StoreDTO> StoreLocSearch(SearchDTO dto);  // 매장 지역별 검색 추상메서드.
 	public StoreDTO deliveryStoreOpen(SearchDTO dto);     // 배달지 지점 검색 메서드.
+	public StoreDTO recentStoreOpen(String store_name);   // 배달지 특정 지점명 검색 메서드.
 }

@@ -107,4 +107,8 @@
 				order by DISTANCE)
 	</select>
 	
+	<select id="recent_store_name" resultType="com.burger.store.model.StoreDTO">
+		select * from king_store where store_name = #{store_name}
+	</select>
+	
 </mapper>

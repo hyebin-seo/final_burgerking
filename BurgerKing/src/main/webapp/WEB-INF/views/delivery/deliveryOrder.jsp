@@ -28,7 +28,6 @@
                     	<span>${delivery_addr }</span>
                     	<span></span>
                     </p>
-                    <button type="button" class="btn04 h02 rbtn"><span>변경</span></button>
                 </div>
                 <div class="info_list">
                     <dl>

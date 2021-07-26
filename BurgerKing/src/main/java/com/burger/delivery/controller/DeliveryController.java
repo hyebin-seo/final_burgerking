@@ -29,6 +29,7 @@ import com.burger.delivery.model.OrderMenuDTO;
 import com.burger.delivery.model.OrderMenuListDTO;
 import com.burger.login.model.UserDTO;
 import com.burger.stamp.model.StampDAO;
+import com.burger.store.model.StoreDAO;
 import com.burger.store.model.StoreDTO;
 
 @Controller
@@ -41,6 +42,9 @@ public class DeliveryController {
 	
 	@Autowired
 	private StampDAO stampDao;
+	
+	@Autowired
+	private StoreDAO storeDao;
 	
 	@RequestMapping("delivery_home.do")
 	public String moveDelivery(Model model, 
@@ -77,6 +81,29 @@ public class DeliveryController {
 							   HttpServletRequest request,
 							   HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession();
+		
+		session.setAttribute("addrSession", sdto);
+		session.setAttribute("delivery_addr", delivery_addr);
+		
+		PrintWriter script = response.getWriter();
+		
+		if(sdto != null) {
+			script.println("<script>");
+			script.println("location.href='delivery_home.do'");
+			script.println("</script>");
+		} else {
+			System.out.println("배달지 저장 오류");
+		}
+	}
+	
+	@RequestMapping("recent_addr.do")
+	public void recentAddrSetting(@RequestParam(value="store_name") String store_name,
+							   @RequestParam(value="delivery_addr") String delivery_addr,
+							   HttpServletRequest request,
+							   HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
+		
+		StoreDTO sdto = storeDao.recentStoreOpen(store_name);
 		
 		session.setAttribute("addrSession", sdto);
 		session.setAttribute("delivery_addr", delivery_addr);
