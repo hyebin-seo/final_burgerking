@@ -14,6 +14,19 @@
 		<jsp:include page="header.jsp" />	
 </head>
 <body>
+
+	<!-- 1. 까만 영역 -->
+		<div class="WEB locationWrap">
+			<div class="web_container">
+				<div class="page_navi">
+					<a href="/burger/">
+						<span>HOME</span>
+					</a>
+					<span>이벤트</span>
+					<span>진행중</span>
+				</div>
+			</div>
+		</div>		<!-- 까만 영역 끝 -->
 		
 	<div id = "menu_m">
 		<jsp:include page="event_menu.jsp" />	
@@ -72,7 +85,7 @@
 	   		
 	   </div>
 	   
-	   <c:if test="${memberSession.getRight() == 'admin1'}">
+	   <c:if test="${memberSession.getUser_right() == 'admin'}">
 	  <div align="center">
 	            <input type="button" class="btn_list" value="이벤트작성"
 	                 onclick="location.href='event_write.do'">

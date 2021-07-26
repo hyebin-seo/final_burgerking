@@ -10,11 +10,28 @@
 <link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-		<jsp:include page="header.jsp" />	
+		 <jsp:include page="header.jsp" /> 
 </head>
 <body>
+		<!-- 전체 내용 영역 -->
+	<div class="contentsWrap">
+		
+		<!-- 1. 까만 영역 -->
+		<div class="WEB locationWrap">
+			<div class="web_container">
+				<div class="page_navi">
+					<a href="/burger/">
+						<span>HOME</span>
+					</a>
+					<span>고객센터</span>
+					<span>공지사항</span>
+				</div>
+			</div>
+		</div>		<!-- 까만 영역 끝 -->
+		
 		<div id = "menu_m">
 		<jsp:include page="cs_menu.jsp" />	
+		
 	  	</div>
 	  	<div class = "notice_list" align="center">
 	    <table class = "table1">
@@ -60,7 +77,7 @@
 	         </tr>
 	      </c:if>
 	      
-	      <c:if test="${memberSession.getRight() == 'admin1'}">
+	      <c:if test="${memberSession.getUser_right() == 'admin'}">
 	     	 <tr>
 	        	 <td colspan="4" align="right">
 	            	<input type="button" class="btn_list" value="공지작성"
@@ -90,7 +107,7 @@
       </div>
       <br>
 	   
-	
+	</div>
 
 
 </body>

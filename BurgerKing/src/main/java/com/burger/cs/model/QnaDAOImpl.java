@@ -36,4 +36,11 @@ public class QnaDAOImpl implements QnaDAO {
 	}
 
 
+
+	@Override
+	public int updateQna(int qna_no) {
+		return this.sqlSession.update("q_edit", qna_no);
+	}
+
+
 }

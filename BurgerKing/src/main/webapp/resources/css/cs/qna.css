@@ -201,3 +201,230 @@ dd>p{
 .help_info li.proposal:before {
     background-image: url("../../img/cs/qna_proposal.jpg");	
 }
+
+
+
+
+
+.locationWrap {
+    height: 58px;
+    padding: 10px 0;
+    color: #fff;
+    line-height: 38px;
+    background: #000;
+    margin-top: 120px;
+}
+
+.locationWrap .web_container {
+    overflow: hidden;
+} 
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page_navi {
+    float: left;
+    font-size: .875rem;
+}
+
+.locationWrap a {
+    color: #fff;
+}
+
+.page_navi>* {
+    float: left;
+}
+
+.page_navi>:before {
+    content: "";
+    float: left;
+    width: 4px;
+    height: 38px;
+    margin: 0 12px;
+    background: url(../../img/mypage/img_arrow2.gif) no-repeat 50%;
+}
+
+
+.page_navi>a:first-child:before {
+    content: "";
+    float: left;
+    width: 0;
+    height: 38px;
+    margin: 0;
+} 
+
+
+
+
+@media screen and (min-width: 375px) and (max-width: 767px)
+{html {
+    font-size: 17px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01, .subWrap02 {
+    min-width: 320px;
+    padding-top: 0!important;
+    padding-bottom: 350px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{#app {
+    min-width: 100%;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+
+@media screen and (min-width: 375px) and (max-width: 767px)
+{html {
+    font-size: 17px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.CS_intro {
+    margin-top: 0;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.CS_intro .help_infotxt {
+    height: 422px;
+    padding: 27px 16px 225px;
+    font-size: .875rem;
+    background-position: 40% bottom;
+    background-size: 271px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.CS_intro .tit {
+    margin-bottom: 18px;
+    font-size: 1.5rem;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.CS_intro .tit>span {
+    display: inline;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.CS_intro .help_infotxt {
+    height: 422px;
+    padding: 27px 16px 225px;
+    font-size: .875rem;
+    background-position: 40% bottom;
+    background-size: 271px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.CS_intro .txt>span {
+    display: block;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info {
+    position: relative;
+    padding: 25px 16px 30px;
+}}
+
+
+element.style {
+}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info dl {
+    padding-left: 90px;
+    font-size: .75rem;
+    background-position: 3px 1px;
+    background-size: 72px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info dt {
+    font-size: .875rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info dd {
+    margin: 5px 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info dd {
+    margin: 5px 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info dl+dl {
+    margin-top: 34px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info .cs_email .btn_area {
+    margin-top: 10px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info ul {
+    position: static;
+    margin-top: 24px;
+    padding: 35px 0 0;
+    font-size: .8125rem;
+    border-top: 1px solid #e1dad6;
+    border-left: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info li {
+    margin-top: 34px;
+    padding-left: 57px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info li:first-child {
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info li>* {
+    display: block;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info li>strong {
+    margin-top: 5px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info li:before {
+    width: 48px;
+    height: 48px;
+    margin-top: -24px;
+    background-size: cover;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info li>* {
+    display: block;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.help_info li:before {
+    width: 48px;
+    height: 48px;
+    margin-top: -24px;
+    background-size: cover;
+}}
+

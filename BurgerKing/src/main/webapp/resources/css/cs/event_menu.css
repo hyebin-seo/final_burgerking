@@ -15,43 +15,37 @@
      font-style: normal;
 }
 
-html {
-	font-size: 16px;
-	font-family: 'S-CoreDream-5Medium';
-}
-
-html {
-	font-size: 16px;
-	font-family: 'S-CoreDream-5Medium';
+/*공통요소*/
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	color: #000;
-	word-wrap: normal;
-	word-break: keep-all;
-	min-height: 100%;
+    min-height: 100%;
+    color: #000;
+    /* background: #f2ebe6; */
+    word-wrap: normal;
+    word-break: keep-all;
 }
 
-body * {
-	font-family: 'S-CoreDream-5Medium';
+body, html {
+    height: 100%;
+    min-height: 450px;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
 }
 
-a, div, li {
-	box-sizing: border-box;
+html{
+	font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 900;
-	font-size: 1em;
-}
-
-h4 {
-	display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+    font-weight: 900;
+    font-size: 1em;
 }
 
 dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
@@ -60,115 +54,113 @@ dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
 }
 
 li {
-	list-style: none;
+    list-style: none;
+}
+
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.bg_w {
+    background: #fff;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.subtitWrap {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+/*고객센터 타이틀*/
+.contentsWrap .page_tit {
+    margin-bottom: 15px;
+   /*  font-size: 5vmin; */
+     font-size: 1.5rem; 
+  
+    line-height: 100%;
+    font-family: 'S-CoreDream-9Black';
+}
+
+/*탭 메뉴*/
+.subtitWrap .tab01 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin: -17.5px 0 0;
+}
+
+.tab01 {
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.tab01 ul {
+    display: table;
+}
+
+.tab01 li:first-child {
+    padding-left: 0;
+}
+
+.tab01 li {
+    position: relative;
+    display: table-cell;
+    padding: 0 18px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.tab01 li.on a, .tab01 li.on button {
+    color: #e22219;
+    border-bottom-color: #e22219;
+}
+
+.subtitWrap .tab01 button {
+    height: 35px;
+    font-size: 1.1rem;
+    border-width: 3px 0;
+}
+
+.tab01 a, .tab01 button {
+    display: inline-block;
+    padding: 10px 1px;
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: #b8b8b8;
+    border: 0 solid transparent;
+    border-width: 4px 0;
+    letter-spacing: -0.8px;
 }
 
 button {
     margin: 0;
-    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    font-size: 1em;
     color: #000;
     vertical-align: middle;
     background: 0;
     border: none;
     overflow: visible;
     cursor: pointer;
+    font-family: 'S-CoreDream-9Black';
 }
 
 button, table td, table th {
     padding: 0;
 }
 
-/* ***메뉴판 전체 영역*** */
-.contentsWrap {
-	min-height: 450px;
-	margin: 0 auto;	
-}
-
-/* 내용 감싸기 */
-.web_container {				/* (위아래 여백) */
-	max-width: 1184px;
-	margin: 0 auto;
-	padding: 0 20px;
-}
-
-.contentsWrap .page_tit {	/* '메뉴' */
-	margin-bottom: 15px;
-	font-size: 2.5rem;
-	line-height: 100%;
-	font-family: 'S-CoreDream-9Black';
-}
-
-.subtitWrap .tab01 {		/* 카테고리 */
-	font-family: 'S-CoreDream-9Black';
-	position: absolute;
-	right: 0;
-	top: 50%;
-	margin: -17.5px 0 0;
-}
-
-.tab01 {
-	overflow: auto;
-}
-
-.tab01 ul {
-	display: table;
-}
-
-.tab01 li:first-child {
-	padding-left: 0;
-}
-
-.tab01 li {
-	position: relative;
-	display: table-cell;
-	padding: 0 18px;
-	vertical-align: top;
-	white-space: nowrap;
-}
-
-/* 메뉴/카테고리 */
-.subtitWrap {
-	position: relative;
-	margin-bottom: 26px;
-}
-
-.sustitWrap .tab01 button {
-	height: 35px;
-	font-size: 1.125rem;
-	border-width: 3px 0;
-}
-
 .tab01 button {
-	height: 54px;
-	padding: 5px 0;
+    height: 54px;
+    padding: 5px 0;
 }
 
-.tab01 a, .tab01 button {
-	display: inline-block;
-	padding: 10px 1px;
-	font-weight: 700;
-	font-size: 1.375rem;
-	color: #b8b8b8;
-	border: o solid transparent;
-	border-width: 4px 0;
+.tab01 button:hover {
+	color: black;
 }
-
-.tab01 a>*, .tab01 button>* {
+/* .tab01 a>*, .tab01 button>* {
     vertical-align: middle;
-}
-
-/* 선택한 카테고리 */
-.tab01 li.on a, .tab01 li.on button {
-	color: #e22219;
-	border-bottom-color: #e22219;
-}
-
-.tab01 span:hover{
-	color:#000;
-}
-
-/*선택된 메뉴는 hover 먹으면 안되니까 똑같이 css 주기*/
-.tab01 li.on span:hover{
-	color: #e22219;
-	border-bottom-color: #e22219;
-}
+} 이 부분 빼면 선이 조금 간격이 생김a*/

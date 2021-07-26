@@ -155,7 +155,7 @@ var onFileUpload = function(event) {
 
 //input 파일 초기화 시켜주는 버튼	
 function resetFile() {
-	alert('파일 삭제 버튼 실행');
+	alert('파일 삭제 ');
 	const file = document.querySelector('input.file');
 	file.value = '';
 	console.log(file.name);

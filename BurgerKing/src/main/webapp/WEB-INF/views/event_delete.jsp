@@ -13,6 +13,19 @@
 </head>
 <body>
 
+	<!-- 1. 까만 영역 -->
+		<div class="WEB locationWrap">
+			<div class="web_container">
+				<div class="page_navi">
+					<a href="/burger/">
+						<span>HOME</span>
+					</a>
+					<span>이벤트</span>
+					<span>상세</span>
+				</div>
+			</div>
+		</div>		<!-- 까만 영역 끝 -->
+
 	<div id = "menu_m">
 		<jsp:include page="event_menu.jsp" />	
 	 </div>

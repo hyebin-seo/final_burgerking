@@ -12,6 +12,20 @@
 </head>
 	<jsp:include page="header.jsp" />	
 <body>
+
+	<!-- 1. 까만 영역 -->
+		<div class="WEB locationWrap">
+			<div class="web_container">
+				<div class="page_navi">
+					<a href="/burger/">
+						<span>HOME</span>
+					</a>
+					<span>고객센터</span>
+					<span>공지사항</span>
+				</div>
+			</div>
+		</div>		<!-- 까만 영역 끝 -->
+
 	<div id = "menu_m">
 	<jsp:include page="cs_menu.jsp" />
 	</div>

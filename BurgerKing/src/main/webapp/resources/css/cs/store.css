@@ -277,3 +277,53 @@ button {
 	 font-family: 'S-CoreDream-9Black';
 	 float: left;
 }
+
+.locationWrap {
+    height: 58px;
+    padding: 10px 0;
+    color: #fff;
+    line-height: 38px;
+    background: #000;
+    margin-top: 150px;
+}
+
+.locationWrap .web_container {
+    overflow: hidden;
+} 
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page_navi {
+    float: left;
+    font-size: .875rem;
+}
+
+.locationWrap a {
+    color: #fff;
+}
+
+.page_navi>* {
+    float: left;
+}
+
+.page_navi>:before {
+    content: "";
+    float: left;
+    width: 4px;
+    height: 38px;
+    margin: 0 12px;
+    background: url(../../img/mypage/img_arrow2.gif) no-repeat 50%;
+}
+
+
+.page_navi>a:first-child:before {
+    content: "";
+    float: left;
+    width: 0;
+    height: 38px;
+    margin: 0;
+} 

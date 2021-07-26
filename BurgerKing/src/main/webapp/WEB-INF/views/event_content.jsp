@@ -13,6 +13,19 @@
 </head>
 	<jsp:include page="header.jsp" />	
 <body>
+
+	<!-- 1. 까만 영역 -->
+		<div class="WEB locationWrap">
+			<div class="web_container">
+				<div class="page_navi">
+					<a href="/burger/">
+						<span>HOME</span>
+					</a>
+					<span>이벤트</span>
+					<span>상세</span>
+				</div>
+			</div>
+		</div>		<!-- 까만 영역 끝 -->
 	
 	<div id = "menu_m">
 		<jsp:include page="event_menu.jsp" />	
@@ -68,7 +81,7 @@
 	      	 <hr class="hr1">
 	         <td colspan="2" align="center">
 	         
-	         	<c:if test="${memberSession.getRight() == 'admin1'}">
+	         	<c:if test="${memberSession.getUser_right() == 'admin'}">
 	            
 	            <input type="button" class="btn_list" value="이벤트수정"
 	                onclick="location.href='event_update.do?no=${dto.getEvent_no() }&page=${page }'">
@@ -76,7 +89,7 @@
 	            <input type="button" class="btn_list" value = "목록보기"	                
 	                onclick="location.href='event_list.do?page=${page }'">
 	            
-	            <c:if test="${memberSession.getRight() == 'admin1'}">
+	            <c:if test="${memberSession.getUser_right() == 'admin'}">
 	            <input type="button" class="btn_list" value="이벤트삭제"
 	                onclick="if(confirm('이벤트를 삭제 하시겠습니까?')) {
 	                				location.href='event_delete.do?no=${dto.getEvent_no() }&page=${page }'

@@ -15,5 +15,6 @@ public class QnaDTO {
 	private String qna_cont;	
 	private String qna_file;
 	private String qna_regdate;
+	private String qna_status;
 	
 };
