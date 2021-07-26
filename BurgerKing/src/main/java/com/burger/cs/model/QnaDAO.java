@@ -18,4 +18,7 @@ public interface QnaDAO {
 	 * 추상메서드.
 	 */	
 	//public List<QnaDTO> searchQnaList(String field, String keyword);
+
+	// 혜린 추가 : 탈퇴시 문의 삭제
+	public void deleteUserQna(String user_id);
 } 

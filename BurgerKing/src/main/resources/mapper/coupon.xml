@@ -15,4 +15,8 @@
 		select * from my_coupon order by coupon_date desc
 	</select>
 	
+	<delete id="deleteUserCoupon">
+		delete from my_coupon where user_id = #{user_id}
+	</delete>
+	
 </mapper>

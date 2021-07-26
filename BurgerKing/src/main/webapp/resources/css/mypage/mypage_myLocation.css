@@ -503,3 +503,304 @@ input[type=checkbox]+:before, input[type=radio]+:before {
 .popWrap .titleBar .title_btn button {
 	    width: 60px;
 }
+
+/* 반응형 */
+
+@media screen and (min-width: 375px) and (max-width: 767px)
+{html {
+    font-size: 17px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsWrap {
+    padding-top: 57px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_bg_basic {
+    background: #f2ebe6!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .r_option.st02 {
+    font-size: .875rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .r_option {
+    position: static;
+    margin: 15px 16px 0;
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap+.container01 {
+    padding-top: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01:last-child {
+    padding-bottom: 23px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01 {
+    padding: 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.nodata {
+    padding: 172px 10px 10px;
+    font-size: .875rem;
+    line-height: 130%;
+    text-align: center;
+    color: #9a918c;
+    background: url(https://www.burgerking.co.kr/dist/img/ico_nodata01.26f01a61.png) no-repeat center 60px;
+    background-size: 89px auto;
+    z-index: 10;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.my_list>li {
+    float: none!important;
+    width: auto;
+    height: auto;
+    min-height: 147px;
+    margin-bottom: 8px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01.my_list .cont {
+    padding: 35px 24px 10px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01 .cont {
+    padding: 32px 24px 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01 .option_chk {
+    display: block;
+    font-weight: 700;
+    font-size: .75rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01 .option_chk input {
+    width: 25px;
+    margin-right: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=radio] {
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkU0OUIzMDUwOTFGMTFFOTkwMzBEQzAyMzMyMTAyRjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkU0OUIzMDYwOTFGMTFFOTkwMzBEQzAyMzMyMTAyRjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RTQ5QjMwMzA5MUYxMUU5OTAzMERDMDIzMzIxMDJGNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RTQ5QjMwNDA5MUYxMUU5OTAzMERDMDIzMzIxMDJGNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Phhti8oAAAI3SURBVHjazFdbS5tBEE32i7HGxtQLthpFKEJvIAqCL/35eQlK6+XBFkRRUIkWSk1r0VzqWThbJsNGNl93sQMHkv2W3bMzZ2dmi4VwKwHzwBwwBVSAMX7rALfADfANuAK6IYsWA+ZMAqtAHcgCyfaAc+AI+JWXgAHeAK/5O4/1gWPgK38HE7Cn3qSrY5gNzY7PGz4CNWALGPd8+03X2ji3gXt65xkwQX0sUh/a7oAm8OMxAvbkH4GyZ+Mv3PxPgK4siXckJc0SbkhPSAIZN9dubwGfQlWtbs0axavD0aBQB1T9FlhQk0+A3WECChDgJa/qtBgfZ9iuJQHr+g3lkQtgL4IA7UZVwtkLrt9xBN5zUMa8mfPkw0gsMywu9HbvVsbBDXXXD7Ra/9H61NArMfbchjjjYF2dfr8Q36z4lkT6tgduZ8x0NTHx1Akkgdl8MSP+d4wSR4FJJpXptacMb4C0dkICeu2KEcqU2SqV6bVLpvDEZjwptpxwP71213hKZDUhAb32rfEIYy4hAb32jfHc+XpgqzaquTI9cC0NG8ieGJzwTIxhy6pR6bla0OeHmqpWZxGLUYktnrzytrm5cNXwJ7AiXD/GBHUZicC6SsF9Njl/y3GH7GaUYssR6sIHHk7aMfuBgY7oO/BSNaPTDE0rRzhKPPmKpyp+dr3lKE3pIVkna0rztuUuw1VjtOWpHiaW7HbowyT20+yEb4qRnmb/xePUp2p7S2apk4pILF31PG+FPmQeBBgA+HyIj95kU20AAAAASUVORK5CYII=) no-repeat 0;
+    background-size: 16px auto;
+    border: none;
+    opacity: 1;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=checkbox], input[type=radio] {
+    position: static;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01.my_list .option_chk~* {
+    padding-left: 25px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.my_list .option_cont {
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01 .my_titWrap {
+    display: table;
+    width: 100%;
+    margin: 10px 0 5px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.my_list .my_titWrap .tit {
+    font-size: 1rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01 .my_titWrap>* {
+    display: table-cell;
+    vertical-align: middle;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01 .my_titWrap>:nth-child(2) {
+    padding-left: 10px;
+    text-align: right;
+    white-space: nowrap;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01 .my_titWrap>* {
+    display: table-cell;
+    vertical-align: middle;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn04, .btn04_m {
+    min-width: 36px;
+    height: 24px;
+    padding: 2px 6px 0;
+    font-size: .625rem;
+    color: #fff;
+    text-align: center;
+    background: #2e2e2e;
+    border-radius: 3px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01.my_list .addr {
+    margin-top: 10px;
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.cart_list01 .btn_del02 {
+    width: 36px;
+    height: 36px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_del02 {
+    background-size: 12px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.my_list li:last-child {
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.my_list>li {
+    float: none!important;
+    width: auto;
+    height: auto;
+    min-height: 147px;
+    margin-bottom: 8px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.info_command_UI {
+    position: relative;
+    margin-top: 20px;
+    padding-right: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 {
+    margin: 7px 0;
+    font-size: .75rem;
+    line-height: 167%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 li {
+    position: relative;
+    padding-left: 15px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 1.67em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAHCAYAAAArkDztAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0U0MEY1ODFFOThGMTFFOEEwMUZGOENGRkE5MEExMkYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0U0MEY1ODJFOThGMTFFOEEwMUZGOENGRkE5MEExMkYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDRTQwRjU3RkU5OEYxMUU4QTAxRkY4Q0ZGQTkwQTEyRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDRTQwRjU4MEU5OEYxMUU4QTAxRkY4Q0ZGQTkwQTEyRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjvBdNUAAABCSURBVHjaYmBAAHEohgMhIN4OxP+heAdUjGEJkiAMg8QYvmKRAIkxPMMiARJjqMIiUQySYATifCA+D8UFIDGAAAMAc/gcGk8cnHoAAAAASUVORK5CYII=) no-repeat 50%;
+    background-size: 3px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.info_command_UI .c_btn.m_mt02 {
+    margin-top: 20px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.info_command_UI .c_btn {
+    position: static;
+    margin: 45px 0 0;
+    -webkit-transform: none;
+    transform: none;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.info_command_UI .c_btn button:only-child {
+    width: auto;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.info_command_UI .c_btn button {
+    width: 49%;
+    width: calc(50% - 4px);
+    margin: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01.bg_m_dark, .btn01_m02 {
+    background: url(	https://www.burgerking.co.kr/dist/img/bg_btn01_normal.192da552.png) no-repeat 50%!important;
+    background-size: 100% 100%!important;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01.bg_m_dark, .btn01_m02 {
+    min-width: 158px!important;
+    height: 48px!important;
+    padding: 12px 10px 10px!important;
+    font-size: 1.125rem!important;
+    font-weight: 700;
+    color: #fff;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 0!important;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.bg_m_dark {
+    background-color: #2e2e2e!important;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01, .btn01.m {
+    height: 48px;
+    line-height: 26px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01 {
+    width: auto;
+    min-width: 158px;
+    font-size: 1.125rem;
+    background-size: 100% 100%!important;
+}}
+

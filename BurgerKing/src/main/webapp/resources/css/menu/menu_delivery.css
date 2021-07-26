@@ -119,6 +119,17 @@ input[type=checkbox], input[type=radio] {
 }
 
 
+#app {
+    position: relative;
+    min-width: 960px;
+    min-height: 100%;
+}
+
+.subWrap02 {
+    margin: 0 auto;
+    padding: 168px 0 272px;
+}
+
 
 
 /* ***메뉴판 전체 영역*** */
@@ -812,6 +823,7 @@ input[type=checkbox], input[type=radio] {
 /* 추가 */
 .pop_header01.st02 .m_cen {
 	font-family: 'S-CoreDream-9Black';
+	padding-right: 0;
 }
 
 .pop_header01 .btn_close {
@@ -987,7 +999,8 @@ input.check02:checked+:before {
     background-image: url(../../img/menu/menu_checked.png);
 }
 
-.menu_sub_list.check_mode input~.cont:before {
+@media (min-width: 769px)
+{.menu_sub_list.check_mode input~.cont:before {
     content: "";
     position: absolute;
     left: 0;
@@ -996,7 +1009,7 @@ input.check02:checked+:before {
     height: 32px;
     margin: -16px 0 0;
     background: url(../../img/menu/menu_check.png) no-repeat 0;
-}
+}}
 
 /* input[type=checkbox]:checked+:before {
     background: url(../../img/menu/menu_checked.png);
@@ -1024,7 +1037,7 @@ input.check02:checked+:before {
     color: #b8b8b8;
 }
 
-.menu_sub_list.check_mode input~.cont:before {
+/* .menu_sub_list.check_mode input~.cont:before {
     content: "";
     position: absolute;
     left: 0;
@@ -1033,7 +1046,7 @@ input.check02:checked+:before {
     height: 32px;
     margin: -16px 0 0;
 	background: url(../../img/mypage/img_check.png) no-repeat 0;   
-}
+} */
 
 .menu_sub_list .tit {
     font-weight: 400;
@@ -1143,26 +1156,1457 @@ input.check02:checked+:before {
 } */
 
 
+/* 반응형 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{#app {
+    min-width: 100%;
+}}
 
-/* ***모바일 화면*** */
-/* 아직 안 넣음 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01, .subWrap02 {
+    min-width: 320px;
+    padding-top: 0!important;
+    padding-bottom: 350px;
+}}
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-	.subtitWrap .tab01 li {
-		padding: 0 12px;
-	}
-	
-	.subtitWrap .tab01 button {
-		font-size: 1rem;
-	}
-	
-	.subtitWrap .tab01 button {
+/* '메뉴'랑 카테고리 겹쳐지는 것 때문에 추가 */
+@media (max-width: 1024px) and (min-width: 769px)
+{.contentsWrap {
+	min-width: 960px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsWrap {
+    /* padding-top: 57px; */
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap {
+    position: relative;
+    height: auto;
+    min-height: 48px;
+    padding: 0;
+    line-height: normal;
+    background: url(	https://www.burgerking.co.kr/dist/img/bg_titbox01.ac98b1ea.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .web_container {
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .page_navi {
+    display: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .location {
+    display: table;
+    float: none;
+    width: 100%;
+    padding: 5px 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .addr {
+    max-width: inherit;
+    padding-left: 40px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAsCAYAAAAEuLqPAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzUzQjc0MkRFNjE4MTFFODgwNTdGMDE0RDM0Rjc0ODEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzUzQjc0MkVFNjE4MTFFODgwNTdGMDE0RDM0Rjc0ODEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDNTNCNzQyQkU2MTgxMUU4ODA1N0YwMTREMzRGNzQ4MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDNTNCNzQyQ0U2MTgxMUU4ODA1N0YwMTREMzRGNzQ4MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkorKYwAAAK+SURBVHjaxJhNaxRBEIZ7ho0oEoWsSuJFiUYlIgY9eVz0FhQxeBDUmyR6y0Hw6MEc8heiBAL+gURyUC+imEhEjSsIfqwfYFgNxjXghhiQ9i2pkcm4O101mRlfeGB3pruqpqe7uno8a60RajM4CUpgP9jB10iL4CMog3tggq+5RQE46ATXwZKVa4n7dLrsx91sAVfBsk2uZbbRog2gA9y36ekBaJcGQMNWsemr0uiVeJFJuAVMg90mG70FR8DX4IIfuumBsQydG7Y9xr7+WQX9Nj/1R19BG3gNiiYfLYA94FuBL1xSOn8MboMK/+8CveCgsH+RfV6jYfDBJ+HQUbtSTO7oAzWhrTnybdigRFXOD67M2Q2+C22WaBUcFQ7bRVAVtHsJLghtHqOI7wgiLQNP8PQBHvdx6a7Ps9GlW7RiFZPUch+XunxegpIMliTrudRGAbSa/6dWCuCnoOHOhGnXpRUKoCZo2Kt0Trn+uKBdjQJ4L2h4GJxQBNAHDgjavaMAZoVGb4B9gnbd3FaipxTAI2HjrVwrnF61na7WKfAwVKy6NEUJYxN+fAHrFUNc5nX+JrIZ9Shs1EFHkLlu2vw1Eq4HdoEXYENO6/8HZ+BqUJLRvn45xwR05e/GFtlAxnMY+vHwxhatios8wbZn9ORzXDUtNKqKg1rtLPiVgXOyeS7sPO5sOJTB0A9pjmYFMJ2i8ym2aVwno+gOOKvIas20yAnqQ6ObfkxH6jCQwrsfaOZc+n1gdA1DP+qy7wm+kGwET8Be5ZO/4m28HtfIF24aZ6h6UThf4T71ND7RBAwqhn5Qatcoa/1JgfNJzRlCMgfC2gaeg/Ym9z9zqp2XGvSVE2ue06ltchg5r3GunQNhhhsM/XASW0kDWAdmQs5n+JralnYOhEVV1DP+fSjh8c0U1pBiK/yVI+nZ8Y9+CzAA7mD3sAmMYLwAAAAASUVORK5CYII=) no-repeat 16px;
+    background-size: 16px auto;
+    white-space: normal;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .location>* {
+    display: block;
+    height: 20px;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 16px;
+    vertical-align: middle;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .addr>* {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    max-height: 2.5em;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .shop {
+    margin-left: 12px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAnCAYAAAB0Q6rCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0E1QzE0Q0FGQ0U3MTFFOEI3MEZEMTdBRURERDJDNzgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0E1QzE0Q0JGQ0U3MTFFOEI3MEZEMTdBRURERDJDNzgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQTVDMTRDOEZDRTcxMUU4QjcwRkQxN0FFREREMkM3OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQTVDMTRDOUZDRTcxMUU4QjcwRkQxN0FFREREMkM3OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvB92DAAAAFSSURBVHjaYvz//z8DFFwHYg2GwQduIruLCUliOcPgBCuQOYxIIawOxDcGoYM1oKGMEcIgwXODzLEXkB2L7mAQWDnIHIzhHhYsClwHkYMx8hVyGh4SgIlhiAH0JMEMxPKDyH0PgfgviggoSSDh8P+DC0SiuQ8jDYOKNcNBFMLngdgIVxp2HmSOZYC6xxWXg0sHaT4rxlasGUCTA+MgdbQRNHnAQ7h4EDsWJZRBISwHpO9iKeIGE/gDxMpA/AgUwoWD3LGw+qIIFsKvgLToEKjkXgOxGCiE2YZIrcw2JNsSow4edTCW4kIBqdLgA+IHONSuAeI0Es1/ADUTHZQA8Twk/iwgDsGiDuS2T7CGJczBH5AU/MNj+S8gfk+ig3F1Z76hmfULhzqQ2z6OpuFRB486eNTBI2hcAh8QAmJjEs1nHkgHe0DxaJIYdfCog0eSgwECDABo4ugKuhoqqQAAAABJRU5ErkJggg==) no-repeat 0;
+    background-size: 22px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .shop span {
+    display: inline-block;
+    padding-top: 2px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .money {
+    margin-left: 15px;
+    padding-bottom: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .btn {
+    margin: 0;
+    text-align: right;
+    padding-top: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .btn a {
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    margin-left: 5px;
+    padding: 0;
+    font-size: .75rem;
+    line-height: 24px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01:last-child {
+    margin-bottom: -10px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 {
+    position: static;
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 {
+    overflow: auto;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_shadow {
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi li, .tab01.m_multi ul {
+    display: block;
+    border-bottom: 1px solid #f1f3f5;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi ul {
+    overflow: hidden;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 ul {
+    display: table;
+    width: 100%;
+    background: #fff;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi .item3 li {
+    width: 33%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi li {
+    position: relative;
+    float: left;
+    width: 25%;
+    margin-bottom: -1px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi li, .tab01.m_multi ul {
+    display: block;
+    border-bottom: 1px solid #f1f3f5;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 .item3 li {
+    width: 33.3333%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 li {
+    display: table-cell;
+    padding: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi button {
+    height: 49px;
+    padding: 0 10px;
+    border-width: 2px 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 button {
+    height: 56px;
+    border-width: 3px 0;
     font-size: 1rem;
-    }
-}
+}}
 
-@media screen and (min-width: 767px) {}
-	.w_alignL {
-	    text-align: left!important;
-	}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 a, .tab01 button {
+    display: block;
+    width: 100%;
+    min-width: 4em;
+    height: 56px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    border-width: 3px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi .item3 li:nth-child(3n - 1) {
+    width: 34%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi .item3 li {
+    width: 33%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi li {
+    position: relative;
+    float: left;
+    width: 25%;
+    margin-bottom: -1px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi li, .tab01.m_multi ul {
+    display: block;
+    border-bottom: 1px solid #f1f3f5;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 .item3 li {
+    width: 33.3333%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 li {
+    display: table-cell;
+    padding: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.nodata {
+    padding: 172px 10px 10px;
+    font-size: .875rem;
+    line-height: 130%;
+    text-align: center;
+    color: #9a918c;
+    background: url(../img/ico_nodata01.26f01a61.png) no-repeat center 60px;
+    background-size: 89px auto;
+    z-index: 10;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list {
+    margin: 0;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list li {
+    position: relative;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: auto;
+    min-height: 95px;
+    margin-bottom: 0;
+    padding: 10px 40px 10px 133px;
+    border-bottom: 1px solid #f8f3ed;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .prd_img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 116px;
+    height: 76px;
+    margin-top: -38px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ico_flag_best, .ico_flag_new {
+    width: 35px;
+    height: 25px;
+    background-size: auto 100%;
+}}
+
+@media screen and (min-width: 375px) and (max-width: 767px)
+{html {
+    font-size: 17px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .cont {
+    width: 100%;
+    min-height: 1em;
+    padding: 18px 0;
+    color: #2e2e2e;
+    text-align: left;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .price, .prdmenu_list .tit {
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.set_info {
+    margin: 5px 0;
+    font-size: .75rem!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .price {
+    margin-top: 2px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .price>* {
+    display: block;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi li:before {
+    content: "";
+    position: absolute;
+    left: -.5px;
+    top: 50%;
+    width: 1px;
+    height: 15px;
+    margin-top: -7px;
+    background: #e6e6e6;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi button {
+    height: 49px;
+    padding: 0 10px;
+    border-width: 2px 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 button {
+    height: 56px;
+    border-width: 3px 0;
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 a, .tab01 button {
+    display: block;
+    width: 100%;
+    min-width: 4em;
+    height: 56px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    border-width: 3px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ico_flag_best, .ico_flag_new {
+    width: 35px;
+    height: 25px;
+    background-size: auto 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list li:last-child {
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.order_caution .tit03 {
+    margin: 0;
+    padding: 0;
+    border: none;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tit03 {
+    margin: 0;
+    font-size: 1rem;
+    border-bottom-width: 1px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.order_caution .tit03 .btn_infoingredient {
+    position: static;
+    width: 100%;
+    height: 54px;
+    margin: 0;
+    padding: 5px 16px 5px 44px;
+    font-size: .8125rem;
+    text-align: left;
+    background-position: 23px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_infoingredient {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTMyNzA2QjcwMjhFMTFFOUFBNjBCOEJGN0UyRTEzNzIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTMyNzA2QjgwMjhFMTFFOUFBNjBCOEJGN0UyRTEzNzIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMzI3MDZCNTAyOEUxMUU5QUE2MEI4QkY3RTJFMTM3MiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMzI3MDZCNjAyOEUxMUU5QUE2MEI4QkY3RTJFMTM3MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjxY/LQAAAKiSURBVHjaxJc9iBNBGIYnyUaJqESxCMJxhUEMehGRqIXiHwgqCIqNIBY2KqLBRiyC/VloI4gnwUoLhVNQ0FMLbSw8RFIIomwjiEIUzvyRn03i+y6zxxJzuzuzOX3hgYPczLzz7fd9MxPJZrNCUwZYAXrgd5hJgmodOA72ggmw1vVbB5jgHXgJHoPaqAzsBwWwx+N/4mCD5JRc/C6YBN+8Jo96/JYC0+CVz+LDtBxcAJ/AJRBRNbATfABHRTjRyHXwBKwMauCQ3HVKjE6HwWuwxs/ANvAQLBWj1xbwdHBut4HV4AFYJhZP2+UnGVoF18B40JlKpZLo9/ui2+2KXq8ncrlc0KHn5EbfuCOwGZxW2Uqn07Fpt9s2CmJF3HAqw4nAZa9SGaZKpWJHgCYYBY18OABmaCAJjqnOUCwWRTQatcPfbDZ18oERn4ngLDiBP+6rjo7H4399EkU1wCpGYLeO/XQ6LWKxmP0ZGAHTNFWnYLVtpYGNOgby+bxIJBL24uVyWRQKBZ1pJmhgTGdkJpOxd99oNEQqpd00x4yFerSfksmknYCGYYhWq6V9VrAPaI9mFTAPiKZaNDCnO5oRYA/QqABHczTwOUxzZx7QiKa+0MCs+H+apYEXYWdhLmiIkf/qRMAMm4gauuechn1w8x9XAQ+PO+7jeMrv9jooJ/sdFHUbfHcb4MFwUWkLaMGkXq+LWq2mMpQbvTrsSjbthCWILMuaj0K1Wg0cOHCS14n528nA02wJeAb2LULJMdfOg1tet2LerY5IE6MUd352cPGF3gV1aWJSPjzD6od8a0ypvIwscAXsAu81F7bkopu8mp1fC3sLeN8+CB7J+g2S5bzirwdnwK+wr2Mmz3NJAuyQz/Nx+fbjZ/opuym76keVMP0RYACQRdk1L5MMWwAAAABJRU5ErkJggg==);
+    background-size: 16px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_infoingredient>:after {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAgCAYAAAD9oDOIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDg5NkFFM0VFNkVCMTFFOEE1NUNGNzE0Q0UyREIzNTEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDg5NkFFM0ZFNkVCMTFFOEE1NUNGNzE0Q0UyREIzNTEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowODk2QUUzQ0U2RUIxMUU4QTU1Q0Y3MTRDRTJEQjM1MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowODk2QUUzREU2RUIxMUU4QTU1Q0Y3MTRDRTJEQjM1MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjoXMP8AAAG0SURBVHjanJZPK0RxFIbvlVITJsVHsNNISk0kKRRZsJfyZ0FCQyLJkEKYLIhEyoKdWIgoRZNSsrHxDawkaUaUrvfUuTWpcd47bz2L2+/0dOuec37XjUQijiYMDkEj2AWj4McJEM/zHNd1nfwM4TmI6vMQKAK9QcQilOSBQnCWIfTTDXak1gkYkU6B2iznPbmIRVpm1PSBzSBikSbAq1E3ANZZsUifQTN4M2qH9QUoqeRRxe9GvbTZCiuVPIAWQjwOFlmp5B60gg9DPAnmWankTsUpQzwDZmWKGKkkCdpA2hDHMUXTrFRyA9oJ8QKYYKWSa9ABPo26ZRBjpZJL0Am+jLo1MMJKJRcq/ibEFXkB9oSsQI/oe5eVNoFjUEAMxhMjbQAnIGTUTfm7wZLW6wIPEYOwxHz9OlI4p71q9mlUhYVE48eZiarRS7CYaPgZZqFUa7OHDWFCN5W5parAFSGUa2WM2aeV+oYlhnAjc8b/k5brG5Yatdt6T3mMNEZc03tgkBH60hejZh/0s0Jfugpus5wfBBX60rTeSck/Z0f62xPozy/z66dUfKrLeAt05SKU/AowAPhSWoCDlhBXAAAAAElFTkSuQmCC);
+    background-size: auto 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 {
+    margin: 7px 0;
+    font-size: .75rem;
+    line-height: 167%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 li {
+    position: relative;
+    padding-left: 15px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01:last-child {
+    padding-bottom: 23px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01 {
+    padding: 16px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.order_caution .btn_acc:after {
+    right: 6px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 {
+    margin: 7px 0;
+    font-size: .75rem;
+    line-height: 167%;
+}}
+
+/* @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 li {
+    position: relative;
+    padding-left: 15px;
+}} */
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 1.67em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAHCAYAAAArkDztAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0U0MEY1ODFFOThGMTFFOEEwMUZGOENGRkE5MEExMkYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0U0MEY1ODJFOThGMTFFOEEwMUZGOENGRkE5MEExMkYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDRTQwRjU3RkU5OEYxMUU4QTAxRkY4Q0ZGQTkwQTEyRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDRTQwRjU4MEU5OEYxMUU4QTAxRkY4Q0ZGQTkwQTEyRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjvBdNUAAABCSURBVHjaYmBAAHEohgMhIN4OxP+heAdUjGEJkiAMg8QYvmKRAIkxPMMiARJjqMIiUQySYATifCA+D8UFIDGAAAMAc/gcGk8cnHoAAAAASUVORK5CYII=) no-repeat 50%;
+    background-size: 3px auto;
+}}
+
+
+/* 세트 고르기 팝업 반응형 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_FullpopWrap .popbox01 {
+    position: relative;
+    left: 0!important;
+    top: 0!important;
+    width: 100%!important;
+    height: 100%!important;
+    max-height: 100%;
+    margin: 0;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    -webkit-transform: none;
+    transform: none;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popbox01.nobtn {
+    padding-bottom: 0!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.M_headerWrap {
+    line-height: normal;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.M_headerWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: #fff;
+    z-index: 50;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.titleBar {
+    position: relative;
+    padding: 0 45px;
+    height: 57px;
+    background: #fff;
+    border-bottom: 1px solid #f7f7f7;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .titleBar .page_tit {
+    height: 100%;
+    padding: 0;
+    font-size: 1.125rem;
+    text-align: center;
+    line-height: 55px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.titleBar .page_tit {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-align: center;
+    line-height: 56px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .titleBar .title_btn {
+    right: auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.title_btn {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .titleBar .title_btn button {
+    width: 60px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01 .btn_close, .popbox01 .title_btn button {
+    position: static;
+    width: 50px;
+    background-size: 19px auto;
 }
+}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .btn_close {
+    width: 50px;
+    height: 50px;
+    background-size: 12px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.title_btn button {
+    height: 100%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_close {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUM0NEY0MjlGREQ1MTFFODhEMTJEQTE2MUI4MkMyREEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUM0NEY0MkFGREQ1MTFFODhEMTJEQTE2MUI4MkMyREEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQzQ0RjQyN0ZERDUxMUU4OEQxMkRBMTYxQjgyQzJEQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQzQ0RjQyOEZERDUxMUU4OEQxMkRBMTYxQjgyQzJEQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pno3eBsAAAEwSURBVHjavNhNDoIwEAXg6lnEcA2C6PkxeAJET4AudWqKIQj0Z96zyVsxpV9XDGPM76okd0kj2RveyiUXyU1S+opPkqfk5dKRcLkDDef0kmMoioWbolZxFvWYKUbjllCzuMqDQuF8qDHuYAKLtbg84RxzjtiQgotF2dTGHdKRcCmoqyQbXsDAqVEMHAyFxMFRCBwNpcXFotoYlAZHR7FxKhQLB0GhcVAUCkdBaXHRqG0kzNZvEi6Uuo/WJTA7YQiKgkOhoDg0CoJjoVS4FFRL7IRVqIzZpmtQtDYdgYLjkCgYjoGC4BryBzkFV8eOCFJbl1icPeczwOgDi3d/aJmspRg2HT04LSoU9530jNcSDoXy4fq1kecUh0Yt4fqQOWzp/o5rEmqMq93li+nDtwADACvj7jAA3N70AAAAAElFTkSuQmCC);
+    background-size: 19px auto;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_head_close {
+    width: 60px;
+    text-indent: -9999em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzhGRDZCMTNENUJCMTFFODk1N0FFOERGQTUxNjMxNDIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzhGRDZCMTRENUJCMTFFODk1N0FFOERGQTUxNjMxNDIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3OEZENkIxMUQ1QkIxMUU4OTU3QUU4REZBNTE2MzE0MiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3OEZENkIxMkQ1QkIxMUU4OTU3QUU4REZBNTE2MzE0MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pn3YebsAAAEwSURBVHjavNhNDoIwEAXg6lnEcA2C6PkxeAJET4AudWqKIQj0Z96zyVsxpV9XDGPM76okd0kj2RveyiUXyU1S+opPkqfk5dKRcLkDDef0kmMoioWbolZxFvWYKUbjllCzuMqDQuF8qDHuYAKLtbg84RxzjtiQgotF2dTGHdKRcCmoqyQbXsDAqVEMHAyFxMFRCBwNpcXFotoYlAZHR7FxKhQLB0GhcVAUCkdBaXHRqG0kzNZvEi6Uuo/WJTA7YQiKgkOhoDg0CoJjoVS4FFRL7IRVqIzZpmtQtDYdgYLjkCgYjoGC4BryBzkFV8eOCFJbl1icPeczwOgDi3d/aJmspRg2HT04LSoU9530jNcSDoXy4fq1kecUh0Yt4fqQOWzp/o5rEmqMq93li+nDtwADACvj7jAA3N70AAAAAElFTkSuQmCC) no-repeat 50%;
+    background-size: 19px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popbox01.nobtn .popcont {
+    max-height: 500px;
+    padding: 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_FullpopWrap .popcont {
+    height: 100%;
+    max-height: 100%!important;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popcont {
+    padding: 16px 16px 0;
+    max-height: 450px;
+    font-size: 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .prd_intro {
+    height: 204px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro {
+    height: 203px;
+    color: #fff;
+    background-size: auto 100%;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .prd_intro .prd_img, .prd_intro .prd_img {
+    bottom: auto;
+    top: 50%;
+    width: 231px;
+    height: 151px;
+    margin: -79px -25px 0 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .prd_img .ico_flag_new {
+    background-image: url(../img/ico_flag_new02_m.562e0e07.png);
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .prd_img .ico_flag_best, .prd_intro .prd_img .ico_flag_new {
+    left: 35px!important;
+    width: 41px;
+    height: 30px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ico_flag_best, .ico_flag_new {
+    width: 35px;
+    height: 25px;
+    background-size: auto 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .prd_img>span {
+    display: block;
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .prd_intro .prd_img img {
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .prd_img img {
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .prd_intro .intro_txt {
+    left: 24px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .intro_txt {
+    left: 24px;
+    width: 40%;
+    z-index: 10;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .prd_intro .intro_txt .tit {
+    font-size: 1.75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .intro_txt .tit {
+    font-size: 1.375rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .prd_intro .intro_txt .subtxt {
+    margin-top: 9px;
+    font-size: .75rem;
+    line-height: 134%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .intro_txt .subtxt {
+    margin-top: 15px;
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list02 {
+    padding: 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list02 li {
+    margin-bottom: 8px;
+    padding: 0 130px 0 22px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list02 li:last-child {
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list02 .prd_img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 116px;
+    height: 76px;
+    margin-top: -38px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ico_flag_best, .ico_flag_new {
+    width: 35px;
+    height: 25px;
+    background-size: auto 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list02 .cont {
+    min-height: 105px;
+    padding: 18px 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list02 .tit {
+    margin-bottom: 5px;
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list02 .set {
+    margin: 6px 0 7px;
+    font-size: .625rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list02 .price {
+    font-size: 1rem;
+}}
+
+/* 업그레이드여부 팝업 반응형 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popcont {
+    padding: 16px 16px 0;
+    max-height: 450px;
+    font-size: 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.poptxt01:first-child {
+    margin-top: 0;
+    padding-top: 24px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.poptxt01 {
+    margin: 19px 0;
+    line-height: 123%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_pop_tit01, .pop_tit01, .poptxt01 {
+    font-size: 1.125rem;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.poptxt01+.prdsetWrap {
+    margin-top: -3px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdsetWrap {
+    margin: 17px 0 20px;
+    color: #2e2e2e;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdsetWrap .prd_img {
+    width: 189px;
+    height: 124px;
+    margin: 0 auto 10px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdsetWrap .ico_flag_best, .prdsetWrap .ico_flag_new {
+    left: 10px;
+    top: 10px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ico_flag_best, .ico_flag_new {
+    width: 35px;
+    height: 25px;
+    background-size: auto 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdsetWrap .tit {
+    margin: 5px 0;
+    font-size: 1.125rem;
+    line-height: 110%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdsetWrap .set {
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 15px 16px;
+    overflow: hidden;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_btn.item2 a, .pop_btn.item2 button {
+    width: calc(50% - 6px);
+    min-width: inherit;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn02, .btn02.red {
+    height: 56px;
+    padding: 2px 10px 0;
+    font-weight: 700;
+    line-height: 54px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01.l, .btn01.l.font_s01, .btn01.m, .btn02, .btn02.red {
+    font-size: 1.125rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s {
+    min-width: 120px;
+    height: 50px!important;
+    padding: 10px!important;
+    font-size: 1.125rem!important;
+    line-height: 30px!important;
+    background: url(../img/bg_btn01_s.3c55e1c9.png) no-repeat 0 0!important;
+    background-size: 100% 100%!important;
+    border-radius: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_btn.item2>:last-child {
+    float: right;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_btn.item2 a, .pop_btn.item2 button {
+    width: calc(50% - 6px);
+    min-width: inherit;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn02, .btn02.red {
+    height: 56px;
+    padding: 2px 10px 0;
+    font-weight: 700;
+    line-height: 54px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01.l, .btn01.l.font_s01, .btn01.m, .btn02, .btn02.red {
+    font-size: 1.125rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s.red {
+    background-image: url(https://www.burgerking.co.kr/dist/img/bg_btn01_s_red.e9d9c88c.png)!important;
+    background-size: 100% 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s {
+    min-width: 120px;
+    height: 50px!important;
+    padding: 10px!important;
+    font-size: 1.125rem!important;
+    line-height: 30px!important;
+    background: url(	https://www.burgerking.co.kr/dist/img/bg_btn01_s.3c55e1c9.png) no-repeat 0 0!important;
+    background-size: 100% 100%!important;
+    border-radius: 0;
+}}
+
+/* 재료추가 팝업 반응형 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01.st02 {
+    height: 48px;
+    padding: 0 16px;
+    background: #f8f8f8;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 54px;
+    padding: 5px 16px;
+    font-size: 1.125rem;
+    line-height: normal;
+    background: #fff;
+    border-bottom: 1px solid #f7f7f7;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01.st02>* {
+    padding-left: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01>* {
+    width: 100%;
+    padding: 0 18px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01 .btn_close {
+    position: absolute;
+    padding: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01 .btn_close, .popbox01 .title_btn button {
+    position: static;
+    width: 50px;
+    background-size: 19px auto;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .btn_close {
+    width: 50px;
+    height: 50px;
+    background-size: 12px auto;
+}}
+/* @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01.st02>* {
+    padding-left: 0;
+}} */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01>* {
+    width: 100%;
+    padding: 0 18px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_close {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUM0NEY0MjlGREQ1MTFFODhEMTJEQTE2MUI4MkMyREEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUM0NEY0MkFGREQ1MTFFODhEMTJEQTE2MUI4MkMyREEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQzQ0RjQyN0ZERDUxMUU4OEQxMkRBMTYxQjgyQzJEQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQzQ0RjQyOEZERDUxMUU4OEQxMkRBMTYxQjgyQzJEQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pno3eBsAAAEwSURBVHjavNhNDoIwEAXg6lnEcA2C6PkxeAJET4AudWqKIQj0Z96zyVsxpV9XDGPM76okd0kj2RveyiUXyU1S+opPkqfk5dKRcLkDDef0kmMoioWbolZxFvWYKUbjllCzuMqDQuF8qDHuYAKLtbg84RxzjtiQgotF2dTGHdKRcCmoqyQbXsDAqVEMHAyFxMFRCBwNpcXFotoYlAZHR7FxKhQLB0GhcVAUCkdBaXHRqG0kzNZvEi6Uuo/WJTA7YQiKgkOhoDg0CoJjoVS4FFRL7IRVqIzZpmtQtDYdgYLjkCgYjoGC4BryBzkFV8eOCFJbl1icPeczwOgDi3d/aJmspRg2HT04LSoU9530jNcSDoXy4fq1kecUh0Yt4fqQOWzp/o5rEmqMq93li+nDtwADACvj7jAA3N70AAAAAElFTkSuQmCC);
+    background-size: 19px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popcont {
+    padding: 16px 16px 0;
+    max-height: 450px;
+    font-size: 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01 {
+    padding: 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popcont .menu_sub_list {
+    padding: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list {
+    margin: 0;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list.check_mode li {
+    margin: 0;
+    padding-left: 130px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list li {
+    position: relative;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: auto;
+    margin-bottom: 0;
+    padding: 0 0 0 133px;
+    border-bottom: 1px solid #f8f3ed;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=checkbox] {
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDg5MDc0NTVGQzUyMTFFODk1OTQ4NUZFOTQ1NDk1MzAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDg5MDc0NTZGQzUyMTFFODk1OTQ4NUZFOTQ1NDk1MzAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEODkwNzQ1M0ZDNTIxMUU4OTU5NDg1RkU5NDU0OTUzMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEODkwNzQ1NEZDNTIxMUU4OTU5NDg1RkU5NDU0OTUzMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjpSlu4AAAG9SURBVHjatJY9T8JQFIZPixglJMyEECHQbhBlcdCBhET+hVHcjDH+BP6CX5sf0V+hxoHBuGiiUxlLcYSRECNDfQ+0UD4u0FLe5M1paHkf7uXc2yuVy2VyKp/Pb6IcwXtwAl6l2erAOvwC31YqlW/nzRVH+BrKNXwAy+ROQVi1fIysB66A/ZIdhg/XUV7hkgfAqPj7h5xn5fYDz+Ed8lecd8kXEoa0hfrpwwgmyYS3ZZ+mSCQJ3ufwIi1XRYZsLJoSCoWm3U7Ic64DoSKRCOVyOVIURdje8qKATCZDgUCAotEohcNhYU8vDDBNkzRNo1ar5Q4Si8WEv2wSoNlsTl2dY4rH45ROpymbzY6B3AKEEEmSev9YMDgE8gIY2iCdqtfr3ZpMJvsgXdcplUq5Bgghk0Cqqvb2CZeAmd3FoFqtNtiIAKhWq64ANuRv2gOGYXRBNqDRaLjt9g5PlwErs0Ac3m63vSwpg0fyPM+THgGsJ4bcWfv+svQo46X1hYubJQH4UPFhd9cZ/O4zgPNO+y0MGk94Ab73YepMK6dg5Q4Wo3V8KeGEcYF6Au/yNsbvpHn6Av6B3+Cr0XPXvwADAHY1rlsfWsRZAAAAAElFTkSuQmCC) no-repeat 0;
+    background-size: 21px auto;
+    border: none;
+    opacity: 1;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=checkbox]:checked {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDVCMjgzQjdGQzUzMTFFOEEzNzk5QURFQzFERDFGN0MiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDVCMjgzQjhGQzUzMTFFOEEzNzk5QURFQzFERDFGN0MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowNUIyODNCNUZDNTMxMUU4QTM3OTlBREVDMUREMUY3QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowNUIyODNCNkZDNTMxMUU4QTM3OTlBREVDMUREMUY3QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjjmZ64AAAJXSURBVHjatJa7qhpRFIaXow4qGFTwDkGFjKOFoILNIYjgC1gdrOIzpFCxCJJgSJVOC7tTxbyD2oVwCi1s1ATEFKJoRMFCGG9Ze3I8qBkvk9EfBobZM/+3Z+291tqybDYLu5pMJvej0SjT7/fZ6XRKr1YrOCe5XA46nY6zWq0to9H4Ua/Xf90dV2xv5vO5rtvtPrZaLWaz2YAYkYmMx2MaL59MJiu53e4PTqczpFarp2ScegIYGo3Gr2azKRpwKPI9TvQV8SO+zxD8g2+9Xu8FXFHED32/8xCMexzJLNxAJPS4xm+o4XCYlhqiU6HDTfSWwl3kgRuK+JNwKaUaORwOwF0lOEb8qUvy4JSCwSCUSiXIZDKCIOJPSQEEAgHI5/OA+QCxWAwYhhF8j5ICKBQKPGCxWEAymYR2uy0OEo/HATP3YkC1Wj06IUFIIpGAdDoNxWLxH9BuiC4BHIUoFH9LGha9PdAWoNFoeEAqlToL4Auo2WzOHj6s1+v8rgiFQqBSqSAajcJsNoNcLrcHqFQqF62fIOQQREITDodBqVSKBpyEbEHr9ZoHES2XS36txAB4iM1my56qXbVaja9Bfr+fB5TLZXEAbGiySCTCYbM5W1pcLhd0Oh3R+WQwGBYUtszmJS//D4AII9WkTCbTp2PF7RrCnv+Zwlz4wrJs6xYAj8fzAw8VD9RTqX5tt9tn1wQQP/S9e854zIPfPp/vJf7RT6mhI98TH+JHfPeOROT44vV6GdwI94PB4D22ZQdmOc1x3FljmqZBq9VyuL5di8Xy7vDc9UeAAQCEsxsALornsQAAAABJRU5ErkJggg==);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=checkbox], input[type=radio] {
+    position: static;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list.check_mode .prd_img {
+    left: 28px;
+    width: 97px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .prd_img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 110px;
+    height: 72px;
+    margin-top: -36px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list.check_mode .cont {
+    min-height: 78px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .cont {
+    width: 100%;
+    min-height: 1em;
+    padding: 18px 0;
+    color: #2e2e2e;
+    text-align: left;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .price, .menu_sub_list .tit {
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .price, .menu_sub_list .tit {
+    font-size: 1rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .price, .prdmenu_list .tit {
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 15px 16px;
+    overflow: hidden;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_btn.item2 a, .pop_btn.item2 button {
+    width: calc(50% - 6px);
+    min-width: inherit;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_btn.item2>:last-child {
+    float: right;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_btn.item2 a, .pop_btn.item2 button {
+    width: calc(50% - 6px);
+    min-width: inherit;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn02, .btn02.red {
+    height: 56px;
+    padding: 2px 10px 0;
+    font-weight: 700;
+    line-height: 54px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01.l, .btn01.l.font_s01, .btn01.m, .btn02, .btn02.red {
+    font-size: 1.125rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s.red {
+    background-image: url(	https://www.burgerking.co.kr/dist/img/bg_btn01_s_red.e9d9c88c.png)!important;
+    background-size: 100% 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.c_btn button+button {
+    margin-left: 3px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s {
+    min-width: 120px;
+    height: 50px!important;
+    padding: 10px!important;
+    font-size: 1.125rem!important;
+    line-height: 30px!important;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_s.3c55e1c9.png) no-repeat 0 0!important;
+    background-size: 100% 100%!important;
+    border-radius: 0;
+}}
+
+
+/* 사이드 팝업 반응형 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01.st02 {
+    height: 48px;
+    padding: 0 16px;
+    background: #f8f8f8;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 54px;
+    padding: 5px 16px;
+    font-size: 1.125rem;
+    line-height: normal;
+    background: #fff;
+    border-bottom: 1px solid #f7f7f7;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01.st02>* {
+    padding-left: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01>* {
+    width: 100%;
+    padding: 0 18px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_cen {
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01 .btn_close {
+    position: absolute;
+    padding: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01 .btn_close, .popbox01 .title_btn button {
+    position: static;
+    width: 50px;
+    background-size: 19px auto;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .btn_close {
+    width: 50px;
+    height: 50px;
+    background-size: 12px auto;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01.st02>* {
+    padding-left: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_header01>* {
+    width: 100%;
+    padding: 0 18px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_close {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUM0NEY0MjlGREQ1MTFFODhEMTJEQTE2MUI4MkMyREEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUM0NEY0MkFGREQ1MTFFODhEMTJEQTE2MUI4MkMyREEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQzQ0RjQyN0ZERDUxMUU4OEQxMkRBMTYxQjgyQzJEQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQzQ0RjQyOEZERDUxMUU4OEQxMkRBMTYxQjgyQzJEQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pno3eBsAAAEwSURBVHjavNhNDoIwEAXg6lnEcA2C6PkxeAJET4AudWqKIQj0Z96zyVsxpV9XDGPM76okd0kj2RveyiUXyU1S+opPkqfk5dKRcLkDDef0kmMoioWbolZxFvWYKUbjllCzuMqDQuF8qDHuYAKLtbg84RxzjtiQgotF2dTGHdKRcCmoqyQbXsDAqVEMHAyFxMFRCBwNpcXFotoYlAZHR7FxKhQLB0GhcVAUCkdBaXHRqG0kzNZvEi6Uuo/WJTA7YQiKgkOhoDg0CoJjoVS4FFRL7IRVqIzZpmtQtDYdgYLjkCgYjoGC4BryBzkFV8eOCFJbl1icPeczwOgDi3d/aJmspRg2HT04LSoU9530jNcSDoXy4fq1kecUh0Yt4fqQOWzp/o5rEmqMq93li+nDtwADACvj7jAA3N70AAAAAElFTkSuQmCC);
+    background-size: 19px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=radio]:checked {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Nzk0M0ExNzMwOTFGMTFFOUI1REZGQjM5NjBBODc2OEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Nzk0M0ExNzQwOTFGMTFFOUI1REZGQjM5NjBBODc2OEYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3OTQzQTE3MTA5MUYxMUU5QjVERkZCMzk2MEE4NzY4RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3OTQzQTE3MjA5MUYxMUU5QjVERkZCMzk2MEE4NzY4RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrYCYzIAAAIwSURBVHjaxJfNS0JBEMCfmlqR1SG62CVKKOgQ/QdC6KHuZXTsav4ZfhyCjql0VDtX1zq+KEitrtoHBGIdyjTKDjULY9iw+97u84UDP9DZmdl9+zE769DkZQRYAYLAIjANjGHbK3ALlIBT4BhoajbJLJDBgN+SNNEn0EvHg0AC+FTomNIGkhhLSWaAYg8dU0o4k1KyBNQEge5xVkLAFODFvTEHhIE4UBX41jC26XrXBR1vAi6JD3ACEfShcepGMzGEU0WdDoFRC3uIzUyOE68MDPMckhzjXfwiq+IAdjhxU7xN1yZGBxigV2ExCpzT8eeIZojBA+DT7BO2HI+kj2yn0cdJMhsGwTzANqADb4iOOo+B3xbpo9X5yDXScGew2/0m+aGINjwZwHTdbc9Oi5YmyoTBlxclk45XECPBW4YzogwLnKMKmS8qiLFM7M6Z8okoRVOoKwxAN1jCbrtnjXPZiKZP5VL6EMRw0+Po1P5HvmQN2QAaRDchsL1UGMCNQD9J/jfYACpEuSBwzikMIC/Qz5P/VTaAK6IMCpzTeJGYCYu3Z3AKqK2tiahkcIpcokRkJRXHgAv0a+LvmIVU/HvNZzkFyH9fRvtm13HBxus4b3Yd970g6ZRk5X6WZGZFaUShKF23UpTKluVxLMv9mNvd+DuEbZVeyvLumSjb+DC5VnmYdD/NkjY8zVJWnma8x2lLoeN3zC0BmWOisqtXyfN8HNteMM2yZTsBjmSf5z8CDADf/o0PCoy8vAAAAABJRU5ErkJggg==);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popcont {
+    padding: 16px 16px 0;
+    max-height: 450px;
+    font-size: 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01 {
+    padding: 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .menu_change {
+    padding: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_change {
+    padding: 30px 0 0;
+    font-size: .625rem;
+    text-align: center;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .menu_change li {
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_change li {
+    position: relative;
+    float: left;
+    width: 33.3%;
+    height: 110px;
+    margin-bottom: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .menu_change .prd_img {
+    max-width: 97px;
+    height: 64px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_change .prd_img {
+    max-width: 110px;
+    margin: 0 auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_change .cont {
+    margin-top: 6px;
+    padding: 0 5px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .menu_change .list_chk input:checked {
+    background-position: 54% 30%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_change .list_chk input:checked {
+    /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAABuCAYAAAATZTDzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkU1OEFEQTkwNDMxMTFFOUJDMkQ4NDg3MDA1OThDRTMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkU1OEFEQUEwNDMxMTFFOUJDMkQ4NDg3MDA1OThDRTMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGRTU4QURBNzA0MzExMUU5QkMyRDg0ODcwMDU5OENFMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGRTU4QURBODA0MzExMUU5QkMyRDg0ODcwMDU5OENFMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pup7ksoAAApqSURBVHja7N19bBPn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) no-repeat 53% 39%;
+     */ /* 체크 이미지 두 개 먹어서 뻄 ㅠㅠ */
+    background-size: auto 55px;
+    opacity: 1;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_change .list_chk input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: none;
+    opacity: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=radio] {
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkU0OUIzMDUwOTFGMTFFOTkwMzBEQzAyMzMyMTAyRjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkU0OUIzMDYwOTFGMTFFOTkwMzBEQzAyMzMyMTAyRjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RTQ5QjMwMzA5MUYxMUU5OTAzMERDMDIzMzIxMDJGNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RTQ5QjMwNDA5MUYxMUU5OTAzMERDMDIzMzIxMDJGNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Phhti8oAAAI3SURBVHjazFdbS5tBEE32i7HGxtQLthpFKEJvIAqCL/35eQlK6+XBFkRRUIkWSk1r0VzqWThbJsNGNl93sQMHkv2W3bMzZ2dmi4VwKwHzwBwwBVSAMX7rALfADfANuAK6IYsWA+ZMAqtAHcgCyfaAc+AI+JWXgAHeAK/5O4/1gWPgK38HE7Cn3qSrY5gNzY7PGz4CNWALGPd8+03X2ji3gXt65xkwQX0sUh/a7oAm8OMxAvbkH4GyZ+Mv3PxPgK4siXckJc0SbkhPSAIZN9dubwGfQlWtbs0axavD0aBQB1T9FlhQk0+A3WECChDgJa/qtBgfZ9iuJQHr+g3lkQtgL4IA7UZVwtkLrt9xBN5zUMa8mfPkw0gsMywu9HbvVsbBDXXXD7Ra/9H61NArMfbchjjjYF2dfr8Q36z4lkT6tgduZ8x0NTHx1Akkgdl8MSP+d4wSR4FJJpXptacMb4C0dkICeu2KEcqU2SqV6bVLpvDEZjwptpxwP71213hKZDUhAb32rfEIYy4hAb32jfHc+XpgqzaquTI9cC0NG8ieGJzwTIxhy6pR6bla0OeHmqpWZxGLUYktnrzytrm5cNXwJ7AiXD/GBHUZicC6SsF9Njl/y3GH7GaUYssR6sIHHk7aMfuBgY7oO/BSNaPTDE0rRzhKPPmKpyp+dr3lKE3pIVkna0rztuUuw1VjtOWpHiaW7HbowyT20+yEb4qRnmb/xePUp2p7S2apk4pILF31PG+FPmQeBBgA+HyIj95kU20AAAAASUVORK5CYII=) no-repeat 0;
+    background-size: 16px auto;
+    border: none;
+    opacity: 1;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{input[type=checkbox], input[type=radio] {
+    position: static;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_change li:nth-child(3n -1) {
+    width: 33.4%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_change li {
+    position: relative;
+    float: left;
+    width: 33.3%;
+    height: 110px;
+    margin-bottom: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.pop_btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 15px 16px;
+    overflow: hidden;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}}
+
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s.red {
+    background-image: url(@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+} .btn02, .btn02.red {
+    height: 56px;
+    padding: 2px 10px 0;
+    font-weight: 700;
+    line-height: 54px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01.l, .btn01.l.font_s01, .btn01.m, .btn02, .btn02.red {
+    font-size: 1.125rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s.red {
+    background-image: url(https://www.burgerking.co.kr/dist/img/bg_btn01_s_red.e9d9c88c.png)!important;
+    background-size: 100% 100%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s:only-child {
+    width: 142px;
+    min-width: 142px!important;
+})!important;
+    background-size: 100% 100%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s:only-child {
+    width: 142px;
+    min-width: 142px!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_btn01_s {
+    min-width: 120px;
+    height: 50px!important;
+    padding: 10px!important;
+    font-size: 1.125rem!important;
+    line-height: 30px!important;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_s.3c55e1c9.png) no-repeat 0 0!important;
+    background-size: 100% 100%!important;
+    border-radius: 0;
+}}

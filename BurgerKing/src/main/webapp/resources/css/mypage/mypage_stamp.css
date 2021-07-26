@@ -499,3 +499,378 @@ em {
 	padding-top: 2rem;
 	padding-bottom: 3rem;
 }
+
+
+/* 반응형 */
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsWrap {
+    padding-top: 57px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap {
+    position: relative;
+    height: auto;
+    min-height: 48px;
+    padding: 0;
+    line-height: normal;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_titbox01.ac98b1ea.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .page_tit.st02 {
+    padding-top: 3px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_status {
+    padding: 35px 16px 10px;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_status .tit {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.125rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_status .info {
+    margin: 5px 0;
+    font-size: .875rem;
+    color: #010101;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_block {
+    display: block;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_list {
+    margin: 20px 0;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_list li {
+    float: left;
+    width: 20%;
+    height: 55px;
+    margin-bottom: 19px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_stamp_off.09d33730.png) no-repeat top;
+    background-size: 100% auto;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp.on {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_stamp_on.f294add1.png) no-repeat top;
+    background-size: 100% auto;
+}}
+
+
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp>* {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 14px;
+    font-weight: 700;
+    font-size: .625rem;
+    color: #7f7873;
+    line-height: 100%;
+    opacity: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp em.coupon {
+    opacity: 1;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_status .c_btn {
+    position: static;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn04, .btn04_m {
+    min-width: 36px;
+    height: 24px;
+    padding: 2px 6px 0;
+    font-size: .625rem;
+    color: #fff;
+    text-align: center;
+    background: #2e2e2e;
+    border-radius: 3px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01.bg_m_dark, .btn01_m02 {
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_normal.192da552.png) no-repeat 50%!important;
+    background-size: 100% 100%!important;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01.bg_m_dark, .btn01_m02 {
+    min-width: 158px!important;
+    height: 48px!important;
+    padding: 12px 10px 10px!important;
+    font-size: 1.125rem!important;
+    font-weight: 700;
+    color: #fff;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 0!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_couponWrap {
+    margin-bottom: 20px;
+    padding-top: 35px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_titWrap {
+    margin: 0 0 17px;
+    padding: 0 20px;
+    font-size: .875rem;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_titWrap .tit {
+    margin-bottom: 7px;
+    font-size: 1.125rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_titWrap .txt {
+    position: static;
+    margin: 0;
+    font-size: .875rem;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_titWrap .txt p:first-child {
+    margin-top: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_titWrap .txt p {
+    margin-top: 6px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_coupon_list {
+    margin-top: 17px;
+    padding: 0 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_introWrap {
+    margin: 0 20px;
+    padding: 29px 0 27px;
+    font-size: .875rem;
+    text-align: center;
+    border-bottom-width: 1px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_introWrap .tit {
+    margin-bottom: 12px;
+    font-size: 1.125rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_introWrap p+p {
+    margin-top: 15px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stamp_introWrap .c_btn {
+    position: static;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01, .btn01.m {
+    height: 48px;
+    line-height: 26px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01 {
+    width: auto;
+    min-width: 158px;
+    font-size: 1.125rem;
+    background-size: 100% 100%!important;
+}}
+
+/*
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stemp_guide {
+    padding: 24px 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stemp_guide .tit {
+    font-size: 1.125rem;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.step_guide {
+    margin-top: 10px;
+    font-size: 1rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.step_guide .step_txt {
+    min-height: 2.5em;
+    margin-bottom: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.step_guide .step_txt {
+    min-height: 60px;
+    margin-top: 20px;
+    font-size: 1rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.step_guide p {
+    margin-bottom: 15px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.stemp_guide .guide_swipe {
+    position: relative;
+    margin: 0 -16px;
+    padding: 0 25px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+*/
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.guide_txt .tit04 {
+    margin: 15px 0;
+    padding-bottom: 10px;
+    font-size: 1.125rem;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 {
+    margin: 7px 0;
+    font-size: .75rem;
+    line-height: 167%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 li {
+    position: relative;
+    padding-left: 15px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 1.67em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAHCAYAAAArkDztAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0U0MEY1ODFFOThGMTFFOEEwMUZGOENGRkE5MEExMkYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0U0MEY1ODJFOThGMTFFOEEwMUZGOENGRkE5MEExMkYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDRTQwRjU3RkU5OEYxMUU4QTAxRkY4Q0ZGQTkwQTEyRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDRTQwRjU4MEU5OEYxMUU4QTAxRkY4Q0ZGQTkwQTEyRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjvBdNUAAABCSURBVHjaYmBAAHEohgMhIN4OxP+heAdUjGEJkiAMg8QYvmKRAIkxPMMiARJjqMIiUQySYATifCA+D8UFIDGAAAMAc/gcGk8cnHoAAAAASUVORK5CYII=) no-repeat 50%;
+    background-size: 3px auto;
+}}
+

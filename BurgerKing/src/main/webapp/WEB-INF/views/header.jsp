@@ -44,6 +44,9 @@ function goDelivery() {
 </script>
 
 <!-- pc -->
+<div id="app">
+<div class="subWrap01">
+
 <div class="headerWrap">
     <div class="head_menuWrap">
         <div class="web_container">
@@ -123,3 +126,4 @@ function goDelivery() {
 		</div>
 	</div>
 </div>
+

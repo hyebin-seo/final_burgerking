@@ -44,4 +44,8 @@
 		select * from qna where qna_no = #{no}
 	</select>
 	
+	<delete id="deleteUserQna">
+		delete from qna where qna_mail = #{user_id}
+	</delete>
+	
 </mapper>

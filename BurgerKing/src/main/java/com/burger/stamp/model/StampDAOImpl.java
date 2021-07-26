@@ -37,4 +37,10 @@ public class StampDAOImpl implements StampDAO {
 		this.sqlSession.update("minus10Stamp", user_id);
 	}
 
+	@Override
+	public void deleteUserStamp(String user_id) {
+		
+		this.sqlSession.delete("deleteUserStamp", user_id);
+	}
+
 }

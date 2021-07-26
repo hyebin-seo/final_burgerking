@@ -87,13 +87,25 @@ strong {
 	font-family: 'S-CoreDream-9Black';
 }
 
+#app {
+    position: relative;
+    min-width: 960px;
+    min-height: 100%;
+}
+
+.subWrap01 {
+    margin: 0 auto;
+    padding: 120px 0 857px;
+}
+
+
 /* 메뉴판 전체 영역 */
 .contentsWrap {
     min-height: 450px;
     margin: 0 auto;
     
     /* 추가 */
-	margin-top: 120px;		/* 헤더 영역만큼 띄우기 */
+	/* margin-top: 120px; */		/* 헤더 영역만큼 띄우기 */
 }
 
 /* 까만 영역 */
@@ -349,16 +361,16 @@ strong {
 }
 
 .prdmenu_list li {
-    position: relative;
+   /*  position: relative;
     float: left;
     width: 25%;
-    margin-bottom: 8px;
+    margin-bottom: 8px; */
 }
 
 /* 추가 */
 .prdmenu_list.prd_submenu.m_bg_basic li {
-	float: none;	 /* float: left가 먼저 먹어서 다시 줌 */
-	width: 33%;	 	/* width: 25%가 먼저 먹어서 다시 줌 */
+	/* float: none; */	 /* float: left가 먼저 먹어서 다시 줌 */
+	/* width: 33%; */	 	/* width: 25%가 먼저 먹어서 다시 줌 */
 }
 
 .prd_submenu .prd_img {
@@ -559,4 +571,613 @@ strong {
     right: 0;
     background: url(../../img/menu/img_next.png) no-repeat 50%;
 }
+
+#app {
+    position: relative;
+    min-width: 960px;
+    min-height: 100%;
+}
+
+.subWrap01 {
+    margin: 0 auto;
+    padding: 120px 0 857px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px)
+html {
+    font-size: 17px;
+}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{#app {
+    min-width: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01, .subWrap02 {
+    min-width: 320px;
+    padding-top: 0!important;
+    padding-bottom: 350px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsWrap {
+    padding-top: 57px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap {
+    position: relative;
+    height: auto;
+    min-height: 48px;
+    padding: 0;
+    line-height: normal;
+    background: url(../img/bg_titbox01.ac98b1ea.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .web_container {
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .page_navi {
+    display: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro {
+    height: 203px;
+    color: #fff;
+    background-size: auto 100%;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .web_container {
+    position: relative;
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .intro_txt {
+    left: 24px;
+    width: 40%;
+    z-index: 10;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .intro_txt .tit {
+    font-size: 1.375rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .intro_txt .subtxt {
+    margin-top: 15px;
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.popWrap .prd_intro .prd_img, .prd_intro .prd_img {
+    bottom: auto;
+    top: 50%;
+    width: 231px;
+    height: 151px;
+    margin: -79px -25px 0 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .prd_img .ico_flag_new {
+    background-image: url(../img/ico_flag_new02_m.562e0e07.png);
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .prd_img .ico_flag_best, .prd_intro .prd_img .ico_flag_new {
+    left: 35px!important;
+    width: 41px;
+    height: 30px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ico_flag_best, .ico_flag_new {
+    width: 35px;
+    height: 25px;
+    background-size: auto 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .prd_img>span {
+    display: block;
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_intro .prd_img img {
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_subinfoWrap {
+    height: 38px;
+    background-size: 100% 100%;
+}}
+@media screen and (max-width: 768px) and (min-width: 600px)
+{.menu_subinfoWrap {
+    background-size: 100% 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_subinfoWrap>.web_container {
+    padding: 0 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_subinfoWrap .btn_back {
+    display: inline-block;
+    height: 100%;
+    padding-left: 14px;
+    font-size: .825rem;
+    line-height: 38px;
+    background-size: 7.5px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_subinfoWrap .btn_back {
+    display: inline-block;
+    height: 100%;
+    padding-left: 14px;
+    font-size: .825rem;
+    line-height: 38px;
+    background-size: 7.5px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.nutrition_info {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -12px;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.nutrition_info button {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: #fff;
+    border-radius: 3px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.nutrition_info button>* {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-indent: -9999em;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_nutrition>:after {
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    margin-top: 0;
+    background-position: 50%;
+    background-size: 12.5px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txt_menudetail_intro {
+    padding: 25px 24px 10px;
+    font-size: .625rem;
+    line-height: 130%;
+    text-align: center;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_bg_basic {
+    background: #f2ebe6!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txt_menudetail_intro {
+    padding: 25px 24px 10px;
+    font-size: .625rem;
+    line-height: 130%;
+    text-align: center;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list {
+    margin: 0;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu {
+    padding: 15px 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_bg_basic {
+    background: #f2ebe6!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu li {
+    position: relative;
+    display: block;
+    width: auto;
+    margin: 0 0 8px;
+    padding: 0 135px 0 20px;
+    background: #fff;
+    -webkit-box-shadow: 0 2px 4px rgb(0 0 0 / 6%);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 6%);
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list li {
+    /* position: relative; */
+    float: none;
+    /* display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+   /*  width: auto; */
+    min-height: 95px;
+   /*  margin-bottom: 0;
+    padding: 10px 40px 10px 133px; */
+    border-bottom: 1px solid #f8f3ed;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .prd_img {
+    left: auto;
+    right: 10px;
+    top: 50%;
+    width: 119px;
+    height: 78px;
+    margin-top: -39px;
+    overflow: hidden;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .prd_img {
+    position: absolute;
+    /* left: 10px;
+    top: 50%;
+    width: 116px;
+    height: 76px;
+    margin-top: -38px; */
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .cont {
+    min-height: 105px;
+    padding: 22px 0 10px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .cont {
+    width: 100%;
+    min-height: 1em;
+    padding: 18px 0;
+    color: #2e2e2e;
+    text-align: left;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .tit {
+    font-size: 1rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .price, .prdmenu_list .tit {
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .tit>* {
+    display: inline;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .set {
+    margin-top: 5px;
+    font-size: .625rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu li:nth-child(2) {
+    border: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu li {
+    position: relative;
+    display: block;
+    width: auto;
+    margin: 0 0 8px;
+    padding: 0 135px 0 20px;
+    background: #fff;
+    -webkit-box-shadow: 0 2px 4px rgb(0 0 0 / 6%);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 6%);
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list li {
+   /*  position: relative;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: auto;
+    min-height: 95px;
+    margin-bottom: 0;
+    padding: 10px 40px 10px 133px;
+    border-bottom: 1px solid #f8f3ed; */
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .prd_img {
+    left: auto;
+    right: 10px;
+    top: 50%;
+    width: 119px;
+    height: 78px;
+    margin-top: -39px;
+    overflow: hidden;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .prd_img {
+    position: absolute;
+    /* left: 10px;
+    top: 50%;
+    width: 116px;
+    height: 76px;
+    margin-top: -38px; */
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .cont {
+    min-height: 105px;
+    padding: 22px 0 10px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .cont {
+    width: 100%;
+    min-height: 1em;
+    padding: 18px 0;
+    color: #2e2e2e;
+    text-align: left;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .tit {
+    font-size: 1rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .price, .prdmenu_list .tit {
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .tit>* {
+    display: inline;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .set {
+    margin-top: 5px;
+    font-size: .625rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .set {
+    margin-top: 5px;
+    font-size: .625rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list li:last-child {
+    margin: 0;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list li {
+    position: relative;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: auto;
+    min-height: 95px;
+    margin-bottom: 0;
+    padding: 10px 40px 10px 133px;
+    border-bottom: 1px solid #f8f3ed;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu li {
+    position: relative;
+    display: block;
+    width: auto;
+    margin: 0 0 8px;
+    padding: 0 135px 0 20px;
+    background: #fff;
+    -webkit-box-shadow: 0 2px 4px rgb(0 0 0 / 6%);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 6%);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .prd_img {
+    left: auto;
+    right: 10px;
+    top: 50%;
+    width: 119px;
+    height: 78px;
+    margin-top: -39px;
+    overflow: hidden;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .cont {
+    min-height: 105px;
+    padding: 22px 0 10px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .cont {
+    width: 100%;
+    min-height: 1em;
+    padding: 18px 0;
+    color: #2e2e2e;
+    text-align: left;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .tit {
+    font-size: 1rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .price, .prdmenu_list .tit {
+    font-size: 1rem;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .tit>* {
+    display: inline;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu .set {
+    margin-top: 5px;
+    font-size: .625rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.other_menuWrap .web_container {
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.other_menuWrap .titbox {
+    padding: 24px 16px 20px;
+    font-size: 1rem;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.othermenu_list {
+    position: relative;
+    height: auto;
+    min-height: 220px;
+    margin-top: -20px;
+    padding: 30px 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.othermenu_list .slick-slider {
+    padding: 0 40px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_swiper {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    background-size: 8px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.othermenu_list .slick-slide {
+    width: auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_swiper {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    background-size: 8px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.swiper-pagination>* {
+    margin: 0 3px;
+    opacity: 1;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.swiper-pagination button {
+    width: 6px;
+    height: 6px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.swiper-pagination>* {
+    margin: 0 3px;
+    opacity: 1;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.swiper-pagination>* {
+    margin: 0 3px;
+    opacity: 1;
+}}
+
+
+
 

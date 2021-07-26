@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="resources/css/menu/menu_brand.css"  rel="stylesheet"  type="text/css">

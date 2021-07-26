@@ -48,4 +48,10 @@ public class LocationDAOImpl implements LocationDAO {
 		this.sqlSession.update("changeLocName", loc);
 	}
 
+	@Override
+	public void deleteUserLoc(String user_id) {
+		
+		this.sqlSession.delete("deleteUserLoc", user_id);
+	}
+
 }

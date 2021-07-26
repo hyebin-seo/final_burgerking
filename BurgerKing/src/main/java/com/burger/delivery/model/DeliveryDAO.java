@@ -8,4 +8,7 @@ public interface DeliveryDAO {
 	public int orderMenuInsert(OrderMenuDTO dto);
 	public OrderListDTO orderDetailOpen(String order_no);
 	public List<OrderMenuDTO> orderMenuOpen(String order_no);
+	
+	// 회원 탈퇴 시 주문 삭제 메소드 추가
+	public void deleteUserOrder(String user_id);
 }

@@ -37,7 +37,7 @@
 	</div>
 </div>
 
-<div class="loc_container">
+<%-- <div class="loc_container">
 	<div class="loc">
 		<div class="page-navi">
 			<a href="delivery_home.do"><span>딜리버리</span></a>
@@ -68,6 +68,6 @@
 			</span>
 		</div>
 	</div>
-</div>
+</div> --%>
 
 <script src="resources/js/delivery/deliveryCart.js"></script>

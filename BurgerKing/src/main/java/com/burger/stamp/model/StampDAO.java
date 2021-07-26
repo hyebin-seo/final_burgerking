@@ -15,4 +15,7 @@ public interface StampDAO {
 	
 	// 해당 회원 스탬프를 10개 차감하는 메소드
 	public void minus10Stamp(String user_id);
+	
+	// 탈퇴시 스탬프 삭제
+	public void deleteUserStamp(String user_id);
 }

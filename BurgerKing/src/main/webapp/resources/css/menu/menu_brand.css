@@ -92,7 +92,7 @@ img {
 	margin: 0 auto;	
 	
 	/* 추가 */
-	margin-top: 120px;		/* 헤더 영역만큼 띄우기 */
+	/* margin-top: 120px; */		/* 헤더 영역만큼 띄우기 */
 }
 
 .locationWrap {
@@ -296,5 +296,283 @@ img {
     height: 100%;
     text-indent: -99999em;
     background: transparent;
+}
+
+#app {
+	position: relative;
+	min-width: 960px;
+	min-height: 100%;
+}
+
+.subWrap01 {
+    margin: 0 auto;
+    padding: 120px 0 857px;
+}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01, .subWrap02 {
+    min-width: 320px;
+    padding-top: 0!important;
+    padding-bottom: 350px;
+}}
+
+@media screen and (min-width: 375px) and (max-width: 767px){
+	html {
+	    font-size: 17px;
+	}
+}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait){
+	#app {
+	    min-width: 100%;
+	}
+}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01, .subWrap02 {
+    min-width: 320px;
+    padding-top: 0!important;
+    padding-bottom: 350px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsWrap {
+    padding-top: 57px;
+    
+    /* 추가 */
+    margin-top: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap {
+    position: relative;
+    height: auto;
+    min-height: 48px;
+    padding: 0;
+    line-height: normal;
+    background: url(../img/bg_titbox01.ac98b1ea.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .web_container {
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .page_navi {
+    display: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}
+}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01:last-child {
+    margin-bottom: -10px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 {
+    position: static;
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi li, .tab01.m_multi ul {
+    display: block;
+    border-bottom: 1px solid #f1f3f5;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi ul {
+    overflow: hidden;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 ul {
+    display: table;
+    width: 100%;
+    background: #fff;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi li {
+    position: relative;
+    float: left;
+    width: 25%;
+    margin-bottom: -1px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi li, .tab01.m_multi ul {
+    display: block;
+    border-bottom: 1px solid #f1f3f5;
+}
+.tab01 li:first-child {
+    padding-left: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 li {
+    display: table-cell;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01.m_multi button {
+    height: 49px;
+    padding: 0 10px;
+    border-width: 2px 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 button {
+    height: 56px;
+    border-width: 3px 0;
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 a, .tab01 button {
+    display: block;
+    width: 100%;
+    min-width: 4em;
+    height: 56px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    border-width: 3px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list {
+    margin: 0;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prd_submenu {
+    padding: 15px 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list li {
+    position: relative;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: auto;
+    min-height: 95px;
+    margin-bottom: 0;
+    padding: 10px 40px 10px 133px;
+    border-bottom: 1px solid #f8f3ed;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .prd_img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 116px;
+    height: 76px;
+    margin-top: -38px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .cont {
+    width: 100%;
+    min-height: 1em;
+    padding: 18px 0;
+    color: #2e2e2e;
+    text-align: left;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .price, .prdmenu_list .tit {
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .btn_detail:after {
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 11px;
+    height: 100%;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAgCAYAAAD9oDOIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDg5NkFFM0VFNkVCMTFFOEE1NUNGNzE0Q0UyREIzNTEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDg5NkFFM0ZFNkVCMTFFOEE1NUNGNzE0Q0UyREIzNTEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowODk2QUUzQ0U2RUIxMUU4QTU1Q0Y3MTRDRTJEQjM1MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowODk2QUUzREU2RUIxMUU4QTU1Q0Y3MTRDRTJEQjM1MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjoXMP8AAAG0SURBVHjanJZPK0RxFIbvlVITJsVHsNNISk0kKRRZsJfyZ0FCQyLJkEKYLIhEyoKdWIgoRZNSsrHxDawkaUaUrvfUuTWpcd47bz2L2+/0dOuec37XjUQijiYMDkEj2AWj4McJEM/zHNd1nfwM4TmI6vMQKAK9QcQilOSBQnCWIfTTDXak1gkYkU6B2iznPbmIRVpm1PSBzSBikSbAq1E3ANZZsUifQTN4M2qH9QUoqeRRxe9GvbTZCiuVPIAWQjwOFlmp5B60gg9DPAnmWankTsUpQzwDZmWKGKkkCdpA2hDHMUXTrFRyA9oJ8QKYYKWSa9ABPo26ZRBjpZJL0Am+jLo1MMJKJRcq/ibEFXkB9oSsQI/oe5eVNoFjUEAMxhMjbQAnIGTUTfm7wZLW6wIPEYOwxHz9OlI4p71q9mlUhYVE48eZiarRS7CYaPgZZqFUa7OHDWFCN5W5parAFSGUa2WM2aeV+oYlhnAjc8b/k5brG5Yatdt6T3mMNEZc03tgkBH60hejZh/0s0Jfugpus5wfBBX60rTeSck/Z0f62xPozy/z66dUfKrLeAt05SKU/AowAPhSWoCDlhBXAAAAAElFTkSuQmCC) no-repeat 100%;
+    background-size: auto 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list li:last-child {
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap {
+    position: relative;
+    height: auto;
+    min-height: 48px;
+    padding: 0;
+    line-height: normal;
+    background: url(../img/bg_titbox01.ac98b1ea.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}}
+
+/**/
+@media screen and (min-width: 769px) and (max-width: 1024px)
+{.subtitWrap .tab01 li {
+    padding: 0 12px;
+}}
+
+@media screen and (min-width: 769px) and (max-width: 1024px)
+{.subtitWrap .tab01 button {
+    font-size: 1rem;
+}}
+
+/* 반응형 하면 카테고리 찌그러져서 추가 */
+.contentsBox01.bg_w {
+	/* min-width: 960px; */
 }
 
