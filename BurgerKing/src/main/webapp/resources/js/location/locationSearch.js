@@ -56,9 +56,9 @@ $(document).ready(function () {
 });
 
 //지도보기 끄기
-$(".popWrap .btn_close").on("click", function(){
+$(".sub_popWrap .btn_close").on("click", function(){
 	//$(".popWrap").css('display','none');
-	$(".popWrap").hide();
+	$(".sub_popWrap").hide();
 });
 
 

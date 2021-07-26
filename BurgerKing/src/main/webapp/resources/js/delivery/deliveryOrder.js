@@ -6,6 +6,20 @@ $(document).ready(function() {
 		
 		$(".payment_tabcont").addClass("w_none");
 		$(".payment_tabcont").eq($(this).index()).removeClass("w_none");
+		
+	});
+	
+	$(document).on("click", "input[name='paymentType']:checked", function () {
+		if($(this).val() == "네이버페이") {
+			$(".naver_cont").show();
+			$(".payco_cont").hide();
+		} else if($(this).val() == "페이코") {
+			$(".payco_cont").show();
+			$(".naver_cont").hide();
+		} else {
+			$(".naver_cont").hide();
+			$(".payco_cont").hide();
+		}
 	});
 	
 	//요청사항 입력감지

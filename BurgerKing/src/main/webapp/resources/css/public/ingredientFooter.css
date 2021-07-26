@@ -77,3 +77,122 @@
     width: 12px;
     height: 1.67em;
 }
+
+.web_container.container01 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.acc_tit {
+    position: relative;
+    padding: 10px 20px 10px 0;
+}
+
+.btn_acc {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999em;
+}
+
+.btn_acc:after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: url(../../img/cs/comB.png) no-repeat 50%;
+    background-size: 15px auto;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transition: transform .3s linear;
+    -webkit-transition: -webkit-transform .3s linear;
+    transition: -webkit-transform .3s linear;
+    transition: transform .3s linear;
+    transition: transform .3s linear,-webkit-transform .3s linear;
+}
+
+.open .btn_acc:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.acc_cont {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+}
+
+@media (max-height: 500px) and (orientation: landscape),
+ screen and (max-width: 768px) and (orientation: portrait) {
+.tit03 {
+    margin: 0;
+    font-size: 1rem;
+    border-bottom-width: 1px;
+}
+
+.web_container.container01 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.order_caution {
+    margin-bottom: 0px;
+    background: #f2ebe6;
+}
+
+.order_caution .tit03 {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.btn_infoingredient {
+    background-size: 16px auto;
+    background: url() no-repeat 0;
+}
+
+.order_caution .tit03 .btn_infoingredient {
+    position: static;
+    width: 100%;
+    height: 54px;
+    margin: 0;
+    padding: 5px 16px 5px 0px;
+    font-size: .8125rem;
+    text-align: left;
+    background-position: 23px;
+}
+
+
+.btn_infoingredient>:after {
+    background-size: auto 16px;
+}
+
+.contentsBox01 {
+    padding: 0!important;
+}
+
+.order_caution .btn_acc:after {
+    right: 6px;
+}
+
+.open .acc_cont {
+    height: auto;
+    overflow: inherit;
+    opacity: 1;
+}
+
+.container01:last-child {
+    padding-bottom: 23px;
+}
+
+
+
+}

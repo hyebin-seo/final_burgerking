@@ -14,6 +14,38 @@
 <jsp:include page="deliveryHeader.jsp" flush="true"/>
 <jsp:include page="deliveryCart.jsp"/>
 <body>
+<div class="loc_container">
+	<div class="loc">
+		<div class="page-navi">
+			<a href="delivery_home.do"><span>딜리버리</span></a>
+			<a href="delivery_home.do"><span>메뉴</span></a>
+		</div>
+		
+		<div class="location">
+			<span class="addr">
+			   <c:if test="${empty addrSession }">
+				<span>배달지를 선택하세요</span>
+			   </c:if>
+			   <c:if test="${!empty addrSession }">
+				<span>${delivery_addr }</span>
+			   </c:if>
+			</span>
+			<span class="shop">
+			   <c:if test="${empty addrSession }">
+				<span>지점</span>
+			   </c:if>
+			   <c:if test="${!empty addrSession }">
+				<span>${addrSession.store_name }</span>
+			   </c:if>
+			</span>
+			<span class="btn">
+				<a href="javascript:locationModify();">
+					<span>변경</span>
+				</a>
+			</span>
+		</div>
+	</div>
+</div>
 
 <c:if test="${!empty addrSession }">
 	<jsp:include page="menu_delivery.jsp"/>	 

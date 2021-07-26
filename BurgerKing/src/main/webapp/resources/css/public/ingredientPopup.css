@@ -532,12 +532,12 @@ screen and (max-width: 768px) and (orientation: portrait) {
 	    transform: none;
 	}
 	
-	.m_FullpopWrap .popbox01 {
+/* 	.m_FullpopWrap .popbox01 {
 	    left: 10%;
 	    top: 10%;
 	    width: 80%;
 	    height: 80%;
-	}
+	} */
 	
 	.m_FullpopWrap .popcont .container02 {
 		    padding: 20px 30px;

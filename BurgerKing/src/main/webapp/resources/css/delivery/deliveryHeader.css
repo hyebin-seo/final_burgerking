@@ -15,10 +15,20 @@
      font-style: normal;
 }
 
-:root {
-  --text-color: #FFFFFF;
-  --backgroun-color: #E22219;
-  --accent-color: #d49466;
+body, html {
+    height: 100%;
+    min-height: 450px;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    min-height: 100%;
+    color: #000;
+    background: #f2ebe6;
+    word-wrap: normal;
+    word-break: keep-all;
 }
 
 body {
@@ -29,8 +39,29 @@ body {
 }
 
 a {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+a {
   text-decoration: none;
   color: white;
+}
+
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+strong {
+    font-family: 'S-CoreDream-9Black';
 }
 
 input[type=text], input[type=url] {
@@ -54,148 +85,43 @@ input[type=text], input[type=url] {
 /*     background: url(../../img/delivery/search_under.png) repeat-x 0 100%; */
 }
 
-
-/* 데스크탑 딜리버리 헤더 start*/
-/* 헤더 전체 div */
-.delivery_navbar {
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   background-color: var(--backgroun-color);
-   font-family: 'S-CoreDream-9Black';
-   height: 180px;
-   z-index: 100;
-}
-
-/* 로고와 타이틀 */
-.king_logo {
-	font-family: 'S-CoreDream-9Black';
+button {
+    appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
     display: inline-block;
-    position: static;
-    width: auto;
-    height: 120px;
-    padding-left: 80px;
-	line-height: 129px;
-    background: url(https://www.burgerking.co.kr/dist/img/logo_delivery.26d1d682.png) no-repeat 0;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    box-sizing: border-box;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+button, table td, table th {
+    padding: 0;
+}
+
+button {
+    margin: 0;
+    font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
     cursor: pointer;
-    color: #fff;
-	font-weight: 300;
-    font-size: 2.1rem;
-    text-indent: 0;
-}
-
-/* 로고 div */
-.delivery_navbar_logo {
-  display: inline;
-  font-size: 24px;
-  color: var(--text-color);
-  padding-left: 10px;
-}
-
-.web_header_center_div {
-	width: 100%;
-    display: inline;
-    margin: 0 auto;
-    padding-left: 20px;
-/*     padding-right: 20px; */
-}
-
-/* 상단 퀵메뉴 div */
-.delivery_navbar_right_menu {
-	background-color: var(--backgroun-color);
-    font-family: 'S-CoreDream-5Medium';
-    color: white;
-    height: 30px;
-    margin: 0 auto;
-    max-width: 1184px;
-}
-
-.delivery_navbar_right_menu ul {
-	list-style: none;
-}
-
-.delivery_navbar_right_menu li {
-	float: left;
-}
-
-/* 상단 마이페이지 div */
-.logo_myinfo_all_div {
-    background-color: var(--backgroun-color);
-    font-family: 'S-CoreDream-5Medium';
-    color: white;
-    /* width: 70%; */
-    height: 130px;
-    margin: 0 auto;
-    max-width: 1184px;
-}
-
-.delivery_navbar_myinfo {
-	display: inline-block;
-    color: #fff;
-    width: 20%;
-    margin-left: 50%;
-}
-
-/* 상단 마이페이지 아이콘 div */
-.my_info_icon {
-	display: inline;
-	font-size: 40px;
-    color: #fff;
-}
-
-.my_info_span_div {
-	display: inline-block;
-    width: 40%;
-    height: 70px;
-    margin-left: 5px;
-}
-
-.span_div {
-	display: inline-block;
-    width: 180px;
-}
-
-.border_li {
-	border-left: #E84E47 1px solid;
-    margin-left: 15px;
-    padding-left: 15px;
-    height: 17px;
-}
-
-
-.delivery_navbar_toggleBtn {
-  display: none;
-  right: 32px;
-  font-size: 24px;
-  color: #fff;
-}
-
-.delivery_navbar_cartBtn {
-  display: none;
-  right: 32px;
-  font-size: 24px;
-  color: #fff;
-}
-
-.menu_div_close {
-	display: none;
-}
-
-.brand_home_div {
-	display: none;
-}
-
-.info_div {
-	display: none;
-}
-
-.delivery_navbar_menu {
-	display: none;
-}
-
-.mob_delivery_navbar_logo {
-	display: none;
 }
 
 .popcont {
@@ -312,232 +238,797 @@ input[type=text], input[type=url] {
     height: 100px;
 }
 
-/* 데스크탑 딜리버리 헤더 end*/
+.head_menuWrap, .headerWrap {
+    background: #fff;
+}
 
-/* 모바일 딜리버리 헤더 start*/
-@media screen and (max-width: 768px) {
-   .logo_myinfo_all_div {
-   	  display: none;
-   }
-   
-  .mob_king_logo {
+.headerWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.head_menuWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.head_menuWrap {
+    position: relative;
+    background: #e22219;
+}
+
+.head_menuWrap:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 2px 2px rgb(0 0 0 / 15%);
+    box-shadow: 0 2px 2px rgb(0 0 0 / 15%);
+    z-index: 2;
+}
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.head_menuWrap .web_container {
+    position: relative;
+    height: 120px;
+    padding-top: 24px;
+}
+
+.head_menuWrap .web_container {
+    height: 168px;
+    padding-top: 48px;
+}
+
+.head_menuWrap .logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 83px;
+    height: 82px;
+    text-indent: -9999em;
+    background: url('https://www.burgerking.co.kr/dist/img/logo_header.51e1a8b7.gif') no-repeat 0 0;
+}
+
+.head_menuWrap .logo {
     display: inline-block;
     position: static;
     width: auto;
-    height: 35px;
-    padding-left: 40px;
-    line-height: 36px;
-    background: url(https://www.burgerking.co.kr/dist/img/logo_delivery.26d1d682.png) no-repeat 0;
-    cursor: pointer;
+    height: 120px;
+    padding-left: 80px;
+    padding-right: 10px;
+    font-weight: 700;
+    font-size: 2.25rem;
     color: #fff;
-    font-size: 1.1rem;
     text-indent: 0;
-    background-size: 35px;
-    font-family: 'S-CoreDream-9Black';
-   }
+    line-height: 120px;
+    background: url('https://www.burgerking.co.kr/dist/img/logo_delivery.26d1d682.png') no-repeat 0;
+    cursor: pointer;
+}
 
-  .delivery_navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 0px;
-    position: relative;
-    font-family: 'S-CoreDream-9Black';
-    height: 60px;
-  }
-  
-  .mob_header_center_div {
-  	width: 100%;
-  }
-  
-  .mob_delivery_navbar_logo {
-	  align-self: center;
-	  display: inline;
-	  margin-left: 31%;
-  }
-  
-  .delivery_navbar_right_menu {
-  	display: none;
-  }
-  
-  /* 햄버거 버튼 누르면 나오는 div */
-  .delivery_navbar_menu_div {
-    display: none;
+.utilWrap {
     position: absolute;
-  	background-color: #fff;
-  	font-family: 'S-CoreDream-9Black';
-  	width: 100%;
-  	height: 100%;
-  	color: black;
-  	top:0;
-  	left:0;
-  	z-index: 100;
-  	font-size: 1.2rem;
-    padding-top: 2%;
-  }
-  
-  /* 왼쪽 슬라이드 효과 */
-  .delivery_navbar_menu_div {
-    animation: 0.5s delivery_navbar_menu_div;
-/*     transform: translateX(-100%); */
-  }
-	
-   @keyframes delivery_navbar_menu_div {
-     from {
-       margin-left: -100%;
-     }
-     to {
-       margin-left: 0%;
-     }
-   }
-  
-  .delivery_navbar_menu {
+    right: 20px;
+    top: 0;
+    overflow: hidden;
+}
+
+.utilWrap a {
+    position: relative;
     display: block;
-    background-color: #F8F8F8;
-  	color: black;
-  	height: 100%;
-  }
-  
-  .menu_all_ul {
-  	list-style: none;
-    padding-top: 3%;
-    padding-left: 0%;
-  }
-  
-  .menu_ul {
-    list-style: none;
-    color: black;
-    margin-left: -4%;
-    margin-top: 1%;
-    font-weight: lighter;
-  }
-  
-  .menu_ul li {
-    list-style: none;
-  	color: black;
-  	font-family: 'S-CoreDream-5Medium';
-  }
-  
-  .menu_ul li a {
-	  text-decoration: none;
-	  color: black;
-	  font-family: 'S-CoreDream-5Medium';
-  }
-  
-  .menu_li {
-  	color: black;
-    margin-bottom: 3%;
-    margin-left: 4%;
-    /* margin-top: 6%; */
-    padding-top: 3%;
-    border-top: #eee 1px solid;
-    /* border-bottom: #eee 1px solid;*/
-  }
+    float: left;
+    height: 48px;
+    padding: 0 14px;
+    font-size: .875rem;
+    line-height: 48px;
+}
 
-  .menu_div_close {
-	display: inline;
-	margin-left: 3%;
-	cursor: pointer;
-  }
-	
-  .brand_home_div {
-	display: inline;
-	margin-left: 73%;
-  }
-  
-  .info_div {
-  	display: block;
-  	margin-left: 3%;
-    margin-top: 5%;
-  }
+.utilWrap a {
+    color: #fff;
+}
 
-  .delivery_navbar_icons {
+.utilWrap a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 13px;
+    margin-top: -6.5px;
+    background: #e5e5e5;
+}
+
+.utilWrap a:first-child:before {
+    width: 0px;
+    height: 0px;
+}
+
+.utilWrap a:before {
+    background: #e84e47;
+}
+
+.MOB {
     display: none;
-    justify-content: center;
-    width: 100%;
-  }
+}
 
-  .delivery_navbar_toggleBtn {
-    display: inline;
-    margin-left: 3%;
-  }
-  
-  .delivery_navbar_cartBtn {
-    display: inline;
-    margin-left: 34%;
-  }
-  
-  .delivery_navbar_myinfo {
+.btn04 {
+    display: inline-block;
+    min-width: 3.5em;
+    height: 36px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #fff;
+    background: #2e2e2e;
+    border-radius: 5px;
+}
+
+.head_menuWrap .WEB.user {
+    position: absolute;
+    right: 20px;
+    bottom: 36px;
+    min-height: 46px;
+    padding: 3px 0 3px 57px;
+    color: #fff;
+    background: url(../../img/delivery/myicon.png) no-repeat 0;
+}
+
+.head_menuWrap .WEB.user a {
+    margin-top: 3px;
+    padding-right: 16px;
+    font-weight: 700;
+    color: #fff;
+    background: url(../../img/delivery/red_right.png) no-repeat 100%;
+}
+
+.btn_join, .btn_order {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 160px;
+    height: 50px;
+    margin-top: -25px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    background: url('https://www.burgerking.co.kr/dist/img/btn_webhead_order.dd5f3d96.png') no-repeat 50%;
+}
+
+.btn_join {
+    top: auto;
+    right: 20px;
+    bottom: 35px;
+    background: url('https://www.burgerking.co.kr/dist/img/btn_webhead_join.ad8dbc41.png') no-repeat 50%;
+}
+
+.btn_join>*, .btn_order>* {
+    display: inline-block;
+    padding: 0 20px 0 0;
+    background: url(../../img/delivery/white_right.png) no-repeat 100%;
+}
+
+.GNBWrap {
+    position: relative;
+    margin-left: 15%;
+    padding-right: 180px;
+}
+
+.GNBWrap>ul {
+    float: left;
+    width: 94%;
+    max-width: 768px;
+}
+
+.GNBWrap>ul>li {
+    position: relative;
+    float: left;
+    width: 25%;
+    padding: 20px 0 0;
+    z-index: 11;
+}
+
+.GNBWrap ul a, .GNBWrap ul button {
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+.GNBWrap>ul>li>button {
+    width: 100%;
+    height: 75px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.375rem;
+    text-align: left;
+    line-height: 55px;
+    cursor: inherit;
+}
+
+.GNBWrap>ul>li>button>span {
+    display: inline-block;
+    padding-right: 19px;
+    background: url(../../img/main/header_menu.gif) no-repeat 100%;
+}
+
+.GNBWrap .submenu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 100%;
+    height: 0;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.GNBWrap .submenu li {
+    margin-bottom: 5px;
+}
+
+.GNBWrap ul a, .GNBWrap ul button {
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+.GNBWrap .submenu a {
+    height: 25px;
+    font-size: .875rem;
+    line-height: 25px;
+}
+
+.GNBWrap>ul>li>button {
+    width: 100%;
+    height: 75px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.375rem;
+    text-align: left;
+    line-height: 55px;
+    cursor: inherit;
+}
+
+
+
+/* 페이지네비/주소/총금액 전체 div */
+.loc_container {
+	background: rgb(0,0,0);
+    color: rgb(255,255,255);
+/*     height: 2.5rem; 63px; */
+    font-family: 'S-CoreDream-5Medium';
+    line-height: 33px;
+    padding: 15px 0;
+}
+
+/* 전체 div 안 a태그 */
+.loc_container a {
+	color: #fff;
+	float: left;
+	margin: 0;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* 페이지네비/주소/총금액 가운대 배치 div */
+.loc_container .loc {
+/* 	display: flex; */
+    justify-content: space-between;
+    height: 1.9rem;
+    font-size: 1rem;
+    max-width: 1184px;
+    margin: 0 auto;
+}
+
+/* 왼쪽 페이지 네비 */
+.loc_container .loc .page-navi {
+    float: left;
+    font-size: .875rem;
+}
+
+.page-navi>:first-child:before {
 	display: none;
 }
 
-   .my_info_icon {
-		display: none;
-   }
-   
-   .popcont {
-	    padding: 16px 16px 0;
-	    max-height: 450px;
-	    font-size: 1rem;
-	    overflow-y: auto;
+/* 페이지 네비 >(꺽쇠) 이미지 */
+.page-navi>:before {
+	content:"";
+	float: left;
+    width: 4px;
+    height: 34px;
+    margin: 0 12px;
+    background: url(../../img/delivery/navi_right.gif) no-repeat 50%;
+}
+
+/* 오른쪽 배달지 설정 관련 div */
+.loc_container .loc .location {
+	float: right;
+    font-size: .875rem;
+}
+
+.location>* {
+    display: inline-block;
+    margin-left: 24px;
+    padding-left: 22px;
+    vertical-align: top;
+}
+
+/* 주소 선택  span */
+.location .addr {
+	max-width: 600px;
+    margin: 0;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+    overflow: hidden;
+    background: url(../../img/delivery/addr.png) no-repeat 0;
+}
+
+/* 지점 자동 선택 span */
+.location .shop {
+	padding-left: 26px;
+	background: url(../../img/delivery/shop.png) no-repeat 0;
+}
+
+/* 주소지 변경 버튼 */
+.location .btn {
+	margin-left: 20px;
+    padding-left: 0;
+}
+
+/* 주소지 변경 버튼 */
+.location .btn a {
+    display: inline-block;
+    width: 56px;
+    height: 34px;
+    padding: 0;
+    font-size: 1rem;
+    color: #000;
+    text-align: center;
+    line-height: 34px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+
+
+/* 모바일 딜리버리 헤더 start*/
+@media (max-height: 500px) and (orientation: landscape), 
+screen and (max-width: 768px) and (orientation: portrait) {
+ 	.headerWrap.side_open {
+	    -webkit-animation: side_open .3s linear forwards;
+	}
+	
+	.headerWrap.side_close{
+		-webkit-animation:side_close .3s linear forwards;
+	}
+	
+	.headerWrap.side_open .head_personalWrap{
+		display:none
+	}
+	
+	@-webkit-keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+		
+	@keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+	
+	@-webkit-keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+	}
+	
+	@keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+	}
+	.WEB {
+	    display: none!important;
+	}
+	
+	.MOB {
+	    display: block!important;
+	}
+	
+	.headerWrap {
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    right: auto!important;
+	    width: 100%;
+	    height: 100%;
+	    background: #f8f8f8!important;
+	    overflow: auto;
 	    -webkit-overflow-scrolling: touch;
+	    -webkit-transform: translateX(-100%);
+	    transform: translateX(-100%);
+	    z-index: 100!important;
 	}
 	
-	.popcont.pd02 {
-	    padding: 15px 24px;
+	.head_menuWrap {
+	    height: 100%;
 	}
 	
-	.addr_chk {
-	    margin: 20px 0 12px;
-	    padding: 60px 0 22px;
-	    background-size: 30px auto;
+	.headerWrap .head_menuWrap {
+	    background: #f8f8f8;
 	}
 	
-	.addr_chk dt {
-	    font-size: .75rem;
+	.web_container, .web_container02 {
+	    min-width: 320px;
+	    padding: 0;
 	}
 	
-	.addr_chk dd {
-	    margin-top: 8px;
-	    font-size: 1.125rem;
-	    color: #010101;
-	    line-height: 123%;
+	.headerWrap .head_menuWrap .web_container {
+	    height: 100%;
+	    padding: 135px 0 0;
 	}
 	
-	.addr_chk+.txt02 {
-	    margin: 12px 0 0;
-	}
-	
-	.popbox02 .botfixWrap button, .addrPopWrap .txt02 {
-	    font-size: 1rem;
-	}
-	
-	.pop_btn {
+	.m_utilWrap {
 	    position: absolute;
 	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 135px;
+	    background: #fff;
+	    -webkit-box-shadow: 1px 1px 2px rgb(0 0 0 / 6%);
+	    box-shadow: 1px 1px 2px rgb(0 0 0 / 6%);
+	}
+	
+	
+	.btn_head_close {
+	    width: 60px;
+	    text-indent: -9999em;
+	    background: url(../../img/delivery/location_close.png) no-repeat 50%;
+	    background-size: 19px auto;
+	}
+		
+	.m_utilWrap .m_top {
+	    position: relative;
+	    height: 56px;
+	}
+	
+	.m_utilWrap .m_top>* {
+	    height: 56px;
+	}
+		
+	.m_top .btn_brandhome {
+	    position: absolute;
 	    right: 0;
-	    bottom: 0;
-	    margin: 0;
-	    padding: 15px 16px;
+	    top: 50%;
+	    height: 40px;
+	    margin-top: -20px;
+	    padding: 0 22px 0 25px;
+	    font-weight: 700;
+	    line-height: 42px;
+	    background: url(../../img/delivery/brand_home.png) no-repeat 1px;
+	    background-size: 17px auto;
+	    font-size: 1.1rem;
+	}	
+		
+	.util_logon {
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    padding: 37px 20px 10px;
 	    overflow: hidden;
 	}
 	
-	.m_btn01_s {
-	    min-width: 120px;
-	    height: 50px!important;
-	    padding: 10px!important;
-	    font-size: 1.125rem!important;
-	    line-height: 30px!important;
-	    background-size: 100% 100%!important;
-	    border-radius: 0;
+	.util_logon .user {
+	    font-size: 1.25rem;
 	}
 	
-	.pop_btn.item2 a, .pop_btn.item2 button {
-	    width: calc(50% - 6px);
-	    min-width: inherit;
+	.m_utilWrap .btn_area {
+	    margin-top: 40px;
+	}
+	
+	.btn04, .btn04_m {
+	    min-width: 36px;
+	    height: 24px;
+	    padding: 2px 6px 0;
+	    font-size: .625rem;
+	    color: #fff;
+	    text-align: center;
+	    background: #2e2e2e;
+	    border-radius: 3px;
+	}
+	.m_utilWrap .btn_area a {
+	    min-width: 73px;
+	    height: 32px;
+	    margin-right: 10px;
+	    padding: 0 10px;
+	    font-size: .875rem;
+	    line-height: 33px;
+	    border-radius: 3px;
+	}	
+		
+	.GNBWrap {
+	    height: 100%;
+	    margin: 0;
+	    padding: 0;
+	    overflow: auto;
+	    -webkit-overflow-scrolling: touch;
+	}
+	
+	.headerWrap .GNBWrap ul {
+	    float: none;
+	    width: 100%;
+	    min-height: 90%;
+	    min-height: calc(100% - 70px);
+	    padding: 0 0 0 20px;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	
+	.headerWrap .GNBWrap li {
+	    float: none;
+	    width: 100%;
+	    padding: 0;
+	    border-bottom: 1px solid #ebebeb;
+	}
+	
+	.headerWrap .GNBWrap a, .headerWrap .GNBWrap button {
+	    position: relative;
+	    padding-right: 35px;
+	    font-size: 1.25rem;
+	}
+	
+		
+	.headerWrap .GNBWrap>ul>li>button {
+	    width: 100%;
+	    height: 62px;
+	    padding: 0;
+	}
+	
+	.headerWrap .GNBWrap button>span {
+	    padding-right: 0;
+	    background: none;
+	    font-family: 'S-CoreDream-9Black';
+	}
+	
+	.headerWrap .GNBWrap>ul>li>button:after {
+	    content: "";
+	    position: absolute;
+	    right: 22px;
+	    top: 50%;
+	    width: 12px;
+	    height: 12px;
+	    margin-top: -6px;
+	    background: url(../../img/delivery/tab_right.png) no-repeat 50%;
+	    background-size: auto 12px;
+	    -webkit-transform: none!important;
+	    transform: none!important;
+	}	
+		
+	.GNBWrap .submenu {
+	    position: static;
+	}
+	
+	.GNBWrap .menu_open .submenu {
+	    height: auto;
+	    padding: 0 0 15px;
+	}
+		
+	.GNBWrap .submenu li {
+	    margin: 0 0 6px;
+	    border: none;
 	}
 
+	.GNBWrap .submenu a {
+	    display: block;
+	    height: 33px;
+	    padding-left: 12px;
+	    line-height: 33px;
+	    color: #000;
+	}
+	
+	.headerWrap .GNBWrap .btn_logout {
+	    width: 100%;
+	    height: 50px;
+	    margin-top: 6px;
+	    padding: 0 17px;
+	    font-size: 1rem;
+	    text-align: right;
+	}
+	
+/* 	.headerWrap .GNBWrap .btn_logout>* {
+	    display: inline-block;
+	    padding-right: 34px;
+	    background-size: 18px auto;
+	    background: url(../../img/delivery/logout_btn.png) no-repeat 100%;
+	} */
+	
+	.GNBWrap:after {
+	    content: "";
+	    display: block;
+	    width: 100%;
+	    height: 0;
+	    clear: both;
+	}
+		
+	.M_headerWrap {
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    background: #fff;
+	    z-index: 50;
+	}
+		
+	.M_headerWrap {
+	    line-height: normal;
+	}
+	
+	.web_container, .web_container02 {
+	    min-width: 320px;
+	    padding: 0;
+	}
+	
+	.M_headerWrap .web_container {
+	    padding: 0;
+	}
+	
+	.titleBar {
+	    position: relative;
+	    padding: 0 45px;
+	    height: 57px;
+	    background: #fff;
+	    border-bottom: 1px solid #f7f7f7;
+	}
+	
+	.titleBar.st02 {
+	    color: #fff;
+	    background: #e22219;
+	    border: none;
+	}
+	
+	.titleBar .page_tit {
+	    height: 100%;
+	    margin: 0;
+	    padding: 0;
+	    font-weight: 700;
+	    font-size: 1.125rem;
+	    text-align: center;
+	    line-height: 56px;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    overflow: hidden;
+	}
+	
+	.titleBar.st02 .page_tit>* {
+	    display: inline-block;
+	    padding-left: 40px;
+	    background: url('https://www.burgerking.co.kr/dist/img/logo_delivery.26d1d682.png') no-repeat 0;
+	    background-size: 33px auto;
+	}
+	
+	.title_btn1 {
+	    display: block;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    height: 100%;
+	}
+	
+	.btn_head_list, .btn_head_menu {
+	    width: 60px;
+	    text-indent: -9999em;
+	}
+	
+	.btn_head_menu {
+	    background: url(../../img/main/head_menu.png) no-repeat 50%;
+	    background-size: 22px auto;
+	}
+	
+	.title_btn1 button {
+	    height: 100%;
+	}
+	
+	.titleBar.st02 .btn_head_menu {
+	    background-image: url(../../img/delivery/white_hambtn.png);
+	}
+	
+	.title_btn1.right {
+	    left: auto;
+	    right: 0;
+	}
+	
+	.btn_head_cart {
+    width: 60px;
+    text-indent: -9999em;
+    background: url(../../img/delivery/cart_icon.png) no-repeat 50%;
+    background-size: 27px auto;
+}
+	
+	.titleBar.st02 .btn_head_cart {
+	    background-image: url(../../img/delivery/cart_icon.png);
+	}
+	
+	
+	/*검은띠 네비게이션 css*/
+	.loc_container {
+	    position: relative;
+	    height: auto;
+	    min-height: 48px;
+	    padding: 0;
+	    line-height: normal;
+	    background: #3E3D3C;
+	    background-size: 100% 100%;
+	    margin-top: 57px;
+	}
+	
+	.loc_container .loc {
+	    height: 100%;
+	    overflow: hidden;
+	    min-width: 320px;
+    	padding: 0;
+	}
+	
+	.loc_container .loc .page-navi {
+    	display: none;
+	}
+    
+    .loc_container .loc .location {
+	    display: table;
+	    float: none;
+	    width: 100%;
+	    padding: 5px 0;
+	}
+	
+	.loc .location>* {
+	    display: block;
+	    height: 20px;
+	    margin: 0;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	    padding-right: 16px;
+	    vertical-align: middle;
+	}
+	
+	.location .addr {
+	    max-width: inherit;
+	    padding-left: 40px;
+	    background: url(../../img/delivery/addr.png) no-repeat 16px;
+	    background-size: 16px auto;
+	    white-space: normal;
+	}
+	
+	.location .shop {
+	    margin-left: 12px;
+	    background: url(../../img/delivery/shop.png) no-repeat 0;
+	    background-size: 22px auto;
+	}
+	
+	.location .money {
+	    margin-left: 15px;
+	    padding-bottom: 0;
+	}
+	
+	.location .btn {
+   		margin: 0;
+	    float: right;
+	    padding-top: 0;
+	}
+	
+	.location .btn a {
+	    display: inline-block;
+	    width: 45px;
+	    height: 24px;
+	    margin-left: 5px;
+	    padding: 0;
+	    font-size: .75rem;
+	    line-height: 24px;
+	}
 }
 /* 모바일 딜리버리 헤더 end*/

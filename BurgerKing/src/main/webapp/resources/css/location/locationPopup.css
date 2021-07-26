@@ -750,7 +750,7 @@ input[type=color], input[type=date], input[type=datetime], input[type=email], in
 screen and (max-width: 768px) and (orientation: portrait) {
 	
 	.w_alignL {
-	    text-align: left!important;
+	    text-align: left;
 	}
 	
 	.inpbox {
@@ -1079,13 +1079,13 @@ screen and (max-width: 768px) and (orientation: portrait) {
 	    height: 22px;
 	    margin-right: 3px;
 	    background-size: 21px auto;
-	    background: url(../../img/mypage/img_check.png) no-repeat 0;
+	   /*  background: url(../../img/mypage/img_check.png) no-repeat 0; */
 	    border: none;
 	    opacity: 1;
 	}
 	
 	input[type=checkbox], input[type=radio] {
-	    position: static;
+	    /* position: static; */
 	}
 
 }

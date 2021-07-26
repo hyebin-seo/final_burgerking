@@ -35,81 +35,116 @@
 	</div>
 </div>
 
-
-<div class="delivery_navbar">
-	 <div class="delivery_navbar_right_menu">
-	  	<ul style="padding-left: 70%;">
-	        <li><a href="/burger/">브랜드홈</a></li>
-	        <c:if test="${!empty memberSession }">
-	        	<li class="border_li"><a href="logout.do">로그아웃</a></li>
-	        </c:if>
-	        <c:if test="${empty memberSession }">
-	        	<li class="border_li"><a href="Login.do">로그인</a></li>
-	        </c:if>
-	        <li class="border_li"><a href="">고객센터</a></li>
-	    </ul>
-	</div>
-	
-	<div class="logo_myinfo_all_div">
-      <div class="delivery_navbar_logo">
-        <h1 class="king_logo"><a href="delivery_home.do"><span><b>딜리버리</b></span></a></h1>
-      </div>
-      
-      <div class="delivery_navbar_myinfo">
-      	<a href="mypage_main.do">
-	      <div class="my_info_icon"><i class="fas fa-user-circle"></i></div>
-	      <div class="my_info_span_div">
-	        <div class="span_div"><span id="user_name_span">${memberSession.user_name}</span> 님 안녕하세요.</div>
-	      	<div class="span_div"><Strong>MY킹 바로가기 ></Strong></div>
-	      </div>
-	    </a> 
-	  </div>
-	</div>
-	 
-	<div class="mob_header_center_div">
-	  <a href="#" class="delivery_navbar_toggleBtn">
-        <i class="fas fa-bars"></i>
-      </a>
-      
-      <div class="mob_delivery_navbar_logo">
-        <h1 class="mob_king_logo"><a href="delivery_home.do"><span>딜리버리</span></a></h1>
-      </div>
-      
-      <a href="#" class="delivery_navbar_cartBtn">
-      	<i class="fas fa-shopping-cart"></i>
-      </a>
-   </div>
+<div class="headerWrap">
+    <div class="head_menuWrap ">
+        <div class="web_container">
+            <h1 class="WEB logo">
+             <a href="delivery_home.do">
+            	<span>딜리버리</span>
+             </a>
+            </h1>
+            <div class="WEB utilWrap">
+            	<a href="/burger/"><span>브랜드홈</span></a>
+            	<c:if test="${!empty memberSession }">
+		        	<a href="logout.do"><span>로그아웃</span></a>
+		        </c:if>
+            	<a href="mypage_main.do"><span>MY킹</span></a>
+            	<c:if test="${empty memberSession }">
+		        	<a href="Login.do"><span>로그인</span></a>
+		        </c:if>
+            	<a href="notice_list.do"><span>고객센터</span></a></div>
+            <div class="MOB m_utilWrap">
+                <div class="m_top">
+                	<button class="btn_head_close ham_close" >
+                		<span>Menu Close</span>
+                	</button>
+                	<button class="btn_brandhome" onclick="location.href='/burger/'">
+                		<span>브랜드 홈</span>
+                	</button>
+                </div>
+                <c:if test="${!empty memberSession }">
+	                <div class="util_logon">
+	                    <div class="user">
+	                        <p><strong><span> ${memberSession.user_name}</span></strong>님 안녕하세요</p>
+	                    </div>
+	                </div>
+                </c:if>
+                <c:if test="${empty memberSession }">
+	                <div class="util_logoff">
+	                    <p><strong>WHERE TASTE IS KING</strong><br>버거킹과 함께하는 맛있는 세계!</p>
+	                    <div class="btn_area">
+	                    	<a class="btn04" href="move_join.do"><span>회원가입</span></a>
+	                    	<a class="btn04" href="Login.do"><span>로그인</span></a>
+	                    </div>
+	                </div>
+                </c:if>
+            </div>
+            <c:if test="${!empty memberSession }">
+	            <div class="WEB on_cont user">
+	                <p><span>${memberSession.user_name}</span> 님 안녕하세요</p>
+	                <a href="mypage_main.do"><strong>MY킹 바로가기</strong></a>
+	            </div>
+            </c:if>
+            <c:if test="${empty memberSession }">
+	            <div class="WEB off_cont join">
+	            	<a class="btn_join" href="move_join.do"><strong>회원가입</strong></a>
+	            </div>
+            </c:if>
+            <div class="MOB GNBWrap">
+                <ul>
+                    <li class="">
+                    	<button type="button">
+                    		<span>MY킹</span>
+                    	</button>
+                        <ul class="submenu">
+                            <li><a href="myStamp.do"><span>스탬프</span></a></li>
+                            <li><a href="myCoupon.do"><span>딜리버리 쿠폰</span></a></li>
+                            <li><a href="myLocation.do"><span>MY배달지</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                    	<button type="button" onclick="location.href='orderList.do'">
+                    		<span>주문내역</span>
+                    	</button>
+                    </li>
+                    <li class="">
+                    	<button type="button">
+                    		<span>고객센터</span>
+                    	</button>
+                        <ul class="submenu">
+                            <li><a href="notice_list.do"><span>공지사항</span></a></li>
+                            <li><a href="faq_home.do?faq_cate=all"><span>FAQ</span></a></li>
+                            <li><a href="Qna.do"><span>문의</span></a></li>
+                            <li><a href="Franchise.do"><span>가맹점모집</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button type="button" class="btn_logout on_cont" onclick="location.href='logout.do'">
+                	<span>로그아웃</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
-
-
-      
-<div class="delivery_navbar_menu_div">
-	<div class="menu_div_close"><i class="fas fa-times"></i></div>
-	<div class="brand_home_div"><i class="fas fa-home"></i>브랜드홈</div>
-	<div class="info_div">(비회원)님 안녕하세요.</div>
-	<div class="delivery_navbar_menu">
-	   	<ul class="menu_all_ul">
-	   		<li class="menu_li">MY킹
-			   	<ul class="menu_ul">
-			       <li><a href="">스탬프</a></li>
-			       <li><a href="">딜리버리 쿠폰</a></li>
-			       <li><a href="">MY세트</a></li>
-			       <li><a href="">MY배달지</a></li>
-			   	</ul>
-		   	</li>
-		   	<li class="menu_li">주문내역</li>
-		   	<li class="menu_li">고객센터
-			   	<ul class="menu_ul">
-			       <li><a href="">공지사항</a></li>
-			       <li><a href="">FAQ</a></li>
-			       <li><a href="">문의</a></li>
-			       <li><a href="">가맹점모집</a></li>
-			   	</ul>
-		   	</li>
-	   	</ul>
-   	</div>
+<div class="MOB M_headerWrap">
+    <div class="web_container">
+        <div class="MOB titleBar st02">
+            <h1 class="page_tit logo_type">
+            	<a href="delivery_home.do"><span>딜리버리</span></a>
+            </h1>
+            <div class="title_btn1">
+            	<button type="button" class="btn_head_menu">
+            		<span>All Menu</span>
+            	</button>
+            </div>
+            <div class="title_btn1 right">
+            	<button type="button" class="btn_head_cart" onclick="location.href='cart.do'">
+            		<span>카트</span>
+            	</button>
+            </div>
+        </div>
+    </div>
 </div>
-
 <script src="resources/js/delivery/deliveryHeader.js"></script>
 
 

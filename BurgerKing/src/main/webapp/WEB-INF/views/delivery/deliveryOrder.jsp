@@ -14,6 +14,38 @@
 <jsp:include page="deliveryCart.jsp"/>
 <link href="resources/css/delivery/deliveryOrder.css"  rel="stylesheet"  type="text/css">
 <body>
+<div class="loc_container">
+	<div class="loc">
+		<div class="page-navi">
+			<a href="delivery_home.do"><span>딜리버리</span></a>
+			<a><span>주문하기</span></a>
+		</div>
+		
+		<div class="location">
+			<span class="addr">
+			   <c:if test="${empty addrSession }">
+				<span>배달지를 선택하세요</span>
+			   </c:if>
+			   <c:if test="${!empty addrSession }">
+				<span>${delivery_addr }</span>
+			   </c:if>
+			</span>
+			<span class="shop">
+			   <c:if test="${empty addrSession }">
+				<span>지점</span>
+			   </c:if>
+			   <c:if test="${!empty addrSession }">
+				<span>${addrSession.store_name }</span>
+			   </c:if>
+			</span>
+			<span class="btn">
+				<a href="javascript:locationModify();">
+					<span>변경</span>
+				</a>
+			</span>
+		</div>
+	</div>
+</div>
 <div class="contentsBox01">
     <div class="web_container">
         <div class="subtitWrap m_bg_basic">
@@ -42,7 +74,7 @@
                         <dt>요청사항</dt>
                         <dd>
                             <div class="inp_bytes">
-                                <div><input type="text" name="order_claim" class="claim" placeholder="요청사항을 입력하세요" maxlength="49"></div>
+                                <div><input type="text" name="order_claim" class="claim" placeholder="요청사항을 입력하세요" maxlength="50"></div>
                                 <div class="txt_byte"><span>0</span>/<span>50</span></div>
                             </div>
                         </dd>
@@ -145,14 +177,14 @@
                         	</label>
                         </li>
                     </ul>
-                    <ul class="txtlist03" style="">
+                    <ul class="txtlist03 naver_cont" style="">
                         <li>· 주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
                         <li>· 네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌 정보를 등록하여 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다. </li>
                         <li>· 결제 가능한 신용카드: 신한, 삼성, 현대, BC, 국민, 하나, 롯데, NH농협, 씨티 </li>
                         <li>· 결제 가능한 은행: NH농협, 국민, 신한, 우리, 기업, SC제일, 부산, 경남, 수협, 우체국, 미래에셋대우. 광주, 대구, 전북, 새마을금고, 제주은행, 신협, 하나은행</li>
                         <li>· 네이버페이 카드 간편결제는 네이버페이에서 제공하는 카드사 별 무이자, 청구할인 혜택을 받을 수 있습니다.</li>
                     </ul>
-                    <ul class="txtlist03" style="display: none;">
+                    <ul class="txtlist03 payco_cont" style="display: none;">
                         <li>· PAYCO는 온/오프라인 쇼핑은 물론 송금, 멤버십 적립까지 가능한 통합 서비스입니다..</li>
                         <li>· 휴대폰과 카드 명의자가 동일해야 결제 가능하며, 결제금액 제한은 없습니다.</li>
                         <li>· - 지원카드: 모든 국내 신용/체크카드. </li>

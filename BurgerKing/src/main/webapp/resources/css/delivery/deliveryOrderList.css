@@ -29,7 +29,7 @@
 .order_list .tit > strong{
     position: relative;
     padding-right: 3em;
-    font-size: 1.75rem;
+/*     font-size: 1.75rem; */
     font-family: 'S-CoreDream-9Black';
 }
 
@@ -82,8 +82,262 @@ a {
     z-index: 10;
 }
 
+@media (max-height: 500px) and (orientation: landscape), 
+screen and (max-width: 768px) and (orientation: portrait) {
+.contentsBox01 {
+    padding: 0!important;
+}
+
+.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}
+
+.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}
+
+.subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.m_shadow {
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+}
+
+.tab01 {
+    overflow: auto;
+}
+
+.subtitWrap .tab01 {
+    position: static;
+    margin: 0;
+}
+
+.subtitWrap .tab01:last-child {
+    margin-bottom: -10px;
+}
+
+.tab01 ul {
+    display: table;
+    width: 100%;
+    background: #fff;
+}
+
+.tab01 li {
+    display: table-cell;
+    padding: 0;
+}
+
+.tab01 .item2 li {
+    width: 50%;
+}
+
+.tab01 a, .tab01 button {
+    display: block;
+    width: 100%;
+    min-width: 4em;
+    height: 56px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    border-width: 3px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.subtitWrap .tab01 button {
+    height: 56px;
+    border-width: 3px 0;
+    font-size: 1rem;
+}
+
+.tab01 .item2 li {
+    width: 50%;
+}
+
+.container01 {
+    padding: 16px;
+}
+
+.container01:last-child {
+    padding-bottom: 23px;
+}
+
+.subtitWrap+.container01 {
+    padding-top: 15px;
+}
+
+.MOB {
+    display: block!important;
+}
+
+.tit01 {
+    margin: 21px 0 8px;
+    font-weight: 700;
+    font-size: .75rem;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tit_ico {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 28px;
+    padding-left: 34px;
+    line-height: 28px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tit_ico:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: 100% auto;
+}
+
+.nodata {
+    padding: 172px 10px 10px;
+    font-size: .875rem;
+    line-height: 130%;
+    text-align: center;
+    color: #9a918c;
+    background-size: 89px auto;
+    z-index: 10;
+}
+
+.order_list {
+    padding: 0;
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.order_list>li {
+    min-height: 111px;
+    margin-bottom: 8px;
+    padding-left: 0;
+    background: #fff;
+    border: none;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+}
+
+.order_list .prd_img {
+    display: none;
+}
+
+.order_list .cont {
+    padding: 22px 20px 20px;
+}
+
+.order_list .tit {
+    position: relative;
+    padding-right: 4rem;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.tag {
+    padding: 0 5px;
+    font-weight: 700;
+    font-size: .625rem;
+    color: #fff;
+    background-size: auto 100%,auto 100%;
+}
+
+.tag, .tag>* {
+    display: inline-block;
+}
+
+.tag>* {
+    height: 24px;
+    padding: 4px 5px 2px;
+    line-height: 18px;
+    background: #762824;
+}
+
+.order_list .tit .tag {
+    position: absolute;
+    right: 0;
+    top: -2px;
+    margin: 0;
+    font-size: .625rem;
+}
+
+.order_list .info, .order_list .menu_info {
+    margin-top: 15px;
+    font-size: .75rem;
+    color: #737373;
+    line-height: normal;
+}
+
+.order_list .info>* {
+    margin-bottom: 6px;
+}
+
+.order_list .info dd, .order_list .info dt {
+    display: inline;
+}
+
+.order_list .info dt:after {
+    content: ":";
+    margin: 0 5px 0 3px;
+}
+
+.order_list .info>:last-child {
+    margin-bottom: 0;
+}
+
+.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.btn01 {
+    width: auto;
+    min-width: 158px;
+    font-size: 1.125rem;
+    background-size: 100% 100%!important;
+}
+
+.btn01, .btn01.m {
+    height: 48px;
+    line-height: 26px;
+}
+
+a.more>*, button.more>* {
+    padding-right: 21px;
+}
 
 
+
+
+}
 
 
 
