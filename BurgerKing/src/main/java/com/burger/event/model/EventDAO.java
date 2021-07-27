@@ -9,6 +9,8 @@ import com.burger.cs.model.PageDTO;
 public interface EventDAO {
 
 	public int getListCount();                          // 전체 게시물 수를 확인하는 메서드.
+	public int getListCount2();                          // 전체 게시물 수를 확인하는 메서드.
+	public int getListCount3();                          // 전체 게시물 수를 확인하는 메서드.
 	public List<EventDTO> getEventList(PageDTO dto);    // 전체 리스트를 호출 추상메서드. 
 	public List<EventDTO> getEventList2(PageDTO dto);    // 진행중인 리스트를 호출 추상메서드. 
 	public List<EventDTO> getEventList3(PageDTO dto);    // 종료된 리스트를 호출 추상메서드. 

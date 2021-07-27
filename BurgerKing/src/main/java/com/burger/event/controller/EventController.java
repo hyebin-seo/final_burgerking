@@ -75,7 +75,7 @@ public class EventController {
 		}
 
 		// DB상의 전체 게시물의 수를 확인하는 작업.
-		totalRecord = this.dao.getListCount();
+		totalRecord = this.dao.getListCount2();
 
 		PageDTO dto = new PageDTO(page, rowsize, totalRecord);
 
@@ -85,6 +85,10 @@ public class EventController {
 		model.addAttribute("List", pageList);
 		model.addAttribute("Paging", dto);
 
+		/*
+		 * System.out.println(pageList); System.out.println(dto);
+		 */
+		
 		return "event_ing";
 	}
 	
@@ -100,7 +104,7 @@ public class EventController {
 		}
 
 		// DB상의 전체 게시물의 수를 확인하는 작업.
-		totalRecord = this.dao.getListCount();
+		totalRecord = this.dao.getListCount3();
 
 		PageDTO dto = new PageDTO(page, rowsize, totalRecord);
 
@@ -109,6 +113,9 @@ public class EventController {
 
 		model.addAttribute("List", pageList);
 		model.addAttribute("Paging", dto);
+		
+		System.out.println(pageList);
+		System.out.println(dto);
 
 		return "event_end";
 	}

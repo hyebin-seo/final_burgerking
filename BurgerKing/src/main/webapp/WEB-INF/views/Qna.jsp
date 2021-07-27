@@ -117,4 +117,7 @@
 <!--   </div> -->
   <jsp:include page="qna_popup.jsp" /> 
 </body>
+<div id = "footer_m">
+<jsp:include page="siteMap.jsp" />
+</div>
 </html>
