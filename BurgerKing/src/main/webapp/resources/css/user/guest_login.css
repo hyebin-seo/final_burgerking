@@ -302,6 +302,31 @@ btn04 {
 .subWrap02 .GNBWrap {
     display: none;
 }
+
+.GNBWrap .menu_open .submenu {
+	    height: auto;
+	    padding: 0 0 15px;
+	}
+	
+	.GNBWrap {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.headerWrap .GNBWrap>ul>li>button {
+    width: 100%;
+    height: 62px;
+    padding: 0;
+}
+
+.headerWrap .GNBWrap a, .headerWrap .GNBWrap button {
+    position: relative;
+    padding-right: 35px;
+    font-size: 1.25rem;
+}
 .GNBWrap {
     position: relative;
     margin-left: 15%;
@@ -1620,6 +1645,7 @@ button {
 }
 
 
+
 .subWrap01, .subWrap02 {
     min-width: 320px;
     padding-top: 0!important;
@@ -1647,6 +1673,9 @@ button {
 
 .head_menuWrap {
     height: 100%;
+}
+.header_offtype .headerWrap .head_menuWrap>.web_container {
+    padding-top: 223px;
 }
 
 header_offtype .headerWrap .head_menuWrap>.web_container {
@@ -1681,6 +1710,37 @@ header_offtype .headerWrap .head_menuWrap>.web_container {
     -webkit-box-shadow: 1px 1px 2px rgb(0 0 0 / 6%);
     box-shadow: 1px 1px 2px rgb(0 0 0 / 6%);
 }
+.headerWrap.side_open {
+	    -webkit-animation: side_open .3s linear forwards;
+	}
+	
+	.headerWrap.side_close{
+		-webkit-animation:side_close .3s linear forwards;
+	}
+	
+	.headerWrap.side_open .head_personalWrap{
+		display:none
+	}
+	
+	@-webkit-keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+		
+	@keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+	
+	@-webkit-keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+	}
+	
+	@keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+		
+	}
+	
 
 .MOB {
     display: block!important;
@@ -1745,7 +1805,7 @@ header_offtype .headerWrap .head_menuWrap>.web_container {
     height: 32px;
     margin-right: 10px;
     padding: 0 10px;
-    font-size: .875rem;
+    font-size: 1.3rem;
     line-height: 33px;
     border-radius: 3px;
 }
@@ -1808,6 +1868,33 @@ GNBWrap {
     padding: 0 0 0 20px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.headerWrap .GNBWrap>ul>li>button {
+    width: 100%;
+    height: 62px;
+    padding: 0;
+}
+
+.headerWrap .GNBWrap a, .headerWrap .GNBWrap button {
+    position: relative;
+    padding-right: 35px;
+    font-size: 1.25rem;
+}
+
+.GNBWrap>ul>li>button {
+    font-size: 1.25rem;
+}
+.GNBWrap {
+    margin-left: 100px;
+    padding-right: 170px;
+}
+.GNBWrap {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .headerWrap .GNBWrap li {
@@ -2420,15 +2507,7 @@ input[type=color], input[type=date], input[type=datetime], input[type=email], in
     border-radius: 0;
 }
 
-.btn01.l {
-    width: 272px;
-    height: 76px;
-    padding: 20px 10px 22px;
-    font-size: 1.625rem;
-    line-height: 34px;
-    background: url(https://www.burgerking.co.kr/dist/i	mg/bg_btn01_l_m.397f410c.png) no-repeat 50%;
-    background-size: 100% 100%;
-}
+
 .btn01.l, .btn01.m {
     width: 158px;
     height: 48px;
@@ -2583,7 +2662,7 @@ input[type=color], input[type=date], input[type=datetime], input[type=email], in
 
 
 
-
+}
 
 
 

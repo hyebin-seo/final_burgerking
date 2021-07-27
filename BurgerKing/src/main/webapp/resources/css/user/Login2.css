@@ -1,4 +1,4 @@
-
+	
 html {
     font: normal 16px HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
 }
@@ -1457,7 +1457,7 @@ html {
 }
 }
 
-@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait){
+	@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait){
 	
 	#app {
     min-width: 100%;
@@ -1591,7 +1591,7 @@ html {
     height: 32px;
     margin-right: 10px;
     padding: 0 10px;
-    font-size: .875rem;
+    font-size: 1.3rem;
     line-height: 33px;
     border-radius: 3px;
 }
@@ -1749,7 +1749,24 @@ MOB {
     background: url(https://www.burgerking.co.kr/dist/img/logo_delivery.26d1d682.png) no-repeat 0;
     background-size: 33px auto;
 }
-
+.GNBWrap:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    clear: both;
+}
+.GNBWrap {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.GNBWrap .menu_open .submenu {
+	    height: auto;
+	    padding: 0 0 15px;
+	}
 
 
 .title_btn {
@@ -2059,11 +2076,7 @@ input[type=checkbox]+:before, input[type=radio]+:before {
     display: none;
 }
 
-.simple_login {
-    max-width: 100%;
-    margin: 37px 0 38px;
-    padding: 0 24px;
-}
+
 
 .loginWrap .weblogin_ui .tit01 {
     margin-left: 8px;
@@ -2072,6 +2085,15 @@ input[type=checkbox]+:before, input[type=radio]+:before {
 
 .tit01:first-child, .WEB:first-child+.tit01 {
     margin-top: 8px;
+}
+
+.simple_login {
+    max-width: 100%;
+    margin: 37px 0 38px;
+    padding: 0 24px;
+}
+joinWrap .simple_login {
+    padding-top: 0;
 }
 
 .simple_login .list {
@@ -2297,13 +2319,47 @@ input[type=checkbox]+:before, input[type=radio]+:before {
 }
 
 
+.headerWrap.side_open {
+	    -webkit-animation: side_open .3s linear forwards;
+	}
+	
+	.headerWrap.side_close{
+		-webkit-animation:side_close .3s linear forwards;
+	}
+	
+	.headerWrap.side_open .head_personalWrap{
+		display:none
+	}
+	
+	@-webkit-keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+		
+	@keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+	
+	@-webkit-keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+	}
+	
+	@keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+	}
+
+.header_offtype .util_logoff {
+    display: block;
+    padding: 16px 20px;
+    font-size: 1.25rem;
+}
 
 
 
 
 
-
-
+	
 
 
 }

@@ -32,7 +32,102 @@ body, html {
 
 }
 
-@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait){
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait){	
+
+	
+	.subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+	
+	
+	/* 헤더 부분 추가 */
+		.M_headerWrap {
+    line-height: normal;
+}
+
+.M_headerWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: #fff;
+    z-index: 50;
+}
+
+.headerWrap.side_open {
+	    -webkit-animation: side_open .3s linear forwards;
+	}
+	
+	.headerWrap.side_close{
+		-webkit-animation:side_close .3s linear forwards;
+	}
+	
+	.headerWrap.side_open .head_personalWrap{
+		display:none
+	}
+	
+	@-webkit-keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+		
+	@keyframes side_open{
+		to{-webkit-transform:translateX(0)}
+	}
+	
+	@-webkit-keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+	}
+	
+	@keyframes side_close{
+		0%{-webkit-transform:translateX(0)}
+		to{-webkit-transform:translateX(-100%)}
+	}
+
+.header_offtype .util_logoff {
+    display: block;
+    padding: 16px 20px;
+    font-size: 1.25rem;
+}
+
+
+
+.welcomeBox {
+    padding: 24px 16px 37px;
+    text-align: center;
+    background: #fff;
+}
+
+.welcomeBox .page_tit02 {
+    padding: 0;
+    font-size: 1.875rem;
+    color: #2e2e2e;
+}
+
+.txt_welcome {
+    font-size: 1rem;
+}
+
+	
+	/* 해더 부분 추가 X */
+	
+
+.personal_logoff .btn_area {
+    margin-top: -10px;
+}	
+	.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}
+	.WEB {
+    display: none!important;
+}
+
 .headerWrap .head_menuWrap {
     background: #f8f8f8;
 }
@@ -231,16 +326,6 @@ a {
 
 .MOB {
     display: none!important;
-}
-button {
-    margin: 0;
-    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
-    color: #000;
-    vertical-align: middle;
-    background: 0;
-    border: none;
-    overflow: visible;
-    cursor: pointer;
 }
 
 p {
@@ -575,11 +660,12 @@ element.style {
 .MOB {
     display: none!important;
 }
+/*
 .contentsWrap .page_tit {
     margin-bottom: 15px;
     font-size: 2.5rem;
     line-height: 100%;
-}
+}*/
 .bg_w {
     background: #fff;
 }
@@ -746,10 +832,13 @@ address, em {
     position: absolute;
     left: 0;
     top: 0;
-    width: 40px;
+    width: 40px;	
     height: 40px;
     background-repeat: no-repeat;
     background-position: 0;
+}
+.joinWrap .simple_login {
+    padding-top: 0;
 }
 
 .simple_login .list {
@@ -991,6 +1080,14 @@ img {
     padding-bottom: 350px;
 }
 
+.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}
+
+
 
 .headerWrap {
     position: fixed;
@@ -1114,7 +1211,7 @@ img {
     height: 32px;
     margin-right: 10px;
     padding: 0 10px;
-    font-size: .875rem;
+    font-size: 1.3rem;
     line-height: 33px;
     border-radius: 3px;
 }
@@ -1566,6 +1663,19 @@ input[type=checkbox], input[type=radio] {
     font-size: .75rem;
 }
 
+.loginWrap .login .c_btn a:only-child {
+    float: none;
+    display: block;
+    margin: 0 auto;
+}
+	.joinWrap .login .c_btn a {
+    line-height: 48px;
+}
+
+.btn02.st03 {
+    height: 56px;
+    padding-top: 0px;
+}	
 
 .btn01.l, .btn01.m {
     width: 158px;
@@ -1817,4 +1927,41 @@ input[type=checkbox]+:before, input[type=radio]+:before {
     font-size: .75rem;
     line-height: 150%;
 }
+
+.welcomeBox .page_tit02 {
+    padding: 0;
+    font-size: 1.875rem;
+    color: #2e2e2e;
+}
+
+
+
+joinWrap .simple_login {
+    padding-top: 0;
+}
+
+.GNBWrap {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+.GNBWrap .menu_open .submenu {
+	    height: auto;
+	    padding: 0 0 15px;
+	}
+
+
 }

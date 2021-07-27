@@ -99,15 +99,12 @@ $(document).ready(function() {
 				let html  ="";
 					$('div.popWrap.m_FullpopWrap3').css('display', 'block');
 					html += '<tr>';
-					html += '<td colspan="3">데이터가 없습니다.</td>';
-					html += '<td></td>';
-					html += '<td></td>';
+					html += '<td colspan="3" align="center">데이터가 없습니다.</td>';
 					html += '</tr>';
 					
 					$(".bodyHtml").append(html);
 
 				} else {
-
 				}
 
 

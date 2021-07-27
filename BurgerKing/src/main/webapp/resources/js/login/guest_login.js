@@ -38,7 +38,7 @@ $(document).ready(function() {
 				if ($('input.st02.phone').val() != '' && $('input.st02.phone').val().length > 10) { /* 모든 입력사항이 들어왔을 때 본인인증을 하는 메서드. */
 
 					$('dl#authNumber.WEB.auth').css('display', '');
-					$('dl.WEB.phone').css('display', 'none');
+					$('dl#WEBphone').css('display', 'none');
 					$('div.move').css('display', 'none')
 					$('div.check').css('display', 'block')
 
