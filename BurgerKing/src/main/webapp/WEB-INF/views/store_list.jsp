@@ -15,6 +15,20 @@
 		
 </head>
 <body>
+
+		<!-- 1. 까만 영역 -->
+		<div class="WEB locationWrap">
+			<div class="web_container">
+				<div class="page_navi">
+					<a href="/burger/" class>
+						<span>HOME</span>
+					</a>
+					<span>신규매장</span>
+					<span>전체</span>
+				</div>
+			</div>
+		</div>		<!-- 까만 영역 끝 -->
+	
 		<div id = "menu_m">
 		<jsp:include page="store_menu.jsp" />	
 		</div>
@@ -73,7 +87,7 @@
 	   		
 	   </div>
 	  	
-	  	<c:if test="${memberSession.getRight() == 'admin1'}">
+	  	<c:if test="${memberSession.getUser_right() == 'admin'}">
 	  	<div align="center">
 	            <input type="button" class="btn_list" value="스토어작성"
 	                 onclick="location.href='store_write.do'">

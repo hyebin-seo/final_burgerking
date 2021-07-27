@@ -1,5 +1,6 @@
 package com.burger.cs.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -172,6 +173,44 @@ public class QnaController {
 
 	}
 	
+	/*
+	 * @RequestMapping("qna_update.do") public void modifyOk(QnaDTO
+	 * dto, @RequestParam("page") int nowPage, HttpServletResponse response) throws
+	 * IOException {
+	 * 
+	 * int check = this.dao.updateQna(dto);
+	 * response.setContentType("text/html; charset=UTF-8");
+	 * 
+	 * PrintWriter out = response.getWriter();
+	 * 
+	 * if (check > 0) { out.println("<script>");
+	 * out.println("alert('Q&A 상태 수정 완료')");
+	 * out.println("location.href='qna_cont.do?no=" + dto.getQna_no() + "&page=" +
+	 * nowPage + "'"); out.println("</script>"); } else { out.println("<script>");
+	 * out.println("alert('Q&A 수정 실패 ')"); out.println("history.back()");
+	 * out.println("</script>"); } }
+	 */
+	@RequestMapping("qna_update.do")
+	   public void FranchiseUpdate(@RequestParam("no") int qna_no, @RequestParam("page") int nowPage, HttpServletResponse response) throws IOException {
+	   
+	      int check = this.dao.updateQna(qna_no);
+	      
+	      response.setContentType("text/html; charset=UTF-8");
+
+	      PrintWriter out = response.getWriter();
+
+	      if (check > 0) {
+	         out.println("<script>");
+	         out.println("alert('qna 확인 완료')");
+	         out.println("location.href='qna_cont.do?no=" + qna_no + "&page=" + nowPage + "'");
+	         out.println("</script>");
+	      } else {
+	         out.println("<script>");
+	         out.println("alert('qna 확인 실패 ')");
+	         out.println("history.back()");
+	         out.println("</script>");
+	      }
+	   }
 	
 }
 

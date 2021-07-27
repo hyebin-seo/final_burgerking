@@ -90,7 +90,7 @@
 								</div>
 								<div class="alignr">
 									<label>
-										<input type="checkbox" class="storeNone" value="N">
+										<input type="checkbox" class="storeNone" value="" name = "qna_store">
 											<span>매장 선택 안함</span>
 									</label>
 								</div>
@@ -120,6 +120,7 @@
 								<button type="button" class="btn04">
 									<span>파일선택</span>
 								</button>
+								
 							</label>
 						</div>
 						<ul id="fileList"><!-- 파일 첨부하면 생기는 영역 -->

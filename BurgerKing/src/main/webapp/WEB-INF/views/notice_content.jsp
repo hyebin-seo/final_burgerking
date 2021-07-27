@@ -14,6 +14,19 @@
 </head>
 <body>
 	
+	<!-- 1. 까만 영역 -->
+		<div class="WEB locationWrap">
+			<div class="web_container">
+				<div class="page_navi">
+					<a href="/burger/">
+						<span>HOME</span>
+					</a>
+					<span>고객센터</span>
+					<span>공지사항</span>
+				</div>
+			</div>
+		</div>		<!-- 까만 영역 끝 -->
+	
 	<div id = "menu_m">
 	<jsp:include page="cs_menu.jsp" />
 	</div>
@@ -72,7 +85,7 @@
 	      	 
 	         <td colspan="2" align="center">
 	         
-	         	<c:if test="${memberSession.getRight() == 'admin1'}">
+	         	<c:if test="${memberSession.getUser_right() == 'admin'}">
 	            <input type="button" class="btn_list" value="공지수정"
 	                onclick="location.href='notice_update.do?no=${dto.getNotice_no() }&page=${page }'">
 	             </c:if>    
@@ -81,7 +94,7 @@
 	                onclick="location.href='notice_list.do?page=${page }'">
 	            
 	            
-	              <c:if test="${memberSession.getRight() == 'admin1'}">
+	              <c:if test="${memberSession.getUser_right() == 'admin'}">
 	            <input type="button" class="btn_list" value="공지삭제"
 	                onclick="if(confirm('공지사항을 삭제 하시겠습니까?')) {
 	                				location.href='notice_delete.do?no=${dto.getNotice_no() }&page=${page }'

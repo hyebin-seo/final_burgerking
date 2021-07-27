@@ -1,5 +1,5 @@
 @charset "UTF-8";
-폰트 적용
+/* 폰트 적용 */
 @font-face {
      font-family: 'S-CoreDream-9Black';
      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
@@ -22,9 +22,9 @@
     word-break: keep-all;
 }
 
-#menu_m{
+/* #menu_m{
 	margin-top: 5%;
-}
+} */
 
 #footer_m{
 	margin-top: 5%;
@@ -62,7 +62,8 @@ a, div, li {
 
 .contentsWrap .page_tit {
     margin-bottom: 15px;
-    font-size: 2.5rem;
+     /* font-size: 2.5rem;  */
+ 
     line-height: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -226,14 +227,15 @@ ul {
     border: 0;
     height: 3px;
     background: #000;
-   max-width: 100%;
+   max-width: 70%;
 }
 
  .table1 {
 	 width : 100%;
-	 /* border-spacing:  30px; */
+	  border-spacing:  10px; 
+	  
+	 margin-top: 5%;	
 	 
-	 margin-top: 5%;
 	
 }
  
@@ -246,12 +248,13 @@ ul {
 	font-size: 1.25rem;
 	text-align: center;	
 	background: #FAFAFA;		
+	
 }
 
 
 
  #tr0{
-
+	display: inline-block;
 	
 } 
  
@@ -310,6 +313,9 @@ a{
 		
 }
 
+
+
+	
 
 
 
@@ -406,4 +412,427 @@ a{
 	font-family: 'S-CoreDream-5Medium';
 	
 } */
+
+.locationWrap {
+    height: 58px;
+    padding: 10px 0;
+    color: #fff;
+    line-height: 38px;
+    background: #000;
+    margin-top: 110px;
+}
+
+.locationWrap .web_container {
+    overflow: hidden;
+} 
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page_navi {
+    float: left;
+    font-size: .875rem;
+}
+
+.locationWrap a {
+    color: #fff;
+}
+
+.page_navi>* {
+    float: left;
+}
+
+.page_navi>:before {
+    content: "";
+    float: left;
+    width: 4px;
+    height: 38px;
+    margin: 0 12px;
+    background: url(../../img/mypage/img_arrow2.gif) no-repeat 50%;
+}
+
+
+.page_navi>a:first-child:before {
+    content: "";
+    float: left;
+    width: 0;
+    height: 38px;
+    margin: 0;
+} 
+
+@media screen and (min-width: 375px) and (max-width: 767px)
+{html {
+    font-size: 17px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{#app {
+    min-width: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01, .subWrap02 {
+    min-width: 320px;
+    padding-top: 0!important;
+    padding-bottom: 350px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .head_menuWrap {
+    background: #f8f8f8;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.head_menuWrap {
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01 .headerWrap .head_menuWrap .web_container {
+    padding-top: 56px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .head_menuWrap .web_container {
+    height: 100%;
+    padding: 135px 0 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01 .m_utilWrap {
+    height: 56px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_utilWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 135px;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 2px rgb(0 0 0 / 6%);
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 6%);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_utilWrap .m_top {
+    position: relative;
+    height: 56px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_utilWrap .m_top>* {
+    height: 56px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_head_close {
+    width: 60px;
+    text-indent: -9999em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzhGRDZCMTNENUJCMTFFODk1N0FFOERGQTUxNjMxNDIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzhGRDZCMTRENUJCMTFFODk1N0FFOERGQTUxNjMxNDIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3OEZENkIxMUQ1QkIxMUU4OTU3QUU4REZBNTE2MzE0MiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3OEZENkIxMkQ1QkIxMUU4OTU3QUU4REZBNTE2MzE0MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pn3YebsAAAEwSURBVHjavNhNDoIwEAXg6lnEcA2C6PkxeAJET4AudWqKIQj0Z96zyVsxpV9XDGPM76okd0kj2RveyiUXyU1S+opPkqfk5dKRcLkDDef0kmMoioWbolZxFvWYKUbjllCzuMqDQuF8qDHuYAKLtbg84RxzjtiQgotF2dTGHdKRcCmoqyQbXsDAqVEMHAyFxMFRCBwNpcXFotoYlAZHR7FxKhQLB0GhcVAUCkdBaXHRqG0kzNZvEi6Uuo/WJTA7YQiKgkOhoDg0CoJjoVS4FFRL7IRVqIzZpmtQtDYdgYLjkCgYjoGC4BryBzkFV8eOCFJbl1icPeczwOgDi3d/aJmspRg2HT04LSoU9530jNcSDoXy4fq1kecUh0Yt4fqQOWzp/o5rEmqMq93li+nDtwADACvj7jAA3N70AAAAAElFTkSuQmCC) no-repeat 50%;
+    background-size: 19px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn_head_close {
+    width: 60px;
+    text-indent: -9999em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzhGRDZCMTNENUJCMTFFODk1N0FFOERGQTUxNjMxNDIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzhGRDZCMTRENUJCMTFFODk1N0FFOERGQTUxNjMxNDIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3OEZENkIxMUQ1QkIxMUU4OTU3QUU4REZBNTE2MzE0MiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3OEZENkIxMkQ1QkIxMUU4OTU3QUU4REZBNTE2MzE0MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pn3YebsAAAEwSURBVHjavNhNDoIwEAXg6lnEcA2C6PkxeAJET4AudWqKIQj0Z96zyVsxpV9XDGPM76okd0kj2RveyiUXyU1S+opPkqfk5dKRcLkDDef0kmMoioWbolZxFvWYKUbjllCzuMqDQuF8qDHuYAKLtbg84RxzjtiQgotF2dTGHdKRcCmoqyQbXsDAqVEMHAyFxMFRCBwNpcXFotoYlAZHR7FxKhQLB0GhcVAUCkdBaXHRqG0kzNZvEi6Uuo/WJTA7YQiKgkOhoDg0CoJjoVS4FFRL7IRVqIzZpmtQtDYdgYLjkCgYjoGC4BryBzkFV8eOCFJbl1icPeczwOgDi3d/aJmspRg2HT04LSoU9530jNcSDoXy4fq1kecUh0Yt4fqQOWzp/o5rEmqMq93li+nDtwADACvj7jAA3N70AAAAAElFTkSuQmCC) no-repeat 50%;
+    background-size: 19px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap {
+    display: block;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.GNBWrap {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}}
+
+@media screen and (max-width: 879px)
+{.GNBWrap {
+    margin-left: 100px;
+    padding-right: 170px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap ul {
+    float: none;
+    width: 100%;
+    min-height: 90%;
+    min-height: calc(100% - 70px);
+    padding: 0 0 0 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap li {
+    float: none;
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid #ebebeb;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap>ul>li>button {
+    width: 100%;
+    height: 62px;
+    padding: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap a, .headerWrap .GNBWrap button {
+    position: relative;
+    padding-right: 35px;
+    font-size: 1.25rem;
+}}
+@media screen and (max-width: 879px)
+{.GNBWrap>ul>li>button {
+    font-size: 1.25rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap button>span {
+    padding-right: 0;
+    background: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap>ul>li>button:after {
+    content: "";
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAYCAYAAAAlBadpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzVERjUxRjgwMTFFMTFFOTkxQjRGMTE3Njg3RENCMkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzVERjUxRjkwMTFFMTFFOTkxQjRGMTE3Njg3RENCMkQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDNURGNTFGNjAxMUUxMUU5OTFCNEYxMTc2ODdEQ0IyRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDNURGNTFGNzAxMUUxMUU5OTFCNEYxMTc2ODdEQ0IyRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvZO3mcAAADjSURBVHjanJRNCwFRGIWHv+EzST4SyU5kQVIs+Nc2s5itjzBIko2EDc7NTElzz3tnbj27Oc80c8/7Wtb3JIEN1qBphTgJMAdvjwtomIZnP0GfM6iZhLcBYcUJVKVwC1yJoCwJOuCmERxBURJ0iWAPCpKgTwQuyEuCAXhoBOrn5iTBEDw1AlWkjCQYE8EKpCTBlAicuBCOAd0zLxackLcuvGEKPCPhe9NR/vQGZNkd30lJtHfcI+3asXaxXh9Yr9vCRJXYlbhklitSi+yoW8TfnMu//VUPs0HVlDjeyBlvzo8AAwATFpNBqDJV/AAAAABJRU5ErkJggg==) no-repeat 50%;
+    background-size: auto 12px;
+    -webkit-transform: none!important;
+    transform: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap ul {
+    float: none;
+    width: 100%;
+    min-height: 90%;
+    min-height: calc(100% - 70px);
+    padding: 0 0 0 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.GNBWrap .submenu {
+    position: static;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.GNBWrap .submenu li {
+    margin: 0 0 6px;
+    border: none;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap li {
+    float: none;
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid #ebebeb;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.GNBWrap .submenu a {
+    display: block;
+    height: 33px;
+    padding-left: 12px;
+    line-height: 33px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap a, .headerWrap .GNBWrap button {
+    position: relative;
+    padding-right: 35px;
+    font-size: 1.25rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap .btn_order {
+    display: none;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.headerWrap .GNBWrap a, .headerWrap .GNBWrap button {
+    position: relative;
+    padding-right: 35px;
+    font-size: 1.25rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.M_headerWrap {
+    line-height: normal;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.M_headerWrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: #fff;
+    z-index: 50;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.M_headerWrap .web_container {
+    padding: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.M_headerWrap .web_container {
+    padding: 0;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.titleBar.noborder {
+    border: none;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.titleBar {
+    position: relative;
+    padding: 0 45px;
+    height: 57px;
+    background: #fff;
+    border-bottom: 1px solid #f7f7f7;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.M_headerWrap {
+    line-height: normal;
+}}
+
+
+
+
+
+
+
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsWrap {
+    padding-top: 57px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_bg_basic {
+    background: #f2ebe6!important;
+}}
  
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ev_detail .ev_tit {
+    margin-bottom: 20px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}} 
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ev_detail .ev_con {
+    padding: 0;
+    border-bottom: 0;
+    margin-bottom: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ev_detail .ev_con img {
+    margin: 0 auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ev_detail .ev_txt {
+    background: #fff;
+    margin-top: 10px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ev_detail .ev_tit {
+    margin-bottom: 20px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ev_detail .ev_txt>p {
+    font-size: .75rem;
+    padding-bottom: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ev_detail .c_btn {
+    padding: 20px;
+    background-color: #fff;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.eventWrap .c_btn {
+    margin: 0 0 35px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.ev_detail .btn_order_m {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #df332c;
+    border-radius: 6px;
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}}

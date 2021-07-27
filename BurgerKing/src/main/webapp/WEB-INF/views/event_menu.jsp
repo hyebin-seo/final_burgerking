@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="resources/css/cs/cs_menu.css"  rel="stylesheet"  type="text/css">
+<link href="resources/css/cs/event_menu.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/event_menu.js"></script>
 </head>
@@ -14,8 +14,7 @@
 		
 		<input type="hidden" id="nowcat" value="${cat }">
 		
-		<!-- 1. 까만 영역 -->
-		<div class="locationWrap WEB"></div>
+		
 
 		<!-- 2. 메뉴판 영역 -->
 			<div class="contentsBox01 bg_w">

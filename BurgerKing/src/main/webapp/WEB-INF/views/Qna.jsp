@@ -12,9 +12,24 @@
 <link rel="shortcut icon" type="image/x-icon"
 	href="resources/img/main/fab.ico">
 <link href="resources/css/cs/qna.css"  rel="stylesheet"  type="text/css"> 
-
+ <jsp:include page="header.jsp" /> 
 </head>
 <body>
+	<div class="contentsWrap eventWrap">
+		<!-- 1. 까만 영역 -->
+		<div class="WEB locationWrap">
+			<div class="web_container">
+				<div class="page_navi">
+					<a href="/burger/" class>
+						<span>HOME</span>
+					</a>
+					<span>고객센터</span>
+					<span>문의</span>
+				</div>
+			</div>
+		</div>		<!-- 까만 영역 끝 -->
+	
+	
 	<jsp:include page="cs_menu.jsp" />
 	<div class = "tab_cont">
 	<h4 class = "hide">문의</h4>
@@ -67,9 +82,9 @@
   		 							<br>
   		 							불편한 사항은 온라인으로 접수 해주세요
   		 						</p>
-  		 						<c:if test="${memberSession.getRight() == 'admin1'}">
+  		 						<%-- <c:if test="${memberSession.getRight() == 'admin1'}"> --%>
   		 						<input type = "button" value="문의리스트" onclick="location.href='qna_list.do'">
-  		 						</c:if>
+  		 						<%-- </c:if> --%>
   		 						<div class="btn_area">
   		 							<br>
   		 							<br>

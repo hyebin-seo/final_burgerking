@@ -13,6 +13,19 @@
 	<jsp:include page="header.jsp" />
 </head>
 <body>
+
+<!-- 1. 까만 영역 -->
+		<div class="WEB locationWrap">
+			<div class="web_container">
+				<div class="page_navi">
+					<a href="/burger/">
+						<span>HOME</span>
+					</a>
+					<span>고객센터</span>
+					<span>문의</span>
+				</div>
+			</div>
+		</div>		<!-- 까만 영역 끝 -->
 	
 	<div id = "menu_m">
 	<jsp:include page="qna_menu.jsp" />
@@ -59,7 +72,15 @@
 	            	 
 	            </td>
 	      	 </tr>
+	      	 	<br>
 	      	 
+	      	 
+	      	  <tr id ="tr3">	           
+	            <td id = "td3"> 
+	            	문의 상태 :	 &emsp; ${dto.getQna_status() } 
+	            	 
+	            </td>
+	      	 </tr>
 	      
 	      	 
 	      	
@@ -86,6 +107,9 @@
 	            <input type="button" class="btn_list" value = "목록보기"	                
 	                onclick="location.href='qna_list.do?page=${page }'">
 	            
+	            <input type="button" class="btn_list" value = "확인"	                
+	               onclick="location.href='qna_update.do?no=${dto.getQna_no() }&page=${page }'">
+	        
 	            
 	              
 	         </td>

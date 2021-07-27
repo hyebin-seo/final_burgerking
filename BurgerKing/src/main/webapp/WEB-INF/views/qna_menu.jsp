@@ -14,8 +14,7 @@
 		
 		<input type="hidden" id="nowcat" value="${cat }">
 		
-		<!-- 1. 까만 영역 -->
-		<div class="locationWrap WEB"></div>
+		
 
 		<!-- 2. 메뉴판 영역 -->
 			<div class="contentsBox01 bg_w">
@@ -27,4 +26,5 @@
 						<!-- 카테고리 -->
 						
 					</div>
-		
+		</div>
+		</div>
