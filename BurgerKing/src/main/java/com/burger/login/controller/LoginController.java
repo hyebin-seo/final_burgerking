@@ -372,7 +372,7 @@ public class LoginController {
     	
     	//
     	String guest_phone = request.getParameter("guest_phone");
-    	
+    	 System.out.println("guest_phone"+guest_phone);
     	//난수설정 
     	String s = "";
 		Random r1 = new Random();
@@ -381,8 +381,8 @@ public class LoginController {
 		String random = s + num;
 		//난수설정 
 		//문자보내는API
-        String api_key = "NCS7DA99XQHE2RLT"; //위에서 받은 api key를 추가
-        String api_secret = "1PCO7UNCSH6LNSO6H9P67UVMSPYKEG9D";  //위에서 받은 api secret를 추가
+        String api_key = "NCSYFHSXH2XW0H0Z	"; //위에서 받은 api key를 추가
+        String api_secret = "WACZOVI1K4O3LQVIOYLSW2UZWKJZLEJC";  //위에서 받은 api secret를 추가
         Message coolsms = new Message(api_key, api_secret);
 
         HashMap<String, String> set = new HashMap<String, String>();
@@ -439,33 +439,36 @@ public class LoginController {
  // guest주문에대한 주문 정보를 조회하는 메서드
     @RequestMapping("order_check.do")
     @ResponseBody
-    public String order_check(HttpServletRequest request, HttpServletResponse response,HttpSession session,OrderListDTO dto) throws IOException {
+    public  HashMap<String, String> order_check(HttpServletRequest request, HttpServletResponse response,HttpSession session,OrderListDTO dto) throws IOException {
     	
     	
     	System.out.println("1"+dto);
+    	HashMap<String, String> set = new HashMap<String, String>();
     	
         dto = this.dao.order_check(dto);   
         
         System.out.println("dto>>+"+dto);
         
          if(dto != null) {
-        	  
+        	 
+        	 
+        	 set.put("dto",dto.getOrder_phone());
+        	 set.put("order_claim", dto.getOrder_claim());
+        	 set.put("order_no", dto.getOrder_no());
         	
-     		return "sucess";
+        	System.out.println("!null+"+set);
+     		return set;
         	 
          }else {
+        	 set.put("dto", "1"); 
         	 
-        	return "fail";
+        	 
+        	 System.out.println("null>"+set);
+        	return set;
          	 
          }
      	
-//    	response.setContentType("text/html; charset=UTF-8");
-//		PrintWriter script = response.getWriter();
-//		
-//		script.println("<script>");
-//		script.println("location.href='delivery_home.do'");
-//		script.println("</script>");
-    	
+
   
        
     }	

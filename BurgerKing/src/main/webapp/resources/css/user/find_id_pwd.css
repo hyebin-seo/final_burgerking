@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
 
 html {
     font: normal 16px HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
@@ -541,6 +554,7 @@ element.style {
     margin-bottom: 15px;
     font-size: 2.5rem;
     line-height: 100%;
+    font-family: 'S-CoreDream-9Black';
 }
 .tab01 {
     margin-bottom: 20px;
@@ -566,6 +580,7 @@ element.style {
 .tab01 li.on a, .tab01 li.on button {
     color: #e22219;
     border-bottom-color: #e22219;
+     font-family: 'S-CoreDream-9Black';
 }
 .tab01 button {
     height: 54px;
@@ -615,6 +630,7 @@ element.style {
     padding: 37px 50px;
     font-size: 1.375rem;
     background: #f8f8f8;
+     font-family: 'S-CoreDream-9Black';
 }
 .titbox {
     position: relative;
@@ -634,6 +650,7 @@ element.style {
     height: 1em;
     padding-top: 26px;
     vertical-align: top;
+     font-family: 'S-CoreDream-9Black';	
 }
 
 .dlist01 dt.vtop+dd {
@@ -791,6 +808,7 @@ input {
     line-height: 34px;
     background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_l.dc747669.png) no-repeat 50%;
     background-size: 100% 100%;
+     font-family: 'S-CoreDream-9Black';	
 }
 .btn01 {
     display: inline-block;

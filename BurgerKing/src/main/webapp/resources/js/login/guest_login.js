@@ -1,4 +1,4 @@
-/**
+	/**
  * 
  */
 
@@ -41,6 +41,8 @@ $(document).ready(function() {
 					$('dl#WEBphone').css('display', 'none');
 					$('div.move').css('display', 'none')
 					$('div.check').css('display', 'block')
+					$('input.st02.phone').prop('readonly','true');
+					$('input.st02.name').prop('readonly','true');
 
 					guest_phone = $("input.st02.phone").val();
 					guest_name = $("input.st02.name").val();
@@ -93,7 +95,7 @@ $(document).ready(function() {
 				$('div.check').css('display',  'none');
 				$('div.rerrange').css('display', '');
 				$('em.tag.st02').css('display', '');
-				$('input.st02.auth').prop('readonly',  'true');
+				$('input.st02.auth').prop('readonly','true');
 			} else {
 				alert('인증번호를 확인해주세요.')
 			}
@@ -103,7 +105,13 @@ $(document).ready(function() {
 		}
 
 	})
-
+	
+	
+	$('button.btn01.l.m_btn01.rerrange').click(function() {
+		
+		location.reload;
+		
+	})
 
 
 	/* 비밀번호 입력 후 DB에 guest 정보를 저장한다. */

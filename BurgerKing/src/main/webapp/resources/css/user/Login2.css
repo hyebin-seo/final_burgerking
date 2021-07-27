@@ -1,4 +1,18 @@
 	
+	
+	 @font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+	
 html {
     font: normal 16px HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
 }
@@ -70,6 +84,7 @@ a, div, li {
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+   
 }
 user agent stylesheet
 div {
@@ -149,6 +164,7 @@ div {
     line-height: 120px;
     background: url(https://www.burgerking.co.kr/dist/img/logo_delivery.26d1d682.png) no-repeat 0;
     cursor: pointer;
+     font-family: 'S-CoreDream-9Black';
 }
 .head_menuWrap .logo {
     position: absolute;
@@ -285,6 +301,8 @@ btn04 {
     right: 20px;
     bottom: 35px;
     background: url(https://www.burgerking.co.kr/dist/img/btn_webhead_join.ad8dbc41.png) no-repeat 50%;
+    font-family: 'S-CoreDream-9Black';	
+    
 }
 .btn_join>*, .btn_order>* {
     display: inline-block;
@@ -581,13 +599,16 @@ h2 {
 
 .loginWrap .page_tit02 em {
     margin-bottom: 11px;
+    font-family: 'S-CoreDream-9Black';
 }
 
 .loginWrap .page_tit02>* {
     display: block;
+    font-family: 'S-CoreDream-9Black';		
 }
 em {
     color: #e22219;
+    
 }
 address, em {
     font-style: normal;
@@ -663,6 +684,7 @@ legend {
 .weblogin_ui .tit01 {
     margin-top: 0;
     font-size: 1.125rem;
+    font-family: 'S-CoreDream-9Black';
 }
 .tit_ico {
     position: relative;
@@ -944,6 +966,7 @@ input[type=checkbox]+:before, input[type=radio]+:before {
 .loginWrap .login .c_btn a {
     float: left;
     width: 216px;
+    font-family: 'S-CoreDream-9Black';
 }
 .btn01.m.red {
     background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_m_red.a7587241.png) no-repeat 0 0;
@@ -1126,6 +1149,7 @@ input[type=checkbox]+:before, input[type=radio]+:before {
 .tab01 li.on a, .tab01 li.on button {
     color: #e22219;
     border-bottom-color: #e22219;
+    font-family: 'S-CoreDream-9Black';			
 }
 .tab01 button {
     height: 54px;
@@ -1191,6 +1215,7 @@ h3 {
     line-height: 34px;
     background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_l.dc747669.png) no-repeat 50%;
     background-size: 100% 100%;
+     font-family: 'S-CoreDream-9Black';
 }
 
 .nonmember_order .container02 {

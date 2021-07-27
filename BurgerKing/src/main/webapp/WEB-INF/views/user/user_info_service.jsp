@@ -243,7 +243,7 @@ function go_brand(){
 							</h3>
 							<div class="container02 auth_list">
 								<div class="titbox">
-									<p>약관 동의 후 메일인증을 진행해 주세요.</p>
+									<p style="font-family: 'S-CoreDream-9Black';	">약관 동의 후 메일인증을 진행해 주세요.</p>
 								</div>
 								<ul class="txtlist01">
 									<li>반드시 회원님의 본인명의로 된 메일로 인증을 진행해 주세요.</li>
@@ -253,7 +253,7 @@ function go_brand(){
 							</div>
 							<div class="c_btn">
 								<a class="btn01 auth"><button>
-										<span>메일 인증하기</span>
+										<span style="color: white;  font-family: 'S-CoreDream-9Black';">메일 인증하기</span>
 									</button></a>
 							</div>
 						</div>

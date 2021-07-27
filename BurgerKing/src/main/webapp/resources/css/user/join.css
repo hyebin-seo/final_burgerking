@@ -3,7 +3,19 @@
 
 
 
-
+ @font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+	
 
 html {
     font: normal 16px HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
@@ -250,6 +262,7 @@ div {
     line-height: 120px;
     background: url(https://www.burgerking.co.kr/dist/img/logo_delivery.26d1d682.png) no-repeat 0;
     cursor: pointer;
+     font-family: 'S-CoreDream-9Black';
 }
 .head_menuWrap .logo {
     position: absolute;
@@ -376,6 +389,7 @@ btn04 {
     right: 20px;
     bottom: 35px;
     background: url(https://www.burgerking.co.kr/dist/img/btn_webhead_join.ad8dbc41.png) no-repeat 50%;
+     font-family: 'S-CoreDream-9Black';
 }
 .btn_join>*, .btn_order>* {
     display: inline-block;
@@ -722,6 +736,7 @@ address, em {
 .weblogin_ui .tit01 {
     margin-top: 0;
     font-size: 1.125rem;
+     font-family: 'S-CoreDream-9Black';
 }
 .tit01:first-child {
     margin-top: 0;
@@ -774,6 +789,7 @@ address, em {
 
 .joinWrap .weblogin_ui .login .c_btn a {
     width: 100%;
+    font-family: 'S-CoreDream-9Black';	
 }
 .loginWrap .login .c_btn a {
     float: left;

@@ -5,7 +5,7 @@
 		<div class="M_headerWrap">
 			<div class="titleBar">
 				<h1 class="page_tit w_alignL">
-					<span>이용약관</span>
+					<span style="font-family: 'S-CoreDream-9Black';">이용약관</span>
 				</h1>
 			</div>
 		</div>
@@ -320,10 +320,10 @@
 		</div>
 		<div class="pop_btn full_type c_btn item2">
 			<button type="button" class="btn02 dark">
-				<span>취소</span>
+				<span style="font-family: 'S-CoreDream-9Black';">취소</span>
 			</button>
 			<button type="button" class="btn02 agree">
-				<span>동의</span>
+				<span style="font-family: 'S-CoreDream-9Black';">동의</span>
 			</button>
 		</div>
 	</div>
