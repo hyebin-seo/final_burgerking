@@ -23,5 +23,12 @@ public class CouponDAOImpl implements CouponDAO {
 		
 		return this.sqlSession.selectList("couponList", user_id);
 	}
+
+	// 탈퇴시 쿠폰 삭제
+	@Override
+	public void deleteUserCoupon(String user_id) {
+		
+		this.sqlSession.delete("deleteUserCoupon", user_id);
+	}
 	
 }

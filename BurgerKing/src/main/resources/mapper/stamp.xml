@@ -26,4 +26,8 @@
 		]]>
 	</delete>
 	
+	<delete id="deleteUserStamp">
+		delete from my_stamp where user_id = #{user_id}
+	</delete>
+	
 </mapper>

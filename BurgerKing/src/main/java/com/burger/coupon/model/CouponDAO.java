@@ -9,5 +9,8 @@ public interface CouponDAO {
 	
 	// 해당 회원의 쿠폰 리스트 반환하는 메소드
 	public List<CouponDTO> getMyCouponList(String user_id);
+	
+	// 탈퇴시 쿠폰 삭제하는 메소드
+	public void deleteUserCoupon(String user_id);
 
 }

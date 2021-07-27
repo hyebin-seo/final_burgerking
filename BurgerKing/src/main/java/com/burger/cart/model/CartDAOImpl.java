@@ -42,4 +42,5 @@ public class CartDAOImpl implements CartDAO {
 	public int cartAllDelete(String user_id) {
 		return this.sqlSession.delete("cart_all_delete", user_id);
 	}
+
 }

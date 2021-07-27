@@ -24,36 +24,40 @@
 	
 	<!-- 내용 영역 -->
 	<div class="contentsWrap">
-		<!-- 1. 까만 영역 위쪽에 include 해옴. -->
-		<!-- <div class="locationWrap">
-			<div class="web_container">
-				<div class="page_navi">
-					<a href="#" class><span>딜리버리</span></a>
-					<a><span>MY킹</span></a>
+		
+		<!-- 1. 까만 영역 -->
+		<div class="loc_container">
+			<div class="loc">
+				<div class="page-navi">
+					<a href="delivery_home.do"><span>딜리버리</span></a>
+					<a href="mypage_main.do"><span>MY킹</span></a>
 				</div>
-	
+				
 				<div class="location">
 					<span class="addr">
-						<span>선택한 배달지 주소</span>
+					   <c:if test="${empty addrSession }">
+						<span>배달지를 선택하세요</span>
+					   </c:if>
+					   <c:if test="${!empty addrSession }">
+						<span>${delivery_addr }</span>
+					   </c:if>
 					</span>
-					<span class="shop" style>
-						<span>매장명</span>
+					<span class="shop">
+					   <c:if test="${empty addrSession }">
+						<span>지점</span>
+					   </c:if>
+					   <c:if test="${!empty addrSession }">
+						<span>${addrSession.store_name }</span>
+					   </c:if>
 					</span>
-					<span class="money" style>
-						최소주문금액 : 
-						<span>12,000원</span>
-						/
-						<span>배달팁 : 0원</span>
-					</span>
-					<span class="no" style="display: none;"></span>
 					<span class="btn">
-						<a href="mypage_searchAddr.do">
+						<a href="javascript:locationModify();">
 							<span>변경</span>
 						</a>
 					</span>
 				</div>
-			</div>		.web_container end 
-		</div>		 .locationWrap end(까만영역) -->
+			</div>
+		</div>
 		
 		<!-- 2. 하얀영역 -->
 		<div class="contentsBox01 bg_w">
@@ -94,7 +98,7 @@
 							</dd>
 						</dl>
 						
-						<dl class="qmenu_myplace">
+						<%-- <dl class="qmenu_myplace">
 							<dt>MY배달지</dt>
 							<dd>
 								<strong>${myLocSize }개</strong>
@@ -105,7 +109,7 @@
 							<!-- <a href="location_list.do?user_id=홍길동" class>
 								<span>MY배달지</span>
 							</a> -->
-						</dl>
+						</dl> --%>
 					</div>
 				</div>			<!-- .myking_info end -->
 			</div>				<!-- .web_container end -->
@@ -168,22 +172,27 @@
 					</a>
 				</div>
 				
-				<!-- 
+				
 				<div class="qmenuWrap02">
 					<ul>
-						<li class="qmenu_myset">
+						<!-- <li class="qmenu_myset">
 							<a href="#" class>
 								<span>MY세트</span>
+							</a>
+						</li> -->
+						<li class="qmenu_myset">
+							<a href="delivery_home.do" class>
+								<span>주문하기</span>
 							</a>
 						</li>
 						
 						<li class="qmenu_myplace">
-							<a href="location_list.do?user_id=홍길동" class>
+							<a href="myLocation.do" class>
 								<span>MY배달지</span>
 							</a>
 						</li>
 					</ul>
-				</div> -->		<!-- .qmenuWrap02 end --> 
+				</div>		<!-- .qmenuWrap02 end --> 
 			</div>			<!-- .web_container.container01 end -->
 		</div>				<!-- .contentsBox01 end -->
 	</div>			<!-- .contentsWrap end (내용영역 끝) -->

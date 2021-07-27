@@ -31,4 +31,8 @@
 		update my_location set loc_nickname = #{loc_nickname}
 		where loc_no = #{loc_no}
 	</update>
+	
+	<delete id="deleteUserLoc">
+		delete from my_location where user_id = #{user_id}
+	</delete>
 </mapper>

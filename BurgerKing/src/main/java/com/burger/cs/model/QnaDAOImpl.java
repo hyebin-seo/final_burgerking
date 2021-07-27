@@ -35,6 +35,12 @@ public class QnaDAOImpl implements QnaDAO {
 		return this.sqlSession.selectOne("q_content", no);
 	}
 
+	@Override
+	public void deleteUserQna(String user_id) {
+		
+		this.sqlSession.delete("deleteUserQna", user_id);
+	}
+
 
 
 	@Override

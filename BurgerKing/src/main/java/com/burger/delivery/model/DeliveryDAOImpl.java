@@ -36,5 +36,12 @@ public class DeliveryDAOImpl implements DeliveryDAO {
 	public List<OrderMenuDTO> orderMenuOpen(String order_no) {
 		return this.sqlSession.selectList("order_menu_list", order_no);
 	}
+
+	// 회원 탈퇴 시 주문 삭제 메소드 추가
+	@Override
+	public void deleteUserOrder(String user_id) {
+		
+		this.sqlSession.delete("deleteUserOrder", user_id);
+	}
 	
 }

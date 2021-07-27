@@ -41,32 +41,33 @@
 							<dd>
 								<div class="vtop m_rbtnWrap">
 									<span>
-										<span>핸드폰번호</span>
+										<span class="phoneNo">${memberSession.user_phone }</span>
 									</span>
-									<button type="button" class="btn04 h02 m_rcen_btn">
+									<button type="button" class="btn04 h02 m_rcen_btn change">
 										<span>변경</span>
 									</button>
-									<button type="button" class="btn04 h02 m_rcen_btn" style="display:nont;">
+									<button type="button" class="btn04 h02 m_rcen_btn cancel" style="display:none;">
 										<span>취소</span>
 									</button>
 								</div>
 								<div class="auth_numWrap" style="display:none;">
 									<div>
 										<input type="text" placeholder="휴대폰 번호를 입력해 주세요">
-										<button type="button" disabled="disabled" class="btn04 h02">
+										<button type="button" disabled="disabled" class="btn04 h02 sendSMS">
 											<span>인증번호 발송</span>
 										</button>
 									</div>
 									<div style="display: none;">
 										<input type="text" placeholder="인증번호 입력">
-										<button type="button" disabled="disabled" class="btn04 h02"
+										<button type="button" disabled="disabled" class="btn04 h02 certify"
 												style="display: none;">
 											<span>인증</span>
 										</button>
-										<button type="button"class="btn04 h02">
+										<!-- <button type="button"class="btn04 h02 reset">
 											<span>재설정</span>
-										</button>
-										<em class="time"></em>
+										</button> -->
+										<!-- 3분 시간제한 -->
+										<!-- <em class="time"></em> -->
 									</div>
 								</div>
 							</dd>
@@ -81,7 +82,7 @@
 						<span>비밀번호 변경</span>
 					</a>
 				</div>
-				<h3 class="tit01 tit_ico marketing">
+				<!-- <h3 class="tit01 tit_ico marketing">
 					<span>마케팅 정보 수신동의</span>
 				</h3>
 				<div class="container02 auth_list">
@@ -101,18 +102,18 @@
 							</span>
 						</label>
 					</div>
-				</div>
+				</div> -->
 				<div class="bot_btn_area">
 					<div class="c_btn m_item2">
-						<a href="#" class="btn01 m">
+						<a href="mypage_main.do" class="btn01 m">
 							<span>취소</span>
 						</a>
-						<a class="btn01 m red">
+						<a class="btn01 m red submit">
 							<span>변경</span>
 						</a>
 					</div>
 					<div class="withdrawal">
-						<a class="btn_withdrawal">
+						<a class="btn_withdrawal" href="secession.do">
 							<span>회원탈퇴</span>
 						</a>
 					</div>
@@ -122,6 +123,7 @@
 	</div>
 
 </body>
+<script src="resources/js/mypage/mypage_changeInfo.js"></script>
 <!-- 하단 푸터 -->
 <jsp:include page="footer.jsp" />
 </html>

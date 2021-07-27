@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+html {
+    font-size: 16px;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+body, html {
+    height: 100%;
+    min-height: 450px;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    min-height: 100%;
+    color: #000;
+    background: #f2ebe6;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-size: 1em;
+}
+dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    margin: 0;
+    font: normal 1em HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
+    color: #000;
+    vertical-align: middle;
+    background: 0;
+    border: none;
+    overflow: visible;
+    cursor: pointer;
+}
+button, table td, table th {
+    padding: 0;
+}
+
+
+
+.contentsWrap {
+    min-height: 450px;
+    margin: 0 auto;
+    
+    /* 추가 */
+	margin-top: 178px;		/* 헤더 영역만큼 띄우기 */
+}
+
+.locationWrap {
+    height: 58px;
+    padding: 10px 0;
+    color: #fff;
+    line-height: 38px;
+    background: #000;
+}
+
+.locationWrap .web_container {
+    overflow: hidden;
+}
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page_navi {
+    float: left;
+    font-size: .875rem;
+}
+
+.locationWrap a {
+    color: #fff;
+}
+.page_navi>* {
+    float: left;
+}
+
+.page_navi>:before {
+    content: "";
+    float: left;
+    width: 4px;
+    height: 38px;
+    margin: 0 12px;
+    background: url(data:image/gif;base64,R0lGODlhBAAMAMQAAC8vLykpKWNjY3t7e3h4eAgICMDAwK+vr5+fn29vbxERER8fHzk5OQwMDCYmJqenp7S0tGpqauvr64SEhOjo6OXl5aurq7i4uAoKCuLi4qioqDQ0NAAAAAAAAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3RDlDMTkwQ0Y4NkYxMUU4OTQ3MUJFNDg0MTU3OTQ0RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3RDlDMTkwREY4NkYxMUU4OTQ3MUJFNDg0MTU3OTQ0RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdEOUMxOTBBRjg2RjExRTg5NDcxQkU0ODQxNTc5NDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdEOUMxOTBCRjg2RjExRTg5NDcxQkU0ODQxNTc5NDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAQADAAABSLg43DcoJENBZAJRBYZQwoGGV0cVm0cYXEKSYAzQZAOC1IIADs=) no-repeat 50%;
+}
+
+.page_navi>:before {
+    content: "";
+    float: left;
+    width: 4px;
+    height: 38px;
+    margin: 0 12px;
+    background: url(data:image/gif;base64,R0lGODlhBAAMAMQAAC8vLykpKWNjY3t7e3h4eAgICMDAwK+vr5+fn29vbxERER8fHzk5OQwMDCYmJqenp7S0tGpqauvr64SEhOjo6OXl5aurq7i4uAoKCuLi4qioqDQ0NAAAAAAAAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3RDlDMTkwQ0Y4NkYxMUU4OTQ3MUJFNDg0MTU3OTQ0RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3RDlDMTkwREY4NkYxMUU4OTQ3MUJFNDg0MTU3OTQ0RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdEOUMxOTBBRjg2RjExRTg5NDcxQkU0ODQxNTc5NDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdEOUMxOTBCRjg2RjExRTg5NDcxQkU0ODQxNTc5NDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAQADAAABSLg43DcoJENBZAJRBYZQwoGGV0cVm0cYXEKSYAzQZAOC1IIADs=) no-repeat 50%;
+}
+
+.join_welcome, .withdrawal_complete {
+    padding: 16% 0;
+    text-align: center;
+    background: #fff;
+}
+.contentsBox01 {
+    padding: 50px 0 45px;
+}
+
+.MOB {
+    display: none!important;
+}
+
+.title_btn {
+    display: none;
+}
+
+.join_welcome .logo, .withdrawal_complete .logo {
+    height: 194px;
+    margin-bottom: 8%;
+    text-indent: -99999em;
+    background: url(https://www.burgerking.co.kr/dist/img/logo02.8c6a70fc.png) no-repeat top;
+}
+
+.join_welcome .cont, .withdrawal_complete .cont {
+    font-size: 1.25rem;
+    line-height: 160%;
+}
+
+.join_welcome .tit, .withdrawal_complete .tit {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.join_welcome .c_btn, .withdrawal_complete .c_btn {
+    margin-top: 55px;
+}
+.c_btn:last-child {
+    margin-bottom: 0;
+}
+.c_btn {
+    margin: 40px 0 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.btn01 {
+    display: inline-block;
+    width: 256px;
+    height: 68px;
+    font-size: 1.5rem;
+    padding: 12px 10px 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_normal.192da552.png) no-repeat 50%;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+
+/* 추가 */
+.page_navi>a:first-child:before {
+    content: "";
+    float: left;
+    width: 0;
+    height: 38px;
+    margin: 0;
+}

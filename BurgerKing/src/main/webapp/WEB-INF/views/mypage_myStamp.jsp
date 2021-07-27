@@ -199,7 +199,7 @@
 						※단품, 콤보 및 쿠폰, 전자상품권을 통한 할인 구매 시 스탬프 적립이 되지 않습니다. 그 외 할인 프로모션의 경우 정책에 따라 적립되지 않을 수 있습니다.
 					</p>
 					<div class="c_btn">
-						<a href="#" class="btn01 red">
+						<a href="delivery_home.do" class="btn01 red">
 							<span>지금 주문하기</span>
 						</a>
 					</div>

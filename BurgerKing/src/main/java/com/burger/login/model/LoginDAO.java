@@ -34,5 +34,11 @@ public interface LoginDAO {
 	public OrderListDTO order_check(OrderListDTO dto);
 	
 	
+	// 혜린 추가
+	// 핸드폰 번호 바꾸기
+	public void change_phoneNo(UserDTO user);
+	
+	// 회원 탈퇴
+	public void deleteUser(String user_id);
 
 }

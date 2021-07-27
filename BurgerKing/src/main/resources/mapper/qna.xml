@@ -44,10 +44,13 @@
 		select * from qna where qna_no = #{no}
 	</select>
 	
-	
 	<update id="q_edit" parameterType="com.burger.cs.model.QnaDTO">
 		update qna set qna_status = '문의접수 확인'
 		    	 where qna_no = #{qna_no}
 	</update>
+	
+	<delete id="deleteUserQna">
+		delete from qna where qna_mail = #{user_id}
+	</delete>
 	
 </mapper>

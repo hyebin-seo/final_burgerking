@@ -32,4 +32,9 @@
 			#{menu_mount},#{detailStr},#{side},#{drink},#{menu_img})
 	
 	</insert>
+	
+	<!-- 회원 탈퇴 시 주문 삭제 추가 -->
+	<delete id="deleteUserOrder">
+		delete from orderlist where order_id = #{user_id}
+	</delete>
 </mapper>

@@ -16,4 +16,6 @@ public interface LocationDAO {
 	
 	public void changeLocName(LocationDTO loc);
 	
+	public void deleteUserLoc(String user_id);
+	
 }

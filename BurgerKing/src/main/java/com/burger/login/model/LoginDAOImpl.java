@@ -72,4 +72,18 @@ public class LoginDAOImpl implements LoginDAO {
 				
 	}
 
+	
+	// 핸폰번호 바꾸기
+	@Override
+	public void change_phoneNo(UserDTO user) {
+		
+		this.sqlSession.update("changePhone", user);
+	}
+
+	@Override
+	public void deleteUser(String user_id) {
+		
+		this.sqlSession.delete("deleteUser", user_id);
+	}
+
 }
