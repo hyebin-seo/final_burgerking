@@ -76,6 +76,10 @@ table {
     font-size: 1em;
 }
 
+a{
+	text-decoration: none;
+	color: black;
+}
 .tlist01 thead tr {
     background: #fafafa;
     border: 0 solid #000;

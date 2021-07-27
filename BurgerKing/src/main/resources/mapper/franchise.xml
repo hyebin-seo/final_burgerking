@@ -29,4 +29,31 @@
 				     where rnum >= #{startNo} and rnum <= #{endNo} 
 		]]>
 	</select>
+	
+	<select id="franchiseCont" parameterType="int" 
+                     resultType="com.burger.cs.model.FranchiseDTO">
+      select fran_no, fran_name, fran_birth, fran_phone, fran_email, fran_possession, fran_area, 
+      fran_job, fran_opinion, fran_regdate, fran_status, a.name as fran_city, b.name as fran_gu
+      from franchise f, local a, local b
+      where f.fran_city = a.lockey
+      and f.fran_gu = b.lockey
+      and f.fran_no = #{no}
+      
+   </select>
+   
+   <update id="francshieUpdate" parameterType="com.burger.cs.model.FranchiseDTO">
+		update franchise set fran_status = '가맹 승인 완료'
+		    	 where fran_no = #{fran_no}
+	</update>
+	
+	<delete id="franchiseDelete" parameterType="int">
+		delete from franchise where fran_no = #{no}
+	</delete>
+	
+	<update id="reFranchiseNO" parameterType="int">
+		<![CDATA[
+			update franchise set fran_no = fran_no - 1
+					where fran_no > #{no}
+		]]>
+	</update>
 </mapper>

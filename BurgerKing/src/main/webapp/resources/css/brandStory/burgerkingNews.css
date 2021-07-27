@@ -209,3 +209,166 @@ img {
     line-height: 140%;
     letter-spacing: -1.2px;
 }
+
+/*반응형*/
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn {
+    border-bottom: 1px solid #f2f2f2;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_shadow {
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li {
+    position: relative;
+    border: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li.on button {
+    border: 0;
+    color: #000;
+    background: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li button {
+    padding: 15px 0;
+    font-size: .938em;
+    background: none;
+    border-bottom: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -6px;
+    content: "";
+    width: 1px;
+    height: 12px;
+    background: #e4e4e4;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.new_product {
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_subtit {
+    margin: 20px 0;
+    font-weight: 700;
+    font-size: 1.375rem;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.new_product .prdmenu_list {
+    padding: 0 16px 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list {
+    margin: 0;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.new_product .prdmenu_list li:nth-child(odd) {
+    clear: both;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.new_product .prdmenu_list li {
+    display: block;
+    float: left;
+    width: 48%;
+    padding: 0;
+    border: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list li {
+    position: relative;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: auto;
+    min-height: 95px;
+    margin-bottom: 0;
+    padding: 10px 40px 10px 133px;
+    border-bottom: 1px solid #f8f3ed;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.new_product .prdmenu_list .prd_img {
+    position: static;
+    margin: 0 auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .prd_img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 116px;
+    height: 76px;
+    margin-top: -38px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.new_product .prdmenu_list .cont {
+    max-width: 100%;
+    font-size: .75rem;
+    line-height: 150%;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.menu_sub_list .price, .prdmenu_list .tit {
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.new_product .prdmenu_list .txt_intro {
+    margin: 8px 0 10px;
+    font-size: .8125rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.prdmenu_list .cont {
+    width: 100%;
+    min-height: 1em;
+    padding: 18px 0;
+    color: #2e2e2e;
+    text-align: left;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.new_product .prdmenu_list li:nth-child(2n) {
+    float: right;
+}}
+
+

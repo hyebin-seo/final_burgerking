@@ -20,7 +20,7 @@ html {
 body{
 	min-height: 100%; 
 	color: #000; 
-	background: #f2ebe6; 
+	/* background: #f2ebe6;  */
 	word-wrap:normal; 
 	word-break: keep-all;
 	margin: 0;
@@ -46,6 +46,9 @@ body{
 .bg_w{
 	background: #fff;
 }
+div .branch_intro01{
+	margin-top: 0;
+}
 
 /*모집 설명 div class*/
 .contentsBox01{
@@ -68,8 +71,8 @@ body{
 }
 
 /*TASTE IS KING 글씨*/
-.branch_intro01 .keyowrd{
-	width: 572px;
+.branch_intro01 .keyword{
+	width: auto;
 	height: 67px; 
 	margin-bottom: 30px;
 	text-indent: -99999em;
@@ -84,7 +87,7 @@ body{
 	font-family: 'S-CoreDream-9Black';
 }
 h5.tit{
-	width: 572px;
+	width: auto;
 	height: 88px;
 	letter-spacing: -0.9px;
 }
@@ -99,6 +102,7 @@ h5.tit{
 }
 /*버거킹 글 설명*/
 .msgbox p { 
+	width: auto!important;
 	margin: 0;
 	font-family: 'S-CoreDream-5Medium';
 	width: 610px;
@@ -260,7 +264,7 @@ dt {
     text-align: center;
 }
 /*가맹점 신청방법 타이틀*/
-.branch_reg .tit_1 {
+.branch_reg .tit {
 	font-family: 'S-CoreDream-9Black';
     font-size: 3rem;
     line-height: 100%; 
@@ -355,3 +359,328 @@ a {
 .eventWrap .contentsBox01 {
     padding: 50px 0 120px;
 }
+
+
+/*반응형*/
+@media screen and (min-width: 375px) and (max-width: 767px)
+{html {
+    font-size: 17px;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro01 {
+    font-size: .875rem;
+    line-height: 157%;
+    border-bottom: 2px solid #6e3d2f;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro01 .web_container {
+    height: auto;
+    padding: 34px 16px 220px;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_branch_m.2d2f778c.jpg) no-repeat bottom;
+    background-size: 360px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro01 .msgbox {
+    width: auto;
+    min-width: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro01 .keyword {
+	width: auto;
+    height: 37px;
+    margin-bottom: 20px;
+    text-indent: -99999em;
+    background: url(https://www.burgerking.co.kr/dist/img/txt_king01_m.eb7a12bc.jpg) no-repeat top;
+    background-size: auto 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro01 .tit {
+	width: auto;
+    margin: 20px 0 17px;
+    font-size: 1.5rem;
+    line-height: 125%;
+    text-align: center;
+    letter-spacing: -1px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro01 .tit>* {
+    display: inline-block;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{
+	h5.tit {
+    width: auto;
+    height: 31px;
+    letter-spacing: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{
+	.msgbox p{
+		width: auto!important;
+		font-size: 0.875rem; 
+	}
+}}
+/*두 번쨰 영역*/
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01:last-child {
+    padding-bottom: 23px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.container01 {
+    padding: 16px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+/*걍 존나 이상*/
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .msgbox .tit {
+    padding: 12px 0 17px;
+    font-size: 1.125rem;
+    line-height: 123%;
+    text-align: center;
+    width: auto!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .msgbox>* {
+    float: none!important;
+    width: auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .msgbox .tit span {
+    display: inline;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .msgbox .txt {
+    padding-left: 0;
+    font-size: .875rem;
+    line-height: 160%;
+    width: auto!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .msgbox .txt p {
+	width: auto;
+    margin-bottom: 0;
+}}
+/*개 이상한 부분 끝 */
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .condition {
+    position: relative;
+    height: auto;
+    margin-top: 17px;
+    padding: 0;
+    background: none;
+    overflow: initial;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .condition>* {
+    float: none;
+    width: auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .condition .tit_ico {
+    margin-bottom: 10px;
+    padding-left: 33px;
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tit_ico:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: 100% auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tit01:first-child, .WEB:first-child+.tit01 {
+    margin-top: 8px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tit_ico {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 28px;
+    padding-left: 34px;
+    line-height: 28px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tit01 {
+    margin: 21px 0 8px;
+    font-weight: 700;
+    font-size: .75rem;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .condition .txtlist01 {
+    margin: 0 0 25px;
+    padding: 20px 20px 20px 17px;
+    line-height: 167%;
+    background: #fff;
+    -webkit-box-shadow: 0 2px 4px rgb(0 0 0 / 1%);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 1%);
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 {
+    margin: 7px 0;
+    font-size: .75rem;
+    line-height: 167%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 li {
+    position: relative;
+    padding-left: 15px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.txtlist01 li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 1.67em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAHCAYAAAArkDztAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0U0MEY1ODFFOThGMTFFOEEwMUZGOENGRkE5MEExMkYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0U0MEY1ODJFOThGMTFFOEEwMUZGOENGRkE5MEExMkYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDRTQwRjU3RkU5OEYxMUU4QTAxRkY4Q0ZGQTkwQTEyRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDRTQwRjU4MEU5OEYxMUU4QTAxRkY4Q0ZGQTkwQTEyRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjvBdNUAAABCSURBVHjaYmBAAHEohgMhIN4OxP+heAdUjGEJkiAMg8QYvmKRAIkxPMMiARJjqMIiUQySYATifCA+D8UFIDGAAAMAc/gcGk8cnHoAAAAASUVORK5CYII=) no-repeat 50%;
+    background-size: 3px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .condition .txtlist01 span {
+    display: inline;
+    word-wrap: normal;
+    word-break: keep-all;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_intro02 .condition:before  {
+   display: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_reg {
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_reg .tit {
+    padding-top: 25px;
+    font-size: 1.125rem;
+    line-height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_reg .step {
+    margin: 26px 0 30px;
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_reg .step li {
+    padding-top: 70px;
+    background-size: 59px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_reg .step {
+    margin: 26px 0 30px;
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_reg .step {
+    margin: 26px 0 30px;
+    font-size: .75rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_reg .step li:after {
+    height: 59px;
+    background-size: 5px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.eventWrap .c_btn {
+    margin: 0 0 35px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01, .btn01.m {
+    height: 48px;
+    line-height: 26px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn01 {
+    width: auto;
+    min-width: 158px;
+    font-size: 1.125rem;
+    background-size: 100% 100%!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.branch_reg .web_container {
+    padding-bottom: 20px;
+}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

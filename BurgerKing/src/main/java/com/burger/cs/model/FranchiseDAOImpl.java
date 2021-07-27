@@ -26,5 +26,25 @@ public class FranchiseDAOImpl implements FranchiseDAO{
 	public List<FranchiseDTO> getFranchiseList(PageDTO dto) {
 		return this.sqlSession.selectList("FranchiseList", dto);
 	}
+	
+	@Override
+	   public FranchiseDTO getFranchiseCont(int no) {
+	      return this.sqlSession.selectOne("franchiseCont", no);
+	   }
 
+	@Override
+	public int updateFranchise(int no) {
+		return this.sqlSession.update("francshieUpdate", no);
+	}
+
+	@Override
+	public int deleteFranchise(int no) {
+		return this.sqlSession.delete("franchiseDelete", no);
+	}
+
+	@Override
+	public void reFranchiseNO(int no) {
+		this.sqlSession.update("reFranchiseNO", no);
+		
+	}
 }

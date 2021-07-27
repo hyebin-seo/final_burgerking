@@ -379,3 +379,187 @@ button, table td, table th {
 .eventWrap .contentsBox01 {
     padding: 50px 0 120px;
 } */
+
+/*반응형*/
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{#app {
+    min-width: 100%;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subWrap01, .subWrap02 {
+    min-width: 320px;
+    padding-top: 0!important;
+    padding-bottom: 350px;
+}}
+
+
+
+/*이제 먹음 */
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn {
+    border-bottom: 1px solid #f2f2f2;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li {
+    position: relative;
+    border: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li.on button {
+    border: 0;
+    color: #000;
+    background: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li button {
+    padding: 15px 0;
+    font-size: .938em;
+    background: none;
+    border-bottom: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -6px;
+    content: "";
+    width: 1px;
+    height: 12px;
+    background: #e4e4e4;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_storyBtn li:nth-child(1):before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -6px;
+    content: "";
+    width: 0;
+    height: 12px;
+    //background: #e4e4e4;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_shadow {
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+}}
+
+/*이제 먹음 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{div .tab_aboutCon {
+    padding: 30px 15px 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_aboutCon div {
+    padding-bottom: 35px;
+    position: relative;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_aboutCon div:before {
+    padding-top: 56%;
+    position: absolute;
+    top: 45px;
+    left: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_aboutCon div h3 {
+    font-size: 1.375rem;
+    width: 100%;
+    float: none;
+    text-align: center;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_aboutCon div p {
+    font-size: .875rem;
+    width: 100%;
+    float: none;
+    padding-top: 60%;
+}}
+
+/*버거킹 history */
+@media screen and (max-width: 900px)
+{.history_area h4 {
+    font-size: 2.813rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.history_area ul {
+    width: 50%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_historyCon.hisBg01 .history_bgBox:after {
+    left: 70%;
+    background: url(	https://www.burgerking.co.kr/dist/img/img_history01.eacf28e5.png) no-repeat 0 100%;
+    background-size: auto 240px;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.history_bgBox:after {
+    top: auto;
+    right: auto;
+    bottom: 50px;
+    height: 240px;
+    -webkit-transform: none;
+    transform: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.MOB {
+    display: block!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_historyCon.hisBg02 .history_bgBox:after {
+    left: 0;
+    bottom: 30px;
+    width: auto;
+    height: 235px;
+    background: url(https://www.burgerking.co.kr/dist/img/img_history02_m.031c3a03.png) bottom no-repeat;
+    background-size: auto 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab_historyCon.hisBg03 .history_bgBox:after {
+    left: 55%!important;
+    bottom: 15px;
+    height: 175px;
+    background: url(https://www.burgerking.co.kr/dist/img/img_history03.2e3fa65c.png) 0 100% no-repeat;
+    background-size: auto 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsWrap {
+    padding-top: 57px;
+}}

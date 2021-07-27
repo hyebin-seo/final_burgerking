@@ -14,7 +14,13 @@
      font-weight: normal;
      font-style: normal;
 }
-
+.contentsWrap {
+    min-height: 450px;
+    margin: 0 auto;
+}
+.eventWrap .contentsBox01 {
+    padding: 50px 0 120px;
+}
 
 .contentsBox01 {
     padding: 50px 0 45px;
@@ -121,3 +127,167 @@ button, table td, table th {
 /* .tab01 a>*, .tab01 button>* {
     vertical-align: middle;
 } 이 부분 빼면 선이 조금 간격이 생김*/
+
+
+/*반응형*/
+@media screen and (min-width: 375px) and (max-width: 767px)
+{html {
+    font-size: 17px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsWrap {
+    padding-top: 57px;
+}}
+
+/*까만 메뉴 영역*/
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap {
+    position: relative;
+    height: auto;
+    min-height: 48px;
+    padding: 0;
+    line-height: normal;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_titbox01.ac98b1ea.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.WEB {
+    display: none!important;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .web_container {
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .page_navi {
+    display: none;
+}}
+
+
+/*메뉴 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.contentsBox01 {
+    padding: 0!important;
+    margin-top: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01:last-child {
+    margin-bottom: -10px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 {
+    position: static;
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.bdBot {
+    border-bottom: 1px solid #f2f2f2;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 {
+    overflow: auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 ul {
+    display: table;
+    width: 100%;
+    background: #fff;
+}}
+
+@media screen and (min-width: 769px) and (max-width: 1024px)
+{.subtitWrap .tab01 li {
+    padding: 0 12px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 li {
+    display: table-cell;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 button {
+    height: 56px;
+    border-width: 3px 0;
+    font-size: 1rem;
+}}
+
+@media screen and (min-width: 769px) and (max-width: 1024px)
+{.subtitWrap .tab01 button {
+    font-size: 1rem;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.tab01 a, .tab01 button {
+    display: block;
+    width: 100%;
+    min-width: 4em;
+    height: 56px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    border-width: 3px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01:last-child {
+    margin-bottom: -10px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap .tab01 {
+    position: static;
+    margin: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}}

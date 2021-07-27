@@ -10,8 +10,10 @@
 <link href="resources/css/brandStory/burgerkingStory.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/brandStory/burgerkingStory.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1" />	
 </head>
 <body>
+	<jsp:include page="burgerkingStorylocation.jsp"/>
 	<jsp:include page="brandStory_menu.jsp"/>
 	<div class="tab_storyWrap">
 		<ul class="web_container tab_storyBtn m_shadow">
@@ -208,5 +210,8 @@
 			</div><!-- tab_historyCon hisBg03 end -->
 		</div><!-- HISTORY end  -->
 	</div><!-- tab_storyWrap end -->
+	</div>
+</div>
+</div>
 </body>
 </html>

@@ -11,6 +11,7 @@
 <script src="resources/js/brandStory/burgerkingTv.js"></script>
 </head>
 <body>
+	<jsp:include page="burgerkingNewslocation.jsp"/>
 	<jsp:include page="brandStory_menu.jsp"/>
 	<div class="web_container">
 	<div class="tab_cont">
