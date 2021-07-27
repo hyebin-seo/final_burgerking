@@ -502,3 +502,213 @@ screen and (max-width: 768px) and (orientation: portrait) {
 }
 
 }
+
+
+
+/* MY배달지 CSS */
+
+.delivery_list {
+    padding: 16px;
+}
+
+.delivery_list>li {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 45px 50px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.myaddrWrap {
+    margin-right: 40px;
+}
+
+.delivery_list .addr, .delivery_list .nick {
+    margin-right: 60px;
+    font-size: 1.5rem;
+}
+
+.delivery_list .nick {
+    position: relative;
+    display: inline-block;
+    min-width: 3em;
+    margin-right: 11px;
+    padding-right: 15px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+    
+    /* 추가 */
+    font-family: 'S-CoreDream-9Black';
+}
+
+.myaddrWrap>* {
+    display: inline-block;
+}
+
+.delivery_list .nick:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1px;
+    height: 20px;
+    margin-top: -10px;
+    background: #f2f2f2;
+}
+
+.myaddrWrap .addr {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.myaddrWrap .addr strong {
+    display: inline;
+    font-weight: 400;  
+    
+    /* 추가 */
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.delivery_list .addr_old {
+    margin-top: 7px;
+}
+.addr_old {
+    font-size: 1rem;
+    color: rgba(0,0,0,.5);
+}
+
+.addr_old .type {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 4px 8px;
+    font-weight: 700;
+    font-size: .625rem;
+    color: #fff;
+    line-height: 100%;
+    vertical-align: middle;
+    background: #8d8d8d;
+    border-radius: 2px;
+}
+
+.delivery_list .btn_del02 {
+    position: absolute;
+    right: 32px;
+    top: 26px;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+}
+.btn_del02, .btn_view01 {
+    height: 40px;
+    text-indent: -9999em;
+}
+.btn_del02 {
+    width: 30px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjJFRDY1N0JGQ0Y5MTFFODg4NzM5RURBODNFREU5MUUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjJFRDY1N0NGQ0Y5MTFFODg4NzM5RURBODNFREU5MUUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCMkVENjU3OUZDRjkxMUU4ODg3MzlFREE4M0VERTkxRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCMkVENjU3QUZDRjkxMUU4ODg3MzlFREE4M0VERTkxRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PlnEs3gAAAEpSURBVHjapJbrCsIwDIXb+fo6q8iYuzjE2x5OBNFfImiDqQTpknQOAmPN+c66dmfLzOeY+Nr4uvvKfVmTfoBmhowamV947+tFqkw0saihjD6YVD8DoQqlicXeGAPY5jowCLUSTCz2DOlv0DRnGqCWAyYWxzgtsE2GC8w1Ln5M4NwJmg2yvwvdCQJHTKRZd3QXUZOtYsoSfBuDU5OdAOBqx8GpyX4E/KCBU5NDAvyYAqcmJwX8xMEzweShuJHniNxS7Sj1zonBuxGL3GlMNG+1+u2NZUuryCUpf9pYdsGFRhCGZJUS9IUsS+GVICgiYVcImipocqGxZOK6FLRTaDxr7oJZN272F8NMtU74ZDbMo40maDPio99yyQona/zlcH/8tjhkrAP8LcAAmXEtfUz/kBEAAAAASUVORK5CYII=) no-repeat 50%;
+}
+
+.delivery_list .btn_detail {
+    width: 85%;
+}
+.btn_detail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -99999em;
+    background: transparent;
+}
+
+.delivery_list>li:last-child {
+    margin: 0;
+}
+
+
+/* MY배달지 반응형 */
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait){
+
+	.delivery_list {
+    padding: 16px;
+	}
+	
+	.delivery_list>li {
+    margin-bottom: 8px;
+    padding: 18px 20px;
+	}
+
+	.myaddrWrap {
+    position: relative;
+    margin-right: 20px;
+    padding-bottom: 1.4em;
+	}
+	
+	.delivery_list .nick {
+	    margin: 3px 0;
+	    font-size: .75rem;
+	}
+	
+		.myaddrWrap .nick {
+	    position: absolute;
+	    left: 0;
+	    bottom: 0;
+	}
+	
+		.delivery_list .addr, .delivery_list .nick {
+	    margin-right: 20px;
+	    font-size: 1rem;
+	}
+	
+	.myaddrWrap .addr {
+	    margin: 0;
+	}
+	
+	.myaddrWrap>* {
+	    float: none;
+	}
+	
+	.delivery_list .addr>strong {
+	    display: block;
+	}
+	
+	.delivery_list .addr_old {
+	    margin-top: 7px;
+	}
+
+	.addr_old {
+	    font-size: .75rem;
+	    color: rgba(0,0,0,.5);
+	}
+
+	.addr_old .type {
+	    margin-right: 4px;
+	    padding: 4px 6px 2px;
+	    font-weight: 700;
+	    font-size: 8px;
+	    color: #fff;
+	    line-height: 100%;
+	    vertical-align: middle;
+	    background: #8d8d8d;
+	    border-radius: 2px;
+	}
+
+	.delivery_list .btn_del02 {
+	    position: absolute;
+	    right: 6px;
+	    top: 6px;
+	    width: 40px;
+	    height: 40px;
+	    z-index: 10;
+	}
+
+	.btn_del02 {
+	    background-size: 12px auto;
+	}
+
+
+	
+}

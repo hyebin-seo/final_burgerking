@@ -56,6 +56,10 @@ button, table td, table th {
 }
 
 
+/* 추가 */
+.loc_container {
+	margin-top: -10px;
+}
 
 .contentsWrap {
     min-height: 450px;
@@ -181,4 +185,135 @@ button, table td, table th {
     width: 0;
     height: 38px;
     margin: 0;
+}
+
+
+/* 반응형 */
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{
+	.join_welcome, .withdrawal_complete {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 57px!important;
+    background: #fff;
+    z-index: 101;
+	}
+	
+	.contentsBox01 {
+    padding: 0!important;
+}
+
+	.join_welcome>.web_container, .withdrawal_complete>.web_container {
+    height: 100%;
+    padding: 19.5% 0 20px;
+    overflow: auto;
+}
+
+.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}
+
+.join_welcome .titleBar, .withdrawal_complete .titleBar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.titleBar {
+    position: relative;
+    padding: 0 45px;
+    height: 57px;
+    background: #fff;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.MOB {
+    display: block!important;
+}
+
+.title_btn {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.title_btn button {
+    height: 100%;
+}
+
+.btn_head_close {
+    width: 60px;
+    text-indent: -9999em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzhGRDZCMTNENUJCMTFFODk1N0FFOERGQTUxNjMxNDIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzhGRDZCMTRENUJCMTFFODk1N0FFOERGQTUxNjMxNDIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3OEZENkIxMUQ1QkIxMUU4OTU3QUU4REZBNTE2MzE0MiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3OEZENkIxMkQ1QkIxMUU4OTU3QUU4REZBNTE2MzE0MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pn3YebsAAAEwSURBVHjavNhNDoIwEAXg6lnEcA2C6PkxeAJET4AudWqKIQj0Z96zyVsxpV9XDGPM76okd0kj2RveyiUXyU1S+opPkqfk5dKRcLkDDef0kmMoioWbolZxFvWYKUbjllCzuMqDQuF8qDHuYAKLtbg84RxzjtiQgotF2dTGHdKRcCmoqyQbXsDAqVEMHAyFxMFRCBwNpcXFotoYlAZHR7FxKhQLB0GhcVAUCkdBaXHRqG0kzNZvEi6Uuo/WJTA7YQiKgkOhoDg0CoJjoVS4FFRL7IRVqIzZpmtQtDYdgYLjkCgYjoGC4BryBzkFV8eOCFJbl1icPeczwOgDi3d/aJmspRg2HT04LSoU9530jNcSDoXy4fq1kecUh0Yt4fqQOWzp/o5rEmqMq93li+nDtwADACvj7jAA3N70AAAAAElFTkSuQmCC) no-repeat 50%;
+    background-size: 19px auto;
+}
+
+.join_welcome .logo, .withdrawal_complete .logo {
+    height: 115px;
+    background: url(https://www.burgerking.co.kr/dist/img/logo02_m.cc56b72c.png) no-repeat top;
+    background-size: 110px auto;
+}
+
+.join_welcome .cont, .withdrawal_complete .cont {
+    padding: 0 16px;
+    font-size: .875rem;
+}
+
+.join_welcome .tit, .withdrawal_complete .tit {
+    margin-bottom: 17px;
+    font-size: 1.5rem;
+}
+
+.join_welcome .c_btn, .withdrawal_complete .c_btn {
+    margin-top: 30px;
+    padding: 0 16px;
+}
+
+.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.c_btn.m_item2 a:last-child, .c_btn.m_item2 button:last-child {
+    float: right;
+}
+
+
+.c_btn.m_item2 a:only-child, .c_btn.m_item2 button:only-child {
+    float: none;
+    width: auto;
+    min-width: 158px;
+}
+
+.c_btn.m_item2 a, .c_btn.m_item2 button {
+    float: left;
+    width: 49%;
+    width: calc(50% - 4px);
+    min-width: 40%;
+}
+
+.btn01, .btn01.m {
+    height: 48px;
+    line-height: 26px;
+}
+
+.btn01 {
+    width: auto;
+    min-width: 158px;
+    font-size: 1.125rem;
+    background-size: 100% 100%!important;
+}
+
+
+
+
 }

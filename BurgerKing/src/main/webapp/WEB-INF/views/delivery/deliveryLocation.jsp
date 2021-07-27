@@ -106,13 +106,44 @@
             
             <div class="tab_cont tab_cont_my">
                 <h3 class="hide">MY 배달지</h3>
-                <div class="nodata ">
-                    <p><strong><span> ${memberSession.user_name}</span> 님</strong><br>
-                    <span>
-                    	평소에 자주 배달받는 주소를 등록해 보세요.<br> 패스트오더로 보다 쉽고 빠르게 주문하실 수 있어요!
-                    </span></p>
-                </div>
-                <ul class="delivery_list"></ul>
+                <c:if test="${empty locList }">
+	                <div class="nodata ">
+	                    <p><strong><span> ${memberSession.user_name}</span> 님</strong><br>
+	                    <span>
+	                    	평소에 자주 배달받는 주소를 등록해 보세요.<br> 패스트오더로 보다 쉽고 빠르게 주문하실 수 있어요!
+	                    </span></p>
+	                </div>
+                </c:if>
+                <c:if test="${!empty locList }">
+               		<ul class="delivery_list">
+               			<c:forEach items="${locList }" var="loc">
+               				<li class="cls${loc.getLoc_no() }">
+               					<div class="cont">
+               						<div class="myaddrWrap">
+               							<div class="nick">
+               								<span>${loc.getLoc_nickname() }</span>
+               							</div>
+               							<p class="addr">
+               								<strong>${loc.getLoc_addr1() }</strong>
+               							</p>
+               						</div>
+               						<div class="addr_old">
+               							<em class="type">
+               								<span>지번</span>
+               							</em>
+               							<span>${loc.getLoc_addr2() }</span>
+               						</div>
+               						<button type="button" class="btn_del02" value="${loc.getLoc_no() }">
+               							<span>배달지 목록에서 삭제</span>
+               						</button>
+               					</div>
+               					<button type="button" class="btn_detail goDeli" value="${loc.getLoc_addr1() },${loc.getLoc_addr3() }">
+               						<span>배달지로 설정</span>
+               					</button>
+               				</li>
+               			</c:forEach>
+               		</ul>
+                </c:if>
             </div>
         </div>
     </div>

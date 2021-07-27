@@ -73,6 +73,9 @@ address, em {
 .coupon_list {
     padding-top: 26px;
     overflow: hidden;
+    
+    /* 추가 */
+    min-width: 1130px;
 }
 
 .coupon_list+.c_btn {
@@ -115,6 +118,9 @@ a.more>*, button.more>* {
 	/* background-color: #fff; */
 	width: 48%;
 	float: left;
+	
+	/* 추가 */
+	min-width: 530px;
 }
 
 .coupon_list>li:nth-child(odd) {
@@ -181,3 +187,137 @@ a.more>*, button.more>* {
 .coupon_price p:nth-child(2) {
 	color: #E22219;
 }
+
+
+/* 반응형 */
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{
+	.contentsBox01 {
+    padding: 0!important;
+	}
+	
+	.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}
+
+	.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}
+
+	.m_bg_basic {
+    background: #f2ebe6!important;
+}
+
+	.subtitWrap .page_tit {
+    margin: 0;
+    padding: 0 16px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+	.subtitWrap .r_option.txt01 {
+    margin: 5px 0 0 16px;
+    font-size: .625rem;
+}
+
+.subtitWrap .r_option {
+    position: static;
+    margin: 15px 16px 0;
+    font-size: .75rem;
+}
+
+.txt01 {
+    margin: 5px 0 7px;
+    font-size: .625rem;
+}
+
+.subtitWrap .r_option.txt01 em {
+    font-weight: 400;
+}
+
+.subtitWrap+.container01 {
+    padding-top: 0;
+}
+
+.container01:last-child {
+    padding-bottom: 23px;
+}
+
+.container01 {
+    padding: 16px;
+}
+
+.nodata {
+    padding: 172px 10px 10px;
+    font-size: .875rem;
+    line-height: 130%;
+    text-align: center;
+    color: #9a918c;
+    background: url(https://www.burgerking.co.kr/dist/img/ico_nodata01.26f01a61.png) no-repeat center 60px;
+    background-size: 89px auto;
+    z-index: 10;
+}
+
+.coupon_list {
+    padding: 0;
+}
+
+.c_btn {
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.btn01 {
+    width: auto;
+    min-width: 158px;
+    font-size: 1.125rem;
+    background-size: 100% 100%!important;
+}
+
+.btn01, .btn01.m {
+    height: 48px;
+    line-height: 26px;
+}
+
+a.more>*, button.more>* {
+    padding-right: 21px;
+}
+
+/* 추가 */
+
+.coupon_list {
+	text-align: center;
+}
+
+.coupon_list>li:nth-child(2n) {
+    float: none;
+}
+
+.coupon_list>li:nth-child(2n) {
+    float: none;
+}
+
+.coupon_list>.couponLi {
+	float: none;	
+	height: 200px;
+	margin-bottom: 1rem;
+}
+
+.mycoupon {
+	height: 200px;
+}
+
+.web_container {
+	overflow: hidden;
+}
+	
+}
+

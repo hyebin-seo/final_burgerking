@@ -1179,5 +1179,20 @@ html {
 }}
 
 
-
-
+/* 슬라이드 div 반응형 떄문에 추가 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{
+	.othermenu_list .slick-slide {
+    	width: 154px!important;
+    	height: 185px!important;
+	} 
+	
+	.slick-slide .cont .tit {
+		font-size: 0.9rem!important;
+	}
+	
+	.othermenu_list .prd_img {
+		height: auto;
+	}
+	
+}

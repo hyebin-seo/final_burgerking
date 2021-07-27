@@ -56,7 +56,7 @@ $(function(){
 	// 별칭변경 버튼 클릭하면 별칭 지정 팝업 (클릭한 배달지 별칭 이름 가지고)
 	$(".change_nick").on("click", function() {
 		$("#change_nick_pop").css("display","block");
-		$(".inpbox>input").val($(this).val().split(",")[0]);
+		$(".popWrap02 .inpbox>input").val($(this).val().split(",")[0]);
 		
 		changeLocName_locNo = $(this).val().split(",")[1];
 	});
@@ -93,8 +93,9 @@ $(function(){
 	});
 	
 	// 등록 버튼 누르면 이름 바뀌어야 함!
-	$(".changeOk").on("click", function () {
-		
+	/*$(".changeOk").on("click", function () {*/
+	$(document).on("click", ".changeOk", function() {
+			
 		if($("#change_nick_pop .inpbox input").val().length != 0) {
 			
 			changeLocName($("#change_nick_pop .inpbox input").val(),
