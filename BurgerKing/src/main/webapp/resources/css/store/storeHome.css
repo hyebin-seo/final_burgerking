@@ -1176,6 +1176,30 @@ button:focus {
     display: none!important;
 }
 
+.mapWrap .pintxt {
+    position: absolute;
+    left: 54%;
+    min-width: 32px;
+    padding: 12px 20px 11px;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    background: rgba(0,0,0,.75);
+    border-radius: 100px;
+    white-space: nowrap;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1234,7 +1258,7 @@ button:focus {
 	}
 	
 	.w_alignL {
-	    text-align: left!important;
+	    text-align: left;
 	}
 	
 	.subtitWrap {
@@ -1540,5 +1564,144 @@ button:focus {
 	#map {
 		height: 960px;
 	}
+	
+	.m_FullpopWrap .popbox01 {
+	    position: relative;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    max-height: 100%;
+	    margin: 0;
+	    padding-top: 56px;
+	    padding-bottom: 56px;
+	    -webkit-transform: none;
+	    transform: none;
+	}
+	
+	.popcont.pd03 {
+	    padding: 16px;
+	}
+	
+	.m_FullpopWrap .popcont {
+	    height: 100%;
+	    max-height: 100%!important;
+	    overflow: auto;
+	    -webkit-overflow-scrolling: touch;
+	}
+	
+	.popcont .container02.shop_detail {
+	    padding: 20px 24px 15px;
+	}
+	
+	.M_headerWrap {
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    background: #fff;
+	    z-index: 50;
+	}
+	
+	.M_headerWrap {
+	    line-height: normal;
+	}
+	
+	.titleBar {
+	    position: relative;
+	    padding: 0 45px;
+	    height: 57px;
+	    background: #fff;
+	    border-bottom: 1px solid #f7f7f7;
+	}
+	
+	.popWrap .titleBar .page_tit {
+	    height: 100%;
+	    padding: 0;
+	    font-size: 1.125rem;
+	    text-align: center;
+	    line-height: 55px;
+	}
+	
+	.popWrap .titleBar .title_btn {
+	    right: auto;
+	}
+	
+	.pop_header01 .btn_close, .popbox01 .title_btn button {
+	    position: static;
+	    width: 50px;
+	    background-size: 19px auto;
+	}
+	
+	.popWrap .titleBar .title_btn button {
+	    width: 60px;
+	}
+	
+	.shop_detail .shoptype_list {
+	    margin: -2px -5px;
+	    font-size: .75rem;
+	    overflow: hidden;
+	}
+	
+	.shop_detail .shoptype_list li {
+	    float: left;
+	    margin: 4px 0;
+	    padding-right: 2px;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	
+	.shop_type {
+	    position: relative;
+	    padding-left: 29px;
+	}
+	
+	.shop_type:before {
+	    content: "";
+	    position: absolute;
+	    left: 0;
+	    top: 50%;
+	    width: 21px;
+	    height: 21px;
+	    margin-top: -10.5px;
+	    background-repeat: no-repeat;
+	    background-position: 0;
+	    background-size: 100% auto;
+	}
+	
+	.shop_detail .shoptype_list .shop_type {
+	    padding-left: 25px;
+	}
+	
+	.shop_detail .shoptype_list .shop_type:before {
+	    background-size: 100% auto;
+	}
+	
+	.shop_detailinfo {
+	    font-size: .875rem;
+	    line-height: 129%;
+	}
+	
+	.pop_btn {
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: 0;
+	    padding: 15px 16px;
+	    overflow: hidden;
+	}
+	
+	.m_FullpopWrap .pop_btn {
+	    padding: 0;
+	}
+	
+	.mapWrap .pintxt
+	{
+	    min-width: 32px;
+	    padding: 8.5px 12px 6.5px;
+	    font-size: .75rem;
+	}
+	
 
 }

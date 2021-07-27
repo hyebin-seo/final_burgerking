@@ -233,7 +233,13 @@ function cityStoreOpen(city, gungu) {
     		   
     		   //마커 클릭 시 띄울 창
     		   var infoWindow = new naver.maps.InfoWindow({
-    		        content: "<div style='width:150px;'><b>"+ store.store_name +"</b></div>"
+    			   content: "<span class='pintxt snm' idx='0' style='z-index:10'>"+store.store_name+"</span>",
+      		        
+	   		        borderWidth: 0,
+	   		        disableAnchor: true,
+	   		        backgroundColor: 'transparent',
+	
+	   		        pixelOffset: new naver.maps.Point(20, -20)
     		   });
 
     		    markers.push(marker);
@@ -384,7 +390,12 @@ function storeOpen(x, y, zoomval) {
     		   
     		   //마커 클릭 시 띄울 창
     		   var infoWindow = new naver.maps.InfoWindow({
-    		        content: "<div style='width:150px;'><b>"+ store.store_name +"</b></div>"
+    			    content: "<span class='pintxt snm' idx='0' style='z-index:10'>"+store.store_name+"</span>",
+   		        
+	   		        borderWidth: 0,
+	   		        disableAnchor: true,
+	   		        backgroundColor: 'transparent'
+	
     		   });
 
     		    markers.push(marker);
@@ -537,7 +548,13 @@ function storeNameSearch(searchName) {
     		   
     		   //마커 클릭 시 띄울 창
     		   var infoWindow = new naver.maps.InfoWindow({
-    		        content: "<div style='width:150px;'><b>"+ store.store_name +"</b></div>"
+    			   content: "<span class='pintxt snm' idx='0' style='z-index:10'>"+store.store_name+"</span>",
+      		        
+	   		        borderWidth: 0,
+	   		        disableAnchor: true,
+	   		        backgroundColor: 'transparent',
+	
+	   		        pixelOffset: new naver.maps.Point(20, -20)
     		   });
 
     		    markers.push(marker);

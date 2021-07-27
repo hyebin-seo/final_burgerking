@@ -1030,5 +1030,116 @@ screen and (max-width: 768px) and (orientation: portrait) {
 	    font-size: .75rem;
 	    line-height: 24px;
 	}
+	
+	.addrPopWrap .btn_close {
+	    width: 50px;
+	    height: 50px;
+	    background-size: 12px auto;
+	}
+	
+	.popcont {
+	    padding: 16px 16px 0;
+	    max-height: 450px;
+	    font-size: 1rem;
+	    overflow-y: auto;
+	    -webkit-overflow-scrolling: touch;
+	}
+	
+	.popcont.pd02 {
+	    padding: 15px 24px;
+	}
+		
+		
+	.addr_chk {
+	    margin: 20px 0 12px;
+	    padding: 60px 0 22px;
+	    background-size: 30px auto;
+	}	
+		
+	.addr_chk dt {
+	    font-size: .75rem;
+	}	
+		
+	.addr_chk dd {
+	    margin-top: 8px;
+	    font-size: 1.125rem;
+	    color: #010101;
+	    line-height: 123%;
+	}	
+		
+	.addr_chk .txt {
+	    font-size: 1rem;
+	}
+	
+	.addr_chk+.txt02 {
+	    margin: 12px 0 0;
+	}
+		
+	.popbox02 .botfixWrap button, .addrPopWrap .txt02 {
+	    font-size: 1rem;
+	}
+	
+	.m_btn01_s {
+	    min-width: 120px;
+	    height: 50px!important;
+	    padding: 10px!important;
+	    font-size: 1.125rem!important;
+	    line-height: 30px!important;
+	    background-size: 100% 100%!important;
+	    background-image: url('https://www.burgerking.co.kr/dist/img/bg_btn01_s.3c55e1c9.png') no-repeat 0 0!important;
+	    border-radius: 0;
+	}
+	
+	.m_btn01_s.red {
+	    background-image: url('https://www.burgerking.co.kr/dist/img/bg_btn01_s_red.e9d9c88c.png')!important;
+	    background-size: 100% 100%;
+	}
+	
+	.c_btn {
+	    margin: 20px 0;
+	    text-align: center;
+	    overflow: hidden;
+	}	
+		
+	.pop_btn {
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: 0;
+	    padding: 15px 16px;
+	    overflow: hidden;
+	}
+
+	.pop_btn.item2 a, .pop_btn.item2 button {
+	    width: calc(50% - 6px);
+	    min-width: inherit;
+	}	
+		
+	.btn02, .btn02.red {
+	    height: 56px;
+	    padding: 2px 10px 0;
+	    font-weight: 700;
+	    line-height: 54px;
+	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 /* 모바일 딜리버리 헤더 end*/
