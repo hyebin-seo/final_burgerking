@@ -121,7 +121,7 @@ $(document).ready(function() {
 
 		var auth_fake = $("input.auth_fake").val();	// #user_id에 입력되는 값
 
-		if (auth_real === auth_fake) {
+		if (auth_real == auth_fake && auth_real!='' && auth_fake!='') {
 			location.href = 'joins.do?user_id=' + user_email;
 		} else {
 

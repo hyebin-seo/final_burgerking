@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -54,6 +54,16 @@
 	}
 		
 </script>	
+<style type="text/css">
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait){
+  
+  form {
+	width: 60%;	!important
+}
+
+}
+</style>
 
 
 </head>
@@ -66,8 +76,8 @@
 		<!-- 아이디, 비번, 이름, 연락처, 주소, 성별 -->
 		<h3 style="text-align: center; padding-top: 10vh;">JOIN</h3>
 		
-		<form method="post" action="<%=request.getContextPath()%>/join_Ok.do" style="width: 25%; margin: auto; padding-top: 5vh;">
-	  		<div class="mb-3">
+		<form method="post" action="<%=request.getContextPath()%>/join_Ok.do" style="width: 50%; margin: auto; padding-top: 5vh;">
+	  		<div class="">
 	    		<label for="id" class="form-label">아이디</label>
 	    		<input type="email" name="user_id" required class="form-control" id="user_id" placeholder="아이디(이메일)를 입력해주세요!" value="${user_id}" readonly="readonly" >
 	    		<!-- 아이디 중복체크 결과 들어갈 부분 -->
@@ -75,34 +85,34 @@
 	  			<span class="id_check_result2">아이디가 이미 존재합니다.</span>
 	  		</div>
 	  		
-	  		<div class="mb-3">
+	  		<div class="mb-6">
 	    		<label for="pwd" class="form-label">비밀번호</label>
 	    		<input type="password"  name="user_pwd" required class="form-control pwd_check" id="pwd">
 	  		</div>
 	  		
-			<div class="mb-3">
+			<div class="mb-6">
 	    		<label for="pwd_check" class="form-label">비밀번호 확인</label>
 	    		<input type="password" name="user_pwd_check" required class="form-control pwd_check" id="pwd_check">
 	  			<span class="pwd_check_result">비밀번호가 일치하지 않습니다.</span>
 	  			<span class="pwd_check_result1">아주 멋진 비밀번호입니다!</span>
 	  		</div>
 			
-			<div class="mb-3">
+			<div class="mb-6">
 	    		<label for="name" class="form-label">이름</label>
 	    		<input type="text" name="user_name" required class="form-control" id="name">
 	  		</div>
 	  		
-	  		<div class="mb-3">
+	  		<div class="mb-6">
 	    		<label for="phone" class="form-label">연락처</label>
 	    		<input type="text" name="user_phone" required class="form-control" id="phone" aria-describedby="emailHelp">
 	    		<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
 	  		</div>
 	  		
 	  		
-	  		<div class="mb-3">
+	  		<div class="mb-6">
 	  			<label style="display: block; " for="addr" class="form-label">주소</label>
 	  			
-	  			<div class="mb-3" id="addr">
+	  			<div class="mb-6" id="addr">
 	  				<div class="input-group mb-3">
 						<input name="user_zipcode" id="zipcode" class="form-control" placeholder="우편번호" required>
 						<button class="btn btn-secondary" type="button"
@@ -114,7 +124,7 @@
 	  		</div>
 	  		
 	  		
-	  		<div class="mb-3">
+	  		<div class="mb-6">
 	    		<label for="radio" class="form-label">성별</label>
 	    		
 	    		<div class="mb-3" id="radio">
@@ -129,7 +139,7 @@
 				</div>
 	  		</div>
 			
-			<div class="d-grid gap-2">
+			<div class="d-grid gap-4">
 				<button class="btn btn-primary" type="submit" style="background-color: black;">join</button>
 			</div>
 		</form>
