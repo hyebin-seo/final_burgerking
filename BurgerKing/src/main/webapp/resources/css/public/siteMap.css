@@ -1,0 +1,71 @@
+
+#app {
+    position: relative;
+    min-width: 960px;
+    min-height: 100%;
+}
+
+
+.web_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* 하단 사이트맵 전체 div */
+.sitemap {
+    height: 585px;
+    background: url('https://www.burgerking.co.kr/dist/img/bg_botmenu.3d4b484b.jpg') repeat-x top;
+}
+
+.sitemap ul.menu {
+    min-height: 338px;
+    padding-top: 50px;
+    overflow: hidden;
+    font-family: 'S-CoreDream-9Black';
+}
+
+.sitemap ul.menu>li {
+    position: relative;
+    float: left;
+    width: 20%;
+}
+
+.sitemap ul.menu>li a {
+    display: block;
+    height: 28px;
+    padding-left: 24px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #89513a;
+    line-height: 28px;
+}
+
+.sitemap ul.menu>li:first-child a {
+    padding-left: 0!important;
+}
+
+.sitemap ul.menu .submenu {
+    margin-top: 15px;
+}
+
+
+.sitemap ul.menu .submenu a {
+    height: 32px;
+    font-size: 1rem;
+    line-height: 32px;
+}
+
+.sitemap ul.menu>li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 338px;
+    border-left: 1px dashed #d9c8be;
+}
+
+.sitemap ul.menu>li:nth-child(1):before{
+	display: none;
+}

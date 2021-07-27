@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 <title>가맹점모집</title>
 <link rel="shortcut icon" type="image/x-icon" href="resources/img/public/favicon.ico">
 <link  href="resources/css/cs/user_franchise.css"  rel="stylesheet"  type="text/css">
+<link  href="resources/css/public/siteMap.css"  rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<jsp:include page="franchiselocation.jsp" />
@@ -132,9 +134,15 @@
 					<br>
 					<a href="mailto:kjsun124@naver.com?Subject=가맹점신청문의" target="_top">가맹점 신청 문의 : layeong.kang@bkr.co.kr </a>
 				</div>
+				<div>
+					<c:if test="${memberSession.getUser_right() == 'admin'}">
+					<input type="button" class="btn_list" value="가맹점 신청리스트" onclick="location.href='AdminFranchise.do'">
+					</c:if>
+				</div>
 			</div>
 		</div>
 	</div>
 	<jsp:include page="franchisePopup.jsp" />
 </body>
+	<jsp:include page="siteMap.jsp"/>
 </html>

@@ -9,7 +9,8 @@
 <link  href="resources/css/cs/admin_franchiseCont.css"  rel="stylesheet"  type="text/css">
 </head>
 <body>
-	<jsp:include page="header.jsp"/>
+	<jsp:include page="franchiselocation.jsp" />
+	<jsp:include page="cs_menu.jsp" />
 	<div class="tab_cont">
 		 <c:set var="dto" value="${franchiseCont }" />
 		  <c:if test="${!empty dto }">	   

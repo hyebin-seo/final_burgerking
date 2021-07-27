@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import com.burger.cs.model.FranchiseDAO;
 import com.burger.cs.model.FranchiseDTO;
 import com.burger.cs.model.NoticeDTO;
 import com.burger.cs.model.PageDTO;
+import com.burger.login.model.UserDTO;
 
 @Controller
 public class FranchiseController {
@@ -28,7 +30,13 @@ public class FranchiseController {
 	private final int rowsize = 8;
 	
 	@RequestMapping("Franchise.do")
-	public String MoveFranchise(Model model) {
+	public String MoveFranchise(HttpServletRequest request, Model model) {
+		
+		HttpSession session = request.getSession();
+		
+		UserDTO userDto = (UserDTO) session.getAttribute("memberSession");
+		
+		System.out.println("userDTO>>"+userDto);
 		
 		model.addAttribute("cat", "가맹점모집");
 		return "user_franchise";
@@ -80,6 +88,8 @@ public class FranchiseController {
 		
 		// 페이지에 해당하는 게시물을 가져오는 메서드 호출
 		List<FranchiseDTO> FranchiseList = this.dao.getFranchiseList(dto);
+		System.out.println(FranchiseList);
+		System.out.println(dto);
 		
 		model.addAttribute("List", FranchiseList);
 		model.addAttribute("Paging", dto);
@@ -149,6 +159,8 @@ public class FranchiseController {
 		}
 	}
 
-
-	
+	@RequestMapping("sitemap.do")
+	public String sitemap() {
+		return "siteMap";
+	}
 }

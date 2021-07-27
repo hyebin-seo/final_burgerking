@@ -132,4 +132,5 @@
 	</div>
 	<jsp:include page="faq_write.jsp"/>
 </body>
+	<jsp:include page="siteMap.jsp"/>
 </html>

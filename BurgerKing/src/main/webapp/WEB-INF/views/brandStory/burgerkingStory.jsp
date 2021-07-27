@@ -214,4 +214,5 @@
 </div>
 </div>
 </body>
+<jsp:include page="../siteMap.jsp"/>
 </html>
