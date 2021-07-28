@@ -18,6 +18,14 @@ public class EventDAOImpl implements EventDAO {
 	public int getListCount() {
 		return this.sqlSession.selectOne("e_count");
 	}
+	@Override
+	public int getListCount2() {
+		return this.sqlSession.selectOne("e_count2");
+	}
+	@Override
+	public int getListCount3() {
+		return this.sqlSession.selectOne("e_count3");
+	}
 
 	@Override
 	public List<EventDTO> getEventList(PageDTO dto) {

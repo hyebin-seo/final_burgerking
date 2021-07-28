@@ -10,6 +10,14 @@
 		select count(*) from event
 	</select>
 	
+	 <select id="e_count2" resultType="int">
+		select count(*) from event where event_cat = '진행중'
+	</select>
+	
+	 <select id="e_count3" resultType="int">
+		select count(*) from event where event_cat = '종료'
+	</select>
+	
 	
 	<select id="e_list" parameterType="com.burger.event.model.PageDTO"
 								resultType="com.burger.event.model.EventDTO">
@@ -40,7 +48,7 @@
 			select * from
 				(select n.*, row_number()
 				   over(order by event_no desc) rnum
-				   from event n) 
+				   from event n where event_cat = '종료') 
 				     where event_cat = '종료' and rnum >= #{startNo} and rnum <= #{endNo} 
 		]]>
 	</select>

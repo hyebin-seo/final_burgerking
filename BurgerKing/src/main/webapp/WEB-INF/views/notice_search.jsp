@@ -98,5 +98,5 @@
       </div> 
 
 </body>
-<jsp:include page="footer.jsp" />
+<jsp:include page="siteMap.jsp" />
 </html>

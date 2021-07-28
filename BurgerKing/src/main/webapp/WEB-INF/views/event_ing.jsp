@@ -44,7 +44,7 @@
 						</li>
 					</ul>
 				<div class="tab_cont m_bg_basic">
-					<div class = "event_list" align="center">
+					<div class = "event_ing" align="center">
 	    <table class = "table1">
 	         
 	   
@@ -98,11 +98,11 @@
       <c:forEach begin="${Paging.getStartBlock() }"
                          end="${Paging.getEndBlock() }" var="i">
          <c:if test="${i == Paging.getPage() }">
-            <b class="page"><a href="event_list.do?page=${i }">${i }</a></b>
+            <b class="page"><a href="event_ing.do?page=${i }">${i }</a></b>
          </c:if>
          
          <c:if test="${i != Paging.getPage() }">
-            <span class="page"><a href="event_list.do?page=${i }">${i }</a></span>
+            <span class="page"><a href="event_ing.do?page=${i }">${i }</a></span>
          </c:if>
       </c:forEach>
       </div>
@@ -112,6 +112,6 @@
 
 </body>
 <div id = "footer_m">
-<jsp:include page="footer.jsp" />
+<jsp:include page="siteMap.jsp" />
 </div>
 </html>
