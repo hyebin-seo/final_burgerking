@@ -6,6 +6,13 @@
 
 <mapper namespace="com.burger.stamp.model.StampDAO">
 	
+	<insert id="insertStamp">
+		insert into my_stamp values(
+		(select max(stamp_no + 1) from my_stamp),
+		#{user_id},
+		(select nvl(max(stamp_count + 1),1) from my_stamp where user_id = #{user_id}))
+	</insert>
+	
 	<select id="getStampList" resultType="com.burger.stamp.model.StampDTO">
 		select * from my_stamp where user_id = #{user_id}
 	</select>

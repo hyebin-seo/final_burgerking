@@ -15,8 +15,8 @@ public class StampDAOImpl implements StampDAO {
 	
 	@Override
 	public void insertStamp(String user_id) {
-		// TODO Auto-generated method stub
 		
+		this.sqlSession.insert("insertStamp", user_id);
 	}
 
 	@Override
