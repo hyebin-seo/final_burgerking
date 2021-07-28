@@ -27,6 +27,8 @@ import com.burger.delivery.model.DeliveryDTO;
 import com.burger.delivery.model.OrderListDTO;
 import com.burger.delivery.model.OrderMenuDTO;
 import com.burger.delivery.model.OrderMenuListDTO;
+import com.burger.location.model.LocationDAO;
+import com.burger.location.model.LocationDTO;
 import com.burger.login.model.UserDTO;
 import com.burger.stamp.model.StampDAO;
 import com.burger.store.model.StoreDAO;
@@ -45,6 +47,10 @@ public class DeliveryController {
 	
 	@Autowired
 	private StoreDAO storeDao;
+	
+	// MY배달지 DAO 추가
+	@Autowired
+	private LocationDAO locationDao;
 	
 	@RequestMapping("delivery_home.do")
 	public String moveDelivery(Model model, 
@@ -130,6 +136,10 @@ public class DeliveryController {
 		
 		if(udto != null) {
 			List<OrderListDTO> olist = dao.gerOrderList(udto.getUser_id());
+			// MY배달지 리스트 추가
+			List<LocationDTO> locList = locationDao.getMyLocationList(udto.getUser_id());
+			
+			model.addAttribute("locList", locList);
 			model.addAttribute("orderList", olist);
 			return "delivery/deliveryLocation";
 		} else {

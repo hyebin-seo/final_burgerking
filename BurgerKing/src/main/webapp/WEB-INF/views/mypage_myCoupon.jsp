@@ -14,11 +14,48 @@
 <jsp:include page="delivery/deliveryCart.jsp"/>
 <body>
 	
+<div class="contentsWrap">
+	
 	<!-- 페이지 넘어올 때 컨트롤러에서 전달한 데이터들 -->
 	<c:set var="couponList" value="${couponList }" />
 	<c:set var="menu5" value="${menu5 }" />
 	<c:set var="menu10" value="${menu10 }" />
 	
+	<!-- 1. 까만 영역 -->
+	<div class="loc_container">
+		<div class="loc">
+			<div class="page-navi">
+				<a href="delivery_home.do"><span>딜리버리</span></a>
+				<a href="mypage_main.do"><span>MY킹</span></a>
+				<span>딜리버리쿠폰</span>
+			</div>
+			
+			<div class="location">
+				<span class="addr">
+				   <c:if test="${empty addrSession }">
+					<span>배달지를 선택하세요</span>
+				   </c:if>
+				   <c:if test="${!empty addrSession }">
+					<span>${delivery_addr }</span>
+				   </c:if>
+				</span>
+				<span class="shop">
+				   <c:if test="${empty addrSession }">
+					<span>지점</span>
+				   </c:if>
+				   <c:if test="${!empty addrSession }">
+					<span>${addrSession.store_name }</span>
+				   </c:if>
+				</span>
+				<span class="btn">
+					<a href="javascript:locationModify();">
+						<span>변경</span>
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>
+		
 	<div class="contentsBox01">
 		<div class="web_container">
 			<div class="subtitWrap m_bg_basic">
@@ -91,6 +128,8 @@
 			</div>
 		</div>	<!-- .web_container -->
 	</div>		<!-- .contentsBox01 -->
+
+</div>
 
 </body>
 <jsp:include page="footer.jsp" />

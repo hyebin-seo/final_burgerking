@@ -51,6 +51,10 @@ button, table td, table th {
     padding: 0;
 }
 
+/* 추가 : 줄이면 밑으로 떨어져서 */
+.loc_container {
+	min-width: 960px;
+}
 
 .contentsBox01 {
     padding: 50px 0 45px;
@@ -348,6 +352,28 @@ label, label>span {
     vertical-align: middle;
 }
 
+@media (min-width: 769px)
+{input[type=text], input[type=url] {
+    display: inline-block;
+    /* height: 66px; */
+    margin: 0;
+    padding: 3px 10px 3px 4px;
+    font-weight: 400;
+    /* font-size: 1.375rem; */
+    font-family: 'S-CoreDream-5Medium';
+    color: #000;
+    vertical-align: middle;
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none; */
+    /* background: url(../../img/delivery/search_under.png) repeat-x 0 100%; */
+}}
+
 input[type=checkbox], input[type=radio] {
     position: absolute;
     margin: 0;
@@ -421,7 +447,7 @@ input[type=checkbox], input[type=radio] {
     -webkit-appearance: none;
     opacity: 0;
 }
-user agent stylesheet
+/* user agent stylesheet
 input[type="checkbox" i] {
     background-color: initial;
     cursor: default;
@@ -430,7 +456,7 @@ input[type="checkbox" i] {
     margin: 3px 3px 3px 4px;
     padding: initial;
     border: initial;
-}
+} */
 
 .auth_list label>span {
     display: inline;
@@ -614,10 +640,22 @@ input {
 	margin-top: 3.7rem;
 }
 
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.subtitWrap {
+    min-height: 56px;
+    margin: 0;
+    padding: 20px 0 10px;
+    background: #fff;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.m_bg_basic {
+    background: #f2ebe6!important;
+}}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
 {.contentsWrap {
-    padding-top: 57px;
+    /* padding-top: 57px; */
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
@@ -637,13 +675,13 @@ input {
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-.web_container, .web_container02 {
+{.web_container, .web_container02 {
     min-width: 320px;
     padding: 0;
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-.subtitWrap {
+{.subtitWrap {
     min-height: 56px;
     margin: 0;
     padding: 20px 0 10px;
@@ -859,16 +897,16 @@ input {
     padding-right: 81px;
 }}
 
-@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+/* @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
 {.auth_numWrap input {
     width: 100%;
     padding-right: 0;
     font-size: .75rem;
-}}
+}} */
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
 {input[type=color], input[type=date], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=rang], input[type=search], input[type=tel], input[type=text], input[type=url] {
     display: inline-block;
-    height: 39px;
+    height: 39px!important;
     margin: 0;
     padding: 0 25px 3px 0;
     font: normal 1rem HGG,Malgun Gothic,"\B9D1\C740 \ACE0\B515",dotum,"\B3CB\C6C0",sans-serif;
@@ -884,12 +922,6 @@ input {
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.btn04.h02 {
-    min-width: 36px;
-    font-size: .625rem;
-    height: 24px;
-}}
-@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
 {.auth_numWrap button {
     position: absolute;
     right: 0;
@@ -898,6 +930,14 @@ input {
     height: 24px;
     margin-top: -12px;
 }}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.btn04.h02 {
+    min-width: 36px;
+    font-size: .625rem;
+    height: 24px;
+}}
+
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
 {.btn04, .btn04_m {
@@ -917,13 +957,7 @@ input {
     padding-right: 81px;
 }}
 
-@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.auth_numWrap input {
-    width: 100%;
-    padding-right: 0;
-    font-size: .75rem;
-}}
-@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+/* @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
 {input[type=color], input[type=date], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=rang], input[type=search], input[type=tel], input[type=text], input[type=url] {
     display: inline-block;
     height: 39px;
@@ -939,6 +973,13 @@ input {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-appearance: none;
+}}
+ */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.auth_numWrap input {
+    width: 100%;
+    padding-right: 0;
+    font-size: .75rem!important;
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
@@ -1194,3 +1235,107 @@ input {
 {.bot_btn_area .withdrawal .btn_withdrawal>:after {
     background-size: 16px auto;
 }}
+
+
+/* page-navi 반응형 */
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap {
+    position: relative;
+    height: auto;
+    min-height: 48px;
+    padding: 0;
+    line-height: normal;
+    background: url(../img/bg_titbox01.ac98b1ea.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .web_container {
+    height: 100%;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.web_container, .web_container02 {
+    min-width: 320px;
+    padding: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .page_navi {
+    display: none;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .location {
+    display: table;
+    float: none;
+    width: 100%;
+    padding: 5px 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .addr {
+    max-width: inherit;
+    padding-left: 40px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAsCAYAAAAEuLqPAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzUzQjc0MkRFNjE4MTFFODgwNTdGMDE0RDM0Rjc0ODEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzUzQjc0MkVFNjE4MTFFODgwNTdGMDE0RDM0Rjc0ODEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDNTNCNzQyQkU2MTgxMUU4ODA1N0YwMTREMzRGNzQ4MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDNTNCNzQyQ0U2MTgxMUU4ODA1N0YwMTREMzRGNzQ4MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkorKYwAAAK+SURBVHjaxJhNaxRBEIZ7ho0oEoWsSuJFiUYlIgY9eVz0FhQxeBDUmyR6y0Hw6MEc8heiBAL+gURyUC+imEhEjSsIfqwfYFgNxjXghhiQ9i2pkcm4O101mRlfeGB3pruqpqe7uno8a60RajM4CUpgP9jB10iL4CMog3tggq+5RQE46ATXwZKVa4n7dLrsx91sAVfBsk2uZbbRog2gA9y36ekBaJcGQMNWsemr0uiVeJFJuAVMg90mG70FR8DX4IIfuumBsQydG7Y9xr7+WQX9Nj/1R19BG3gNiiYfLYA94FuBL1xSOn8MboMK/+8CveCgsH+RfV6jYfDBJ+HQUbtSTO7oAzWhrTnybdigRFXOD67M2Q2+C22WaBUcFQ7bRVAVtHsJLghtHqOI7wgiLQNP8PQBHvdx6a7Ps9GlW7RiFZPUch+XunxegpIMliTrudRGAbSa/6dWCuCnoOHOhGnXpRUKoCZo2Kt0Trn+uKBdjQJ4L2h4GJxQBNAHDgjavaMAZoVGb4B9gnbd3FaipxTAI2HjrVwrnF61na7WKfAwVKy6NEUJYxN+fAHrFUNc5nX+JrIZ9Shs1EFHkLlu2vw1Eq4HdoEXYENO6/8HZ+BqUJLRvn45xwR05e/GFtlAxnMY+vHwxhatios8wbZn9ORzXDUtNKqKg1rtLPiVgXOyeS7sPO5sOJTB0A9pjmYFMJ2i8ym2aVwno+gOOKvIas20yAnqQ6ObfkxH6jCQwrsfaOZc+n1gdA1DP+qy7wm+kGwET8Be5ZO/4m28HtfIF24aZ6h6UThf4T71ND7RBAwqhn5Qatcoa/1JgfNJzRlCMgfC2gaeg/Ym9z9zqp2XGvSVE2ue06ltchg5r3GunQNhhhsM/XASW0kDWAdmQs5n+JralnYOhEVV1DP+fSjh8c0U1pBiK/yVI+nZ8Y9+CzAA7mD3sAmMYLwAAAAASUVORK5CYII=) no-repeat 16px;
+    background-size: 16px auto;
+    white-space: normal;
+}}
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .location>* {
+    display: block;
+    height: 20px;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 16px;
+    vertical-align: middle;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .addr>* {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    max-height: 2.5em;
+    overflow: hidden;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .shop {
+    margin-left: 12px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAnCAYAAAB0Q6rCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0E1QzE0Q0FGQ0U3MTFFOEI3MEZEMTdBRURERDJDNzgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0E1QzE0Q0JGQ0U3MTFFOEI3MEZEMTdBRURERDJDNzgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQTVDMTRDOEZDRTcxMUU4QjcwRkQxN0FFREREMkM3OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQTVDMTRDOUZDRTcxMUU4QjcwRkQxN0FFREREMkM3OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvB92DAAAAFSSURBVHjaYvz//z8DFFwHYg2GwQduIruLCUliOcPgBCuQOYxIIawOxDcGoYM1oKGMEcIgwXODzLEXkB2L7mAQWDnIHIzhHhYsClwHkYMx8hVyGh4SgIlhiAH0JMEMxPKDyH0PgfgviggoSSDh8P+DC0SiuQ8jDYOKNcNBFMLngdgIVxp2HmSOZYC6xxWXg0sHaT4rxlasGUCTA+MgdbQRNHnAQ7h4EDsWJZRBISwHpO9iKeIGE/gDxMpA/AgUwoWD3LGw+qIIFsKvgLToEKjkXgOxGCiE2YZIrcw2JNsSow4edTCW4kIBqdLgA+IHONSuAeI0Es1/ADUTHZQA8Twk/iwgDsGiDuS2T7CGJczBH5AU/MNj+S8gfk+ig3F1Z76hmfULhzqQ2z6OpuFRB486eNTBI2hcAh8QAmJjEs1nHkgHe0DxaJIYdfCog0eSgwECDABo4ugKuhoqqQAAAABJRU5ErkJggg==) no-repeat 0;
+    background-size: 22px auto;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .shop span {
+    display: inline-block;
+    padding-top: 2px;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .money {
+    margin-left: 15px;
+    padding-bottom: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .btn {
+    margin: 0;
+    text-align: right;
+    padding-top: 0;
+}}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{.locationWrap .btn a {
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    margin-left: 5px;
+    padding: 0;
+    font-size: .75rem;
+    line-height: 24px;
+}}
+

@@ -12,9 +12,46 @@
 <jsp:include page="delivery/deliveryCart.jsp"/>
 <body>
 	
+<!-- 내용 영역 -->
+<div class="contentsWrap">
+	
 	<!-- 페이지 이동시 컨트롤러에서 전달한 데이터들 -->
 	<c:set var="stampList" value="${myStampList }" />
-	
+		
+	<!-- 1. 까만 영역 -->
+	<div class="loc_container">
+		<div class="loc">
+			<div class="page-navi">
+				<a href="delivery_home.do"><span>딜리버리</span></a>
+				<a><span>스탬프</span></a>
+			</div>
+			
+			<div class="location">
+				<span class="addr">
+				   <c:if test="${empty addrSession }">
+					<span>배달지를 선택하세요</span>
+				   </c:if>
+				   <c:if test="${!empty addrSession }">
+					<span>${delivery_addr }</span>
+				   </c:if>
+				</span>
+				<span class="shop">
+				   <c:if test="${empty addrSession }">
+					<span>지점</span>
+				   </c:if>
+				   <c:if test="${!empty addrSession }">
+					<span>${addrSession.store_name }</span>
+				   </c:if>
+				</span>
+				<span class="btn">
+					<a href="javascript:locationModify();">
+						<span>변경</span>
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>
+		
 	<!-- 배너 이미지 -->
 	<div class="contentsBox02">
 		<div class="web_container">
@@ -254,17 +291,98 @@
 						</p>
 					</li>
 				</ol>
-				<!-- 와우.. 너무 많아서 반응형 할 때 넣겟습니당 -->
+				
+				<!-- 모바일 가이드 전체 div -->
 				<div class="MOB guide_swipe">
 					<div class="list slick-initialized slick-slider slick-dotted">
-						<button class="btn_swiper btn_prev slick-arrow">
+						
+						<!-- 왼쪽 버튼(<) -->
+						<button class="btn_swiper btn_prev slick-arrow" style>
 							<span>Previous contents</span>
 						</button>
-						<div class="slick-list draggable"></div>
-						<dutton class="btn_swiper btn_next slick-arrow" style></dutton>
-						<ul class="swiper-pagination" style role="tablist"></ul>
+						
+						<!-- 사용 가이드 내용(이미지+텍스트) 영역 -->
+						<div class="slick-list draggable">
+							<!-- <div class="slick-track" style="opacity: 1; width: 6754px; transform: translate3d(-1842px, 0px, 0px);"> -->
+							<div class="slick-track" style="opacity: 1; width: 6754px;">
+								<div class="slick-slide div1" style="width: 660px; display: block;">
+									<div>
+										<div style="width: 100%; display: inline-block;">
+											<div class="guide_img">
+												<img src="https://www.burgerking.co.kr/dist/img/img_guide_stamp01_m.b5de10ca.png" alt="guide image">
+											</div>
+											<p class="step_txt">
+												<strong class="num">Step 1.</strong>
+												<span>버거킹 웹, 앱 딜리버리에서 세트/팩 주문</span>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="slick-slide div2" style="width: 660px; display: none;">
+									<div>
+										<div style="width: 100%; display: inline-block;">
+											<div class="guide_img">
+												<img src="https://www.burgerking.co.kr/dist/img/img_guide_stamp02_m.e02349e4.png" alt="guide image">
+											</div>
+											<p class="step_txt">
+												<strong class="num">Step 2.</strong>
+												<span>버거킹 웹, 앱의 "스탬프" 메뉴 선택</span>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="slick-slide div3" style="width: 660px; display: none;">
+									<div>
+										<div style="width: 100%; display: inline-block;">
+											<div class="guide_img">
+												<img src="https://www.burgerking.co.kr/dist/img/img_guide_stamp03_m.601adee9.png" alt="guide image">
+											</div>
+											<p class="step_txt">
+												<strong class="num">Step 3.</strong>
+												<span>스탬프 메뉴에서 스탬프 적립을 확인!</span>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="slick-slide div4" style="width: 660px; display: none;">
+									<div>
+										<div style="width: 100%; display: inline-block;">
+											<div class="guide_img">
+												<img src="https://www.burgerking.co.kr/dist/img/img_guide_stamp04_m.5ed8eaae.png" alt="guide image">
+											</div>
+											<p class="step_txt">
+												<strong class="num">Step 4.</strong>
+												<span>스탬프 적립 후 쿠폰 받기!</span>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="slick-slide div5" style="width: 660px; display: none;">
+									<div>
+										<div style="width: 100%; display: inline-block;">
+											<div class="guide_img">
+												<img src="https://www.burgerking.co.kr/dist/img/img_guide_stamp05_m.65209d3f.png" alt="guide image">
+											</div>
+											<p class="step_txt">
+												<strong class="num">Step 5.</strong>
+												<span>받은 쿠폰을 매장에서 사용하기!</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 오른쪽 버튼(>) -->
+						<dutton class="btn_swiper btn_next slick-arrow" style>
+							<span>Next contents</span>
+						</dutton>
+						
+						<!-- 하단 ... 부분 생략 -->
+						<!-- <ul class="swiper-pagination" style role="tablist"></ul> -->
 					</div>
 				</div>
+				
 				<div class="guide_txt">
 					<h2 class="tit04">꼭 알아두세요.</h2>
 					<ul class="txtlist01">
@@ -333,6 +451,8 @@
 			</div>
 		</div>
 	</div>
+
+</div>
 
 </body>
 <script src="resources/js/mypage/mypage_myStamp.js"></script>

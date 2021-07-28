@@ -11,12 +11,37 @@
 <body>
 	
 	<div class="contentsWrap">
-		<div class="locationWrap WEB">
-			<div class="web_container">
-				<div class="page_navi">
-					<a href="delivery_home.do" class><span>딜리버리</span></a>
-					<a href="mypage_main.do" class><span>MY킹</span></a>
+		<!-- 1. 까만 영역 -->
+		<div class="loc_container">
+			<div class="loc">
+				<div class="page-navi">
+					<a href="delivery_home.do"><span>딜리버리</span></a>
+					<a href="mypage_main.do"><span>MY킹</span></a>
 					<span>회원탈퇴</span>
+				</div>
+				
+				<div class="location">
+					<span class="addr">
+					   <c:if test="${empty addrSession }">
+						<span>배달지를 선택하세요</span>
+					   </c:if>
+					   <c:if test="${!empty addrSession }">
+						<span>${delivery_addr }</span>
+					   </c:if>
+					</span>
+					<span class="shop">
+					   <c:if test="${empty addrSession }">
+						<span>지점</span>
+					   </c:if>
+					   <c:if test="${!empty addrSession }">
+						<span>${addrSession.store_name }</span>
+					   </c:if>
+					</span>
+					<span class="btn">
+						<a href="javascript:locationModify();">
+							<span>변경</span>
+						</a>
+					</span>
 				</div>
 			</div>
 		</div>
@@ -25,7 +50,8 @@
 			<div class="web_container">
 				<div class="MOB titleBar">
 					<div class="title_btn">
-						<button type="button" class="btn_head_close">
+						<button type="button" class="btn_head_close"
+							onclick="location.href='/burger/'">
 							<span>Close</span>
 						</button>
 					</div>

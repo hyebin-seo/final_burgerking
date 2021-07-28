@@ -65,6 +65,14 @@
     select * from orderlist where order_no = #{order_no} and order_pwd = #{order_pwd}
     
    </select>
+   
+   <update id="changePhone" parameterType="com.burger.login.model.UserDTO">
+   	update user_info set user_phone = #{user_phone} where user_id = #{user_id}
+   </update>
+   
+   <delete id="deleteUser">
+   	delete from user_info where user_id = #{user_id}
+   </delete>
   
   </mapper>
 
