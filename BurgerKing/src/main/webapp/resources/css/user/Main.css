@@ -1,4 +1,16 @@
-
+ @font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+	
 
 #header1 {
 	margin-top: 10%;
@@ -17,12 +29,11 @@ body {
 }
 
 
-
 .allPage {
 	max-width: 1440px;
 	min-height: 450px;
     margin: 0 auto;
-	margin-top: 136px;
+	margin-top: 60px;
 }
 
 /* sns 과련 제일큰 div css */
@@ -356,6 +367,7 @@ img {vertical-align: middle;}
 .sitemap {
     height: 585px;
     background: url('https://www.burgerking.co.kr/dist/img/bg_botmenu.3d4b484b.jpg') repeat-x top;
+     font-family: 'S-CoreDream-9Black';	
 }
 
 .web_container {
@@ -435,6 +447,7 @@ em {
     padding-top: 100px;
     padding-bottom: 88px;
     background: #fff;
+    font-family: 'S-CoreDream-9Black';	
 }
 
 .home_searchshop .tit {

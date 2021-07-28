@@ -94,18 +94,33 @@ $(document).ready(function() {
 			},
 			success: function(data) {
 
-                
-				if (data != 'success') {
-				let html  ="";
+				let dto = data.dto;
+				let order_claim = data.order_claim;
+				let order_no = data.order_no;
+
+
+				if (dto == 1) {
+					let html = "";
 					$('div.popWrap.m_FullpopWrap3').css('display', 'block');
 					html += '<tr>';
-					html += '<td colspan="3" align="center">데이터가 없습니다.</td>';
+					html += '<td colspan="3" align="center">주문내역이 존재하지 않습니다.</td>';
 					html += '</tr>';
-					
+
 					$(".bodyHtml").append(html);
 
 				} else {
+
+					let html = "";
+					$('div.popWrap.m_FullpopWrap3').css('display', 'block');
+					html += '<tr>';
+					html += '<td style="width:20%;">' + order_no + '</td>';
+					html += '<td style="width:20%;">' + order_claim + '</td>';
+					html += '<td>' + dto + '</td>';
+					html += '</tr>';
+
+					$(".bodyHtml").append(html);
 				}
+
 
 
 			}
@@ -123,7 +138,7 @@ $(document).ready(function() {
 
 
 
-	
+
 
 
 	$('div.popWrap.m_FullpopWrap3').css('display', 'none');
@@ -131,9 +146,11 @@ $(document).ready(function() {
 
 	$('button.btn02.dark').click(function() {
 		$('div.popWrap.m_FullpopWrap3').css('display', 'none');
+		location.reload();
 	})
 	$('button.btn02.auth_agree').click(function() {
 		$('div.popWrap.m_FullpopWrap3').css('display', 'none');
+		location.reload();
 
 	})
 });

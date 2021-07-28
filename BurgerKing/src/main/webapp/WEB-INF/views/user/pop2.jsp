@@ -12,7 +12,7 @@
 		</div>
 		<div class="popcont nopadding">
 			<div class="auth_cont">
-				<h1 class="hide">개인정보처리방침</h1>
+				<h1 class="hide" style="font-family: 'S-CoreDream-9Black';">개인정보처리방침</h1>
 				<p>'주식회사 비케이알' (이하 '회사')이 취급하는 모든 개인정보는 개인정보보호법 등 관련 법령상의 개인정보보호
 					규정을 준수하여 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록
 					다음과 같은 처리방침을 운영하고 있습니다.</p>
@@ -290,10 +290,10 @@
 		</div>
 		<div class="pop_btn full_type c_btn item2">
 			<button type="button" class="btn02 dark">
-				<span>취소</span>
+				<span style="font-family: 'S-CoreDream-9Black';">취소</span>
 			</button>
 			<button type="button" class="btn02 agree2">
-				<span>동의</span>
+				<span style="font-family: 'S-CoreDream-9Black';">동의</span>
 			</button>
 		</div>
 	</div>

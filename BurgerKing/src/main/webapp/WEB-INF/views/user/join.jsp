@@ -207,7 +207,7 @@ function go_brand(){
 						<div class="welcomeBox bg_w">
 							<h3 class="page_tit02">환영합니다!</h3>
 							<div class="txt_welcome">
-								<p>
+								<p style=" font-family: 'S-CoreDream-9Black';">
 									<span class="br"><strong>이메일 주소</strong> 혹은 <strong>SNS
 											계정</strong>으로</span> 간편하게 <strong><em>회원가입</em></strong> 하세요!
 								</p>

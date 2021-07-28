@@ -21,50 +21,50 @@
 
 
 
-<script type="text/javascript" src="resources/js/login/bk_login.js"></script>
-
-
-
-
-<script type="text/javascript">
-var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;	
-
-$(document).ready(function () {
+	<script type="text/javascript" src="resources/js/login/bk_login.js"></script>
 	
-	if(!isMobile) {
-		$(".GNBWrap ul").mouseover(function(){
-			$(".head_menuWr	ap").addClass("GNB_open");
+	
+	
+	
+	<script type="text/javascript">
+	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;	
+	
+	$(document).ready(function () {
+		
+		if(!isMobile) {
+			$(".GNBWrap ul").mouseover(function(){
+				$(".head_menuWr	ap").addClass("GNB_open");
+			});
+			
+			$(".GNBWrap ul").mouseleave(function(){
+				$(".head_menuWrap").removeClass("GNB_open");
+			});
+		}
+		
+		
+		$(".btn_head_menu").click(function() {
+			
+			$(".headerWrap").addClass("side_open");
+			$('div.MOB.m_utliWrap').css('display','block');
 		});
 		
-		$(".GNBWrap ul").mouseleave(function(){
-			$(".head_menuWrap").removeClass("GNB_open");
+		$(".btn_head_close").click(function() {
+			$(".headerWrap").removeClass("side_open");
 		});
+		
+		$(".GNBWrap li").click(function() {
+			$(this).toggleClass("menu_open");
+		});
+		
+		
+	});
+		
+		
+	function go_brand(){
+		location.href='/burger/';
 	}
 	
-	
-	$(".btn_head_menu").click(function() {
-		
-		$(".headerWrap").addClass("side_open");
-		$('div.MOB.m_utliWrap').css('display','block');
-	});
-	
-	$(".btn_head_close").click(function() {
-		$(".headerWrap").removeClass("side_open");
-	});
-	
-	$(".GNBWrap li").click(function() {
-		$(this).toggleClass("menu_open");
-	});
-	
-	
-});
-	
-	
-function go_brand(){
-	location.href='/burger/';
-}
-
-</script>
+	</script>
 
 </head>
 <body>
