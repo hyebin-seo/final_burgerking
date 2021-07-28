@@ -209,52 +209,6 @@
       <jsp:include page="footer.jsp" />
       
 <script type="text/javascript">
-/* var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-
-showSlides(); */
-
-
-/* function showSlides(n) {	
-	
-	$(".mySlideDiv").hide();
-	
- 	  for(var i=1; i<=7; i++) {
-	      $(".mySlides"+i).css("display", "none");
-	   }
-	   
-	   index++;
-	   
-	   if(index > 7) {index = 1}
-	   
-	   $(".mySlides"+index).css("display", "block");
-	   
-	    $(".mySlide"+index)
-	   
-	   if($(".mySlides1").css("display")=="block") {
-	      //alert("tnlqkf");
-	      $(".fade").css("display","none");
-	      $(".mySlide2").css("display","block");
-	   }else if($(".mySlide2").css("display")=="block") {
-	      $(".fade").css("display","none");
-	      $(".mySlide3").css("display","block");
-	   }else {
-	      $(".fade").css("display","none");
-	      $(".mySlide1").css("display","block");
-	   } 
-
-	   setTimeout(showSlides, 4000);     
-	   
-} */
 
 $(document).ready(function () {
 	$(".mySlideDiv").not(".active").hide();
