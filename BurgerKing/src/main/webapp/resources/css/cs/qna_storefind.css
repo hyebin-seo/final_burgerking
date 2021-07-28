@@ -125,9 +125,9 @@ input, select {
     height: 100%;
 }
 
-.title_btn {
+/* .title_btn {
     display: none;
-}
+} */
 
 .popbox01 .title_btn button {
     width: 100px;
@@ -533,4 +533,38 @@ address, em {
     line-height: 44px;
     background: #e22219 url(https://www.burgerking.co.kr/dist/img/bg_btn02_pattern.908362f6.png) repeat-x 0 0;
     background-size: auto 100%;
+}
+
+.qna_list {
+    display: inline-block;
+    width: 107px;
+    height: 38px;
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 12px 10px 10px;
+    /* font-weight: 700; */
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    background: url(https://www.burgerking.co.kr/dist/img/bg_btn01_normal.192da552.png) no-repeat 50%;
+    background-size: 100% 100%;
+    border-radius: 0;
+    border: none;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+input, a {
+	cursor: pointer;
+}
+
+@media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
+{
+	.qna_list {
+	    width: 107px;
+	    height: 38px;
+	    font-size: 0.8rem;
+	}
+	
+	
+	
 }

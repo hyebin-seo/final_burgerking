@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공지사항</title>
 <link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -39,18 +39,17 @@
 	    <form method="post"
 	      action="<%=request.getContextPath() %>/notice_search.do">	      
 	        <input type="hidden" name="page" value="${Paging.getPage() }">
-	      
+	      	<div class="board_searchWrap">
 	      		<input type="hidden" name="field" value="search_list">
 	    		<input type="text" placeholder="제목  + 내용" class="search_bar" name = "keyword">
 	    	 	<button class="btn_search" type="submit"></button>
-	    	
+	    	</div>
 	  
 	     
 	     
 	   </form>
-	   	<hr class="hr1">
 	      <tr>
-	         <th>NO.</th> <th>공지제목</th>
+	         <th>NO.</th> <th>제목</th>
 	      	 <th>날짜</th> <th>조회수</th>
 	      </tr>
 	      
@@ -90,7 +89,6 @@
 	   </table>
 	   </div>
 	  
-	   <hr class="hr1">
 	   <%-- 페이징 처리 부분 --%>
 	<%-- 페이징 처리 부분 --%>
       <div class="text">

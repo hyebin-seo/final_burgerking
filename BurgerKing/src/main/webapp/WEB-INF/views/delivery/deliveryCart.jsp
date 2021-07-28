@@ -7,17 +7,18 @@
 
 <div class="WEB on_cont head_personalWrap">
     <div class="web_container">
-       <c:if test="${empty memberSession }">
+      <c:set var="user_id" value="${fn:split(memberSession.user_id,'@')}" />
+       <c:if test="${user_id[0] == 'NOMEMBER' }">
         <div class="personal_logoff">
             <p>WHERE TASTE IS KING! 버거킹과 함께하는 맛있는 세계!</p>
-            <a><strong>회원가입하고 혜택받기</strong></a>
+            <a href="join_info_service.do"><strong>회원가입하고 혜택받기</strong></a>
             <div class="btn_area">
             	<a href="Login.do"><strong>로그인</strong></a>
-            	<a href="order_list.do"><strong>비회원 주문내역</strong></a>
+            	<a href="orderList.do"><strong>비회원 주문내역</strong></a>
             </div>
         </div>
        </c:if>
-       <c:if test="${!empty memberSession }">
+       <c:if test="${user_id[0] != 'NOMEMBER' }">
         <div class="personal_logon ">
         	<a href="orderList.do">
               <div class="personal_order">
@@ -27,7 +28,7 @@
                 </dl>
               </div>
             </a>
-            <a <c:if test="${!empty addrSession }">href="cart.do"</c:if>>
+            <a <c:if test="${!user_id[0] != 'NOMEMBER' }">href="cart.do"</c:if>>
                <div class="personal_cart">
                   <dl>
                     <dt><strong>카트</strong></dt>

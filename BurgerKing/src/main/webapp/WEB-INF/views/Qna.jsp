@@ -82,9 +82,9 @@
   		 							<br>
   		 							불편한 사항은 온라인으로 접수 해주세요
   		 						</p>
-  		 						<%-- <c:if test="${memberSession.getRight() == 'admin1'}"> --%>
-  		 						<input type = "button" value="문의리스트" onclick="location.href='qna_list.do'">
-  		 						<%-- </c:if> --%>
+  		 					   <c:if test="${memberSession.user_right == 'admin'}">
+  		 						<input type = "button" class="qna_list" value="문의리스트" onclick="location.href='qna_list.do'">
+  		 					   </c:if>
   		 						<div class="btn_area">
   		 							<br>
   		 							<br>

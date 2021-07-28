@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+a, div, li {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .contentsWrap {
 	min-height: 450px;
 	margin: 0 auto;

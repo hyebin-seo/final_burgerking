@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/css/mypage/mypage_changeInfo.css" type="text/css">
-<title>Insert title here</title>
+<title>회원정보변경</title>
 </head>
 <jsp:include page="delivery/deliveryHeader.jsp" flush="true"/>
 <jsp:include page="delivery/deliveryCart.jsp"/>

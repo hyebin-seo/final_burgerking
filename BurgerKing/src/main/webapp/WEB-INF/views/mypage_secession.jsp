@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/css/mypage/mypage_secession.css" type="text/css">
-<title>Insert title here</title>
+<title>회원탈퇴</title>
 </head>
 <jsp:include page="delivery/deliveryHeader.jsp" flush="true"/>
 <jsp:include page="delivery/deliveryCart.jsp"/>

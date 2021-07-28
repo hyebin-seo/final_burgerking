@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- 파비콘 -->
@@ -15,7 +16,7 @@
 <link href="resources/css/delivery/deliveryHeader.css"  rel="stylesheet"  type="text/css">
 
 <input type="hidden" id="head_delivery_addr" value="${addrSession.store_name }">
-
+<c:set var="user_id" value="${fn:split(memberSession.user_id,'@')}" />
 <div class="addrPopWrap">
 	<div class="popbox01">
 		<button type="button" class="btn_close" style="z-index: 100;" onclick="addrWrapHide();"></button>
@@ -45,11 +46,11 @@
             </h1>
             <div class="WEB utilWrap">
             	<a href="/burger/"><span>브랜드홈</span></a>
-            	<c:if test="${!empty memberSession }">
+            	<c:if test="${user_id[0] != 'NOMEMBER' }">
 		        	<a href="logout.do"><span>로그아웃</span></a>
+		        	<a href="mypage_main.do"><span>MY킹</span></a>
 		        </c:if>
-            	<a href="mypage_main.do"><span>MY킹</span></a>
-            	<c:if test="${empty memberSession }">
+            	<c:if test="${user_id[0] == 'NOMEMBER' }">
 		        	<a href="Login.do"><span>로그인</span></a>
 		        </c:if>
             	<a href="notice_list.do"><span>고객센터</span></a></div>
@@ -62,30 +63,30 @@
                 		<span>브랜드 홈</span>
                 	</button>
                 </div>
-                <c:if test="${!empty memberSession }">
+                <c:if test="${user_id[0] != 'NOMEMBER' }">
 	                <div class="util_logon">
 	                    <div class="user">
 	                        <p><strong><span> ${memberSession.user_name}</span></strong>님 안녕하세요</p>
 	                    </div>
 	                </div>
                 </c:if>
-                <c:if test="${empty memberSession }">
+                <c:if test="${user_id[0] == 'NOMEMBER' }">
 	                <div class="util_logoff">
 	                    <p><strong>WHERE TASTE IS KING</strong><br>버거킹과 함께하는 맛있는 세계!</p>
 	                    <div class="btn_area">
-	                    	<a class="btn04" href="move_join.do"><span>회원가입</span></a>
+	                    	<a class="btn04" href="join_info_service.do"><span>회원가입</span></a>
 	                    	<a class="btn04" href="Login.do"><span>로그인</span></a>
 	                    </div>
 	                </div>
                 </c:if>
             </div>
-            <c:if test="${!empty memberSession }">
+            <c:if test="${user_id[0] != 'NOMEMBER' }">
 	            <div class="WEB on_cont user">
 	                <p><span>${memberSession.user_name}</span> 님 안녕하세요</p>
 	                <a href="mypage_main.do"><strong>MY킹 바로가기</strong></a>
 	            </div>
             </c:if>
-            <c:if test="${empty memberSession }">
+            <c:if test="${user_id[0] == 'NOMEMBER' }">
 	            <div class="WEB off_cont join">
 	            	<a class="btn_join" href="move_join.do"><strong>회원가입</strong></a>
 	            </div>

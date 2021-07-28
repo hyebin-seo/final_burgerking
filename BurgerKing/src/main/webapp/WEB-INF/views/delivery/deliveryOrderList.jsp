@@ -15,6 +15,8 @@
 <link href="resources/css/delivery/deliveryOrderDetail.css"  rel="stylesheet"  type="text/css">
 <link href="resources/css/delivery/deliveryOrderList.css"  rel="stylesheet"  type="text/css">
 <body>
+<c:set var="user_id" value="${fn:split(memberSession.user_id,'@')}" />
+<c:if test="${user_id[0] != 'NOMEMBER' }">
 <div class="loc_container">
 	<div class="loc">
 		<div class="page-navi">
@@ -48,6 +50,7 @@
 		</div>
 	</div>
 </div>
+</c:if>
 <div class="contentsBox01">
     <div class="web_container">
         <div class="subtitWrap">

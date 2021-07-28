@@ -123,6 +123,10 @@ li {
     letter-spacing: -1px;
 }
 
+.cs_email .btn01 {
+	cursor: pointer;
+}
+
 .help_info dd {
     margin: 13px 0;
 }

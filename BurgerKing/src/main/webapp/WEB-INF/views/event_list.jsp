@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>이벤트</title>
 <link rel="shortcut icon" type="image/x-icon" href="resources/img/public/favicon.ico">
 <link  href="resources/css/cs/event.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

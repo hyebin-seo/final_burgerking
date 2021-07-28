@@ -18,7 +18,6 @@
 <body>
 	<jsp:include page="faqlocation.jsp" />
 	<jsp:include page="cs_menu.jsp" />
-	${memberSession.getUser_right()} 
 	<div class="faq_category">
 		<form method="post" action="faq_home.do">
 		<label class="switch01">

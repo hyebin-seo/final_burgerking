@@ -448,7 +448,7 @@ $(document).ready(function () {
 			// 현재 경로의 .do 앞(location OR myLocation)
 			$("input[name='path']").val(window.location.pathname.split("/").pop().split(".")[0]);
 			
-			alert(window.location.pathname.split("/").pop().split(".")[0]);
+			//alert(window.location.pathname.split("/").pop().split(".")[0]);
 			
 			form.submit();
 			

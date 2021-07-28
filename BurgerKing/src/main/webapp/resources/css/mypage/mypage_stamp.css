@@ -7,6 +7,7 @@ dd, dl, dt, em, figure, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
 
 em {
     color: #e22219;
+    font-style: normal;
 }
 
 button {

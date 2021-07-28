@@ -82,9 +82,31 @@ $(document).ready(function() {
 		let order_no = $('input.order_no').val();
 		let order_pwd = $('input.order_pwd').val();
 
+		var newForm = document.createElement('form'); 
+		
+		newForm.name = 'newForm'; 
+		newForm.method = 'post'; 
+		newForm.action = 'order_check.do'; 
+		
+		var input1 = document.createElement('input');
+		var input2 = document.createElement('input');
+		
+		input1.setAttribute("type", "hidden");
+		input1.setAttribute("name", "order_no");
+		input1.setAttribute("value", order_no);
+		
+		input2.setAttribute("type", "hidden");
+		input2.setAttribute("name", "order_pwd");
+		input2.setAttribute("value", order_pwd);
 
+		newForm.appendChild(input1);
+		newForm.appendChild(input2);
+		
+		document.body.appendChild(newForm);
+		
+		newForm.submit();
 
-		$.ajax({
+		/*$.ajax({
 
 			url: 'order_check.do',
 			type: 'post',
@@ -126,12 +148,12 @@ $(document).ready(function() {
 			}
 
 
-		})  /* ajax 끝!  */
+		})   ajax 끝!  */
 
-	})
+	});
 
 
-})
+});
 
 
 $(document).ready(function() {

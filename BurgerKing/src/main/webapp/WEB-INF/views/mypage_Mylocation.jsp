@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="resources/css/mypage/mypage_myLocation.css" type="text/css">
 
-<title>Insert title here</title>
+<title>MY배달지</title>
 </head>
 
 <jsp:include page="delivery/deliveryHeader.jsp" flush="true"/>

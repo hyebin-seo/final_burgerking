@@ -100,7 +100,7 @@ input, select {
 }
 /* @media screen and (min-width: 767px) */
 .w_alignL {
-    text-align: left!important;
+    text-align: left;
 }
 
 .contentsWrap .page_tit {
@@ -869,7 +869,7 @@ div.txtlist01:before, p.txtlist01:before {
     overflow: hidden;
 }
 
-.popWrap .btn02:only-child { /*이 친구가 안먹음 왜지?*/
+.qnaPopWrap .btn02:only-child { /*이 친구가 안먹음 왜지?*/
     max-width: 100%;
 }
 
@@ -921,7 +921,7 @@ div.txtlist01:before, p.txtlist01:before {
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.m_FullpopWrap .popbox01 {
+{.popbox01 {
     position: relative;
     left: 0;
     top: 0;
@@ -1006,7 +1006,7 @@ div.txtlist01:before, p.txtlist01:before {
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.popWrap .titleBar .page_tit {
+{.qnaPopWrap .titleBar .page_tit {
     height: 100%;
     padding: 0;
     font-size: 1.125rem;
@@ -1024,7 +1024,7 @@ div.txtlist01:before, p.txtlist01:before {
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.popWrap .titleBar .title_btn {
+{.qnaPopWrap .titleBar .title_btn {
     right: auto;
 }}
 
@@ -1034,14 +1034,14 @@ div.txtlist01:before, p.txtlist01:before {
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.popWrap .btn_close {
+{.qnaPopWrap .btn_close {
     width: 50px;
     height: 50px;
     background-size: 12px auto;
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.popWrap .titleBar .title_btn button {
+{.qnaPopWrap .titleBar .title_btn button {
     width: 60px;
 }}
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)

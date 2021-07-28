@@ -109,46 +109,46 @@ public class MypageController {
 	
 	
 	// 인증번호 발송
-	// 문자를 보낼때 맵핑되는 메소드
-	@RequestMapping("/sendSMS.do")
-    @ResponseBody
-    public HashMap<String, String> sendSms(HttpServletRequest request) throws Exception {
-    	
-		//
-		String guest_phone = request.getParameter("newPhoneNo");
-		
-		//난수설정 
-		String s = "";
-		Random r1 = new Random();
-		int num = r1.nextInt(999999); // 랜덤난수설정
+	   // 문자를 보낼때 맵핑되는 메소드
+	   @RequestMapping("/sendSMS.do")
+	    @ResponseBody
+	    public HashMap<String, String> sendSms(HttpServletRequest request) throws Exception {
+	       
+	      //
+	      String guest_phone = request.getParameter("newPhoneNo");
+	      
+	      //난수설정 
+	      String s = "";
+	      Random r1 = new Random();
+	      int num = r1.nextInt(999999); // 랜덤난수설정
+	      
+	      String random = s + num;
+	      //난수설정 
+	      //문자보내는API
+	       String api_key = "NCSJOUCPO2I53ISF"; //위에서 받은 api key를 추가
+	       String api_secret = "6MWIMK00KRQB9A3Z6DGSJPAEDDCFHRSA";  //위에서 받은 api secret를 추가
+	       Message coolsms = new Message(api_key, api_secret);
 	   
-		String random = s + num;
-		//난수설정 
-		//문자보내는API
-	    String api_key = "NCS7DA99XQHE2RLT"; //위에서 받은 api key를 추가
-	    String api_secret = "1PCO7UNCSH6LNSO6H9P67UVMSPYKEG9D";  //위에서 받은 api secret를 추가
-	    Message coolsms = new Message(api_key, api_secret);
-	
-	    HashMap<String, String> set = new HashMap<String, String>();
-	    set.put("to", guest_phone); // 수신번호
-	
-	    set.put("from", "01063082509"); // 발신번호
-	    set.put("text", random); // 문자내용
-	    set.put("type", "sms"); // 문자 타입
-	
-	    System.out.println(set);
-	
-	    //JSONObject result = (JSONObject) coolsms.send(set); // 보내기&전송결과받기
+	       HashMap<String, String> set = new HashMap<String, String>();
+	       set.put("to", guest_phone); // 수신번호
+	   
+	       set.put("from", "01033610849"); // 발신번호
+	       set.put("text", random); // 문자내용
+	       set.put("type", "sms"); // 문자 타입
+	   
+	       System.out.println(set);
+	   
+	       JSONObject result = (JSONObject) coolsms.send(set); // 보내기&전송결과받기
+	       
+	       //System.out.println(result);
+	       System.out.println(set);
 	    
-	    //System.out.println(result);
-	    System.out.println(set);
-    
-	    set.put("random", random);
+	       set.put("random", random);
 
-	    System.out.println("set??"+set);
-	    
-	    return set;
-  }	
+	       System.out.println("set??"+set);
+	       
+	       return set;
+	  }   
 	
 	
 	// 핸드폰번호 바꾸는 메소드
@@ -167,6 +167,8 @@ public class MypageController {
 		user.setUser_phone(new_phoneNo);
 		
 		this.loginDao.change_phoneNo(user);
+		
+		session.setAttribute("memberSession", user);
 		
 		return "redirect:/change_info.do";
 
@@ -209,6 +211,12 @@ public class MypageController {
 		
 		// QNA삭제
 		this.qnaDao.deleteUserQna(user_id);
+		
+		session.removeAttribute("access_Token");
+		session.removeAttribute("userId");
+		session.removeAttribute("addrSession");
+		session.removeAttribute("delivery_addr");
+		session.invalidate();
 		
 		return "secSuccess";
 	}

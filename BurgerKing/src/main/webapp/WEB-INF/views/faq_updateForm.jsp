@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>FAQ수정</title>
 <link  href="resources/css/cs/faq_updateForm.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="resources/js/cs/faq_updateForm.js" type="text/javascript"></script>

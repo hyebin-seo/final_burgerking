@@ -1,4 +1,4 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
+		<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -6,80 +6,71 @@
 <head>
 <meta charset="UTF-8">
 <title>버거킹</title>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script type="text/javascript">
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
-
-
-</script>
 </head>
-
 <!-- jsp:header -->
 <jsp:include page="header.jsp" />
-
-<!-- 부트스트랩 적용하면 css가 다 깨지는데 방법을 찾아야할거같아요-->
-	
-
-<link href="resources/css/user/Main.css" rel="stylesheet"
-	type="text/css">
+<link href="resources/css/user/Main.css" rel="stylesheet" type="text/css">
 <body>
-
 
 	<!-- 본문 시작  -->
 	<section class="allPage">
 		<!-- 이벤트 배너판. 이벤트에 있는 페이지와 연동되어야 합니다. -->
 		<div class="slideshow-container">
 
-            <div class="mySlides fade first">
-              <div class="numbertext">1 / 3</div>
-              <img src="resources/img/main/2.png" style="width:100%">
+            <div class="mySlideDiv fade active">
+              <img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/93220396-6c46-49d6-bdc2-21cbba672fd7.png" class="WEB"
+              onclick="location.href='event_cont.do?no=12&page=2'"> 
+              <img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/d80321c3-4f7c-44e7-ae47-3827821dd95a.png" class="MOB"  
+             onclick="location.href='event_cont.do?no=12&page=2'"> 
               
             </div>
             
-            <div class="mySlides fade second">
-              <div class="numbertext">2 / 3</div>
-              <img src="resources/img/main/3.png" style="width:100%">
+            <div class="mySlideDiv fade">
+              <img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/c2ee3f34-bb55-4697-91fd-e79a52dc6281.png" class="WEB"
+             onclick="location.href='event_cont.do?no=13&page=1'">
+              <img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/a1642a33-d1b1-401b-9e18-c798cc11e0f2.png" class="MOB"
+               onclick="location.href='event_cont.do?no=13&page=1'">
               
             </div>
             
-            <div class="mySlides fade third">
-              <div class="numbertext">3 / 3</div>
-              <img src="resources/img/main/4.png" style="width:100%">
-              
-            </div>	
-            
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            
+            <div class="mySlideDiv fade">
+            	<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/a42dc617-eaff-48a6-aea5-a8436028e8b0.png" class="WEB"
+            	onclick="location.href='event_cont.do?no=18&page=1'">
+            	<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/e5539963-0986-4d03-8e31-65aab447f612.png" class="MOB"
+            	onclick="location.href='event_cont.do?no=18&page=1'">
             </div>
-            <br>
             
+            <div class="mySlideDiv fade">
+            	<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/1ebf501d-b884-4218-9cda-de9e8776f8db.png" class="WEB"
+            	onclick="location.href='event_cont.do?no=15&page=1'">
+            	<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/03bb9cd7-4dcd-4344-87ed-3938cbe64919.png" class="MOB"
+            	onclick="location.href='event_cont.do?no=15&page=1'">
+            </div>
+                        
+            <div class="mySlideDiv fade">
+              <img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/30182210-6be6-4548-8838-2a964788d0d8.png" class="WEB">
+              <img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/09ce385b-a2dc-4a16-a0c6-075ed7723254.png" class="MOB">
+            </div>
+            
+            <div class="mySlideDiv fade">
+            	<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/371731a2-3fcb-42dc-bc6b-92cb16cbd6c9.png" class="WEB"
+            	onclick="location.href='event_cont.do?no=21&page=1'">
+            	<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/d9c47234-88c6-4e53-864c-83208636eb7e.png" class="MOB"
+            	onclick="location.href='event_cont.do?no=21&page=1'">
+            </div>
+            
+            <div class="mySlideDiv fade">
+            	<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/7f123731-b504-47c0-989d-1534b302046b.png" class="WEB"
+            	onclick="location.href='event_cont.do?no=22&page=1'" >
+            	<img src="https://d1cua0vf0mkpiy.cloudfront.net/images/web/banner/04d287cf-fd1c-44f5-95fd-d4bde8a04451.png" class="MOB"
+            	onclick="location.href='event_cont.do?no=22&page=1'">
+            </div>
+            
+            
+           <a class="prev" onclick="prevSlide()">&#10094;</a>
+           <a class="next" onclick="nextSlide()">&#10095;</a>
+            
+       </div>
            
 		<!-- 이벤트 배너판 end. -->
 
@@ -167,7 +158,8 @@ function showSlides(n) {
 
 		<!-- 버거킹 대표번호 나오는 부분 -->
 		<div class="phone">
-			<img src="resources/img/main/1599.png">
+			<img src="resources/img/main/1599.png" class="WEB">
+			<img src="resources/img/main/1599_mob.JPG" class="MOB">
 		</div>
 		<!-- 버거킹 대표번호 나오는 부분  끝(이미지처리)-->
 
@@ -180,7 +172,15 @@ function showSlides(n) {
             <div class="web_container">
                 <ul class="menu">
                     <li><a><span>메뉴</span></a>
-                        <ul class="submenu"></ul></li>
+                        <ul class="submenu">
+                        	<li><a href="menu_brand.do?category=스페셜%26할인팩"><span>스페셜&amp;할인팩</span></a></li>
+                            <li><a href="menu_brand.do?category=프리미엄"><span>프리미엄</span></a></li>
+                            <li><a href="menu_brand.do?category=와퍼"><span>와퍼</span></a></li>
+                            <li><a href="menu_brand.do?category=주니어%26버거"><span>주니어&amp;버거</span></a></li>
+                            <li><a href="menu_brand.do?category=올데이킹%26치킨버거"><span>올데이킹&amp;치킨버거</span></a></li>
+                            <li><a href="menu_brand.do?category=사이드"><span>사이드</span></a></li>
+                            <li><a href="menu_brand.do?category=음료%26디저트"><span>음료&amp;디저트</span></a></li>
+                        </ul></li>
                     <li><a><span>매장</span></a>
                         <ul class="submenu">
                             <li><a href="store.do"><span>매장찾기</span></a></li>
@@ -207,6 +207,120 @@ function showSlides(n) {
         </div>
 	<!-- foote 끝 -->
       <jsp:include page="footer.jsp" />
+      
+<script type="text/javascript">
+/* var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+
+showSlides(); */
+
+
+/* function showSlides(n) {	
+	
+	$(".mySlideDiv").hide();
+	
+ 	  for(var i=1; i<=7; i++) {
+	      $(".mySlides"+i).css("display", "none");
+	   }
+	   
+	   index++;
+	   
+	   if(index > 7) {index = 1}
+	   
+	   $(".mySlides"+index).css("display", "block");
+	   
+	    $(".mySlide"+index)
+	   
+	   if($(".mySlides1").css("display")=="block") {
+	      //alert("tnlqkf");
+	      $(".fade").css("display","none");
+	      $(".mySlide2").css("display","block");
+	   }else if($(".mySlide2").css("display")=="block") {
+	      $(".fade").css("display","none");
+	      $(".mySlide3").css("display","block");
+	   }else {
+	      $(".fade").css("display","none");
+	      $(".mySlide1").css("display","block");
+	   } 
+
+	   setTimeout(showSlides, 4000);     
+	   
+} */
+
+$(document).ready(function () {
+	$(".mySlideDiv").not(".active").hide();
+	
+	setInterval(nextSlide, 4000);
+});
+
+function prevSlide() {
+	$(".mySlideDiv").hide();
+	var allSlide = $(".mySlideDiv");
+	var currentIndex = 0;
+	
+	$(".mySlideDiv").each(function(index,item){
+		if($(this).hasClass("active")) {
+			currentIndex = index;
+		}
+        
+    });
+	
+	var newIndex = 0;
+	
+	if(currentIndex <= 0) {
+		newIndex = allSlide.length-1;
+	} else {
+		newIndex = currentIndex-1;
+	}
+	
+	console.log("currentIndex:"+currentIndex);
+	console.log("newIndex:"+newIndex);
+	
+	$(".mySlideDiv").removeClass("active");
+	$(".mySlideDiv").eq(newIndex).addClass("active");
+	$(".mySlideDiv").eq(newIndex).show();
+	
+}
+
+function nextSlide() {
+	$(".mySlideDiv").hide();
+	var allSlide = $(".mySlideDiv");
+	var currentIndex = 0;
+	
+	$(".mySlideDiv").each(function(index,item){
+		if($(this).hasClass("active")) {
+			currentIndex = index;
+		}
+        
+    });
+	
+	var newIndex = 0;
+	
+	if(currentIndex >= allSlide.length-1) {
+		newIndex = 0;
+	} else {
+		newIndex = currentIndex+1;
+	}
+	
+	console.log("currentIndex:"+currentIndex);
+	console.log("newIndex:"+newIndex);
+	
+	$(".mySlideDiv").removeClass("active");
+	$(".mySlideDiv").eq(newIndex).addClass("active");
+	$(".mySlideDiv").eq(newIndex).show();
+	
+}
+
+</script>
 </body>
 <!-- jsp:footer -->
 

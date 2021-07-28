@@ -68,8 +68,8 @@ $(function(){
 		
 		//alert($(this).val());
 		
-		var addr1 = $(this).val().split(",")[0];	// 도로명주소
-		addr3 = $(this).val().split(",")[1];		// 상세 주소
+		var addr1 = $(this).val().split("@")[0];	// 도로명주소
+		addr3 = $(this).val().split("@")[1];		// 상세 주소
 		
 		// 도로명 주소->좌표 값 함수 호출 (연결돼서 배달지 세팅 후 딜리버리 홈으로 이동까지)
 		addrChange2(addr1);

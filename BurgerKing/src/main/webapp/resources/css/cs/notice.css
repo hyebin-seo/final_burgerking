@@ -12,6 +12,7 @@
      
 }
 
+
 .hr1 {
     border: 0;
     height: 3px;
@@ -20,20 +21,61 @@
 }
 
 .table1 {
-	 width : 70%;
+	/*  width : 70%; */
 	 border-spacing:  30px;
-	 
+	 margin-top: 10px;
+    border-bottom: 2px solid #000;
 }
 
 
 
-.table1 th {
+/* .table1 th {
 		
 	font-family: 'S-CoreDream-9Black';
 	height: 30px;
 	font-size: 1.25rem;
 	text-align: center;	
 	background: #FAFAFA;		
+} */
+
+.board_searchWrap {
+    margin: 70px 0 0px;
+    padding: 34px 50px;
+    text-align: center;
+    background: #fafafa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+}
+
+.table1 tbody td, .table1 tbody th {
+    height: 56px;
+    padding: 10px;
+    font-size: 1.125rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table1 tbody tr:first-child {
+    background: #fafafa;
+    border: 0 solid #000;
+    border-width: 2px 0;
+    border-bottom-color: #e5e5e5;
+    font-family: 'S-CoreDream-9Black';
+}
+
+.table1 tbody tr:first-child th {
+    height: 50px;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.table1 a {
+    display: block;
+    text-align: left;
 }
 
 .table1 td{
@@ -55,6 +97,13 @@
 
 #menu_m{
 	margin-top: 1%;
+	max-width: 1184px;
+    margin: 0 auto;
+}
+
+.notice_list {
+	max-width: 1184px;
+    margin: 0 auto;
 }
 
 #footer_m{
@@ -148,7 +197,7 @@
     outline: none;
     padding: 5px 10px 5px 5px;
     font-weight: 350;
-    font-size: 30px;
+    font-size: 1.2rem;
     font-family: 'S-CoreDream-5Medium';
     text-align: left;
     vertical-align: bottom;   
@@ -158,6 +207,8 @@
 /*페이징 디자인*/
 .text{
    text-align: center; 
+   margin-top: 25px;
+   margin-bottom: 25px;
 }
 .page a{
    height: 36px; 
@@ -170,7 +221,10 @@
 }
 
 
-
+.back_list_btn {
+	text-align: center;
+    margin-bottom: 25px;
+}
 
 
 .locationWrap {
@@ -179,7 +233,7 @@
     color: #fff;
     line-height: 38px;
     background: #000;
-    margin-top: 150px;
+    margin-top: 120px;
 }
 
 .locationWrap .web_container {
@@ -286,7 +340,7 @@
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
 {.board_searchWrap {
     margin: 0;
-    padding: 16px 16px 19px;
+    padding: 16px 16px 0px;
     text-align: center;
 }}
 
@@ -333,6 +387,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-appearance: none;
+    width: 88%;
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
@@ -369,30 +424,39 @@
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.tlist01 {
+{.table1 {
     border-bottom: 1px solid #000;
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.tlist01 thead tr {
+{.table1 thead tr {
     border-width: 1px 0;
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.tlist01 thead th {
+{.table1 thead th {
     height: 20px;
     padding: 5px;
     font-size: .75rem;
-}}
+}
+
+.table1 tbody tr:first-child th {
+    font-size: 0.8rem;
+}
+table {
+    width: 95%;
+}
+
+}
 
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.tlist01 tbody tr {
+{.table1 tbody tr {
     border-top: 1px solid #e5e5e5;
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.tlist01 tbody td, .tlist01 tbody th {
+{.table1 tbody td, .tlist01 tbody th {
     height: 19px;
     padding: 9px 5px;
     font-size: .6875rem;
@@ -413,12 +477,12 @@
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.tlist01 .nodata {
+{.table1 .nodata {
     padding-bottom: 50px;
 }}
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
-{.tlist01 tbody td, .tlist01 tbody th {
+{.table1 tbody td, .table1 tbody th {
     height: 19px;
     padding: 9px 5px;
     font-size: .6875rem;

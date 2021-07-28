@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>문의리스트</title>
 <link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -38,7 +38,6 @@
 	    
 	    	
 	  
-	    	   	<hr class="hr1">
 	      <tr>
 	         <th>문의번호</th> <th>고객</th>
 	         <th>분류</th>
@@ -74,7 +73,6 @@
 	   </table>
 	   </div>
 	  
-	   <hr class="hr1">
 	   <%-- 페이징 처리 부분 --%>
 	<%-- 페이징 처리 부분 --%>
       <div class="text">

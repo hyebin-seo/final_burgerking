@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.burger.brandStory.model.newMenuDAO;
 import com.burger.delivery.model.OrderListDTO;
+import com.burger.location.model.LocationDTO;
 import com.burger.login.model.EmailService;
 import com.burger.login.model.Guest_Order;
 import com.burger.login.model.LoginDAO;
@@ -388,7 +389,7 @@ public class LoginController {
         HashMap<String, String> set = new HashMap<String, String>();
         set.put("to", guest_phone); // 수신번호
 
-        set.put("from", "01063082509"); // 발신번호
+        set.put("from", "01066029640"); // 발신번호
         set.put("text", random); // 문자내용
         set.put("type", "sms"); // 문자 타입
 
@@ -420,8 +421,21 @@ public class LoginController {
     
     public void guest_order(HttpServletRequest request, HttpServletResponse response,HttpSession session,UserDTO dto) throws IOException {
     	
-   
+    	int leftLimit = 48; // numeral '0'
+    	int rightLimit = 122; // letter 'z'
+    	int targetStringLength = 10;
+    	Random random = new Random();
+
+    	String generatedString = random.ints(leftLimit,rightLimit + 1)
+    	  .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+    	  .limit(targetStringLength)
+    	  .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+    	  .toString();
+
+    	System.out.println(generatedString);
     
+    	dto.setUser_id("NOMEMBER@"+generatedString);
+    	
     	System.out.println(dto);
     	
     	response.setContentType("text/html; charset=UTF-8");
@@ -437,39 +451,69 @@ public class LoginController {
     
     
  // guest주문에대한 주문 정보를 조회하는 메서드
+	/*
+	 * @RequestMapping("order_check.do")
+	 * 
+	 * @ResponseBody public HashMap<String, String> order_check(HttpServletRequest
+	 * request, HttpServletResponse response,HttpSession session,OrderListDTO dto)
+	 * throws IOException {
+	 * 
+	 * 
+	 * System.out.println("1"+dto); HashMap<String, String> set = new
+	 * HashMap<String, String>();
+	 * 
+	 * dto = this.dao.order_check(dto);
+	 * 
+	 * System.out.println("dto>>+"+dto);
+	 * 
+	 * if(dto != null) {
+	 * 
+	 * 
+	 * set.put("dto",dto.getOrder_phone()); set.put("order_claim",
+	 * dto.getOrder_claim()); set.put("order_no", dto.getOrder_no());
+	 * 
+	 * System.out.println("!null+"+set); return set;
+	 * 
+	 * }else { set.put("dto", "1");
+	 * 
+	 * 
+	 * System.out.println("null>"+set); return set;
+	 * 
+	 * }
+	 * 
+	 * 
+	 * 
+	 * 
+	 * }
+	 */
+    
     @RequestMapping("order_check.do")
     @ResponseBody
-    public  HashMap<String, String> order_check(HttpServletRequest request, HttpServletResponse response,HttpSession session,OrderListDTO dto) throws IOException {
+    public void order_check(HttpServletRequest request, HttpServletResponse response,HttpSession session,OrderListDTO dto) throws IOException {
     	
     	
-    	System.out.println("1"+dto);
-    	HashMap<String, String> set = new HashMap<String, String>();
-    	
-        dto = this.dao.order_check(dto);   
-        
-        System.out.println("dto>>+"+dto);
-        
-         if(dto != null) {
-        	 
-        	 
-        	 set.put("dto",dto.getOrder_phone());
-        	 set.put("order_claim", dto.getOrder_claim());
-        	 set.put("order_no", dto.getOrder_no());
-        	
-        	System.out.println("!null+"+set);
-     		return set;
-        	 
-         }else {
-        	 set.put("dto", "1"); 
-        	 
-        	 
-        	 System.out.println("null>"+set);
-        	return set;
-         	 
-         }
-     	
-
-  
+        dto = this.dao.order_check(dto);
+		
+		PrintWriter script = response.getWriter();
+		
+		
+		if(dto != null) {
+			UserDTO udto = new UserDTO();
+			udto.setUser_id(dto.getOrder_id());
+			udto.setUser_name("비회원");
+			udto.setUser_phone(dto.getOrder_phone());
+			udto.setUser_pwd(dto.getOrder_pwd());
+			
+			session.setAttribute("memberSession", udto);
+			script.println("<script>");
+			script.println("location.href='orderList.do'");
+			script.println("</script>");
+		} else {
+			script.println("<script>");
+			script.println("alert('해당 정보와 일치하는 주문내역이 없습니다.')");
+			script.println("history.back()");
+			script.println("</script>");
+		}
        
     }	
 

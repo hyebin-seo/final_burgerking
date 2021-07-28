@@ -137,7 +137,7 @@
                							<span>배달지 목록에서 삭제</span>
                						</button>
                					</div>
-               					<button type="button" class="btn_detail goDeli" value="${loc.getLoc_addr1() },${loc.getLoc_addr3() }">
+               					<button type="button" class="btn_detail goDeli" value="${loc.getLoc_addr1() }@${loc.getLoc_addr3() }">
                						<span>배달지로 설정</span>
                					</button>
                				</li>

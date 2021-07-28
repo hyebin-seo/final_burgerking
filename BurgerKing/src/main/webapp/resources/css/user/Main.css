@@ -36,14 +36,14 @@ body {
 	margin-top: 60px;
 }
 
-/* sns 과련 제일큰 div css */
+/* sns 怨쇰젴 �젣�씪�겙 div css */
 .sns {
 	height: auto;
 	margin:0;
 /* 	background-color: rgb(94, 54, 48); */
 }
 
-/* sns 과련 제일큰 div css , ul , li 줄세우고 간격 주기 */
+/* sns 怨쇰젴 �젣�씪�겙 div css , ul , li 以꾩꽭�슦怨� 媛꾧꺽 二쇨린 */
 .sns ul {
 	text-align: center;
 }
@@ -78,12 +78,12 @@ body {
 	width: 100%;
 }
 
-/* phone 번호가 젹혀있는 부분 */
+/* phone 踰덊샇媛� �졊���엳�뒗 遺�遺� */
 .phone img {
 	width: 100%;
 }
 
-/* 여기는 sns이동하는 부분  */
+/* �뿬湲곕뒗 sns�씠�룞�븯�뒗 遺�遺�  */
 
 .homeWrap .contentsBox01 {
     padding-top: 0;
@@ -187,6 +187,7 @@ strong {
 
 .home_snsWrap .list .youtube .status {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAMCAYAAABvEu28AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ZTM4YjQ5OS0wMzNkLTQ0ODItYjNmMi0xMjhjNGZlMGE3YzgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzU5NDY3MzgwQTcwMTFFOTk0NDlCNTZGQjc5NjZGMjIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzU5NDY3MzcwQTcwMTFFOTk0NDlCNTZGQjc5NjZGMjIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1OTg0MzFkOC1kYzgyLTQ2MmYtOWE5Mi0xMWE3MGNiMTUxZGIiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpjYmRlOGE0Mi05Zjc1LTRjNDQtOTI2Ny03OWMzZWIwOGRhMDAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5jqlhOAAAA2klEQVR42mLU09NjZGBgyAFiNyBWBGIeIOYDYpC4AAMq+ADE/4H4ExB/AeL7QLwLiKeyAIl8IO5nIA7ADBaE0tpA7APEzExQBqXAG2SQEh4FW4D4DxEGKYMMEsKjoAqI9YF4IwGDhJigAYsPXAPiACB2BOJTONTwMZEQDqDY+odLkgkalfiAFhCvA+IDQGyBQ80nUPS/A2J+HApagdgTiFkIWPYO5KJ7eBT4EmEICNxlgkYxpWAbyLZJ0EB0B2J5IOaFYlZodkEGoGzxG4g/Q/FDIN4JxFMAAgwAmVsjooKJO0IAAAAASUVORK5CYII=);
+    font-family: 'S-CoreDream-5Medium';
 }
 .home_snsWrap .list .status {
     display: inline-block;
@@ -211,6 +212,7 @@ strong {
 
 .home_snsWrap .list .facebook .status {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ZTM4YjQ5OS0wMzNkLTQ0ODItYjNmMi0xMjhjNGZlMGE3YzgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzU1Mzk3MkYwQTcwMTFFOTk0NDlCNTZGQjc5NjZGMjIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzU1Mzk3MkUwQTcwMTFFOTk0NDlCNTZGQjc5NjZGMjIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1OTg0MzFkOC1kYzgyLTQ2MmYtOWE5Mi0xMWE3MGNiMTUxZGIiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpjYmRlOGE0Mi05Zjc1LTRjNDQtOTI2Ny03OWMzZWIwOGRhMDAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4pkq1iAAAAzElEQVR42mL8//8/g76+PgMB0ADE7kDsBcTvsSlgYiAOfAFiCyAuwqWAWINgrvCm1CAlKM1BiUFCQJwJZd+lxKAKIBaEsm/gUsRCwBBpIM5B4vsDsQGamu9APJGFiGjnROKrQjE6EIAZ5IImcQGIrYA4gQiv/wXidphBu9EkfYA4jQivgwAzyPvERj8hoEUNgx4DsTU1DJIFYm4WCg35DMQrgPg+pS76D8RZQPwHn0GzgfgJAYPuQKMfb/RuhGIBIGbEoeYD1FUMAAEGAJ78IP+x+GxCAAAAAElFTkSuQmCC);
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .home_snsWrap .list .cont>* {
@@ -232,9 +234,8 @@ strong {
 
 .home_snsWrap .list .insta .status {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ZTM4YjQ5OS0wMzNkLTQ0ODItYjNmMi0xMjhjNGZlMGE3YzgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzU1Mzk3MzMwQTcwMTFFOTk0NDlCNTZGQjc5NjZGMjIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzU1Mzk3MzIwQTcwMTFFOTk0NDlCNTZGQjc5NjZGMjIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1OTg0MzFkOC1kYzgyLTQ2MmYtOWE5Mi0xMWE3MGNiMTUxZGIiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpjYmRlOGE0Mi05Zjc1LTRjNDQtOTI2Ny03OWMzZWIwOGRhMDAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5eSZMzAAAAxElEQVR42mLU09NjQAMsQFwMxElArADED4B4HhD3AvEfdIXoYAUQByPx1YC4A4hNgTgEWSETmkZHNI3IIBgqj1OzDQN+YItP83sCmt/h07wWiL/i0AgSX4dP83MgDgfiz2jin6HizwiF9lZoCEcAsTQQP4XGwAtscYoNgBROIOB/uGYpIK4GYgcg5sCj/gcQHwDiNpCLQJqVgPgYEIszEAe0oHFuzQRNdsRqhAGQ+h6QZlcG8oALSDM3mZp5mBgoAAABBgDTbx7hyJNu4gAAAABJRU5ErkJggg==);
+    font-family: 'S-CoreDream-5Medium';
 }
-
-
 
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
@@ -248,6 +249,7 @@ img {vertical-align: middle;}
   max-width: 1440px;
   position: relative;
   margin: auto;
+  margin-top: 120px;
 }
 
 /* Next & previous buttons */
@@ -331,14 +333,14 @@ img {vertical-align: middle;}
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
+/* @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
-
+ */
     
 
 /* 
-  footer1 부분 각 정보에대한 리스트가 있는 곳 
+  footer1 遺�遺� 媛� �젙蹂댁뿉���븳 由ъ뒪�듃媛� �엳�뒗 怨� 
  */
  
   .info {
@@ -351,7 +353,7 @@ img {vertical-align: middle;}
     
   }
   
-  /* footer에 있는 info클래스에서 적용될 css */
+  /* footer�뿉 �엳�뒗 info�겢�옒�뒪�뿉�꽌 �쟻�슜�맆 css */
   
   .info_div {
       width: 80%;
@@ -363,7 +365,7 @@ img {vertical-align: middle;}
   
   }
 
-/* 하단 사이트맵 전체 div */
+/* �븯�떒 �궗�씠�듃留� �쟾泥� div */
 .sitemap {
     height: 585px;
     background: url('https://www.burgerking.co.kr/dist/img/bg_botmenu.3d4b484b.jpg') repeat-x top;
@@ -416,7 +418,7 @@ li {
     line-height: 32px;
 }
 
-/* 매장찾기 */
+/* 留ㅼ옣李얘린 */
 em {
     font-style: normal;
 }
@@ -450,10 +452,27 @@ em {
     font-family: 'S-CoreDream-9Black';	
 }
 
-.home_searchshop .tit {
+.home_searchshop .titl {
     margin-bottom: 16px;
     font-size: 3rem;
     line-height: 100%;
+}
+
+.home_searchshop .web_container > p {
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.sitemap ul.menu>li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 338px;
+    border-left: 1px dashed #d9c8be;
+}
+
+.sitemap ul.menu>li:first-child:before {
+    content: none;
 }
 
 .c_btn {
@@ -495,6 +514,11 @@ em {
 
 .shop_categorylist {
     overflow: hidden;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.shop_categorylist em {
+    font-family: 'S-CoreDream-9Black';
 }
 
 .shop_categorylist li {
@@ -540,11 +564,19 @@ em {
 
 
 
-/* 반응형으로 만들대 필요한 것들  */
+/* 諛섏쓳�삎�쑝濡� 留뚮뱾�� �븘�슂�븳 寃껊뱾  */
 
 @media (max-height: 500px) and (orientation: landscape),
 screen and (max-width: 768px) and (orientation: portrait) {
+.slideshow-container {
+  margin-top: 57px;
+}
 
+.home_searchshop .titl {
+    margin-bottom: 9px;
+    font-size: 1.5rem;
+    line-height: 100%;
+}
 	.allPage {
 	
 	width: auto;
@@ -610,18 +642,8 @@ screen and (max-width: 768px) and (orientation: portrait) {
 	.shop_categorylist li>span {
 	    display: none;
 	}
-
-
-
-
-}
-
-
-
-@media screen and (min-width: 375px) and (max-width: 767px){
 	
-	
-	html {
+		html {
     font-size: 17px;
 }
 html {
@@ -650,16 +672,19 @@ html {
     background-position: 8px;
     background-size: 13px auto;
     border-radius: 3px;
+    width: 91%;
 }
 
 .home_snsWrap .list .facebook .cont, .home_snsWrap .list .insta .cont, .home_snsWrap .list .youtube .cont {
     background-position: center 45px;
     background-size: 47px auto;
+    font-family: 'S-CoreDream-9Black';
 }
 
 .home_snsWrap .list .facebook .status {
     padding-left: 23px;
     background-size: 11.5px auto;
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .home_snsWrap .list li .cont {
@@ -676,8 +701,17 @@ html {
     padding-left: 23px;
     background-size: 11.5px auto;
 }
+
 }
 
+
+/* 
+@media screen and (min-width: 375px) and (max-width: 767px){
+	
+	
+
+}
+ */
 
 
 

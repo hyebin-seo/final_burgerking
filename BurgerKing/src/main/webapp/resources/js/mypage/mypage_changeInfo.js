@@ -124,7 +124,7 @@ function sendSMS(newPhoneNo) {
 						$(".certify").prop("disabled",true);
 						$(".certify").css("display","");
 						
-						alert(data.random);
+						//alert(data.random);
 						//check(data);
 						
 						auth_no = data.random;

@@ -45,7 +45,7 @@
 					<input type="hidden" name="confmKey" value="devU01TX0FVVEgyMDIxMDcwOTE2Mzc0OTExMTM5Mjc="/><!-- 요청 변수 설정 (승인키) -->
                     <div class="r_srch01 st02">
                         <div class="inpbox">
-                        	<input type="text" maxlength="50" class="font_s01" name="keyword" onkeydown="enterSearch();">
+                        	<input type="text" maxlength="50" class="font_s01" name="keyword" onkeydown="enterSearch();" autocomplete="off">
                        		<button type="button" class="btn_del01" style="display: none;">
                        			<span>입력 텍스트 삭제</span>
                        		</button>

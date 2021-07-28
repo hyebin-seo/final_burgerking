@@ -8,8 +8,7 @@
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <title>로그인</title>
 <!-- 파비콘 -->
-<link rel="shortcut icon" type="image/x-icon"
-	href="resources/img/main/fab.ico">
+<link rel="icon" href="resources/img/public/favicon.ico">
 
 <!-- 눈 아이콘 -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -71,7 +70,7 @@
 
 	<div id="app">
 		<div class="subWrap02 header_offtype">
-			<div class="headerWrap">
+			 <div class="headerWrap">
 				<div class="head_menuWrap ">
 					<div class="web_container">
 						<h1 class="WEB logo">
@@ -219,7 +218,7 @@
 									<form action="login_Ok.do" name="form" method="post">
 										<div class="inpbox">
 											<label><span class="hide">ID</span><input type="text"
-												placeholder="아이디 (이메일)" name="user_id" class="user_id">
+												placeholder="아이디 (이메일)" name="user_id" class="user_id" autocomplete="off">
 												<button type="button" tabindex="-1" class="btn_del01 "
 													style="display: none;">
 													<span>입력 텍스트 삭제</span>
@@ -227,7 +226,7 @@
 										</div>
 										<div class="inpbox">
 											<label><span class="hide">Password</span><input
-												placeholder="비밀번호" type="password" name="user_pwd"
+												placeholder="비밀번호" type="password" name="user_pwd" autocomplete="off"
 												class="user_pwd">
 												<button type="button" tabindex="-1" class="btn_view01">
 													<span>입력 텍스트 보기</span>

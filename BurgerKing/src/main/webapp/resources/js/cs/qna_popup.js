@@ -115,7 +115,7 @@ $(document).ready(function() {
 	// 매장 선택 안함 눌렀을 때 disabled 시켜보자
 	$(".storeNone").click(function () {
 		
-		alert('선택');
+		//alert('선택');
 		
 		if(this.checked){
 			$(".chosenStore").attr("disabled", true);

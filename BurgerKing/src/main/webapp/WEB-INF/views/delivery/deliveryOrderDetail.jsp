@@ -14,6 +14,8 @@
 <jsp:include page="deliveryCart.jsp"/>
 <link href="resources/css/delivery/deliveryOrderDetail.css"  rel="stylesheet"  type="text/css">
 <body>
+<c:set var="user_id" value="${fn:split(memberSession.user_id,'@')}" />
+<c:if test="${user_id[0] != 'NOMEMBER' }">
 <div class="loc_container">
 	<div class="loc">
 		<div class="page-navi">
@@ -48,6 +50,7 @@
 		</div>
 	</div>
 </div>
+</c:if>
 <div class="contentsWrap" orderno="${orderDTO.order_no }" menutype="2">
     <div class="contentsBox01 bg_w">
         <div class="web_container">
@@ -167,12 +170,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="c_btn m_item2"></div>
+                <div class="c_btn m_item2">
+                	<button type="button" class="btn01 m" onclick="location.href='orderList.do'"><span>주문목록</span></button>
+                </div>
             </div>
         </div>
-        <div class="c_btn m_item2">
-          <button type="button" class="btn01 m" onclick="location.href='orderList.do'"><span>주문목록</span></button>
-   		</div>
+        
     </div>
     
 </div>

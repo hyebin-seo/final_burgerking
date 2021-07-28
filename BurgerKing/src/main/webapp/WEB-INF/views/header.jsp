@@ -10,20 +10,25 @@
 <link rel="shortcut icon" type="image/x-icon" href="resources/img/public/favicon.ico">
 <link href="resources/css/public/header.css"  rel="stylesheet"  type="text/css">
 <script type="text/javascript">
-var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 
 $(document).ready(function () {
-	console.log(isMobile);
 	
-	if(!isMobile) {
-		$(".GNBWrap ul").mouseover(function(){
+	var windowWidth = $(window).width();
+	
+	//창크기 변화 감지
+	$(window).resize(function() {
+		windowWidth = $(window).width();
+	});
+	
+	$(".GNBWrap ul").mouseover(function(){
+		if(windowWidth > 768)
 			$(".head_menuWrap").addClass("GNB_open");
-		});
-		
-		$(".GNBWrap ul").mouseleave(function(){
+	});
+	
+	$(".GNBWrap ul").mouseleave(function(){
+		if(windowWidth > 768)
 			$(".head_menuWrap").removeClass("GNB_open");
-		});
-	}
+	});
 	
 	$(".btn_head_menu").click(function() {
 		$(".headerWrap").addClass("side_open");
@@ -72,12 +77,12 @@ function goDelivery() {
                             <li><a href="menu_brand.do?category=음료%26디저트"><span>음료&amp;디저트</span></a></li>
                         </ul>
                     </li>
-                    <li class="menu_open"><button type="button"><span>매장소개</span></button>
+                    <li class=""><button type="button"><span>매장소개</span></button>
                         <ul class="submenu">
                             <li><a href="store.do"><span>매장찾기</span></a></li>
                         </ul>
                     </li>
-                    <li class="menu_open"><button type="button"><span>이벤트</span></button>
+                    <li class=""><button type="button"><span>이벤트</span></button>
                         <ul class="submenu">
                             <li><a href="event_list.do"><span>이벤트</span></a></li>
                             <li class="MOB"><a><span>신규매장</span></a></li>

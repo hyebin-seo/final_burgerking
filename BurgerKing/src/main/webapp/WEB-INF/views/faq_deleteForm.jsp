@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>FAQ삭제</title>
 <link  href="resources/css/cs/faq_deleteForm.css"  rel="stylesheet"  type="text/css">
 </head>
 <body>

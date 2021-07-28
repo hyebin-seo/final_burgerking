@@ -6,13 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공지사항</title>
 <link  href="resources/css/cs/notice.css"  rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 	<jsp:include page="header.jsp" />	
 <body>
-
+<!-- 전체 내용 영역 -->
+	<div class="contentsWrap">
 	<!-- 1. 까만 영역 -->
 		<div class="WEB locationWrap">
 			<div class="web_container">
@@ -35,12 +36,12 @@
 	     <form method="post"
 	      action="<%=request.getContextPath() %>/notice_search.do">	      
 	     		<input type="hidden" name="page" value="${Paging.getPage() }">
-	      		
+	      	<div class="board_searchWrap">	
 	      		<input type="hidden" name="field" value="search_list">
 	    		<input type="text" placeholder="제목  + 내용" class="search_bar" name = "keyword">
 	    	 	<button class="btn_search" type="submit"></button>
+	    	</div>
 	    	 	
-	   	<hr class="hr1">
 	      <tr>
 	         <th>No.</th> <th>공지제목</th>
 	      	 <th>날짜</th> <th>조회수</th>
@@ -70,18 +71,8 @@
 	      	 </tr>
 	      </c:if>
 	      
-	     
-	    
-	         <td colspan="5" align="center">
-	            <input type="button" class="btn_list" value="전체목록"
-	               onclick="location.href='notice_list.do'">
-	         </td>
-	      </tr>
-	      
-	      
 	   </table>	   
 	   </div>
-	     <hr class="hr1">
 	     
 	<%-- 페이징 처리 부분 --%>
       <div class="text">
@@ -96,7 +87,11 @@
          </c:if>
       </c:forEach>
       </div> 
-
+      <div class="back_list_btn">
+      	<input type="button" class="btn_list" value="전체목록"
+	               onclick="location.href='notice_list.do'">
+	   </div>            
+	</div>
 </body>
 <jsp:include page="siteMap.jsp" />
 </html>

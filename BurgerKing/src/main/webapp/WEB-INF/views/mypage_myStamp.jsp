@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/css/mypage/mypage_stamp.css" type="text/css">
-<title>Insert title here</title>
+<title>MY스탬프</title>
 </head>
 <jsp:include page="delivery/deliveryHeader.jsp" flush="true"/>
 <jsp:include page="delivery/deliveryCart.jsp"/>

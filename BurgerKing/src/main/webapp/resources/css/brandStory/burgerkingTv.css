@@ -485,7 +485,7 @@ img {
 
 @media (max-height: 500px) and (orientation: landscape), screen and (max-width: 768px) and (orientation: portrait)
 {.movie_list ul.list{
-    width: 706px;
+    width: 67%;
 }}
 
 

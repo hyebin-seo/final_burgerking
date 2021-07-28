@@ -63,14 +63,22 @@ public class DeliveryController {
 		
 		if(dto != null) {
 			
-			CartDTO cart = new CartDTO();
-			cart.setUser_id(dto.getUser_id());
+			//String[] user_id = dto.getUser_id().split("@");
+			//if(!user_id[0].equals("NOMEMBER")) {
 			
-			List<CartDTO> list = cartDao.cartOpen(cart);
-		
-			model.addAttribute("cartlist", list);
+				CartDTO cart = new CartDTO();
+				cart.setUser_id(dto.getUser_id());
+				
+				List<CartDTO> list = cartDao.cartOpen(cart);
 			
-			return "delivery/deliveryHome";
+				model.addAttribute("cartlist", list);
+				
+				return "delivery/deliveryHome";
+			//} else {
+			//	script.println("<script>");
+			//	script.println("location.href='Login.do'");
+			//	script.println("</script>");
+			//}
 
 		} else {
 			script.println("<script>");
@@ -209,7 +217,7 @@ public class DeliveryController {
 		
 		if(udto != null) {
 			
-			SimpleDateFormat format1 = new SimpleDateFormat ( "yyMMdd-HHmmss");
+			SimpleDateFormat format1 = new SimpleDateFormat ( "yyMMddHHmm");
 			SimpleDateFormat format2 = new SimpleDateFormat ( "yyyy.MM.dd HH:mm:ss");
 			Calendar time = Calendar.getInstance();
 			String format_time1 = format1.format(time.getTime());
@@ -217,7 +225,7 @@ public class DeliveryController {
 			System.out.println(format_time1);
 			
 			int randNo = (int)(Math.random() * 10000);
-			String order_no = format_time1+"-"+randNo;
+			String order_no = format_time1+randNo;
 			
 			orderDto.setOrder_no(order_no);
 			orderDto.setOrder_id(udto.getUser_id());

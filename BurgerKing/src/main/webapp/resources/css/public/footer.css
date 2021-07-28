@@ -37,6 +37,7 @@ ul ul {
     position: absolute;
     top: 42px;
     right: 10px;
+    font-family: 'S-CoreDream-5Medium';
 }
 
 .footer_menu ul {
@@ -122,6 +123,10 @@ img {
     vertical-align: top;
 }
 
+.copyright {
+    font-family: 'S-CoreDream-5Medium';
+}
+
 .copyright p {
     line-height: 170%;
 }
@@ -172,6 +177,16 @@ screen and (max-width: 768px) and (orientation: portrait) {
     width: 25%;
 }
 
+
+.footer_menu ul li:nth-child(2) {
+    width: 50%;
+    text-align: center;
+}
+
+.footer_menu ul li:last-child {
+    text-align: right;
+}
+
 .footer_menu ul a {
     display: block;
     padding: 5px 0;
@@ -197,6 +212,20 @@ screen and (max-width: 768px) and (orientation: portrait) {
     height: 27.5px;
 }
 
+#app {
+    min-width: 100%;
+}
 
+.subWrap01, .subWrap02 {
+    min-width: 320px;
+    padding-top: 0!important;
+    padding-bottom: 350px;
+}
+
+.footer_menu .c_btn a {
+    width: calc(50% - 3.5px);
+    height: 36px;
+    line-height: 26px;
+}
 
 }
