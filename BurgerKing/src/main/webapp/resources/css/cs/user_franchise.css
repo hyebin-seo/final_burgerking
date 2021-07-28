@@ -360,6 +360,21 @@ a {
     padding: 50px 0 120px;
 }
 
+/*관리자 버튼*/
+.btn_list {
+		
+	width: 200px;
+	height: 60px;
+	background: url("../../img/cs/listB.png") no-repeat;
+	background-size: 200px 
+	padding: 0;
+	border: 0;
+	font-family: 'S-CoreDream-9Black';
+	font-size: 1.25rem;
+	color: white;
+}
+
+
 
 /*반응형*/
 @media screen and (min-width: 375px) and (max-width: 767px)

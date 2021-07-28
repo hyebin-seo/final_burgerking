@@ -291,4 +291,5 @@
 	</div><!-- tab_cont bg_w 5번째 탭 영역 -->
 </div><!-- contentsWrap end menu에 있어야 함 -->
 </body>
+<jsp:include page="../siteMap.jsp"/>
 </html>

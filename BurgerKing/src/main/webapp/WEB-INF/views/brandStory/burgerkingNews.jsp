@@ -61,4 +61,5 @@
 		</div><!-- tab_cont end -->
 	</div><!-- web_container end 탭 부분의 컨테이너임 -->
 </body>
+<jsp:include page="../siteMap.jsp"/>
 </html>

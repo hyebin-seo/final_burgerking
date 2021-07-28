@@ -57,9 +57,8 @@ li {
     list-style: none;
 }
 .tab_cont{
-	margin-top: 150px;
-	max-width: 70%;
-	margin-left: 15%;
+	max-width: 80%;
+	margin: 0 auto;
 }
 .hide {
     font-family: 'S-CoreDream-9Black';

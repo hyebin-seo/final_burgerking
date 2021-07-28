@@ -37,7 +37,7 @@ public class FaqController {
 		
 		
 		
-		System.out.println("123>>"+userDto);
+		System.out.println("userDTO>>"+userDto);
 		
 		
 		

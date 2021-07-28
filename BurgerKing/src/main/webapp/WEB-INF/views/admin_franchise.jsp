@@ -9,6 +9,8 @@
 <link  href="resources/css/cs/admin_franchise.css"  rel="stylesheet"  type="text/css">
 </head>
 <body>
+	<jsp:include page="franchiselocation.jsp" />
+	<jsp:include page="cs_menu.jsp" />
 	<div class="tab_cont">
 		<h4 class="hide">가맹점모집 신청현황</h4>
 		<!-- 서치 부분 -->
