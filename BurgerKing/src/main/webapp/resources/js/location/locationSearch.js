@@ -39,7 +39,7 @@ $(document).ready(function () {
 	        	    position: new naver.maps.LatLng(y, x), //마커 찍을 좌표
 	        	    map: map,
 	        	    icon: {
-	        	        url: 'resources/img/delivery/map_marker.png', //아이콘 경로
+	        	        url: 'resources/img/delivery/home_marker.png', //아이콘 경로
 	        	        size: new naver.maps.Size(36, 49), //아이콘 사이즈
 	        	        origin: new naver.maps.Point(0, 0),
 	        	        anchor: new naver.maps.Point(11, 35)
